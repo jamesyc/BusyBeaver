@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE_SUCCESSOR_PROJECT_SOURCE_BUILD",
+  "root": "PA215PA.MachineNonhaltingV2",
+  "modules": 1060,
+  "retained_original_empty_origin_source_builds": 274,
+  "fresh_successor_source_builds": 786,
+  "author_project_objects_reused": false,
+  "external_package_cache_reused": true,
+  "fresh_external_source_build": false,
+  "manifest_sha256": "22dbbd85fa5363890a7e710e9bcef46c2bdff91de5871950312d0d1142bba657",
+  "ledger_sha256": "35c8b131699fb0b20e2f3c6c0c1859ff4199763e48171e7f57b4b76929bf49b0",
+  "last_receipt": "cbeb55e516f9524ee4c8aed3faa49a8db0a41778c3e2dbc4c4b961df8271dd39"
+}

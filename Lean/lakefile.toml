@@ -1,0 +1,6 @@
+name = "pa215"
+version = "0.1.0"
+defaultTargets = ["PA215"]
+
+[[lean_lib]]
+name = "PA215"

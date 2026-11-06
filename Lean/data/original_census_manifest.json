@@ -1,0 +1,298 @@
+{
+  "source_corpus_sha256": "7cc47482b8ffcaad47dac92c9033a54a93d1a43d4686db2ccd165542897dfffe",
+  "count": 5134,
+  "parts": [
+    {
+      "module": "PA215.Census.C000",
+      "path": "PA215/Census/C000.lean",
+      "lo": 0,
+      "count": 128,
+      "sha256": "e5612260bd8c44d965c5300d0ca5a1a9670e844450b5346b90e09404a98a0132"
+    },
+    {
+      "module": "PA215.Census.C001",
+      "path": "PA215/Census/C001.lean",
+      "lo": 128,
+      "count": 128,
+      "sha256": "da84663de7fea332552d8c56e9b537387b4aace83b8106855faa0d0f23898896"
+    },
+    {
+      "module": "PA215.Census.C002",
+      "path": "PA215/Census/C002.lean",
+      "lo": 256,
+      "count": 128,
+      "sha256": "f6be87e05058759ee2178e31c0784fa8a0a0dd66ea357375f3f5376dab50a3fd"
+    },
+    {
+      "module": "PA215.Census.C003",
+      "path": "PA215/Census/C003.lean",
+      "lo": 384,
+      "count": 128,
+      "sha256": "dce9f30157dd7cab64841ef9775cb7d40321d00193955a7c2ab569646cec4f01"
+    },
+    {
+      "module": "PA215.Census.C004",
+      "path": "PA215/Census/C004.lean",
+      "lo": 512,
+      "count": 128,
+      "sha256": "8c3c2da17643579592eb1b5e5a82d5948bf7854a188ee9ecb181e17607306669"
+    },
+    {
+      "module": "PA215.Census.C005",
+      "path": "PA215/Census/C005.lean",
+      "lo": 640,
+      "count": 128,
+      "sha256": "5273a4bf70b0fb4994400cfe5c3b3475661a381cd9ba9e68c32078e2017234aa"
+    },
+    {
+      "module": "PA215.Census.C006",
+      "path": "PA215/Census/C006.lean",
+      "lo": 768,
+      "count": 128,
+      "sha256": "ca5babecaf620e5b84bac458a9f1dbdb0ac982db7c614d273ce6e372012a1b6b"
+    },
+    {
+      "module": "PA215.Census.C007",
+      "path": "PA215/Census/C007.lean",
+      "lo": 896,
+      "count": 128,
+      "sha256": "3ea6d69d7dcff4f5f4e1027b10f5d4d68b8221bb5398c297ede93af728b0b59d"
+    },
+    {
+      "module": "PA215.Census.C008",
+      "path": "PA215/Census/C008.lean",
+      "lo": 1024,
+      "count": 128,
+      "sha256": "25a0e0f9834f22defe29970c4e6a86390ddff93234234772aad1a5ebaf7bdbe4"
+    },
+    {
+      "module": "PA215.Census.C009",
+      "path": "PA215/Census/C009.lean",
+      "lo": 1152,
+      "count": 128,
+      "sha256": "50d4126cf7395f1655df9b7a291ddd47ba4d5e5cb37fafdc7a8d20db450e1859"
+    },
+    {
+      "module": "PA215.Census.C010",
+      "path": "PA215/Census/C010.lean",
+      "lo": 1280,
+      "count": 128,
+      "sha256": "ea31370c3b54ed88af98c751872e9619fb59c168a0b760583a563ad00a6c2b10"
+    },
+    {
+      "module": "PA215.Census.C011",
+      "path": "PA215/Census/C011.lean",
+      "lo": 1408,
+      "count": 128,
+      "sha256": "d5f5f3ec23fa1f6b68f6e033b060122d3548f04af358948fe65d9ba17d4d105a"
+    },
+    {
+      "module": "PA215.Census.C012",
+      "path": "PA215/Census/C012.lean",
+      "lo": 1536,
+      "count": 128,
+      "sha256": "ae521145f3064fb8eacedfc7e9cd2479b941527c99cae0e8edbc12747df073ea"
+    },
+    {
+      "module": "PA215.Census.C013",
+      "path": "PA215/Census/C013.lean",
+      "lo": 1664,
+      "count": 128,
+      "sha256": "8b43eb50b8d95aee9e58404b3b3f6435901ce63d7c09d8c3d50bf21831993f2f"
+    },
+    {
+      "module": "PA215.Census.C014",
+      "path": "PA215/Census/C014.lean",
+      "lo": 1792,
+      "count": 128,
+      "sha256": "d00f9bd4626b50bb87b3d90640a514175c097fcefa518f3ebdbc7aefce593909"
+    },
+    {
+      "module": "PA215.Census.C015",
+      "path": "PA215/Census/C015.lean",
+      "lo": 1920,
+      "count": 128,
+      "sha256": "06b7992cb8d8ee3f4efb7712eac03d04b97213042aa90baded0d198469105f18"
+    },
+    {
+      "module": "PA215.Census.C016",
+      "path": "PA215/Census/C016.lean",
+      "lo": 2048,
+      "count": 128,
+      "sha256": "9a6c8836f362baffa79eafdda33a08741df4c4b2e49d0919de9720112977be90"
+    },
+    {
+      "module": "PA215.Census.C017",
+      "path": "PA215/Census/C017.lean",
+      "lo": 2176,
+      "count": 128,
+      "sha256": "9a44cdfda7554441ca6d9b7162811e7188318a7cfad5f35caf3e0fd6fc80f746"
+    },
+    {
+      "module": "PA215.Census.C018",
+      "path": "PA215/Census/C018.lean",
+      "lo": 2304,
+      "count": 128,
+      "sha256": "9d4659dc74f1062cb8986d81deac82f06a3d842e967fb13377c83779ae37506f"
+    },
+    {
+      "module": "PA215.Census.C019",
+      "path": "PA215/Census/C019.lean",
+      "lo": 2432,
+      "count": 128,
+      "sha256": "38d9d816e9a1bdcd085f25f0ea7f45c86ccf5d4c9a24e05d0a2e53c89d38eec9"
+    },
+    {
+      "module": "PA215.Census.C020",
+      "path": "PA215/Census/C020.lean",
+      "lo": 2560,
+      "count": 128,
+      "sha256": "01fafff047e86d86d3f2ca8df5a602c58cccb84858cca27f1c57b6fde3bd3df3"
+    },
+    {
+      "module": "PA215.Census.C021",
+      "path": "PA215/Census/C021.lean",
+      "lo": 2688,
+      "count": 128,
+      "sha256": "85eb92897ca0ee1fa52ae56225f5ca391fed051ae82f3fbb5113b508e2128d47"
+    },
+    {
+      "module": "PA215.Census.C022",
+      "path": "PA215/Census/C022.lean",
+      "lo": 2816,
+      "count": 128,
+      "sha256": "c51de9c8dfd17902d110726246db98dfc24a41fd9ff6488d15e11f31ec073f84"
+    },
+    {
+      "module": "PA215.Census.C023",
+      "path": "PA215/Census/C023.lean",
+      "lo": 2944,
+      "count": 128,
+      "sha256": "64c6d900877194041a51d61aeb521f6439d283cb6385c97b4d1917da60e685ac"
+    },
+    {
+      "module": "PA215.Census.C024",
+      "path": "PA215/Census/C024.lean",
+      "lo": 3072,
+      "count": 128,
+      "sha256": "4e4f132b3dcddfe26e2775bec80edea97e7f89c706f46283c6a3f2ec0b972e96"
+    },
+    {
+      "module": "PA215.Census.C025",
+      "path": "PA215/Census/C025.lean",
+      "lo": 3200,
+      "count": 128,
+      "sha256": "785213e6771fb548a96b44e35a8c4e867e36ba505144da5fa83ce6418a173516"
+    },
+    {
+      "module": "PA215.Census.C026",
+      "path": "PA215/Census/C026.lean",
+      "lo": 3328,
+      "count": 128,
+      "sha256": "289ffc7d2a2075194755edb2c640e238edca610a07dc397dbf7d3a34d4dc64fd"
+    },
+    {
+      "module": "PA215.Census.C027",
+      "path": "PA215/Census/C027.lean",
+      "lo": 3456,
+      "count": 128,
+      "sha256": "082e2ba25b37fe0cbb2821784066ab6dcf418dac7e22c142925f90b7bf6bccd6"
+    },
+    {
+      "module": "PA215.Census.C028",
+      "path": "PA215/Census/C028.lean",
+      "lo": 3584,
+      "count": 128,
+      "sha256": "39d68d541fd04a2df52ec943e91eaf69ce38a573d806927310829f926d49ad79"
+    },
+    {
+      "module": "PA215.Census.C029",
+      "path": "PA215/Census/C029.lean",
+      "lo": 3712,
+      "count": 128,
+      "sha256": "d4fefdbc8b2303e5acd31016c6cef44b3241d6eb5b342029b3a55bd52c54c466"
+    },
+    {
+      "module": "PA215.Census.C030",
+      "path": "PA215/Census/C030.lean",
+      "lo": 3840,
+      "count": 128,
+      "sha256": "f7a898e237e358bc03e16ace4550f32b9734bd54d81a4978ca8666cb9ab2394f"
+    },
+    {
+      "module": "PA215.Census.C031",
+      "path": "PA215/Census/C031.lean",
+      "lo": 3968,
+      "count": 128,
+      "sha256": "0cbf67b41497bf060f3955f8b3e8e93fae496f200cc5a455610c95cb61976b43"
+    },
+    {
+      "module": "PA215.Census.C032",
+      "path": "PA215/Census/C032.lean",
+      "lo": 4096,
+      "count": 128,
+      "sha256": "4afa3b10faa10283acaf22b41b9c97b0c89ab856ce214cb4d67a8bbd9303442c"
+    },
+    {
+      "module": "PA215.Census.C033",
+      "path": "PA215/Census/C033.lean",
+      "lo": 4224,
+      "count": 128,
+      "sha256": "8fac9fe0699c539cfd6488c81211ad6798894d7575c9a601f67c8d26a8d31ba7"
+    },
+    {
+      "module": "PA215.Census.C034",
+      "path": "PA215/Census/C034.lean",
+      "lo": 4352,
+      "count": 128,
+      "sha256": "83aa7871b301b30d3becc1a664ba9893227ef0368597d61b1159a6cc44cdc839"
+    },
+    {
+      "module": "PA215.Census.C035",
+      "path": "PA215/Census/C035.lean",
+      "lo": 4480,
+      "count": 128,
+      "sha256": "6c70855d0e82bb4d467f43a07f82bbb032549e2dec5bcaffeef5f16403d04ef0"
+    },
+    {
+      "module": "PA215.Census.C036",
+      "path": "PA215/Census/C036.lean",
+      "lo": 4608,
+      "count": 128,
+      "sha256": "dc461287bccaa208c74c57b2a14f6d7852a43357f5f6d2115d94d82cb9b3f93a"
+    },
+    {
+      "module": "PA215.Census.C037",
+      "path": "PA215/Census/C037.lean",
+      "lo": 4736,
+      "count": 128,
+      "sha256": "493f095fc5fec64044475fb06d650d58b4b75df028b116b40a801dacde3d4d2b"
+    },
+    {
+      "module": "PA215.Census.C038",
+      "path": "PA215/Census/C038.lean",
+      "lo": 4864,
+      "count": 128,
+      "sha256": "429f5ae0442a1bc5474a1e0e188d2fec22f3a2cd682cf70192a1af37d8feb855"
+    },
+    {
+      "module": "PA215.Census.C039",
+      "path": "PA215/Census/C039.lean",
+      "lo": 4992,
+      "count": 128,
+      "sha256": "0ea05d890fb8cf3a72d0fdbdb67adec5fdf11921d2f2354fbdf01c95d399607e"
+    },
+    {
+      "module": "PA215.Census.C040",
+      "path": "PA215/Census/C040.lean",
+      "lo": 5120,
+      "count": 14,
+      "sha256": "426352e1babdd5a296ec2c8f6450330032a7aaedbbde38c85e0ff214ad6bf80e"
+    }
+  ],
+  "aggregator": {
+    "path": "PA215/OriginalCensus.lean",
+    "sha256": "4a990c66396db1ee11644fee64e21699f0148394581c4a4a0abddb5e9343bc66"
+  },
+  "scope": "Typed original inputs and index/size facts only. Execution certificates are separate."
+}

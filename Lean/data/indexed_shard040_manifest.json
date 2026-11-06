@@ -1,0 +1,21 @@
+{
+  "status": "Generated indexed wrappers; compile and review are separate; adds no execution coverage",
+  "runtime_manifest_sha256": "bf1af6785def2b76a8eb5696f39e9bb6609c045c66987db8d30c75219e1f90a4",
+  "indices": [
+    5133
+  ],
+  "parts": [
+    {
+      "path": "PA215/IndexedContracts/Shard040Part0.lean",
+      "module": "PA215.IndexedContracts.Shard040Part0",
+      "indices": [
+        5133
+      ],
+      "sha256": "c31080f214e53101c7be51712f3f367e3d0b971934ebe2cff85be6e2a82e3453"
+    }
+  ],
+  "aggregator": {
+    "path": "PA215/IndexedContracts/Shard040.lean",
+    "sha256": "19e5e53af836b9ae85f44e308e6bc56706e9b20170828231cf44ec39349ba2da"
+  }
+}

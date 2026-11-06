@@ -1,0 +1,28 @@
+import PA215.OriginalCensusTypes
+set_option maxRecDepth 100000
+set_option maxHeartbeats 2000000
+
+namespace PA215.Census.C040
+open PA215.Runtime
+
+def records : Array RawOriginal := #[
+  ⟨5120, 3936, [true, true, true, true, true, true, false, false, true, true, false, false, true], "EBreak", some 1, none, (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 2, .run false 0 2, .run true 0 1, .run false 1 51, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 3, .run false 1 53, .run true 0 1, .box (.plain .none)]), false⟩,
+  ⟨5121, 3937, [true, true, true, true, true, true, false, false, true, true, false, true, false], "EDecnz", some 7, some (5, true), (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 2, .run false 0 1, .run true 0 1, .run false 1 52, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 3, .run false 1 53, .run true 0 1, .box (.plain .none)]), false⟩,
+  ⟨5122, 3937, [true, true, true, true, true, true, false, false, true, true, false, true, false], "EDecnz", some 7, some (5, false), (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 2, .run false 0 1, .run true 0 1, .run false 1 52, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 2, .run false 0 1, .run true 0 2, .run false 1 52, .run true 0 1, .box (.plain (.dec 5))]), false⟩,
+  ⟨5123, 3938, [true, true, true, true, true, true, false, false, true, true, false, true, true, false], "EInc", some 6, none, (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 2, .run false 0 1, .run true 0 2, .run false 1 51, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 2, .run false 0 1, .run true 0 3, .run false 1 50, .run true 0 1, .box (.plain (.inc 8))]), false⟩,
+  ⟨5124, 3939, [true, true, true, true, true, true, false, false, true, true, false, true, true, true], "EContinue", some 2, none, (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 2, .run false 0 1, .run true 0 3, .run false 1 50, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 2, .run false 0 1, .run true 0 1, .run false 1 52, .run true 0 1, .box (.plain .none)]), false⟩,
+  ⟨5125, 3940, [true, true, true, true, true, true, false, false, true, true, true], "EContinue", some 3, none, (84, false, [.run true 0 1], [.run true 0 6, .run false 0 2, .run true 0 3, .run false 1 53, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 1 58, .run true 0 1, .box (.plain .none)]), false⟩,
+  ⟨5126, 3941, [true, true, true, true, true, true, false, true, false], "EDecnz", some 7, some (5, true), (84, false, [.run true 0 1], [.run true 0 6, .run false 0 1, .run true 0 1, .run false 1 56, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 7, .run false 1 57, .run true 0 1, .box (.plain .none)]), false⟩,
+  ⟨5127, 3941, [true, true, true, true, true, true, false, true, false], "EDecnz", some 7, some (5, false), (84, false, [.run true 0 1], [.run true 0 6, .run false 0 1, .run true 0 1, .run false 1 56, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 0 1, .run true 0 2, .run false 1 56, .run true 0 1, .box (.plain (.dec 5))]), false⟩,
+  ⟨5128, 3942, [true, true, true, true, true, true, false, true, true, false], "EInc", some 2, none, (84, false, [.run true 0 1], [.run true 0 6, .run false 0 1, .run true 0 2, .run false 1 55, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 0 1, .run true 0 3, .run false 1 54, .run true 0 1, .box (.plain (.inc 0))]), false⟩,
+  ⟨5129, 3943, [true, true, true, true, true, true, false, true, true, true], "EContinue", some 2, none, (84, false, [.run true 0 1], [.run true 0 6, .run false 0 1, .run true 0 3, .run false 1 54, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 6, .run false 0 1, .run true 0 1, .run false 1 56, .run true 0 1, .box (.plain .none)]), false⟩,
+  ⟨5130, 3944, [true, true, true, true, true, true, true, false], "EDecnz", some 6, some (8, true), (84, false, [.run true 0 1], [.run true 0 7, .run false 1 57, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run false 1 65, .run true 0 1, .box (.plain .none)]), false⟩,
+  ⟨5131, 3944, [true, true, true, true, true, true, true, false], "EDecnz", some 6, some (8, false), (84, false, [.run true 0 1], [.run true 0 7, .run false 1 57, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 8, .run false 1 57, .run true 0 1, .box (.plain (.dec 8))]), false⟩,
+  ⟨5132, 3945, [true, true, true, true, true, true, true, true, false], "EInc", some 5, none, (84, false, [.run true 0 1], [.run true 0 8, .run false 1 56, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 9, .run false 1 55, .run true 0 1, .box (.plain (.inc 7))]), false⟩,
+  ⟨5133, 3946, [true, true, true, true, true, true, true, true, true], "EContinue", some 2, none, (84, false, [.run true 0 1], [.run true 0 9, .run false 1 55, .run true 0 1, .box (.plain .none)]), some (84, false, [.run true 0 1], [.run true 0 7, .run false 1 57, .run true 0 1, .box (.plain .none)]), false⟩]
+
+theorem size : records.size = 14 := by decide
+
+theorem indices : records.toList.map RawOriginal.index = List.range' 5120 14 := by decide
+
+end PA215.Census.C040

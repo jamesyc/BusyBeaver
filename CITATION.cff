@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite the article and identify the commit used."
+type: software
+title: "Nonhalting and PA-unprovability for a 215-state Turing machine"
+authors:
+  - family-names: "Chang"
+    given-names: "James"
+repository-code: "https://github.com/jamesyc/BusyBeaver"
+abstract: >-
+  Assuming the consistency of ordinary Peano arithmetic, an explicit binary
+  Turing machine with 215 working states runs forever on a blank tape and PA
+  cannot prove its nonhalting sentence. The Lean formalization checks the
+  machine simulation and the internal implication from nonhalting to PA consistency.

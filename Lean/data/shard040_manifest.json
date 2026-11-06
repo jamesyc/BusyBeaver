@@ -1,0 +1,24 @@
+{
+  "proof_method": "verified_flat_lookup",
+  "lookup_equivalence_sha256": "a3316b7effdbccf1040ad4a7a9f2b55c78b08aa76ca1b8e570c71fdac514d286",
+  "source_corpus_sha256": "7cc47482b8ffcaad47dac92c9033a54a93d1a43d4686db2ccd165542897dfffe",
+  "shard": 40,
+  "indices": [
+    5133
+  ],
+  "parts": [
+    {
+      "module": "PA215.ContractShards.Shard040Part0",
+      "path": "PA215/ContractShards/Shard040Part0.lean",
+      "indices": [
+        5133
+      ],
+      "sha256": "4cdec179f05cb7456bf063789a91eefe30e173f7fb7382dc379cc50c02aac399"
+    }
+  ],
+  "aggregator": {
+    "path": "PA215/ContractShards/Shard040.lean",
+    "sha256": "b024e2f6800da0143ac2bbb2b39dfa51ef8165afdd7c850621104f69e386a351"
+  },
+  "status": "Generated obligations; kernel build/review/publication are separate."
+}
