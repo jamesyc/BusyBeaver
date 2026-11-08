@@ -24,7 +24,7 @@ Suppose a number codes a PA proof of a contradiction. The formalization translat
 
 If PA also proved *N*, it could apply that implication and prove Con(PA). Gödel's second incompleteness theorem rules this out when PA is consistent. Under that assumption, *N* is true and PA cannot prove it. The figure 213 counts the working states of this particular machine. [Unprovability theorem](Lean/metamathematics/PA213PA/NonhaltingUnprovability.lean)
 
-PA cannot prove the negation of *N* either: every PA theorem is true in the natural numbers, so a PA proof of the negation would make it true there, contradicting *N*. Foundation proves that the natural numbers model PA, and so that PA is consistent. With that fact, the two-sided independence theorem and the blank-tape nonhalting theorem have no explicit premises. These are theorems of Lean's metatheory, not PA proofs about PA. [Two-sided theorem](Lean/metamathematics/PA213PA/TwoSidedIndependence.lean)
+PA cannot prove the negation of *N* either: every PA theorem is true in the natural numbers, so a PA proof of the negation would make it true there, contradicting *N*. Foundation proves that the natural numbers model PA, and so that PA is consistent. With that fact, the two-sided independence theorem and the blank-tape nonhalting theorem have no explicit premises. These are theorems of Lean's metatheory, not PA proofs about PA. [Two-sided theorem](Lean/metamathematics/PA213PA/TwoSidedIndependence.lean) · [LaTeX exposition](docs/pa213-independence.tex)
 
 ## Formal verification
 

@@ -4629,7 +4629,7 @@
       "sha256": "2d5ec4cee5cd726e859e276ebce8aeff86961b7ed27420df68753ea6f6f0ec03"
     },
     "README.md": {
-      "sha256": "f5618076638ae838bd963ad63c8b2cb7196c72bdd39d58072f36574b644902d1",
+      "sha256": "cde33568267aac7ab754d9ea20775b296fd00645132f7ccfdb9e7b770e4cf4d0",
       "original_sha256": "c910d0f641c617ac5b796d94eddca5a0931c950c1ac656c206a9fcd391a946fc"
     },
     "Lean/metamathematics/PA213PA/Theory.lean": {
@@ -6301,6 +6301,14 @@
     "evidence/publication/independence-axioms.txt": {
       "publication_generated": true,
       "sha256": "e956f1832a7145ecbd14652194dd7a7581a4a19e468f4595eff1d1d74f8d4ce3"
+    },
+    "docs/pa213-independence.tex": {
+      "publication_generated": true,
+      "sha256": "4f377a789bfbcd5799242907c0f865a2febea718b3739aa07ff7e56e33415b20"
+    },
+    "docs/pa213-independence.pdf": {
+      "publication_generated": true,
+      "sha256": "d99c54f406aa039a81e976da98b0dd12928b95a04b7d16171fa767df3c7d6e3b"
     }
   }
 }
