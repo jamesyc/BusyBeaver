@@ -640,9 +640,9 @@
       "sha256": "460d4fb6f45fd89278ba881d4b70e8bd1b7df223ee907e758342c2f9989f789d"
     },
     "Lean/metamathematics/Audit.lean": {
-      "sha256": "11f50892cc0edb8cffef0433323b2cca3069960ae52c4d6ff00efe2c6635e033",
+      "sha256": "6e2bd7fcf91ce594196677b9fcfa2c390755033e9eb6f31c0b3050bc6ee3a6b9",
       "original_sha256": "14c8dabe9fbbc8b26a86b17983dedb5457eb1ad2a8be91aa847befc7c7e721b2",
-      "lean_program_sha256": "674990d6ca861fa4ef22a1e15979607e08850bc6a7311e36324d68838d182228"
+      "lean_program_sha256": "2a3840ddc272c8c5ca2ea13a3fda488ab64bb2964f149e5dc9719995e79d3b20"
     },
     "Lean/metamathematics/PA215PA/AXCodeBridge.lean": {
       "sha256": "6a1cc9dbdc6d6e7945c0ee48acea6aa46157e8e9b2f4a24bb7318bd0bc3fb736"
@@ -4629,7 +4629,7 @@
       "sha256": "2d5ec4cee5cd726e859e276ebce8aeff86961b7ed27420df68753ea6f6f0ec03"
     },
     "README.md": {
-      "sha256": "b8694623124de33ea25b6cba13bf8efe1dda26afa5f559fde4c6d696012e2eb1",
+      "sha256": "f5618076638ae838bd963ad63c8b2cb7196c72bdd39d58072f36574b644902d1",
       "original_sha256": "c910d0f641c617ac5b796d94eddca5a0931c950c1ac656c206a9fcd391a946fc"
     },
     "Lean/metamathematics/PA213PA/Theory.lean": {
@@ -6273,7 +6273,7 @@
     },
     "Lean/metamathematics/PA213PA.lean": {
       "publication_generated": true,
-      "sha256": "8628fd7a4e9d9e50a92b52e6d432a5db57ff25f43bbd4ee0930e5826a0fe6793"
+      "sha256": "5c4dbf05a3563a67d49d4d058246924ef925651f1bb501160ba88605cc973db8"
     },
     "Lean/data/pa213.tm": {
       "sha256": "b332b36d8ed9c909c51df27727a2c68a6890c122e102a4e7a6d411a483094989"
@@ -6293,6 +6293,14 @@
     },
     "Lean/metamathematics/patches/VERIFICATION.json": {
       "sha256": "1704478512037cfe194466c1f0dae4f9cf2938f6ede464042dc80432854bb7ca"
+    },
+    "Lean/metamathematics/PA213PA/TwoSidedIndependence.lean": {
+      "publication_generated": true,
+      "sha256": "0e74cfb55bb5c881cb535ead719e43090499d1f0e34092b736b087e1c51ef6ce"
+    },
+    "evidence/publication/independence-axioms.txt": {
+      "publication_generated": true,
+      "sha256": "e956f1832a7145ecbd14652194dd7a7581a4a19e468f4595eff1d1d74f8d4ce3"
     }
   }
 }

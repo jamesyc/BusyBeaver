@@ -12,8 +12,8 @@ bash scripts/check.sh
 
 The script compares PA213's 426 transition rows and 3,947 source sites with
 their Lean representations, checks its relabeling and 519 reviewed module
-hashes. It checks file hashes, module imports, and all five theorem names
-in the final axiom audit.
+hashes. It checks file hashes, module imports, and all eight theorem names
+in the final axiom audit: the five original roots and the three independence roots.
 
 ## Install the proof dependencies
 
@@ -50,7 +50,7 @@ bash scripts/check.sh --full
 ```
 
 This runs the data checks, compiles the PA213 metamathematics root, and
-checks the transitive axioms of all five endpoint theorems. The scheduler
+checks the transitive axioms of all eight audited theorems. The scheduler
 submits one local or Foundation target at a time.
 
 To inspect the build order, run the scheduler with `--list`.
@@ -62,7 +62,7 @@ python3 Lean/scripts/build_serial.py --metamathematics --list
 To build the final theorem module directly, name it with `--target`.
 
 ```sh
-python3 Lean/scripts/build_serial.py --metamathematics --target PA213PA.NonhaltingUnprovability
+python3 Lean/scripts/build_serial.py --metamathematics --target PA213PA.TwoSidedIndependence
 ```
 
 With the endpoint built, run `python3 Lean/metamathematics/scripts/check_axioms.py`
@@ -70,6 +70,6 @@ to check its axioms. To check the core machine library on its own, run
 `bash Lean/scripts/check.sh`.
 
 The PA213 final target can also be rechecked with
-`lake --rehash build +PA213PA.NonhaltingUnprovability` from
+`lake --rehash build +PA213PA.TwoSidedIndependence` from
 `Lean/metamathematics` after the serial build.
-[Endpoint axiom report](../evidence/publication/endpoint-axioms.txt) · [Frozen build receipt](../evidence/pa213/FINAL_PA_RECEIPT.json)
+[Extended axiom report](../evidence/publication/independence-axioms.txt) · [Original endpoint axiom report](../evidence/publication/endpoint-axioms.txt) · [Frozen build receipt](../evidence/pa213/FINAL_PA_RECEIPT.json)

@@ -13,6 +13,7 @@ from build_serial import build_order
 from check_source_hygiene import without_comments
 
 ENDPOINT = "PA213PA.NonhaltingUnprovability"
+INDEPENDENCE = "PA213PA.TwoSidedIndependence"
 
 
 def checked_file(root, name, expected):
@@ -47,6 +48,8 @@ def main():
     closure = set(build_order(lean, "PA213PA", roots))
     if ENDPOINT not in closure:
         raise ValueError(f"Default root does not expose {ENDPOINT}")
+    if INDEPENDENCE not in closure:
+        raise ValueError(f"Default root does not expose {INDEPENDENCE}")
     closure.update(build_order(lean, "PA213"))
     expected_axioms = {
         "PA213.PA.consistent_machine_nonhalting",
@@ -54,10 +57,13 @@ def main():
         "PA213.PA.InternalUnprovability.pa_proves_nonhalting_consistency",
         "PA213.PA.InternalUnprovability.nonhalting_unprovable",
         "PA213.PA.InternalUnprovability.final_endpoint",
+        "PA213.PA.Independence.nonhalting_irrefutable",
+        "PA213.PA.Independence.two_sided_independence",
+        "PA213.PA.Independence.machine_nonhalting",
     }
     audit = (lean / "metamathematics/Audit.lean").read_text()
     if set(re.findall(r"^#print axioms (\S+)$", audit, re.M)) != expected_axioms:
-        raise ValueError("The final axiom audit must name all five PA213 theorem roots")
+        raise ValueError("The final axiom audit must name the five original PA213 roots and the three independence roots")
     docs = {ROOT / name for name in manifest["files"] if name.endswith(".md")}
     docs.add(ROOT / "evidence/README.md")
     docs.update((ROOT / "docs").glob("*.md"))

@@ -1,8 +1,8 @@
-# Nonhalting and PA-unprovability for a 213-state Turing machine
+# Nonhalting and PA-independence for a 213-state Turing machine
 
 Let PA stand for ordinary first-order Peano arithmetic. PA is consistent if its axioms admit no proof of a contradiction.
 
-> If PA is consistent, PA213 runs forever on a blank tape, and PA cannot prove the arithmetic sentence that says it runs forever.
+> If PA is consistent, PA213 runs forever on a blank tape, and PA cannot prove the arithmetic sentence that says it runs forever. The natural numbers are a model of PA, so PA is consistent, and PA cannot refute that sentence either.
 
 PA213 searches for a proof of a contradiction from the axioms of PA. A proof is a finite derivation. Each line contains a formula, and a mechanical rule determines whether that line follows from the axioms or from earlier lines. The machine encodes formulas and derivations as numbers on its tape. It halts when it derives a contradiction.
 
@@ -22,13 +22,15 @@ PA can describe a run of the machine by encoding its successive configurations a
 
 Suppose a number codes a PA proof of a contradiction. The formalization translates it into a code the search program accepts, and from that code obtains a halting trace. In every model of PA, including nonstandard models, a code for a refutation would therefore make *N* false. By completeness of first-order logic, PA itself proves *N* → Con(PA), where Con(PA) is its arithmetic sentence for consistency. [Proof-code translation](Lean/metamathematics/PA215PA/FoundationNativeRefutationTransport.lean) · [From a refutation to a halting trace](Lean/metamathematics/PA213PA/InternalActualRefutationHalting.lean)
 
-If PA also proved *N*, it could apply that implication and prove Con(PA). Gödel's second incompleteness theorem rules this out when PA is consistent. Under that assumption, *N* is true and PA cannot prove it. Two-sided independence would require a further result ruling out a PA proof of the negation of *N*. The figure 213 counts the working states of this particular machine. [Unprovability theorem](Lean/metamathematics/PA213PA/NonhaltingUnprovability.lean)
+If PA also proved *N*, it could apply that implication and prove Con(PA). Gödel's second incompleteness theorem rules this out when PA is consistent. Under that assumption, *N* is true and PA cannot prove it. The figure 213 counts the working states of this particular machine. [Unprovability theorem](Lean/metamathematics/PA213PA/NonhaltingUnprovability.lean)
+
+PA cannot prove the negation of *N* either: every PA theorem is true in the natural numbers, so a PA proof of the negation would make it true there, contradicting *N*. Foundation proves that the natural numbers model PA, and so that PA is consistent. With that fact, the two-sided independence theorem and the blank-tape nonhalting theorem have no explicit premises. These are theorems of Lean's metatheory, not PA proofs about PA. [Two-sided theorem](Lean/metamathematics/PA213PA/TwoSidedIndependence.lean)
 
 ## Formal verification
 
 The frozen PA213 build used Lean 4.35.0 and completed 3,224 targets. Its final theorem combines the 213-state and 426-row counts, nonhalting from the blank tape, truth of *N* in the natural numbers, and the unprovability of *N* under consistency. PA's internal implication *N* → Con(PA) is also proved. The audited endpoint uses propositional extensionality (`propext`), classical choice (`Classical.choice`), and quotient soundness (`Quot.sound`). [Formal statements](docs/result.md) · [Frozen build receipt](evidence/pa213/FINAL_PA_RECEIPT.json)
 
-The physical proof uses an equivalent sparse labeling, with start label 74 and halt label 254. The arithmetic sentence uses exactly the published table's 426 transitions. Lean proves its equivalence to an auxiliary encoding with two unreachable padding states. The default build checks PA213, and the axiom audit covers its five endpoint theorems. [Table relabeling](Lean/PA213/CandidateTable.lean) · [Exact arithmetic sentence](Lean/metamathematics/PA213PA/ExactHaltingFormula.lean) · [Verification records](docs/validation.md)
+The physical proof uses an equivalent sparse labeling, with start label 74 and halt label 254. The arithmetic sentence uses exactly the published table's 426 transitions. Lean proves its equivalence to an auxiliary encoding with two unreachable padding states. The default build includes two-sided independence; the audit covers the five original roots and three new roots using the same three axioms. [Table relabeling](Lean/PA213/CandidateTable.lean) · [Exact arithmetic sentence](Lean/metamathematics/PA213PA/ExactHaltingFormula.lean) · [Verification records](docs/validation.md)
 
 ## References and reproduction
 

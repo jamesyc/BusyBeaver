@@ -24,3 +24,21 @@ exact 426-row machine.
 contains the physical nonhalting proof.
 [NonhaltingUnprovability.lean](../Lean/metamathematics/PA213PA/NonhaltingUnprovability.lean)
 contains the remaining four theorems.
+
+## Two-sided independence
+
+The default build also includes
+[TwoSidedIndependence.lean](../Lean/metamathematics/PA213PA/TwoSidedIndependence.lean).
+It uses Foundation's proof that the standard natural numbers model PA and
+logical soundness. The five original statements above are unchanged.
+
+| Theorem | Statement |
+|---|---|
+| `PA213.PA.Independence.nonhalting_irrefutable` | Given PA consistency, PA cannot prove the negation of *N*, using standard-model soundness already proved by Foundation. |
+| `PA213.PA.Independence.two_sided_independence` | PA proves neither *N* nor its negation. There are no explicit premises: Foundation's standard-model consistency instance discharges the consistency hypotheses. |
+| `PA213.PA.Independence.machine_nonhalting` | The physical machine cannot halt from `PA213.Startup.blank`. The same instance discharges the consistency premise of `consistent_machine_nonhalting`. |
+
+Soundness and consistency are established in Lean's metatheory; they are
+not asserted to be PA theorems. All three new declarations use only `propext`,
+`Classical.choice`, and `Quot.sound`, and are included alongside the five
+original roots in the [extended axiom audit](../evidence/publication/independence-axioms.txt).
