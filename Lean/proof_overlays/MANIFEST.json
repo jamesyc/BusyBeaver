@@ -1,0 +1,135 @@
+{
+  "PA215/Source/UnpairBinding.lean": {
+    "original_sha256": "9f2387a4c9d815993668326a572d2e9751462ea83381ab767cae4f3a95be463b",
+    "overlay_sha256": "54389a00fadebb2ca256a3320fa10b8700ceaae217d3716bcf60e047199ebbec",
+    "reason": "Replace resource-heavy finite linear resolver reduction by extensionally equal proved trie resolver; original theorem statement and machine/source data unchanged.",
+    "checked": "lake build +PA215.Source.UnpairBinding; Lean 4.35.0; propext, Quot.sound",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/NIPBinding.lean": {
+    "original_sha256": "7c9df8a6a10d6dacf15a31e2f1d1febaed2a96d81a6cdb81b43d47787e16cfa8",
+    "overlay_sha256": "0aa3f0026ee000e9cac3b9225289dc703ac593dafc63fce85f16e8e16bd6cc1b",
+    "reason": "Proof-only finite resolver speedup using already-proved fastResolveAt_eq; theorem statement unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/S36Binding.lean": {
+    "original_sha256": "ec248bf9639f27b47094d531987c1658f980fa4e4ee71afdf7ba4d7787295c44",
+    "overlay_sha256": "74b7da527c2edc565ac8fb2be26e12d5ffc80ae97fd54d65eb37c891fd91afe1",
+    "reason": "Proof-only finite resolver speedup using already-proved fastResolveAt_eq; theorem statement unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B004.lean": {
+    "original_sha256": "ed0d0d76cc33b8835d9ccd9fbfd14b51fc575ad5bd162ca0290e3d2ad2cb7f13",
+    "overlay_sha256": "1f34686dac672c05c5555e25f0315c14ff3aa6ada57497a51663f1bdc04d34d8",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B005.lean": {
+    "original_sha256": "f4a675871ef757bfaeb98866e05e1d1a4f542daeed52f5e2138ee978035e0af4",
+    "overlay_sha256": "594d651865873a241871630295ce82558e15d7a631aa6d96a7853aa8650bb8ba",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B006.lean": {
+    "original_sha256": "4f3d6e3b7772e82eb30a5752b2462b88443ce946400cc8b41e9babe782b4d7cf",
+    "overlay_sha256": "17a5aa018564c6f5d0d7eb47dedec56c9ae8602e14c04af08483f95e1be50347",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B007.lean": {
+    "original_sha256": "dac831a398a0671f3e885b7da4f8341a95c271d70583f37a457a5d84f753ad21",
+    "overlay_sha256": "cd1caa1d787f408d6699c704fcdd7eb5e211ed95178afb6677c68d3ff20cfa78",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B008.lean": {
+    "original_sha256": "f4ecb7731749e8c48df9ad0444db52431b363bbdbf20b46bde2ed4563c4d5c95",
+    "overlay_sha256": "252cd7605f0dafc0d87e4affda2aa9ebce082bb44f419746146af595e3f02377",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B009.lean": {
+    "original_sha256": "2d23392055bade4e29fc46536cb382958dec0b44b29b9e9567f052458b976798",
+    "overlay_sha256": "cd4a766b9bcab3dae391143595d1f27eea3a58f5986e3d50cdf522845f91aa9f",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B010.lean": {
+    "original_sha256": "657d19f72528e0dec917448f35038fc704970b7d2ca984698b9affb7ccf395b5",
+    "overlay_sha256": "8d4e7e58e065b44b428cebc8ed8f887147bea4f8bb0ae8334b21a84d24634759",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B011.lean": {
+    "original_sha256": "e193192fbd5c5b9c61e6901aeba493f84ed614635bf76f55a35e8a9ef477af5e",
+    "overlay_sha256": "998f960a29c95f4ca7ac4cb130c0e321a07c56d5cc57077c6d87b87696ba5bf7",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B012.lean": {
+    "original_sha256": "dc62d83f2be6a62f0c99a8a1fd3e2e59af9747e295001c8dde259db014a93054",
+    "overlay_sha256": "e99aabafde2f2c5796fafdde6d2be3c22499933ea075def0b9931ab7175d5e09",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B013.lean": {
+    "original_sha256": "a32628157bf6590c40ff15d915db4b27e4b535f0ee97261f09cc37020f52367d",
+    "overlay_sha256": "dbb142b8ccbcbb51d2ea58337a9db298421ddc3190fcf0e57bcd0e04e38bd6e7",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B014.lean": {
+    "original_sha256": "f1e6f5d4e15dfce5f9bbffa30c433122a4730fe6bf67c741622a4a6710ad880e",
+    "overlay_sha256": "a501f5267b20daac2070042bdd6e637599d77ec551ccf2e4ba703a7e49e2ebae",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B015.lean": {
+    "original_sha256": "73b081a53ed1741d8e3fcc27a7b67aa92b09a7565638b2ddbf575bd2af7cc282",
+    "overlay_sha256": "8d8fe77b83dc502c3f184f7b4684fa57221317f760500b0435923dd112b8a4bf",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B016.lean": {
+    "original_sha256": "0a8912ed7ed7cc32b883f9f1e092272c06ae96e218e5f5721f7d048282460ced",
+    "overlay_sha256": "808877542dbd893c71debfa6b075bac0bdffbf1d94094ab567a6000e45df8558",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B017.lean": {
+    "original_sha256": "c8455ed85394bb076722d8abd9f4de584e477a70576497c685587335b5e2704b",
+    "overlay_sha256": "cf12558834b898dbc2795d93f168a0b2c6cdafc6afef95e2f0ca46a94e614a4d",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B018.lean": {
+    "original_sha256": "ac089c4db920e6360d7ebfa3328ed29133dbcca46deaae0d57b7309f59a358a8",
+    "overlay_sha256": "dd3dff6437cb1cbe9c21b76f3ec4007d276e60cb6814dcc6a484a5ae99202bb2",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B019.lean": {
+    "original_sha256": "4c193de0c134196bd0cd0098213a395c5dbe21947a7b8aa2e14018411a599025",
+    "overlay_sha256": "d092acbb975d0acd7fbd91ffab8bac60566899915ab4fa47ef8a7eee47b0ef82",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B020.lean": {
+    "original_sha256": "d853cff21c2b68e7e305d316a97e08700f3d8a4ff87098c3f545c9e2f75f30d6",
+    "overlay_sha256": "3bc8d37708530a5959cbb39f026da4644449b658c399d5d962c7f0faa7d7ea4e",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B021.lean": {
+    "original_sha256": "6ed0e0f3b47b4a7b2d04f173b50fd9f818dd22a053d29e90ab94482eeb596aa0",
+    "overlay_sha256": "1e1f4455403f77f6cefefac96e6e1cef20b9c1b6b5e01afcdc93e570bfd83785",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  },
+  "PA215/Source/AXBindings/B022.lean": {
+    "original_sha256": "0589fc82a2f88a8715a0e64b9479f192529ad89785d58452a7dcd521b2e4706a",
+    "overlay_sha256": "daeee021324a4157ac8322beb57823f55969a965ed3e9dd25d5253162cd3a733",
+    "reason": "Proof-only replacement of repeated tree resolution by kernel-checked all-site exact source code lookup. The original statement is unchanged.",
+    "status": "Kernel-checked in external PA endpoint build; no statement change"
+  }
+}

@@ -11,7 +11,7 @@ class Plan(unittest.TestCase):
                 p = root.joinpath(*name.split('.')).with_suffix('.lean')
                 p.parent.mkdir(parents=True, exist_ok=True)
                 p.write_text(text)
-            return build_order(root)
+            return build_order(root, 'PA215')
     def test_dependency_order_and_shared_import(self):
         self.assertEqual(self.plan({'PA215':'import PA215.A PA215.B',
           'PA215.A':'import Std PA215.B','PA215.B':''}), ['PA215.B','PA215.A','PA215'])
@@ -34,5 +34,18 @@ class Plan(unittest.TestCase):
             (meta / 'PA215PA.lean').write_text('import PA215')
             self.assertEqual(build_order(root, 'PA215PA', {'PA215PA':meta}),
                              ['PA215','PA215PA'])
+
+    def test_shared_support_needs_no_standalone_root(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / 'PA215').mkdir()
+            (root / 'PA215/Support.lean').write_text('')
+            (root / 'PA213.lean').write_text('import PA215.Support')
+            self.assertEqual(build_order(root), ['PA215.Support', 'PA213'])
+            meta = root / 'meta'
+            meta.mkdir()
+            (meta / 'PA213PA.lean').write_text('import PA213')
+            self.assertEqual(build_order(root, 'PA213PA', {'PA213PA': meta}),
+                             ['PA215.Support', 'PA213', 'PA213PA'])
 
 if __name__ == '__main__': unittest.main()

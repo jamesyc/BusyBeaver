@@ -1,7 +1,7 @@
-import PA215PA.MachineNonhaltingV2
-import PA215PA.NonhaltingUnprovability
+import PA213PA.NonhaltingUnprovability
 
-#print axioms PA215.PA.CachedV2.consistent_machine_nonhalting
-#print axioms PA215.PA.CachedV2.consistent_nonhalting_sentence
-#print axioms PA215.PA.InternalUnprovability.pa_proves_nonhalting_consistency
-#print axioms PA215.PA.InternalUnprovability.nonhalting_unprovable
+#print axioms PA213.PA.consistent_machine_nonhalting
+#print axioms PA213.PA.InternalUnprovability.nonhalting_true
+#print axioms PA213.PA.InternalUnprovability.pa_proves_nonhalting_consistency
+#print axioms PA213.PA.InternalUnprovability.nonhalting_unprovable
+#print axioms PA213.PA.InternalUnprovability.final_endpoint

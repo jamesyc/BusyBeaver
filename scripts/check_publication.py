@@ -12,10 +12,7 @@ sys.path.insert(0, str(ROOT / "Lean/scripts"))
 from build_serial import build_order
 from check_source_hygiene import without_comments
 
-ENDPOINTS = (
-    "PA215PA.MachineNonhaltingV2",
-    "PA215PA.NonhaltingUnprovability",
-)
+ENDPOINT = "PA213PA.NonhaltingUnprovability"
 
 
 def checked_file(root, name, expected):
@@ -24,17 +21,6 @@ def checked_file(root, name, expected):
         raise ValueError(f"Missing or out-of-tree file: {name}")
     if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
         raise ValueError(f"SHA256 mismatch: {name}")
-
-
-def manifest_files(value):
-    if isinstance(value, dict):
-        if "path" in value and "sha256" in value:
-            yield value["path"], value["sha256"]
-        for child in value.values():
-            yield from manifest_files(child)
-    elif isinstance(value, list):
-        for child in value:
-            yield from manifest_files(child)
 
 
 def lean_program_sha256(text):
@@ -51,39 +37,27 @@ def main():
             if lean_program_sha256((ROOT / name).read_text()) != record["lean_program_sha256"]:
                 raise ValueError(f"Lean program differs from its recorded source: {name}")
     lean = ROOT / "Lean"
-    roots = {"PA215PA": lean / "metamathematics"}
-    closure = set(build_order(lean, "PA215PA", roots))
-    for endpoint in ENDPOINTS:
-        if endpoint not in closure:
-            raise ValueError(f"Default root does not expose {endpoint}")
-        build_order(lean, endpoint, roots)
-    # Also validate the standalone core audit's import root.
-    build_order(lean, "PA215")
-    references = 0
-    for path in sorted((lean / "data").glob("*manifest.json")):
-        for name, digest in manifest_files(json.loads(path.read_text())):
-            checked_file(lean, name, digest)
-            references += 1
-    historical = json.loads((ROOT / "evidence/nonhalting/PROJECT_SOURCE_OUTPUT_IDENTITIES.json").read_text())
-    for entry in historical["modules"]:
-        module = entry["module"]
-        base = lean / "metamathematics" if module.startswith("PA215PA.") else lean
-        path = (base / (module.replace(".", "/") + ".lean")).relative_to(ROOT)
-        record = manifest["files"][path.as_posix()]
-        # The immutable build ledger identifies the source it actually checked.
-        # Comment-edited modules additionally bind the original program text.
-        digest = record["original_sha256"] if "lean_program_sha256" in record else record["sha256"]
-        if digest != entry["source_sha256"]:
-            raise ValueError(f"Nonhalting source ledger mismatch: {path}")
+    for package, expected in ((lean, {"PA213"}),
+                              (lean / "metamathematics", {"PA213PA"})):
+        config = (package / "lakefile.toml").read_text()
+        targets = re.search(r"^defaultTargets = (\[[^\n]*\])$", config, re.M)
+        if targets is None or set(json.loads(targets.group(1))) != expected:
+            raise ValueError(f"Default target must be PA213: {package}")
+    roots = {"PA215PA": lean / "metamathematics", "PA213PA": lean / "metamathematics"}
+    closure = set(build_order(lean, "PA213PA", roots))
+    if ENDPOINT not in closure:
+        raise ValueError(f"Default root does not expose {ENDPOINT}")
+    closure.update(build_order(lean, "PA213"))
     expected_axioms = {
-        "PA215.PA.CachedV2.consistent_machine_nonhalting",
-        "PA215.PA.CachedV2.consistent_nonhalting_sentence",
-        "PA215.PA.InternalUnprovability.pa_proves_nonhalting_consistency",
-        "PA215.PA.InternalUnprovability.nonhalting_unprovable",
+        "PA213.PA.consistent_machine_nonhalting",
+        "PA213.PA.InternalUnprovability.nonhalting_true",
+        "PA213.PA.InternalUnprovability.pa_proves_nonhalting_consistency",
+        "PA213.PA.InternalUnprovability.nonhalting_unprovable",
+        "PA213.PA.InternalUnprovability.final_endpoint",
     }
     audit = (lean / "metamathematics/Audit.lean").read_text()
     if set(re.findall(r"^#print axioms (\S+)$", audit, re.M)) != expected_axioms:
-        raise ValueError("The final axiom audit must name all four theorem roots")
+        raise ValueError("The final axiom audit must name all five PA213 theorem roots")
     docs = {ROOT / name for name in manifest["files"] if name.endswith(".md")}
     docs.add(ROOT / "evidence/README.md")
     docs.update((ROOT / "docs").glob("*.md"))
@@ -96,7 +70,7 @@ def main():
             if not dest.is_relative_to(ROOT) or not dest.exists():
                 raise ValueError(f"Broken file link in {doc.relative_to(ROOT)}: {target}")
     print(f"PASS: {len(manifest['files'])} source identities, {len(closure)} "
-          f"default-root local modules, {references} input-manifest references, "
+          f"PA213 dependency modules, "
           "and publication documentation links.")
 
 

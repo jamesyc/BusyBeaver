@@ -1,0 +1,24 @@
+[
+  {
+    "path": ".lake/packages/Foundation/Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Basic.lean",
+    "module": "Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Basic",
+    "original_sha256": "011d4e6c7d222628926ef327104ee6ef4dd683ed4a8447f8379a6752c61e78ec",
+    "working_sha256": "9e9017f7ba62ee9396aeada5f449e21fed2ddf572da33f44e921f80f01341e36",
+    "change": "Add generic liftLastArgument theorem; replace only IsUTerm.BV.construction.func_defined proof. All prior declaration types, data, formulas, and computational fields unchanged.",
+    "status": "Kernel checked as the canonical module with proof-only overlay.",
+    "build_log": "metamathematics/transport_logs/Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Basic.log",
+    "peak_rss_mib": 1896.8,
+    "build_log_sha256": "334f69fa2c10502d1dd01ded450526eeaeab9acaef5bf6caa230a077ec5b4084"
+  },
+  {
+    "module": "Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Functions",
+    "path": ".lake/packages/Foundation/Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Functions.lean",
+    "original_sha256": "d79a08c80f3c9f86cfcea1f2c60b1d193b0df9a902be8d6a008cfa7d5aac16b7",
+    "working_sha256": "d8ba2b6579ccc5888015b2b8d0d81ec8e2e8cbb85ee4e38e60bdb06d56d97e18",
+    "change": "Add generic liftSwapArguments theorem; replace only TermSubst.construction.bvar_defined proof. All prior declaration types, data, formulas, and computational fields unchanged.",
+    "status": "Kernel checked as canonical module with proof-only overlay.",
+    "peak_rss_mib": 1843.1,
+    "build_log": "metamathematics/transport_logs/Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Functions.log",
+    "build_log_sha256": "496c920372ef37e059bd6a23fcc6a61417948dbdde0beea57cde63c56ac114a7"
+  }
+]

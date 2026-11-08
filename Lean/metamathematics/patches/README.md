@@ -1,16 +1,17 @@
 # Foundation proof patches
 
-Both patches apply to Foundation commit
-`c3eb37ae896dc8f1d239ba1511e74d9f25e9d158` with Lean 4.35.0. To reduce memory use, the patched tactics rewrite formula substitution
-explicitly before running the simplifier. The patches preserve the declaration
-statements and mathematical definitions.
+The PA213 build uses two reviewed repairs to Foundation commit
+`c3eb37ae896dc8f1d239ba1511e74d9f25e9d158` with Lean 4.35.0.
+They add generic substitution lemmas and use them in two syntax proofs.
+The preserved originals, patches, and exact hashes are in
+[the Foundation overlay manifest](MANIFEST.json).
 
-| File | Declaration |
-|---|---|
-| [Term/Basic patch](foundation-term-basic.patch) | `IsUTerm.BV.construction.func_defined` |
-| [Term/Functions patch](foundation-term-functions.patch) | `TermSubst.construction.bvar_defined` |
+| File | Proof field | Patch |
+|---|---|---|
+| Term/Basic | `IsUTerm.BV.construction.func_defined` | [Basic patch](foundation-term-basic.patch) |
+| Term/Functions | `TermSubst.construction.bvar_defined` | [Functions patch](foundation-term-functions.patch) |
 
-Once the pinned dependencies are installed, run these commands from
+Once the pinned dependencies are installed, run this command from
 `Lean/metamathematics`.
 
 ```sh
@@ -18,9 +19,12 @@ python3 scripts/apply_foundation_patch.py
 python3 scripts/apply_foundation_functions_patch.py
 ```
 
-The Basic script checks the original SHA256
-`011d4e6c7d222628926ef327104ee6ef4dd683ed4a8447f8379a6752c61e78ec` and
-verifies patched SHA256
-`6b700dc6ea4ea8d60bb17b7d681c46e1ac53ce52a37f5be5b84e4d033c5bb31e`.
-You can rerun either script on a file with the expected patched hash.
-[Term/Functions hashes](TERM_FUNCTIONS.md) · [Dependency license](../../licenses/Foundation-Apache-2.0.txt)
+The scripts accept the pinned originals and recognized proof repairs.
+Each checks its input hash, applies the patch to a temporary copy of the
+preserved original, verifies the output hash, and atomically installs the
+repair. Rerunning either on its reviewed version succeeds immediately.
+[Dependency license](../../licenses/Foundation-Apache-2.0.txt)
+
+The 22 project proof overlays are already applied in the supporting sources.
+Their original files and diffs are preserved alongside
+[the project overlay manifest](../../proof_overlays/MANIFEST.json).

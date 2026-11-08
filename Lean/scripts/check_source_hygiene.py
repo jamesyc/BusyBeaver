@@ -56,9 +56,11 @@ def main():
     root = Path(__file__).resolve().parents[1]
     forbidden = re.compile(r'\b(sorry|admit|native_decide|native_eval|axiom)\b')
     failed = []
-    sources = (sorted((root / 'PA215').rglob('*.lean'))
-               + sorted((root / 'metamathematics/PA215PA').rglob('*.lean'))
-               + [root / 'PA215.lean', root / 'metamathematics/PA215PA.lean'])
+    sources = []
+    for package in (root / 'PA215', root / 'PA213',
+                    root / 'metamathematics/PA215PA', root / 'metamathematics/PA213PA'):
+        sources.extend(sorted(package.rglob('*.lean')))
+    sources.extend([root / 'PA213.lean', root / 'metamathematics/PA213PA.lean'])
     for source in sources:
         for line_no, line in enumerate(without_comments(source.read_text()).splitlines(), 1):
             if forbidden.search(line):

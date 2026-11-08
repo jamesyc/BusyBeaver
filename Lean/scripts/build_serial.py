@@ -13,10 +13,10 @@ from check_source_hygiene import without_comments
 NAME = re.compile(r'[A-Za-z_][A-Za-z_0-9]*(?:\.[A-Za-z_][A-Za-z_0-9]*)*\Z')
 
 def is_local(name):
-    return name == 'PA215' or name.startswith('PA215.')
+    return name in ('PA215', 'PA213') or name.startswith(('PA215.', 'PA213.'))
 
-def build_order(root, target='PA215', package_roots=None):
-    roots = {'PA215': root, **(package_roots or {})}
+def build_order(root, target='PA213', package_roots=None):
+    roots = {'PA215': root, 'PA213': root, **(package_roots or {})}
     def local(name):
         return name.split('.')[0] in roots
     states, order = {}, []
@@ -50,15 +50,16 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--target')
     p.add_argument('--metamathematics', action='store_true',
-                   help='Also schedule local PA215PA and pinned Foundation imports')
+                   help='Also schedule local metamathematics and pinned Foundation imports')
     p.add_argument('--list', action='store_true', help='Print plan without building')
     args = p.parse_args()
     root = Path(__file__).resolve().parents[1]
     cwd = root / 'metamathematics' if args.metamathematics else root
     extra = {}
     if args.metamathematics:
-        extra = {'PA215PA': cwd, 'Foundation': cwd / '.lake/packages/Foundation'}
-    target = args.target or ('PA215PA' if args.metamathematics else 'PA215')
+        extra = {'PA215PA': cwd, 'PA213PA': cwd,
+                 'Foundation': cwd / '.lake/packages/Foundation'}
+    target = args.target or ('PA213PA' if args.metamathematics else 'PA213')
     try:
         order = build_order(root, target, extra)
     except ValueError as e:

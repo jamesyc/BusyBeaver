@@ -1,3 +1,4 @@
+import PA213.FastCodes
 import PA215.Source.AXMacroPlan
 import PA215.Source.AXMacroRead
 import PA215.Source.AXHead3Plan
@@ -15,61 +16,61 @@ theorem block2006 : AXMacro.Realizes exactSites .incT 2006 2007 := AXHead3.block
 theorem block2007 : AXMacro.Realizes exactSites .cons 2007 2034 := AXHead3.block2007
 theorem block2034 : AXMacro.Realizes exactSites .cons 2034 2061 := AXHead3.block2034
 private theorem row2061_p0 : resolveAt exactSites 2061 = some (AXPushParam.relocate 2036 (AXPushParam.expected 0)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p1 : resolveAt exactSites 2062 = some (AXPushParam.relocate 2036 (AXPushParam.expected 1)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p2 : resolveAt exactSites 2063 = some (AXPushParam.relocate 2036 (AXPushParam.expected 2)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p3 : resolveAt exactSites 2064 = some (AXPushParam.relocate 2036 (AXPushParam.expected 3)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p4 : resolveAt exactSites 2065 = some (AXPushParam.relocate 2036 (AXPushParam.expected 4)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p5 : resolveAt exactSites 2066 = some (AXPushParam.relocate 2036 (AXPushParam.expected 5)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p6 : resolveAt exactSites 2067 = some (AXPushParam.relocate 2036 (AXPushParam.expected 6)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p7 : resolveAt exactSites 2068 = some (AXPushParam.relocate 2036 (AXPushParam.expected 7)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p8 : resolveAt exactSites 2069 = some (AXPushParam.relocate 2036 (AXPushParam.expected 8)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p9 : resolveAt exactSites 2070 = some (AXPushParam.relocate 2036 (AXPushParam.expected 9)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p10 : resolveAt exactSites 2071 = some (AXPushParam.relocate 2036 (AXPushParam.expected 10)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p11 : resolveAt exactSites 2072 = some (AXPushParam.relocate 2036 (AXPushParam.expected 11)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p12 : resolveAt exactSites 2073 = some (AXPushParam.relocate 2036 (AXPushParam.expected 12)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p13 : resolveAt exactSites 2074 = some (AXPushParam.relocate 2036 (AXPushParam.expected 13)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p14 : resolveAt exactSites 2075 = some (AXPushParam.relocate 2036 (AXPushParam.expected 14)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p15 : resolveAt exactSites 2076 = some (AXPushParam.relocate 2036 (AXPushParam.expected 15)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p16 : resolveAt exactSites 2077 = some (AXPushParam.relocate 2036 (AXPushParam.expected 16)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p17 : resolveAt exactSites 2078 = some (AXPushParam.relocate 2036 (AXPushParam.expected 17)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2061_p18 : resolveAt exactSites 2079 = some (AXPushParam.relocate 2036 (AXPushParam.expected 18)) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem bound2061_p : AXPushParam.Bound exactSites 2036 := by
   intro ⟨j,hj⟩
@@ -97,25 +98,25 @@ private theorem bound2061_p : AXPushParam.Bound exactSites 2036 := by
 theorem block2061 : AXMacro.Realizes exactSites .push 2061 2080 :=
   AXMacro.push_realizes bound2061_p
 private theorem row2080_c0 : resolveAt exactSites 2080 = some (CopyToT.expected 4 2080 0) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2080_c1 : resolveAt exactSites 2081 = some (CopyToT.expected 4 2080 1) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2080_c2 : resolveAt exactSites 2082 = some (CopyToT.expected 4 2080 2) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2080_c3 : resolveAt exactSites 2083 = some (CopyToT.expected 4 2080 3) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2080_c4 : resolveAt exactSites 2084 = some (CopyToT.expected 4 2080 4) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2080_c5 : resolveAt exactSites 2085 = some (CopyToT.expected 4 2080 5) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem row2080_c6 : resolveAt exactSites 2086 = some (CopyToT.expected 4 2080 6) := by
-  rw [← PathTrie.fastResolveAt_eq]
+  rw [PA213.FastCodes.baseline_resolve]
   rfl
 private theorem bound2080_c : CopyToT.Bound exactSites 4 2080 := by
   intro ⟨j,hj⟩
@@ -135,3 +136,4 @@ theorem plan012 : AXMacro.Plan exactSites 1899 2087 code012 :=
   AXMacro.Plan.cons block1899 ( AXMacro.Plan.cons block1926 ( AXMacro.Plan.cons block1927 ( AXMacro.Plan.cons block1946 ( AXMacro.Plan.cons block1953 ( AXMacro.Plan.cons block1972 ( AXMacro.Plan.cons block1979 ( AXMacro.Plan.cons block2006 ( AXMacro.Plan.cons block2007 ( AXMacro.Plan.cons block2034 ( AXMacro.Plan.cons block2061 ( AXMacro.Plan.cons block2080 ( AXMacro.Plan.nil 2087))))))))))))
 #print axioms plan012
 end PA215.Source.AXAll
+

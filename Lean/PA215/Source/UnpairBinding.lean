@@ -1,4 +1,4 @@
-import PA215.Source.ExactSource
+import PA215.Source.TrieResolver
 set_option maxHeartbeats 16000000
 set_option maxRecDepth 50000
 
@@ -24,7 +24,9 @@ def unpairExpected : Array Instruction := #[
 
 theorem unpair_resolved_fragment :
     (List.range 14).map (fun j => resolveAt exactSites (3933+j)) =
-      unpairExpected.toList.map some := by decide
+      unpairExpected.toList.map some := by
+  simp only [← PathTrie.fastResolveAt_eq]
+  decide +kernel
 
 theorem unpair_resolved_at (j : Fin 14) :
     resolveAt exactSites (3933+j.val) = some unpairExpected[j.val] := by
@@ -35,3 +37,4 @@ theorem unpair_resolved_at (j : Fin 14) :
 
 #print axioms unpair_resolved_fragment
 end PA215.Source
+

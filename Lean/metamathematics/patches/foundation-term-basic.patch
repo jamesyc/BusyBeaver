@@ -1,14 +1,28 @@
---- a/Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Basic.lean
-+++ b/Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Basic.lean
-@@ -681,7 +681,10 @@
+--- canonical/Term/Basic.lean
++++ working/Term/Basic.lean
+@@ -673,6 +673,16 @@
+   fvar := .mkSigma “y x. y = 0”
+   func := .mkSigma “y k f v v'. !listMaxDef y v'”
+ 
++/- Keep the substitution proof generic so kernel checking does not normalize
++    the large closed listMax formula. No formula or semantic statement changes. -/
++omit [V↓[ℒₒᵣ] ⊧* 𝗜𝚺₁] in
++theorem liftLastArgument (φ : 𝚺ᴬ₁.Semisentence 2) (f : V → V)
++    (h : 𝚺ᴬ₁-Function₁ f via φ) :
++    𝚺ᴬ₁.DefinedFunction (fun (v : Fin 4 → V) => f (v 3))
++      (.mkSigma “y k f v w. !φ y w”) := .mk fun v => by
++  simp only [Bounding.HierarchySymbol.Semiformula.val_mkSigma, Semiformula.eval_substs]
++  exact h.iff
++
+ variable (L)
+ 
+ noncomputable def construction : Language.TermRec.Construction V blueprint where
+@@ -681,7 +691,7 @@
    func (_ _ _ _ v') := listMax v'
    bvar_defined := .mk fun v ↦ by simp [blueprint]
    fvar_defined := .mk fun v ↦ by simp [blueprint]
 -  func_defined := .mk fun v ↦ by simp [blueprint]
-+  func_defined := .mk fun v ↦ by
-+    simp only [blueprint, Bounding.HierarchySymbol.Semiformula.val_mkSigma]
-+    rw [Semiformula.eval_substs]
-+    simp [listMax_defined.df]
++  func_defined := liftLastArgument listMaxDef listMax listMax_defined
  
  end IsUTerm.BV
  

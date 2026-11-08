@@ -10,9 +10,10 @@ of Lean named in `Lean/lean-toolchain`.
 bash scripts/check.sh
 ```
 
-The script compares the transition table, search program, and runtime census
-with the data in the Lean sources. It checks file hashes, module imports, and
-the names of the theorems in the axiom audit.
+The script compares PA213's 426 transition rows and 3,947 source sites with
+their Lean representations, checks its relabeling and 519 reviewed module
+hashes. It checks file hashes, module imports, and all five theorem names
+in the final axiom audit.
 
 ## Install the proof dependencies
 
@@ -32,9 +33,11 @@ python3 scripts/apply_foundation_functions_patch.py
 cd ../..
 ```
 
-Both patch scripts check the original file hash before writing and verify the
-patched hash afterward. If the file already has the patched hash, the script
-accepts it. [Patch specifications](../Lean/metamathematics/patches/README.md)
+The patch scripts accept the pinned originals and recognized proof repairs.
+They check the input and output hashes and upgrade an older repair using
+the preserved original. The 22 project proof
+overlays are already applied to the source files.
+[Patch specifications](../Lean/metamathematics/patches/README.md)
 
 ## Compile and audit
 
@@ -46,8 +49,8 @@ dependencies. The verified build ran on a machine with 32 GiB of memory.
 bash scripts/check.sh --full
 ```
 
-This runs the data checks, compiles the metamathematics root with both theorem
-modules, then checks the transitive axioms of all four theorems. The scheduler
+This runs the data checks, compiles the PA213 metamathematics root, and
+checks the transitive axioms of all five endpoint theorems. The scheduler
 submits one local or Foundation target at a time.
 
 To inspect the build order, run the scheduler with `--list`.
@@ -56,15 +59,17 @@ To inspect the build order, run the scheduler with `--list`.
 python3 Lean/scripts/build_serial.py --metamathematics --list
 ```
 
-To build one theorem module at a time, name it with `--target`.
+To build the final theorem module directly, name it with `--target`.
 
 ```sh
-python3 Lean/scripts/build_serial.py --metamathematics --target PA215PA.MachineNonhaltingV2
-python3 Lean/scripts/build_serial.py --metamathematics --target PA215PA.NonhaltingUnprovability
+python3 Lean/scripts/build_serial.py --metamathematics --target PA213PA.NonhaltingUnprovability
 ```
 
-With both modules built, run `python3 Lean/metamathematics/scripts/check_axioms.py`
-to check their axioms. To check the core machine library on its own, run
+With the endpoint built, run `python3 Lean/metamathematics/scripts/check_axioms.py`
+to check its axioms. To check the core machine library on its own, run
 `bash Lean/scripts/check.sh`.
 
-[Expected axiom report](../evidence/publication/endpoint-axioms.txt)
+The PA213 final target can also be rechecked with
+`lake --rehash build +PA213PA.NonhaltingUnprovability` from
+`Lean/metamathematics` after the serial build.
+[Endpoint axiom report](../evidence/publication/endpoint-axioms.txt) · [Frozen build receipt](../evidence/pa213/FINAL_PA_RECEIPT.json)

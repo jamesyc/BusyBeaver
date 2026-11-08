@@ -1,0 +1,88 @@
+--- original
++++ proof_overlay
+@@ -1,3 +1,4 @@
++import PA213.FastCodes
+ import PA215.Source.AXMacroPlan
+ import PA215.Source.AXMacroRead
+ import PA215.Source.AXHead3Plan
+@@ -5,61 +6,61 @@
+ set_option maxRecDepth 100000
+ namespace PA215.Source.AXAll
+ private theorem row1765_p0 : resolveAt exactSites 1765 = some (AXPushParam.relocate 1740 (AXPushParam.expected 0)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p1 : resolveAt exactSites 1766 = some (AXPushParam.relocate 1740 (AXPushParam.expected 1)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p2 : resolveAt exactSites 1767 = some (AXPushParam.relocate 1740 (AXPushParam.expected 2)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p3 : resolveAt exactSites 1768 = some (AXPushParam.relocate 1740 (AXPushParam.expected 3)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p4 : resolveAt exactSites 1769 = some (AXPushParam.relocate 1740 (AXPushParam.expected 4)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p5 : resolveAt exactSites 1770 = some (AXPushParam.relocate 1740 (AXPushParam.expected 5)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p6 : resolveAt exactSites 1771 = some (AXPushParam.relocate 1740 (AXPushParam.expected 6)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p7 : resolveAt exactSites 1772 = some (AXPushParam.relocate 1740 (AXPushParam.expected 7)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p8 : resolveAt exactSites 1773 = some (AXPushParam.relocate 1740 (AXPushParam.expected 8)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p9 : resolveAt exactSites 1774 = some (AXPushParam.relocate 1740 (AXPushParam.expected 9)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p10 : resolveAt exactSites 1775 = some (AXPushParam.relocate 1740 (AXPushParam.expected 10)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p11 : resolveAt exactSites 1776 = some (AXPushParam.relocate 1740 (AXPushParam.expected 11)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p12 : resolveAt exactSites 1777 = some (AXPushParam.relocate 1740 (AXPushParam.expected 12)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p13 : resolveAt exactSites 1778 = some (AXPushParam.relocate 1740 (AXPushParam.expected 13)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p14 : resolveAt exactSites 1779 = some (AXPushParam.relocate 1740 (AXPushParam.expected 14)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p15 : resolveAt exactSites 1780 = some (AXPushParam.relocate 1740 (AXPushParam.expected 15)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p16 : resolveAt exactSites 1781 = some (AXPushParam.relocate 1740 (AXPushParam.expected 16)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p17 : resolveAt exactSites 1782 = some (AXPushParam.relocate 1740 (AXPushParam.expected 17)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem row1765_p18 : resolveAt exactSites 1783 = some (AXPushParam.relocate 1740 (AXPushParam.expected 18)) := by
+-  rw [← PathTrie.fastResolveAt_eq]
++  rw [PA213.FastCodes.baseline_resolve]
+   rfl
+ private theorem bound1765_p : AXPushParam.Bound exactSites 1740 := by
+   intro ⟨j,hj⟩
