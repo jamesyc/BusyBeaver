@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqValueDomainGuardProjection
+module
+
+public import PA215PA.NumericPAeqValueDomainGuardProjection
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueDomainGuard
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

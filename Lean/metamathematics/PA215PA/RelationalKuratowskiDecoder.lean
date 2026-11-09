@@ -1,4 +1,8 @@
-import PA215PA.RelationalKuratowskiElimination
+module
+
+public import PA215PA.RelationalKuratowskiElimination
+
+@[expose] public section
 
 /-! Actual finite coordinate uniqueness for the existential raw Kuratowski
 formula. Equality is decoded from real witnesses, without extensionality. -/

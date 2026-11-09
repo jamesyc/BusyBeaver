@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceSyntax
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Formula.Coding
+module
+
+public import PA215PA.RelationalSourceSyntax
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Formula.Coding
+
+@[expose] public section
 
 /-! Numeric coding for the existing relational source language. The convention
 is Foundation's set-language convention: equality 0, membership 1, both binary,

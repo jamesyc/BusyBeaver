@@ -1,8 +1,12 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceMPStores
-import PA215.Source.MPPush
-import PA215.Source.MPCopy
-import PA215.Source.MPCons
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceMPStores
+public import PA215.Source.MPPush
+public import PA215.Source.MPCopy
+public import PA215.Source.MPCons
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

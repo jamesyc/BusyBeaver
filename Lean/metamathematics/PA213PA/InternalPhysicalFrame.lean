@@ -1,5 +1,9 @@
-import PA213PA.InternalFileEffects
-import PA215.Source.RootFrame
+module
+
+public import PA213PA.InternalFileEffects
+public import PA215.Source.RootFrame
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.PhysicalFrame
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

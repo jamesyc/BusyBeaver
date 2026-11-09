@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedTheorySupport
-import PA215PA.PAInterpretedFixedClosure
-import PA215PA.PAInterpretedInductionSentence
+module
+
+public import PA215PA.PAInterpretedTheorySupport
+public import PA215PA.PAInterpretedFixedClosure
+public import PA215PA.PAInterpretedInductionSentence
+
+@[expose] public section
 
 /-! Exact witness-dispatched ordinary PAeq sentence suppliers. All additional
 premises are explicit numerical budgets, not encoded proof correctness. -/

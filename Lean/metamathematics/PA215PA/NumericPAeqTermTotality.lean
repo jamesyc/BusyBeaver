@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTables
-import PA215PA.Theory
+module
+
+public import PA215PA.NumericPAeqTermTables
+public import PA215PA.Theory
+
+@[expose] public section
 
 /-! Genuine full-PA, all-model source-code induction constructs a finite HFS
 witness table for every well-formed source term and every parameter packet.

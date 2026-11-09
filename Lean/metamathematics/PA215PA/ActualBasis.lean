@@ -1,4 +1,8 @@
-import PA215PA.ActualRho7Recovery
+module
+
+public import PA215PA.ActualRho7Recovery
+
+@[expose] public section
 
 /-! Finite proofs over the literal AX basis. Structural recursion embeds the smaller ActualCore calculus. -/
 namespace PA215.PA.NativeCalculus.ActualBasis

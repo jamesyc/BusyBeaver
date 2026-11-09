@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationOutputTotal
+module
+
+public import PA215PA.RelationalMultiplicationOutputTotal
+
+@[expose] public section
 
 /-! Ordinal-valued multiplication result existence for a fixed free base, with
 all finite source premises paid. Neither uniqueness nor PA laws follow here. -/

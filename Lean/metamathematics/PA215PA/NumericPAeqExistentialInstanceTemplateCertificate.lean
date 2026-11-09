@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqExistentialInstanceTemplateCode
-import PA215PA.RelationalPredicateBinaryEmptyRequested
+module
+
+public import PA215PA.NumericPAeqExistentialInstanceTemplateCode
+public import PA215PA.RelationalPredicateBinaryEmptyRequested
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqExistentialInstanceTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

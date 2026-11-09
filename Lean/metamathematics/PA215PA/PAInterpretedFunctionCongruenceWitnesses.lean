@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedEqualityWitnesses
-import PA215PA.PAForwardRelationalCoherence
+module
+
+public import PA215PA.PAInterpretedEqualityWitnesses
+public import PA215PA.PAForwardRelationalCoherence
+
+@[expose] public section
 
 /-! Elimination of two actual value witnesses for fixed function-congruence
 images. No representative is selected and equality remains order isomorphism. -/

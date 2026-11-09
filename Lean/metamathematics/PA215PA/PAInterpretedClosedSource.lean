@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedClosedSourceGuard
+module
+
+public import PA215PA.PAInterpretedClosedSourceGuard
+
+@[expose] public section
 
 /-! Conversion of one fully closed guarded target derivation to the exact
 source universal closure. The finite target support obligation is syntactic,

@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedEqualityWitnesses
-import PA215PA.PAForwardRelationalTotalityRewriting
-import PA215PA.RelationalOrderIsoClosedSymmetry
+module
+
+public import PA215PA.PAInterpretedEqualityWitnesses
+public import PA215PA.PAForwardRelationalTotalityRewriting
+public import PA215PA.RelationalOrderIsoClosedSymmetry
+
+@[expose] public section
 
 /-! Swap actual interpreted-equality witnesses using the supplied closed
 isomorphism symmetry theorem; no uniqueness of term values is needed. -/

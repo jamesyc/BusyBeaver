@@ -1,6 +1,10 @@
-import PA213PA.InternalSymbolicExec
-import PA213.InternalCallAudit
-import PA213.RuntimeContracts
+module
+
+public import PA213PA.InternalSymbolicExec
+public import PA213.InternalCallAudit
+public import PA213.RuntimeContracts
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.Symbolic
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

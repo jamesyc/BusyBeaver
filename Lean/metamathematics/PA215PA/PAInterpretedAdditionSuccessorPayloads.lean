@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedAdditionSuccessorPremises
+module
+
+public import PA215PA.PAInterpretedAdditionSuccessorPremises
+
+@[expose] public section
 
 /-! Both actual graph payloads yield the correctly oriented equality image. -/
 namespace PA215.PA.ForwardRelational

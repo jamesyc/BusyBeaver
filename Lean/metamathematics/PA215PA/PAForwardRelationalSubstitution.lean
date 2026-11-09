@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalCoherence
+module
+
+public import PA215PA.PAForwardRelationalCoherence
+
+@[expose] public section
 
 /-! Source bound substitution replaces index zero and lowers every old successor
 index. This is distinct from rewriting the relational target language. -/

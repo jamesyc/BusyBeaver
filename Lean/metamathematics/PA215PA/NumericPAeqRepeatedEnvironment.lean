@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaEnvironment
-import PA215PA.NumericPAeqValueDomainGuardCollection
-import PA215PA.FoundationRelationalSequentConnectiveNormalization
+module
+
+public import PA215PA.NumericPAeqFormulaEnvironment
+public import PA215PA.NumericPAeqValueDomainGuardCollection
+public import PA215PA.FoundationRelationalSequentConnectiveNormalization
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqRepeatedEnvironment
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

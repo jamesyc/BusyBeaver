@@ -1,4 +1,8 @@
-import PA215.Source.CyclicDriver
+module
+
+public import PA215.Source.CyclicDriver
+
+@[expose] public section
 namespace PA215.Source
 
 def cycleRun (sites : Array Site) : Nat → Configuration → Configuration

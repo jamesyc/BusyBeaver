@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalCodeLanguage
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Typed
+module
+
+public import PA215PA.FoundationRelationalCodeLanguage
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Typed
+
+@[expose] public section
 
 /-! Thin contextual operations on Foundation's existing model-valued typed
 LK derivations. Contexts are actual finite HFS sequents of negative assumptions.

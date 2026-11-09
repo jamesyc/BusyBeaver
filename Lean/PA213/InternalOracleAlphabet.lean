@@ -1,4 +1,8 @@
-import PA213.InternalCallAudit
+module
+
+public import PA213.InternalCallAudit
+
+@[expose] public section
 namespace PA213.InternalOracleAlphabet
 open PA215.Runtime
 /-- Finite native oracle call alphabet, independent of branch guards or any

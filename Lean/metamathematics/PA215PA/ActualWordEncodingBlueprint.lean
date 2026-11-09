@@ -1,4 +1,8 @@
-import PA215PA.SourceCommandEncodingInternal
+module
+
+public import PA215PA.SourceCommandEncodingInternal
+
+@[expose] public section
 namespace PA215.PA.ActualWordEncodingBlueprint
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

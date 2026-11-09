@@ -1,5 +1,9 @@
-import PA215PA.InternalTracePrepend
-import PA215PA.InternalTraceRows
+module
+
+public import PA215PA.InternalTracePrepend
+public import PA215PA.InternalTraceRows
+
+@[expose] public section
 
 /-! Explicit arithmetic coding of arbitrary repeated binary bits. This is not
 Foundation's HFS list encoding; HFS sequences encode the resulting run. -/

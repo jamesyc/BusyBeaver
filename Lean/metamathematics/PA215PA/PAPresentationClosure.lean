@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationRewriting
+module
+
+public import PA215PA.PAPresentationRewriting
+
+@[expose] public section
 
 /-! Preservation of free parameters and exact universal closure. -/
 namespace PA215.PA.Presentation

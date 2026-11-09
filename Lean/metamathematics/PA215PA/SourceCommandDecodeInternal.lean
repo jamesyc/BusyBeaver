@@ -1,17 +1,16 @@
-import PA215PA.ActualCompilerHaltingWord
+module
+
+public import PA215PA.ActualCompilerHaltingWord
+
+@[expose] public section
 namespace PA215.PA.SourceCommandEncodingInternal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic
 open SourceCantorInternal ActualCommandStepGraph
-open Lean Elab Tactic in
-elab "expose_source_splice_helpers" : tactic => do
-  let env ← getEnv
-  let names := env.constants.toList.filterMap fun (n,_) =>
-    if n.toString.startsWith "_private.PA215PA.SourceCommandEncodingInternal." &&
-      ["atomInput","tailInput","tag","fields"].any (fun suffix => n.toString.endsWith ("."++suffix))
-      then some (mkIdent n) else none
-  let names := names.toArray
-  evalTactic (← `(tactic| simp only [$[$names:ident],*]))
+macro "expose_source_splice_helpers" : tactic => `(tactic|
+  simp only [SourceCommandEncodingInternal.Templates.atomInput, SourceCommandEncodingInternal.Templates.tailInput,
+    SourceCommandEncodingInternal.Templates.tag, SourceCommandEncodingInternal.Templates.fields])
+
 variable {V : Type*} [ORingStructure V] [V↓[ℒₒᵣ] ⊧* 𝗜𝚺₁]
 
 theorem splice_value (atom tail : V) : spliceValue atom tail =

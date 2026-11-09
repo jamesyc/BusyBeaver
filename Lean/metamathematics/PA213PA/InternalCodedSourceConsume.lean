@@ -1,8 +1,12 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceRootCommand
-import PA213PA.InternalCodedSourceCommandIteration
-import PA213PA.InternalCodedSourceExt
-import PA215PA.SourceCommandResidualTermination
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceRootCommand
+public import PA213PA.InternalCodedSourceCommandIteration
+public import PA213PA.InternalCodedSourceExt
+public import PA215PA.SourceCommandResidualTermination
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

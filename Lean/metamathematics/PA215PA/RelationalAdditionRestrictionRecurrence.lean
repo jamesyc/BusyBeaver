@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionRestrictionInside
-import PA215PA.RelationalAdditionRecurrenceExtension
+module
+
+public import PA215PA.RelationalAdditionRestrictionInside
+public import PA215PA.RelationalAdditionRecurrenceExtension
+
+@[expose] public section
 
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND

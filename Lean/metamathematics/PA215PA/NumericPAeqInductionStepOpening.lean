@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqInductionStepOpeningTyped
-import PA215PA.NumericPAeqInductionStepTemplateCode
-import PA215PA.NumericPAeqTermTargetShiftTemplates
+module
+
+public import PA215PA.NumericPAeqInductionStepOpeningTyped
+public import PA215PA.NumericPAeqInductionStepTemplateCode
+public import PA215PA.NumericPAeqTermTargetShiftTemplates
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionStepOpening
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

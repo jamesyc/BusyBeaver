@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermFreeSupport
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Functions
+module
+
+public import PA215PA.NumericPAeqTermFreeSupport
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Functions
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

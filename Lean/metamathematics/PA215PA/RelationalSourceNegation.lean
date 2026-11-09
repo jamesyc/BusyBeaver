@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceSyntax
-import PA215PA.ActualRelationalPointed
+module
+
+public import PA215PA.RelationalSourceSyntax
+public import PA215PA.ActualRelationalPointed
+
+@[expose] public section
 
 /-! Foundation's NNF negation is translated by finite actual-basis proofs,
 including the relative falsum/truth codes. Not a semantic completeness step. -/

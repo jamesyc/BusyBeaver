@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalBinders
+module
+
+public import PA215PA.ActualRelationalBinders
+
+@[expose] public section
 
 /-! The primitive-equality witness from actual R1 is converted to a
 membership-only equality witness using ONLY special-label primitive vacuity.

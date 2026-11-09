@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalMarkPrefix
+public import User211PAInternalMarkPrefix
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.MarkAll
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

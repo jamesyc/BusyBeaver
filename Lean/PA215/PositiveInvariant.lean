@@ -1,4 +1,8 @@
-import PA215.Zip
+module
+
+public import PA215.Zip
+
+@[expose] public section
 
 namespace PA215.Zip
 

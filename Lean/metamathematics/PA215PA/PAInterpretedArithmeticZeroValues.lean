@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedArithmeticVariableValues
-import PA215PA.RelationalArithmeticZeroLaws
+module
+
+public import PA215PA.PAInterpretedArithmeticVariableValues
+public import PA215PA.RelationalArithmeticZeroLaws
+
+@[expose] public section
 
 /-! Actual child witnesses of the two first-argument-zero term values. -/
 namespace PA215.PA.ForwardRelational

@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedZeroSuccessorPayload
+module
+
+public import PA215PA.PAInterpretedZeroSuccessorPayload
+
+@[expose] public section
 
 /-! No arbitrary source successor term is interpreted as equal to zero. -/
 namespace PA215.PA.ForwardRelational

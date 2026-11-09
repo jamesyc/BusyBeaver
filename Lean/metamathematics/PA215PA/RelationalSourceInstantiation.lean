@@ -1,4 +1,8 @@
-import PA215PA.RelationalSourceAllocation
+module
+
+public import PA215PA.RelationalSourceAllocation
+
+@[expose] public section
 
 /-! A concrete Foundation first-order logical rule compiled into a finite
 actual-basis proof: universal elimination for arbitrary source formulas and

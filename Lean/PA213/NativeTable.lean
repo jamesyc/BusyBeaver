@@ -1,4 +1,8 @@
-import PA213.Machine
+module
+
+public import PA213.Machine
+
+@[expose] public section
 namespace PA213.NativeTable
 open PA215.Zip PA213.CandidateTable
 set_option maxRecDepth 100000

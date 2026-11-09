@@ -1,5 +1,9 @@
-import PA213PA.InternalTraceCompose
-import Foundation.FirstOrder.Arithmetic.R0.Basic
+module
+
+public import PA213PA.InternalTraceCompose
+public import Foundation.FirstOrder.Arithmetic.R0.Basic
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FixedTrace
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

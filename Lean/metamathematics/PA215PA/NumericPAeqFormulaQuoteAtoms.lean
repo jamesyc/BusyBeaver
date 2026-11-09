@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaAgreement
-import PA215PA.NumericPAeqFormulaRecursion
-import PA215PA.NumericPAeqTermCalibration
+module
+
+public import PA215PA.NumericPAeqFormulaAgreement
+public import PA215PA.NumericPAeqFormulaRecursion
+public import PA215PA.NumericPAeqTermCalibration
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

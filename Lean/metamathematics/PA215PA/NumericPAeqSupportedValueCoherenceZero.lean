@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedValueCoherenceSyntax
-import PA215PA.NumericPAeqValueCoherenceZeroCertificate
-import PA215PA.NumericPAeqValueCertificateComposition
+module
+
+public import PA215PA.NumericPAeqSupportedValueCoherenceSyntax
+public import PA215PA.NumericPAeqValueCoherenceZeroCertificate
+public import PA215PA.NumericPAeqValueCertificateComposition
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoGreatestImage
+module
+
+public import PA215PA.RelationalIsoGreatestImage
+
+@[expose] public section
 
 /-! The image of a successor endpoint is an actual ordinal predecessor,
 with all five domain clauses inherited from the target representative. -/

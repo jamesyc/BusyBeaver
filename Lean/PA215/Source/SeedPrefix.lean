@@ -1,6 +1,10 @@
-import PA215.Source.ExactSource
-import PA215.Source.Determinism
-import PA215.Source.CyclicDeterminism
+module
+
+public import PA215.Source.ExactSource
+public import PA215.Source.Determinism
+public import PA215.Source.CyclicDeterminism
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 

@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqExistentialUniformCertificate
-import PA215PA.NumericPAeqExistentialInstanceTemplateCertificate
-import PA215PA.NumericPAeqSupportedValueCoherenceShape
+module
+
+public import PA215PA.NumericPAeqExistentialUniformCertificate
+public import PA215PA.NumericPAeqExistentialInstanceTemplateCertificate
+public import PA215PA.NumericPAeqSupportedValueCoherenceShape
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqExistentialInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

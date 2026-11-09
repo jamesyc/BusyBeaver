@@ -1,4 +1,8 @@
-import PA215PA.ActualCompilerRows
+module
+
+public import PA215PA.ActualCompilerRows
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerBlueprint
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

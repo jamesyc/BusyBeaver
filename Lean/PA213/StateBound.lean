@@ -1,4 +1,8 @@
-import PA213.CandidateTable
+module
+
+public import PA213.CandidateTable
+
+@[expose] public section
 namespace PA213.StateBound
 open PA213.CandidateTable
 set_option maxRecDepth 100000

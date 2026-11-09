@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationRestrictionEndpoint
-import PA215PA.RelationalAdditionRestrictionWitness
+module
+
+public import PA215PA.RelationalMultiplicationRestrictionEndpoint
+public import PA215PA.RelationalAdditionRestrictionWitness
+
+@[expose] public section
 
 /-! A predecessor multiplication result from an actual Separation-built subgraph. -/
 namespace PA215.PA.RelationalSource.PairGraph

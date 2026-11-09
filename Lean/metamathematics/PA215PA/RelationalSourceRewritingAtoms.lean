@@ -1,4 +1,8 @@
-import PA215PA.RelationalSourceND
+module
+
+public import PA215PA.RelationalSourceND
+
+@[expose] public section
 /-! Explicit arity-two vector normalization for literal source atoms. These
 are syntax equalities, not logical or semantic axiom additions. -/
 namespace PA215.PA.RelationalSource

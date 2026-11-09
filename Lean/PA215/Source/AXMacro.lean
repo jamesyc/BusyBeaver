@@ -1,5 +1,9 @@
-import PA215.Source.Semantics
-import PA215.Source.AXCode
+module
+
+public import PA215.Source.Semantics
+public import PA215.Source.AXCode
+
+@[expose] public section
 namespace PA215.Source.AXMacro
 
 inductive Op where

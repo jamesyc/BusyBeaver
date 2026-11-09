@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosureExtremaLogic
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosureExtremaLogic
+
+@[expose] public section
 
 /-! Finite least/greatest witness transformations for an intersection trace.
 All sets and witnesses remain raw representatives. -/

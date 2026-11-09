@@ -1,4 +1,8 @@
-import PA215PA.ActualCompilerInvariantFormula
+module
+
+public import PA215PA.ActualCompilerInvariantFormula
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerLeafSoundness
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic

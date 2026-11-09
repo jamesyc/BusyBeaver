@@ -1,5 +1,9 @@
-import PA215PA.RelationalParameterClosure
-import PA215PA.RelationalSourceND
+module
+
+public import PA215PA.RelationalParameterClosure
+public import PA215PA.RelationalSourceND
+
+@[expose] public section
 
 /-! Iterated actual-basis generalization of an already fully supplied theorem.
 No open ND premise is generalized. Allocated labels and the depth-dependent

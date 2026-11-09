@@ -1,4 +1,8 @@
-import PA215PA.RelationalSourceSeparation
+module
+
+public import PA215PA.RelationalSourceSeparation
+
+@[expose] public section
 
 /-! Actual weak adjunction from the literal pointed property truth. The
 member binder is renamed independently of the chosen point; no shared-name

@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateLiftSyntax
-import PA215PA.RelationalPredicateTemplateLiftLogic
+module
+
+public import PA215PA.RelationalPredicateTemplateLiftSyntax
+public import PA215PA.RelationalPredicateTemplateLiftLogic
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder ND
 

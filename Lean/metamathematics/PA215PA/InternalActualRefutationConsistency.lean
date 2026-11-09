@@ -1,6 +1,10 @@
-import PA215PA.FoundationNativeRefutationInternal
-import PA215PA.InternalActualRefutationSentences
-import PA215PA.Foundation
+module
+
+public import PA215PA.FoundationNativeRefutationInternal
+public import PA215PA.InternalActualRefutationSentences
+public import PA215PA.Foundation
+
+@[expose] public section
 
 /-! The actual checker consistency statement implies Foundation's exact PA
 consistency sentence internally. The logical proof-code adapter is now paid. -/

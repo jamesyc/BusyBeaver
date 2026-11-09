@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionClosure
+module
+
+public import PA215PA.FoundationPAeqCodeInductionClosure
+
+@[expose] public section
 /-! Bounded canonical inverse recognizer for the literal PAeq induction scheme.
 No existential syntax-image decidability is presumed. -/
 namespace PA215.PA.FoundationPAeqCode

@@ -1,5 +1,9 @@
-import PA215PA.InternalCarryCode
-import PA215PA.InternalScanNatBridge
+module
+
+public import PA215PA.InternalCarryCode
+public import PA215PA.InternalScanNatBridge
+
+@[expose] public section
 
 namespace PA215.PA.InternalTrace.CarryCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

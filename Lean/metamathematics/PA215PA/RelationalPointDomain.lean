@@ -1,4 +1,8 @@
-import PA215PA.RelationalPointGraph
+module
+
+public import PA215PA.RelationalPointGraph
+
+@[expose] public section
 
 /-! The inclusive domain of a point graph at an actual empty ordinal is exactly
 that ordinal plus its endpoint. Both existential directions are finite proofs. -/

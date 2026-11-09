@@ -1,19 +1,23 @@
-import PA213.Startup.S000
-import PA213.Startup.S001
-import PA213.Startup.S002
-import PA213.Startup.S003
-import PA213.Startup.S004
-import PA213.Startup.S005
-import PA213.Startup.S006
-import PA213.Startup.S007
-import PA213.Startup.S008
-import PA213.Startup.S009
-import PA213.Startup.S010
-import PA213.Startup.S011
-import PA213.Startup.S012
-import PA213.Startup.S013
-import PA213.Startup.S014
-import PA213.Startup.S015
+module
+
+public import PA213.Startup.S000
+public import PA213.Startup.S001
+public import PA213.Startup.S002
+public import PA213.Startup.S003
+public import PA213.Startup.S004
+public import PA213.Startup.S005
+public import PA213.Startup.S006
+public import PA213.Startup.S007
+public import PA213.Startup.S008
+public import PA213.Startup.S009
+public import PA213.Startup.S010
+public import PA213.Startup.S011
+public import PA213.Startup.S012
+public import PA213.Startup.S013
+public import PA213.Startup.S014
+public import PA213.Startup.S015
+
+@[expose] public section
 
 namespace PA213.Startup
 open PA215.Zip PA213.CandidateTable

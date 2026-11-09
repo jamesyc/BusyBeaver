@@ -1,4 +1,8 @@
-import PA215PA.SourceCommandResidualBounds
+module
+
+public import PA215PA.SourceCommandResidualBounds
+
+@[expose] public section
 namespace PA215.PA.SourceCommandEncodingInternal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

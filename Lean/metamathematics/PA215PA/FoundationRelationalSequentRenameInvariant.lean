@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentRenameAtoms
+module
+
+public import PA215PA.FoundationRelationalSequentRenameAtoms
+
+@[expose] public section
 
 /-! Exact source-environment conditional renaming relation, displayed model
 induction invariant, and guarded atomic certificate supply. -/

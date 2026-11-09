@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaSupportedArity
-import PA215PA.NumericPAeqFormulaFreeSupportSubstitution
+module
+
+public import PA215PA.NumericPAeqFormulaSupportedArity
+public import PA215PA.NumericPAeqFormulaFreeSupportSubstitution
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

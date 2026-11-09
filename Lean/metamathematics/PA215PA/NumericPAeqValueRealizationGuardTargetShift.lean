@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueRealizationGuardValidity
-import PA215PA.NumericPAeqTermSupportedTargetShift
+module
+
+public import PA215PA.NumericPAeqValueRealizationGuardValidity
+public import PA215PA.NumericPAeqTermSupportedTargetShift
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueRealizationGuard
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

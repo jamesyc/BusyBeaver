@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateSeparationPointed
+module
+
+public import PA215PA.ActualCertificateSeparationPointed
+
+@[expose] public section
 
 /-! Numeric nonextensional separation at an explicit formula-code witness. Vacuity and forall-strip certificates establish padding equivalence for the chosen output label. -/
 namespace PA215.PA.ActualCertificateEquivalence

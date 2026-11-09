@@ -1,6 +1,10 @@
-import Foundation.FirstOrder.Incompleteness.Definability
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Basic
-import PA215PA.Theory
+module
+
+public import Foundation.FirstOrder.Incompleteness.Definability
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Basic
+public import PA215PA.Theory
+
+@[expose] public section
 
 /-!
 # Numeric annotations for the pinned PA induction axiom predicate

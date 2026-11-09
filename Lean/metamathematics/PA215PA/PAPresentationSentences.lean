@@ -1,5 +1,9 @@
-import PA215PA.PAPresentationClosure
-import PA215PA.PAPresentationInductionTheorem
+module
+
+public import PA215PA.PAPresentationClosure
+public import PA215PA.PAPresentationInductionTheorem
+
+@[expose] public section
 
 /-! Exact sentence-level compatibility, so translated closed Foundation
 axioms are not replaced by an informal 'equivalent closure'. -/

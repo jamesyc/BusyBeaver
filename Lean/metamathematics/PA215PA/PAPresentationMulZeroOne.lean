@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationAddComm
+module
+
+public import PA215PA.PAPresentationAddComm
+
+@[expose] public section
 
 /-! Fixed images four and five: x*0=0 and x*1=x, each derived by explicit
 first-argument successor induction, not assumed as target defining axioms. -/

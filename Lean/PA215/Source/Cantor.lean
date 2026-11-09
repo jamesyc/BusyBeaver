@@ -1,4 +1,8 @@
-import Std.Tactic
+module
+
+public import Std.Tactic
+
+@[expose] public section
 
 /-! The source's Cantor pairing, including the zero alias. The decoder walks
 successive diagonal positions exactly as the literal stack-unpairing loop does.

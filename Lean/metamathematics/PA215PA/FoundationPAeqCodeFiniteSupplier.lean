@@ -1,7 +1,11 @@
-import PA215PA.FoundationPAeqCodeTheory
-import PA215PA.FoundationPAeqCodeFormulaCalibration
-import PA215PA.FoundationPAAxiomCodeComplete
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Coding
+module
+
+public import PA215PA.FoundationPAeqCodeTheory
+public import PA215PA.FoundationPAeqCodeFormulaCalibration
+public import PA215PA.FoundationPAAxiomCodeComplete
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Coding
+
+@[expose] public section
 
 /-! Genuine all-model numeric proof witnesses for the exact original finite26
 axiom branch. Only fixed host-tagged axioms are quoted; arbitrary induction

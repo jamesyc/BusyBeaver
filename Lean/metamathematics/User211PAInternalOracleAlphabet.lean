@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalCallAudit
+public import User211PAInternalCallAudit
+
+@[expose] public section
 namespace PA211.UserCandidate.InternalOracleAlphabet
 open PA215.Runtime
 /-- Finite native oracle call alphabet, independent of branch guards or any

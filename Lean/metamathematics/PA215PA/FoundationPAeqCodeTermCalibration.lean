@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeTermValidity
+module
+
+public import PA215PA.FoundationPAeqCodeTermValidity
+
+@[expose] public section
 
 /-! Standard syntax calibration of the independently total numeric adapter.
 This theorem does not replace the arbitrary-model recursion/arity results. -/

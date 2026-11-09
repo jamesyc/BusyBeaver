@@ -1,6 +1,10 @@
-import PA215PA.PAPresentationND
-import PA215PA.PAPresentationRewriting
-import Mathlib.Tactic.FinCases
+module
+
+public import PA215PA.PAPresentationND
+public import PA215PA.PAPresentationRewriting
+public import Mathlib.Tactic.FinCases
+
+@[expose] public section
 
 /-! A finite PAeq certificate for x + S(0) = S(x), used in the induction-schema adapter. -/
 namespace PA215.PA.Presentation

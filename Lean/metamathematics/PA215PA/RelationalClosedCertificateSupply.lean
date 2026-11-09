@@ -1,5 +1,9 @@
-import PA215PA.RelationalClosedCertificateSeeds
-import PA215PA.RelationalClosedCertificatePrimitives
+module
+
+public import PA215PA.RelationalClosedCertificateSeeds
+public import PA215PA.RelationalClosedCertificatePrimitives
+
+@[expose] public section
 
 /-! Closed certificates for four primitive totality statements. -/
 namespace PA215.PA.RelationalClosedCertificate

@@ -1,8 +1,12 @@
-import PA215PA.RelationalSourceND
-import PA215PA.ActualFixedCertificateExistence
-import PA215PA.FoundationRelationalCodeAgreement
-import PA215PA.FoundationRelationalSequentFixedGraph
-import PA215PA.FoundationRelationalSequentClosedRelocation
+module
+
+public import PA215PA.RelationalSourceND
+public import PA215PA.ActualFixedCertificateExistence
+public import PA215PA.FoundationRelationalCodeAgreement
+public import PA215PA.FoundationRelationalSequentFixedGraph
+public import PA215PA.FoundationRelationalSequentClosedRelocation
+
+@[expose] public section
 
 /-! A fixed CLOSED host relational theorem supplies accepted certificates at
 all covered model-valued native label/allocator/reserve parameters. The host

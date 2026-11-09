@@ -1,6 +1,10 @@
-import PA215PA.FoundationRelationalCodeLanguage
-import PA215PA.RelationalMultiplicationUniversalOutput
-import PA215PA.PAInterpretedBudgetBounds
+module
+
+public import PA215PA.FoundationRelationalCodeLanguage
+public import PA215PA.RelationalMultiplicationUniversalOutput
+public import PA215PA.PAInterpretedBudgetBounds
+
+@[expose] public section
 
 /-! Four actual external primitive totality proofs at symbolic standard
 reserves. No large numeral certificate is evaluated or postulated. -/
@@ -18,7 +22,7 @@ theorem primitiveReserve_code_bound (q : Form) : 1+Encodable.encode q≤primitiv
 theorem primitiveReserve_mul_bound (q : Form) : 1+lkBudget mulUniversalOutputDerivation≤primitiveReserve q := by
   exact le_trans (Nat.le_add_left _ _) (Nat.le_add_right _ _)
 attribute [local irreducible] primitiveReserve
-private theorem primitive_budgets (q : Form) : FunctionCongruenceBudgets (fun _=>0) 1 (primitiveReserve q) :=
+theorem primitive_budgets (q : Form) : FunctionCongruenceBudgets (fun _=>0) 1 (primitiveReserve q) :=
   FunctionCongruenceBudgets.of_bound _ _ _ (by decide) (by intro; decide) (by unfold primitiveReserve; exact le_trans (Nat.le_add_right _ _) (Nat.le_add_right _ _))
 
 def zeroNativeProof : NativeCalculus.ActualBasis.Proof (code zeroInhabited (fun _=>0) 1 (primitiveReserve zeroInhabited)) := by

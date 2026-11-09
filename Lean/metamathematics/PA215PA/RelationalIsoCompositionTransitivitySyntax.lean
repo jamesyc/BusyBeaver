@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionExistsSyntax
+module
+
+public import PA215PA.RelationalIsoCompositionExistsSyntax
+
+@[expose] public section
 
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND

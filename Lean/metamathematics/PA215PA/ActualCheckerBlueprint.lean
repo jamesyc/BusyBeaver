@@ -1,4 +1,8 @@
-import PA215PA.ActualCheckerRows
+module
+
+public import PA215PA.ActualCheckerRows
+
+@[expose] public section
 namespace PA215.PA.ActualCheckerBlueprint
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

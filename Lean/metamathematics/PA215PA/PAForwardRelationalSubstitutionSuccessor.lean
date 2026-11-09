@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitution
+module
+
+public import PA215PA.PAForwardRelationalSubstitution
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND
@@ -43,7 +47,7 @@ def substitutionSuccessor {n : Nat} (t : SourceTerm (n+1))
   have ha' := up (shiftProof (up (shiftProof ha) p)) q
   have hi := ih u A' _ _ (Rew.shift (Rew.shift a)) Hu'
     (by simpa only [freeShiftEnv_cons] using Ht')
-    (by simpa only [value_shift] using ha') _ _ (andLeft hp')
+    (by simpa only [value_shift] using ha') (.fvar 1) (.fvar 0) (andLeft hp')
     (by simpa only [freeShiftEnv_cons] using andLeft hq)
   have out := successorIsoAt A' _ _ _ _
     (valueDomain _ _ _ _ (andLeft hp')) (valueDomain _ _ _ _ (andLeft hq))

@@ -1,5 +1,9 @@
-import PA213PA.InternalScanRight
-import Mathlib.Tactic.Ring.Basic
+module
+
+public import PA213PA.InternalScanRight
+public import Mathlib.Tactic.Ring.Basic
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.ForwardCell
 open PA215

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCommutativityStep
+module
+
+public import PA215PA.RelationalAdditionCommutativityStep
+
+@[expose] public section
 
 /-! Constructive ordinal induction for addition commutativity. All auxiliary
 right laws and closed witness-producing totality remain explicit finite inputs. -/

@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedFixedCertificateSeeds
-import PA215PA.FoundationRelationalCodeAgreement
+module
+
+public import PA215PA.PAInterpretedFixedCertificateSeeds
+public import PA215PA.FoundationRelationalCodeAgreement
+
+@[expose] public section
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND
 open FFL.FirstOrder.Arithmetic FFL.FirstOrder.Arithmetic.Bootstrapping

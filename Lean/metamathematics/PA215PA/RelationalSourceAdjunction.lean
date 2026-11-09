@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceAdjunctionAxioms
-import PA215PA.RelationalSourceContext
+module
+
+public import PA215PA.RelationalSourceAdjunctionAxioms
+public import PA215PA.RelationalSourceContext
+
+@[expose] public section
 
 /-! Ordinary nonextensional adjunction derived from the actual-basis weak-container, separation, and equality theorems. -/
 namespace PA215.PA.RelationalSource

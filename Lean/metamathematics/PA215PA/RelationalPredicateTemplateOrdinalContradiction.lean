@@ -1,7 +1,11 @@
-import PA215PA.RelationalPredicateTemplateOrdinalMinimum
-import PA215PA.RelationalPredicateTemplateOrdinalSchemaRules
-import PA215PA.RelationalPredicateTemplateLiftClosure
-import PA215PA.RelationalPredicateTemplateLiftEquality
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalMinimum
+public import PA215PA.RelationalPredicateTemplateOrdinalSchemaRules
+public import PA215PA.RelationalPredicateTemplateLiftClosure
+public import PA215PA.RelationalPredicateTemplateLiftEquality
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder ND
 def leastBadContradiction {Γ : List Form} (e : EqualityProofs Γ)

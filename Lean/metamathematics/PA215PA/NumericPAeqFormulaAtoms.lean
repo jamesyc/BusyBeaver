@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaAtomParameters
-import PA215PA.NumericPAeqTermFunction
+module
+
+public import PA215PA.NumericPAeqFormulaAtomParameters
+public import PA215PA.NumericPAeqTermFunction
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqValueCertificateComposition
+module
+
+public import PA215PA.NumericPAeqValueCertificateComposition
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueTotality
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

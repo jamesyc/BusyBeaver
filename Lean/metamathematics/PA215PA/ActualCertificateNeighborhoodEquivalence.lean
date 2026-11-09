@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateVacuityNeighborhood
+module
+
+public import PA215PA.ActualCertificateVacuityNeighborhood
+
+@[expose] public section
 
 /-! Finite equivalence recipes for the exact neighborhood equality. -/
 namespace PA215.PA.ActualCertificateEquivalence

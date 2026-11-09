@@ -1,0 +1,84 @@
+version: "v0.4"
+
+project:
+  name: "Nonhalting and PA-independence for a 211-state Turing machine"
+  description: >-
+    A literal binary Turing machine with 211 working states and 422 transitions
+    runs forever from state 0 on an all-zero tape. Neither the arithmetic
+    sentence asserting that it does not halt nor the negation of that sentence
+    is provable in ordinary first-order Peano arithmetic. The statement uses
+    first-order consequence over PA models, which the Solution proves equivalent
+    to syntactic provability for the exact arithmetized sentence. The two-sided
+    result uses the standard model of PA in Lean's metatheory. The machine is
+    given explicitly, and no minimality claim is made.
+  authors: ["James Chang"]
+  license: "MIT"
+  responsible_maintainers: ["James Chang"]
+
+classification:
+  arxiv: ["math.LO", "cs.LO"]
+  msc2020: ["03D10", "03F30"]
+
+sources:
+  - title: "Two-sided independence from Peano arithmetic for a 211-state Turing machine"
+    authors: ["James Chang"]
+    type: paper
+    location: "docs/pa211-independence.pdf in jamesyc/BusyBeaver"
+    relationship: formalizes
+    note: "The article describes the same PA211 construction and exact arithmetic sentence."
+  - title: "ProveIt, Busy Beaver formalization"
+    authors: ["Vladimir Reshetnikov"]
+    type: other
+    location: "https://github.com/VladimirReshetnikov/ProveIt/tree/6809609c61b9f2dd11c66374952cc5eb3defbd9f/Computability/BusyBeaver"
+    relationship: adapts
+    note: "A supporting Rocq proof is translated into Lean. Its exact source and hashes are recorded in provenance/dominated-rho8-manifest.json."
+  - title: "Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I"
+    authors: ["Kurt Gödel"]
+    type: paper
+    id: "https://doi.org/10.1007/BF01700692"
+    relationship: background
+  - title: "On Non-Computable Functions"
+    authors: ["Tibor Radó"]
+    type: paper
+    id: "https://doi.org/10.1002/j.1538-7305.1962.tb00480.x"
+    relationship: background
+  - title: "A Relatively Small Turing Machine Whose Behavior Is Independent of Set Theory"
+    authors: ["Adam Yedidia", "Scott Aaronson"]
+    type: paper
+    id: "https://arxiv.org/abs/1605.04343"
+    relationship: background
+    note: "An earlier small-machine construction for set theory."
+
+status:
+  scope: >-
+    Comparator checks the literal machine's blank-tape nonhalting and two-sided
+    PA independence. The underlying development also checks the separate
+    consistency-conditional endpoint and the implication from the exact
+    nonhalting sentence to the consistency of PA inside PA.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: agent
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Codex wrote the Palomar statement and the Lean proofs transferring it
+        to the existing PA211 results, and assisted with the module-system port.
+    - method: other
+      tool_setup: >-
+        The proof development includes generated finite certificates. Their
+        required equalities are checked in Lean's kernel.
+
+fidelity:
+  divergences: >-
+    The Challenge gives a semantic presentation of the arithmetic claim.
+    Solution.exact_formula_representation proves agreement in every PA model
+    with a formula whose translation is Foundation's exact nonhalting sentence.
+    The original transition function and all arithmetic rows are matched by
+    equality in Lean.
+
+review:
+  status: "self-assessed"
+  notes: "The repository records Lean builds, theorem interface checks, and axiom audits."

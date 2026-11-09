@@ -1,4 +1,8 @@
-import PA215PA.NativeHFS
+module
+
+public import PA215PA.NativeHFS
+
+@[expose] public section
 
 /-! Soundness direction of native/PA calibration, using the concrete HFS
 interpretation in every PA model. This does NOT supply the reverse four-pass

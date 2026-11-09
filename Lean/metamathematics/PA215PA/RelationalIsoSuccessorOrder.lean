@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoSuccessorOrderRules
-import PA215PA.RelationalOrdinalInductionMembers
+module
+
+public import PA215PA.RelationalIsoSuccessorOrderRules
+public import PA215PA.RelationalOrdinalInductionMembers
+
+@[expose] public section
 
 /-! Universal order clause of the exact successor extension. -/
 namespace PA215.PA.RelationalSource.PairGraph

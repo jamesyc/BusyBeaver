@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeFields
+module
+
+public import PA215PA.FoundationRelationalCodeFields
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.Numeric
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

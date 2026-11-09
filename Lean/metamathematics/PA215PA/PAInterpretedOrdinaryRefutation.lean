@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedOrdinaryImageSupplier
+module
+
+public import PA215PA.PAInterpretedOrdinaryImageSupplier
+
+@[expose] public section
 
 /-! Fully supplied external annotated ordinary PAeq refutation compiler.
 This consumes an actual typed derivation and explicit numerical allocation
@@ -8,7 +12,7 @@ open FFL FFL.FirstOrder RelationalSource ND
 open Ordinal (Term Formula)
 open PairGraph
 
-private def imageListSupplier (ws : List OrdinaryAxiomWitness)
+def imageListSupplier (ws : List OrdinaryAxiomWitness)
     (f : Nat → Nat) (lo z : Nat)
     (h : ∀w,w∈ws→NativeCalculus.ActualBasis.Proof (code (ordinarySentenceImage w.sentence) f lo z))
     (q : Form) (hq : q∈ordinaryImageContext ws) :

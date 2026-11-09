@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueUniqueness
-import PA215PA.NumericPAeqValueDiagonalSupply
-import PA215PA.NumericPAeqSupportedValueCoherence
+module
+
+public import PA215PA.NumericPAeqValueUniqueness
+public import PA215PA.NumericPAeqValueDiagonalSupply
+public import PA215PA.NumericPAeqSupportedValueCoherence
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

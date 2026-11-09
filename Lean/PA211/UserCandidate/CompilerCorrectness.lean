@@ -1,5 +1,9 @@
-import PA211.UserCandidate.PrimitiveSimulation
-import PA215.PositiveInvariant
+module
+
+public import PA211.UserCandidate.PrimitiveSimulation
+public import PA215.PositiveInvariant
+
+@[expose] public section
 namespace PA211.UserCandidate.CompilerCorrectness
 open PA215.Zip PA215.Runtime PA215.Source PA211.UserCandidate.CandidateTable PA211.UserCandidate.PrimitiveSimulation
 

@@ -1,5 +1,9 @@
-import PA213.AllSourceChecks
-import PA215.Source.CyclicDeterminism
+module
+
+public import PA213.AllSourceChecks
+public import PA215.Source.CyclicDeterminism
+
+@[expose] public section
 namespace PA213.SourceEquivalence
 open PA215.Source PA215.Source.PathTrie PA213.FastResolve PA213.SourceProgram
 

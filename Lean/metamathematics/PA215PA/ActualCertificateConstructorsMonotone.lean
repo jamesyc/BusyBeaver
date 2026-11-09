@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateConstructorsLocality
+module
+
+public import PA215PA.ActualCertificateConstructorsLocality
+
+@[expose] public section
 
 /-! Positive-result fuel stability for the exact V1 verifier. Rejection zero
 is not preserved; every nonzero result, including successful formula zero,

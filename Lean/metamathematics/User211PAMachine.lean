@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import PA211.UserCandidate.CandidateTable
-import PA211.UserCandidate.StateBound
+public import PA211.UserCandidate.CandidateTable
+public import PA211.UserCandidate.StateBound
+
+@[expose] public section
 /-! Dense arithmetic tags for the minimized 211-control machine. Tags122,150,205 and214
 are unused padding, not working controls. Their auxiliary rows are self-loops;
 all candidate rows have targets in the 211 active tags or the halt tag215.

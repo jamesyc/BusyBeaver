@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentDerivationInvariant
-import PA215PA.NumericPAeqSequentEigenShift
+module
+
+public import PA215PA.NumericPAeqSequentDerivationInvariant
+public import PA215PA.NumericPAeqSequentEigenShift
+
+@[expose] public section
 
 /-! Proof-wide source support is derived from the actual derivation code,
 not inferred from support of its end sequent. No derivation induction is

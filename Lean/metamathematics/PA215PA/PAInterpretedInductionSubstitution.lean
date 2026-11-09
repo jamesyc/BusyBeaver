@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedInductionCoverage
+module
+
+public import PA215PA.PAInterpretedInductionCoverage
+
+@[expose] public section
 
 /-! Actual unary source substitution for the two induction instances. The
 term's target value is retained explicitly, and only occurring free parameters

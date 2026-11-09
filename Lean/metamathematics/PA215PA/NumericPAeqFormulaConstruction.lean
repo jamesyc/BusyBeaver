@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaFields
+module
+
+public import PA215PA.NumericPAeqFormulaFields
+
+@[expose] public section
 
 /-! Actual changing-parameter formula recursion consuming the proved total
 term witness function. Full PA models are required by that term supplier. -/

@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceNatTrace
-import PA213PA.InternalCodedSourceTraceDeterminism
-import PA213PA.InternalStartupHaltingBridge
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceNatTrace
+public import PA213PA.InternalCodedSourceTraceDeterminism
+public import PA213PA.InternalStartupHaltingBridge
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FixedTrace
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

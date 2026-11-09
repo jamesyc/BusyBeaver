@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqValueCoherenceSuccessorSyntax
-import PA215PA.NumericPAeqVariableCoherenceCalibration
-import PA215PA.NumericPAeqFormulaConstructors
-import PA215PA.RelationalClosedCertificateCoherenceSupply
+module
+
+public import PA215PA.NumericPAeqValueCoherenceSuccessorSyntax
+public import PA215PA.NumericPAeqVariableCoherenceCalibration
+public import PA215PA.NumericPAeqFormulaConstructors
+public import PA215PA.RelationalClosedCertificateCoherenceSupply
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaEqualityTransport
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

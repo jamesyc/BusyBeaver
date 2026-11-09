@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateTargetShiftBinders
-import PA215PA.RelationalPredicateTemplateFormulaValidity
+module
+
+public import PA215PA.RelationalPredicateTemplateTargetShiftBinders
+public import PA215PA.RelationalPredicateTemplateFormulaValidity
+
+@[expose] public section
 /-! Eigenvariable/free-variable shift also shifts the unary predicate's free
 parameters. A fixed-P naturality statement would in general be false. -/
 namespace PA215.PA.RelationalPredicateTemplate

@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedValueTotalitySyntax
-import PA215PA.NumericPAeqValueCoherenceSyntax
-import PA215PA.NumericPAeqTermSupportedValidity
+module
+
+public import PA215PA.NumericPAeqSupportedValueTotalitySyntax
+public import PA215PA.NumericPAeqValueCoherenceSyntax
+public import PA215PA.NumericPAeqTermSupportedValidity
+
+@[expose] public section
 
 /-! Genuine free-support coverage for existing paired value comparison syntax.
 No source-code size bound or replacement of the target syntax. -/

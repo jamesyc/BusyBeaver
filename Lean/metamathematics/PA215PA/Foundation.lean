@@ -1,6 +1,10 @@
-import Foundation.FirstOrder.Incompleteness.Consistency
-import PA215PA.Theory
-import PA215PA.HaltingFormula
+module
+
+public import Foundation.FirstOrder.Incompleteness.Consistency
+public import PA215PA.Theory
+public import PA215PA.HaltingFormula
+
+@[expose] public section
 
 /-! Ordinary first-order Peano arithmetic and the second incompleteness theorem.
 
@@ -20,7 +24,11 @@ noncomputable def consistencySentence : ArithmeticSentence := theory.consistent.
 /-- The imported second incompleteness theorem instantiated at PA. -/
 theorem consistency_unprovable (h : Consistent) : theory ⊬ consistencySentence := by
   let : FFL.Entailment.Consistent theory := h
-  exact ProvabilityAbstraction.con_unprovable (𝔅 := theory.standardProvability)
+  intro hc
+  apply ProvabilityAbstraction.con_unprovable (𝔅 := theory.standardProvability)
+  unfold ProvabilityAbstraction.Provability.con
+  rw [Arithmetic.standardProvability_def]
+  exact hc
 
 /-- If PA proves that a sentence implies its own consistency, consistency of PA rules out a proof of that sentence. -/
 theorem unprovable_of_internal_consistency_implication

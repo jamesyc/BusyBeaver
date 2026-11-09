@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeRecursion
+module
+
+public import PA215PA.FoundationRelationalCodeRecursion
+
+@[expose] public section
 
 /-! Standard syntax calibration to the unchanged external interpretation.
 Environments are explicitly the total lookups of finite HFS vectors; no arbitrary

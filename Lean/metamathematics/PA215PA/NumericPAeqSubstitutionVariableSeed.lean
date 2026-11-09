@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSubstitutionVariableTransport
+module
+
+public import PA215PA.NumericPAeqSubstitutionVariableTransport
+
+@[expose] public section
 namespace PA215.PA.RelationalClosedCertificate
 noncomputable section
 open FFL FFL.FirstOrder RelationalSource ND PairGraph ForwardRelational
@@ -6,9 +10,9 @@ attribute [local irreducible] lkBudget isoRightTransportDerivation isoRightTrans
 
 def isoRightTransportReserve : Nat := max 20 (4+lkBudget isoRightTransportDerivation) + (1+Encodable.encode isoRightTransportClosed)
 theorem isoRightTransportReserve_code : 1+Encodable.encode isoRightTransportClosed≤isoRightTransportReserve := Nat.le_add_left _ _
-private theorem isoRightTransportReserve_room : 20≤isoRightTransportReserve :=
+theorem isoRightTransportReserve_room : 20≤isoRightTransportReserve :=
   le_trans (le_max_left _ _) (Nat.le_add_right _ _)
-private theorem isoRightTransportReserve_budget : 4+lkBudget isoRightTransportDerivation≤isoRightTransportReserve :=
+theorem isoRightTransportReserve_budget : 4+lkBudget isoRightTransportDerivation≤isoRightTransportReserve :=
   le_trans (le_max_right _ _) (Nat.le_add_right _ _)
 attribute [local irreducible] isoRightTransportReserve
 

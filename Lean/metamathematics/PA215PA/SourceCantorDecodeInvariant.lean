@@ -1,4 +1,8 @@
-import PA215PA.SourceCantorDecodeInternal
+module
+
+public import PA215PA.SourceCantorDecodeInternal
+
+@[expose] public section
 namespace PA215.PA.SourceCantorInternal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

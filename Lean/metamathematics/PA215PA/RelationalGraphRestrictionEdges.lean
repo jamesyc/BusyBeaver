@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphRestriction
-import PA215PA.RelationalIsoEntriesExtension
+module
+
+public import PA215PA.RelationalGraphRestriction
+public import PA215PA.RelationalIsoEntriesExtension
+
+@[expose] public section
 
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND

@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationAdditiveOutput
-import PA215PA.RelationalMultiplicationAdditiveShift
+module
+
+public import PA215PA.RelationalMultiplicationAdditiveOutput
+public import PA215PA.RelationalMultiplicationAdditiveShift
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 open Ordinal (Term Formula)

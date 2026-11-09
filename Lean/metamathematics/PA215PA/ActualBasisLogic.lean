@@ -1,4 +1,8 @@
-import PA215PA.ActualMembershipVacuity
+module
+
+public import PA215PA.ActualMembershipVacuity
+
+@[expose] public section
 /-! The accepted finite context compiler reinstantiated in the full actual
 basis. Tautologies and R2/R6 come by explicit actual-core embedding only. -/
 namespace PA215.PA.NativeCalculus.ActualBasis

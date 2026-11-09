@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeAtomTranslation
+module
+
+public import PA215PA.FoundationPAeqCodeAtomTranslation
+
+@[expose] public section
 
 /-! Original arithmetic to PAeq formula recursion. The dummy parameter is
 unchanged under binders. Its graph is supplied by the actual pinned recursor;

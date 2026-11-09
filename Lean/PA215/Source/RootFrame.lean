@@ -1,4 +1,8 @@
-import PA215.Source.PhysicalRegisters
+module
+
+public import PA215.Source.PhysicalRegisters
+
+@[expose] public section
 
 /-! Canonical full physical root frames for source paths. The offset accounts
 for header overflow and positive decrement; the box retains the entire file. -/

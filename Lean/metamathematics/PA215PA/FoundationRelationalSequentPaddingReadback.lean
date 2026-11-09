@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentPrefixAgreement
-import PA215PA.FoundationRelationalSequentClosedRelocation
+module
+
+public import PA215PA.FoundationRelationalSequentPrefixAgreement
+public import PA215PA.FoundationRelationalSequentClosedRelocation
+
+@[expose] public section
 
 /-! Returning an accepted proof from a padded environment and larger reserve
 keeps the requested allocator and every original free label. No closedness

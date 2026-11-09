@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqUniversalContextOpeningSupport
-import PA215PA.NumericPAeqSequentDerivationInvariant
-import PA215PA.NumericPAeqFormulaSupportedSourceShift
-import PA215PA.NumericPAeqValueDomainGuardCollection
+module
+
+public import PA215PA.NumericPAeqUniversalContextOpeningSupport
+public import PA215PA.NumericPAeqSequentDerivationInvariant
+public import PA215PA.NumericPAeqFormulaSupportedSourceShift
+public import PA215PA.NumericPAeqValueDomainGuardCollection
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula.Sequent
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,5 +1,9 @@
-import PA213PA.InternalRunNormalization
-import PA215.Runtime
+module
+
+public import PA213PA.InternalRunNormalization
+public import PA215.Runtime
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.Symbolic
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

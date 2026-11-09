@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentPadEnvironment
+module
+
+public import PA215PA.FoundationRelationalSequentPadEnvironment
+
+@[expose] public section
 
 /-! Padding preserves finite label validity and supplies a proof-code budget
 without replacing any of the requested free labels. -/

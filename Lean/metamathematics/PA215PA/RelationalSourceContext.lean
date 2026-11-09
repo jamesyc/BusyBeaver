@@ -1,4 +1,8 @@
-import PA215PA.RelationalSourceND
+module
+
+public import PA215PA.RelationalSourceND
+
+@[expose] public section
 /-! Actual finite open-parameter context discharge. Every premise is an
 explicit native proof at the same free environment and allocator. -/
 namespace PA215.PA.RelationalSource

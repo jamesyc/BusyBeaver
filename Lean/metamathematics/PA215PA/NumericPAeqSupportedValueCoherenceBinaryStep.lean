@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedValueCoherenceBinaryShape
-import PA215PA.NumericPAeqSupportedValueCoherenceSupply
-import PA215PA.NumericPAeqBinaryCoherenceCertificate
+module
+
+public import PA215PA.NumericPAeqSupportedValueCoherenceBinaryShape
+public import PA215PA.NumericPAeqSupportedValueCoherenceSupply
+public import PA215PA.NumericPAeqBinaryCoherenceCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

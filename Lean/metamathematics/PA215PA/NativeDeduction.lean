@@ -1,4 +1,8 @@
-import PA215PA.DominatedRho8
+module
+
+public import PA215PA.DominatedRho8
+
+@[expose] public section
 
 /-! Actual finite-context proof compilation, following NumericHilbert238.v
 at jeff87654/busy-beaver@84049b5e753190cf328cbc2d2710791ad32ad59c.

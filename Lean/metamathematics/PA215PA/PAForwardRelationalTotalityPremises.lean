@@ -1,6 +1,10 @@
-import PA215PA.PAForwardRelationalArithmeticClosure
-import PA215PA.PAForwardRelationalTotalityRewriting
-import PA215PA.RelationalMultiplicationClosedResult
+module
+
+public import PA215PA.PAForwardRelationalArithmeticClosure
+public import PA215PA.PAForwardRelationalTotalityRewriting
+public import PA215PA.RelationalMultiplicationClosedResult
+
+@[expose] public section
 
 /-! Explicit closed ND hypotheses for structural value totality. Their actual
 suppliers are separate, with budgets preserved. -/

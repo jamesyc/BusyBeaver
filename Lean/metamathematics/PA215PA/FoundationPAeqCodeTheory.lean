@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionTheory
+module
+
+public import PA215PA.FoundationPAeqCodeInductionTheory
+
+@[expose] public section
 /-! Exact Delta-one classifier for the unchanged ordinaryPAeq theory.
 The finite branch exposes literal host-list witnesses even in nonstandard models. -/
 namespace PA215.PA.FoundationPAeqCode

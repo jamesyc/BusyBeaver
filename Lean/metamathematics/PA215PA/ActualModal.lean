@@ -1,4 +1,8 @@
-import PA215PA.ActualPropositional
+module
+
+public import PA215PA.ActualPropositional
+
+@[expose] public section
 
 /-! Modal rules for the AX proof datatype. -/
 namespace PA215.PA.NativeCalculus.ActualCore

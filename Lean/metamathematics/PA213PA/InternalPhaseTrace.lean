@@ -1,5 +1,9 @@
-import PA213PA.InternalSegmentCompose
-import PA213PA.InternalTracePrepend
+module
+
+public import PA213PA.InternalSegmentCompose
+public import PA213PA.InternalTracePrepend
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace
 open PA215

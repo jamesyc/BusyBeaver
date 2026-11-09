@@ -1,5 +1,9 @@
-import PA215.Source.S36Binding
-import PA215.Source.Semantics
+module
+
+public import PA215.Source.S36Binding
+public import PA215.Source.Semantics
+
+@[expose] public section
 
 namespace PA215.Source.S36Lift
 

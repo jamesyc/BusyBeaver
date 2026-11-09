@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationEqualityInstances
+module
+
+public import PA215PA.PAPresentationEqualityInstances
+
+@[expose] public section
 
 /-! Equality substitution for every arithmetic term, with actual finite
 proofs supplied only by the six allowed equality axioms. -/

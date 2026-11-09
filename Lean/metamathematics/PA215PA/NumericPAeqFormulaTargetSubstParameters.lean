@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaSupportedCoverage
-import PA215PA.NumericPAeqTermTargetSubstParameters
+module
+
+public import PA215PA.NumericPAeqFormulaSupportedCoverage
+public import PA215PA.NumericPAeqTermTargetSubstParameters
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

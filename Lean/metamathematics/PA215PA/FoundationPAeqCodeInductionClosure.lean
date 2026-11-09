@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionBody
+module
+
+public import PA215PA.FoundationPAeqCodeInductionBody
+
+@[expose] public section
 /-! Exact canonical universal closure, including the non-vacuous arity guard.
 Specializes the pinned Foundation argument to the existing PAeq language. -/
 namespace PA215.PA.FoundationPAeqCode

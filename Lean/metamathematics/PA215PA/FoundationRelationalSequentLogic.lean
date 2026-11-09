@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentSingleton
-import PA215PA.ActualCertificateEquivalenceInduction
+module
+
+public import PA215PA.FoundationRelationalSequentSingleton
+public import PA215PA.ActualCertificateEquivalenceInduction
+
+@[expose] public section
 
 /-! Actual numeric disjunction certificates and singleton-bottom extraction.
 These finite recipes are prerequisites for the separate model-length scan induction. -/

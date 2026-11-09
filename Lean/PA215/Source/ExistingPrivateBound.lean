@@ -1,4 +1,8 @@
-import Lean
+module
+
+public meta import Lean
+
+@[expose] public section
 /-! Read-only elaboration of an existing private proof constant. The generated
 alias theorem still has an explicit type checked by Lean's kernel. This helper
 neither adds declarations nor changes the environment; it only returns the

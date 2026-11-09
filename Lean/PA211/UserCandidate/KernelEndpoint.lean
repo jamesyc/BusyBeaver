@@ -1,8 +1,12 @@
-import PA211.UserCandidate.Dense
-import PA211.UserCandidate.LiteralStartup
-import PA211.UserCandidate.StateBound
-import PA211.UserCandidate.StartupExact
-import PA211.UserCandidate.NonhaltingFromSource
+module
+
+public import PA211.UserCandidate.Dense
+public import PA211.UserCandidate.LiteralStartup
+public import PA211.UserCandidate.StateBound
+public import PA211.UserCandidate.StartupExact
+public import PA211.UserCandidate.NonhaltingFromSource
+
+@[expose] public section
 namespace PA211.UserCandidate
 open PA215.Zip PA215.Source
 

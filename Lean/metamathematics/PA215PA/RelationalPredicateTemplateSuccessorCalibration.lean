@@ -1,9 +1,13 @@
-import PA215PA.RelationalPredicateTemplateSuccessorSyntax
-import PA215PA.RelationalPredicateTemplateClosedCalibration
-import PA215PA.RelationalPredicateTemplateLiftSyntax
-import PA215PA.RelationalPredicateTemplateNegation
-import PA215PA.FoundationRelationalSequentSeparationCode
-import PA215PA.NumericPAeqTermConstructors
+module
+
+public import PA215PA.RelationalPredicateTemplateSuccessorSyntax
+public import PA215PA.RelationalPredicateTemplateClosedCalibration
+public import PA215PA.RelationalPredicateTemplateLiftSyntax
+public import PA215PA.RelationalPredicateTemplateNegation
+public import PA215PA.FoundationRelationalSequentSeparationCode
+public import PA215PA.NumericPAeqTermConstructors
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Successor
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

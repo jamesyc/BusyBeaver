@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedInductionClosedGuard
-import PA215PA.PAInterpretedClosedSourceExact
+module
+
+public import PA215PA.PAInterpretedInductionClosedGuard
+public import PA215PA.PAInterpretedClosedSourceExact
+
+@[expose] public section
 
 /-! Literal source parameter closure from the fully supplied target guard.
 No open Separation assumption is generalized. -/

@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitutionRealizedBinary
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionRealizedBinary
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedSuccessorZero
+module
+
+public import PA215PA.PAInterpretedSuccessorZero
+
+@[expose] public section
 
 /-! Eliminate the right actual value witness of an alleged zero/successor equality. -/
 namespace PA215.PA.ForwardRelational

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseEntrySuccessor
+module
+
+public import PA215PA.RelationalIsoInverseEntrySuccessor
+
+@[expose] public section
 
 /-! Every object of the raw adjoined inverse prefix has actual coordinates. -/
 namespace PA215.PA.RelationalSource.PairGraph

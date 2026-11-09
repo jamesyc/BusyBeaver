@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateOrdinalInduction
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalInduction
+
+@[expose] public section
 /-! A single concrete finite host LK template, with one unary relation symbol.
 Its seven explicit assumptions are retained for native certificate discharge. -/
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal

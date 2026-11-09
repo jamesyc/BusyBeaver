@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalEquivalence
+module
+
+public import PA215PA.ActualRelationalEquivalence
+
+@[expose] public section
 
 /-! Explicit binder change for the membership-only equality replacement.
 This is a finite actual-basis proof, not an assumed alpha-conversion rule. -/

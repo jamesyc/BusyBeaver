@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermUniqueness
+module
+
+public import PA215PA.NumericPAeqTermUniqueness
+
+@[expose] public section
 
 /-! A total model function represented by the genuine unique table-witness
 relation. Classical selection is uniquely characterized in every PA model;

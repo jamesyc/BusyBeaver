@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedVectorRealizationSyntax
-import PA215PA.NumericPAeqValueRealizationGuardProjection
-import PA215PA.NumericPAeqValueSourceProjections
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealizationSyntax
+public import PA215PA.NumericPAeqValueRealizationGuardProjection
+public import PA215PA.NumericPAeqValueSourceProjections
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

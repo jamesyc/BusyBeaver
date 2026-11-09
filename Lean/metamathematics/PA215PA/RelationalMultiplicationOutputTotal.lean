@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationOutputExists
-import PA215PA.RelationalMultiplicationTotalSupplier
+module
+
+public import PA215PA.RelationalMultiplicationOutputExists
+public import PA215PA.RelationalMultiplicationTotalSupplier
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 open Ordinal (Term Formula)

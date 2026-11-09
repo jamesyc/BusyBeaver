@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermTemplates
+module
+
+public import PA215PA.NumericPAeqTermTemplates
+
+@[expose] public section
 
 /-! Actual coded relational equality and guarded quantifier constructors for
 arithmetic interpretation. Inputs are relational formula codes, not native

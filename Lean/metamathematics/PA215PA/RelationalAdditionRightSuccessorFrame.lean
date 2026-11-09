@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightSuccessor
+module
+
+public import PA215PA.RelationalAdditionRightSuccessor
+
+@[expose] public section
 
 /-! Explicit movable proof data for right-successor induction. -/
 namespace PA215.PA.RelationalSource.PairGraph

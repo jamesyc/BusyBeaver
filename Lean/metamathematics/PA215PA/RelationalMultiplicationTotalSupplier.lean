@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationInduction
-import PA215PA.RelationalAdditionResultSupplier
+module
+
+public import PA215PA.RelationalMultiplicationInduction
+public import PA215PA.RelationalAdditionResultSupplier
+
+@[expose] public section
 
 /-! Fixed-base finite multiplication-prefix totality. The additive and
 multiplicative Separation formulas are different, explicit, and individually

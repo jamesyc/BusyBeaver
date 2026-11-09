@@ -1,4 +1,8 @@
-import PA215PA.NativeNamed
+module
+
+public import PA215PA.NativeNamed
+
+@[expose] public section
 
 /-! Exact total decoder from NumericSyntax238.v:227ff, pinned by NativeCalculus.
 The zero code is special. Tag-zero with consequent code1 is NNot, and code1

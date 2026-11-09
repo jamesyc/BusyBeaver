@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqUniversalContextCertificate
-import PA215PA.NumericPAeqUniversalContextOpening
+module
+
+public import PA215PA.NumericPAeqUniversalContextCertificate
+public import PA215PA.NumericPAeqUniversalContextOpening
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqUniversalContext
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

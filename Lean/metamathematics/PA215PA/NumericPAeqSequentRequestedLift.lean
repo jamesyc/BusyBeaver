@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentDerivationInvariant
-import PA215PA.FoundationRelationalSequentPaddingReadback
+module
+
+public import PA215PA.NumericPAeqSequentDerivationInvariant
+public import PA215PA.FoundationRelationalSequentPaddingReadback
+
+@[expose] public section
 
 /-! Requested native labels are preserved while two intermediate closed
 source arrows are covered. The local rule must explicitly retain the domain

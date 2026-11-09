@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightSuccessorSupplier
+module
+
+public import PA215PA.RelationalAdditionRightSuccessorSupplier
+
+@[expose] public section
 
 /-! Arbitrary-parameter specialization with the exact iso(v,s) orientation. -/
 namespace PA215.PA.RelationalSource.PairGraph

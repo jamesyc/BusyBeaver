@@ -1,6 +1,10 @@
-import PA215PA.RelationalGraphRangeExtension
-import PA215PA.RelationalGraphFunctionalExtension
-import PA215PA.RelationalMultiplicationTrace
+module
+
+public import PA215PA.RelationalGraphRangeExtension
+public import PA215PA.RelationalGraphFunctionalExtension
+public import PA215PA.RelationalMultiplicationTrace
+
+@[expose] public section
 
 /-! Finite recurrence elimination and transport for multiplication graphs. Existential previous outputs are real graph members. -/
 namespace PA215.PA.RelationalSource.PairGraph

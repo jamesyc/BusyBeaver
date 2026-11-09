@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqFormulaTargetShiftConstructors
-import PA215PA.NumericPAeqFormulaTargetShiftParameters
-import PA215PA.NumericPAeqFormulaSupportedAtomValidity
-import PA215PA.NumericPAeqTermSupportedTargetShift
+module
+
+public import PA215PA.NumericPAeqFormulaTargetShiftConstructors
+public import PA215PA.NumericPAeqFormulaTargetShiftParameters
+public import PA215PA.NumericPAeqFormulaSupportedAtomValidity
+public import PA215PA.NumericPAeqTermSupportedTargetShift
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

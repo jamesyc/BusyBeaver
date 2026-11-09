@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationRewriting
-import PA215PA.RelationalMultiplicationRecurrence
+module
+
+public import PA215PA.RelationalMultiplicationRewriting
+public import PA215PA.RelationalMultiplicationRecurrence
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 

@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedEqualitySymmetry
-import PA215PA.RelationalOrderIsoTransport
+module
+
+public import PA215PA.PAInterpretedEqualitySymmetry
+public import PA215PA.RelationalOrderIsoTransport
+
+@[expose] public section
 
 /-! Ordinary equality transports arbitrary ground relational endpoints. -/
 namespace PA215.PA.ForwardRelational

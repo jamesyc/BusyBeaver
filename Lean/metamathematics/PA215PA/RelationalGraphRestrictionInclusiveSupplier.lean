@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphRestrictionInclusive
-import PA215PA.RelationalSourceContext
+module
+
+public import PA215PA.RelationalGraphRestrictionInclusive
+public import PA215PA.RelationalSourceContext
+
+@[expose] public section
 
 /-! Actual-basis discharge of the literal Separation premise. Budgets remain
 explicit. Closing a parameter happens only after discharging the ND context. -/

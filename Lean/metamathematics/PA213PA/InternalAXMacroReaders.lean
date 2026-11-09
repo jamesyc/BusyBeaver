@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA215.Source.AXMacroRead
-import PA213PA.InternalAXMacroCons
-import PA213PA.InternalCodedSourceUnpairApply
+module
+
+public import PA215PA.Theory
+public import PA215.Source.AXMacroRead
+public import PA213PA.InternalAXMacroCons
+public import PA213PA.InternalCodedSourceUnpairApply
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.ModelAX
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

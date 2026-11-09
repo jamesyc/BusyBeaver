@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoSuccessorBijection
+module
+
+public import PA215PA.RelationalIsoSuccessorBijection
+
+@[expose] public section
 
 /-! Explicit finite proof inputs for constructing a successor isomorphism. -/
 namespace PA215.PA.RelationalSource.PairGraph

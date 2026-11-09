@@ -1,9 +1,13 @@
-import PA213.SourceEquivalence
+module
+
+public import PA213.SourceEquivalence
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 64000000
 namespace PA213.FastCodes
 open PA215.Source PA213.SourceProgram
-private def c000 (i : Nat) : Option Instruction :=
+def c000 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 8 (some 2) (some 1))
   | 1 => some (.jump (some 9))
@@ -70,7 +74,7 @@ private def c000 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 7 (some 63))
   | 63 => some (.dec 6 (some 66) (some 64))
   | _ => none
-private def c001 (i : Nat) : Option Instruction :=
+def c001 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 65))
   | 1 => some (.jump (some 63))
@@ -137,7 +141,7 @@ private def c001 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 127))
   | 63 => some (.inc 6 (some 128))
   | _ => none
-private def c002 (i : Nat) : Option Instruction :=
+def c002 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 125))
   | 1 => some (.dec 6 (some 132) (some 130))
@@ -204,7 +208,7 @@ private def c002 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 191))
   | 63 => some (.jump (some 189))
   | _ => none
-private def c003 (i : Nat) : Option Instruction :=
+def c003 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 183))
   | 1 => some (.dec 7 (some 199) (some 194))
@@ -271,7 +275,7 @@ private def c003 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 6 (some 260) (some 255))
   | 63 => some (.inc 7 (some 256))
   | _ => none
-private def c004 (i : Nat) : Option Instruction :=
+def c004 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 6 (some 259) (some 257))
   | 1 => some (.inc 1 (some 258))
@@ -338,7 +342,7 @@ private def c004 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 2 (some 326) (some 319))
   | 63 => some (.inc 7 (some 320))
   | _ => none
-private def c005 (i : Nat) : Option Instruction :=
+def c005 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 6 (some 322) (some 321))
   | 1 => some (.jump (some 325))
@@ -405,7 +409,7 @@ private def c005 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 7 (some 383))
   | 63 => some (.dec 6 (some 386) (some 384))
   | _ => none
-private def c006 (i : Nat) : Option Instruction :=
+def c006 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 385))
   | 1 => some (.jump (some 383))
@@ -472,7 +476,7 @@ private def c006 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 447))
   | 63 => some (.inc 1 (some 448))
   | _ => none
-private def c007 (i : Nat) : Option Instruction :=
+def c007 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 449))
   | 1 => some (.inc 1 (some 450))
@@ -539,7 +543,7 @@ private def c007 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 1 (some 514) (some 511))
   | 63 => some (.inc 7 (some 512))
   | _ => none
-private def c008 (i : Nat) : Option Instruction :=
+def c008 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 6 (some 513))
   | 1 => some (.jump (some 510))
@@ -606,7 +610,7 @@ private def c008 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 572))
   | 63 => some (.jump (some 566))
   | _ => none
-private def c009 (i : Nat) : Option Instruction :=
+def c009 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 7 (some 579) (some 577))
   | 1 => some (.inc 2 (some 578))
@@ -673,7 +677,7 @@ private def c009 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 633))
   | 63 => some (.inc 1 (some 640))
   | _ => none
-private def c010 (i : Nat) : Option Instruction :=
+def c010 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 641))
   | 1 => some (.inc 1 (some 642))
@@ -740,7 +744,7 @@ private def c010 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 7 (some 705) (some 703))
   | 63 => some (.inc 2 (some 704))
   | _ => none
-private def c011 (i : Nat) : Option Instruction :=
+def c011 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 702))
   | 1 => some (.dec 1 (some 709) (some 706))
@@ -807,7 +811,7 @@ private def c011 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 764))
   | 63 => some (.dec 5 (some 771) (some 768))
   | _ => none
-private def c012 (i : Nat) : Option Instruction :=
+def c012 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 769))
   | 1 => some (.inc 6 (some 770))
@@ -874,7 +878,7 @@ private def c012 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 825))
   | 63 => some (.inc 1 (some 832))
   | _ => none
-private def c013 (i : Nat) : Option Instruction :=
+def c013 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 833))
   | 1 => some (.dec 2 (some 841) (some 834))
@@ -941,7 +945,7 @@ private def c013 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 7 (some 895))
   | 63 => some (.inc 6 (some 896))
   | _ => none
-private def c014 (i : Nat) : Option Instruction :=
+def c014 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 893))
   | 1 => some (.dec 6 (some 903) (some 898))
@@ -1008,7 +1012,7 @@ private def c014 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 3 (some 962) (some 959))
   | 63 => some (.inc 1 (some 960))
   | _ => none
-private def c015 (i : Nat) : Option Instruction :=
+def c015 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 6 (some 961))
   | 1 => some (.jump (some 958))
@@ -1075,7 +1079,7 @@ private def c015 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 7 (some 1025) (some 1023))
   | 63 => some (.inc 2 (some 1024))
   | _ => none
-private def c016 (i : Nat) : Option Instruction :=
+def c016 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 1022))
   | 1 => some (.dec 1 (some 1029) (some 1026))
@@ -1142,7 +1146,7 @@ private def c016 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 7 (some 1089) (some 1087))
   | 63 => some (.inc 2 (some 1088))
   | _ => none
-private def c017 (i : Nat) : Option Instruction :=
+def c017 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 1086))
   | 1 => some (.inc 1 (some 1090))
@@ -1209,7 +1213,7 @@ private def c017 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 1143))
   | 63 => some (.dec 7 (some 1154) (some 1152))
   | _ => none
-private def c018 (i : Nat) : Option Instruction :=
+def c018 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 2 (some 1153))
   | 1 => some (.jump (some 1151))
@@ -1276,7 +1280,7 @@ private def c018 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 1212))
   | 63 => some (.dec 4 (some 1219) (some 1216))
   | _ => none
-private def c019 (i : Nat) : Option Instruction :=
+def c019 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 1217))
   | 1 => some (.inc 6 (some 1218))
@@ -1343,7 +1347,7 @@ private def c019 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 1 (some 1281) (some 1279))
   | 63 => some (.inc 6 (some 1280))
   | _ => none
-private def c020 (i : Nat) : Option Instruction :=
+def c020 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 1278))
   | 1 => some (.dec 2 (some 1284) (some 1282))
@@ -1410,7 +1414,7 @@ private def c020 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 6 (some 1348) (some 1343))
   | 63 => some (.inc 7 (some 1344))
   | _ => none
-private def c021 (i : Nat) : Option Instruction :=
+def c021 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 6 (some 1347) (some 1345))
   | 1 => some (.inc 1 (some 1346))
@@ -1477,7 +1481,7 @@ private def c021 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 1407))
   | 63 => some (.inc 1 (some 1408))
   | _ => none
-private def c022 (i : Nat) : Option Instruction :=
+def c022 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 1409))
   | 1 => some (.inc 1 (some 1410))
@@ -1544,7 +1548,7 @@ private def c022 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 1471))
   | 63 => some (.jump (some 1469))
   | _ => none
-private def c023 (i : Nat) : Option Instruction :=
+def c023 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 1 (some 1476) (some 1473))
   | 1 => some (.inc 7 (some 1474))
@@ -1611,7 +1615,7 @@ private def c023 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 7 (some 1537) (some 1535))
   | 63 => some (.inc 2 (some 1536))
   | _ => none
-private def c024 (i : Nat) : Option Instruction :=
+def c024 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 1534))
   | 1 => some (.dec 3 (some 1541) (some 1538))
@@ -1678,7 +1682,7 @@ private def c024 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 1599))
   | 63 => some (.jump (some 1594))
   | _ => none
-private def c025 (i : Nat) : Option Instruction :=
+def c025 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 1601))
   | 1 => some (.inc 1 (some 1602))
@@ -1745,7 +1749,7 @@ private def c025 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 6 (some 1663))
   | 63 => some (.jump (some 1660))
   | _ => none
-private def c026 (i : Nat) : Option Instruction :=
+def c026 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 6 (some 1670) (some 1665))
   | 1 => some (.inc 7 (some 1666))
@@ -1812,7 +1816,7 @@ private def c026 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 6 (some 1729) (some 1727))
   | 63 => some (.inc 1 (some 1728))
   | _ => none
-private def c027 (i : Nat) : Option Instruction :=
+def c027 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 1726))
   | 1 => some (.jump (some 1720))
@@ -1879,7 +1883,7 @@ private def c027 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 1788))
   | 63 => some (.dec 1 (some 1794) (some 1792))
   | _ => none
-private def c028 (i : Nat) : Option Instruction :=
+def c028 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 6 (some 1793))
   | 1 => some (.jump (some 1791))
@@ -1946,7 +1950,7 @@ private def c028 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 7 (some 1855))
   | 63 => some (.inc 6 (some 1856))
   | _ => none
-private def c029 (i : Nat) : Option Instruction :=
+def c029 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 1853))
   | 1 => some (.dec 6 (some 1863) (some 1858))
@@ -2013,7 +2017,7 @@ private def c029 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 1916))
   | 63 => some (.jump (some 1910))
   | _ => none
-private def c030 (i : Nat) : Option Instruction :=
+def c030 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 7 (some 1926) (some 1921))
   | 1 => some (.inc 1 (some 1922))
@@ -2080,7 +2084,7 @@ private def c030 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 1986))
   | 63 => some (.dec 7 (some 1986) (some 1984))
   | _ => none
-private def c031 (i : Nat) : Option Instruction :=
+def c031 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 6 (some 1985))
   | 1 => some (.jump (some 1983))
@@ -2147,7 +2151,7 @@ private def c031 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 7 (some 2047))
   | 63 => some (.inc 6 (some 2048))
   | _ => none
-private def c032 (i : Nat) : Option Instruction :=
+def c032 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 2045))
   | 1 => some (.dec 6 (some 2055) (some 2050))
@@ -2214,7 +2218,7 @@ private def c032 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 6 (some 2113) (some 2111))
   | 63 => some (.inc 5 (some 2112))
   | _ => none
-private def c033 (i : Nat) : Option Instruction :=
+def c033 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 2110))
   | 1 => some (.dec 1 (some 2116) (some 2114))
@@ -2281,7 +2285,7 @@ private def c033 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 7 (some 2177) (some 2175))
   | 63 => some (.inc 2 (some 2176))
   | _ => none
-private def c034 (i : Nat) : Option Instruction :=
+def c034 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 2174))
   | 1 => some (.dec 1 (some 2181) (some 2178))
@@ -2348,7 +2352,7 @@ private def c034 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 2 (some 2239))
   | 63 => some (.jump (some 2237))
   | _ => none
-private def c035 (i : Nat) : Option Instruction :=
+def c035 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 5 (some 2244) (some 2241))
   | 1 => some (.inc 1 (some 2242))
@@ -2415,7 +2419,7 @@ private def c035 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 1 (some 2305) (some 2303))
   | 63 => some (.inc 6 (some 2304))
   | _ => none
-private def c036 (i : Nat) : Option Instruction :=
+def c036 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 2302))
   | 1 => some (.dec 2 (some 2308) (some 2306))
@@ -2482,7 +2486,7 @@ private def c036 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 2 (some 2367))
   | 63 => some (.jump (some 2365))
   | _ => none
-private def c037 (i : Nat) : Option Instruction :=
+def c037 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 1 (some 2372) (some 2369))
   | 1 => some (.inc 7 (some 2370))
@@ -2549,7 +2553,7 @@ private def c037 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 4 (some 2434) (some 2431))
   | 63 => some (.inc 1 (some 2432))
   | _ => none
-private def c038 (i : Nat) : Option Instruction :=
+def c038 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 6 (some 2433))
   | 1 => some (.jump (some 2430))
@@ -2616,7 +2620,7 @@ private def c038 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 6 (some 2495))
   | 63 => some (.jump (some 2493))
   | _ => none
-private def c039 (i : Nat) : Option Instruction :=
+def c039 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 2489))
   | 1 => some (.dec 7 (some 2500) (some 2498))
@@ -2683,7 +2687,7 @@ private def c039 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 2556))
   | 63 => some (.jump (some 2550))
   | _ => none
-private def c040 (i : Nat) : Option Instruction :=
+def c040 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 7 (some 2566) (some 2561))
   | 1 => some (.inc 1 (some 2562))
@@ -2750,7 +2754,7 @@ private def c040 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 2615))
   | 63 => some (.dec 7 (some 2626) (some 2624))
   | _ => none
-private def c041 (i : Nat) : Option Instruction :=
+def c041 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 2 (some 2625))
   | 1 => some (.jump (some 2623))
@@ -2817,7 +2821,7 @@ private def c041 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 2684))
   | 63 => some (.dec 5 (some 2691) (some 2688))
   | _ => none
-private def c042 (i : Nat) : Option Instruction :=
+def c042 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 2689))
   | 1 => some (.inc 6 (some 2690))
@@ -2884,7 +2888,7 @@ private def c042 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 2748))
   | 63 => some (.dec 2 (some 2754) (some 2752))
   | _ => none
-private def c043 (i : Nat) : Option Instruction :=
+def c043 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 2753))
   | 1 => some (.jump (some 2751))
@@ -2951,7 +2955,7 @@ private def c043 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 2811))
   | 63 => some (.dec 6 (some 2821) (some 2816))
   | _ => none
-private def c044 (i : Nat) : Option Instruction :=
+def c044 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 7 (some 2817))
   | 1 => some (.dec 6 (some 2820) (some 2818))
@@ -3018,7 +3022,7 @@ private def c044 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 7 (some 2884) (some 2879))
   | 63 => some (.inc 1 (some 2880))
   | _ => none
-private def c045 (i : Nat) : Option Instruction :=
+def c045 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 2881))
   | 1 => some (.inc 1 (some 2882))
@@ -3085,7 +3089,7 @@ private def c045 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 1 (some 2946) (some 2943))
   | 63 => some (.inc 7 (some 2944))
   | _ => none
-private def c046 (i : Nat) : Option Instruction :=
+def c046 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 6 (some 2945))
   | 1 => some (.jump (some 2942))
@@ -3152,7 +3156,7 @@ private def c046 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 3007))
   | 63 => some (.jump (some 3005))
   | _ => none
-private def c047 (i : Nat) : Option Instruction :=
+def c047 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 2999))
   | 1 => some (.dec 7 (some 3015) (some 3010))
@@ -3219,7 +3223,7 @@ private def c047 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 3068))
   | 63 => some (.dec 2 (some 3074) (some 3072))
   | _ => none
-private def c048 (i : Nat) : Option Instruction :=
+def c048 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 3073))
   | 1 => some (.jump (some 3071))
@@ -3286,7 +3290,7 @@ private def c048 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 7 (some 3135))
   | 63 => some (.inc 6 (some 3136))
   | _ => none
-private def c049 (i : Nat) : Option Instruction :=
+def c049 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 3133))
   | 1 => some (.dec 6 (some 3143) (some 3138))
@@ -3353,7 +3357,7 @@ private def c049 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 3195))
   | 63 => some (.dec 6 (some 3202) (some 3200))
   | _ => none
-private def c050 (i : Nat) : Option Instruction :=
+def c050 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 3 (some 3201))
   | 1 => some (.jump (some 3199))
@@ -3420,7 +3424,7 @@ private def c050 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 1 (some 3266) (some 3263))
   | 63 => some (.inc 7 (some 3264))
   | _ => none
-private def c051 (i : Nat) : Option Instruction :=
+def c051 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 6 (some 3265))
   | 1 => some (.jump (some 3262))
@@ -3487,7 +3491,7 @@ private def c051 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 2 (some 3327))
   | 63 => some (.jump (some 3325))
   | _ => none
-private def c052 (i : Nat) : Option Instruction :=
+def c052 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 3329))
   | 1 => some (.dec 2 (some 3337) (some 3330))
@@ -3554,7 +3558,7 @@ private def c052 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 7 (some 3391))
   | 63 => some (.inc 6 (some 3392))
   | _ => none
-private def c053 (i : Nat) : Option Instruction :=
+def c053 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 3389))
   | 1 => some (.dec 6 (some 3399) (some 3394))
@@ -3621,7 +3625,7 @@ private def c053 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 3455))
   | 63 => some (.inc 1 (some 3456))
   | _ => none
-private def c054 (i : Nat) : Option Instruction :=
+def c054 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 3451))
   | 1 => some (.inc 1 (some 3458))
@@ -3688,7 +3692,7 @@ private def c054 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 7 (some 3519))
   | 63 => some (.inc 6 (some 3520))
   | _ => none
-private def c055 (i : Nat) : Option Instruction :=
+def c055 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 3517))
   | 1 => some (.dec 6 (some 3527) (some 3522))
@@ -3755,7 +3759,7 @@ private def c055 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 6 (some 3585) (some 3583))
   | 63 => some (.inc 1 (some 3584))
   | _ => none
-private def c056 (i : Nat) : Option Instruction :=
+def c056 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 3582))
   | 1 => some (.jump (some 3576))
@@ -3822,7 +3826,7 @@ private def c056 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 3639))
   | 63 => some (.dec 7 (some 3650) (some 3648))
   | _ => none
-private def c057 (i : Nat) : Option Instruction :=
+def c057 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 2 (some 3649))
   | 1 => some (.jump (some 3647))
@@ -3889,7 +3893,7 @@ private def c057 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 6 (some 3716) (some 3711))
   | 63 => some (.inc 7 (some 3712))
   | _ => none
-private def c058 (i : Nat) : Option Instruction :=
+def c058 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.dec 6 (some 3715) (some 3713))
   | 1 => some (.inc 1 (some 3714))
@@ -3956,7 +3960,7 @@ private def c058 (i : Nat) : Option Instruction :=
   | 62 => some (.dec 6 (some 3776) (some 3775))
   | 63 => some (.jump (some 3773))
   | _ => none
-private def c059 (i : Nat) : Option Instruction :=
+def c059 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 3778))
   | 1 => some (.dec 6 (some 3783) (some 3778))
@@ -4023,7 +4027,7 @@ private def c059 (i : Nat) : Option Instruction :=
   | 62 => some (.inc 1 (some 3839))
   | 63 => some (.inc 6 (some 3840))
   | _ => none
-private def c060 (i : Nat) : Option Instruction :=
+def c060 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.jump (some 3837))
   | 1 => some (.dec 6 (some 3844) (some 3842))
@@ -4090,7 +4094,7 @@ private def c060 (i : Nat) : Option Instruction :=
   | 62 => some (.jump (some 3900))
   | 63 => some (.dec 4 (some 3907) (some 3904))
   | _ => none
-private def c061 (i : Nat) : Option Instruction :=
+def c061 (i : Nat) : Option Instruction :=
   match i with
   | 0 => some (.inc 1 (some 3905))
   | 1 => some (.inc 6 (some 3906))

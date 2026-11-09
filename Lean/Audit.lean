@@ -1,4 +1,8 @@
-import PA211
+module
+
+public import PA211
+
+@[expose] public section
 
 #print axioms PA211.UserCandidate.CandidateTable.native_boxes
 #print axioms PA211.UserCandidate.StateBound.domain

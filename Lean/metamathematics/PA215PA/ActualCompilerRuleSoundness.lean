@@ -1,4 +1,8 @@
-import PA215PA.ActualCompilerRecursiveSoundness
+module
+
+public import PA215PA.ActualCompilerRecursiveSoundness
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerLeafSoundness
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic

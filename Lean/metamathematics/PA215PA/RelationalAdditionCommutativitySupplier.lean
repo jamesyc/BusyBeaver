@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCommutativityInduction
+module
+
+public import PA215PA.RelationalAdditionCommutativityInduction
+
+@[expose] public section
 
 /-! Actual repaired-basis commutativity, with every finite theorem leaf paid.
 The budget records only arithmetic bounds on explicit finite derivations. -/

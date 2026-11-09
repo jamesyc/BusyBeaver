@@ -1,5 +1,9 @@
-import PA215PA.RelationalOrdinalInductionPredecessor
-import PA215PA.RelationalFormulaCongruence
+module
+
+public import PA215PA.RelationalOrdinalInductionPredecessor
+public import PA215PA.RelationalFormulaCongruence
+
+@[expose] public section
 
 /-! Parameter-preserving represented traces for arbitrary relational formulas.
 The property may have arbitrary nested quantifiers and Nat free parameters. -/

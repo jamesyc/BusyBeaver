@@ -1,6 +1,10 @@
-import PA215PA.ActualProofCodeComplete
-import PA215PA.ActualCheckerStandard
-import Foundation.FirstOrder.Arithmetic.R0.Basic
+module
+
+public import PA215PA.ActualProofCodeComplete
+public import PA215PA.ActualCheckerStandard
+public import Foundation.FirstOrder.Arithmetic.R0.Basic
+
+@[expose] public section
 
 /-! Fixed closed certificate existence by Sigma-one completeness. The proof
 parameter and output number are standard host data; this is not an internal

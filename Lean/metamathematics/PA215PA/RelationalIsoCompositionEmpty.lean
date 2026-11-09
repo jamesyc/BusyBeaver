@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionPrefix
+module
+
+public import PA215PA.RelationalIsoCompositionPrefix
+
+@[expose] public section
 
 /-! The displayed empty object is an actual composition-prefix witness. -/
 namespace PA215.PA.RelationalSource.PairGraph

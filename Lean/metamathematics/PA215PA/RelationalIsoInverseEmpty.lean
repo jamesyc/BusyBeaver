@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInversePrefix
+module
+
+public import PA215PA.RelationalIsoInversePrefix
+
+@[expose] public section
 
 /-! An empty object is itself an inverse-prefix witness for every graph.
 No equality, extensionality, or additional existence premise is used. -/

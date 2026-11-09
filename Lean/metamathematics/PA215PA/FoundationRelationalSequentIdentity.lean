@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentFold
+module
+
+public import PA215PA.FoundationRelationalSequentFold
+
+@[expose] public section
 
 /-! The numeric relational-source identity case. NNF negation is transported
 by accepted certificates, never asserted equal to native negation. -/

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermLanguage
+module
+
+public import PA215PA.NumericPAeqTermLanguage
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

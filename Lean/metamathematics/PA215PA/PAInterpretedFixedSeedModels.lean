@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedFixedSeedCalibration
-import PA215PA.FoundationRelationalSequentFixedGraph
-import PA215PA.FoundationRelationalSequentClosedRelocation
+module
+
+public import PA215PA.PAInterpretedFixedSeedCalibration
+public import PA215PA.FoundationRelationalSequentFixedGraph
+public import PA215PA.FoundationRelationalSequentClosedRelocation
+
+@[expose] public section
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND
 open FFL.FirstOrder.Arithmetic FFL.FirstOrder.Arithmetic.Bootstrapping

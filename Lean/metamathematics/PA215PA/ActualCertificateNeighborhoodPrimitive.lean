@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateNeighborhoodEquivalence
+module
+
+public import PA215PA.ActualCertificateNeighborhoodEquivalence
+
+@[expose] public section
 
 /-! Numeric R1/R3/R5/R7 and noncircular primitive equality recovery.
 The only equality-vacuity used here is the special actual-R7 label. -/

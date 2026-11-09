@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitutionAtomicWitnesses
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionAtomicWitnesses
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

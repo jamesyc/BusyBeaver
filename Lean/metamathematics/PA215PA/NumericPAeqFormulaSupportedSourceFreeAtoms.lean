@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaSourceFreeParameters
-import PA215PA.NumericPAeqFormulaSupportedAtomValidity
-import PA215PA.NumericPAeqTermSupportedSourceFree
+module
+
+public import PA215PA.NumericPAeqFormulaSourceFreeParameters
+public import PA215PA.NumericPAeqFormulaSupportedAtomValidity
+public import PA215PA.NumericPAeqTermSupportedSourceFree
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

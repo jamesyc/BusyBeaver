@@ -1,6 +1,10 @@
-import PA215PA.RelationalClosedCertificateCoherenceSupport
-import PA215PA.PAInterpretedParameterClosure
-import PA215PA.RelationalZeroIso
+module
+
+public import PA215PA.RelationalClosedCertificateCoherenceSupport
+public import PA215PA.PAInterpretedParameterClosure
+public import PA215PA.RelationalZeroIso
+
+@[expose] public section
 namespace PA215.PA.RelationalClosedCertificate
 open FFL FFL.FirstOrder RelationalSource ND PairGraph ForwardRelational
 attribute [local irreducible] Ordinal.zero orderIso

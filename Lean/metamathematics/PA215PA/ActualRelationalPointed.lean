@@ -1,5 +1,9 @@
-import PA215PA.ActualPointedSchema
-import PA215PA.ActualRelationalFreshening
+module
+
+public import PA215PA.ActualPointedSchema
+public import PA215PA.ActualRelationalFreshening
+
+@[expose] public section
 
 /-! Constructive pointed-family supplier for the restricted relational image.
 Padding is an explicit new witness formula, not a change to the machine or

@@ -1,6 +1,10 @@
-import PA213PA.InternalLeftPhase
-import PA213PA.InternalScanRight
-import PA213.NativeTable
+module
+
+public import PA213PA.InternalLeftPhase
+public import PA213PA.InternalScanRight
+public import PA213.NativeTable
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.NativeRows
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoEndpointFresh
-import PA215PA.RelationalOrdinalInductionMembers
+module
+
+public import PA215PA.RelationalIsoEndpointFresh
+public import PA215PA.RelationalOrdinalInductionMembers
+
+@[expose] public section
 
 /-! Injectivity of the extension, using freshness of the old range endpoint. -/
 namespace PA215.PA.RelationalSource.PairGraph

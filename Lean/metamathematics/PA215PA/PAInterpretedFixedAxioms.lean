@@ -1,13 +1,17 @@
-import PA215PA.PAPresentationND
-import PA215PA.PAInterpretedReflexivity
-import PA215PA.PAInterpretedSymmetry
-import PA215PA.PAInterpretedTransitivity
-import PA215PA.PAInterpretedFunctionCongruenceBinaryImage
-import PA215PA.PAInterpretedFunctionCongruenceSuccImage
-import PA215PA.PAInterpretedArithmeticZeroImage
-import PA215PA.PAInterpretedZeroNotSucc
-import PA215PA.PAInterpretedSuccInjective
-import PA215PA.PAInterpretedMulSuccSupplier
+module
+
+public import PA215PA.PAPresentationND
+public import PA215PA.PAInterpretedReflexivity
+public import PA215PA.PAInterpretedSymmetry
+public import PA215PA.PAInterpretedTransitivity
+public import PA215PA.PAInterpretedFunctionCongruenceBinaryImage
+public import PA215PA.PAInterpretedFunctionCongruenceSuccImage
+public import PA215PA.PAInterpretedArithmeticZeroImage
+public import PA215PA.PAInterpretedZeroNotSucc
+public import PA215PA.PAInterpretedSuccInjective
+public import PA215PA.PAInterpretedMulSuccSupplier
+
+@[expose] public section
 
 /-! Exhaustive constructive assembly of all twelve literal fixed PAeq images.
 The dispatch uses decidable syntax equality, not elimination of Prop-only

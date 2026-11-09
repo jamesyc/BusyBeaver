@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedAdditionSuccessorPayloads
-import PA215PA.PAInterpretedFunctionCongruenceWitnesses
+module
+
+public import PA215PA.PAInterpretedAdditionSuccessorPayloads
+public import PA215PA.PAInterpretedFunctionCongruenceWitnesses
+
+@[expose] public section
 
 /-! Both literal term sides have real values, and every such value pair is
 related by the correctly oriented actual order isomorphism. -/

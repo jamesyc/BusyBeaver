@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSupportedVectorRealizationSyntax
-import PA215PA.NumericPAeqTermSupportedSourceBShift
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealizationSyntax
+public import PA215PA.NumericPAeqTermSupportedSourceBShift
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

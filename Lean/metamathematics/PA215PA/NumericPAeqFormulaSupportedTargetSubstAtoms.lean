@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqFormulaTargetSubstConstructors
-import PA215PA.NumericPAeqFormulaTargetSubstParameters
-import PA215PA.NumericPAeqFormulaSupportedAtomValidity
-import PA215PA.NumericPAeqTermSupportedTargetSubst
+module
+
+public import PA215PA.NumericPAeqFormulaTargetSubstConstructors
+public import PA215PA.NumericPAeqFormulaTargetSubstParameters
+public import PA215PA.NumericPAeqFormulaSupportedAtomValidity
+public import PA215PA.NumericPAeqTermSupportedTargetSubst
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

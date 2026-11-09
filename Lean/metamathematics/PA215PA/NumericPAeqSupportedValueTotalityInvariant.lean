@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSupportedValueTotalitySteps
+module
+
+public import PA215PA.NumericPAeqSupportedValueTotalitySteps
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueTotality
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

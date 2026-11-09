@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PANativeTable
-import PA211.UserCandidate.RuntimeContracts
+public import User211PANativeTable
+public import PA211.UserCandidate.RuntimeContracts
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 2000000
 namespace PA211.UserCandidate.InternalCallAudit

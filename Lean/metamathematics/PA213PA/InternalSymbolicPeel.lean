@@ -1,5 +1,9 @@
-import PA213PA.InternalSymbolicWords
-import PA213PA.InternalNativeRows
+module
+
+public import PA213PA.InternalSymbolicWords
+public import PA213PA.InternalNativeRows
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.Symbolic
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

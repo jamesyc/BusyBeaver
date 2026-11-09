@@ -1,4 +1,8 @@
-import PA215.NativeTable
+module
+
+public import PA215.NativeTable
+
+@[expose] public section
 
 namespace PA215.Contracts
 open PA215.Zip PA215.Runtime PA215.NativeTable

@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedInductionContext
+module
+
+public import PA215PA.PAInterpretedInductionContext
+
+@[expose] public section
 
 /-! Every finite source premise of guarded interpreted induction is supplied
 by an actual numerical-basis derivation. Bounds are arithmetic inequalities;

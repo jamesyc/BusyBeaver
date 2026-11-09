@@ -1,8 +1,12 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceTraceInvariant
-import User211CompleteModelCoverage
-import User211EndpointInternalSymbolicGraphs
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceTraceInvariant
+public import User211CompleteModelCoverage
+public import User211EndpointInternalSymbolicGraphs
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open PA213.PA.InternalTrace.CodedSource

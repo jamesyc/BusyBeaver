@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrderIso
+module
+
+public import PA215PA.RelationalOrderIso
+
+@[expose] public section
 
 /-! The displayed empty object itself is an actual empty identity graph. -/
 namespace PA215.PA.RelationalSource.PairGraph

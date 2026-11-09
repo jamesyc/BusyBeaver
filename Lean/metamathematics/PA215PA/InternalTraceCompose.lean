@@ -1,4 +1,8 @@
-import PA215PA.InternalTraceAppend
+module
+
+public import PA215PA.InternalTraceAppend
+
+@[expose] public section
 
 namespace PA215.PA.InternalTrace
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

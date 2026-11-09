@@ -1,4 +1,8 @@
-import PA215PA.NativeNames
+module
+
+public import PA215PA.NativeNames
+
+@[expose] public section
 
 /-! Literal atom-label replacement from NumericNamed238.v at
 jeff87654/busy-beaver@84049b5e753190cf328cbc2d2710791ad32ad59c.

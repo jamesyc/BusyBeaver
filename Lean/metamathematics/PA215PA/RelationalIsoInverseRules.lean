@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoInverseEntriesExtension
-import PA215PA.RelationalGraphOperations
+module
+
+public import PA215PA.RelationalIsoInverseEntriesExtension
+public import PA215PA.RelationalGraphOperations
+
+@[expose] public section
 
 /-! Pointwise rules and capture-aware shifts for inverse prefixes. -/
 namespace PA215.PA.RelationalSource.PairGraph

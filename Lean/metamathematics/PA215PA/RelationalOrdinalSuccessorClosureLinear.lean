@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosureStructural
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosureStructural
+
+@[expose] public section
 
 /-! The fourth structural successor clause: member comparability. Equality
 transitivity is an explicit ordinary equality-base premise. -/

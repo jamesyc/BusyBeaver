@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateOrdinalSyntax
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalSyntax
+
+@[expose] public section
 /-! The unary predicate hole and literal finite ordinal-induction statement.
 All formulas use the existing Foundation syntax over the template language. -/
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal

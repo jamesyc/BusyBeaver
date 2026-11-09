@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedVariableEqualityPayload
+module
+
+public import PA215PA.PAInterpretedVariableEqualityPayload
+
+@[expose] public section
 
 /-! Exact variable-equality elimination to actual order isomorphism. -/
 namespace PA215.PA.ForwardRelational
@@ -7,7 +11,7 @@ open Ordinal (Term Formula)
 attribute [local irreducible] value PairGraph.orderIso Ordinal.domain
 set_option maxHeartbeats 800000
 
-private theorem freeDoubleShift (x : Term 0) :
+theorem freeDoubleShift (x : Term 0) :
     Rew.free (Rew.bShift (Rew.bShift x)) = Rew.bShift (Rew.shift x) := by
   cases x with
   | bvar i => nomatch i

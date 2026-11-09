@@ -1,5 +1,9 @@
-import PA215PA.ActualCertificateEquivalenceNNFCases
-import PA215PA.FoundationRelationalCodeRecursion
+module
+
+public import PA215PA.ActualCertificateEquivalenceNNFCases
+public import PA215PA.FoundationRelationalCodeRecursion
+
+@[expose] public section
 
 /-! The exact first-order certificate relation and course-of-values invariant
 for subsequent full-PA NNF induction. This file does not prove that induction. -/

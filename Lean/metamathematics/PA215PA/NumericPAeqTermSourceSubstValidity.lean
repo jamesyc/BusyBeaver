@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermValidity
+module
+
+public import PA215PA.NumericPAeqTermValidity
+
+@[expose] public section
 
 /-! Source singleton substitution arity from original source-code coverage only.
 The substituted code is not assumed bounded by the finite free environment. -/

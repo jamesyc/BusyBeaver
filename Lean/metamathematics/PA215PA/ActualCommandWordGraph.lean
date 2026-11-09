@@ -1,4 +1,8 @@
-import PA215PA.ActualCommandStepGraph
+module
+
+public import PA215PA.ActualCommandStepGraph
+
+@[expose] public section
 namespace PA215.PA.ActualCommandWordGraph
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

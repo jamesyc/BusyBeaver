@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaValidity
-import PA215PA.NumericPAeqTermTargetSubstTemplates
-import PA215PA.NumericPAeqValueIsoCode
+module
+
+public import PA215PA.NumericPAeqFormulaValidity
+public import PA215PA.NumericPAeqTermTargetSubstTemplates
+public import PA215PA.NumericPAeqValueIsoCode
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

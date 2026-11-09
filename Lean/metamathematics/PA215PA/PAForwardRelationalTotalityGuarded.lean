@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalTotalitySupplier
+module
+
+public import PA215PA.PAForwardRelationalTotalitySupplier
+
+@[expose] public section
 
 /-! Discharging the finite domain assumptions into explicit implication guards.
 Unlike the pointwise supplier, the guarded supplier has no open environment

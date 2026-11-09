@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationZeroLawPrefix
-import PA215PA.RelationalMultiplicationCompactSyntax
+module
+
+public import PA215PA.RelationalMultiplicationZeroLawPrefix
+public import PA215PA.RelationalMultiplicationCompactSyntax
+
+@[expose] public section
 
 /-! Open the displayed graph witness without identifying distinct empty objects. -/
 namespace PA215.PA.RelationalSource.PairGraph

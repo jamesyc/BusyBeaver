@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTemplates
-import PA215PA.PAForwardRelationalRewriting
+module
+
+public import PA215PA.NumericPAeqTermTemplates
+public import PA215PA.PAForwardRelationalRewriting
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueIsoGuard
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

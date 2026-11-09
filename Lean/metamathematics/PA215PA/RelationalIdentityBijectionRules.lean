@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityTotalExtension
+module
+
+public import PA215PA.RelationalIdentityTotalExtension
+
+@[expose] public section
 
 /-! Ordinary equality turns diagonal identity edges into the pointwise
 bijection and order laws. No extensionality of graph objects is used. -/

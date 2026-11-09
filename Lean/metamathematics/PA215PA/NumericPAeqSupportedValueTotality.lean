@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSupportedValueTotalityInvariant
+module
+
+public import PA215PA.NumericPAeqSupportedValueTotalityInvariant
+
+@[expose] public section
 
 /-! Genuine full-PA source-rank induction supplies guarded semantic value
 existence for arbitrary model-valued arithmetic terms, at requested labels. -/

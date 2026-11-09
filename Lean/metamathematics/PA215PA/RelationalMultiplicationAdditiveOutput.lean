@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationGraphExistence
-import PA215PA.RelationalAdditionApplications
+module
+
+public import PA215PA.RelationalMultiplicationGraphExistence
+public import PA215PA.RelationalAdditionApplications
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 open Ordinal (Term Formula)

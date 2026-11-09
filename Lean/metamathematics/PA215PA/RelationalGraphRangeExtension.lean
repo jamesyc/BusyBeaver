@@ -1,4 +1,8 @@
-import PA215PA.RelationalGraphDomainExtension
+module
+
+public import PA215PA.RelationalGraphDomainExtension
+
+@[expose] public section
 
 /-! Full ordinal range preservation under exact graph extension. Raw output
 equalities transport the entire five-clause domain formula. -/

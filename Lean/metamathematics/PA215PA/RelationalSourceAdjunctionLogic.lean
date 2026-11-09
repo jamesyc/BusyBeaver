@@ -1,6 +1,10 @@
-import PA215PA.RelationalSourceND
-import PA215PA.RelationalSourceRewritingAtoms
-import PA215PA.RelationalSourceSeparation
+module
+
+public import PA215PA.RelationalSourceND
+public import PA215PA.RelationalSourceRewritingAtoms
+public import PA215PA.RelationalSourceSeparation
+
+@[expose] public section
 
 /-! Logical filtering step for exact adjunction. All results are actual
 Foundation LK proof terms; the eventual set axiom suppliers remain separate. -/

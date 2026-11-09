@@ -1,7 +1,11 @@
-import PA215PA.RelationalPredicateTemplateSourceShift
-import PA215PA.RelationalPredicateTemplateSourceSubstitution
-import PA215PA.RelationalPredicateTemplateTargetShift
-import PA215PA.RelationalPredicateTemplateSubstitution
+module
+
+public import PA215PA.RelationalPredicateTemplateSourceShift
+public import PA215PA.RelationalPredicateTemplateSourceSubstitution
+public import PA215PA.RelationalPredicateTemplateTargetShift
+public import PA215PA.RelationalPredicateTemplateSubstitution
+
+@[expose] public section
 
 /-! Actual eigenvariable opening. The arbitrary unary hole is shifted along
 with the target free parameters; it is not assumed closed. -/

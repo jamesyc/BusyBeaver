@@ -1,10 +1,14 @@
-import PA215PA.SourceCommandDecodeInternal
+module
+
+public import PA215PA.SourceCommandDecodeInternal
+
+@[expose] public section
 namespace PA215.PA.SourceCommandEncodingInternal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding
 open ActualCheckExpression
-private def tagExpr : Expr := .left .previous
-private def restExpr : Expr := .right .previous
+def tagExpr : Expr := .left .previous
+def restExpr : Expr := .right .previous
 
 def residualExpr : Expr := .ifEq tagExpr (.num 0) restExpr <|
   .ifEq tagExpr (.num 1) (.right restExpr) (.right (.right restExpr))

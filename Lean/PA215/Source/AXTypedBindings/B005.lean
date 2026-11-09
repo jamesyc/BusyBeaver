@@ -1,6 +1,11 @@
-import PA215.Source.AXBindings.B005
-import PA215.Source.AXTypedPlan
-import PA215.Source.ExistingPrivateBound
+module
+
+public import PA215.Source.AXBindings.B005
+public import PA215.Source.AXTypedPlan
+public import PA215.Source.ExistingPrivateBound
+import all PA215.Source.AXBindings.B005
+
+@[expose] public section
 namespace PA215.Source.AXModelBounds
 theorem row831_i0 : resolveAt exactSites 831 = some (Instruction.inc 1 (some 832)) :=
   existingPrivateBound% "PA215.Source.AXBindings.B005" "PA215.Source.AXAll.row831_i0"

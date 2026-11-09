@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentProofBudget
+module
+
+public import PA215PA.FoundationRelationalSequentProofBudget
+
+@[expose] public section
 
 /-! A genuine model-length HFS vector of zero labels, not a host list. -/
 namespace PA215.PA.RelationalSource.Numeric

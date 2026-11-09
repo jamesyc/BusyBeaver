@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeLanguage
+module
+
+public import PA215PA.FoundationRelationalCodeLanguage
+
+@[expose] public section
 
 /-! Guarded variable-label translation using finite HFS environments. This is
 the variable/atom prerequisite, not a total formula or proof interpreter. -/

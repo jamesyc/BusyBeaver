@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaConstruction
+module
+
+public import PA215PA.NumericPAeqFormulaConstruction
+
+@[expose] public section
 
 /-! A genuine total Sigma-one arithmetic-to-relational formula syntax graph.
 This requires PA models, preserves the exact interpretation constructors, and

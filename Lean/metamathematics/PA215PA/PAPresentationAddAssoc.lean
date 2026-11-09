@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationAddZero
+module
+
+public import PA215PA.PAPresentationAddZero
+
+@[expose] public section
 
 /-! A second fixed image: associativity of addition. The induction variable
 is the first argument; two arbitrary parameters are closed and the final

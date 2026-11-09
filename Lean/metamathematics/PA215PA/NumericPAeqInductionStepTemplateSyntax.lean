@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaQuantifierTemplatesCode
-import PA215PA.NumericPAeqValueCoherenceSuccessorCalibration
+module
+
+public import PA215PA.NumericPAeqFormulaQuantifierTemplatesCode
+public import PA215PA.NumericPAeqValueCoherenceSuccessorCalibration
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionStepTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

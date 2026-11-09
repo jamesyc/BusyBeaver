@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeSubstitutionAgreementVectors
+module
+
+public import PA215PA.FoundationPAeqCodeSubstitutionAgreementVectors
+
+@[expose] public section
 /-! Model-valued substitution ignores surplus entries. The proof uses the
 pinned definable formula induction, including unequal vector lengths under binders. -/
 namespace PA215.PA.FoundationPAeqCode

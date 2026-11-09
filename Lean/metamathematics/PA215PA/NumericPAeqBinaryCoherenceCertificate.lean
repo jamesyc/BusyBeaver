@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqBinaryCoherenceCode
-import PA215PA.NumericPAeqBinaryCoherenceCalibration
-import PA215PA.RelationalPredicateBinaryRequested
+module
+
+public import PA215PA.NumericPAeqBinaryCoherenceCode
+public import PA215PA.NumericPAeqBinaryCoherenceCalibration
+public import PA215PA.RelationalPredicateBinaryRequested
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

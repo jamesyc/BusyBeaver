@@ -1,1 +1,5 @@
-import PA211PA.TwoSidedIndependence
+module
+
+public import PA211PA.TwoSidedIndependence
+
+@[expose] public section

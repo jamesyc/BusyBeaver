@@ -1,5 +1,9 @@
-import PA215PA.ActualCompactEquality
-import PA215PA.NativeRenaming
+module
+
+public import PA215PA.ActualCompactEquality
+public import PA215PA.NativeRenaming
+
+@[expose] public section
 
 /-! Atomic label substitution in the actual relational interpretation.
 All uses of equality below mean the explicit neighborhood replacement. -/

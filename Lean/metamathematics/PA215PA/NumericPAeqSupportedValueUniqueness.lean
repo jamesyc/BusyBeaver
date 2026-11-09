@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSupportedValueUniquenessInput
+module
+
+public import PA215PA.NumericPAeqSupportedValueUniquenessInput
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

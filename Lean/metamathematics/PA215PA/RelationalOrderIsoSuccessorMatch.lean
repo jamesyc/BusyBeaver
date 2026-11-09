@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoSuccessorMatchGraph
+module
+
+public import PA215PA.RelationalIsoSuccessorMatchGraph
+
+@[expose] public section
 
 /-! Any representative isomorphic to a displayed successor has a genuine
 ordinal predecessor isomorphic to the original predecessor. -/

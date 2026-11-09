@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermChildren
+module
+
+public import PA215PA.NumericPAeqTermChildren
+
+@[expose] public section
 
 /-! Local cells of an arithmetic-term interpretation witness table. Children
 are shared table records with exact shifted parameter packets. The source

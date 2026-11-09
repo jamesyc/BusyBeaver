@@ -1,4 +1,8 @@
-import PA215.Source.ActualHeadSelectors
+module
+
+public import PA215.Source.ActualHeadSelectors
+
+@[expose] public section
 namespace PA215.Source.ActualCommandMacros
 open Cantor Enumeration ActualAXCode
 open AXCode (wim wal wn wex)

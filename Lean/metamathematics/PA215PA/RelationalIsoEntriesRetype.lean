@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoEntriesExtension
-import PA215PA.RelationalOrderIsoRules
+module
+
+public import PA215PA.RelationalIsoEntriesExtension
+public import PA215PA.RelationalOrderIsoRules
+
+@[expose] public section
 
 /-! Retyping actual graph objects via a new typing proof. Unlike typing alone,
 the explicit old entries premise supplies genuine ordered-pair witnesses. -/

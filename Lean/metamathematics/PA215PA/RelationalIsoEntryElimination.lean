@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoEntries
+module
+
+public import PA215PA.RelationalIsoEntries
+
+@[expose] public section
 
 /-! Finite two-coordinate elimination for an actual graph-object witness. -/
 namespace PA215.PA.RelationalSource.PairGraph

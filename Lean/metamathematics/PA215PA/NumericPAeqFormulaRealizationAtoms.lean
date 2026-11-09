@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaEqualityValueShape
-import PA215PA.NumericPAeqFormulaRealizationAtomTransport
-import PA215PA.NumericPAeqFormulaRealizationConnectives
+module
+
+public import PA215PA.NumericPAeqFormulaEqualityValueShape
+public import PA215PA.NumericPAeqFormulaRealizationAtomTransport
+public import PA215PA.NumericPAeqFormulaRealizationConnectives
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

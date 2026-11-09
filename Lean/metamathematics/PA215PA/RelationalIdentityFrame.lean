@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityTotalExtension
+module
+
+public import PA215PA.RelationalIdentityTotalExtension
+
+@[expose] public section
 
 /-! Actual finite proof data for an identity graph successor construction. -/
 namespace PA215.PA.RelationalSource.PairGraph

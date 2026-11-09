@@ -1,8 +1,12 @@
-import PA215PA.Theory
-import PA213PA.InternalActualRefutationSentences
-import PA213PA.InternalCodedSourceSeedRoot
-import PA213PA.InternalCodedSourceEnumeration
-import PA213PA.InternalSeedHaltingBridge
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalActualRefutationSentences
+public import PA213PA.InternalCodedSourceSeedRoot
+public import PA213PA.InternalCodedSourceEnumeration
+public import PA213PA.InternalSeedHaltingBridge
+
+@[expose] public section
 namespace PA213.PA.InternalActualRefutation
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceLK
-import PA215PA.ActualCompactEquality
+module
+
+public import PA215PA.RelationalSourceLK
+public import PA215PA.ActualCompactEquality
+
+@[expose] public section
 
 /-! Literal source formulas for Compact238 equality_base and ir, with finite
 actual-basis suppliers for their relational translation. No set/PA axioms are

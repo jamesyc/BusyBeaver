@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaRecursion
-import PA215PA.NumericPAeqFormulaCoverage
-import PA215PA.NumericPAeqTermValidity
+module
+
+public import PA215PA.NumericPAeqFormulaRecursion
+public import PA215PA.NumericPAeqFormulaCoverage
+public import PA215PA.NumericPAeqTermValidity
+
+@[expose] public section
 
 /-! Both real value-syntax children of an equality atom are well scoped in the
 same two-binder target context. No source term is treated as a target variable. -/

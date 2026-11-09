@@ -1,4 +1,8 @@
-import PA215PA.RelationalGraphRestrictionInclusive
+module
+
+public import PA215PA.RelationalGraphRestrictionInclusive
+
+@[expose] public section
 
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND

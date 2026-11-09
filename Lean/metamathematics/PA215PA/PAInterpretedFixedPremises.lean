@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedFixedSupplier
-import PA215PA.PAInterpretedND
+module
+
+public import PA215PA.PAInterpretedFixedSupplier
+public import PA215PA.PAInterpretedND
+
+@[expose] public section
 
 /-! The paid fixed-image context is stable under genuine target eigenvariable
 shifts and supplies the logical compiler's explicit arithmetic proof data. -/

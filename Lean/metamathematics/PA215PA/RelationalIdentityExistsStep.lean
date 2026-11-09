@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentitySuccessorWitness
+module
+
+public import PA215PA.RelationalIdentitySuccessorWitness
+
+@[expose] public section
 
 /-! Successor closure of the existential identity-graph predicate. -/
 namespace PA215.PA.RelationalSource.PairGraph

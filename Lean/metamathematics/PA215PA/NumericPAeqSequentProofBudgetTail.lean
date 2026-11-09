@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSequentProofBudget
+module
+
+public import PA215PA.NumericPAeqSequentProofBudget
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula.Sequent
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

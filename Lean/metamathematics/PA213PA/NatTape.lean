@@ -1,4 +1,8 @@
-import PA213.Tape
+module
+
+public import PA213.Tape
+
+@[expose] public section
 
 /-! Two natural-number stacks represent a finite binary tape relative to its
 head. This representation connects arithmetic data with the independently

@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalTrace
-import User211PAInternalRows
+public import User211PAInternalTrace
+public import User211PAInternalRows
+
+@[expose] public section
 
 /-! Object-PA prefix extension specialized to every exact literal machine row.
 This composes the accepted row-totality proofs with HFS trace extension. -/

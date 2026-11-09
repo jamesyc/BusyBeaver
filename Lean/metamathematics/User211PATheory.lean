@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import Foundation.FirstOrder.Arithmetic.Schemata
+public import Foundation.FirstOrder.Arithmetic.Schemata
+
+@[expose] public section
 
 /-! The fixed first-order Peano arithmetic presentation. This small interface
 does not import arithmetization or incompleteness, so elementary internal PA

@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateOrdinalRewriting
-import PA215PA.RelationalPredicateTemplateLiftLogic
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalRewriting
+public import PA215PA.RelationalPredicateTemplateLiftLogic
+
+@[expose] public section
 /-! Actual finite LK trace operations in the unary-predicate template language. -/
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder ND

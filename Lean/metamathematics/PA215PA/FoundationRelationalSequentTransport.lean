@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentAllocator
+module
+
+public import PA215PA.FoundationRelationalSequentAllocator
+
+@[expose] public section
 
 /-! Actual HFS sequent allocator transport and vacuity, obtained from the
 proved model-length fold/member theorems and explicit per-member suppliers. -/

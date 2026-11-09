@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSequentEigenShift
-import PA215PA.NumericPAeqSequentDerivationInvariant
-import PA215PA.NumericPAeqValueCertificateComposition
+module
+
+public import PA215PA.NumericPAeqSequentEigenShift
+public import PA215PA.NumericPAeqSequentDerivationInvariant
+public import PA215PA.NumericPAeqValueCertificateComposition
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula.Sequent
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

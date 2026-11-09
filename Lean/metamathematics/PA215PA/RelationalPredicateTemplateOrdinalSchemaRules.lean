@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateOrdinalRewriting
-import PA215PA.RelationalPredicateTemplateLiftLogic
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalRewriting
+public import PA215PA.RelationalPredicateTemplateLiftLogic
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder ND
 def inductionBaseAt {Γ : List Form} (p : Formula 1) (a : Nat)

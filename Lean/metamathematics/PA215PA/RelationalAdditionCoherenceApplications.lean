@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionCoherenceSupplier
-import PA215PA.RelationalOrderIsoReflexivity
+module
+
+public import PA215PA.RelationalAdditionCoherenceSupplier
+public import PA215PA.RelationalOrderIsoReflexivity
+
+@[expose] public section
 
 /-! Applications of the paid full two-input coherence sentence. -/
 namespace PA215.PA.RelationalSource.PairGraph

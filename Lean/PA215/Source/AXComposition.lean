@@ -1,6 +1,10 @@
-import PA215.Source.AXMacroPlan
-import PA215.Source.AXActualSpec
-import PA215.Source.AXGate
+module
+
+public import PA215.Source.AXMacroPlan
+public import PA215.Source.AXActualSpec
+public import PA215.Source.AXGate
+
+@[expose] public section
 namespace PA215.Source.AXComposition
 
 private theorem gate_registers (s : AXMacro.Store) (t a d h bottom : Nat) (f : Registers) :

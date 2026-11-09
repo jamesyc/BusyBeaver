@@ -1,5 +1,9 @@
-import PA215.Source.WrapperStack
-import PA215PA.CommandSemantics
+module
+
+public import PA215.Source.WrapperStack
+public import PA215PA.CommandSemantics
+
+@[expose] public section
 
 /-! Native proof witnesses above the SAME opaque stack tail are preserved
 by the exact arithmetic commands. NoRefutation is explicit here; its actual

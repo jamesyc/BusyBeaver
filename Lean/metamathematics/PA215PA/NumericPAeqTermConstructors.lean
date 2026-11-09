@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermTemplates
+module
+
+public import PA215PA.NumericPAeqTermTemplates
+
+@[expose] public section
 
 /-! Actual relational formula-code constructors for arithmetic term values.
 The successor child is supplied under one additional bound variable; it is not

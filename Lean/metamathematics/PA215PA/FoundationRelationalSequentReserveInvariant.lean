@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentAllocator
-import PA215PA.ActualCertificateNeighborhoodBinders
+module
+
+public import PA215PA.FoundationRelationalSequentAllocator
+public import PA215PA.ActualCertificateNeighborhoodBinders
+
+@[expose] public section
 
 /-! Exact paired certificate relation and explicit full-PA invariant for
 changing only the source translator reserve, under both coverage guards. -/

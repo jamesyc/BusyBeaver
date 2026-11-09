@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeTermBlueprint
+module
+
+public import PA215PA.FoundationPAeqCodeTermBlueprint
+
+@[expose] public section
 
 /-! A genuine IΣ₁-total numeric term translation obtained from the unchanged
 parameter TermRec. Invalid original source term codes return zero by that

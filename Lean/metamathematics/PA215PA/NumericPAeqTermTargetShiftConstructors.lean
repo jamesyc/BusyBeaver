@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTargetShiftParameters
-import PA215PA.NumericPAeqTermBinaryConstructors
+module
+
+public import PA215PA.NumericPAeqTermTargetShiftParameters
+public import PA215PA.NumericPAeqTermBinaryConstructors
+
+@[expose] public section
 
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

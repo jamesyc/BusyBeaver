@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionRecognizer
+module
+
+public import PA215PA.FoundationPAeqCodeInductionRecognizer
+
+@[expose] public section
 /-! Both directions of quotation calibration against exactly universally closed
 successor induction formulas, with the canonical closure arity proved. -/
 namespace PA215.PA.FoundationPAeqCode

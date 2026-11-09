@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionRecurrenceExtension
-import PA215PA.RelationalOrdinalSuccessor
+module
+
+public import PA215PA.RelationalAdditionRecurrenceExtension
+public import PA215PA.RelationalOrdinalSuccessor
+
+@[expose] public section
 
 /-! Finite proof data for an addition-trace extension. Every field is an
 ordinary actual derivation; no trace-existence premise is hidden. -/

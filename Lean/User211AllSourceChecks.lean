@@ -1,65 +1,69 @@
-import User211SourceChecks000
-import User211SourceChecks001
-import User211SourceChecks002
-import User211SourceChecks003
-import User211SourceChecks004
-import User211SourceChecks005
-import User211SourceChecks006
-import User211SourceChecks007
-import User211SourceChecks008
-import User211SourceChecks009
-import User211SourceChecks010
-import User211SourceChecks011
-import User211SourceChecks012
-import User211SourceChecks013
-import User211SourceChecks014
-import User211SourceChecks015
-import User211SourceChecks016
-import User211SourceChecks017
-import User211SourceChecks018
-import User211SourceChecks019
-import User211SourceChecks020
-import User211SourceChecks021
-import User211SourceChecks022
-import User211SourceChecks023
-import User211SourceChecks024
-import User211SourceChecks025
-import User211SourceChecks026
-import User211SourceChecks027
-import User211SourceChecks028
-import User211SourceChecks029
-import User211SourceChecks030
-import User211SourceChecks031
-import User211SourceChecks032
-import User211SourceChecks033
-import User211SourceChecks034
-import User211SourceChecks035
-import User211SourceChecks036
-import User211SourceChecks037
-import User211SourceChecks038
-import User211SourceChecks039
-import User211SourceChecks040
-import User211SourceChecks041
-import User211SourceChecks042
-import User211SourceChecks043
-import User211SourceChecks044
-import User211SourceChecks045
-import User211SourceChecks046
-import User211SourceChecks047
-import User211SourceChecks048
-import User211SourceChecks049
-import User211SourceChecks050
-import User211SourceChecks051
-import User211SourceChecks052
-import User211SourceChecks053
-import User211SourceChecks054
-import User211SourceChecks055
-import User211SourceChecks056
-import User211SourceChecks057
-import User211SourceChecks058
-import User211SourceChecks059
-import User211SourceChecks060
-import User211SourceChecks061
+module
+
+public import User211SourceChecks000
+public import User211SourceChecks001
+public import User211SourceChecks002
+public import User211SourceChecks003
+public import User211SourceChecks004
+public import User211SourceChecks005
+public import User211SourceChecks006
+public import User211SourceChecks007
+public import User211SourceChecks008
+public import User211SourceChecks009
+public import User211SourceChecks010
+public import User211SourceChecks011
+public import User211SourceChecks012
+public import User211SourceChecks013
+public import User211SourceChecks014
+public import User211SourceChecks015
+public import User211SourceChecks016
+public import User211SourceChecks017
+public import User211SourceChecks018
+public import User211SourceChecks019
+public import User211SourceChecks020
+public import User211SourceChecks021
+public import User211SourceChecks022
+public import User211SourceChecks023
+public import User211SourceChecks024
+public import User211SourceChecks025
+public import User211SourceChecks026
+public import User211SourceChecks027
+public import User211SourceChecks028
+public import User211SourceChecks029
+public import User211SourceChecks030
+public import User211SourceChecks031
+public import User211SourceChecks032
+public import User211SourceChecks033
+public import User211SourceChecks034
+public import User211SourceChecks035
+public import User211SourceChecks036
+public import User211SourceChecks037
+public import User211SourceChecks038
+public import User211SourceChecks039
+public import User211SourceChecks040
+public import User211SourceChecks041
+public import User211SourceChecks042
+public import User211SourceChecks043
+public import User211SourceChecks044
+public import User211SourceChecks045
+public import User211SourceChecks046
+public import User211SourceChecks047
+public import User211SourceChecks048
+public import User211SourceChecks049
+public import User211SourceChecks050
+public import User211SourceChecks051
+public import User211SourceChecks052
+public import User211SourceChecks053
+public import User211SourceChecks054
+public import User211SourceChecks055
+public import User211SourceChecks056
+public import User211SourceChecks057
+public import User211SourceChecks058
+public import User211SourceChecks059
+public import User211SourceChecks060
+public import User211SourceChecks061
+
+@[expose] public section
 namespace PA211.UserCandidate.Source
 theorem checked (i : Nat) (hi : i<3947) :
     (sites[i]?).bind (PA213.FastResolve.resolveTree trie)=PA213.SourceProgram.codes[i]? := by

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSupportedValueCoherenceProjection
-import PA215PA.NumericPAeqVariableCoherenceCertificate
+module
+
+public import PA215PA.NumericPAeqSupportedValueCoherenceProjection
+public import PA215PA.NumericPAeqVariableCoherenceCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

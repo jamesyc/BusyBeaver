@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeFormulaConstruction
+module
+
+public import PA215PA.FoundationPAeqCodeFormulaConstruction
+
+@[expose] public section
 
 /-! Exact total Sigma-one original Foundation arithmetic to PAeq formula
 syntax, in every IΣ1 model. All eight recursion equations retain source validity.

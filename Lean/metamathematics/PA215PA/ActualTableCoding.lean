@@ -1,6 +1,10 @@
-import PA215PA.TraceAdequacy
-import PA215PA.ActualProofCodeTable
-import Mathlib.Data.List.GetD
+module
+
+public import PA215PA.TraceAdequacy
+public import PA215PA.ActualProofCodeTable
+public import Mathlib.Data.List.GetD
+
+@[expose] public section
 namespace PA215.PA.ActualTableCoding
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic

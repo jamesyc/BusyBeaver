@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentZeroEnvironment
+module
+
+public import PA215PA.FoundationRelationalSequentZeroEnvironment
+
+@[expose] public section
 
 /-! Uniform finite proof environments from a model-length primitive recursion.
 No host function or external finite list is encoded by assertion. -/

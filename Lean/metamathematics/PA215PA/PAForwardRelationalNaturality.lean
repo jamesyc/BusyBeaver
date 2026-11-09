@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSyntax
+module
+
+public import PA215PA.PAForwardRelationalSyntax
+
+@[expose] public section
 
 /-! Naturality under target relational rewriting, not source term substitution. -/
 namespace PA215.PA.ForwardRelational

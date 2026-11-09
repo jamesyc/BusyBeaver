@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoEntriesExtension
+module
+
+public import PA215PA.RelationalIsoEntriesExtension
+
+@[expose] public section
 
 /-! Diagonal edge classification after adjoining the actual (a,a) object. -/
 namespace PA215.PA.RelationalSource.PairGraph

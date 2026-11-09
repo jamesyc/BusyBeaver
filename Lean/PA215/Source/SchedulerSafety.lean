@@ -1,5 +1,9 @@
-import PA215.Source.Scheduler
-import PA215.Source.CommandStore
+module
+
+public import PA215.Source.Scheduler
+public import PA215.Source.CommandStore
+
+@[expose] public section
 namespace PA215.Source.Scheduler
 open Enumeration
 

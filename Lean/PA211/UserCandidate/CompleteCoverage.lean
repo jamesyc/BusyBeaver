@@ -1,6 +1,10 @@
-import PA211.UserCandidate.RuntimeCoverage
-import User211SourceEquivalence
-import PA211.UserCandidate.CompilerCorrectness
+module
+
+public import PA211.UserCandidate.RuntimeCoverage
+public import User211SourceEquivalence
+public import PA211.UserCandidate.CompilerCorrectness
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 8000000
 namespace PA211.UserCandidate.CompleteCoverage

@@ -1,4 +1,8 @@
-import PA213PA.InternalTrace
+module
+
+public import PA213PA.InternalTrace
+
+@[expose] public section
 
 /-! Definable two-vector append for the existing Foundation HFS sequence code.
 This is a prerequisite to internal trace-segment composition, not itself a

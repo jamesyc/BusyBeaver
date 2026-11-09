@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PATheory
-import User211PANatTape
+public import User211PATheory
+public import User211PANatTape
+
+@[expose] public section
 
 /-! An explicit six-place object-arithmetic formula for all 430 exact rows.
 State code 215 is reserved for halting; working controls use their dense index.

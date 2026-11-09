@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueTotalitySyntax
-import PA215PA.NumericPAeqValueDomainGuardValidity
+module
+
+public import PA215PA.NumericPAeqValueTotalitySyntax
+public import PA215PA.NumericPAeqValueDomainGuardValidity
+
+@[expose] public section
 
 /-! Full finite-environment domain antecedent for future semantic totality.
 Only syntax, graph, and guarded arity are asserted in this module. -/

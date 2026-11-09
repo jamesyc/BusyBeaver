@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedAddSucc
-import PA215PA.PAInterpretedFunctionCongruenceContext
+module
+
+public import PA215PA.PAInterpretedAddSucc
+public import PA215PA.PAInterpretedFunctionCongruenceContext
+
+@[expose] public section
 
 /-! Fully supplied finite source context for the literal addition recursion image. -/
 namespace PA215.PA.ForwardRelational

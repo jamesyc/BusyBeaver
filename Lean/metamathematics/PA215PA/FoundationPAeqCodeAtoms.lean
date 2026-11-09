@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeTermCalibration
+module
+
+public import PA215PA.FoundationPAeqCodeTermCalibration
+
+@[expose] public section
 
 /-! Literal equality and strict-order presentation atoms. Strict order is the
 positive-difference formula ∃z, x + S(z) = y, with both arguments shifted under

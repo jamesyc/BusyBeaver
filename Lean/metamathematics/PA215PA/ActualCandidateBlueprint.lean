@@ -1,6 +1,10 @@
-import PA215PA.ActualCompilerStandard
-import PA215PA.ActualWordEncodingBlueprint
-import PA215PA.ActualCodeCompilerWord
+module
+
+public import PA215PA.ActualCompilerStandard
+public import PA215PA.ActualWordEncodingBlueprint
+public import PA215PA.ActualCodeCompilerWord
+
+@[expose] public section
 namespace PA215.PA.ActualCandidateBlueprint
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

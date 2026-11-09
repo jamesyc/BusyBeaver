@@ -1,6 +1,10 @@
-import PA215PA.RelationalIsoCompositionExists
-import PA215PA.RelationalParameterFresh
-import PA215PA.RelationalIsoCompositionTransitivitySyntax
+module
+
+public import PA215PA.RelationalIsoCompositionExists
+public import PA215PA.RelationalParameterFresh
+public import PA215PA.RelationalIsoCompositionTransitivitySyntax
+
+@[expose] public section
 
 /-! Existential transitivity with both graph parameters explicitly closed in
 the exact Separation axiom and opened at their actual eigenvariables. -/

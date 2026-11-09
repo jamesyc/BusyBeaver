@@ -1,4 +1,8 @@
-import PA215PA.StepFormula
+module
+
+public import PA215PA.StepFormula
+
+@[expose] public section
 
 namespace PA215.PA.StepFormula
 open NatTape

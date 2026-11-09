@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermSourceBShiftParameters
-import PA215PA.NumericPAeqTermSupportedValidity
+module
+
+public import PA215PA.NumericPAeqTermSourceBShiftParameters
+public import PA215PA.NumericPAeqTermSupportedValidity
+
+@[expose] public section
 
 /-! Source bound shift compensated by a prepended target bound environment entry.
 Only original source coverage is assumed; bound-shifted code coverage is not assumed. -/

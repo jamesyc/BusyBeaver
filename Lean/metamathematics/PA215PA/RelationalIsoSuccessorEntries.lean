@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoEntriesExtension
+module
+
+public import PA215PA.RelationalIsoEntriesExtension
+
+@[expose] public section
 
 /-! Objectwise entries under simultaneous successor extension on both sides.
 The old coordinates and the new ordered-pair object remain actual witnesses. -/

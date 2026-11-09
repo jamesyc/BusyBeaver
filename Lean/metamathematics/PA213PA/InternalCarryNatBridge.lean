@@ -1,6 +1,10 @@
-import PA215PA.Theory
-import PA213PA.InternalCarryCode
-import PA213PA.InternalScanNatBridge
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCarryCode
+public import PA213PA.InternalScanNatBridge
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.CarryCode
 open PA215 PA215.PA

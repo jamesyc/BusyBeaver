@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueClosedEnvironment
-import PA215PA.NumericPAeqValueTotalitySyntax
+module
+
+public import PA215PA.NumericPAeqValueClosedEnvironment
+public import PA215PA.NumericPAeqValueTotalitySyntax
+
+@[expose] public section
 
 /-! Exact successor output shape for context-zero target environments.
 This preserves all target free variables; it does not supply totality. -/

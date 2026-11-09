@@ -1,4 +1,8 @@
-import PA211PA
+module
+
+public import PA211PA
+
+@[expose] public section
 
 #print axioms PA211.UserCandidate.PA.literal_final_endpoint
 #print axioms PA211.UserCandidate.PA.consistent_literal_nonhalting

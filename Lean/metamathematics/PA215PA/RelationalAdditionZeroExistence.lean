@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionZero
+module
+
+public import PA215PA.RelationalAdditionZero
+
+@[expose] public section
 
 /-! Constructive existential assembly of the zero-input addition trace. Every
 graph and entry is built by the paid empty/adjunction suppliers. -/

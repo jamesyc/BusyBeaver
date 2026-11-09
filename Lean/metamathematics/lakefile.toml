@@ -172,6 +172,10 @@ roots = [
 [[lean_lib]]
 name = "PA211PA"
 
+[[lean_lib]]
+name = "PA211Palomar"
+roots = ["Challenge", "PA211Statement", "Solution"]
+
 [[require]]
 name = "Foundation"
 git = "https://github.com/FormalizedFormalLogic/Foundation.git"

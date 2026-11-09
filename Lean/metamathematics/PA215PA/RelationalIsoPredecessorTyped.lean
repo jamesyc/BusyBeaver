@@ -1,6 +1,10 @@
-import PA215PA.RelationalGraphRestrictionRules
-import PA215PA.RelationalIsoEntriesRetype
-import PA215PA.RelationalOrderIsoRelationRules
+module
+
+public import PA215PA.RelationalGraphRestrictionRules
+public import PA215PA.RelationalIsoEntriesRetype
+public import PA215PA.RelationalOrderIsoRelationRules
+
+@[expose] public section
 
 /-! A strict cut through a displayed endpoint edge is typed by the two
 predecessor containers. Existing actual entries are explicitly retyped. -/

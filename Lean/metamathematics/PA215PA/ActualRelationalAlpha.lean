@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalSubstitution
+module
+
+public import PA215PA.ActualRelationalSubstitution
+
+@[expose] public section
 
 /-! Finite universal specialization and two-way binder alpha-conversion
 for the restricted relational image. The representative-equality witness is

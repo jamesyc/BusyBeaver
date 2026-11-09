@@ -1,5 +1,9 @@
-import PA215.Source.Enumeration
-import PA215PA.AXCodeBridge
+module
+
+public import PA215.Source.Enumeration
+public import PA215PA.AXCodeBridge
+
+@[expose] public section
 
 /-! Exact closed arithmetic command semantics from the retained source
 THEOREM.md section 3. This is NOT Source.step: transfer from literal graph

@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrderIsoSuccessor
+module
+
+public import PA215PA.RelationalOrderIsoSuccessor
+
+@[expose] public section
 
 /-! The successor isomorphism implication with all six finite source axioms
 supplied by the actual repaired numeric basis. -/

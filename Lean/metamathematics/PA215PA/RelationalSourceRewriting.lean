@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceSyntax
-import PA215PA.NativeRenaming
+module
+
+public import PA215PA.RelationalSourceSyntax
+public import PA215PA.NativeRenaming
+
+@[expose] public section
 
 /-! Exact compatibility with Foundation's actual substitution machinery.
 These are syntax equalities, not an assumed proof translation. -/

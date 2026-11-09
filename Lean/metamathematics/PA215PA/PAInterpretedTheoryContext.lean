@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedAnnotatedCompiler
-import PA215PA.PAInterpretedFixedPremises
+module
+
+public import PA215PA.PAInterpretedAnnotatedCompiler
+public import PA215PA.PAInterpretedFixedPremises
+
+@[expose] public section
 
 /-! Finite theory-image integration. The only support premise is an explicit
 syntax identity for translated closed sentences, separate from logical axiom

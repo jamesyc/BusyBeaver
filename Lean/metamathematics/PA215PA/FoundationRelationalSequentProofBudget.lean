@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentExsRule
+module
+
+public import PA215PA.FoundationRelationalSequentExsRule
+
+@[expose] public section
 
 /-! Definable finite environments budgeted by the actual source derivation
 code. Child descent changes environments only by explicit HFS operations. -/

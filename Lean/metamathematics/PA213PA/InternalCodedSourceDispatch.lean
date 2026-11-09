@@ -1,8 +1,12 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceLoopRegisters
-import PA213PA.InternalCodedSourceTraceCompose
-import PA213PA.InternalCodedSourceDrainSpec
-import PA215.Source.Dispatch
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceLoopRegisters
+public import PA213PA.InternalCodedSourceTraceCompose
+public import PA213PA.InternalCodedSourceDrainSpec
+public import PA215.Source.Dispatch
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

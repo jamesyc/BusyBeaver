@@ -1,6 +1,10 @@
-import PA215PA.Theory
-import PA215PA.ActualRefutationGraph
-import User211PAHaltingFormula
+module
+
+public import PA215PA.Theory
+public import PA215PA.ActualRefutationGraph
+public import User211PAHaltingFormula
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalActualRefutation
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

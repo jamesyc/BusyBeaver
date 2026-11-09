@@ -1,6 +1,10 @@
-import PA215PA.RelationalIsoCompositionExistsStep
-import PA215PA.RelationalIsoCompositionEdgeTotal
-import PA215PA.RelationalIsoInverseGuardedStep
+module
+
+public import PA215PA.RelationalIsoCompositionExistsStep
+public import PA215PA.RelationalIsoCompositionEdgeTotal
+public import PA215PA.RelationalIsoInverseGuardedStep
+
+@[expose] public section
 
 /-! The composition successor step retains the explicit subset(n,a) guard. -/
 namespace PA215.PA.RelationalSource.PairGraph

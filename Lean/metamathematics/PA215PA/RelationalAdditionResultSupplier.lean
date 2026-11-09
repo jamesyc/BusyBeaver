@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionOutputTotal
+module
+
+public import PA215PA.RelationalAdditionOutputTotal
+
+@[expose] public section
 
 /-! A finite actual-calculus proof of ordinal-valued addition totality.
 All eight source premises, including the exact Separation instance, are paid. -/

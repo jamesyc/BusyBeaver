@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoGreatestRules
-import PA215PA.RelationalGraphFunctionalExtension
+module
+
+public import PA215PA.RelationalIsoGreatestRules
+public import PA215PA.RelationalGraphFunctionalExtension
+
+@[expose] public section
 
 /-! Greatest-image witnesses are obtained from actual right totality, not
 from a surjectivity assumption about unrepresented objects. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalClosedCertificateCoherenceSeeds
+module
+
+public import PA215PA.RelationalClosedCertificateCoherenceSeeds
+
+@[expose] public section
 namespace PA215.PA.RelationalClosedCertificate
 open FFL FFL.FirstOrder RelationalSource ND PairGraph
 open FFL.FirstOrder.Arithmetic FFL.FirstOrder.Arithmetic.Bootstrapping

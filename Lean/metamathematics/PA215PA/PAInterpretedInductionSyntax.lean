@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedUniversal
-import PA215PA.RelationalOrdinalInductionSchema
+module
+
+public import PA215PA.PAInterpretedUniversal
+public import PA215PA.RelationalOrdinalInductionSchema
+
+@[expose] public section
 
 /-! The exact unary target predicate for a source induction instance.
 These are capture-aware target syntax identities, not source substitution. -/

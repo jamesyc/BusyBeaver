@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionTemplate
+module
+
+public import PA215PA.FoundationPAeqCodeInductionTemplate
+
+@[expose] public section
 /-! Coded identities relate the successor and additive induction-body template to its fixed-vector definitions in every model. -/
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

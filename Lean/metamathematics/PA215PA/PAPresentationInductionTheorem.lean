@@ -1,5 +1,9 @@
-import PA215PA.PAPresentationInductionTransport
-import PA215PA.PAPresentationParameterClosure
+module
+
+public import PA215PA.PAPresentationInductionTransport
+public import PA215PA.PAPresentationParameterClosure
+
+@[expose] public section
 
 /-! Uniform actual ordinary-PAeq proof data for the exact translated
 Foundation induction schema, including universal closure of all parameters.

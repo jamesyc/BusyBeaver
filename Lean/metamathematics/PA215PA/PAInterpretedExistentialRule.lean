@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedInductionBase
+module
+
+public import PA215PA.PAInterpretedInductionBase
+
+@[expose] public section
 
 /-! The source existential rule uses a real value of the substituted arithmetic
 term. Totality and finite domain guards are retained, not replaced by raw

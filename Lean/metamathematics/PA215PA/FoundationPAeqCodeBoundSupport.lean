@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionCalibration
+module
+
+public import PA215PA.FoundationPAeqCodeInductionCalibration
+
+@[expose] public section
 /-! Exact bound-variable support, needed for canonical closure counts. -/
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

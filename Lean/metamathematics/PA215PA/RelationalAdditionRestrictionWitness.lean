@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionRestrictionEndpoint
-import PA215PA.RelationalGraphRestrictionInclusiveSupplier
+module
+
+public import PA215PA.RelationalAdditionRestrictionEndpoint
+public import PA215PA.RelationalGraphRestrictionInclusiveSupplier
+
+@[expose] public section
 
 /-! A predecessor addition result from an actual Separation-built subgraph. -/
 namespace PA215.PA.RelationalSource.PairGraph

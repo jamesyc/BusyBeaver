@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrderIsoRules
+module
+
+public import PA215PA.RelationalOrderIsoRules
+
+@[expose] public section
 
 /-! Shared literal injectivity and membership-order rules, with both actual
 edge premises retained. -/

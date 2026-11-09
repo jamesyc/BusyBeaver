@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationSyntax
+module
+
+public import PA215PA.PAPresentationSyntax
+
+@[expose] public section
 
 /-! Capture-avoiding compatibility, including the extra existential binder
 introduced by strict-order elimination. -/

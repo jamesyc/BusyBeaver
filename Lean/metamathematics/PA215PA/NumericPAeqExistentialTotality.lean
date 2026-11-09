@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqExistentialOpening
-import PA215PA.NumericPAeqSupportedValueTotality
-import PA215PA.NumericPAeqValueCertificateComposition
-import PA215PA.RelationalPredicateBinaryEmptyRequested
+module
+
+public import PA215PA.NumericPAeqExistentialOpening
+public import PA215PA.NumericPAeqSupportedValueTotality
+public import PA215PA.NumericPAeqValueCertificateComposition
+public import PA215PA.RelationalPredicateBinaryEmptyRequested
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqExistentialInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

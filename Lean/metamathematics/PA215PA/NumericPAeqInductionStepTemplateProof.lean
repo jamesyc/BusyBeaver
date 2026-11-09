@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqInductionStepTemplateSyntax
+module
+
+public import PA215PA.NumericPAeqInductionStepTemplateSyntax
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionStepTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

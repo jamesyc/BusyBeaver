@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionTrace
+module
+
+public import PA215PA.RelationalAdditionTrace
+
+@[expose] public section
 
 /-! The genuine zero-input addition trace: its recurrence is proved from the
 impossibility of a predecessor for an actual empty ordinal. -/

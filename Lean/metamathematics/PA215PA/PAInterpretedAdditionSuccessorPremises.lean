@@ -1,7 +1,11 @@
-import PA215PA.PAInterpretedAdditionSuccessorValues
-import PA215PA.PAInterpretedEqualitySymmetryRight
-import PA215PA.RelationalAdditionSuccessorLaw
-import PA215PA.RelationalAdditionRightSuccessor
+module
+
+public import PA215PA.PAInterpretedAdditionSuccessorValues
+public import PA215PA.PAInterpretedEqualitySymmetryRight
+public import PA215PA.RelationalAdditionSuccessorLaw
+public import PA215PA.RelationalAdditionRightSuccessor
+
+@[expose] public section
 
 /-! Explicit paid inputs for the literal addition-successor image. -/
 namespace PA215.PA.ForwardRelational

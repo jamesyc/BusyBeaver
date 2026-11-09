@@ -1,6 +1,10 @@
-import PA215PA.RelationalMultiplicationZeroLaw
-import PA215PA.RelationalOrderIsoZero
-import PA215PA.RelationalZeroIso
+module
+
+public import PA215PA.RelationalMultiplicationZeroLaw
+public import PA215PA.RelationalOrderIsoZero
+public import PA215PA.RelationalZeroIso
+
+@[expose] public section
 
 /-! Zero multiplication outputs are genuinely empty, hence isomorphic without
 choosing or identifying a canonical empty object. -/

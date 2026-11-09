@@ -1,6 +1,10 @@
-import PA215PA.RelationalSourceExistential
-import PA215PA.RelationalSourceGeneralization
-import Foundation.FirstOrder.LK.Basic
+module
+
+public import PA215PA.RelationalSourceExistential
+public import PA215PA.RelationalSourceGeneralization
+public import Foundation.FirstOrder.LK.Basic
+
+@[expose] public section
 
 /-! A constructive compiler from Foundation's actual logical LK derivations
 into finite actual-basis proof terms. Source theory axiom and PA/induction

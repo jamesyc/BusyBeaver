@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorBase
+module
+
+public import PA215PA.RelationalOrdinalSuccessorBase
+
+@[expose] public section
 
 /-! Finite nonextensional graph-entry formulas. Objects are witnesses, never
 canonical pairs. Mathematical definitions follow the retained PairGraph238

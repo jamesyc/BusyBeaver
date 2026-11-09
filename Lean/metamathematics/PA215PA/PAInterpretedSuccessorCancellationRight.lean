@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedEqualitySymmetry
-import PA215PA.RelationalOrderIsoSuccessorCancel
+module
+
+public import PA215PA.PAInterpretedEqualitySymmetry
+public import PA215PA.RelationalOrderIsoSuccessorCancel
+
+@[expose] public section
 
 /-! Actual successor-value cancellation, eliminating the right child witness. -/
 namespace PA215.PA.ForwardRelational

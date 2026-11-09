@@ -1,4 +1,8 @@
-import PA213PA.InternalFileGraphs
+module
+
+public import PA213PA.InternalFileGraphs
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FileEffects
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

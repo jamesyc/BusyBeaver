@@ -1,5 +1,9 @@
-import PA215.Source.Semantics
-import PA215.Source.ExactSource
+module
+
+public import PA215.Source.Semantics
+public import PA215.Source.ExactSource
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.AXGateCompare
 structure Store where

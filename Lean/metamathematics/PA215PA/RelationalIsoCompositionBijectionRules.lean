@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionRelationRules
-import PA215PA.RelationalIsoCompositionRules
+module
+
+public import PA215PA.RelationalIsoCompositionRelationRules
+public import PA215PA.RelationalIsoCompositionRules
+
+@[expose] public section
 
 /-! Pointwise typing, uniqueness, and order for the actual composite graph. -/
 namespace PA215.PA.RelationalSource.PairGraph

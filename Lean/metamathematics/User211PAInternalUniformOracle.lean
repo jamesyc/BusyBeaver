@@ -1,8 +1,12 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalFileGuards
-import User211PAInternalSymbolicAudit
-import User211PAInternalOracleAlphabet
+public import User211PAInternalFileGuards
+public import User211PAInternalSymbolicAudit
+public import User211PAInternalOracleAlphabet
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.FileBoxes
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

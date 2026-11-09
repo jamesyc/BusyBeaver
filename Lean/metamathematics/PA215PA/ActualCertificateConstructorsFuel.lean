@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateConstructorsMonotone
+module
+
+public import PA215PA.ActualCertificateConstructorsMonotone
+
+@[expose] public section
 
 /-! Arbitrary model-length extension of successful V1 checker fuel, with an
 explicit arithmetic induction invariant and exact table-bound transport. -/

@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitutionBinary
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionBinary
+
+@[expose] public section
 
 /-! Constructive compatibility for substitution of an actual source term into
 bound variable zero. The output relates arbitrary actual witnesses by order

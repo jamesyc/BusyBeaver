@@ -1,4 +1,8 @@
-import PA215.Source.AXGateBinding
+module
+
+public import PA215.Source.AXGateBinding
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.AXGate

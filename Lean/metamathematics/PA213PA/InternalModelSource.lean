@@ -1,6 +1,10 @@
-import PA215.Source.ExactSource
-import PA213PA.InternalPhysicalRegisters
-import PA215.Source.InstructionOutcome
+module
+
+public import PA215.Source.ExactSource
+public import PA213PA.InternalPhysicalRegisters
+public import PA215.Source.InstructionOutcome
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.ModelSource
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

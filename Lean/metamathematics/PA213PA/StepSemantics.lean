@@ -1,4 +1,8 @@
-import PA213PA.StepFormula
+module
+
+public import PA213PA.StepFormula
+
+@[expose] public section
 
 namespace PA213.PA.StepFormula
 open PA215

@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationTrichotomyTools
+module
+
+public import PA215PA.PAPresentationTrichotomyTools
+
+@[expose] public section
 
 namespace PA215.PA.Presentation
 open FFL FFL.FirstOrder

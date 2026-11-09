@@ -1,4 +1,8 @@
-import PA213.StartupProof
+module
+
+public import PA213.StartupProof
+
+@[expose] public section
 namespace PA213.Startup
 open PA215.Zip PA213.CandidateTable
 private theorem compose {M : TMN} {a b c : Conf} {n m : Nat}

@@ -1,4 +1,8 @@
-import PA215.Source.Fetch
+module
+
+public import PA215.Source.Fetch
+
+@[expose] public section
 set_option maxRecDepth 50000
 set_option maxHeartbeats 2000000
 

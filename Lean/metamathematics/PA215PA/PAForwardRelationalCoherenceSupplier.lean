@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalCoherenceGuarded
+module
+
+public import PA215PA.PAForwardRelationalCoherenceGuarded
+
+@[expose] public section
 
 /-! Actual-basis compilation with all eight closed premises paid. Environment
 isomorphisms and the two real value relations remain explicit finite implication

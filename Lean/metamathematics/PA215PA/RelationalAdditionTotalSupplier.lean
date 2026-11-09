@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionInduction
-import PA215PA.RelationalAdditionZeroSupplier
+module
+
+public import PA215PA.RelationalAdditionInduction
+public import PA215PA.RelationalAdditionZeroSupplier
+
+@[expose] public section
 
 /-! Finite actual-basis addition-prefix totality for an arbitrary free base
 parameter. The exact negated-prefix Separation instance is discharged. -/

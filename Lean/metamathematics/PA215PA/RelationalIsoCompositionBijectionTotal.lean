@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionRealizeEdge
-import PA215PA.RelationalIsoCompositionEdgeRightTotal
+module
+
+public import PA215PA.RelationalIsoCompositionRealizeEdge
+public import PA215PA.RelationalIsoCompositionEdgeRightTotal
+
+@[expose] public section
 
 /-! Both totality directions for the actual finite composition graph. -/
 namespace PA215.PA.RelationalSource.PairGraph

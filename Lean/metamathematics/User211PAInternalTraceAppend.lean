@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalTrace
+public import User211PAInternalTrace
+
+@[expose] public section
 
 /-! Definable two-vector append for the existing Foundation HFS sequence code.
 This is a prerequisite to internal trace-segment composition, not itself a

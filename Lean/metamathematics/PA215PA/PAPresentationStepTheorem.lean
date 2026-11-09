@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationStepCertificate
+module
+
+public import PA215PA.PAPresentationStepCertificate
+
+@[expose] public section
 
 /-! Discharge the concrete certificate into the explicitly universally closed
 ordinary PAeq theory, using actual Theory.Proof data, not completeness. -/

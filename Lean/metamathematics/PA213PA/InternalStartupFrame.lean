@@ -1,7 +1,11 @@
-import PA213PA.Startup.SourceBinding
-import PA215PA.Theory
-import PA213PA.InternalStartupTrace
-import PA213PA.InternalFixedFile
+module
+
+public import PA213PA.Startup.SourceBinding
+public import PA215PA.Theory
+public import PA213PA.InternalStartupTrace
+public import PA213PA.InternalFixedFile
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FixedTrace
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

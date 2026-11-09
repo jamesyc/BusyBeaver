@@ -1,4 +1,8 @@
-import PA211.UserCandidate.CandidateTable
+module
+
+public import PA211.UserCandidate.CandidateTable
+
+@[expose] public section
 namespace PA211.UserCandidate.StateBound
 open PA211.UserCandidate.CandidateTable
 set_option maxRecDepth 100000

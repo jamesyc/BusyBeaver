@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionCoherenceRules
-import PA215PA.RelationalAdditionZeroCoherence
+module
+
+public import PA215PA.RelationalAdditionCoherenceRules
+public import PA215PA.RelationalAdditionZeroCoherence
+
+@[expose] public section
 
 /-! Universal zero case for the arbitrary-other-input addition coherence predicate. -/
 namespace PA215.PA.RelationalSource.PairGraph

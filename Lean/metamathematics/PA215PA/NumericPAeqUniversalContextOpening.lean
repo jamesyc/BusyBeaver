@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqUniversalContextOpeningSupport
-import PA215PA.NumericPAeqFormulaSupportedSourceFree
-import PA215PA.NumericPAeqInductionInterpretationSyntax
+module
+
+public import PA215PA.NumericPAeqUniversalContextOpeningSupport
+public import PA215PA.NumericPAeqFormulaSupportedSourceFree
+public import PA215PA.NumericPAeqInductionInterpretationSyntax
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqUniversalContextOpening
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionPrefixStep
-import PA215PA.RelationalOrdinalInductionUniform
+module
+
+public import PA215PA.RelationalAdditionPrefixStep
+public import PA215PA.RelationalOrdinalInductionUniform
+
+@[expose] public section
 
 /-! Addition prefixes satisfy the actual ordinal induction schema. The sole
 variable-schema premise is explicit Separation of the negated prefix property. -/

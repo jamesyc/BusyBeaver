@@ -1,5 +1,9 @@
-import PA213PA.InternalUniformOracle
-import PA213.RuntimeContracts
+module
+
+public import PA213PA.InternalUniformOracle
+public import PA213.RuntimeContracts
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FileBoxes
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

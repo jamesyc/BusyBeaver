@@ -1,4 +1,8 @@
-import PA213PA.InternalReturnCode
+module
+
+public import PA213PA.InternalReturnCode
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.CarryReturn
 open PA215

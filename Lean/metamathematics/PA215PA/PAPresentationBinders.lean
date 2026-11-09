@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationRewriting
+module
+
+public import PA215PA.PAPresentationRewriting
+
+@[expose] public section
 
 /-! Concrete binder operations used by the actual Foundation LK rules. -/
 namespace PA215.PA.Presentation

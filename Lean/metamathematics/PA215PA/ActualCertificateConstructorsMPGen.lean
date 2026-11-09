@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateConstructorsFuel
+module
+
+public import PA215PA.ActualCertificateConstructorsFuel
+
+@[expose] public section
 
 /-! Explicit numeric V1 MP and GEN certificates, correct uniformly in PA
 models. These do not translate Foundation proof constructors by themselves. -/

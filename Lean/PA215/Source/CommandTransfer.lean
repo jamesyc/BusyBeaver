@@ -1,5 +1,9 @@
-import PA215.Source.CommandAX
-import PA215.Source.ParsedCommandTransfer
+module
+
+public import PA215.Source.CommandAX
+public import PA215.Source.ParsedCommandTransfer
+
+@[expose] public section
 namespace PA215.Source
 open Enumeration
 /-- All three actual macros instantiate the proved parser/source composition. -/

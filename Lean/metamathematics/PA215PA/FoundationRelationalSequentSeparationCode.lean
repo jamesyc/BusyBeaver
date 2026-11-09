@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentSeparationAtName
-import PA215PA.FoundationRelationalSequentFree
+module
+
+public import PA215PA.FoundationRelationalSequentSeparationAtName
+public import PA215PA.FoundationRelationalSequentFree
+
+@[expose] public section
 
 /-! Total numeric source separation constructor. Context widening of the
 one-bound-variable property preserves its literal numeric formula code. -/

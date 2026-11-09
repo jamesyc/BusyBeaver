@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueCoherenceVariables
-import PA215PA.NumericPAeqValueCoherenceZero
-import PA215PA.NumericPAeqValueGuardedSteps
+module
+
+public import PA215PA.NumericPAeqValueCoherenceVariables
+public import PA215PA.NumericPAeqValueCoherenceZero
+public import PA215PA.NumericPAeqValueGuardedSteps
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

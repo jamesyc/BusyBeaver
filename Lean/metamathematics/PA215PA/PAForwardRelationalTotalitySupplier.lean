@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalTotalityContext
+module
+
+public import PA215PA.PAForwardRelationalTotalityContext
+
+@[expose] public section
 
 /-! Compilation to the actual basis supplies the closed arithmetic premises. The totality statement takes finitely indexed hypotheses for the environment domain. -/
 namespace PA215.PA.ForwardRelational

@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoEndpointEdge
-import PA215PA.RelationalIsoPredecessorCutWitness
+module
+
+public import PA215PA.RelationalIsoEndpointEdge
+public import PA215PA.RelationalIsoPredecessorCutWitness
+
+@[expose] public section
 
 /-! Successor cancellation modulo the actual order-isomorphism relation.
 The target successor is an ordinal representative and the required closed

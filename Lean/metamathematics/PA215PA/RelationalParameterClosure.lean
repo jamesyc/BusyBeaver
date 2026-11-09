@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceSeparation
-import PA215PA.RelationalSourceLK
+module
+
+public import PA215PA.RelationalSourceSeparation
+public import PA215PA.RelationalSourceLK
+
+@[expose] public section
 
 /-! Closing the first free parameter of an already supplied relational theorem.
 This is actual-basis generalization, with the fresh label and shifted allocator

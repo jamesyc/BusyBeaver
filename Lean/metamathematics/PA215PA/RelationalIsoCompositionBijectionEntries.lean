@@ -1,7 +1,11 @@
-import PA215PA.RelationalIsoCompositionEntryElimination
-import PA215PA.RelationalIsoCompositionEntriesExtension
-import PA215PA.RelationalIsoEntries
-import PA215PA.RelationalOrderIsoRules
+module
+
+public import PA215PA.RelationalIsoCompositionEntryElimination
+public import PA215PA.RelationalIsoCompositionEntriesExtension
+public import PA215PA.RelationalIsoEntries
+public import PA215PA.RelationalOrderIsoRules
+
+@[expose] public section
 
 /-! Every actual composite graph object carries the required endpoint pair. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedExistentialRule
-import PA215PA.PAPresentationND
+module
+
+public import PA215PA.PAInterpretedExistentialRule
+public import PA215PA.PAPresentationND
+
+@[expose] public section
 
 /-! Constructive propositional sequent interpretation. The host environment
 is explicitly domain-covered; this is not a coded internal proof transformer.

@@ -1,4 +1,8 @@
-import PA213.SourceProgram
+module
+
+public import PA213.SourceProgram
+
+@[expose] public section
 namespace PA213.PathBounds
 open PA215.Source PA213.SourceProgram
 set_option maxRecDepth 100000

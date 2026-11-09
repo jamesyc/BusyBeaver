@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueIsoCode
-import Foundation.FirstOrder.Arithmetic.HFS.PRF
+module
+
+public import PA215PA.NumericPAeqValueIsoCode
+public import Foundation.FirstOrder.Arithmetic.HFS.PRF
+
+@[expose] public section
 
 /-! Model-length pointwise order-isomorphism guards over two term vectors.
 This is syntax construction only; no native certificate is assumed. -/

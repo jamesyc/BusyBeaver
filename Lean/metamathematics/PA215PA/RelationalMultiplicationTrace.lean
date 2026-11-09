@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionZeroExistence
+module
+
+public import PA215PA.RelationalAdditionZeroExistence
+
+@[expose] public section
 
 /-! Literal multiplication trace clauses. The base edge is (zero, zero).
 The second argument is fixed in the backwards additive recurrence. -/

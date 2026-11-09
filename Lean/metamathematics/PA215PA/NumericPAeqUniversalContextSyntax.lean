@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqUniversalContextMatrix
+module
+
+public import PA215PA.NumericPAeqUniversalContextMatrix
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqUniversalContext
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

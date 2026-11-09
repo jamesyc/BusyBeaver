@@ -1,4 +1,8 @@
-import PA215.Source.AXMacroProgram
+module
+
+public import PA215.Source.AXMacroProgram
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.AXSymbolic
 abbrev Op := AXMacro.Op

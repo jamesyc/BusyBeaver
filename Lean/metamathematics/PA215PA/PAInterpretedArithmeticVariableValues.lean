@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedArithmeticTransport
+module
+
+public import PA215PA.PAInterpretedArithmeticTransport
+
+@[expose] public section
 
 /-! Literal variable arithmetic values yield exact graph relations on the
 supplied environment representatives, using ordinary equality only. -/

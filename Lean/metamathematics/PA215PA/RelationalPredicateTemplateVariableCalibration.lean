@@ -1,8 +1,12 @@
-import PA215PA.RelationalPredicateTemplateVariableProof
-import PA215PA.RelationalPredicateTemplateClosedCalibration
-import PA215PA.RelationalPredicateTemplateLiftSyntax
-import PA215PA.RelationalPredicateTemplateSourceInstance
-import PA215PA.NumericPAeqTermConstructors
+module
+
+public import PA215PA.RelationalPredicateTemplateVariableProof
+public import PA215PA.RelationalPredicateTemplateClosedCalibration
+public import PA215PA.RelationalPredicateTemplateLiftSyntax
+public import PA215PA.RelationalPredicateTemplateSourceInstance
+public import PA215PA.NumericPAeqTermConstructors
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Variable
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

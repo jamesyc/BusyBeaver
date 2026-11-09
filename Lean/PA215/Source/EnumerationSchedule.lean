@@ -1,4 +1,8 @@
-import PA215.Source.EnumerationCredit
+module
+
+public import PA215.Source.EnumerationCredit
+
+@[expose] public section
 namespace PA215.Source.Enumeration
 
 def schedule (n : Nat) : List Command := (List.range n).flatMap word

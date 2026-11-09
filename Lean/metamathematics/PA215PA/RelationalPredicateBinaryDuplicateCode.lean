@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateBinaryDuplicate
+module
+
+public import PA215PA.RelationalPredicateBinaryDuplicate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueTotality
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

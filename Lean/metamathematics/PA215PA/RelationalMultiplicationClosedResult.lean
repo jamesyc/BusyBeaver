@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationResultSupplier
-import PA215PA.RelationalParameterFresh
+module
+
+public import PA215PA.RelationalMultiplicationResultSupplier
+public import PA215PA.RelationalParameterFresh
+
+@[expose] public section
 
 /-! The first free multiplier is closed only after its finite actual-basis
 proof has been supplied. The two Separation budgets remain separate. -/

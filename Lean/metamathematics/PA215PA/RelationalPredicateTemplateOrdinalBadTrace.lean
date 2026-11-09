@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateOrdinalContradiction
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalContradiction
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder ND
 def leastBadExistsContradiction {Γ : List Form} (e : EqualityProofs Γ)

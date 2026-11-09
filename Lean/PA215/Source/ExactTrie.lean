@@ -1,5 +1,9 @@
-import PA215.Source.PathTrie
-import PA215.Source.ExactSource
+module
+
+public import PA215.Source.PathTrie
+public import PA215.Source.ExactSource
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA215.Source.PathTrie

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermSupportedValidity
+module
+
+public import PA215PA.NumericPAeqTermSupportedValidity
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open FFL.FirstOrder.Arithmetic.Bootstrapping

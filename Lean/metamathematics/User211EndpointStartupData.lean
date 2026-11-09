@@ -1,7 +1,11 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211EndpointZipNatTape
-import PA211.UserCandidate.StartupExact
-import User211SourceEquivalence
+public import User211EndpointZipNatTape
+public import PA211.UserCandidate.StartupExact
+public import User211SourceEquivalence
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA211.UserCandidate.PA.Startup

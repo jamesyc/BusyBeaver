@@ -1,4 +1,8 @@
-import PA215.Source.PathTrie
+module
+
+public import PA215.Source.PathTrie
+
+@[expose] public section
 namespace PA213.FastResolve
 open PA215.Source PA215.Source.PathTrie
 

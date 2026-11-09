@@ -1,5 +1,9 @@
-import PA213.CandidateTable
-import PA213.SourceData
+module
+
+public import PA213.CandidateTable
+public import PA213.SourceData
+
+@[expose] public section
 
 /- Exact blank-startup checkpoints, generated from frozen table.
 All `by decide +kernel` obligations are UNCHECKED until compiled. -/

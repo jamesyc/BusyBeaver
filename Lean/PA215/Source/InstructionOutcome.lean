@@ -1,5 +1,9 @@
-import PA215.Source.ContractPlan
-import PA215.Source.CyclicDriver
+module
+
+public import PA215.Source.ContractPlan
+public import PA215.Source.CyclicDriver
+
+@[expose] public section
 
 namespace PA215.Source
 open PA215.Runtime

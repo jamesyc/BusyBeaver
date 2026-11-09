@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoSuccessorTyped
-import PA215PA.RelationalGraphOutputExtension
+module
+
+public import PA215PA.RelationalIsoSuccessorTyped
+public import PA215PA.RelationalGraphOutputExtension
+
+@[expose] public section
 
 /-! Real left and right witnesses persist under an exact graph extension. -/
 namespace PA215.PA.RelationalSource.PairGraph

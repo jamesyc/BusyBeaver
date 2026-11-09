@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateNDPadded
-import PA215PA.FoundationRelationalSequentPaddingReadback
+module
+
+public import PA215PA.RelationalPredicateTemplateNDPadded
+public import PA215PA.FoundationRelationalSequentPaddingReadback
+
+@[expose] public section
 /-! Native conclusion at the caller's exact covered labels and reserve.
 Padding preserves their prefix and readback removes only added dummy slots. -/
 namespace PA215.PA.RelationalPredicateTemplate

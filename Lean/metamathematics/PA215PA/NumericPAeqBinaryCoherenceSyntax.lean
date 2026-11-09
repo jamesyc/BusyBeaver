@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueCoherenceSuccessorSyntax
-import PA215PA.RelationalPredicateBinaryRewriting
+module
+
+public import PA215PA.NumericPAeqValueCoherenceSuccessorSyntax
+public import PA215PA.RelationalPredicateBinaryRewriting
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

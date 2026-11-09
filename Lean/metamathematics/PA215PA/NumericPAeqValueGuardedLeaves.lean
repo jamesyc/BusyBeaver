@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueGuardedTotalitySyntax
-import PA215PA.NumericPAeqValueTotalityLeaves
-import PA215PA.NumericPAeqValueCertificateComposition
+module
+
+public import PA215PA.NumericPAeqValueGuardedTotalitySyntax
+public import PA215PA.NumericPAeqValueTotalityLeaves
+public import PA215PA.NumericPAeqValueCertificateComposition
+
+@[expose] public section
 
 /-! Bound/free variable cases of guarded value existence. Both finite domain
 guards remain antecedents; no domain membership is asserted without them. -/

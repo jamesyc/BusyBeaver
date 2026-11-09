@@ -1,5 +1,9 @@
-import PA215PA.RelationalIdentityBijectionOrder
-import PA215PA.RelationalIdentitySupplier
+module
+
+public import PA215PA.RelationalIdentityBijectionOrder
+public import PA215PA.RelationalIdentitySupplier
+
+@[expose] public section
 
 /-! Reflexivity of the exact seven-clause existential order isomorphism on
 ordinal representatives, via actual identity graphs rather than object equality. -/

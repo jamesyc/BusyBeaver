@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateBinders
+module
+
+public import PA215PA.RelationalPredicateTemplateBinders
+
+@[expose] public section
 /-! Finite host template instantiation into arbitrary model-valued relational
 syntax. Under a bound quantifier the unary hole itself is unchanged. -/
 namespace PA215.PA.RelationalPredicateTemplate

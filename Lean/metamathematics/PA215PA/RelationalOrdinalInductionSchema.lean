@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalTraceSeparation
+module
+
+public import PA215PA.RelationalOrdinalTraceSeparation
+
+@[expose] public section
 
 /-! The exact, parameter-preserving domain induction schema syntax. -/
 namespace PA215.PA.RelationalSource.Ordinal

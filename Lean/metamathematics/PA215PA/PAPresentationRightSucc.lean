@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationAddAssoc
+module
+
+public import PA215PA.PAPresentationAddAssoc
+
+@[expose] public section
 
 /-! Derived recursion in the second argument, needed for commutativity.
 Both the defining first-argument recursion and the induction context stay explicit. -/

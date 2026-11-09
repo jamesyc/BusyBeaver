@@ -1,7 +1,11 @@
-import PA213PA.InternalFileLayout
-import PA213PA.InternalDecrementPositive
-import PA213PA.InternalDecrementZero
-import PA213PA.InternalSymbolicPrimitives
+module
+
+public import PA213PA.InternalFileLayout
+public import PA213PA.InternalDecrementPositive
+public import PA213PA.InternalDecrementZero
+public import PA213PA.InternalSymbolicPrimitives
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FileBoxes
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

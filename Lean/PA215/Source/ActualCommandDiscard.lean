@@ -1,4 +1,8 @@
-import PA215.Source.ActualCommandMacros
+module
+
+public import PA215.Source.ActualCommandMacros
+
+@[expose] public section
 
 /-! DISCARD is proved with a symbolic positive selector before specializing
 to1. This avoids kernel normalization of enormous closed nested axiom codes;

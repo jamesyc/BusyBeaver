@@ -1,4 +1,8 @@
-import PA215PA.ActualCheckerStandard
+module
+
+public import PA215PA.ActualCheckerStandard
+
+@[expose] public section
 namespace PA215.PA.ActualRefutationGraph
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic

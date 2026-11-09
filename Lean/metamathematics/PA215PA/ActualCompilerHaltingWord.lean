@@ -1,6 +1,10 @@
-import PA215PA.ActualCompilerInvariant
-import PA215PA.ActualCandidateBlueprint
-import PA215PA.ActualRefutationGraph
+module
+
+public import PA215PA.ActualCompilerInvariant
+public import PA215PA.ActualCandidateBlueprint
+public import PA215PA.ActualRefutationGraph
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerHaltingWord
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

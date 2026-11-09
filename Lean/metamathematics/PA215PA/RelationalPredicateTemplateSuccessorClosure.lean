@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateSuccessorClosureSyntax
-import PA215PA.RelationalClosedCertificateSupply
+module
+
+public import PA215PA.RelationalPredicateTemplateSuccessorClosureSyntax
+public import PA215PA.RelationalClosedCertificateSupply
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Successor
 open FFL FFL.FirstOrder
 open FFL.FirstOrder.Arithmetic FFL.FirstOrder.Arithmetic.Bootstrapping

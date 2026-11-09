@@ -1,5 +1,9 @@
-import PA215PA.RelationalClosedCertificateOrdinalSeeds
-import PA215PA.RelationalPredicateTemplateClosedCalibration
+module
+
+public import PA215PA.RelationalClosedCertificateOrdinalSeeds
+public import PA215PA.RelationalPredicateTemplateClosedCalibration
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

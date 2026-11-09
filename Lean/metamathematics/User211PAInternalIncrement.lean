@@ -1,11 +1,15 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalForwardFile
-import User211PAInternalSelectedCell
-import User211PAInternalCarryReturnRelation
-import User211PAInternalIncrementTail
-import User211PAInternalCarryFile
-import User211PAInternalReturnFile
+public import User211PAInternalForwardFile
+public import User211PAInternalSelectedCell
+public import User211PAInternalCarryReturnRelation
+public import User211PAInternalIncrementTail
+public import User211PAInternalCarryFile
+public import User211PAInternalReturnFile
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PA.InternalTrace.Increment
 open PA215

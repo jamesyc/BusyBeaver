@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqFormulaSourceFreeCalibration
-import PA215PA.NumericPAeqFormulaSupportedArity
-import PA215PA.NumericPAeqFormulaSourceFreeArity
-import PA215PA.NumericPAeqFormulaSupportedSourceFreeAtoms
+module
+
+public import PA215PA.NumericPAeqFormulaSourceFreeCalibration
+public import PA215PA.NumericPAeqFormulaSupportedArity
+public import PA215PA.NumericPAeqFormulaSourceFreeArity
+public import PA215PA.NumericPAeqFormulaSupportedSourceFreeAtoms
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,7 +1,11 @@
-import User211SourceEquivalence
-import User211PAModelPrimitive
-import PA211.UserCandidate.RuntimeShards.S053
-import PA211.UserCandidate.RuntimeShards.S054
+module
+
+public import User211SourceEquivalence
+public import User211PAModelPrimitive
+public import PA211.UserCandidate.RuntimeShards.S053
+public import PA211.UserCandidate.RuntimeShards.S054
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 32000000
 namespace PA211.UserCandidate.PA.ModelCoverageShards.S041

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightZeroInduction
+module
+
+public import PA215PA.RelationalAdditionRightZeroInduction
+
+@[expose] public section
 
 /-! Right-zero supplier from nine explicit finite source axioms, including
 the inclusive restriction and negated right-zero property Separation instances. -/

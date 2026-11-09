@@ -1,4 +1,8 @@
-import PA215.Source.Cantor
+module
+
+public import PA215.Source.Cantor
+
+@[expose] public section
 
 /-! Literal numeric formula constructors and the dominated-rho8 proof calculus.
 Constructors/bundle transcribe PA/m238/coq/logic/Codes238.v at upstream commit

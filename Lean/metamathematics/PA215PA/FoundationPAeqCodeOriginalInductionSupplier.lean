@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeOpenInductionSupplier
+module
+
+public import PA215PA.FoundationPAeqCodeOpenInductionSupplier
+
+@[expose] public section
 /-! Discharge the original arbitrary-model induction branch. The exact source
 closure count is retained; target canonical axioms use their own proved support
 count, related by numeric surplus-vector agreement and actual proof opening. -/

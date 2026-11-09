@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedInductionSupplier
-import PA215PA.PAInterpretedParameterClosure
+module
+
+public import PA215PA.PAInterpretedInductionSupplier
+public import PA215PA.PAInterpretedParameterClosure
+
+@[expose] public section
 
 /-! Close the already fully supplied finite guarded induction theorem.
 The result is an actual plain target universal closure. Equivalence with the

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightSuccessorStep
+module
+
+public import PA215PA.RelationalAdditionRightSuccessorStep
+
+@[expose] public section
 
 /-! Constructive uniform ordinal induction, with its precise negated-property
 Separation assumption displayed rather than implicitly generalized. -/

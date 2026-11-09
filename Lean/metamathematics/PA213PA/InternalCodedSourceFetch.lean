@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceFetchPrefix
-import PA213PA.InternalCodedSourceFetchDecode
-import PA213PA.InternalCodedSourceCommandProjection
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceFetchPrefix
+public import PA213PA.InternalCodedSourceFetchDecode
+public import PA213PA.InternalCodedSourceCommandProjection
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

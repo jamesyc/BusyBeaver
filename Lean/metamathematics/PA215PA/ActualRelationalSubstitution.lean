@@ -1,5 +1,9 @@
-import PA215PA.ActualRelationalAtoms
-import PA215PA.ActualRelationalEncoding
+module
+
+public import PA215PA.ActualRelationalAtoms
+public import PA215PA.ActualRelationalEncoding
+
+@[expose] public section
 
 /-! Structural finite proof translation of named label substitution under
 fixed reserved-label neighborhood equality. All original constructors are

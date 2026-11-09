@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationCoherenceOutputs
-import PA215PA.RelationalOrderIsoSuccessorMatch
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceOutputs
+public import PA215PA.RelationalOrderIsoSuccessorMatch
+
+@[expose] public section
 
 /-! Pointwise successor case of addition coherence. The matching predecessor
 and both lower arithmetic outputs are actual existential witnesses. -/

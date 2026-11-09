@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueVectorRealizationSyntax
-import PA215PA.NumericPAeqSupportedValueCoherenceShape
-import PA215PA.NumericPAeqTermSupportedVectorSubst
+module
+
+public import PA215PA.NumericPAeqValueVectorRealizationSyntax
+public import PA215PA.NumericPAeqSupportedValueCoherenceShape
+public import PA215PA.NumericPAeqTermSupportedVectorSubst
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

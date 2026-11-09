@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermTargetSubst
+module
+
+public import PA215PA.NumericPAeqTermTargetSubst
+
+@[expose] public section
 
 /-! Existential value-output syntax. This defines a formula, not a proof of
 semantic totality. Bound and free environments contain target term codes. -/

@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentZeroEnvironment
-import Foundation.FirstOrder.Arithmetic.R0.Basic
+module
+
+public import PA215PA.FoundationRelationalSequentZeroEnvironment
+public import Foundation.FirstOrder.Arithmetic.R0.Basic
+
+@[expose] public section
 
 /-! Fixed standard graph calibration by Sigma-one completeness. Each input
 and output is a host natural number. This does not assert computation of

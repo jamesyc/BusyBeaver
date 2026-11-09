@@ -1,4 +1,8 @@
-import PA215.Source.RootFrame
+module
+
+public import PA215.Source.RootFrame
+
+@[expose] public section
 namespace PA215.Source
 open PA215.Runtime
 

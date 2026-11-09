@@ -1,6 +1,10 @@
-import PA213PA.InternalCarryCell
-import PA213PA.InternalCarryCode
-import PA213PA.InternalSegmentCompose
+module
+
+public import PA213PA.InternalCarryCell
+public import PA213PA.InternalCarryCode
+public import PA213PA.InternalSegmentCompose
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.CarryFile
 open PA215

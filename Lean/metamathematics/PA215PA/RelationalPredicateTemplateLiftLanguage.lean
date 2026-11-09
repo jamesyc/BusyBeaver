@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateLiftND
+module
+
+public import PA215PA.RelationalPredicateTemplateLiftND
+
+@[expose] public section
 
 /-! The ordinary equality/membership language embeds into the unary-hole
 language. This transports actual Foundation LK derivations, not semantic

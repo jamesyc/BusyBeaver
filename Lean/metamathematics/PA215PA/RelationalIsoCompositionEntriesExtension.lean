@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionEntrySuccessor
+module
+
+public import PA215PA.RelationalIsoCompositionEntrySuccessor
+
+@[expose] public section
 
 /-! Universal actual-entry preservation under the raw composition adjunction. -/
 namespace PA215.PA.RelationalSource.PairGraph

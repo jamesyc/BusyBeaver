@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSupportedVectorBinderGuard
-import PA215PA.NumericPAeqValueDomainGuardPrepend
+module
+
+public import PA215PA.NumericPAeqSupportedVectorBinderGuard
+public import PA215PA.NumericPAeqValueDomainGuardPrepend
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

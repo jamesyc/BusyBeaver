@@ -1,6 +1,10 @@
-import PA215PA.ActualCompilerRuleSoundness
-import PA215PA.ActualCompilerBlueprint
-import PA215PA.ActualCheckerBlueprint
+module
+
+public import PA215PA.ActualCompilerRuleSoundness
+public import PA215PA.ActualCompilerBlueprint
+public import PA215PA.ActualCheckerBlueprint
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerLeafSoundness
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

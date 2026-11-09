@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalEmpty
+module
+
+public import PA215PA.RelationalOrdinalEmpty
+
+@[expose] public section
 
 /-! Represented intersections supplied by one ordinary Separation instance.
 No extensional identification of the witness is made. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrderIsoReflexivity
+module
+
+public import PA215PA.RelationalOrderIsoReflexivity
+
+@[expose] public section
 
 /-! Ordinary equality transports the endpoints of a witnessed isomorphism.
 This does not identify merely isomorphic representatives as equal. -/

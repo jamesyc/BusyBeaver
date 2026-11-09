@@ -1,4 +1,8 @@
-import PA215.Source.CyclicDriver
+module
+
+public import PA215.Source.CyclicDriver
+
+@[expose] public section
 namespace PA215.Source
 theorem nonexit_to_cycle (h : Steps sites n a b) (hb : b.control ≠ .exited) :
     CycleSteps sites n a b := by

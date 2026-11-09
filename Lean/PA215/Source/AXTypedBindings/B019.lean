@@ -1,6 +1,11 @@
-import PA215.Source.AXBindings.B019
-import PA215.Source.AXTypedPlan
-import PA215.Source.ExistingPrivateBound
+module
+
+public import PA215.Source.AXBindings.B019
+public import PA215.Source.AXTypedPlan
+public import PA215.Source.ExistingPrivateBound
+import all PA215.Source.AXBindings.B019
+
+@[expose] public section
 namespace PA215.Source.AXModelBounds
 theorem bound3035_c : CopyToT.Bound exactSites 3 3035 :=
   existingPrivateBound% "PA215.Source.AXBindings.B019" "PA215.Source.AXAll.bound3035_c"

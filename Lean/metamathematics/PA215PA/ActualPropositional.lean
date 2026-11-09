@@ -1,4 +1,8 @@
-import PA215PA.ActualDominated
+module
+
+public import PA215PA.ActualDominated
+
+@[expose] public section
 
 /-! Finite-context proof trees for the AX proof datatype, following NumericHilbert238.v at jeff87654/busy-beaver@84049b5e753190cf328cbc2d2710791ad32ad59c. The context rules import only closed native theorems and exclude generalization. -/
 namespace PA215.PA.NativeCalculus.ActualCore

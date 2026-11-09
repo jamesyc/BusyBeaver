@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSyntax
+module
+
+public import PA215PA.PAForwardRelationalSyntax
+
+@[expose] public section
 
 /-! Explicit constructor contracts and NNF negation duality. -/
 namespace PA215.PA.ForwardRelational

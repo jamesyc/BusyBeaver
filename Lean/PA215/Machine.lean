@@ -1,4 +1,8 @@
-import Std
+module
+
+public import Std
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 2000000
 

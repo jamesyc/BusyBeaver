@@ -1,7 +1,13 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceCompare
-import PA215.Source.MPGuardSteps
-import PA215.Source.AXGateCompareSteps
+module
+
+meta import Lean
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceCompare
+public import PA215.Source.MPGuardSteps
+public import PA215.Source.AXGateCompareSteps
+import all PA215.Source.MPGuardSteps
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 /- Read-only resolution of the exact already checked private row theorem.

@@ -1,5 +1,9 @@
-import PA213.CandidateTable
-import PA213.StateBound
+module
+
+public import PA213.CandidateTable
+public import PA213.StateBound
+
+@[expose] public section
 /-! Dense arithmetic tags for the frozen 213-control machine. Tags122 and214
 are unused padding, not working controls. Their auxiliary rows are self-loops;
 all candidate rows have targets in the 213 active tags or the halt tag215.

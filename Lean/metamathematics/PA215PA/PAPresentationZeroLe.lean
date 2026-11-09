@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationOrderBasic
+module
+
+public import PA215PA.PAPresentationOrderBasic
+
+@[expose] public section
 
 namespace PA215.PA.Presentation
 open FFL FFL.FirstOrder

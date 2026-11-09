@@ -1,4 +1,8 @@
-import PA215PA.ActualBasisLogic
+module
+
+public import PA215PA.ActualBasisLogic
+
+@[expose] public section
 /-! Modal closure in the literal actual basis and an explicit equality-free
 replacement formula testcase. No primitive equality vacuity is used. -/
 namespace PA215.PA.NativeCalculus.ActualBasis

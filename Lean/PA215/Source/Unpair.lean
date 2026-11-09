@@ -1,6 +1,10 @@
-import PA215.Source.UnpairBinding
-import PA215.Source.Semantics
-import PA215.Source.Cantor
+module
+
+public import PA215.Source.UnpairBinding
+public import PA215.Source.Semantics
+public import PA215.Source.Cantor
+
+@[expose] public section
 
 namespace PA215.Source.Unpair
 

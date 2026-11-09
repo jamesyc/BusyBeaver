@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalScanBits
+public import User211PAInternalScanBits
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PA.InternalTrace.ScanLeft
 open PA215

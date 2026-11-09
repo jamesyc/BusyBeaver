@@ -1,6 +1,10 @@
-import PA215PA.FoundationRelationalSequentConnectiveNormalization
-import PA215PA.FoundationRelationalSequentPaddedProofEnvironment
-import PA215PA.FoundationRelationalSequentPaddingReadback
+module
+
+public import PA215PA.FoundationRelationalSequentConnectiveNormalization
+public import PA215PA.FoundationRelationalSequentPaddedProofEnvironment
+public import PA215PA.FoundationRelationalSequentPaddingReadback
+
+@[expose] public section
 
 /-! Compose supplied source implications at a common raised proof budget,
 then return the final source implication to exactly the requested labels. -/

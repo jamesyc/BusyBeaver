@@ -1,4 +1,8 @@
-import PA215.Source.AXPushSteps
+module
+
+public import PA215.Source.AXPushSteps
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.AXPair
 abbrev Store := AXPush.Store

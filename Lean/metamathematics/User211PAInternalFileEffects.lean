@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalFileGraphs
+public import User211PAInternalFileGraphs
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.FileEffects
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

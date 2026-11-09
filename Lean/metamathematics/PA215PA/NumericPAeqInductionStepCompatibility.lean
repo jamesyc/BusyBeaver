@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqInductionSuccessorComparison
-import PA215PA.NumericPAeqInductionStepOpening
-import PA215PA.NumericPAeqInductionStepTemplateCertificate
+module
+
+public import PA215PA.NumericPAeqInductionSuccessorComparison
+public import PA215PA.NumericPAeqInductionStepOpening
+public import PA215PA.NumericPAeqInductionStepTemplateCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

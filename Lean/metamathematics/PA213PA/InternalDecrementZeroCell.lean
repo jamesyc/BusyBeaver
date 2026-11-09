@@ -1,6 +1,10 @@
-import PA213PA.InternalLeftPhase
-import PA213PA.InternalTracePrepend
-import Mathlib.Tactic.Ring.Basic
+module
+
+public import PA213PA.InternalLeftPhase
+public import PA213PA.InternalTracePrepend
+public import Mathlib.Tactic.Ring.Basic
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.DecrementZeroCell
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

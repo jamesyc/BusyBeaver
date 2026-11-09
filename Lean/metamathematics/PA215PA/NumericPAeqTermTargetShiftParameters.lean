@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTargetShiftTemplates
-import PA215PA.NumericPAeqTermChildren
+module
+
+public import PA215PA.NumericPAeqTermTargetShiftTemplates
+public import PA215PA.NumericPAeqTermChildren
+
+@[expose] public section
 
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

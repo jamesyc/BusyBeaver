@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateBinaryRequested
+module
+
+public import PA215PA.RelationalPredicateBinaryRequested
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateBinary
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

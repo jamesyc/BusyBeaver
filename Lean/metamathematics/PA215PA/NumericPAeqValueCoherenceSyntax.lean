@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueGuardedTotalitySyntax
-import PA215PA.NumericPAeqValueClosedEnvironment
-import PA215PA.NumericPAeqValueIsoGuardValidity
+module
+
+public import PA215PA.NumericPAeqValueGuardedTotalitySyntax
+public import PA215PA.NumericPAeqValueClosedEnvironment
+public import PA215PA.NumericPAeqValueIsoGuardValidity
+
+@[expose] public section
 
 /-! Paired finite environments and universal two-value comparison syntax.
 Free vectors may have different lengths; only their common prefix is compared. -/

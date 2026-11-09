@@ -1,6 +1,10 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceProgram
-import PA213.SourceEquivalence
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceProgram
+public import PA213.SourceEquivalence
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA

@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationSentences
+module
+
+public import PA215PA.PAPresentationSentences
+
+@[expose] public section
 
 /-! First fixed PA-minus image: x+0=x. The target's defining recursion is
 on the FIRST argument, so this right-zero equation is proved by induction. -/

@@ -1,6 +1,10 @@
-import PA215PA.RelationalAdditionZeroLaw
-import PA215PA.RelationalOrderIsoTransport
-import PA215PA.RelationalOrderIsoZero
+module
+
+public import PA215PA.RelationalAdditionZeroLaw
+public import PA215PA.RelationalOrderIsoTransport
+public import PA215PA.RelationalOrderIsoZero
+
+@[expose] public section
 
 /-! The zero case of two-input addition coherence. Both result witnesses are
 actual traces; only their raw output equality is used to transport the given

@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateOrdinalSupport
-import PA215PA.RelationalPredicateTemplateClosedEnvironment
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalSupport
+public import PA215PA.RelationalPredicateTemplateClosedEnvironment
+
+@[expose] public section
 /-! Explicit numerical output of the unary-hole ordinal-induction template.
 The empty template free environment does not erase free parameters of P. -/
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal

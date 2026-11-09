@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaAtomParameters
+module
+
+public import PA215PA.NumericPAeqFormulaAtomParameters
+
+@[expose] public section
 
 /-! A conservative finite free-environment coverage invariant. The code bound
 is sufficient, not necessary; existence of a sufficiently long environment is

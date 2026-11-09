@@ -1,8 +1,12 @@
-import PA215.Source.MPField
-import PA215.Source.MPPush
-import PA215.Source.MPCopy
-import PA215.Source.MPCons
-import PA215.Source.MPGuard
+module
+
+public import PA215.Source.MPField
+public import PA215.Source.MPPush
+public import PA215.Source.MPCopy
+public import PA215.Source.MPCons
+public import PA215.Source.MPGuard
+
+@[expose] public section
 namespace PA215.Source.MP
 
 def registers (t w d h l : Nat) (f : Registers) : Registers := fun r =>

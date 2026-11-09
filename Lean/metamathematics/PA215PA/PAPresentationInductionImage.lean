@@ -1,6 +1,10 @@
-import PA215PA.PAPresentationBinders
-import PA215PA.PAPresentationAxioms
-import Foundation.FirstOrder.Arithmetic.Schemata
+module
+
+public import PA215PA.PAPresentationBinders
+public import PA215PA.PAPresentationAxioms
+public import Foundation.FirstOrder.Arithmetic.Schemata
+
+@[expose] public section
 
 /-! The exact image of Foundation's induction schema. Its additive step is
 not silently identified with primitive successor induction. -/

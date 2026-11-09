@@ -1,4 +1,8 @@
-import PA215.Source.AXMacroRead
+module
+
+public import PA215.Source.AXMacroRead
+
+@[expose] public section
 namespace PA215.Source.AXTyped
 /-- Finite literal binding evidence, separate from external Nat semantics. -/
 inductive Bound : AXMacro.Op → Nat → Nat → Prop

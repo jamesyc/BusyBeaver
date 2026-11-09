@@ -1,8 +1,12 @@
-import PA215PA.RelationalPredicateTemplateSuccessorProof
-import PA215PA.RelationalPredicateTemplateSuccessorClosure
-import PA215PA.RelationalPredicateTemplateSuccessorCalibration
-import PA215PA.RelationalPredicateTemplateNDRequested
-import PA215PA.RelationalPredicateTemplateOrdinalSupport
+module
+
+public import PA215PA.RelationalPredicateTemplateSuccessorProof
+public import PA215PA.RelationalPredicateTemplateSuccessorClosure
+public import PA215PA.RelationalPredicateTemplateSuccessorCalibration
+public import PA215PA.RelationalPredicateTemplateNDRequested
+public import PA215PA.RelationalPredicateTemplateOrdinalSupport
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Successor
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

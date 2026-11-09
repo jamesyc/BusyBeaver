@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionEdge
-import PA215PA.RelationalOrderIsoRules
+module
+
+public import PA215PA.RelationalIsoCompositionEdge
+public import PA215PA.RelationalOrderIsoRules
+
+@[expose] public section
 
 /-! Actual right-totality witnesses for the composite relation. -/
 namespace PA215.PA.RelationalSource.PairGraph

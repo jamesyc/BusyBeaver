@@ -1,8 +1,12 @@
-import PA215PA.NumericPAeqValueBinaryShape
-import PA215PA.NumericPAeqValueDomainProjection
-import PA215PA.NumericPAeqValueCertificateComposition
-import PA215PA.RelationalPredicateBinaryDuplicateCode
-import PA215PA.RelationalPredicateBinarySupply
+module
+
+public import PA215PA.NumericPAeqValueBinaryShape
+public import PA215PA.NumericPAeqValueDomainProjection
+public import PA215PA.NumericPAeqValueCertificateComposition
+public import PA215PA.RelationalPredicateBinaryDuplicateCode
+public import PA215PA.RelationalPredicateBinarySupply
+
+@[expose] public section
 
 /-! Actual independent two-child semantic arithmetic branches. The common
 domain duplication and all fixed add/mul totality suppliers are paid. -/

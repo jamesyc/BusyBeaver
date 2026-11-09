@@ -1,4 +1,8 @@
-import PA213PA.HaltingFormula
+module
+
+public import PA213PA.HaltingFormula
+
+@[expose] public section
 
 /-! Length-normalized certificates for the existing HFS-coded machine trace.
 All semantic lemmas below quantify arbitrary PA models, not only Nat. -/

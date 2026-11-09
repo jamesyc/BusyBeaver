@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentShiftRule
+module
+
+public import PA215PA.FoundationRelationalSequentShiftRule
+
+@[expose] public section
 
 /-! Explicit arithmetic invariant for conditional translation of the unchanged
 relational Foundation derivation codes. The axiom supplier is a separate

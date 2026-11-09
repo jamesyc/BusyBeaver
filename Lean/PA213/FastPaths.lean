@@ -1,9 +1,13 @@
-import PA213.PathBounds
+module
+
+public import PA213.PathBounds
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 64000000
 namespace PA213.FastPaths
 open PA215.Source PA213.SourceProgram
-private def p000 (i : Nat) : Path :=
+def p000 (i : Nat) : Path :=
   match i with
   | 0 => [false,false,false,false]
   | 1 => [false,false,false,true]
@@ -70,7 +74,7 @@ private def p000 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,false,false,true,false,true,true,false,true,true,false,false]
   | 63 => [true,false,true,false,false,true,false,false,true,false,true,true,false,true,true,false,true,false]
   | _ => []
-private def p001 (i : Nat) : Path :=
+def p001 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,false,false,true,false,true,true,false,true,true,false,true,true,false]
   | 1 => [true,false,true,false,false,true,false,false,true,false,true,true,false,true,true,false,true,true,true]
@@ -137,7 +141,7 @@ private def p001 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,false,false,true,false,true,false]
   | 63 => [true,false,true,false,false,true,true,false,false,false,true,false,true,true,false]
   | _ => []
-private def p002 (i : Nat) : Path :=
+def p002 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,false,false,false,true,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,false,false,false,true,true,false]
@@ -204,7 +208,7 @@ private def p002 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,true,false,true,false,true,false,true,true,false,true,true,false]
   | 63 => [true,false,true,false,false,true,true,false,true,false,true,false,true,false,true,true,false,true,true,true]
   | _ => []
-private def p003 (i : Nat) : Path :=
+def p003 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,false,true,false,true,false,true,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,false,true,false,true,false,true,true,false]
@@ -271,7 +275,7 @@ private def p003 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,true,false,true,true,true,true,false,true,false]
   | 63 => [true,false,true,false,false,true,true,false,true,false,true,true,true,true,false,true,true,false,false]
   | _ => []
-private def p004 (i : Nat) : Path :=
+def p004 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,false,true,false,true,true,true,true,false,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,false,true,false,true,true,true,true,false,true,true,false,true,true,false]
@@ -338,7 +342,7 @@ private def p004 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,true,true,true,false,false,false,false,false]
   | 63 => [true,false,true,false,false,true,true,false,true,true,true,false,false,false,false,true,false]
   | _ => []
-private def p005 (i : Nat) : Path :=
+def p005 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,false,true,true,true,false,false,false,false,true,true,false,false,false]
   | 1 => [true,false,true,false,false,true,true,false,true,true,true,false,false,false,false,true,true,false,false,true]
@@ -405,7 +409,7 @@ private def p005 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,true,true,true,false,true,true,false,true,true,false,true,true,false,false]
   | 63 => [true,false,true,false,false,true,true,false,true,true,true,false,true,true,false,true,true,false,true,true,false,true,false]
   | _ => []
-private def p006 (i : Nat) : Path :=
+def p006 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,false,true,true,true,false,true,true,false,true,true,false,true,true,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,false,true,true,true,false,true,true,false,true,true,false,true,true,false,true,true,true]
@@ -472,7 +476,7 @@ private def p006 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,true,true,true,true,false,true,true,true,true,false,false,false]
   | 63 => [true,false,true,false,false,true,true,false,true,true,true,true,false,true,true,true,true,false,false,true]
   | _ => []
-private def p007 (i : Nat) : Path :=
+def p007 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,false,true,true,true,true,false,true,true,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,false,true,true,true,true,false,true,true,true,true,false,true,true]
@@ -539,7 +543,7 @@ private def p007 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,true,true,false,false,false]
   | 63 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,true,true,false,false,true,false]
   | _ => []
-private def p008 (i : Nat) : Path :=
+def p008 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,true,true,false,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,false,false,true,false,true,true,false,false,true,true,true]
@@ -606,7 +610,7 @@ private def p008 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,true,true,false,false,false,true,true,false,true,true,false,true,true,true]
   | 63 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,true,true,false,false,false,true,true,false,true,true,true]
   | _ => []
-private def p009 (i : Nat) : Path :=
+def p009 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,true,true,false,false,false,true,true,true,false]
   | 1 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,true,true,false,false,false,true,true,true,true,false]
@@ -673,7 +677,7 @@ private def p009 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,true,true,true,false,true,true,true,true]
   | 63 => [true,false,true,false,false,true,true,false,true,true,true,true,true,true,true,true,true,true]
   | _ => []
-private def p010 (i : Nat) : Path :=
+def p010 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,false,false,false,false]
   | 1 => [true,false,true,false,false,true,true,true,false,false,false,false,true]
@@ -740,7 +744,7 @@ private def p010 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,false,false,true,false,true,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,false,false,false,true,false,true,false,false,true,true,false]
   | _ => []
-private def p011 (i : Nat) : Path :=
+def p011 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,false,false,true,false,true,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,false,false,false,true,false,true,false,true,false,false,false]
@@ -807,7 +811,7 @@ private def p011 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,false,false,true,true,false,false,true,false,true,true,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,false,false,false,true,true,false,false,true,true,false,false]
   | _ => []
-private def p012 (i : Nat) : Path :=
+def p012 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,false,false,true,true,false,false,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,false,false,false,true,true,false,false,true,true,false,true,true,false]
@@ -874,7 +878,7 @@ private def p012 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,false,true,false,false,true,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,false,false,true,false,true,false]
   | _ => []
-private def p013 (i : Nat) : Path :=
+def p013 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,false,true,false,true,true]
   | 1 => [true,false,true,false,false,true,true,true,false,false,true,true,false,false,false,false,false,false]
@@ -941,7 +945,7 @@ private def p013 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,false,true,true,false,true,false,true,true,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,false,false,true,true,false,true,false,true,true,false,false,true,true,false]
   | _ => []
-private def p014 (i : Nat) : Path :=
+def p014 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,false,true,true,false,true,false,true,true,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,false,false,true,true,false,true,false,true,true,false,true,false]
@@ -1008,7 +1012,7 @@ private def p014 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,false,true,true,true,false,false,true,true,false,false]
   | 63 => [true,false,true,false,false,true,true,true,false,false,true,true,true,false,false,true,true,false,true,false]
   | _ => []
-private def p015 (i : Nat) : Path :=
+def p015 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,false,true,true,true,false,false,true,true,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,false,false,true,true,true,false,false,true,true,false,true,true,true]
@@ -1075,7 +1079,7 @@ private def p015 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,false,true,true,true,true,false,true,false,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,false,false,true,true,true,true,false,true,false,false,false,true,true,false]
   | _ => []
-private def p016 (i : Nat) : Path :=
+def p016 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,false,true,true,true,true,false,true,false,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,false,false,true,true,true,true,false,true,false,false,true,false,false,false]
@@ -1142,7 +1146,7 @@ private def p016 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,false,true,true,true,true,false,true,true,false,false,true,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,false,false,true,true,true,true,false,true,true,false,false,true,true,true,true,false]
   | _ => []
-private def p017 (i : Nat) : Path :=
+def p017 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,false,true,true,true,true,false,true,true,false,false,true,true,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,false,false,true,true,true,true,false,true,true,false,true]
@@ -1209,7 +1213,7 @@ private def p017 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,true,false,false,false,false,false,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,false,true,false,false,false,false,true,false]
   | _ => []
-private def p018 (i : Nat) : Path :=
+def p018 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,true,false,false,false,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,false,true,false,false,false,false,true,true,true]
@@ -1276,7 +1280,7 @@ private def p018 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,true,false,false,true,false,false,true,false,true,true,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,false,true,false,false,true,false,false,true,true,false,false]
   | _ => []
-private def p019 (i : Nat) : Path :=
+def p019 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,true,false,false,true,false,false,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,false,true,false,false,true,false,false,true,true,false,true,true,false]
@@ -1343,7 +1347,7 @@ private def p019 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,true,false,false,true,true,true,false,true,false,false,false]
   | 63 => [true,false,true,false,false,true,true,true,false,true,false,false,true,true,true,false,true,false,false,true,false]
   | _ => []
-private def p020 (i : Nat) : Path :=
+def p020 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,true,false,false,true,true,true,false,true,false,false,true,true]
   | 1 => [true,false,true,false,false,true,true,true,false,true,false,false,true,true,true,false,true,false,true,false,false]
@@ -1410,7 +1414,7 @@ private def p020 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,true,false,true,false,false,false,false,true,true,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,false,true,false,true,false,false,false,false,true,true,false,true,true,false,false]
   | _ => []
-private def p021 (i : Nat) : Path :=
+def p021 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,true,false,true,false,false,false,false,true,true,false,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,false,true,false,true,false,false,false,false,true,true,false,true,true,false,true,true,false]
@@ -1477,7 +1481,7 @@ private def p021 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,true,false,true,false,true,false,true,true,true,false,false,false]
   | 63 => [true,false,true,false,false,true,true,true,false,true,false,true,false,true,false,true,true,true,false,false,true]
   | _ => []
-private def p022 (i : Nat) : Path :=
+def p022 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,true,false,true,false,true,false,true,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,false,true,false,true,false,true,false,true,true,true,false,true,true]
@@ -1544,7 +1548,7 @@ private def p022 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,true,false,true,true,false,true,false,true,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,false,true,false,true,true,false,true,false,true,false,true,true]
   | _ => []
-private def p023 (i : Nat) : Path :=
+def p023 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,true,false,true,true,false,true,false,true,true,false,false,false]
   | 1 => [true,false,true,false,false,true,true,true,false,true,false,true,true,false,true,false,true,true,false,false,true,false]
@@ -1611,7 +1615,7 @@ private def p023 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,true,false,true,true,true,true,false,true,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,false,true,false,true,true,true,true,false,true,true,true,true,false]
   | _ => []
-private def p024 (i : Nat) : Path :=
+def p024 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,false,true,false,true,true,true,true,false,true,true,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,false,true,false,true,true,true,true,true,false,false]
@@ -1678,7 +1682,7 @@ private def p024 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,false,true,true,true,true,true,true,false,true,true]
   | 63 => [true,false,true,false,false,true,true,true,false,true,true,true,true,true,true,true]
   | _ => []
-private def p025 (i : Nat) : Path :=
+def p025 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,false,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,false,true]
@@ -1745,7 +1749,7 @@ private def p025 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,false,false,true,false,true,true,false,false,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,false,false,true,false,true,true,false,false,true,true,true]
   | _ => []
-private def p026 (i : Nat) : Path :=
+def p026 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,false,false,true,false,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,false,false,true,false,true,true,false,true,true,false,false]
@@ -1812,7 +1816,7 @@ private def p026 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,true,false,false,false,true,false,true,true,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,true,false,false,false,true,false,true,true,false,true,true,false]
   | _ => []
-private def p027 (i : Nat) : Path :=
+def p027 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,true,false,false,false,true,false,true,true,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,true,false,false,false,true,false,true,true,true]
@@ -1879,7 +1883,7 @@ private def p027 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,true,true,false,false,false,true,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,true,true,false,false,true,false,false,false]
   | _ => []
-private def p028 (i : Nat) : Path :=
+def p028 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,true,true,false,false,true,false,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,false,true,true,true,false,false,true,false,false,true,true]
@@ -1946,7 +1950,7 @@ private def p028 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,false,false,false,false,true,true,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,false,false,false,false,true,true,false,false,true,true,false]
   | _ => []
-private def p029 (i : Nat) : Path :=
+def p029 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,false,false,false,false,true,true,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,false,false,false,false,true,true,false,true,false]
@@ -2013,7 +2017,7 @@ private def p029 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,false,true,false,true,false,true,true,false,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,false,true,false,true,false,true,true,true]
   | _ => []
-private def p030 (i : Nat) : Path :=
+def p030 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,false,true,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,false,true,false,true,true,true,false,false,false]
@@ -2080,7 +2084,7 @@ private def p030 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,true,true,false,false,false,true,true,false,false,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,true,true,false,false,false,true,true,false,true,false]
   | _ => []
-private def p031 (i : Nat) : Path :=
+def p031 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,true,true,false,false,false,true,true,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,false,true,true,true,false,false,false,true,true,false,true,true,true]
@@ -2147,7 +2151,7 @@ private def p031 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,true,false,false,true,true,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,true,false,false,true,true,false,false,true,true,false]
   | _ => []
-private def p032 (i : Nat) : Path :=
+def p032 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,true,false,false,true,true,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,true,false,false,true,true,false,true,false]
@@ -2214,7 +2218,7 @@ private def p032 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,true,true,false,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,true,true,false,true,true,true,false]
   | _ => []
-private def p033 (i : Nat) : Path :=
+def p033 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,true,true,false,true,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,false,true,true,true,true,false,false,false]
@@ -2281,7 +2285,7 @@ private def p033 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,true,false,true,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,true,false,true,false,false,true,true,false]
   | _ => []
-private def p034 (i : Nat) : Path :=
+def p034 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,true,false,true,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,true,false,true,false,true,false,false,false]
@@ -2348,7 +2352,7 @@ private def p034 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,false,false,true,false,true,true,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,false,false,true,false,true,true,true,true,true]
   | _ => []
-private def p035 (i : Nat) : Path :=
+def p035 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,false,false,true,true,false,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,false,false,true,true,false,true,false]
@@ -2415,7 +2419,7 @@ private def p035 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,false,false,true,false,false,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,false,false,true,false,false,true,false]
   | _ => []
-private def p036 (i : Nat) : Path :=
+def p036 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,false,false,true,false,false,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,false,false,true,false,true,false,false]
@@ -2482,7 +2486,7 @@ private def p036 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,false,false,false,false,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,false,false,false,false,true,true,true]
   | _ => []
-private def p037 (i : Nat) : Path :=
+def p037 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,false,false,false,true,false,false,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,false,false,false,true,false,false,true,false]
@@ -2549,7 +2553,7 @@ private def p037 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,false,true,true,false,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,false,true,true,false,true,false]
   | _ => []
-private def p038 (i : Nat) : Path :=
+def p038 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,false,true,true,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,false,true,true,false,true,true,true]
@@ -2616,7 +2620,7 @@ private def p038 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,true,false,true,false,false,false,true,true,false,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,true,false,true,false,false,false,true,true,false,true,true,true]
   | _ => []
-private def p039 (i : Nat) : Path :=
+def p039 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,true,false,true,false,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,false,true,true,true,true,true,false,true,false,false,true,false]
@@ -2683,7 +2687,7 @@ private def p039 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,true,true,false,false,true,false,true,true,false,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,true,true,false,false,true,false,true,true,true]
   | _ => []
-private def p040 (i : Nat) : Path :=
+def p040 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,true,true,false,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,true,true,false,false,true,true,true,false,false,false]
@@ -2750,7 +2754,7 @@ private def p040 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,false,true,true,true,true,false,false,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,false,true,true,true,true,false,true,false]
   | _ => []
-private def p041 (i : Nat) : Path :=
+def p041 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,false,true,true,true,true,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,false,true,true,true,true,false,true,true,true]
@@ -2817,7 +2821,7 @@ private def p041 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,false,false,true,false,true,true,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,false,false,true,true,false,false]
   | _ => []
-private def p042 (i : Nat) : Path :=
+def p042 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,false,false,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,false,false,true,true,false,true,true,false]
@@ -2884,7 +2888,7 @@ private def p042 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,false,false,false,false,false,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,false,false,false,false,true,false,false]
   | _ => []
-private def p043 (i : Nat) : Path :=
+def p043 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,false,false,false,false,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,false,false,false,false,true,false,true,true]
@@ -2951,7 +2955,7 @@ private def p043 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,false,true,false,true,false,false,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,false,true,false,true,false,true,false]
   | _ => []
-private def p044 (i : Nat) : Path :=
+def p044 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,false,true,false,true,false,true,true,false,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,false,true,false,true,false,true,true,false,true,false]
@@ -3018,7 +3022,7 @@ private def p044 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,true,true,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,true,true,true,true,true,false,false,false]
   | _ => []
-private def p045 (i : Nat) : Path :=
+def p045 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,true,true,true,true,true,false,false,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,false,false,true,true,true,true,true,true,false,true,false]
@@ -3085,7 +3089,7 @@ private def p045 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,false,true,false,false,false,false,true,true,false,false,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,false,true,false,false,false,false,true,true,false,false,true,false]
   | _ => []
-private def p046 (i : Nat) : Path :=
+def p046 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,false,true,false,false,false,false,true,true,false,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,false,true,false,false,false,false,true,true,false,false,true,true,true]
@@ -3152,7 +3156,7 @@ private def p046 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,false,true,false,true,false,true,false,true,true,false,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,false,true,false,true,false,true,false,true,true,false,true,true,true]
   | _ => []
-private def p047 (i : Nat) : Path :=
+def p047 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,false,true,false,true,false,true,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,false,true,false,true,false,true,true,false]
@@ -3219,7 +3223,7 @@ private def p047 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,false,false,true,false,false,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,false,false,true,false,true,false,false]
   | _ => []
-private def p048 (i : Nat) : Path :=
+def p048 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,false,false,true,false,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,false,false,true,false,true,false,true,true]
@@ -3286,7 +3290,7 @@ private def p048 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,true,false,false,true,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,true,false,false,true,false,false,true,true,false]
   | _ => []
-private def p049 (i : Nat) : Path :=
+def p049 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,true,false,false,true,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,true,false,false,true,false,true,false]
@@ -3353,7 +3357,7 @@ private def p049 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,true,true,false,false,true,false,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,true,true,false,false,true,true,false]
   | _ => []
-private def p050 (i : Nat) : Path :=
+def p050 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,true,true,false,false,true,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,false,true,true,true,true,false,false,true,true,true,true]
@@ -3420,7 +3424,7 @@ private def p050 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,false,false,true,true,false,false,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,false,false,true,true,false,false,true,false]
   | _ => []
-private def p051 (i : Nat) : Path :=
+def p051 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,false,false,true,true,false,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,false,false,true,true,false,false,true,true,true]
@@ -3487,7 +3491,7 @@ private def p051 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,true,false,true,false,false,true,true,true,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,true,false,true,false,false,true,true,true,true,true]
   | _ => []
-private def p052 (i : Nat) : Path :=
+def p052 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,true,false,true,false,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,true,false,true,true,false,false,false]
@@ -3554,7 +3558,7 @@ private def p052 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,true,true,true,false,false,true,true,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,true,true,true,false,false,true,true,false,false,true,true,false]
   | _ => []
-private def p053 (i : Nat) : Path :=
+def p053 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,true,true,true,false,false,true,true,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,false,true,true,true,false,false,true,true,false,true,false]
@@ -3621,7 +3625,7 @@ private def p053 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,false,false,false,true,true,true,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,false,false,false,true,true,true,false,true,true]
   | _ => []
-private def p054 (i : Nat) : Path :=
+def p054 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,false,false,false,true,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,false,false,true,false]
@@ -3688,7 +3692,7 @@ private def p054 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,true,false,false,true,false,true,true,false,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,true,false,false,true,false,true,true,false,false,true,true,false]
   | _ => []
-private def p055 (i : Nat) : Path :=
+def p055 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,true,false,false,true,false,true,true,false,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,true,false,false,true,false,true,true,false,true,false]
@@ -3755,7 +3759,7 @@ private def p055 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,true,true,false,true,false,true,true,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,true,true,false,true,false,true,true,false,true,true,false]
   | _ => []
-private def p056 (i : Nat) : Path :=
+def p056 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,true,true,false,true,false,true,true,false,true,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,false,true,true,true,false,true,false,true,true,true]
@@ -3822,7 +3826,7 @@ private def p056 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,false,false,false,false,false,true,true,true]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,false,false,false,false,true,false]
   | _ => []
-private def p057 (i : Nat) : Path :=
+def p057 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,false,false,false,false,true,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,false,false,false,false,true,true,true]
@@ -3889,7 +3893,7 @@ private def p057 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,false,true,false,false,true,false,true,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,false,true,false,false,true,false,true,true,false,false]
   | _ => []
-private def p058 (i : Nat) : Path :=
+def p058 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,false,true,false,false,true,false,true,true,false,true,false]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,false,true,false,false,true,false,true,true,false,true,true,false]
@@ -3956,7 +3960,7 @@ private def p058 (i : Nat) : Path :=
   | 62 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,true,false,false,false,false,true,false,false]
   | 63 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,true,false,false,false,false,true,false,true]
   | _ => []
-private def p059 (i : Nat) : Path :=
+def p059 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,true,false,false,false,false,true,true]
   | 1 => [true,false,true,false,false,true,true,true,true,false,true,true,true,true,true,false,false,false,true]
@@ -4023,7 +4027,7 @@ private def p059 (i : Nat) : Path :=
   | 62 => [true,false,true,false,true,false,false,false,true,true,true,false,true,false]
   | 63 => [true,false,true,false,true,false,false,false,true,true,true,false,true,true,false]
   | _ => []
-private def p060 (i : Nat) : Path :=
+def p060 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,true,false,false,false,true,true,true,false,true,true,true]
   | 1 => [true,false,true,false,true,false,false,false,true,true,true,true,false]
@@ -4090,7 +4094,7 @@ private def p060 (i : Nat) : Path :=
   | 62 => [true,false,true,false,true,true,true,false,true,true,true,true,true]
   | 63 => [true,false,true,false,true,true,true,true,false,false]
   | _ => []
-private def p061 (i : Nat) : Path :=
+def p061 (i : Nat) : Path :=
   match i with
   | 0 => [true,false,true,false,true,true,true,true,false,true,false]
   | 1 => [true,false,true,false,true,true,true,true,false,true,true,false]

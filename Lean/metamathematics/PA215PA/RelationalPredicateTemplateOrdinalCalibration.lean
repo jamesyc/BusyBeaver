@@ -1,7 +1,11 @@
-import PA215PA.RelationalPredicateTemplateOrdinalSchema
-import PA215PA.RelationalPredicateTemplateNegation
-import PA215PA.RelationalPredicateTemplateClosedAgreement
-import PA215PA.FoundationRelationalSequentSeparationCode
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalSchema
+public import PA215PA.RelationalPredicateTemplateNegation
+public import PA215PA.RelationalPredicateTemplateClosedAgreement
+public import PA215PA.FoundationRelationalSequentSeparationCode
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

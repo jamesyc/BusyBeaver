@@ -1,6 +1,10 @@
-import PA215PA.RelationalPredicateTemplateExistentialRule
-import PA215PA.RelationalPredicateTemplateCut
-import PA215PA.RelationalPredicateTemplateProofCoverage
+module
+
+public import PA215PA.RelationalPredicateTemplateExistentialRule
+public import PA215PA.RelationalPredicateTemplateCut
+public import PA215PA.RelationalPredicateTemplateProofCoverage
+
+@[expose] public section
 /-! A fixed host proof in Foundation's existing LK calculus yields a coded
 numeric derivation uniformly in the arbitrary model-valued unary hole. -/
 namespace PA215.PA.RelationalPredicateTemplate

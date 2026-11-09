@@ -1,7 +1,11 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import PA215.Source.PhysicalRegisters
-import User211EndpointStartupData
-import PA215.Source.ExactSource
+public import PA215.Source.PhysicalRegisters
+public import User211EndpointStartupData
+public import PA215.Source.ExactSource
+
+@[expose] public section
 
 set_option maxRecDepth 100000
 set_option maxHeartbeats 2000000

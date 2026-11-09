@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentTransport
+module
+
+public import PA215PA.FoundationRelationalSequentTransport
+
+@[expose] public section
 
 /-! Exact relational-source all-rule accepted-code closure. The child uses
 free/setShift literally, with explicit lo+1 allocator and finite free extension. -/

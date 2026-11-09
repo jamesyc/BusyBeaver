@@ -1,7 +1,11 @@
-import PA215PA.RelationalMultiplicationCoherenceSyntax
-import PA215PA.RelationalAdditionCoherenceRules
-import PA215PA.PAForwardRelationalRewriting
-import PA215PA.RelationalSpecializeFive
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceSyntax
+public import PA215PA.RelationalAdditionCoherenceRules
+public import PA215PA.PAForwardRelationalRewriting
+public import PA215PA.RelationalSpecializeFive
+
+@[expose] public section
 
 /-! Capture-aware specialization of the universally quantified coherence IH. -/
 namespace PA215.PA.RelationalSource.PairGraph

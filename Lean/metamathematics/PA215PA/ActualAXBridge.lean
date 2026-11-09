@@ -1,5 +1,9 @@
-import PA215.Source.ActualAXCode
-import PA215PA.ActualAXLogic
+module
+
+public import PA215.Source.ActualAXCode
+public import PA215PA.ActualAXLogic
+
+@[expose] public section
 
 /-! The literal AX arithmetic profile supplies finite witnesses in the PA-sound native calculus. The bridge is used in the direction required for source soundness. -/
 namespace PA215.PA.NativeCalculus

@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionRestrictionWitness
-import PA215PA.RelationalAdditionZeroLawPayload
+module
+
+public import PA215PA.RelationalAdditionRestrictionWitness
+public import PA215PA.RelationalAdditionZeroLawPayload
+
+@[expose] public section
 
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND

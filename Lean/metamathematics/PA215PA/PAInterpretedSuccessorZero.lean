@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedEqualitySymmetry
-import PA215PA.RelationalOrderIsoSuccessorZero
+module
+
+public import PA215PA.PAInterpretedEqualitySymmetry
+public import PA215PA.RelationalOrderIsoSuccessorZero
+
+@[expose] public section
 
 /-! A genuine successor term-value cannot be a raw empty representative. -/
 namespace PA215.PA.ForwardRelational

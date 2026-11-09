@@ -1,6 +1,10 @@
-import PA215.Source.FetchUnpairBinding
-import PA215.Source.Unpair
-import PA215.Source.SegmentTransfer
+module
+
+public import PA215.Source.FetchUnpairBinding
+public import PA215.Source.Unpair
+public import PA215.Source.SegmentTransfer
+
+@[expose] public section
 
 namespace PA215.Source.FetchUnpair
 

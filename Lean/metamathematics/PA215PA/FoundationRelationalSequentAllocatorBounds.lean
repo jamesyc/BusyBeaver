@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentBinderAlpha
+module
+
+public import PA215PA.FoundationRelationalSequentBinderAlpha
+
+@[expose] public section
 
 /-! Common child allocator arithmetic. Both original allocator budgets and
 both original valid environments are explicit premises. Reserve z is unchanged. -/

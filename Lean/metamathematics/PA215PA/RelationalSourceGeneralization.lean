@@ -1,4 +1,8 @@
-import PA215PA.RelationalSourceInstantiation
+module
+
+public import PA215PA.RelationalSourceInstantiation
+
+@[expose] public section
 
 /-! The eigenvariable guard for the concrete source language is paid by
 finite actual-basis vacuity proofs, not a semantic GEN assumption. -/

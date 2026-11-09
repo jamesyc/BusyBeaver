@@ -1,7 +1,11 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211EndpointTraceAdequacy
-import User211EndpointPhysicalAdequacy
-import User211ConsistentNonhalting
+public import User211EndpointTraceAdequacy
+public import User211EndpointPhysicalAdequacy
+public import User211ConsistentNonhalting
+
+@[expose] public section
 namespace PA211.UserCandidate.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic

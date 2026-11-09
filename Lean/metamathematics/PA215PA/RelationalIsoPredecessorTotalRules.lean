@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoPredecessorTyped
-import PA215PA.RelationalIsoSuccessorTotalRules
+module
+
+public import PA215PA.RelationalIsoPredecessorTyped
+public import PA215PA.RelationalIsoSuccessorTotalRules
+
+@[expose] public section
 
 /-! Actual totality witnesses for the strict predecessor cut. -/
 namespace PA215.PA.RelationalSource.PairGraph

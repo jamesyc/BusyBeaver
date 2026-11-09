@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentSubstitutionLabels
+module
+
+public import PA215PA.FoundationRelationalSequentSubstitutionLabels
+
+@[expose] public section
 
 /-! Exact all-model formula substitution compatibility for finite guarded
 term-label environments, with the actual qVec binder change. -/

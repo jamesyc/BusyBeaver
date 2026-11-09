@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentMember
+module
+
+public import PA215PA.FoundationRelationalSequentMember
+
+@[expose] public section
 
 /-! Full-PA numeric fold elimination. Its premise is explicit accepted-code
 existence for every actual HFS member, not an external proof compiler. -/

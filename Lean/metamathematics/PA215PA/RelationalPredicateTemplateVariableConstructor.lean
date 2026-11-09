@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateVariableCalibration
-import PA215PA.FoundationPAeqCodeSubstitutionAgreement
+module
+
+public import PA215PA.RelationalPredicateTemplateVariableCalibration
+public import PA215PA.FoundationPAeqCodeSubstitutionAgreement
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Variable
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

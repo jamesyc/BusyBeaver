@@ -1,4 +1,8 @@
-import PA215PA.RelationalPairSupplier
+module
+
+public import PA215PA.RelationalPairSupplier
+
+@[expose] public section
 
 /-! Concrete graph entries and monotonicity under raw adjunction. Graph members
 are real Kuratowski witnesses, not a replacement graph predicate. -/

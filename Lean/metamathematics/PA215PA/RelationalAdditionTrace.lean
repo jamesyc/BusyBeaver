@@ -1,4 +1,8 @@
-import PA215PA.RelationalPointDomain
+module
+
+public import PA215PA.RelationalPointDomain
+
+@[expose] public section
 
 /-! Actual finite addition trace clauses, with recursion in the first argument.
 The zero trace is a real point graph and uses no extensional representatives. -/

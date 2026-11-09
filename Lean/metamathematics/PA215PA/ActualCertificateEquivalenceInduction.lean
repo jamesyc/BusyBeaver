@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateEquivalenceInvariant
+module
+
+public import PA215PA.ActualCertificateEquivalenceInvariant
+
+@[expose] public section
 
 /-! Full-PA model-length induction for the exact existential NNF certificate
 relation. No external Nat structural induction or recipe-graph uniqueness. -/

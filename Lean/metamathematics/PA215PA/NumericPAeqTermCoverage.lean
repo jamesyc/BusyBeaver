@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermFunction
+module
+
+public import PA215PA.NumericPAeqTermFunction
+
+@[expose] public section
 
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

@@ -1,4 +1,8 @@
-import PA215PA.RelationalGraphClassification
+module
+
+public import PA215PA.RelationalGraphClassification
+
+@[expose] public section
 
 /-! Finite existence of an exact graph extension, discharging all ordinary
 nonlogical suppliers. This does not assert canonical choice of the new graph. -/

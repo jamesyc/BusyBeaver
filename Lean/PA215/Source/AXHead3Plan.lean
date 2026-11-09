@@ -1,6 +1,10 @@
-import PA215.Source.AXHead3Bindings0
-import PA215.Source.AXHead3Bindings1
-import PA215.Source.AXHead3Bindings2
+module
+
+public import PA215.Source.AXHead3Bindings0
+public import PA215.Source.AXHead3Bindings1
+public import PA215.Source.AXHead3Bindings2
+
+@[expose] public section
 namespace PA215.Source.AXHead3
 def code : List AXMacro.Op := [.copyD,.push,.copyH,.cons,.incT,.incT,.incT,.push,.copyA,.push,.copyD,.cons,.incT,.push,.copyA,.push,.copyH,.cons,.incT,.cons,.cons]
 theorem plan : AXMacro.Plan exactSites 1784 2061 code :=

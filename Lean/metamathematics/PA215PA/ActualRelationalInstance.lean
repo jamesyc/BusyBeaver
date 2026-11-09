@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalVacuity
+module
+
+public import PA215PA.ActualRelationalVacuity
+
+@[expose] public section
 /-! Concrete atomic universal specialization in the full actual basis.
 Only membership-target vacuity is used; primitive equality-vacuity is absent. -/
 namespace PA215.PA.NativeCalculus.ActualBasis

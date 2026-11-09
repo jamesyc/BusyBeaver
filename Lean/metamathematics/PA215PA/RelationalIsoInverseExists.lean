@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoInverseBijection
-import PA215PA.RelationalIsoInverseInduction
+module
+
+public import PA215PA.RelationalIsoInverseBijection
+public import PA215PA.RelationalIsoInverseInduction
+
+@[expose] public section
 
 /-! Construct a reversed order-isomorphism from an actual forward bijection.
 The exact parameterized Separation instance remains explicit at this layer. -/

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqValueCertificateComposition
+module
+
+public import PA215PA.NumericPAeqValueCertificateComposition
+
+@[expose] public section
 
 /-! Parallel composition of two supplied source implications, retaining
 exact caller labels after paying all intermediate formula budgets. -/

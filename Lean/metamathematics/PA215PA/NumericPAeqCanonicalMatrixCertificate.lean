@@ -1,8 +1,12 @@
-import PA215PA.NumericPAeqCanonicalMatrixEnvironment
-import PA215PA.NumericPAeqCanonicalMatrixLogic
-import PA215PA.NumericPAeqFormulaClosedEnvironment
-import PA215PA.NumericPAeqInductionBodyCertificate
-import PA215PA.NumericPAeqCanonicalVectorInputCertificate
+module
+
+public import PA215PA.NumericPAeqCanonicalMatrixEnvironment
+public import PA215PA.NumericPAeqCanonicalMatrixLogic
+public import PA215PA.NumericPAeqFormulaClosedEnvironment
+public import PA215PA.NumericPAeqInductionBodyCertificate
+public import PA215PA.NumericPAeqCanonicalVectorInputCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqCanonicalMatrix
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionResultSupplier
+module
+
+public import PA215PA.RelationalAdditionResultSupplier
+
+@[expose] public section
 
 /-! Capture-safe applications of the paid ordinal-valued addition totality. -/
 namespace PA215.PA.RelationalSource.PairGraph

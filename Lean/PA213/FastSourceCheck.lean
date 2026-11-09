@@ -1,5 +1,9 @@
-import PA213.SourceCheck
-import PA213.PathBounds
+module
+
+public import PA213.SourceCheck
+public import PA213.PathBounds
+
+@[expose] public section
 namespace PA213.FastSourceCheck
 open PA215.Source PA215.Source.PathTrie PA213.FastResolve PA213.SourceProgram
 

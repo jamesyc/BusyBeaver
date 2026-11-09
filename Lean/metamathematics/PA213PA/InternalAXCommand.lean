@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA213PA.InternalAXFullPlan
-import PA213PA.InternalAXGate
-import PA213PA.InternalAXActualProfile
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalAXFullPlan
+public import PA213PA.InternalAXGate
+public import PA213PA.InternalAXActualProfile
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.ModelAX
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

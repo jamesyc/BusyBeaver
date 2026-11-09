@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionZeroLawPrefix
-import PA215PA.RelationalAdditionStepExistence
+module
+
+public import PA215PA.RelationalAdditionZeroLawPrefix
+public import PA215PA.RelationalAdditionStepExistence
+
+@[expose] public section
 
 /-! Open the displayed graph witness without identifying distinct empty objects. -/
 namespace PA215.PA.RelationalSource.PairGraph

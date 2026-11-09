@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeSubstitutionAgreementTerms
+module
+
+public import PA215PA.FoundationPAeqCodeSubstitutionAgreementTerms
+
+@[expose] public section
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

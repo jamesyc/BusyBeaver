@@ -1,4 +1,8 @@
-import PA215PA.RelationalGraphFreshInput
+module
+
+public import PA215PA.RelationalGraphFreshInput
+
+@[expose] public section
 
 /-! Functionality of an exact graph extension at a fresh input. Freshness is
 an explicit syntactic no-output proof, discharged for ordinal successors next. -/

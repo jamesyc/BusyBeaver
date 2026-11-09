@@ -1,8 +1,12 @@
-import User211SourceEquivalence
-import PA215.Source.PhysicalRegisters
-import PA213.StartupData
-import PA215PA.ActualSchedulerBridge
-import PA215.Source.SeedScheduler
+module
+
+public import User211SourceEquivalence
+public import PA215.Source.PhysicalRegisters
+public import PA213.StartupData
+public import PA215PA.ActualSchedulerBridge
+public import PA215.Source.SeedScheduler
+
+@[expose] public section
 namespace PA211.UserCandidate.Source
 open PA215.Source
 

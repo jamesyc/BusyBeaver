@@ -1,5 +1,9 @@
-import PA215.Source.AXGateSteps
-import PA215.Source.AXCode
+module
+
+public import PA215.Source.AXGateSteps
+public import PA215.Source.AXCode
+
+@[expose] public section
 namespace PA215.Source.AXGate
 
 theorem copy_a (t a d h x y : Nat) (f : Registers) :

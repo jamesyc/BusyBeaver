@@ -1,4 +1,8 @@
-import PA213PA.HaltingFormula
+module
+
+public import PA213PA.HaltingFormula
+
+@[expose] public section
 
 namespace PA213.PA.HaltingFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

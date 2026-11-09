@@ -1,5 +1,9 @@
-import PA215PA.StepSemantics
-import Foundation.FirstOrder.Arithmetic.HFS.Vec
+module
+
+public import PA215PA.StepSemantics
+public import Foundation.FirstOrder.Arithmetic.HFS.Vec
+
+@[expose] public section
 
 /-! A single arithmetic halting sentence using Foundation's specified HFS
 finite-sequence coding (not an external Lean existential over lists).

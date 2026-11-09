@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedInductionStep
-import PA215PA.RelationalOrdinalInductionUniform
+module
+
+public import PA215PA.PAInterpretedInductionStep
+public import PA215PA.RelationalOrdinalInductionUniform
+
+@[expose] public section
 
 /-! Uniform typed interpretation of the actual PAeq induction schema.
 All occurring free parameters have explicit finite domain coverage; exact

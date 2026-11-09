@@ -1,5 +1,9 @@
-import PA215.Source.CommandTransfer
-import PA215.Source.SchedulerInvariantCore
+module
+
+public import PA215.Source.CommandTransfer
+public import PA215.Source.SchedulerInvariantCore
+
+@[expose] public section
 namespace PA215.Source.Scheduler
 /-- Actual literal-source scheduler safety; every source macro supplier has
 been proved against the exact source, including the complete actual AX Plan. -/

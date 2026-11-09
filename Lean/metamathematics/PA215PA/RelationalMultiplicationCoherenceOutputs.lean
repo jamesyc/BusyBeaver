@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationCoherenceOutputRight
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceOutputRight
+
+@[expose] public section
 
 /-! Both actual predecessor-output witnesses are retained through the successor step. -/
 namespace PA215.PA.RelationalSource.PairGraph

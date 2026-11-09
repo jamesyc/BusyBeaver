@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentIdentity
-import PA215PA.FoundationRelationalSequentPropositional
+module
+
+public import PA215PA.NumericPAeqSequentIdentity
+public import PA215PA.FoundationRelationalSequentPropositional
+
+@[expose] public section
 
 /-! Finite native recipes retain the guard as an actual Context assumption.
 No unguarded accepted proof is inferred from a guarded implication. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateSubstitutionAtoms
+module
+
+public import PA215PA.RelationalPredicateTemplateSubstitutionAtoms
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

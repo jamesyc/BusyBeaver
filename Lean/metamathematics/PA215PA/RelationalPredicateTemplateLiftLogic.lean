@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateLiftLanguage
+module
+
+public import PA215PA.RelationalPredicateTemplateLiftLanguage
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.ND
 open FFL FFL.FirstOrder
 

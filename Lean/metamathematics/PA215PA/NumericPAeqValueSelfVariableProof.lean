@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqVariableCoherenceCalibration
-import PA215PA.RelationalClosedCertificateOrdinalSeeds
+module
+
+public import PA215PA.NumericPAeqVariableCoherenceCalibration
+public import PA215PA.RelationalClosedCertificateOrdinalSeeds
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueTotality
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,6 +1,10 @@
-import PA213PA.InternalRollbackCell
-import PA213PA.InternalCarryCode
-import PA213PA.InternalSegmentCompose
+module
+
+public import PA213PA.InternalRollbackCell
+public import PA213PA.InternalCarryCode
+public import PA213PA.InternalSegmentCompose
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.RollbackFile
 open PA215

@@ -1,4 +1,8 @@
-import PA215.Source.Syntax
+module
+
+public import PA215.Source.Syntax
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.PathTrie
 

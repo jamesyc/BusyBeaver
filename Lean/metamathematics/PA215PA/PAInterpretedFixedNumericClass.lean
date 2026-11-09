@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedFixedInternal
-import PA215PA.FoundationPAeqCodeTheory
+module
+
+public import PA215PA.PAInterpretedFixedInternal
+public import PA215PA.FoundationPAeqCodeTheory
+
+@[expose] public section
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND
 open FFL.FirstOrder.Arithmetic FFL.FirstOrder.Arithmetic.Bootstrapping FFL.Entailment

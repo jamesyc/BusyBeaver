@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentAllChild
-import PA215PA.NumericPAeqUniversalSourceContext
+module
+
+public import PA215PA.NumericPAeqSequentAllChild
+public import PA215PA.NumericPAeqUniversalSourceContext
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula.Sequent
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

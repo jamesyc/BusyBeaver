@@ -1,5 +1,9 @@
-import PA215.Source.FetchPrefixBinding
-import PA215.Source.Determinism
+module
+
+public import PA215.Source.FetchPrefixBinding
+public import PA215.Source.Determinism
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.FetchPrefix
 structure Store where

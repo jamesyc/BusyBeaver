@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermValidity
-import PA215PA.NumericPAeqFormulaAgreement
+module
+
+public import PA215PA.NumericPAeqTermValidity
+public import PA215PA.NumericPAeqFormulaAgreement
+
+@[expose] public section
 
 /-! Explicit finite support agreement for quotation calibration. No infinite
 host function is asserted to have a finite numeric representation. -/

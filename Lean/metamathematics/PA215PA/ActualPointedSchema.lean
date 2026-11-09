@@ -1,4 +1,8 @@
-import PA215PA.ActualBasisLogic
+module
+
+public import PA215PA.ActualBasisLogic
+
+@[expose] public section
 
 /-! Classical extraction of the pointed existential from the literal AX bundle. -/
 namespace PA215.PA.NativeCalculus.ActualCore

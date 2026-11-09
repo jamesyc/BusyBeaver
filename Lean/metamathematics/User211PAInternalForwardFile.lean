@@ -1,9 +1,13 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalForwardCell
-import User211PAInternalReturnCode
-import User211PAInternalCarryCode
-import User211PAInternalSegmentCompose
+public import User211PAInternalForwardCell
+public import User211PAInternalReturnCode
+public import User211PAInternalCarryCode
+public import User211PAInternalSegmentCompose
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PA.InternalTrace.ForwardFile
 open PA215

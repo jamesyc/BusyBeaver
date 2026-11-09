@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCoherenceInduction
+module
+
+public import PA215PA.RelationalAdditionCoherenceInduction
+
+@[expose] public section
 
 /-! Actual-basis full two-input addition coherence, with ten finite source
 axioms paid, including the three distinct Separation requirements. -/

@@ -1,8 +1,12 @@
-import PA213.FastResolve
-import PA213.SourceSites
-import PA213.SourceTrie
-import PA213.SourceCodes
-import PA215.Source.ExactTrie
+module
+
+public import PA213.FastResolve
+public import PA213.SourceSites
+public import PA213.SourceTrie
+public import PA213.SourceCodes
+public import PA215.Source.ExactTrie
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 64000000
 namespace PA213.SourceProgram

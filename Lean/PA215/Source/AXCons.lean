@@ -1,7 +1,11 @@
-import PA215.Source.AXPushParamSteps
-import PA215.Source.AXPop
-import PA215.Source.AXPairFirst
-import PA215.Source.AXCode
+module
+
+public import PA215.Source.AXPushParamSteps
+public import PA215.Source.AXPop
+public import PA215.Source.AXPairFirst
+public import PA215.Source.AXCode
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXCons
 

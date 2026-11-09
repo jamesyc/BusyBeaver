@@ -1,4 +1,8 @@
-import PA215.Source.Cantor
+module
+
+public import PA215.Source.Cantor
+
+@[expose] public section
 
 /-! Explicit finite proved wrappers above an arbitrary opaque numeric tail.
 Zero-valued heads and the Cantor zero alias are allowed without exception. -/

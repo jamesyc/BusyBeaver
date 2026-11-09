@@ -1,4 +1,8 @@
-import PA215PA.NativeSubstitution
+module
+
+public import PA215PA.NativeSubstitution
+
+@[expose] public section
 
 /-! Syntactic vacuity through all named constructors. The output is a finite
 native proof, not a semantic assertion about free variables. This is the

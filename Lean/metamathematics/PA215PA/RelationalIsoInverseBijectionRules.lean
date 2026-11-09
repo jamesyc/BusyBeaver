@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoInverseRules
-import PA215PA.RelationalOrderIsoRelationRules
+module
+
+public import PA215PA.RelationalIsoInverseRules
+public import PA215PA.RelationalOrderIsoRelationRules
+
+@[expose] public section
 
 /-! Reversal exchanges functionality with injectivity and reverses the
 order biconditional. All statements concern the displayed finite graphs. -/

@@ -1,6 +1,10 @@
-import PA215PA.RelationalIsoPredecessorBijection
-import PA215PA.RelationalIsoSuccessorFrame
-import PA215PA.RelationalGraphRestrictionSupplier
+module
+
+public import PA215PA.RelationalIsoPredecessorBijection
+public import PA215PA.RelationalIsoSuccessorFrame
+public import PA215PA.RelationalGraphRestrictionSupplier
+
+@[expose] public section
 
 /-! Explicit finite inputs to construct a predecessor isomorphism by Separation. -/
 namespace PA215.PA.RelationalSource.PairGraph

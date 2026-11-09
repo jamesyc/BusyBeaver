@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaQuantifierTemplatesSyntax
+module
+
+public import PA215PA.NumericPAeqFormulaQuantifierTemplatesSyntax
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaQuantifierTemplates
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

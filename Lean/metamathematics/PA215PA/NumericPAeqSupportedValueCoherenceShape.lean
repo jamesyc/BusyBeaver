@@ -1,9 +1,13 @@
-import PA215PA.NumericPAeqValueCoherenceShape
-import PA215PA.NumericPAeqValueCoherenceSuccessorCalibration
-import PA215PA.NumericPAeqValueSuccessorShape
-import PA215PA.NumericPAeqTermSupportedBoundInstance
-import PA215PA.NumericPAeqSupportedValueCoherenceSyntax
-import PA215PA.NumericPAeqValueDomainProjection
+module
+
+public import PA215PA.NumericPAeqValueCoherenceShape
+public import PA215PA.NumericPAeqValueCoherenceSuccessorCalibration
+public import PA215PA.NumericPAeqValueSuccessorShape
+public import PA215PA.NumericPAeqTermSupportedBoundInstance
+public import PA215PA.NumericPAeqSupportedValueCoherenceSyntax
+public import PA215PA.NumericPAeqValueDomainProjection
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

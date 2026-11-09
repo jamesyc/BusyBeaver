@@ -1,7 +1,11 @@
-import PA215PA.RelationalOrdinalDomain
-import PA215PA.RelationalSourceAdjunctionExistence
-import PA215PA.RelationalSourceEmpty
-import PA215PA.RelationalSourceContext
+module
+
+public import PA215PA.RelationalOrdinalDomain
+public import PA215PA.RelationalSourceAdjunctionExistence
+public import PA215PA.RelationalSourceEmpty
+public import PA215PA.RelationalSourceContext
+
+@[expose] public section
 
 /-! Empty ordinal representatives, constructed as actual Foundation LK proof
 terms. Existential elimination uses the capture-aware eigenvariable rule. -/

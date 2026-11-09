@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedVectorRealizationProjection
-import PA215PA.NumericPAeqSupportedValueUniqueness
-import PA215PA.NumericPAeqSubstitutionVariableCertificate
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealizationProjection
+public import PA215PA.NumericPAeqSupportedValueUniqueness
+public import PA215PA.NumericPAeqSubstitutionVariableCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,4 +1,8 @@
-import PA215.Native
+module
+
+public import PA215.Native
+
+@[expose] public section
 
 /-! Frozen213 candidate, raw sparse numeric labels.
 Table SHA256b332b36d8ed9c909c51df27727a2c68a6890c122e102a4e7a6d411a483094989.

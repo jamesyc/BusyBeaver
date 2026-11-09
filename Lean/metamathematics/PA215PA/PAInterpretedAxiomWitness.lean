@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! Explicit typed witnesses for the unchanged ordinary PAeq axiom predicate.
 This is not a numerical code or decoder. Executable later compilers receive

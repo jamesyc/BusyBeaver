@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentFreshness
-import PA215PA.FoundationRelationalCodeCoverage
+module
+
+public import PA215PA.FoundationRelationalSequentFreshness
+public import PA215PA.FoundationRelationalCodeCoverage
+
+@[expose] public section
 
 /-! Exact accepted-certificate relation and full-PA vacuity induction invariant.
 This module supplies guarded atom payloads but does not perform the induction. -/

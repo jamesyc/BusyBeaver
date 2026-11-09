@@ -1,4 +1,8 @@
-import PA215.Contracts
+module
+
+public import PA215.Contracts
+
+@[expose] public section
 
 namespace PA215.Census
 open PA215.Runtime

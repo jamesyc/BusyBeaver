@@ -1,5 +1,9 @@
-import PA215PA.InternalScanBits
-import Mathlib.Tactic.Ring.Basic
+module
+
+public import PA215PA.InternalScanBits
+public import Mathlib.Tactic.Ring.Basic
+
+@[expose] public section
 
 namespace PA215.PA.InternalTrace.CarryCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

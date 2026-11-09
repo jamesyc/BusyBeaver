@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeBlueprint
+module
+
+public import PA215PA.FoundationRelationalCodeBlueprint
+
+@[expose] public section
 
 /-! Independently typed field proofs, avoiding whole-Blueprint normalization. -/
 namespace PA215.PA.RelationalSource.Numeric

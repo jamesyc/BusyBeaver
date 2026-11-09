@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateNeighborhoodBinders
+module
+
+public import PA215PA.ActualCertificateNeighborhoodBinders
+
+@[expose] public section
 
 /-! Genuine numeric neighborhood existential witness from actual R1/R7. -/
 namespace PA215.PA.ActualCertificateEquivalence

@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosureLogic
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosureLogic
+
+@[expose] public section
 
 /-! Ordinary equality premises and their elementary proof transformations.
 Only the literal reflexivity, symmetry and membership-congruence formulas

@@ -1,4 +1,8 @@
-import PA213PA.InternalSymbolicStep
+module
+
+public import PA213PA.InternalSymbolicStep
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.Symbolic
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

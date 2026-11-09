@@ -1,5 +1,9 @@
-import PA215.Source.ExactSource
-import PA215.Source.Determinism
+module
+
+public import PA215.Source.ExactSource
+public import PA215.Source.Determinism
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 4000000
 namespace PA215.Source.AXPush

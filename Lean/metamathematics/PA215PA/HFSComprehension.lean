@@ -1,5 +1,9 @@
-import PA215PA.Theory
-import Foundation.FirstOrder.Arithmetic.HFS.Basic
+module
+
+public import PA215PA.Theory
+public import Foundation.FirstOrder.Arithmetic.HFS.Basic
+
+@[expose] public section
 
 /-! Full formula separation in every PA model, not only in standard finite HFS.
 This is the discriminating arithmetic ingredient for the native pointed bundle;

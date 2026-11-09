@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionCoverageExtension
+module
+
+public import PA215PA.RelationalIsoCompositionCoverageExtension
+
+@[expose] public section
 
 /-! Finite proof data for constructing one actual composition-prefix extension. -/
 namespace PA215.PA.RelationalSource.PairGraph

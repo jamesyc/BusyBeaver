@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoPredecessorTotalRules
+module
+
+public import PA215PA.RelationalIsoPredecessorTotalRules
+
+@[expose] public section
 
 /-! Universal left/right totality of a strict predecessor graph cut. -/
 namespace PA215.PA.RelationalSource.PairGraph

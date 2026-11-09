@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseCorrectExtension
+module
+
+public import PA215PA.RelationalIsoInverseCorrectExtension
+
+@[expose] public section
 
 /-! Existential coverage of every old or newly added prefix coordinate. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityFrame
+module
+
+public import PA215PA.RelationalIdentityFrame
+
+@[expose] public section
 
 /-! Construct the new identity graph from a real Kuratowski object and actual
 raw Adjunction. The objectwise entries clause is retained throughout. -/

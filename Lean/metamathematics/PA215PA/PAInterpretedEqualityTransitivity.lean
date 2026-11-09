@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedVariableEquality
-import PA215PA.RelationalOrderIsoClosedTransitivity
+module
+
+public import PA215PA.PAInterpretedVariableEquality
+public import PA215PA.RelationalOrderIsoClosedTransitivity
+
+@[expose] public section
 
 /-! Variable equality transitivity uses the actual closed order-isomorphism
 composition theorem, with its source-domain premise explicit. -/

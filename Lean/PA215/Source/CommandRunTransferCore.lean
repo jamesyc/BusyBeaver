@@ -1,7 +1,11 @@
-import PA215.Source.ParsedCommandTransfer
-import PA215.Source.CommandHalting
-import PA215.Source.EnumerationSchedule
-import PA215.Source.SchedulerSafety
+module
+
+public import PA215.Source.ParsedCommandTransfer
+public import PA215.Source.CommandHalting
+public import PA215.Source.EnumerationSchedule
+public import PA215.Source.SchedulerSafety
+
+@[expose] public section
 namespace PA215.Source.CommandRunTransfer
 open Enumeration
 

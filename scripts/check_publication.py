@@ -31,6 +31,19 @@ def lean_program_sha256(text):
     return hashlib.sha256(program.encode()).hexdigest()
 
 
+def pre_port_source(data):
+    """Undo the mechanical header added to a legacy Lean file."""
+    if not data.startswith(b"module\n\n"):
+        return data
+    data = data.removeprefix(b"module\n\n")
+    if data.startswith(b"@[expose] public section\n\n"):
+        return data.removeprefix(b"@[expose] public section\n\n")
+    if b"\n@[expose] public section\n" in data:
+        header, body = data.split(b"\n@[expose] public section\n", 1)
+        return re.sub(rb"(?m)^public import ", b"import ", header) + body
+    return data
+
+
 def main():
     manifest = json.loads((ROOT / "evidence/source-manifest.json").read_text())
     baseline = {name: record["sha256"] for name, record in manifest["files"].items()
@@ -38,10 +51,25 @@ def main():
     encoded = json.dumps(baseline, sort_keys=True, separators=(",", ":")).encode()
     if hashlib.sha256(encoded).hexdigest() != PA211_BASELINE_SHA256:
         raise ValueError("The 395-module PA211 source baseline differs from its pinned hash")
+    # The historical manifest and validation records describe the original checkout.
+    # Check mechanical module ports against it, with explicit digests for other edits.
+    port = json.loads((ROOT / "evidence/palomar-source-manifest.json").read_text())
+    for name, expected in port["files"].items():
+        checked_file(ROOT, name, expected)
     for name, record in manifest["files"].items():
-        checked_file(ROOT, name, record["sha256"])
+        if name in port["files"]:
+            continue
+        archive = name.startswith("Lean/proof_overlays/originals/") and name.endswith(".lean")
+        path = (ROOT / (name + ".txt" if archive else name)).resolve()
+        if not path.is_relative_to(ROOT) or not path.is_file():
+            raise ValueError(f"Missing or out-of-tree file: {name}")
+        data = path.read_bytes()
+        if name.endswith(".lean") and not archive and hashlib.sha256(data).hexdigest() != record["sha256"]:
+            data = pre_port_source(data)
+        if hashlib.sha256(data).hexdigest() != record["sha256"]:
+            raise ValueError(f"SHA256 mismatch: {path.relative_to(ROOT)}")
         if "lean_program_sha256" in record:
-            if lean_program_sha256((ROOT / name).read_text()) != record["lean_program_sha256"]:
+            if lean_program_sha256(data.decode()) != record["lean_program_sha256"]:
                 raise ValueError(f"Lean program differs from its recorded source: {name}")
     lean = ROOT / "Lean"
     for package, expected in ((lean, {"PA211"}),
@@ -86,6 +114,11 @@ def main():
     audit = (lean / "metamathematics/Audit.lean").read_text()
     if set(re.findall(r"^#print axioms (\S+)$", audit, re.M)) != expected_axioms:
         raise ValueError("The final axiom audit must name all nine PA211 roots")
+    project = lean / "metamathematics"
+    challenge = (project / "Challenge.lean").read_text()
+    statement = (project / "PA211Statement.lean").read_text()
+    if challenge.split("-- Challenge theorems\n", 1)[0] + "\nend PA211.Palomar\n" != statement:
+        raise ValueError("Challenge and Solution must use identical statement definitions")
     docs = {ROOT / name for name in manifest["files"] if name.endswith(".md")}
     docs.add(ROOT / "evidence/README.md")
     docs.update((ROOT / "docs").glob("*.md"))

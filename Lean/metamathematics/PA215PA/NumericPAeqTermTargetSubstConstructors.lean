@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqTermTargetSubstParameters
-import PA215PA.NumericPAeqTermTargetSubstTemplates
-import PA215PA.NumericPAeqTermBinaryConstructors
+module
+
+public import PA215PA.NumericPAeqTermTargetSubstParameters
+public import PA215PA.NumericPAeqTermTargetSubstTemplates
+public import PA215PA.NumericPAeqTermBinaryConstructors
+
+@[expose] public section
 
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

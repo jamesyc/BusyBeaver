@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentAssumptionDischarge
+module
+
+public import PA215PA.FoundationRelationalSequentAssumptionDischarge
+
+@[expose] public section
 
 /-! Finite HFS premise discharge for sets of arbitrary model length. Each member is a source code with a native certificate. -/
 namespace PA215.PA.RelationalSource.Numeric

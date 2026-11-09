@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentFree
+module
+
+public import PA215PA.FoundationRelationalSequentFree
+
+@[expose] public section
 
 /-! Explicit finite-environment freshness for subsequent numeric vacuity.
 The quantified name lies below every future allocator, but need not be above

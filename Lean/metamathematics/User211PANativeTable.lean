@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAMachine
+public import User211PAMachine
+
+@[expose] public section
 namespace PA211.UserCandidate.NativeTable
 open PA215.Zip PA211.UserCandidate.CandidateTable
 set_option maxRecDepth 100000

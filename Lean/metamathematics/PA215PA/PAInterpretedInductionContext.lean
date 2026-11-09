@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedInductionParameters
-import PA215PA.PAInterpretedAddSuccSupplier
-import PA215PA.RelationalOrderIsoClosedTransitivity
+module
+
+public import PA215PA.PAInterpretedInductionParameters
+public import PA215PA.PAInterpretedAddSuccSupplier
+public import PA215PA.RelationalOrderIsoClosedTransitivity
+
+@[expose] public section
 
 /-! A finite context and finite guarded conclusion for the arbitrary induction
 image. No free parameter's domain is silently supplied or generalized. -/

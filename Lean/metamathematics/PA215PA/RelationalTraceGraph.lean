@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphExactExistence
-import PA215PA.RelationalFormulaCongruence
+module
+
+public import PA215PA.RelationalGraphExactExistence
+public import PA215PA.RelationalFormulaCongruence
+
+@[expose] public section
 
 /-! Literal inclusive finite graph clauses used by the arithmetic traces.
 Range means the full five-clause ordinal domain, not an extensional ordinal. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightZeroSupplier
+module
+
+public import PA215PA.RelationalAdditionRightZeroSupplier
+
+@[expose] public section
 
 /-! Specialization of the closed right-zero conclusion at arbitrary parameters. -/
 namespace PA215.PA.RelationalSource.PairGraph

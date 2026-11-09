@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionFrame
+module
+
+public import PA215PA.RelationalIsoCompositionFrame
+
+@[expose] public section
 
 /-! Real Kuratowski(n,z) and raw Adjunction construct the next composition
 prefix. Neither an image object nor canonical pair representatives are assumed. -/

@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitutionCompatibility
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionCompatibility
+
+@[expose] public section
 
 /-! Pure source-variable renaming alignment. Unlike actual function-term
 substitution this special case does preserve interpreted syntax literally. -/

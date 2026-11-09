@@ -1,4 +1,8 @@
-import PA215PA.RelationalSourceEquality
+module
+
+public import PA215PA.RelationalSourceEquality
+
+@[expose] public section
 
 /-! A concrete nonlogical finite-set axiom supplier: empty-set existence,
 constructed from the exact actual pointed bundle, not assumed from a theory

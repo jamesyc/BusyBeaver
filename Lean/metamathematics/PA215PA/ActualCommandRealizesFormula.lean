@@ -1,4 +1,8 @@
-import PA215PA.ActualCommandRealizesInternal
+module
+
+public import PA215PA.ActualCommandRealizesInternal
+
+@[expose] public section
 namespace PA215.PA.ActualCommandStepGraph
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

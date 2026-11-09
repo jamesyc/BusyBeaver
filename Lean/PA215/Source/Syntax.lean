@@ -1,4 +1,8 @@
-import Std
+module
+
+public import Std
+
+@[expose] public section
 
 /-! Literal source syntax and the prefix-path control convention. Register order
 is N,T,W,A,D,H,X,Y,L. A missing destination is normal source-root exit, which is

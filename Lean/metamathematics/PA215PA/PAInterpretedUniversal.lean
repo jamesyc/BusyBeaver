@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedEqualityWitnesses
+module
+
+public import PA215PA.PAInterpretedEqualityWitnesses
+
+@[expose] public section
 
 /-! A capture-aware introduction rule for the literal guarded source universal.
 The entire finite context is shifted; its domain guard remains an actual premise. -/
@@ -8,13 +12,13 @@ open Ordinal (Term Formula)
 attribute [local irreducible] value equal PairGraph.orderIso Ordinal.domain
 set_option maxHeartbeats 800000
 
-private theorem freeShiftTerm (x : Term 0) : Rew.free (Rew.bShift x) = Rew.shift x := by
+theorem freeShiftTerm (x : Term 0) : Rew.free (Rew.bShift x) = Rew.shift x := by
   cases x with
   | bvar i => nomatch i
   | func fn _ => nomatch fn
   | fvar k => rfl
 
-private theorem freeBindEnv {n : Nat} (b : Fin n → Term 0) :
+theorem freeBindEnv {n : Nat} (b : Fin n → Term 0) :
     (fun i => Rew.free (bindEnv b i)) = Fin.cases (.fvar 0) (fun i => Rew.shift (b i)) := by
   funext i
   refine Fin.cases ?_ (fun j => ?_) i

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseEmpty
+module
+
+public import PA215PA.RelationalIsoInverseEmpty
+
+@[expose] public section
 
 /-! Actual coordinate witnesses for reversed graph entries. -/
 namespace PA215.PA.RelationalSource.PairGraph

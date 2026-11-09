@@ -1,7 +1,11 @@
-import PA213PA.InternalMarkSkipGeneric
-import PA213PA.InternalMarkReturnGeneric
-import PA213PA.InternalMarkDelimiter
-import PA213PA.InternalReturnCode
+module
+
+public import PA213PA.InternalMarkSkipGeneric
+public import PA213PA.InternalMarkReturnGeneric
+public import PA213PA.InternalMarkDelimiter
+public import PA213PA.InternalReturnCode
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.MarkPrefix
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

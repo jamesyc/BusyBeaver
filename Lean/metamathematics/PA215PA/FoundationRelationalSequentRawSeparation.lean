@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentHighVacuity
-import PA215PA.ActualCertificateSeparationRaw
+module
+
+public import PA215PA.FoundationRelationalSequentHighVacuity
+public import PA215PA.ActualCertificateSeparationRaw
+
+@[expose] public section
 
 /-! Raw numeric separation for an arbitrary covered source property. Padding
 is above the fixed reserve; source parameters are not changed circularly. -/

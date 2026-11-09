@@ -1,4 +1,8 @@
-import PA215PA.RelationalSourceLK
+module
+
+public import PA215PA.RelationalSourceLK
+
+@[expose] public section
 
 /-! A constructive natural-deduction interface whose values ARE Foundation
 LK.Derivation. No new unverified calculus, validity premise, or completeness
@@ -64,7 +68,7 @@ def botElim {Γ : List Form} {p : Form} (d : Proof Γ ⊥) : Proof Γ p :=
   (OneSidedLK.removeBot d).weakening
 
 def contradiction {Γ : List Form} {p : Form} (d : Proof Γ p) (e : Proof Γ (∼p)) : Proof Γ ⊥ :=
-  (LK.Derivation.cut d e).weakening.contra ((traversal Γ).succ ⊥) (by intro x hx; simpa using hx)
+  ((LK.Derivation.cut d e).weakening (φ := ⊥)).contra ((traversal Γ).succ ⊥) (by intro x hx; simpa using hx)
 
 def byContradiction {Γ : List Form} {p : Form} (d : Proof (∼p::Γ) ⊥) : Proof Γ p :=
   (OneSidedLK.removeBot d).cast (by simp only [negatives_cons, Semiformula.neg_eq, Semiformula.neg_neg])

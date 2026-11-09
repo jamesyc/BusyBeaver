@@ -1,6 +1,10 @@
-import PA213PA.InternalFileEffects
-import PA213PA.InternalFileGuards
-import PA215.Source.PhysicalRegisters
+module
+
+public import PA213PA.InternalFileEffects
+public import PA213PA.InternalFileGuards
+public import PA215.Source.PhysicalRegisters
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.PhysicalRegisters
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

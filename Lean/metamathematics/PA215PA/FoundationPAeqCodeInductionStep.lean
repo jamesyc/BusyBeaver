@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeEqualityFormula
-import PA215PA.PAPresentationStepTheorem
+module
+
+public import PA215PA.FoundationPAeqCodeEqualityFormula
+public import PA215PA.PAPresentationStepTheorem
+
+@[expose] public section
 /-! The fixed arithmetic +1=S proof is quoted through the actual coded proof
 bridge and specialized to arbitrary model-valued target terms. -/
 namespace PA215.PA.FoundationPAeqCode

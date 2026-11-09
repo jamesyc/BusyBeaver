@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationTermCongruence
+module
+
+public import PA215PA.PAPresentationTermCongruence
+
+@[expose] public section
 
 /-! Capture-aware eigenvariable lifting of actual equality derivations.
 The newly opened binder gets reflexivity; old names get shifted proofs. -/

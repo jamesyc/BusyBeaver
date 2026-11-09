@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoEntrySuccessor
+module
+
+public import PA215PA.RelationalIsoEntrySuccessor
+
+@[expose] public section
 
 /-! Actual objectwise graph-entry preservation under raw diagonal adjunction. -/
 namespace PA215.PA.RelationalSource.PairGraph

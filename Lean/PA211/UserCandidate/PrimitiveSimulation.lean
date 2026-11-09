@@ -1,6 +1,10 @@
-import PA211.UserCandidate.RuntimeContracts
-import PA215.Source.FileInvariant
-import PA215.Source.CyclicDeterminism
+module
+
+public import PA211.UserCandidate.RuntimeContracts
+public import PA215.Source.FileInvariant
+public import PA215.Source.CyclicDeterminism
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PrimitiveSimulation
 open PA215.Zip PA215.Runtime PA215.Source PA211.UserCandidate.CandidateTable

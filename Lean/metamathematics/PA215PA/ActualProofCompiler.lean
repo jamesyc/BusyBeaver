@@ -1,6 +1,10 @@
-import PA215PA.ActualBasis
-import PA215.Source.ActualSelectedHeads
-import PA215.Source.ActualRuleMacros
+module
+
+public import PA215PA.ActualBasis
+public import PA215.Source.ActualSelectedHeads
+public import PA215.Source.ActualRuleMacros
+
+@[expose] public section
 
 /-! Structural compilation of the literal actual finite proof datatype into
 actual arithmetic commands. A compiled proof either halts early or returns its

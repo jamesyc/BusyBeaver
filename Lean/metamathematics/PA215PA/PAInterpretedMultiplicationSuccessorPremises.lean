@@ -1,7 +1,11 @@
-import PA215PA.PAInterpretedMultiplicationSuccessorValues
-import PA215PA.PAInterpretedAdditionSuccessorPremises
-import PA215PA.PAInterpretedEqualityTransitivity
-import PA215PA.RelationalMultiplicationPARecursion
+module
+
+public import PA215PA.PAInterpretedMultiplicationSuccessorValues
+public import PA215PA.PAInterpretedAdditionSuccessorPremises
+public import PA215PA.PAInterpretedEqualityTransitivity
+public import PA215PA.RelationalMultiplicationPARecursion
+
+@[expose] public section
 
 /-! Multiplication's literal PA orientation uses the proved commutativity bridge
 and closed order-isomorphism composition in addition to the paid arithmetic inputs. -/

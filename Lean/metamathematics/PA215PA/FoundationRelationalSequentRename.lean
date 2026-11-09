@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentRenameInvariant
+module
+
+public import PA215PA.FoundationRelationalSequentRenameInvariant
+
+@[expose] public section
 
 /-! Full-PA source-code induction for conditional formula renaming under
 explicit finite environment relations, at a common allocator and reserve. -/

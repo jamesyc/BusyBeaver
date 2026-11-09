@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalTotalityOutputs
+module
+
+public import PA215PA.PAForwardRelationalTotalityOutputs
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

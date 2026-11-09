@@ -1,9 +1,13 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalMarkSkipGeneric
-import User211PAInternalMarkReturnGeneric
-import User211PAInternalMarkDelimiter
-import User211PAInternalReturnCode
+public import User211PAInternalMarkSkipGeneric
+public import User211PAInternalMarkReturnGeneric
+public import User211PAInternalMarkDelimiter
+public import User211PAInternalReturnCode
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.MarkPrefix
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

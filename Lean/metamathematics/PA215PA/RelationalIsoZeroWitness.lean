@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrderIsoRules
+module
+
+public import PA215PA.RelationalOrderIsoRules
+
+@[expose] public section
 
 /-! Typed total graph witnesses cannot connect a nonempty side to an empty
 side. These are constructive existential eliminations, not cardinality facts. -/

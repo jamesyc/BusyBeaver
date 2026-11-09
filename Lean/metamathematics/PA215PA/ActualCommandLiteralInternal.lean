@@ -1,4 +1,8 @@
-import PA215PA.ActualCommandAXInternal
+module
+
+public import PA215PA.ActualCommandAXInternal
+
+@[expose] public section
 namespace PA215.PA.ActualCommandLiteralInternal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic

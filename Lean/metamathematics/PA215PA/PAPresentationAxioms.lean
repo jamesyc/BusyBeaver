@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationSyntax
+module
+
+public import PA215PA.PAPresentationSyntax
+
+@[expose] public section
 
 /-! Mathematical inventory of the 0/S/+/*/= PA presentation, checked against
 PAeq238 and its unchanged vendored FA/Robinson/PA definitions at upstream pin

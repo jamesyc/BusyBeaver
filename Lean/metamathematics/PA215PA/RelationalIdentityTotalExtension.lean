@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityDiagonalExtension
+module
+
+public import PA215PA.RelationalIdentityDiagonalExtension
+
+@[expose] public section
 
 /-! The successor identity graph has every required diagonal edge. -/
 namespace PA215.PA.RelationalSource.PairGraph

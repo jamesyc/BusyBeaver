@@ -1,6 +1,10 @@
-import PA215PA.Theory
-import PA213PA.InternalAXMacro
-import PA213PA.InternalAXGateCompare
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalAXMacro
+public import PA213PA.InternalAXGateCompare
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.ModelAX
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

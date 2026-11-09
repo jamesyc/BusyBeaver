@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoZeroTransport
+module
+
+public import PA215PA.RelationalIsoZeroTransport
+
+@[expose] public section
 
 /-! The interpreted zero predicate respects the exact existential order
 isomorphism, without identifying the two underlying set objects. -/

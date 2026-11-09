@@ -1,6 +1,10 @@
-import PA215PA.Theory
-import PA213PA.InternalScanBits
-import PA213PA.ZipNatTape
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalScanBits
+public import PA213PA.ZipNatTape
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.ScanBits
 open PA215 PA215.PA

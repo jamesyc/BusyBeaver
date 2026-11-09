@@ -1,6 +1,10 @@
-import PA215PA.RelationalAdditionCoherenceZero
-import PA215PA.RelationalAdditionCoherenceStep
-import PA215PA.RelationalOrdinalInductionUniform
+module
+
+public import PA215PA.RelationalAdditionCoherenceZero
+public import PA215PA.RelationalAdditionCoherenceStep
+public import PA215PA.RelationalOrdinalInductionUniform
+
+@[expose] public section
 
 /-! The exact minimum-counterexample ordinal induction instance for full
 addition coherence, retaining its one negated-property Separation premise. -/

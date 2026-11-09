@@ -1,4 +1,8 @@
-import PA215PA.RelationalKuratowskiExistence
+module
+
+public import PA215PA.RelationalKuratowskiExistence
+
+@[expose] public section
 
 /-! Finite actual-basis Kuratowski existence; its only nonlogical inputs are the
 already constructed empty and adjunction proofs, at the same allocator. -/

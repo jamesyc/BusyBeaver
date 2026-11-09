@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedTheoryContext
-import PA215PA.PAForwardRelationalClosureSupport
+module
+
+public import PA215PA.PAInterpretedTheoryContext
+public import PA215PA.PAForwardRelationalClosureSupport
+
+@[expose] public section
 
 /-! Discharge the closed-sentence support identity syntactically. -/
 namespace PA215.PA.ForwardRelational

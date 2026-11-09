@@ -1,6 +1,10 @@
-import PA215PA.FoundationRelationalSequentRawSeparation
-import PA215PA.FoundationRelationalSequentVacuity
-import PA215PA.ActualCertificateSeparationRelocation
+module
+
+public import PA215PA.FoundationRelationalSequentRawSeparation
+public import PA215PA.FoundationRelationalSequentVacuity
+public import PA215PA.ActualCertificateSeparationRelocation
+
+@[expose] public section
 
 /-! Native readback of a covered source property at a fresh low output label. -/
 namespace PA215.PA.RelationalSource.Numeric

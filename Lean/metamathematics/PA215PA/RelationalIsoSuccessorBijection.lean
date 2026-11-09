@@ -1,7 +1,11 @@
-import PA215PA.RelationalIsoSuccessorEntries
-import PA215PA.RelationalIsoSuccessorTotal
-import PA215PA.RelationalIsoSuccessorInjective
-import PA215PA.RelationalIsoSuccessorOrder
+module
+
+public import PA215PA.RelationalIsoSuccessorEntries
+public import PA215PA.RelationalIsoSuccessorTotal
+public import PA215PA.RelationalIsoSuccessorInjective
+public import PA215PA.RelationalIsoSuccessorOrder
+
+@[expose] public section
 
 /-! All seven clauses of a genuine successor order-bijection. -/
 namespace PA215.PA.RelationalSource.PairGraph

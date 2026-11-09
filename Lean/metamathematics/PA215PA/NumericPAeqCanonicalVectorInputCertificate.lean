@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqCanonicalVectorInputSyntax
-import PA215PA.NumericPAeqValueDomainGuardProjection
-import PA215PA.NumericPAeqValueCertificateComposition
+module
+
+public import PA215PA.NumericPAeqCanonicalVectorInputSyntax
+public import PA215PA.NumericPAeqValueDomainGuardProjection
+public import PA215PA.NumericPAeqValueCertificateComposition
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqCanonicalVectorInput
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionStepWithZero
+module
+
+public import PA215PA.RelationalAdditionStepWithZero
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 open Ordinal (Term Formula)

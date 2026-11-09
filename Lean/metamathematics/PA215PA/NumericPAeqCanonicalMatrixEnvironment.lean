@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqCanonicalMatrixSupport
-import PA215PA.NumericPAeqFormulaRealization
+module
+
+public import PA215PA.NumericPAeqCanonicalMatrixSupport
+public import PA215PA.NumericPAeqFormulaRealization
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqCanonicalMatrix
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

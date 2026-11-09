@@ -1,4 +1,8 @@
-import PA215PA.RelationalGraphOperations
+module
+
+public import PA215PA.RelationalGraphOperations
+
+@[expose] public section
 
 /-! An addition trace with an empty input has its unique output equal to the
 base. The displayed zero object is forced equal by the actual inclusive domain,

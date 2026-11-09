@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAStepFormula
+public import User211PAStepFormula
+
+@[expose] public section
 
 /-! Uniform object-PA derivations for every exact machine row. These quantify
 arbitrary stack tails, not just standard natural-number witnesses. They do not

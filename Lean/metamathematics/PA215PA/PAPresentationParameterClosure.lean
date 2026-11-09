@@ -1,5 +1,9 @@
-import PA215PA.PAPresentationFormulaCongruence
-import PA215PA.PAPresentationStepTheorem
+module
+
+public import PA215PA.PAPresentationFormulaCongruence
+public import PA215PA.PAPresentationStepTheorem
+
+@[expose] public section
 
 /-! Actual finite proof operations for universally closed theory axioms with
 arbitrary parameters. No completeness or Prop-to-proof witness extraction. -/

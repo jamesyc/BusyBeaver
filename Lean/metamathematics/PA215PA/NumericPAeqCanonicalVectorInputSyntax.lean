@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqValueRealizationGuardCollection
-import PA215PA.NumericPAeqValueVectorRealizationSyntax
-import PA215PA.NumericPAeqValueSelfVariableCertificate
-import Foundation.FirstOrder.Arithmetic.Collection.Basic
+module
+
+public import PA215PA.NumericPAeqValueRealizationGuardCollection
+public import PA215PA.NumericPAeqValueVectorRealizationSyntax
+public import PA215PA.NumericPAeqValueSelfVariableCertificate
+public import Foundation.FirstOrder.Arithmetic.Collection.Basic
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqCanonicalVectorInput
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

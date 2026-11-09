@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationRestrictionWitness
+module
+
+public import PA215PA.RelationalMultiplicationRestrictionWitness
+
+@[expose] public section
 
 
 namespace PA215.PA.RelationalSource.PairGraph

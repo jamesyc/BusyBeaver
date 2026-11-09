@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalEquivalence
+module
+
+public import PA215PA.ActualRelationalEquivalence
+
+@[expose] public section
 
 /-! Four closed numeric equality proofs for the relational replacement of Compact238.equality_base (upstream 84049b5e, arith/Compact238.v). Labels 0 through 3 denote the displayed de Bruijn indices. Label 4 is reserved inside each equality replacement. -/
 namespace PA215.PA.NativeCalculus.ActualBasis

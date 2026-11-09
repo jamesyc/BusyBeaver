@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentAllocatorBounds
-import PA215PA.FoundationRelationalSequentBinderAlphaNegative
+module
+
+public import PA215PA.FoundationRelationalSequentAllocatorBounds
+public import PA215PA.FoundationRelationalSequentBinderAlphaNegative
+
+@[expose] public section
 
 /-! Exact paired certificate relation and explicit full-PA invariant for
 changing only the source translator allocator, under both coverage guards. -/

@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalAlpha
+module
+
+public import PA215PA.ActualRelationalAlpha
+
+@[expose] public section
 
 /-! Bottom-up actual-basis finite freshening compiler for the restricted
 relational image. The reserved equality label stays below newly allocated

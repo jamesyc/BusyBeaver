@@ -1,4 +1,8 @@
-import PA215PA.RelationalPairDecoding
+module
+
+public import PA215PA.RelationalPairDecoding
+
+@[expose] public section
 
 /-! Component-level uniqueness of decoded coordinates. The proof only inspects
 actual memberships of the two constituent objects; it does not identify them

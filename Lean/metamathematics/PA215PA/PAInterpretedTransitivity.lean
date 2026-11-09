@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedEqualityTransitivity
-import PA215PA.PAInterpretedUniversal
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAInterpretedEqualityTransitivity
+public import PA215PA.PAInterpretedUniversal
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! Literal typed PAeq transitivity with all three guarded binders paid. -/
 namespace PA215.PA.ForwardRelational

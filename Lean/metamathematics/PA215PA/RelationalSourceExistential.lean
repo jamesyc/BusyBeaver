@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceInstantiation
-import PA215PA.RelationalSourceNegation
+module
+
+public import PA215PA.RelationalSourceInstantiation
+public import PA215PA.RelationalSourceNegation
+
+@[expose] public section
 
 /-! Concrete existential introduction for Foundation source formulas, via
 finite actual-basis proofs and the already paid universal substitution guards. -/

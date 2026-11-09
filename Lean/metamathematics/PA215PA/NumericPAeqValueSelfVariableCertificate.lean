@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueSelfVariableProof
-import PA215PA.RelationalPredicateBinaryRequested
+module
+
+public import PA215PA.NumericPAeqValueSelfVariableProof
+public import PA215PA.RelationalPredicateBinaryRequested
+
+@[expose] public section
 
 /-! A value of a variable at its own target term, not existential totality.
 The ordinary equality-reflexivity premise is paid by its actual native proof. -/

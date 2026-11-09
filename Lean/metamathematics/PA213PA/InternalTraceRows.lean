@@ -1,5 +1,9 @@
-import PA213PA.InternalTrace
-import PA213PA.InternalRows
+module
+
+public import PA213PA.InternalTrace
+public import PA213PA.InternalRows
+
+@[expose] public section
 
 /-! Object-PA prefix extension specialized to every exact literal machine row.
 This composes the accepted row-totality proofs with HFS trace extension. -/

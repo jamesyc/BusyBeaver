@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentVacuityInvariant
-import PA215PA.ActualCertificateVacuityNeighborhood
+module
+
+public import PA215PA.FoundationRelationalSequentVacuityInvariant
+public import PA215PA.ActualCertificateVacuityNeighborhood
+
+@[expose] public section
 
 /-! Full-PA model-length vacuity certificate existence for covered source
 formulas at labels strictly above the reserve. All endpoint-label exclusions

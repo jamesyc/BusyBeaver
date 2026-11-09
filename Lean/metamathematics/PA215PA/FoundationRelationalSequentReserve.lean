@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentReserveInvariant
+module
+
+public import PA215PA.FoundationRelationalSequentReserveInvariant
+
+@[expose] public section
 
 /-! Full-PA accepted reserve relocation at a fixed allocator. Both source
 coverage guards are retained throughout the model-length induction. -/

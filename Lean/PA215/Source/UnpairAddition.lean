@@ -1,4 +1,8 @@
-import PA215.Source.Unpair
+module
+
+public import PA215.Source.Unpair
+
+@[expose] public section
 namespace PA215.Source.Unpair
 
 /-- The same literal decoder can add its head into a nonzero destination.

@@ -1,5 +1,9 @@
-import PA213PA.InternalNativeRows
-import Mathlib.Tactic.Ring.Basic
+module
+
+public import PA213PA.InternalNativeRows
+public import Mathlib.Tactic.Ring.Basic
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.MarkSkipGeneric
 open PA215

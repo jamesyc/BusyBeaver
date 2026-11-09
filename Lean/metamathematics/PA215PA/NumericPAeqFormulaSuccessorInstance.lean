@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaOneEntryRealization
-import PA215PA.NumericPAeqInductionSuccessorValueCertificate
+module
+
+public import PA215PA.NumericPAeqFormulaOneEntryRealization
+public import PA215PA.NumericPAeqInductionSuccessorValueCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

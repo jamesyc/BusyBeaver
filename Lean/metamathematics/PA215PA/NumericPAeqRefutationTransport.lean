@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentDerivation
-import PA215PA.NumericPAeqBottomGuardDischarge
+module
+
+public import PA215PA.NumericPAeqSequentDerivation
+public import PA215PA.NumericPAeqBottomGuardDischarge
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqRefutationTransport
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

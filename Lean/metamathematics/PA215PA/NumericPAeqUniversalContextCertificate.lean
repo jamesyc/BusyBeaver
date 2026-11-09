@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqUniversalContextUniform
-import PA215PA.NumericPAeqUniversalContextSyntax
-import PA215PA.NumericPAeqUniversalContextTemplateCertificate
+module
+
+public import PA215PA.NumericPAeqUniversalContextUniform
+public import PA215PA.NumericPAeqUniversalContextSyntax
+public import PA215PA.NumericPAeqUniversalContextTemplateCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqUniversalContext
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

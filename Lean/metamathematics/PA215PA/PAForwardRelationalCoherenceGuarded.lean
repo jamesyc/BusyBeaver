@@ -1,5 +1,9 @@
-import PA215PA.PAForwardRelationalCoherence
-import PA215PA.PAForwardRelationalTotalityGuarded
+module
+
+public import PA215PA.PAForwardRelationalCoherence
+public import PA215PA.PAForwardRelationalTotalityGuarded
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

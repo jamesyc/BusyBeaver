@@ -1,6 +1,10 @@
-import PA215.Source.PhysicalRegisters
-import PA213PA.Startup.Data
-import PA215.Source.ExactSource
+module
+
+public import PA215.Source.PhysicalRegisters
+public import PA213PA.Startup.Data
+public import PA215.Source.ExactSource
+
+@[expose] public section
 
 set_option maxRecDepth 100000
 set_option maxHeartbeats 2000000

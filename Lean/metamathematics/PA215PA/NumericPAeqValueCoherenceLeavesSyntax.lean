@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqValueCoherenceGraphs
+module
+
+public import PA215PA.NumericPAeqValueCoherenceGraphs
+
+@[expose] public section
 
 /-! Exact leaf comparison clauses; these identities alone do not prove
 coherence. Endpoint terms retain their target free parameters. -/

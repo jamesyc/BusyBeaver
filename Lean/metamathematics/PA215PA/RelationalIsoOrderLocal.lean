@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoEndpointFresh
+module
+
+public import PA215PA.RelationalIsoEndpointFresh
+
+@[expose] public section
 
 /-! Local ordinal membership exclusions and finite biconditional assembly. -/
 namespace PA215.PA.RelationalSource.PairGraph

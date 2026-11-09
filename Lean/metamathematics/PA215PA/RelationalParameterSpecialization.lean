@@ -1,5 +1,9 @@
-import PA215PA.RelationalParameterClosure
-import PA215PA.RelationalSourceRewritingAtoms
+module
+
+public import PA215PA.RelationalParameterClosure
+public import PA215PA.RelationalSourceRewritingAtoms
+
+@[expose] public section
 
 /-! Literal specialization of the reusable first-parameter closure. -/
 namespace PA215.PA.RelationalSource

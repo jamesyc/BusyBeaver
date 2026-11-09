@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateEquivalenceRelation
+module
+
+public import PA215PA.ActualCertificateEquivalenceRelation
+
+@[expose] public section
 
 /-! Exact numeric certificate suppliers for the target shapes occurring in
 Foundation NNF negation. No induction on nonstandard syntax is asserted here. -/

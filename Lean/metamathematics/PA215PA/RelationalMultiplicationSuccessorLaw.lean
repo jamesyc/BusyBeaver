@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationCoherenceApplications
-import PA215PA.RelationalMultiplicationCoherenceOutputRight
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceApplications
+public import PA215PA.RelationalMultiplicationCoherenceOutputRight
+
+@[expose] public section
 
 /-! The first-argument multiplicative recursion equation modulo actual
 isomorphism, comparing independently witnessed product and sum traces. -/

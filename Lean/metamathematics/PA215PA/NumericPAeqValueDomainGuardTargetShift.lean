@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueDomainGuardValidity
-import PA215PA.NumericPAeqTermTargetShiftParameters
+module
+
+public import PA215PA.NumericPAeqValueDomainGuardValidity
+public import PA215PA.NumericPAeqTermTargetShiftParameters
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueDomainGuard
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

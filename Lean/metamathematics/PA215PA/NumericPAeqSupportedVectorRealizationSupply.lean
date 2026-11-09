@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSupportedVectorRealizationLeaves
-import PA215PA.NumericPAeqSupportedVectorRealizationSteps
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealizationLeaves
+public import PA215PA.NumericPAeqSupportedVectorRealizationSteps
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

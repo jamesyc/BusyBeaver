@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCommutativityOutputs
+module
+
+public import PA215PA.RelationalAdditionCommutativityOutputs
+
+@[expose] public section
 
 /-! Universal parameter closure of the successor step. -/
 namespace PA215.PA.RelationalSource.PairGraph

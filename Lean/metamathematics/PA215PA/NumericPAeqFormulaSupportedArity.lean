@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaSupportedAtomValidity
+module
+
+public import PA215PA.NumericPAeqFormulaSupportedAtomValidity
+
+@[expose] public section
 
 /-! Guarded arity preservation for arbitrary model-valued PAeq formulas,
 proved by an explicit full-PA course-of-values invariant, not Nat induction. -/

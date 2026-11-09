@@ -1,5 +1,9 @@
-import PA215PA.ActualCommandSemantics
-import PA215.Source.SchedulerSafety
+module
+
+public import PA215PA.ActualCommandSemantics
+public import PA215.Source.SchedulerSafety
+
+@[expose] public section
 
 /-! Explicit representation bridge from the core literal-source scheduler's
 arithmetic store to the actual-profile PA interpreter. This discharges only

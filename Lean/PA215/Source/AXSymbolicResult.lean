@@ -1,4 +1,8 @@
-import PA215.Source.AXSymbolic
+module
+
+public import PA215.Source.AXSymbolic
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 4000000
 namespace PA215.Source.AXSymbolic

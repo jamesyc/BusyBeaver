@@ -1,7 +1,11 @@
-import PA215PA.RelationalMultiplicationCompactSyntax
-import PA215PA.RelationalAdditionRecurrenceExtension
-import PA215PA.RelationalMultiplicationPreviousPreserve
-import PA215PA.RelationalMultiplicationResultTransport
+module
+
+public import PA215PA.RelationalMultiplicationCompactSyntax
+public import PA215PA.RelationalAdditionRecurrenceExtension
+public import PA215PA.RelationalMultiplicationPreviousPreserve
+public import PA215PA.RelationalMultiplicationResultTransport
+
+@[expose] public section
 
 /-! The actual successor step for multiplication recurrence with an explicit additive result. New predecessor cases
 are discharged by local ordinal predecessor uniqueness, not extensionality. -/

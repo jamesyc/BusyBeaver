@@ -1,5 +1,9 @@
-import PA215.Source.FetchPrefix
-import PA215.Source.FetchUnpairTransport
+module
+
+public import PA215.Source.FetchPrefix
+public import PA215.Source.FetchUnpairTransport
+
+@[expose] public section
 
 namespace PA215.Source.Fetch
 

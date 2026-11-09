@@ -1,7 +1,11 @@
-import PA215PA.RelationalPredicateTemplateVariableCalibration
-import PA215PA.RelationalPredicateTemplateClosedSupply
-import PA215PA.RelationalPredicateTemplateNDRequested
-import PA215PA.RelationalPredicateTemplateOrdinalSupport
+module
+
+public import PA215PA.RelationalPredicateTemplateVariableCalibration
+public import PA215PA.RelationalPredicateTemplateClosedSupply
+public import PA215PA.RelationalPredicateTemplateNDRequested
+public import PA215PA.RelationalPredicateTemplateOrdinalSupport
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Variable
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

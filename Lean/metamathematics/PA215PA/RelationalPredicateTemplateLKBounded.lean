@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateLK
-import PA215PA.RelationalPredicateTemplateProofCoverageBound
+module
+
+public import PA215PA.RelationalPredicateTemplateLK
+public import PA215PA.RelationalPredicateTemplateProofCoverageBound
+
+@[expose] public section
 /-! Finite host LK soundness with one explicit numerical environment bound. -/
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

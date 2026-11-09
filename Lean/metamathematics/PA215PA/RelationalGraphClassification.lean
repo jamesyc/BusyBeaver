@@ -1,4 +1,8 @@
-import PA215PA.RelationalKuratowskiTransport
+module
+
+public import PA215PA.RelationalKuratowskiTransport
+
+@[expose] public section
 
 /-! Exact pointwise classification of graph edges after adjoining a concrete
 Kuratowski entry. The reverse direction and uniqueness are finite proofs. -/

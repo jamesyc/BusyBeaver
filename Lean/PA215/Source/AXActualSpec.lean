@@ -1,5 +1,9 @@
-import PA215.Source.AXSymbolicResult
-import PA215.Source.ActualAXCode
+module
+
+public import PA215.Source.AXSymbolicResult
+public import PA215.Source.ActualAXCode
+
+@[expose] public section
 namespace PA215.Source.AXSymbolic
 
 def valuation (t c d h y x : Nat) : Fin 6 → Nat := fun i => [t,c,d,h,y,x][i.val]!

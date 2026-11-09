@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitutionSuccessor
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionSuccessor
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND
@@ -55,11 +59,11 @@ def substitutionBinary {n : Nat} (op : BinaryOperation) (t v : SourceTerm (n+1))
   have ha' := up (shiftProof (shiftProof (up (shiftProof (shiftProof ha)) p))) q
   have hi := iht u A' _ _ (Rew.shift (Rew.shift (Rew.shift (Rew.shift a)))) Hu'
     (by simpa only [freeShiftEnv_cons] using H0')
-    (by simpa only [value_shift] using ha') _ _ (andLeft hp')
+    (by simpa only [value_shift] using ha') (.fvar 3) (.fvar 1) (andLeft hp')
     (by simpa only [freeShiftEnv_cons] using andLeft hq)
   have hj := ihv u A' _ _ (Rew.shift (Rew.shift (Rew.shift (Rew.shift a)))) Hu'
     (by simpa only [freeShiftEnv_cons] using H1')
-    (by simpa only [value_shift] using ha') _ _ (andLeft (andRight hp'))
+    (by simpa only [value_shift] using ha') (.fvar 2) (.fvar 0) (andLeft (andRight hp'))
     (by simpa only [freeShiftEnv_cons] using andLeft (andRight hq))
   have out := binaryIsoAt op A' _ _ _ _ _ _
     (valueDomain _ _ _ _ (andLeft hp')) (valueDomain _ _ _ _ (andLeft hq))

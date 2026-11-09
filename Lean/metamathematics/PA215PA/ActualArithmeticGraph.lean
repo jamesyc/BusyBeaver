@@ -1,4 +1,8 @@
-import PA215PA.SourceCantorInjectiveInternal
+module
+
+public import PA215PA.SourceCantorInjectiveInternal
+
+@[expose] public section
 namespace PA215.PA.ActualArithmeticGraph
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalSegmentCompose
-import User211PAInternalTracePrepend
+public import User211PAInternalSegmentCompose
+public import User211PAInternalTracePrepend
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PA.InternalTrace
 open PA215

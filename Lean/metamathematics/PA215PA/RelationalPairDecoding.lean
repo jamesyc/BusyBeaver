@@ -1,4 +1,8 @@
-import PA215PA.RelationalPairTransport
+module
+
+public import PA215PA.RelationalPairTransport
+
+@[expose] public section
 
 /-! Finite decoder lemmas use membership in the actual witnesses. They do not
 identify sets merely because their memberships agree. -/

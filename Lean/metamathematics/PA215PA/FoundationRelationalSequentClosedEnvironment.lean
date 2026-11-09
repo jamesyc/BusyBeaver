@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentShift
+module
+
+public import PA215PA.FoundationRelationalSequentShift
+
+@[expose] public section
 
 /-! Independence from arbitrary finite free-label environments under the
 explicit coded shift-fixed condition. No semantic closedness equivalence is

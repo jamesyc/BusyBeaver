@@ -1,4 +1,8 @@
-import PA213PA.InternalSymbolicPeel
+module
+
+public import PA213PA.InternalSymbolicPeel
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.Symbolic
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

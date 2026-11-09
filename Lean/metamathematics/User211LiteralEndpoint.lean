@@ -1,6 +1,10 @@
-import User211NonhaltingUnprovability
-import PA211.UserCandidate.Dense
-import User211LiteralArithmeticBinding
+module
+
+public import User211NonhaltingUnprovability
+public import PA211.UserCandidate.Dense
+public import User211LiteralArithmeticBinding
+
+@[expose] public section
 namespace PA211.UserCandidate.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic

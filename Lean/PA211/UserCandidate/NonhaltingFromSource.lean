@@ -1,6 +1,10 @@
-import PA211.UserCandidate.CompleteCoverage
-import PA211.UserCandidate.Dense
-import PA211.UserCandidate.StartupProof
+module
+
+public import PA211.UserCandidate.CompleteCoverage
+public import PA211.UserCandidate.Dense
+public import PA211.UserCandidate.StartupProof
+
+@[expose] public section
 namespace PA211.UserCandidate.NonhaltingFromSource
 open PA215.Zip PA215.Runtime PA215.Source PA211.UserCandidate.CandidateTable PA211.UserCandidate.PrimitiveSimulation PA211.UserCandidate.Source
 

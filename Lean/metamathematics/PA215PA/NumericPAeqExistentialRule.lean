@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqExistentialElimination
-import PA215PA.NumericPAeqExistentialTotality
+module
+
+public import PA215PA.NumericPAeqExistentialElimination
+public import PA215PA.NumericPAeqExistentialTotality
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqExistentialInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,6 +1,10 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceUnpairFull
-import PA213PA.InternalCodedSourceS36Guard
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceUnpairFull
+public import PA213PA.InternalCodedSourceS36Guard
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

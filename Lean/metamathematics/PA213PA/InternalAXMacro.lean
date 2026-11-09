@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourcePush
-import PA215PA.SourceCantorInjectiveInternal
-import PA215.Source.AXSymbolicResult
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourcePush
+public import PA215PA.SourceCantorInjectiveInternal
+public import PA215.Source.AXSymbolicResult
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.ModelAX
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

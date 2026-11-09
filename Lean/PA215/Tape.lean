@@ -1,4 +1,8 @@
-import PA215.Machine
+module
+
+public import PA215.Machine
+
+@[expose] public section
 
 namespace PA215
 

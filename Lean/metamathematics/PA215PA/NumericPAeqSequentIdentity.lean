@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSequentInsert
-import PA215PA.NumericPAeqFormulaSupportedNegation
-import PA215PA.FoundationRelationalSequentIdentity
+module
+
+public import PA215PA.NumericPAeqSequentInsert
+public import PA215PA.NumericPAeqFormulaSupportedNegation
+public import PA215PA.FoundationRelationalSequentIdentity
+
+@[expose] public section
 
 /-! Identity and truth for interpreted PAeq HFS sequents. Source NNF negation
 is related to native negation by an accepted certificate, never identified

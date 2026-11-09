@@ -1,6 +1,10 @@
-import PA215PA.PAForwardRelationalNaturality
-import PA215PA.PAForwardRelationalConstructors
-import PA215PA.RelationalSourceAdjunctionLogic
+module
+
+public import PA215PA.PAForwardRelationalNaturality
+public import PA215PA.PAForwardRelationalConstructors
+public import PA215PA.RelationalSourceAdjunctionLogic
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource

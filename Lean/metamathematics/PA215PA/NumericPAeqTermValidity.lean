@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermCoverage
+module
+
+public import PA215PA.NumericPAeqTermCoverage
+
+@[expose] public section
 
 /-! Actual target semiformula validity in arbitrary PA models, under explicit
 finite source/target environment coverage. This is not semantic value existence. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightSuccessorFrame
+module
+
+public import PA215PA.RelationalAdditionRightSuccessorFrame
+
+@[expose] public section
 
 /-! The second real predecessor output, and the lower right-successor IH. -/
 namespace PA215.PA.RelationalSource.PairGraph

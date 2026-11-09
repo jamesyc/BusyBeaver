@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeDerivation
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.FoundationPAeqCodeDerivation
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! Literal successor-based induction body for the existing target theory.
 This does not identify arithmetic addition-by-one with successor. -/

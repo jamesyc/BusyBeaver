@@ -1,6 +1,11 @@
-import PA215.Source.AXBindings.B016
-import PA215.Source.AXTypedPlan
-import PA215.Source.ExistingPrivateBound
+module
+
+public import PA215.Source.AXBindings.B016
+public import PA215.Source.AXTypedPlan
+public import PA215.Source.ExistingPrivateBound
+import all PA215.Source.AXBindings.B016
+
+@[expose] public section
 namespace PA215.Source.AXModelBounds
 theorem bound2539_u : UnpairPartial.Bound exactSites 2539 :=
   existingPrivateBound% "PA215.Source.AXBindings.B016" "PA215.Source.AXAll.bound2539_u"

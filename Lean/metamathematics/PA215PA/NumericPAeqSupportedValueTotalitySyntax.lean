@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermFreeSupport
-import PA215PA.NumericPAeqValueGuardedTotalitySyntax
+module
+
+public import PA215PA.NumericPAeqTermFreeSupport
+public import PA215PA.NumericPAeqValueGuardedTotalitySyntax
+
+@[expose] public section
 
 /-! Supported semantic environments reuse the original finite domain guards and
 value-existence formula. Source-code magnitude is not a coverage condition. -/

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaRealizationConnectiveSyntax
-import PA215PA.NumericPAeqValueCertificatePair
+module
+
+public import PA215PA.NumericPAeqFormulaRealizationConnectiveSyntax
+public import PA215PA.NumericPAeqValueCertificatePair
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

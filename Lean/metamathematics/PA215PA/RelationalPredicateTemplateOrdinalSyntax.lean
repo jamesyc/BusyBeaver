@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateSyntax
+module
+
+public import PA215PA.RelationalPredicateTemplateSyntax
+
+@[expose] public section
 /-! Literal five-clause ordinal syntax in the predicate-template language.
 This only adds syntax; no induction proof or extensionality is assumed. -/
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal

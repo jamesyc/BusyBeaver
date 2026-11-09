@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqValueCoherenceShape
-import PA215PA.NumericPAeqFormulaRecursion
-import PA215PA.NumericPAeqFormulaEqualityTransportCode
-import PA215PA.NumericPAeqTermSupportedBoundInstance
+module
+
+public import PA215PA.NumericPAeqValueCoherenceShape
+public import PA215PA.NumericPAeqFormulaRecursion
+public import PA215PA.NumericPAeqFormulaEqualityTransportCode
+public import PA215PA.NumericPAeqTermSupportedBoundInstance
+
+@[expose] public section
 
 /-! Exact positive equality-atom shape at zero-arity target environments.
 Only genuine free-variable support is required, never source-code bounds. -/

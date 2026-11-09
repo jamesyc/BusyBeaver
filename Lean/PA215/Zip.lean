@@ -1,4 +1,8 @@
-import Std
+module
+
+public import Std
+
+@[expose] public section
 
 /-!
 List-zipper machines for the K-family runtime (port of K230's `TM230`/`Zip`).

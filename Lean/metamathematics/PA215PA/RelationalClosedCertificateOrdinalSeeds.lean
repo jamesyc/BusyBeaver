@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateLiftAxiomShift
-import PA215PA.RelationalClosedCertificate
+module
+
+public import PA215PA.RelationalPredicateTemplateLiftAxiomShift
+public import PA215PA.RelationalClosedCertificate
+
+@[expose] public section
 namespace PA215.PA.RelationalClosedCertificate
 open FFL FFL.FirstOrder RelationalSource ND
 noncomputable section

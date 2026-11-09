@@ -1,6 +1,10 @@
-import PA213PA.InternalFixedTraceSigma
-import PA213PA.Startup.Data
-import PA213PA.TraceAdequacy
+module
+
+public import PA213PA.InternalFixedTraceSigma
+public import PA213PA.Startup.Data
+public import PA213PA.TraceAdequacy
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FixedTrace
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic

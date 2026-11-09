@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeRecursion
+module
+
+public import PA215PA.FoundationRelationalCodeRecursion
+
+@[expose] public section
 
 /-! A conservative all-model coverage invariant. The free environment is assumed
 long enough for the source code; this is sufficient, not necessary, and no

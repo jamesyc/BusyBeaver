@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedSuccessorCancellation
-import PA215PA.PAInterpretedUniversal
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAInterpretedSuccessorCancellation
+public import PA215PA.PAInterpretedUniversal
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! Literal typed PAeq successor injectivity, using a paid closed strict-cut
 Separation instance rather than extensionality or raw successor uniqueness. -/

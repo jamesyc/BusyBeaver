@@ -1,5 +1,9 @@
-import PA215.Source.AXPushParamSteps
-import PA215.Source.Cantor
+module
+
+public import PA215.Source.AXPushParamSteps
+public import PA215.Source.Cantor
+
+@[expose] public section
 
 namespace PA215.Source.AXPushParam
 variable {sites : Array Site} {offset : Nat} (hbound : Bound sites offset)

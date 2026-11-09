@@ -1,4 +1,8 @@
-import PA213PA.InternalScanBits
+module
+
+public import PA213PA.InternalScanBits
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.ScanLeft
 open PA215

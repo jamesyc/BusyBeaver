@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueRealizationGuard
-import PA215PA.NumericPAeqTermValidity
+module
+
+public import PA215PA.NumericPAeqValueRealizationGuard
+public import PA215PA.NumericPAeqTermValidity
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueRealizationGuard
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

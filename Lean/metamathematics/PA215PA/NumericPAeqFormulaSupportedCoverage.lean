@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaCoverage
-import PA215PA.NumericPAeqFormulaFreeSupportLaws
+module
+
+public import PA215PA.NumericPAeqFormulaCoverage
+public import PA215PA.NumericPAeqFormulaFreeSupportLaws
+
+@[expose] public section
 
 /-! A conservative finite free-environment coverage invariant. The code bound
 is sufficient, not necessary; existence of a sufficiently long environment is

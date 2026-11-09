@@ -1,5 +1,9 @@
-import PA211.UserCandidate.CandidateTable
-import PA215.Runtime
+module
+
+public import PA211.UserCandidate.CandidateTable
+public import PA215.Runtime
+
+@[expose] public section
 
 /-!
 Candidate-specific reuse of the existing all-natural symbolic runtime theorem.

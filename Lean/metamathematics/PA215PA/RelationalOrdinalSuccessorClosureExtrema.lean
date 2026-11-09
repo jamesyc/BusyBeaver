@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosureTrace
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosureTrace
+
+@[expose] public section
 
 /-! Actual LK existential witness and classical case assembly for both
 internal extrema. No external choice of representatives is performed. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityBijectionUnique
+module
+
+public import PA215PA.RelationalIdentityBijectionUnique
+
+@[expose] public section
 
 /-! Membership-order equivalence for the identity graph; ordinary equality
 supplies both directions without any equality of graph objects. -/

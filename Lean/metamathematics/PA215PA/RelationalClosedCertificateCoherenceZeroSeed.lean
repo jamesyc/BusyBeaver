@@ -1,4 +1,8 @@
-import PA215PA.RelationalClosedCertificateCoherenceZero
+module
+
+public import PA215PA.RelationalClosedCertificateCoherenceZero
+
+@[expose] public section
 namespace PA215.PA.RelationalClosedCertificate
 noncomputable section
 open FFL FFL.FirstOrder RelationalSource ND PairGraph ForwardRelational
@@ -6,9 +10,9 @@ attribute [local irreducible] lkBudget zeroIsoDerivation zeroIsoClosed
 
 def zeroIsoReserve : Nat := max 20 (3+lkBudget zeroIsoDerivation) + (1+Encodable.encode zeroIsoClosed)
 theorem zeroIsoReserve_code : 1+Encodable.encode zeroIsoClosed≤zeroIsoReserve := Nat.le_add_left _ _
-private theorem zeroIsoReserve_room : 20≤zeroIsoReserve :=
+theorem zeroIsoReserve_room : 20≤zeroIsoReserve :=
   le_trans (le_max_left _ _) (Nat.le_add_right _ _)
-private theorem zeroIsoReserve_budget : 3+lkBudget zeroIsoDerivation≤zeroIsoReserve :=
+theorem zeroIsoReserve_budget : 3+lkBudget zeroIsoDerivation≤zeroIsoReserve :=
   le_trans (le_max_right _ _) (Nat.le_add_right _ _)
 attribute [local irreducible] zeroIsoReserve
 

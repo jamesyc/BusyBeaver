@@ -1,4 +1,8 @@
-import PA215PA.ActualWordMacros
+module
+
+public import PA215PA.ActualWordMacros
+
+@[expose] public section
 namespace PA215.PA.ActualCommandStepGraph
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding
@@ -8,21 +12,27 @@ open ActualWordExpression ActualHeadGraphs
 HFS vector [T,W,D,H]. W remains a Source Cantor stack, not an HFS vector. -/
 noncomputable def stateCode {V : Type*} [ORingStructure V] [V↓[ℒₒᵣ] ⊧* 𝗜𝚺₁]
     (t w d h : V) : V := t ∷ w ∷ d ∷ h ∷ 0
-private def zero : Scalar := .num 0
-private def top : Scalar := .nth .previous (.num 0)
-private def stack : Scalar := .nth .previous (.num 1)
-private def cacheD : Scalar := .nth .previous (.num 2)
-private def cacheH : Scalar := .nth .previous (.num 3)
-private def tag : Scalar := .left .tag
-private def fields : Scalar := .right .tag
-private def first : Scalar := .left fields
-private def second : Scalar := .left (.right fields)
-private def state (t w d h : Scalar) : Expr := .cons t (.cons w (.cons d (.cons h .nil)))
-private def imp (a b : Scalar) : Scalar := .head implicationExpr a b zero zero
-private def headValue (e : ActualArithmeticGraph.Expr) (a b c : Scalar) : Scalar := .head e a b c cacheD
-private def push : List Scalar → Scalar → Scalar
+namespace Templates
+
+def zero : Scalar := .num 0
+def top : Scalar := .nth .previous (.num 0)
+def stack : Scalar := .nth .previous (.num 1)
+def cacheD : Scalar := .nth .previous (.num 2)
+def cacheH : Scalar := .nth .previous (.num 3)
+def tag : Scalar := .left .tag
+def fields : Scalar := .right .tag
+def first : Scalar := .left fields
+def second : Scalar := .left (.right fields)
+def state (t w d h : Scalar) : Expr := .cons t (.cons w (.cons d (.cons h .nil)))
+def imp (a b : Scalar) : Scalar := .head implicationExpr a b zero zero
+def headValue (e : ActualArithmeticGraph.Expr) (a b c : Scalar) : Scalar := .head e a b c cacheD
+def push : List Scalar → Scalar → Scalar
   | [],w => w
   | a::as,w => ActualWordMacros.pair a (push as w)
+
+end Templates
+
+open Templates
 
 def shift : Expr := .ifEq (.add top cacheH) (.num 1) .nil <|
   state cacheH (.right stack) cacheD (.left stack)

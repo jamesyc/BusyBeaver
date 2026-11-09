@@ -1,27 +1,31 @@
-import PA215.Source.AXBindings.B000
-import PA215.Source.AXBindings.B001
-import PA215.Source.AXBindings.B002
-import PA215.Source.AXBindings.B003
-import PA215.Source.AXBindings.B004
-import PA215.Source.AXBindings.B005
-import PA215.Source.AXBindings.B006
-import PA215.Source.AXBindings.B007
-import PA215.Source.AXBindings.B008
-import PA215.Source.AXBindings.B009
-import PA215.Source.AXBindings.B010
-import PA215.Source.AXBindings.B011
-import PA215.Source.AXBindings.B012
-import PA215.Source.AXBindings.B013
-import PA215.Source.AXBindings.B014
-import PA215.Source.AXBindings.B015
-import PA215.Source.AXBindings.B016
-import PA215.Source.AXBindings.B017
-import PA215.Source.AXBindings.B018
-import PA215.Source.AXBindings.B019
-import PA215.Source.AXBindings.B020
-import PA215.Source.AXBindings.B021
-import PA215.Source.AXBindings.B022
-import PA215.Source.AXMacroProgram
+module
+
+public import PA215.Source.AXBindings.B000
+public import PA215.Source.AXBindings.B001
+public import PA215.Source.AXBindings.B002
+public import PA215.Source.AXBindings.B003
+public import PA215.Source.AXBindings.B004
+public import PA215.Source.AXBindings.B005
+public import PA215.Source.AXBindings.B006
+public import PA215.Source.AXBindings.B007
+public import PA215.Source.AXBindings.B008
+public import PA215.Source.AXBindings.B009
+public import PA215.Source.AXBindings.B010
+public import PA215.Source.AXBindings.B011
+public import PA215.Source.AXBindings.B012
+public import PA215.Source.AXBindings.B013
+public import PA215.Source.AXBindings.B014
+public import PA215.Source.AXBindings.B015
+public import PA215.Source.AXBindings.B016
+public import PA215.Source.AXBindings.B017
+public import PA215.Source.AXBindings.B018
+public import PA215.Source.AXBindings.B019
+public import PA215.Source.AXBindings.B020
+public import PA215.Source.AXBindings.B021
+public import PA215.Source.AXBindings.B022
+public import PA215.Source.AXMacroProgram
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXAll
 theorem full_plan : AXMacro.Plan exactSites 25 3769 AXMacro.program :=

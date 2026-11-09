@@ -1,8 +1,12 @@
-import PA215PA.NumericPAeqSequentRequestedLeaves
-import PA215PA.NumericPAeqSequentAllRule
-import PA215PA.NumericPAeqSequentExsRule
-import PA215PA.NumericPAeqSequentShiftRule
-import PA215PA.NumericPAeqSequentProofBudgetTail
+module
+
+public import PA215PA.NumericPAeqSequentRequestedLeaves
+public import PA215PA.NumericPAeqSequentAllRule
+public import PA215PA.NumericPAeqSequentExsRule
+public import PA215PA.NumericPAeqSequentShiftRule
+public import PA215PA.NumericPAeqSequentProofBudgetTail
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula.Sequent
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

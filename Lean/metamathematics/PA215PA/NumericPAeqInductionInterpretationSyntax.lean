@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaZeroInstance
-import PA215PA.NumericPAeqFormulaSupportedOpening
-import PA215PA.NumericPAeqValueDomainGuardTargetShift
+module
+
+public import PA215PA.NumericPAeqFormulaZeroInstance
+public import PA215PA.NumericPAeqFormulaSupportedOpening
+public import PA215PA.NumericPAeqValueDomainGuardTargetShift
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

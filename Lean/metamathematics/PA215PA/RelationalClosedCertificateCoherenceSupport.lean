@@ -1,7 +1,11 @@
-import PA215PA.RelationalClosedCertificatePrimitives
-import PA215PA.RelationalOrderIsoReflexivity
-import PA215PA.RelationalOrderIsoClosedSymmetry
-import PA215PA.RelationalMultiplicationCoherenceSupplier
+module
+
+public import PA215PA.RelationalClosedCertificatePrimitives
+public import PA215PA.RelationalOrderIsoReflexivity
+public import PA215PA.RelationalOrderIsoClosedSymmetry
+public import PA215PA.RelationalMultiplicationCoherenceSupplier
+
+@[expose] public section
 namespace PA215.PA.RelationalClosedCertificate
 open FFL FFL.FirstOrder RelationalSource ND PairGraph
 attribute [local irreducible] Ordinal.domain orderIso

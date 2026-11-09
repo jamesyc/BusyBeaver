@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAHaltingFormula
+public import User211PAHaltingFormula
+
+@[expose] public section
 
 /-! Length-normalized certificates for the existing HFS-coded machine trace.
 All semantic lemmas below quantify arbitrary PA models, not only Nat. -/

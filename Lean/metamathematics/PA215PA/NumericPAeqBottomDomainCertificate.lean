@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqBottomDomainClosed
+module
+
+public import PA215PA.NumericPAeqBottomDomainClosed
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqBottomDomain
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

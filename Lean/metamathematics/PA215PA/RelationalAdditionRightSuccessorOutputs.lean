@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightSuccessorOutputRight
+module
+
+public import PA215PA.RelationalAdditionRightSuccessorOutputRight
+
+@[expose] public section
 
 /-! Capture-safe elimination of the first real predecessor output. -/
 namespace PA215.PA.RelationalSource.PairGraph

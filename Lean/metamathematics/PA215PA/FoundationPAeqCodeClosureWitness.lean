@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeFormulaSupport
+module
+
+public import PA215PA.FoundationPAeqCodeFormulaSupport
+
+@[expose] public section
 /-! Transfer the exact source induction witness, retaining its canonical support
 count. The resulting body is additive; it is not a successor induction axiom. -/
 namespace PA215.PA.FoundationPAeqCode

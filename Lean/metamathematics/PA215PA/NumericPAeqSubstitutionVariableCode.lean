@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSubstitutionVariableProof
-import PA215PA.NumericPAeqValueCoherencePairwiseCode
-import PA215PA.FoundationRelationalSequentSeparationCode
+module
+
+public import PA215PA.NumericPAeqSubstitutionVariableProof
+public import PA215PA.NumericPAeqValueCoherencePairwiseCode
+public import PA215PA.FoundationRelationalSequentSeparationCode
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

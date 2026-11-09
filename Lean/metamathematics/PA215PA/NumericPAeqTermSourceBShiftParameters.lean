@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermSourceShiftParameters
+module
+
+public import PA215PA.NumericPAeqTermSourceShiftParameters
+
+@[expose] public section
 
 /-! Prepending a target bound-environment entry compensates for source bound shift.
 The free environment and result term are preserved. -/

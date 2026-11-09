@@ -1,4 +1,8 @@
-import User211LiteralEndpoint
+module
+
+public import User211LiteralEndpoint
+
+@[expose] public section
 
 /-! Two-sided independence for the exact literal 211-state machine.
 Foundation's standard model supplies PA soundness and consistency in Lean's

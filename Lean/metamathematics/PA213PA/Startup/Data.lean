@@ -1,6 +1,10 @@
-import PA213PA.ZipNatTape
-import PA213.StartupExact
-import PA213.FastPaths
+module
+
+public import PA213PA.ZipNatTape
+public import PA213.StartupExact
+public import PA213.FastPaths
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA213.PA.Startup

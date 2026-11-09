@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionEdge
+module
+
+public import PA215PA.RelationalIsoCompositionEdge
+
+@[expose] public section
 
 /-! Pointwise and shifting interfaces for composition-prefix clauses. -/
 namespace PA215.PA.RelationalSource.PairGraph

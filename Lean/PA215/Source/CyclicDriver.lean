@@ -1,4 +1,8 @@
-import PA215.Source.Determinism
+module
+
+public import PA215.Source.Determinism
+
+@[expose] public section
 
 /-! Explicit global-driver convention: a normal source-root return restarts
 ordinal zero in the same primitive step. Explicit halt remains halt. -/

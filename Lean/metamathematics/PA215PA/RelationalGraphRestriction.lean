@@ -1,6 +1,10 @@
-import PA215PA.RelationalOrderIsoRules
-import PA215PA.RelationalKuratowskiTransport
-import PA215PA.RelationalParameterSpecialization
+module
+
+public import PA215PA.RelationalOrderIsoRules
+public import PA215PA.RelationalKuratowskiTransport
+public import PA215PA.RelationalParameterSpecialization
+
+@[expose] public section
 
 /-! Finite restrictions of actual graph objects. Separation retains all free
 parameters; a retained object includes its own decoding witnesses. -/

@@ -1,4 +1,8 @@
-import PA215.Source.Cantor
+module
+
+public import PA215.Source.Cantor
+
+@[expose] public section
 
 /-! Pure arithmetic specification for the exact PA135 AX output. These are
 numeric constructors, not a second proof calculus or an assumed AX theorem.

@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalDecrementPositiveCell
-import User211PAInternalIncrement
+public import User211PAInternalDecrementPositiveCell
+public import User211PAInternalIncrement
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.DecrementPositive
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

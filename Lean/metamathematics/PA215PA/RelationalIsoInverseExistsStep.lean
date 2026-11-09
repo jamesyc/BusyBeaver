@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseSuccessorWitness
+module
+
+public import PA215PA.RelationalIsoInverseSuccessorWitness
+
+@[expose] public section
 
 /-! Existential elimination supplies both the old prefix and the next value. -/
 namespace PA215.PA.RelationalSource.PairGraph

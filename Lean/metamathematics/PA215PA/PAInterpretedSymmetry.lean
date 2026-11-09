@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedEqualitySymmetry
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAInterpretedEqualitySymmetry
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! The literal typed image of the second fixed PAeq equality axiom. -/
 namespace PA215.PA.ForwardRelational

@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedFixedSupplier
+module
+
+public import PA215PA.PAInterpretedFixedSupplier
+
+@[expose] public section
 
 /-! The exact twelve fixed source axioms have no free parameters. Their
 ordinary source sentence closure therefore embeds back to the identical

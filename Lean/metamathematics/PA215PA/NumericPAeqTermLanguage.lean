@@ -1,5 +1,9 @@
-import PA215PA.PAPresentationSyntax
-import PA215PA.FoundationRelationalCodeLanguage
+module
+
+public import PA215PA.PAPresentationSyntax
+public import PA215PA.FoundationRelationalCodeLanguage
+
+@[expose] public section
 
 /-! Numeric identity of the existing PAeq presentation. These four function
 symbols are not Foundation's ordered-semiring signature. No interpretation or

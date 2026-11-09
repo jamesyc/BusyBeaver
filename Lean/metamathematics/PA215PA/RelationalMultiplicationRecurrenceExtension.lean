@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationCompactSyntax
-import PA215PA.RelationalMultiplicationRecurrenceAt
+module
+
+public import PA215PA.RelationalMultiplicationCompactSyntax
+public import PA215PA.RelationalMultiplicationRecurrenceAt
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 set_option maxHeartbeats 600000

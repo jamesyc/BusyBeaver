@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedParameterClosure
-import PA215PA.PAForwardRelationalClosureClosedPremise
+module
+
+public import PA215PA.PAInterpretedParameterClosure
+public import PA215PA.PAForwardRelationalClosureClosedPremise
+
+@[expose] public section
 
 /-! Exact raw target closure syntax and constructive specialization. -/
 namespace PA215.PA.ForwardRelational

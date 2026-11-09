@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentInsert
+module
+
+public import PA215PA.FoundationRelationalSequentInsert
+
+@[expose] public section
 
 /-! Accepted-code closures for the literal relational-source propositional
 sequent premises in Foundation Derivation.Phi. Quantifier rules are not included. -/

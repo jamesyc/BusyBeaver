@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedZeroSuccessorEquality
-import PA215PA.PAPresentationAxioms
-import PA215PA.RelationalArithmeticLawContext
+module
+
+public import PA215PA.PAInterpretedZeroSuccessorEquality
+public import PA215PA.PAPresentationAxioms
+public import PA215PA.RelationalArithmeticLawContext
+
+@[expose] public section
 
 /-! Literal typed image of PAeq's zero/successor disjointness. No canonical
 empty object or raw extensional equality is assumed. -/

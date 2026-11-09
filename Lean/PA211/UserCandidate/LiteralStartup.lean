@@ -1,5 +1,9 @@
-import PA211.UserCandidate.Dense
-import PA211.UserCandidate.StartupExact
+module
+
+public import PA211.UserCandidate.Dense
+public import PA211.UserCandidate.StartupExact
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA211.UserCandidate.LiteralStartup

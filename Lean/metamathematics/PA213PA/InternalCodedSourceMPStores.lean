@@ -1,8 +1,12 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceCons
-import PA213PA.InternalCodedSourceMPField
-import PA213PA.InternalCodedSourceMPGuard
-import PA215PA.SourceCantorInjectiveInternal
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceCons
+public import PA213PA.InternalCodedSourceMPField
+public import PA213PA.InternalCodedSourceMPGuard
+public import PA215PA.SourceCantorInjectiveInternal
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

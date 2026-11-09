@@ -1,4 +1,8 @@
-import PA215.Source.Syntax
+module
+
+public import PA215.Source.Syntax
+
+@[expose] public section
 set_option maxHeartbeats 8000000
 set_option maxRecDepth 50000
 

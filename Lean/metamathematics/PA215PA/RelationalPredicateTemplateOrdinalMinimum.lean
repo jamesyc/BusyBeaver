@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateOrdinalRules
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalRules
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder ND
 def predicateTraceMinimum {Γ : List Form} (p : Formula 1) (s c a : Nat)

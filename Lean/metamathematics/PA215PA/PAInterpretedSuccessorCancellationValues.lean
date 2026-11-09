@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedSuccessorCancellationRight
+module
+
+public import PA215PA.PAInterpretedSuccessorCancellationRight
+
+@[expose] public section
 
 /-! Eliminate the left successor's actual child witness. -/
 namespace PA215.PA.ForwardRelational

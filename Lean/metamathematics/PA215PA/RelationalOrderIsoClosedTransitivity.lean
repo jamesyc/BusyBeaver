@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionTransitivitySupplier
-import PA215PA.RelationalAdditionCoherenceRules
+module
+
+public import PA215PA.RelationalIsoCompositionTransitivitySupplier
+public import PA215PA.RelationalAdditionCoherenceRules
+
+@[expose] public section
 
 /-! Parameter-close an already fully supplied transitivity theorem. No free
 Separation premise is generalized; all three object parameters are genuinely bound. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationPrefixStep
+module
+
+public import PA215PA.RelationalMultiplicationPrefixStep
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 open Ordinal (Term Formula)

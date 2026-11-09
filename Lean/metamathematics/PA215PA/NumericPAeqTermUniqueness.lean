@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTotality
-import PA215PA.NumericPAeqTermInversion
+module
+
+public import PA215PA.NumericPAeqTermTotality
+public import PA215PA.NumericPAeqTermInversion
+
+@[expose] public section
 
 /-! Output uniqueness of finite witness tables follows genuine full-PA
 induction on the source term code. Tables themselves need not be unique. -/

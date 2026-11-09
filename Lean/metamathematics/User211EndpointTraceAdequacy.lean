@@ -1,5 +1,9 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211PAHaltingFormula
+public import User211PAHaltingFormula
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PA.HaltingFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

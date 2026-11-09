@@ -1,5 +1,9 @@
-import PA215PA.PAPresentationInstantiation
-import PA215PA.PAPresentationStepCertificate
+module
+
+public import PA215PA.PAPresentationInstantiation
+public import PA215PA.PAPresentationStepCertificate
+
+@[expose] public section
 
 /-! Actual arbitrary-term instances of the six explicitly allowed equality
 axioms. These are finite LK constructions, not an assumed Leibniz rule. -/

@@ -1,8 +1,12 @@
-import PA215PA.NumericPAeqInductionBodyInterpretation
-import PA215PA.NumericPAeqInductionBaseCompatibility
-import PA215PA.NumericPAeqInductionStepCompatibility
-import PA215PA.NumericPAeqOrdinalInductionShapeSupply
-import PA215PA.NumericPAeqInductionCombineCertificate
+module
+
+public import PA215PA.NumericPAeqInductionBodyInterpretation
+public import PA215PA.NumericPAeqInductionBaseCompatibility
+public import PA215PA.NumericPAeqInductionStepCompatibility
+public import PA215PA.NumericPAeqOrdinalInductionShapeSupply
+public import PA215PA.NumericPAeqInductionCombineCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

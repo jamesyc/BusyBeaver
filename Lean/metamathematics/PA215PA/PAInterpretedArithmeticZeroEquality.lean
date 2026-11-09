@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedArithmeticZeroValues
-import PA215PA.PAInterpretedFunctionCongruenceWitnesses
-import PA215PA.RelationalAdditionRightSuccessor
+module
+
+public import PA215PA.PAInterpretedArithmeticZeroValues
+public import PA215PA.PAInterpretedFunctionCongruenceWitnesses
+public import PA215PA.RelationalAdditionRightSuccessor
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

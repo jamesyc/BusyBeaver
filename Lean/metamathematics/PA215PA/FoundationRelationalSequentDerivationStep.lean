@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentDerivationInvariant
+module
+
+public import PA215PA.FoundationRelationalSequentDerivationInvariant
+
+@[expose] public section
 
 /-! The ten literal numeric Foundation constructor cases, conditional on the
 explicit axiom supplier and smaller-code translation witnesses. -/

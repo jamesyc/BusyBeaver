@@ -1,5 +1,9 @@
-import PA215.Source.EnumerationSchedule
-import PA215.Source.FetchDispatch
+module
+
+public import PA215.Source.EnumerationSchedule
+public import PA215.Source.FetchDispatch
+
+@[expose] public section
 namespace PA215.Source.Scheduler
 open Enumeration
 

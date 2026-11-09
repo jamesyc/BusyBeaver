@@ -9,7 +9,7 @@ closure and all nine endpoint audit declarations. Mutation tests exercise
 changes to transition rows, state relabelings, and source instructions.
 [Reproduction instructions](reproduction.md)
 
-## Build results
+## Build results before the module port
 
 The serial build passed all 2,420 scheduled modules, including 2,276
 project modules and 144 Foundation modules. Both default targets also
@@ -22,7 +22,7 @@ The default targets use support modules in the `PA213`, `PA215`,
 refutation compiler, and machine lemmas. The build also uses two pinned
 Foundation patches. [Patch specifications](../Lean/metamathematics/patches/README.md)
 
-## Axiom audits
+## Axiom audits before the module port
 
 The core audit passed all eight physical and runtime declarations. The
 metamathematics audit passed all nine endpoint declarations, including the

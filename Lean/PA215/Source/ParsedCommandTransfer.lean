@@ -1,4 +1,8 @@
-import PA215.Source.CommandAXRegisters
+module
+
+public import PA215.Source.CommandAXRegisters
+
+@[expose] public section
 namespace PA215.Source
 open Cantor Enumeration
 

@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitutionQuantifiers
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionQuantifiers
+
+@[expose] public section
 
 /-! Actual source formula substitution equivalence under finite occurrence
 realizations. The general Rew recursion lifts through every binder with q. -/

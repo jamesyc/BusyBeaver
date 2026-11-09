@@ -1,8 +1,12 @@
-import PA215PA.NumericPAeqFormulaRealizationAtoms
-import PA215PA.NumericPAeqFormulaRealizationNegativeAtom
-import PA215PA.NumericPAeqFormulaRealizationConstants
-import PA215PA.NumericPAeqFormulaRealizationQuantifiers
-import PA215PA.NumericPAeqFormulaRealizationInvariant
+module
+
+public import PA215PA.NumericPAeqFormulaRealizationAtoms
+public import PA215PA.NumericPAeqFormulaRealizationNegativeAtom
+public import PA215PA.NumericPAeqFormulaRealizationConstants
+public import PA215PA.NumericPAeqFormulaRealizationQuantifiers
+public import PA215PA.NumericPAeqFormulaRealizationInvariant
+
+@[expose] public section
 
 /-! Full-PA original-formula rank induction. The entire finite domain and actual
 substitution-value guard remains the antecedent of the supplied certificate. -/

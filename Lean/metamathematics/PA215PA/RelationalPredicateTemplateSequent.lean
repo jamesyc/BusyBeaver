@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateNegation
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Basic
+module
+
+public import PA215PA.RelationalPredicateTemplateNegation
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Basic
+
+@[expose] public section
 /-! A finite host multiset of templates becomes an actual model HFS sequent.
 Multiplicity is intentionally forgotten, as in the pinned numeric calculus. -/
 namespace PA215.PA.RelationalPredicateTemplate

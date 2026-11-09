@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueSelfVariableProof
-import PA215PA.NumericPAeqValueCoherenceSuccessorCalibration
-import PA215PA.NumericPAeqValueClosedEnvironment
+module
+
+public import PA215PA.NumericPAeqValueSelfVariableProof
+public import PA215PA.NumericPAeqValueCoherenceSuccessorCalibration
+public import PA215PA.NumericPAeqValueClosedEnvironment
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionSuccessorValue
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

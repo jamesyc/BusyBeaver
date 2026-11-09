@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentValidity
-import PA215PA.FoundationRelationalSequentFold
+module
+
+public import PA215PA.NumericPAeqSequentValidity
+public import PA215PA.FoundationRelationalSequentFold
+
+@[expose] public section
 
 namespace PA215.PA.NumericPAeqFormula.Sequent
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

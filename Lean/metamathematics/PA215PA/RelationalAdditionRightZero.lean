@@ -1,7 +1,11 @@
-import PA215PA.RelationalAdditionCoherenceOutputRight
-import PA215PA.RelationalAdditionZeroLaw
-import PA215PA.RelationalZeroIso
-import PA215PA.RelationalOrdinalInductionUniform
+module
+
+public import PA215PA.RelationalAdditionCoherenceOutputRight
+public import PA215PA.RelationalAdditionZeroLaw
+public import PA215PA.RelationalZeroIso
+public import PA215PA.RelationalOrdinalInductionUniform
+
+@[expose] public section
 
 /-! Right zero for arbitrary actual addition traces. The zero and output
 representatives remain universally quantified; no canonical empty set is used. -/

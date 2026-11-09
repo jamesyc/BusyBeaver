@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalCodeParameters
-import Mathlib.Tactic.FinCases
+module
+
+public import PA215PA.FoundationRelationalCodeParameters
+public import Mathlib.Tactic.FinCases
+
+@[expose] public section
 
 /-! Total model functions with explicit default behavior, agreeing with guarded
 atom translation on covered inputs. No computational extraction from Prop. -/

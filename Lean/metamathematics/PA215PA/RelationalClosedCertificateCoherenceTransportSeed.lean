@@ -1,4 +1,8 @@
-import PA215PA.RelationalClosedCertificateCoherenceTransport
+module
+
+public import PA215PA.RelationalClosedCertificateCoherenceTransport
+
+@[expose] public section
 namespace PA215.PA.RelationalClosedCertificate
 noncomputable section
 open FFL FFL.FirstOrder RelationalSource ND PairGraph ForwardRelational
@@ -6,9 +10,9 @@ attribute [local irreducible] lkBudget isoTransportDerivation isoTransportClosed
 
 def isoTransportReserve : Nat := max 20 (5+lkBudget isoTransportDerivation) + (1+Encodable.encode isoTransportClosed)
 theorem isoTransportReserve_code : 1+Encodable.encode isoTransportClosed≤isoTransportReserve := Nat.le_add_left _ _
-private theorem isoTransportReserve_room : 20≤isoTransportReserve :=
+theorem isoTransportReserve_room : 20≤isoTransportReserve :=
   le_trans (le_max_left _ _) (Nat.le_add_right _ _)
-private theorem isoTransportReserve_budget : 5+lkBudget isoTransportDerivation≤isoTransportReserve :=
+theorem isoTransportReserve_budget : 5+lkBudget isoTransportDerivation≤isoTransportReserve :=
   le_trans (le_max_right _ _) (Nat.le_add_right _ _)
 attribute [local irreducible] isoTransportReserve
 

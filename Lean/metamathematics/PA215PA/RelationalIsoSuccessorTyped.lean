@@ -1,5 +1,9 @@
-import PA215PA.RelationalOrderIsoRelationRules
-import PA215PA.RelationalGraphFunctionalExtension
+module
+
+public import PA215PA.RelationalOrderIsoRelationRules
+public import PA215PA.RelationalGraphFunctionalExtension
+
+@[expose] public section
 
 /-! Edge typing after exact extension by the two predecessor endpoints. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedInductionSubstitution
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAInterpretedInductionSubstitution
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! The genuine zero and raw-successor instances used by interpreted induction.
 All arithmetic value witnesses and finite free-parameter guards remain explicit. -/

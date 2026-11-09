@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphRestrictionInclusiveRules
-import PA215PA.RelationalGraphOperations
+module
+
+public import PA215PA.RelationalGraphRestrictionInclusiveRules
+public import PA215PA.RelationalGraphOperations
+
+@[expose] public section
 
 /-! Restriction preserves the functional and full ordinal-range trace clauses. -/
 namespace PA215.PA.RelationalSource.PairGraph

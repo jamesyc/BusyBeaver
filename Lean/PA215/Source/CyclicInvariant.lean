@@ -1,4 +1,8 @@
-import PA215.Source.CyclicDeterminism
+module
+
+public import PA215.Source.CyclicDeterminism
+
+@[expose] public section
 namespace PA215.Source
 
 theorem CycleSteps.append (h₁ : CycleSteps sites n a b) (h₂ : CycleSteps sites m b c) :

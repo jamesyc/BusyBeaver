@@ -1,5 +1,9 @@
-import PA215.Source.NIPBinding
-import PA215.Source.S36Lift
+module
+
+public import PA215.Source.NIPBinding
+public import PA215.Source.S36Lift
+
+@[expose] public section
 
 namespace PA215.Source.NIPGuard
 

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaSupportedTargetShiftAtoms
-import PA215PA.NumericPAeqFormulaSupportedArity
+module
+
+public import PA215PA.NumericPAeqFormulaSupportedTargetShiftAtoms
+public import PA215PA.NumericPAeqFormulaSupportedArity
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open FFL.FirstOrder.Arithmetic.Bootstrapping

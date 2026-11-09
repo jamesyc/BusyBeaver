@@ -1,5 +1,9 @@
-import PA213.StartupData
-import PA211.UserCandidate.CandidateTable
+module
+
+public import PA213.StartupData
+public import PA211.UserCandidate.CandidateTable
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA211.UserCandidate.Startup

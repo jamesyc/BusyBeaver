@@ -1,4 +1,8 @@
-import PA215.Source.Cantor
+module
+
+public import PA215.Source.Cantor
+
+@[expose] public section
 
 /-! Pure command-field enumeration, with the same fresh/positive-pointer
 convention proved by Fetch. AX/MP execution and global credit are separate. -/

@@ -1,4 +1,8 @@
-import PA215.Source.Determinism
+module
+
+public import PA215.Source.Determinism
+
+@[expose] public section
 
 namespace PA215.Source
 

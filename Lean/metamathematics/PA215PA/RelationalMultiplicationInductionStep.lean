@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationInductionBase
+module
+
+public import PA215PA.RelationalMultiplicationInductionBase
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 open Ordinal (Term Formula)

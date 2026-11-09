@@ -1,7 +1,11 @@
-import PA213PA.InternalReturnCell
-import PA213PA.InternalReturnCode
-import PA213PA.InternalCarryCode
-import PA213PA.InternalSegmentCompose
+module
+
+public import PA213PA.InternalReturnCell
+public import PA213PA.InternalReturnCode
+public import PA213PA.InternalCarryCode
+public import PA213PA.InternalSegmentCompose
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.ReturnFile
 open PA215

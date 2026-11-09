@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceRewriting
-import PA215PA.ActualRelationalFreshening
+module
+
+public import PA215PA.RelationalSourceRewriting
+public import PA215PA.ActualRelationalFreshening
+
+@[expose] public section
 
 /-! Exact allocator change is paid by finite actual-basis freshening proofs,
 not by equating alpha-equivalent syntax or assuming an alpha axiom. -/

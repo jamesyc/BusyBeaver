@@ -1,4 +1,8 @@
-import PA215PA.ActualCompilerRuleExpression
+module
+
+public import PA215PA.ActualCompilerRuleExpression
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerRuleExpression
 open ActualWordExpression ActualWordCoding NativeCalculus.ActualBasis.Code
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

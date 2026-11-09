@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalClosureApplication
+module
+
+public import PA215PA.PAForwardRelationalClosureApplication
+
+@[expose] public section
 
 /-! Conditional exact source universal closure. Uniform body proof data are
 required explicitly; an arbitrary open ND or Separation assumption is NOT

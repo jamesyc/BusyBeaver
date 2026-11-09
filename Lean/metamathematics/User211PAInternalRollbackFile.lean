@@ -1,8 +1,12 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalRollbackCell
-import User211PAInternalCarryCode
-import User211PAInternalSegmentCompose
+public import User211PAInternalRollbackCell
+public import User211PAInternalCarryCode
+public import User211PAInternalSegmentCompose
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PA.InternalTrace.RollbackFile
 open PA215

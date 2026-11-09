@@ -1,5 +1,10 @@
-import PA215.Source.AXGateSteps
-import PA215.Source.ExistingPrivateBound
+module
+
+public import PA215.Source.AXGateSteps
+public import PA215.Source.ExistingPrivateBound
+import all PA215.Source.AXGateSteps
+
+@[expose] public section
 namespace PA215.Source.AXModelGateRows
 theorem row3769 : resolveAt exactSites 3769 = some (.dec 3 (some 3773) (some 3770)) :=
   existingPrivateBound% "PA215.Source.AXGateSteps" "PA215.Source.AXGate.row3769"

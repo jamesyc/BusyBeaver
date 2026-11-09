@@ -1,5 +1,9 @@
-import PA215PA.RelationalOrdinalSuccessorBase
-import PA215PA.RelationalOrdinalIntersectionAxiom
+module
+
+public import PA215PA.RelationalOrdinalSuccessorBase
+public import PA215PA.RelationalOrdinalIntersectionAxiom
+
+@[expose] public section
 
 /-! Capture-aware elimination and shift operations used by finite ordinal
 successor closure. These are proof transformations, not semantic arguments. -/

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTargetShiftConstructors
-import PA215PA.NumericPAeqTermSupportedValidity
+module
+
+public import PA215PA.NumericPAeqTermTargetShiftConstructors
+public import PA215PA.NumericPAeqTermSupportedValidity
+
+@[expose] public section
 
 /-! Exact target free-variable shift naturality in every model of PA.
 All source ranks, arities and environment vectors may be nonstandard. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCoherenceSuccessor
+module
+
+public import PA215PA.RelationalAdditionCoherenceSuccessor
+
+@[expose] public section
 
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND

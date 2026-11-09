@@ -1,4 +1,8 @@
-import PA215PA.RelationalPairExistence
+module
+
+public import PA215PA.RelationalPairExistence
+
+@[expose] public section
 
 /-! Noncanonical Kuratowski witnesses from empty and adjunction. No uniqueness or
 extensionality is asserted. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityEmpty
+module
+
+public import PA215PA.RelationalIdentityEmpty
+
+@[expose] public section
 
 /-! Every graph object carries actual coordinate witnesses, independently of
 edge typing. This interface deliberately preserves that stronger clause. -/

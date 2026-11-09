@@ -1,5 +1,9 @@
-import PA215.Source.CommandRegisters
-import PA215.Source.CyclicInvariant
+module
+
+public import PA215.Source.CommandRegisters
+public import PA215.Source.CyclicInvariant
+
+@[expose] public section
 namespace PA215.Source
 open Cantor Enumeration
 

@@ -1,4 +1,8 @@
-import PA215.Source.SourceSemanticEquivalence
+module
+
+public import PA215.Source.SourceSemanticEquivalence
+
+@[expose] public section
 namespace PA215.Source
 open Enumeration
 

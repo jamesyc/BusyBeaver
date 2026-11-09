@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoPredecessorImage
-import PA215PA.RelationalIsoSuccessorFrame
+module
+
+public import PA215PA.RelationalIsoPredecessorImage
+public import PA215PA.RelationalIsoSuccessorFrame
+
+@[expose] public section
 
 /-! A real graph edge supplies an actual ordinal predecessor witness. -/
 namespace PA215.PA.RelationalSource.PairGraph

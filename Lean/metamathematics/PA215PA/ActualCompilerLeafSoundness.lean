@@ -1,20 +1,29 @@
-import PA215PA.ActualCommandRealizesFormula
-import PA215PA.ActualRuleExpression
-import PA215PA.ActualCompilerRuleExpression
+module
+
+public import PA215PA.ActualCommandRealizesFormula
+public import PA215PA.ActualRuleExpression
+public import PA215PA.ActualCompilerRuleExpression
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerLeafSoundness
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic
 open SourceCantorInternal ActualHeadGraphs ActualCommandStepGraph
-open Lean Elab Tactic in
-elab "expose_actual_rule_helpers" : tactic => do
-  let env ← getEnv
-  let names := env.constants.toList.filterMap fun (n,_) =>
-    if (["_private.PA215PA.ActualRuleExpression.","_private.PA215PA.ActualCompilerRuleExpression."].any
-        (fun pre => n.toString.startsWith pre)) &&
-      ["zero","one","accepted","r1","r2","r3","r4","a","b","c","u","h","requireZero","minor","major"].any
-        (fun suffix => n.toString.endsWith ("." ++ suffix)) then some (mkIdent n) else none
-  let names := names.toArray
-  evalTactic (← `(tactic| simp only [$[$names:ident],*] at *))
+macro "expose_actual_rule_helpers" : tactic => `(tactic|
+  simp only [ActualRuleExpression.Templates.zero, ActualRuleExpression.Templates.one,
+    ActualRuleExpression.Templates.accepted, ActualRuleExpression.Templates.r1,
+    ActualRuleExpression.Templates.r2, ActualRuleExpression.Templates.r3,
+    ActualRuleExpression.Templates.r4, ActualRuleExpression.Templates.a,
+    ActualRuleExpression.Templates.b, ActualRuleExpression.Templates.c,
+    ActualRuleExpression.Templates.u, ActualRuleExpression.Templates.h,
+    ActualRuleExpression.Templates.requireZero, ActualRuleExpression.Templates.minor,
+    ActualRuleExpression.Templates.major,
+    ActualCompilerRuleExpression.Templates.zero, ActualCompilerRuleExpression.Templates.r1,
+    ActualCompilerRuleExpression.Templates.r2, ActualCompilerRuleExpression.Templates.r3,
+    ActualCompilerRuleExpression.Templates.r4, ActualCompilerRuleExpression.Templates.a,
+    ActualCompilerRuleExpression.Templates.b, ActualCompilerRuleExpression.Templates.c,
+    ActualCompilerRuleExpression.Templates.u, ActualCompilerRuleExpression.Templates.requireZero] at *)
+
 variable {V : Type*} [ORingStructure V] [V↓[ℒₒᵣ] ⊧* 𝗜𝚺₁]
 
 theorem leaf1_sound (previous words tag payload out : V)

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionFrame
+module
+
+public import PA215PA.RelationalAdditionFrame
+
+@[expose] public section
 
 /-! Constructive graph-extension assembly for the addition induction step.
 The endpoint, its successor, and the extended graph are all explicitly built. -/

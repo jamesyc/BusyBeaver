@@ -1,5 +1,9 @@
-import PA213PA.InternalScanLeft
-import PA213PA.InternalPhaseTrace
+module
+
+public import PA213PA.InternalScanLeft
+public import PA213PA.InternalPhaseTrace
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.LeftPhase
 open PA215

@@ -1,5 +1,9 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211PANativeTable
+public import User211PANativeTable
+
+@[expose] public section
 namespace PA211.UserCandidate.PaddedBridge
 open PA215.Zip PA211.UserCandidate.NativeTable PA211.UserCandidate.CandidateTable
 set_option maxRecDepth 100000

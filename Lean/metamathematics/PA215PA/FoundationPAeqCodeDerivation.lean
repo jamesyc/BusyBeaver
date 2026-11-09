@@ -1,6 +1,10 @@
-import Foundation.FirstOrder.Incompleteness.Definability
-import PA215PA.FoundationPAeqCodeSequent
-import PA215PA.FoundationPAeqCodeNegation
+module
+
+public import Foundation.FirstOrder.Incompleteness.Definability
+public import PA215PA.FoundationPAeqCodeSequent
+public import PA215PA.FoundationPAeqCodeNegation
+
+@[expose] public section
 
 /-! Conditional proof-number transport. U is an explicitly Delta-one target theory;
 its translated original-axiom proof supplier remains a genuine hypothesis. -/

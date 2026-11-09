@@ -1,5 +1,9 @@
-import PA215PA.PAPresentationFormulaCongruence
-import PA215PA.PAPresentationInductionImage
+module
+
+public import PA215PA.PAPresentationFormulaCongruence
+public import PA215PA.PAPresentationInductionImage
+
+@[expose] public section
 
 /-! Uniform constructive replacement of additive induction by primitive
 successor induction. The allowed finite arithmetic context is explicit. -/

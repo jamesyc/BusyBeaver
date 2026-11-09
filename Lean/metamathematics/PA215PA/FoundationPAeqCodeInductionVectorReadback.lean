@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeClosedInductionBody
+module
+
+public import PA215PA.FoundationPAeqCodeClosedInductionBody
+
+@[expose] public section
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,5 +1,9 @@
-import PA215PA.RelationalOrderIsoZero
-import PA215PA.RelationalAdditionTrace
+module
+
+public import PA215PA.RelationalOrderIsoZero
+public import PA215PA.RelationalAdditionTrace
+
+@[expose] public section
 
 /-! Successor and zero representatives are disjoint modulo the actual
 existential order-isomorphism relation, not just raw object equality. -/

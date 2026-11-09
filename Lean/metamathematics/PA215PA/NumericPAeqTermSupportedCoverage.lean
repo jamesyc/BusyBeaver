@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermCoverage
-import PA215PA.NumericPAeqTermFreeSupportLaws
+module
+
+public import PA215PA.NumericPAeqTermCoverage
+public import PA215PA.NumericPAeqTermFreeSupportLaws
+
+@[expose] public section
 
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

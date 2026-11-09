@@ -1,4 +1,8 @@
-import PA215PA.NativeNames
+module
+
+public import PA215PA.NativeNames
+
+@[expose] public section
 
 /-! The logical source is Foundation's actual de-Bruijn Semiformula datatype
 over an explicit empty-function membership/equality language, not a second

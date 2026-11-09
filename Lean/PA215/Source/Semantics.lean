@@ -1,4 +1,8 @@
-import PA215.Source.Syntax
+module
+
+public import PA215.Source.Syntax
+
+@[expose] public section
 
 namespace PA215.Source
 

@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionVectorReadback
+module
+
+public import PA215PA.FoundationPAeqCodeInductionVectorReadback
+
+@[expose] public section
 /-! Substitution depends only on the actual bound-variable support. The two
 replacement vectors need not have equal lengths. -/
 namespace PA215.PA.FoundationPAeqCode

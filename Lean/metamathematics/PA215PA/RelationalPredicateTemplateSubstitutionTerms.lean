@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateBinders
+module
+
+public import PA215PA.RelationalPredicateTemplateBinders
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

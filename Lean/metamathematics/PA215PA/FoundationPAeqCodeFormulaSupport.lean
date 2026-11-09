@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeAtomSupport
+module
+
+public import PA215PA.FoundationPAeqCodeAtomSupport
+
+@[expose] public section
 /-! Exact formula support preservation, including the extra strict-order binder.
 This is an arbitrary-model syntax induction, not standard quotation. -/
 namespace PA215.PA.FoundationPAeqCode

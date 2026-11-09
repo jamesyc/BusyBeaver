@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSequentGuardedLogic
+module
+
+public import PA215PA.NumericPAeqSequentGuardedLogic
+
+@[expose] public section
 
 /-! Guard-preserving closures for the literal HFS conjunction, disjunction,
 and cut premises. The guard is an arbitrary native formula code and remains

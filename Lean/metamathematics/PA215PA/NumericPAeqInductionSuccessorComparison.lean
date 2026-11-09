@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqInductionSuccessorSyntax
-import PA215PA.NumericPAeqFormulaLogicalCurry
-import PA215PA.NumericPAeqSourceCertificateMP
+module
+
+public import PA215PA.NumericPAeqInductionSuccessorSyntax
+public import PA215PA.NumericPAeqFormulaLogicalCurry
+public import PA215PA.NumericPAeqSourceCertificateMP
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqExistentialOpening
-import PA215PA.NumericPAeqFormulaLogicalCurry
+module
+
+public import PA215PA.NumericPAeqExistentialOpening
+public import PA215PA.NumericPAeqFormulaLogicalCurry
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqExistentialInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

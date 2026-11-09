@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphRangeExtension
-import PA215PA.RelationalGraphFunctionalExtension
+module
+
+public import PA215PA.RelationalGraphRangeExtension
+public import PA215PA.RelationalGraphFunctionalExtension
+
+@[expose] public section
 
 /-! Finite recurrence elimination and transport for the literal first-argument
 addition graph. Existential previous outputs are real graph members. -/

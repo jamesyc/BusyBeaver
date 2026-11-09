@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateSubstitutionBinders
-import PA215PA.RelationalPredicateTemplateFormulaValidity
+module
+
+public import PA215PA.RelationalPredicateTemplateSubstitutionBinders
+public import PA215PA.RelationalPredicateTemplateFormulaValidity
+
+@[expose] public section
 /-! Capture-aware target bound substitution through a finite host template. -/
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

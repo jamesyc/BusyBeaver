@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaRealizationBinderSyntax
+module
+
+public import PA215PA.NumericPAeqFormulaRealizationBinderSyntax
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

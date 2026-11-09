@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentConnectiveNormalization
-import PA215PA.FoundationRelationalSequentSeparationGuards
+module
+
+public import PA215PA.FoundationRelationalSequentConnectiveNormalization
+public import PA215PA.FoundationRelationalSequentSeparationGuards
+
+@[expose] public section
 
 /-! Certificate normalization from the exact numeric source separation
 constructor to the covered native separation supplier. -/

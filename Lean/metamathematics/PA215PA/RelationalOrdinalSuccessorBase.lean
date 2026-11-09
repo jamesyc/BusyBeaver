@@ -1,5 +1,9 @@
-import PA215PA.RelationalOrdinalEmpty
-import PA215PA.RelationalSourceAdjunction
+module
+
+public import PA215PA.RelationalOrdinalEmpty
+public import PA215PA.RelationalSourceAdjunction
+
+@[expose] public section
 
 /-! Raw successor existence is a finite specialization of the already proved
 nonextensional adjunction axiom. This does not assert closure of the ordinal

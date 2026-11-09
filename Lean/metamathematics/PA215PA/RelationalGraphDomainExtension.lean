@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphOutputExtension
-import PA215PA.RelationalGraphFreshInput
+module
+
+public import PA215PA.RelationalGraphOutputExtension
+public import PA215PA.RelationalGraphFreshInput
+
+@[expose] public section
 
 /-! Exact inclusive domain advancement by one ordinal successor. No model
 reasoning or finiteness assumption replaces the object-level proofs. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionRules
+module
+
+public import PA215PA.RelationalIsoCompositionRules
+
+@[expose] public section
 
 /-! Composition-edge correctness of the actual adjoined graph. -/
 namespace PA215.PA.RelationalSource.PairGraph

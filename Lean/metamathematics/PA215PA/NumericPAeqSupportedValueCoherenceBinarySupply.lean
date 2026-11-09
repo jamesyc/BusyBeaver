@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSupportedValueCoherenceBinaryStep
-import PA215PA.NumericPAeqValueCertificatePair
+module
+
+public import PA215PA.NumericPAeqSupportedValueCoherenceBinaryStep
+public import PA215PA.NumericPAeqValueCertificatePair
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermConstructors
+module
+
+public import PA215PA.NumericPAeqTermConstructors
+
+@[expose] public section
 
 /-! Finite vectors of target term codes, not native variable labels. The
 existential value binder shifts both environments and uses bound result zero.

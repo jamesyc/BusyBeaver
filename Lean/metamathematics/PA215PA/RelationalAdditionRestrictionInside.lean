@@ -1,6 +1,10 @@
-import PA215PA.RelationalAdditionRecurrence
-import PA215PA.RelationalGraphRestrictionInclusiveDomain
-import PA215PA.RelationalGraphRestrictionInclusiveLaws
+module
+
+public import PA215PA.RelationalAdditionRecurrence
+public import PA215PA.RelationalGraphRestrictionInclusiveDomain
+public import PA215PA.RelationalGraphRestrictionInclusiveLaws
+
+@[expose] public section
 
 /-! Inclusive trace restriction retains the literal empty witness and every
 predecessor input. These are ordinary finite ND derivations. -/

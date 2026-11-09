@@ -13,7 +13,7 @@ def source_sites(text):
     nodes = {}
     operations = {"inc": "EInc", "dec": "EDecnz", "breakTo": "EBreak",
                   "continueTo": "EContinue", "halt": "EHalt"}
-    for name, expression in re.findall(r"^private def (node\d+) : Tree := (.+)$", text, re.M):
+    for name, expression in re.findall(r"^(?:private )?def (node\d+) : Tree := (.+)$", text, re.M):
         tokens = iter(re.findall(r"\.\w+|node\d+|\d+|[()]", expression))
 
         def parse():

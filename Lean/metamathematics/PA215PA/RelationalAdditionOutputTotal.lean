@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionOutputExists
+module
+
+public import PA215PA.RelationalAdditionOutputExists
+
+@[expose] public section
 
 /-! Ordinal-valued addition results exist, with the exact finite graph witness.
 No uniqueness or cross-representative isomorphism statement is inferred. -/

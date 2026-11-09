@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSupportedVectorBinderSyntax
+module
+
+public import PA215PA.NumericPAeqSupportedVectorBinderSyntax
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

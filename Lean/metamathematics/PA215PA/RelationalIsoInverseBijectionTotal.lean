@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseReverseEdge
+module
+
+public import PA215PA.RelationalIsoInverseReverseEdge
+
+@[expose] public section
 
 /-! Both totality directions for the actual reversed graph. -/
 namespace PA215.PA.RelationalSource.PairGraph

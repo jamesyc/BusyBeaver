@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCoherenceOutputRight
+module
+
+public import PA215PA.RelationalAdditionCoherenceOutputRight
+
+@[expose] public section
 
 /-! Both actual predecessor-output witnesses are retained through the successor step. -/
 namespace PA215.PA.RelationalSource.PairGraph

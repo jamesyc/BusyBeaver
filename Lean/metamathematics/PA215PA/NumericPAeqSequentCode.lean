@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaRecursion
-import Foundation.FirstOrder.Arithmetic.HFS.PRF
+module
+
+public import PA215PA.NumericPAeqFormulaRecursion
+public import Foundation.FirstOrder.Arithmetic.HFS.PRF
+
+@[expose] public section
 
 /-! A total relational source formula folding an actual HFS set of PAeq
 formula codes. Empty is source falsum; member insertion uses source disjunction.

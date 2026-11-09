@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedFixedAxioms
+module
+
+public import PA215PA.PAInterpretedFixedAxioms
+
+@[expose] public section
 
 /-! One explicit finite context and actual-basis supplier covers exactly the
 complete twelve-entry fixed PAeq axiom inventory. No induction branch or

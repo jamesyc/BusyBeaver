@@ -1,5 +1,9 @@
-import PA215PA.RelationalOrdinalTraceSeparation
-import PA215PA.RelationalOrdinalInductionMinimal
+module
+
+public import PA215PA.RelationalOrdinalTraceSeparation
+public import PA215PA.RelationalOrdinalInductionMinimal
+
+@[expose] public section
 
 /-! Actual ND operations for a minimum represented bad trace. -/
 namespace PA215.PA.RelationalSource.Ordinal

@@ -1,5 +1,9 @@
-import PA215.Source.CommandRunTransfer
-import PA215.Source.SeedScheduler
+module
+
+public import PA215.Source.CommandRunTransfer
+public import PA215.Source.SeedScheduler
+
+@[expose] public section
 namespace PA215.Source
 
 theorem seed_halts_iff_scheduler :

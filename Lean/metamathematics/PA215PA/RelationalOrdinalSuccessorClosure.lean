@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosureExtrema
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosureExtrema
+
+@[expose] public section
 
 /-! Full five-clause ordinal-domain closure under represented successor.
 Intersection witnesses are eliminated by Foundation's capture-aware rule.

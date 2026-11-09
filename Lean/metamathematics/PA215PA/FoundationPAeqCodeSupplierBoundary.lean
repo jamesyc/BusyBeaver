@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeFiniteSupplier
+module
+
+public import PA215PA.FoundationPAeqCodeFiniteSupplier
+
+@[expose] public section
 /-! The finite axioms and model-coded induction instances give the two cases for transporting PA derivations. -/
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

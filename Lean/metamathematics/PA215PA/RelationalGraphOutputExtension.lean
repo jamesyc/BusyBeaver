@@ -1,4 +1,8 @@
-import PA215PA.RelationalGraphOperations
+module
+
+public import PA215PA.RelationalGraphOperations
+
+@[expose] public section
 
 /-! Exact output-domain behavior of a genuine graph extension. Existential
 outputs are eliminated and constructed explicitly. -/

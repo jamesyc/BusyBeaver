@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCommutativityFrame
+module
+
+public import PA215PA.RelationalAdditionCommutativityFrame
+
+@[expose] public section
 
 /-! Eliminate the genuine successor witness of the reversed lower sum. -/
 namespace PA215.PA.RelationalSource.PairGraph

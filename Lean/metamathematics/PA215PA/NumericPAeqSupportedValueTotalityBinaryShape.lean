@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqSupportedValueTotalityValidity
-import PA215PA.NumericPAeqTermSupportedBoundInstance
-import PA215PA.NumericPAeqValueBoundInstance
-import PA215PA.NumericPAeqValueSuccessorShape
+module
+
+public import PA215PA.NumericPAeqSupportedValueTotalityValidity
+public import PA215PA.NumericPAeqTermSupportedBoundInstance
+public import PA215PA.NumericPAeqValueBoundInstance
+public import PA215PA.NumericPAeqValueSuccessorShape
+
+@[expose] public section
 
 /-! Exact independent left/right value predicates at binary result binders.
 Neither child is identified with the other. -/

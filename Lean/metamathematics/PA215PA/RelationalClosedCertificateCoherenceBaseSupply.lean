@@ -1,5 +1,9 @@
-import PA215PA.RelationalClosedCertificateCoherenceZeroSeed
-import PA215PA.RelationalClosedCertificateCoherenceSuccessorSeed
+module
+
+public import PA215PA.RelationalClosedCertificateCoherenceZeroSeed
+public import PA215PA.RelationalClosedCertificateCoherenceSuccessorSeed
+
+@[expose] public section
 namespace PA215.PA.RelationalClosedCertificate
 open FFL FFL.FirstOrder RelationalSource ND
 open FFL.FirstOrder.Arithmetic FFL.FirstOrder.Arithmetic.Bootstrapping

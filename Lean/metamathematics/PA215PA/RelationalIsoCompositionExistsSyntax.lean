@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionBijection
+module
+
+public import PA215PA.RelationalIsoCompositionBijection
+
+@[expose] public section
 
 /-! Separate syntax identities keep existential composition assembly small. -/
 namespace PA215.PA.RelationalSource.PairGraph

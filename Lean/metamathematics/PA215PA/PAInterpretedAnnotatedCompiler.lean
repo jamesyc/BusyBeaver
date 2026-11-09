@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedAnnotatedProof
-import PA215PA.PAInterpretedND
+module
+
+public import PA215PA.PAInterpretedAnnotatedProof
+public import PA215PA.PAInterpretedND
+
+@[expose] public section
 
 /-! Conditional executable transport of explicitly annotated ordinary-PAeq
 proofs. Every literal closed axiom image is supplied as an actual target proof;

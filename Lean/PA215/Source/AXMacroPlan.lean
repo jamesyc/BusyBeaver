@@ -1,4 +1,8 @@
-import PA215.Source.AXMacroSound
+module
+
+public import PA215.Source.AXMacroSound
+
+@[expose] public section
 namespace PA215.Source.AXMacro
 /-- Every macro carries its actual primitive-source semantic proof. -/
 inductive Plan (sites : Array Site) : Nat → Nat → List Op → Prop

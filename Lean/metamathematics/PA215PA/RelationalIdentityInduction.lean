@@ -1,5 +1,9 @@
-import PA215PA.RelationalIdentityExistsStep
-import PA215PA.RelationalOrdinalInductionUniform
+module
+
+public import PA215PA.RelationalIdentityExistsStep
+public import PA215PA.RelationalOrdinalInductionUniform
+
+@[expose] public section
 
 /-! Uniform ordinal induction constructs actual identity graphs, with the
 precise negated-identity-existence Separation instance still explicit here. -/

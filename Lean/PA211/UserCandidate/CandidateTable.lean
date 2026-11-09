@@ -1,4 +1,8 @@
-import PA215.Native
+module
+
+public import PA215.Native
+
+@[expose] public section
 
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000

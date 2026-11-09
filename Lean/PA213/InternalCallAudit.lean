@@ -1,5 +1,9 @@
-import PA213.NativeTable
-import PA213.RuntimeContracts
+module
+
+public import PA213.NativeTable
+public import PA213.RuntimeContracts
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 2000000
 namespace PA213.InternalCallAudit

@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateFormula
+module
+
+public import PA215PA.RelationalPredicateTemplateFormula
+
+@[expose] public section
 
 /-! A fixed template with no source free variables does not inspect its source
 free environment. The unary hole may still contain arbitrary target free

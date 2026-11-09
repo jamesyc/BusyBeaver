@@ -1,4 +1,8 @@
-import PA215.Source.MPGuardSteps
+module
+
+public import PA215.Source.MPGuardSteps
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.MPGuard
 

@@ -1,4 +1,8 @@
-import PA215.Source.CommandStore
+module
+
+public import PA215.Source.CommandStore
+
+@[expose] public section
 
 /-! Operational contracts of the exact arithmetic compiler macros, including
 saved top1 and the Cantor zero alias. Literal source transfer is separate. -/

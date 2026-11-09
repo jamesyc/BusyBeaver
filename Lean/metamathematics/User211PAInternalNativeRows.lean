@@ -1,8 +1,12 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalLeftPhase
-import User211PAInternalScanRight
-import User211PANativeTable
+public import User211PAInternalLeftPhase
+public import User211PAInternalScanRight
+public import User211PANativeTable
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.NativeRows
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

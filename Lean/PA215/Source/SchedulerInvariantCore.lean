@@ -1,5 +1,9 @@
-import PA215.Source.ParsedCommandTransfer
-import PA215.Source.SchedulerSafety
+module
+
+public import PA215.Source.ParsedCommandTransfer
+public import PA215.Source.SchedulerSafety
+
+@[expose] public section
 namespace PA215.Source.Scheduler
 open Enumeration
 

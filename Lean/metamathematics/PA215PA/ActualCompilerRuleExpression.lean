@@ -1,16 +1,27 @@
-import PA215PA.ActualWordMacros
+module
+
+public import PA215PA.ActualWordMacros
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerRuleExpression
 open ActualWordExpression
-private def zero : Scalar := .num 0
-private def r1 : Scalar := .right .payload
-private def r2 : Scalar := .right r1
-private def r3 : Scalar := .right r2
-private def r4 : Scalar := .right r3
-private def a : Scalar := .left .payload
-private def b : Scalar := .left r1
-private def c : Scalar := .left r2
-private def u : Scalar := .left r3
-private def requireZero (tail : Scalar) (result : Expr) : Expr := .ifEq tail zero result .nil
+namespace Templates
+
+def zero : Scalar := .num 0
+def r1 : Scalar := .right .payload
+def r2 : Scalar := .right r1
+def r3 : Scalar := .right r2
+def r4 : Scalar := .right r3
+def a : Scalar := .left .payload
+def b : Scalar := .left r1
+def c : Scalar := .left r2
+def u : Scalar := .left r3
+def requireZero (tail : Scalar) (result : Expr) : Expr := .ifEq tail zero result .nil
+
+end Templates
+
+open Templates
+
 open PA215.Source.ActualCommandMacros PA215.Source.CommandAtomEncoding
 
 def mp : Expr := requireZero r3 <|

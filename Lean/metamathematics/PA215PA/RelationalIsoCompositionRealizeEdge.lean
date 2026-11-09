@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionRelationRules
-import PA215PA.RelationalIsoCompositionRules
+module
+
+public import PA215PA.RelationalIsoCompositionRelationRules
+public import PA215PA.RelationalIsoCompositionRules
+
+@[expose] public section
 
 /-! Coverage and component functionality recover every composite edge in the
 actual constructed graph, without assuming a comprehension/image object. -/

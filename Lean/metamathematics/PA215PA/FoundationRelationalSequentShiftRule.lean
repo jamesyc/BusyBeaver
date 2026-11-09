@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentProofBudget
+module
+
+public import PA215PA.FoundationRelationalSequentProofBudget
+
+@[expose] public section
 
 /-! Literal shiftRule environment reconstruction, plus positivity of the
 unchanged ten-constructor Foundation derivation code. -/

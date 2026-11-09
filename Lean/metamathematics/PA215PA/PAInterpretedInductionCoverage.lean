@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedInductionSyntax
-import PA215PA.PAForwardRelationalSubstitutionFormula
+module
+
+public import PA215PA.PAInterpretedInductionSyntax
+public import PA215PA.PAForwardRelationalSubstitutionFormula
+
+@[expose] public section
 
 /-! Only occurring free parameters require domain proofs. The induction
 variable's domain is supplied separately by each guarded rule. -/

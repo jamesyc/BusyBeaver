@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqTermLanguage
-import PA215PA.PAForwardRelationalSyntax
-import Mathlib.Tactic.FinCases
+module
+
+public import PA215PA.NumericPAeqTermLanguage
+public import PA215PA.PAForwardRelationalSyntax
+public import Mathlib.Tactic.FinCases
+
+@[expose] public section
 
 /-! Fixed relational predicate templates instantiated by actual model-valued
 term codes. All substitution is Foundation's capture-aware coded substitution.

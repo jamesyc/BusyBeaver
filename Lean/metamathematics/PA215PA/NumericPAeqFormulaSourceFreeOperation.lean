@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermSourceFreeCalibration
-import PA215PA.NumericPAeqFormulaRecursion
+module
+
+public import PA215PA.NumericPAeqTermSourceFreeCalibration
+public import PA215PA.NumericPAeqFormulaRecursion
+
+@[expose] public section
 
 /-! Last-bound source formula opening uses the existing changing-parameter
 formula recursor; the threshold increases under each source quantifier. -/

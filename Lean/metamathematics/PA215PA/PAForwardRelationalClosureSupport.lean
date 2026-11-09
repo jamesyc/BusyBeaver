@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalClosureCoverage
+module
+
+public import PA215PA.PAForwardRelationalClosureCoverage
+
+@[expose] public section
 
 /-! Translation introduces no free parameter names. The proof uses exact source
 and target renaming, not expansion of the arithmetic graph definitions. -/

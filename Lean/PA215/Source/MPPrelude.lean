@@ -1,4 +1,8 @@
-import PA215.Source.MPStore
+module
+
+public import PA215.Source.MPStore
+
+@[expose] public section
 namespace PA215.Source.MP
 
 /-- Actual MP push/copy/constructor prefix, keeping the decoded offset D.

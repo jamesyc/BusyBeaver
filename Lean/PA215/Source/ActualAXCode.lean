@@ -1,4 +1,8 @@
-import PA215.Source.AXCode
+module
+
+public import PA215.Source.AXCode
+
+@[expose] public section
 /-! Arithmetic specification of the instructions emitted by the AX macro program. -/
 namespace PA215.Source.ActualAXCode
 open AXCode (wim wal wel weq wn wa wex)

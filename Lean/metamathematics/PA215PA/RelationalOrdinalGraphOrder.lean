@@ -1,4 +1,8 @@
-import PA215PA.RelationalTraceGraph
+module
+
+public import PA215PA.RelationalTraceGraph
+
+@[expose] public section
 
 /-! Local ordinal facts needed by actual arithmetic graph extension. Neither
 freshness nor predecessor uniqueness uses global IR or extensionality. -/

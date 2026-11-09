@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentShiftLabels
+module
+
+public import PA215PA.FoundationRelationalSequentShiftLabels
+
+@[expose] public section
 
 /-! Exact formula-shift compatibility by full-PA source-code induction.
 The parameter extension and common reserve are literal, not alpha conversion. -/

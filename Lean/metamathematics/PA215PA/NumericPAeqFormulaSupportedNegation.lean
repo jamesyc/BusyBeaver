@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaNegationRules
-import PA215PA.NumericPAeqFormulaSupportedArity
+module
+
+public import PA215PA.NumericPAeqFormulaNegationRules
+public import PA215PA.NumericPAeqFormulaSupportedArity
+
+@[expose] public section
 
 /-! Exact NNF negation compatibility of the arithmetic-to-relational syntax
 map in arbitrary PA models. This stage uses Foundation NNF on both sides;

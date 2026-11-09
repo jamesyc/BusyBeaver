@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationRewriting
-import PA215PA.RelationalOrderIso
+module
+
+public import PA215PA.RelationalMultiplicationRewriting
+public import PA215PA.RelationalOrderIso
+
+@[expose] public section
 
 /-! Target rewriting only; these laws do not substitute source arithmetic terms. -/
 namespace PA215.PA.RelationalSource

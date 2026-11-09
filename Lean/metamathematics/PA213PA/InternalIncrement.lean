@@ -1,9 +1,13 @@
-import PA213PA.InternalForwardFile
-import PA213PA.InternalSelectedCell
-import PA213PA.InternalCarryReturnRelation
-import PA213PA.InternalIncrementTail
-import PA213PA.InternalCarryFile
-import PA213PA.InternalReturnFile
+module
+
+public import PA213PA.InternalForwardFile
+public import PA213PA.InternalSelectedCell
+public import PA213PA.InternalCarryReturnRelation
+public import PA213PA.InternalIncrementTail
+public import PA213PA.InternalCarryFile
+public import PA213PA.InternalReturnFile
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.Increment
 open PA215

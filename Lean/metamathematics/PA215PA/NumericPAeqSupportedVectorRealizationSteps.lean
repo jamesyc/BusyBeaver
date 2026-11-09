@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedVectorRealizationShape
-import PA215PA.NumericPAeqValueCoherenceSuccessorCertificate
-import PA215PA.NumericPAeqBinaryCoherenceCertificate
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealizationShape
+public import PA215PA.NumericPAeqValueCoherenceSuccessorCertificate
+public import PA215PA.NumericPAeqBinaryCoherenceCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

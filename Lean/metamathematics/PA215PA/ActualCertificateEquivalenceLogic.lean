@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateConstructorsDominated
+module
+
+public import PA215PA.ActualCertificateConstructorsDominated
+
+@[expose] public section
 
 /-! Finite schematic certificate recipes over arbitrary PA-model values.
 Every closed result contains an explicit accepted V1 numeric code. This finite

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCommutativitySupplier
+module
+
+public import PA215PA.RelationalAdditionCommutativitySupplier
+
+@[expose] public section
 
 /-! Explicit specialization of constructive commutativity. -/
 namespace PA215.PA.RelationalSource.PairGraph

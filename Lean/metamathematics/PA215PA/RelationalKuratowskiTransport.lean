@@ -1,4 +1,8 @@
-import PA215PA.RelationalKuratowskiDecoder
+module
+
+public import PA215PA.RelationalKuratowskiDecoder
+
+@[expose] public section
 
 /-! Coordinate and container transport for the existential pair formula, using
 only the literal ordinary equality premises and finite witness elimination. -/

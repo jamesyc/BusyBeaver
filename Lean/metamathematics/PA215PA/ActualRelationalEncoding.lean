@@ -1,5 +1,9 @@
-import PA215PA.ActualRelationalWitness
-import PA215PA.NativeNames
+module
+
+public import PA215PA.ActualRelationalWitness
+public import PA215PA.NativeNames
+
+@[expose] public section
 
 /-! A structural named-formula to numeric relational-code compiler. A user
 of this compiler must reserve z outside all original names; no semantic or

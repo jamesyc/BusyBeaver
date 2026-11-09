@@ -1,4 +1,8 @@
-import PA215.Source.AXPushParamDrains
+module
+
+public import PA215.Source.AXPushParamDrains
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 
 namespace PA215.Source.AXPushParam

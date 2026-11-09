@@ -1,5 +1,9 @@
-import PA215PA.NativeConnectives
-import PA215PA.NativeRenaming
+module
+
+public import PA215PA.NativeConnectives
+public import PA215PA.NativeRenaming
+
+@[expose] public section
 
 /-! Actual finite equality and atomic renaming proof compilation, following
 NumericHilbert238.v and NumericNamed238.v at the pinned PA238 source.

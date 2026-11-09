@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueIsoGuardValidity
-import PA215PA.FoundationRelationalSequentPropositional
-import PA215PA.FoundationRelationalSequentFold
+module
+
+public import PA215PA.NumericPAeqValueIsoGuardValidity
+public import PA215PA.FoundationRelationalSequentPropositional
+public import PA215PA.FoundationRelationalSequentFold
+
+@[expose] public section
 
 /-! Actual native projection certificates by model-count induction. The
 term environment remains explicit; no domain assumption is asserted true. -/

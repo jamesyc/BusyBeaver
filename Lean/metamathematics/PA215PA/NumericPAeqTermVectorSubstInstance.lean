@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermVectorSubstTarget
-import PA215PA.NumericPAeqValueBoundInstance
+module
+
+public import PA215PA.NumericPAeqTermVectorSubstTarget
+public import PA215PA.NumericPAeqValueBoundInstance
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

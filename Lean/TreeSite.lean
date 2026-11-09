@@ -1,4 +1,8 @@
-import PA213.SourceCheck
+module
+
+public import PA213.SourceCheck
+
+@[expose] public section
 namespace PA215.Source.PathTrie
 /-- Ordinal lookup that returns the exact leaf path and operation without expanding the flattened list. -/
 def nthSite : Tree → Nat → Option Site

@@ -1,7 +1,11 @@
-import PA215PA.RelationalAdditionResultSupplier
-import PA215PA.RelationalParameterClosure
-import PA215PA.RelationalOrdinalSuccessor
-import PA215PA.RelationalOrdinalEmpty
+module
+
+public import PA215PA.RelationalAdditionResultSupplier
+public import PA215PA.RelationalParameterClosure
+public import PA215PA.RelationalOrdinalSuccessor
+public import PA215PA.RelationalOrdinalEmpty
+
+@[expose] public section
 
 /-! Closed addition totality, with every allocator and Separation obligation
 retained. This closes a supplied theorem, never an open ND hypothesis. -/

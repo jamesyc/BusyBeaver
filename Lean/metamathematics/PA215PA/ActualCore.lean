@@ -1,6 +1,10 @@
-import PA215.Source.ActualAXCode
-import PA215.Source.Enumeration
-import PA215PA.NativeCalculus
+module
+
+public import PA215.Source.ActualAXCode
+public import PA215.Source.Enumeration
+public import PA215PA.NativeCalculus
+
+@[expose] public section
 
 /-! Finite proof trees for the AX fragment used to derive rho7. The available rules are R1, R2, R6, R8, quantified R7, modus ponens, and generalization. -/
 namespace PA215.PA.NativeCalculus.ActualCore

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqOrdinalInductionShape
-import PA215PA.RelationalPredicateTemplateOrdinalRequested
+module
+
+public import PA215PA.NumericPAeqOrdinalInductionShape
+public import PA215PA.RelationalPredicateTemplateOrdinalRequested
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqOrdinalInductionShape
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

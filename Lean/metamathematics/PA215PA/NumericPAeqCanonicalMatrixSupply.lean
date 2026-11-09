@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqCanonicalMatrixCertificate
-import PA215PA.NumericPAeqGuardedAlls
+module
+
+public import PA215PA.NumericPAeqCanonicalMatrixCertificate
+public import PA215PA.NumericPAeqGuardedAlls
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqCanonicalMatrix
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

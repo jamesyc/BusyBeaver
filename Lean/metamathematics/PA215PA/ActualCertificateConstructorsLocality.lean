@@ -1,6 +1,10 @@
-import PA215PA.ActualCheckerBlueprint
-import PA215PA.ActualCompilerLeafSoundness
-import PA215PA.SourceCantorInjectiveInternal
+module
+
+public import PA215PA.ActualCheckerBlueprint
+public import PA215PA.ActualCompilerLeafSoundness
+public import PA215PA.SourceCantorInjectiveInternal
+
+@[expose] public section
 
 /-! Locality of the V1 verifier in every model. Fuel extension and numeric parent construction are separate lemmas. -/
 namespace PA215.PA.ActualCertificateConstructors

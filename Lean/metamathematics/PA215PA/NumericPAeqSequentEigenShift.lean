@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSequentTargetShift
-import PA215PA.NumericPAeqUniversalContextOpening
-import PA215PA.NumericPAeqFormulaSupportedSourceShift
+module
+
+public import PA215PA.NumericPAeqSequentTargetShift
+public import PA215PA.NumericPAeqUniversalContextOpening
+public import PA215PA.NumericPAeqFormulaSupportedSourceShift
+
+@[expose] public section
 
 /-! The actual source setShift image changes scan order. Its interpreted fold
 is related by accepted certificates to target shift of the old fold. -/

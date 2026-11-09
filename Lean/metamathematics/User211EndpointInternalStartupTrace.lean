@@ -1,7 +1,11 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211EndpointInternalFixedTraceSigma
-import User211EndpointStartupData
-import User211EndpointTraceAdequacy
+public import User211EndpointInternalFixedTraceSigma
+public import User211EndpointStartupData
+public import User211EndpointTraceAdequacy
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.FixedTrace
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic
@@ -53,12 +57,20 @@ def startupSentence : ArithmeticSentence := sentence 64764 81 1 Startup.finalCon
 theorem pa_proves_startup : theory ⊢ startupSentence :=
   pa_proves_fixed 64764 81 1 Startup.finalConfig.right startup_segment
 
+-- Rewrite the semantics before instantiating the large closed numerals.
+private theorem sentence_models {V : Type*} [ORingStructure V] [V↓[ℒₒᵣ] ⊧* theory]
+    (n q l r : Nat) :
+    V↓[ℒₒᵣ] ⊧ sentence n q l r ↔
+      ∃ qs ls rs : V, Segment (n : V) qs ls rs 0 0 0 (q : V) (l : V) (r : V) := by
+  simp [sentence, models_iff, segment_correct, numeral_eq_natCast]
+
 /-- This all-model consequence comes from the proved fixed sentence, not from
 silently applying a standard Nat trajectory to arbitrary model inputs. -/
 theorem startup_all_models {V : Type*} [ORingStructure V] [V↓[ℒₒᵣ] ⊧* theory] :
     ∃ qs ls rs : V, Segment 64764 qs ls rs 0 0 0 81 1 (Startup.finalConfig.right : V) := by
-  have h := consequence_iff.mp (Theory.Proof.sound pa_proves_startup) V inferInstance
-  simpa [startupSentence,sentence,models_iff,segment_correct,numeral_eq_natCast,Nat.cast_ofNat] using h
+  simpa only [Nat.cast_ofNat, Nat.cast_one] using
+    (sentence_models 64764 81 1 Startup.finalConfig.right).mp
+      (consequence_iff.mp (Theory.Proof.sound pa_proves_startup) V inferInstance)
 #print axioms run_segment
 #print axioms startup_segment
 #print axioms pa_proves_startup

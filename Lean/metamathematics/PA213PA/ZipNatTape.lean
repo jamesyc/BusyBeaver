@@ -1,5 +1,9 @@
-import PA213PA.NatTape
-import PA213.NativeTable
+module
+
+public import PA213PA.NatTape
+public import PA213.NativeTable
+
+@[expose] public section
 
 /-! Exact connection from the native finite-list zipper interpreter to the
 two-natural stack semantics and hence to the literal functional-tape machine.

@@ -1,6 +1,10 @@
-import PA215PA.RelationalPredicateTemplateSourceShift
-import PA215PA.RelationalPredicateTemplateTargetShift
-import PA215PA.RelationalPredicateTemplateSequent
+module
+
+public import PA215PA.RelationalPredicateTemplateSourceShift
+public import PA215PA.RelationalPredicateTemplateTargetShift
+public import PA215PA.RelationalPredicateTemplateSequent
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,4 +1,8 @@
-import PA215.Source.AXPairDrains
+module
+
+public import PA215.Source.AXPairDrains
+
+@[expose] public section
 namespace PA215.Source.AXPair
 variable {sites : Array Site} {offset : Nat} (hbound : Bound sites offset)
 include hbound

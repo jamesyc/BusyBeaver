@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqCanonicalMatrixSupply
-import PA215PA.NumericPAeqGuardedAllsFinish
+module
+
+public import PA215PA.NumericPAeqCanonicalMatrixSupply
+public import PA215PA.NumericPAeqGuardedAllsFinish
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

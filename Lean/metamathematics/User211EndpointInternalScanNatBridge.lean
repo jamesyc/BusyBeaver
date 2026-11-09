@@ -1,7 +1,11 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import PA215PA.Theory
-import User211PAInternalScanBits
-import User211EndpointZipNatTape
+public import PA215PA.Theory
+public import User211PAInternalScanBits
+public import User211EndpointZipNatTape
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PA.InternalTrace.ScanBits
 open PA215 PA215.PA

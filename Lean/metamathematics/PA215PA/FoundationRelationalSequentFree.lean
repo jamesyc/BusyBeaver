@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentSubstitution
+module
+
+public import PA215PA.FoundationRelationalSequentSubstitution
+
+@[expose] public section
 
 /-! Exact source substs1/free compatibility, with finite environments explicit.
 These equalities are not native quantifier instantiation certificates. -/

@@ -1,5 +1,9 @@
-import PA215.Source.SchedulerInvariant
-import PA215.Source.SeedPrefix
+module
+
+public import PA215.Source.SchedulerInvariant
+public import PA215.Source.SeedPrefix
+
+@[expose] public section
 namespace PA215.Source
 
 private theorem seed_config : SeedPrefix.seed = commandConfig 25 0 0 0 ⟨1,1,0,0⟩ := by

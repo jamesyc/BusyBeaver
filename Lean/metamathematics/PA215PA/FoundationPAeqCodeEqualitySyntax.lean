@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeTheory
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.DerivabilityCondition.D1
+module
+
+public import PA215PA.FoundationPAeqCodeTheory
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.DerivabilityCondition.D1
+
+@[expose] public section
 
 /-! Typed wrappers for the existing PAeq numeric constructors, not semantic
 equality or an alternative source encoding. -/

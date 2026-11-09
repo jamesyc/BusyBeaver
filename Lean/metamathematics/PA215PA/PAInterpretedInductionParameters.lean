@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedInduction
+module
+
+public import PA215PA.PAInterpretedInduction
+
+@[expose] public section
 
 /-! Finite free-parameter guards for the interpreted schema. Parameter names
 are taken from the actual source formula, not a globally covered environment. -/

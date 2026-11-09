@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseRules
+module
+
+public import PA215PA.RelationalIsoInverseRules
+
+@[expose] public section
 
 /-! Reversed-edge correctness after one actual graph adjunction. -/
 namespace PA215.PA.RelationalSource.PairGraph

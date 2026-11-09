@@ -1,6 +1,10 @@
-import PA215PA.FoundationRelationalCodeLabels
-import PA215PA.ActualHeadGraphs
-import PA215PA.ActualRelationalEncoding
+module
+
+public import PA215PA.FoundationRelationalCodeLabels
+public import PA215PA.ActualHeadGraphs
+public import PA215PA.ActualRelationalEncoding
+
+@[expose] public section
 
 /-! Exact guarded atomic translation. Source relation tags are not native formula
  tags. HFS environments and term vectors are not Source-Cantor pairs. -/

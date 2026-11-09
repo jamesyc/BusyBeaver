@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermParameters
-import PA215PA.NumericPAeqFormulaCalibration
+module
+
+public import PA215PA.NumericPAeqTermParameters
+public import PA215PA.NumericPAeqFormulaCalibration
+
+@[expose] public section
 
 /-! Two finite vectors of target relational term codes. A source quantifier
 adds its actual target bound variable and shifts every older bound/free image.

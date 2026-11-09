@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentRename
-import PA215PA.ActualCertificateNeighborhoodSpecialization
+module
+
+public import PA215PA.FoundationRelationalSequentRename
+public import PA215PA.ActualCertificateNeighborhoodSpecialization
+
+@[expose] public section
 
 /-! Source bound-head alpha with a common body allocator and reserve. Both
 eigenlabels explicitly avoid the old finite environments. No allocator change. -/

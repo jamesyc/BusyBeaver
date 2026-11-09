@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentCode
-import PA215PA.NumericPAeqFormulaSupportedArity
+module
+
+public import PA215PA.NumericPAeqSequentCode
+public import PA215PA.NumericPAeqFormulaSupportedArity
+
+@[expose] public section
 
 /-! Full-PA validity of the HFS scan under explicit per-member supported
 formula interpretation. Membership, not vector lookup, controls the fold. -/

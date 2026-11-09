@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateNeighborhoodPrimitive
+module
+
+public import PA215PA.ActualCertificateNeighborhoodPrimitive
+
+@[expose] public section
 
 /-! Guarded native membership specialization and neighborhood congruence. -/
 namespace PA215.PA.ActualCertificateEquivalence

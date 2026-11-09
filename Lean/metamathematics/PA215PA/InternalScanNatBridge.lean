@@ -1,5 +1,9 @@
-import PA215PA.InternalScanBits
-import PA215PA.ZipNatTape
+module
+
+public import PA215PA.InternalScanBits
+public import PA215PA.ZipNatTape
+
+@[expose] public section
 
 namespace PA215.PA.InternalTrace.ScanBits
 /-- Standard-model calibration to the existing zipper's binary stack encoding.

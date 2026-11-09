@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationMulZeroOne
+module
+
+public import PA215PA.PAPresentationMulZeroOne
+
+@[expose] public section
 
 /-! Reusable finite proof data for the already-derived addition laws. -/
 namespace PA215.PA.Presentation

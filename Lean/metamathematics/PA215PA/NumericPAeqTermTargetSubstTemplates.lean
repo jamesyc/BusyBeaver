@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermBinaryTemplates
+module
+
+public import PA215PA.NumericPAeqTermBinaryTemplates
+
+@[expose] public section
 
 /-! Target bound substitution through fixed relational templates. Source
 arithmetic syntax is unchanged; every target vector/term arity is explicit. -/

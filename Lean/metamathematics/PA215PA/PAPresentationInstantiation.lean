@@ -1,6 +1,10 @@
-import PA215PA.PAPresentationND
-import PA215PA.PAPresentationRewriting
-import Mathlib.Tactic.FinCases
+module
+
+public import PA215PA.PAPresentationND
+public import PA215PA.PAPresentationRewriting
+public import Mathlib.Tactic.FinCases
+
+@[expose] public section
 
 /-! Uniform finite quantifier instantiation with arbitrary target terms.
 These helpers retain actual LK proof data and do not invoke completeness. -/

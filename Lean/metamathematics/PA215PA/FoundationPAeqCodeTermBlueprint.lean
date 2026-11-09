@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqTermLanguage
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Functions
-import Mathlib.Tactic.FinCases
+module
+
+public import PA215PA.NumericPAeqTermLanguage
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Functions
+public import Mathlib.Tactic.FinCases
+
+@[expose] public section
 
 /-! The literal Foundation ordered-semiring to PAeq term-code adapter.
 It keeps source variable indices, sends one to S(0), and changes function tags.

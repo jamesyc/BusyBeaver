@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateTermValidity
+module
+
+public import PA215PA.RelationalPredicateTemplateTermValidity
+
+@[expose] public section
 /-! Predicate-template atoms with a formula hole that binds one argument and permits free parameters. -/
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

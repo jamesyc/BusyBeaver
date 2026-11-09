@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentSeparationCode
+module
+
+public import PA215PA.FoundationRelationalSequentSeparationCode
+
+@[expose] public section
 
 /-! Finite accepted normalization of Foundation implication and iff. Source
 NNF negation is transported by certificates, never identified syntactically

@@ -1,4 +1,8 @@
-import PA215PA.RelationalFormulaCongruence
+module
+
+public import PA215PA.RelationalFormulaCongruence
+
+@[expose] public section
 
 /-! Cache a generic finite five-binder variable-specialization combinator before instantiating
 large arithmetic trace formulas. No theory premise is added or removed. -/

@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedClosedSource
-import PA215PA.PAForwardRelationalClosureSupport
+module
+
+public import PA215PA.PAInterpretedClosedSource
+public import PA215PA.PAForwardRelationalClosureSupport
+
+@[expose] public section
 
 /-! Exact closure conversion with all finite-support obligations discharged.
 The sole proof premise is the already fully closed guarded target theorem. -/

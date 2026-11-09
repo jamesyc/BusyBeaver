@@ -1,4 +1,8 @@
-import PA215PA.RelationalSourceAdjunctionLogic
+module
+
+public import PA215PA.RelationalSourceAdjunctionLogic
+
+@[expose] public section
 
 /-! Relational ordinal-domain formulas for the nonextensional finite-set
 interpretation. These are formulas, not axioms or semantic assumptions.

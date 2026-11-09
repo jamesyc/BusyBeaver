@@ -1,13 +1,24 @@
-import PA215PA.ActualWordMacros
+module
+
+public import PA215PA.ActualWordMacros
+
+@[expose] public section
 namespace PA215.PA.SourceCommandEncodingInternal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding
 open ActualCheckExpression
 
-private def atomInput : Expr := .previous
-private def tailInput : Expr := .tag
-private def tag : Expr := .left atomInput
-private def fields : Expr := .right atomInput
+namespace Templates
+
+def atomInput : Expr := .previous
+def tailInput : Expr := .tag
+def tag : Expr := .left atomInput
+def fields : Expr := .right atomInput
+
+end Templates
+
+open Templates
+
 /-- Replace the terminal zero of a standalone source command atom with a
 new source residual tail. HFS word-vector coding is not used for this pair. -/
 def spliceExpr : Expr :=
@@ -38,15 +49,15 @@ theorem splice_standard (atom tail : Nat) : spliceValue atom tail=splice atom ta
   rcases p with ⟨tag,payload⟩
   cases tag with
   | zero =>
-    simp [spliceValue,spliceExpr,atomInput,tailInput,fields,SourceCommandEncodingInternal.tag,
+    simp [spliceValue,spliceExpr,atomInput,tailInput,fields,SourceCommandEncodingInternal.Templates.tag,
       eval,ActualWordMacros.pair_standard,decodeLeft,decodeRight,decodeState_standard,splice,hd]
   | succ tag =>
     cases tag with
     | zero =>
-      simp [spliceValue,spliceExpr,atomInput,tailInput,fields,SourceCommandEncodingInternal.tag,
+      simp [spliceValue,spliceExpr,atomInput,tailInput,fields,SourceCommandEncodingInternal.Templates.tag,
         eval,ActualWordMacros.pair_standard,decodeLeft,decodeRight,decodeState_standard,splice,hd]
     | succ tag =>
-      simp [spliceValue,spliceExpr,atomInput,tailInput,fields,SourceCommandEncodingInternal.tag,
+      simp [spliceValue,spliceExpr,atomInput,tailInput,fields,SourceCommandEncodingInternal.Templates.tag,
         eval,ActualWordMacros.pair_standard,decodeLeft,decodeRight,decodeState_standard,splice,hd]
 
 #print axioms splice_graph

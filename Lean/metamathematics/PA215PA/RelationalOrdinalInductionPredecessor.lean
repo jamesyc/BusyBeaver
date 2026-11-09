@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalInductionMembers
+module
+
+public import PA215PA.RelationalOrdinalInductionMembers
+
+@[expose] public section
 
 /-! A greatest member of a transitive representative is a raw predecessor.
 This is an explicit finite ND proof, not an extensional identification. -/

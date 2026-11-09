@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRecurrence
+module
+
+public import PA215PA.RelationalAdditionRecurrence
+
+@[expose] public section
 
 /-! The actual successor step for addition recurrence. New predecessor cases
 are discharged by local ordinal predecessor uniqueness, not extensionality. -/

@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqExistentialUniformSyntax
-import PA215PA.FoundationRelationalSequentRequestedUniversal
-import PA215PA.NumericPAeqSourceCertificateMP
+module
+
+public import PA215PA.NumericPAeqExistentialUniformSyntax
+public import PA215PA.FoundationRelationalSequentRequestedUniversal
+public import PA215PA.NumericPAeqSourceCertificateMP
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqExistentialInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

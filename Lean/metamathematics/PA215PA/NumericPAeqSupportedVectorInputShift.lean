@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedVectorRealizationSyntax
-import PA215PA.NumericPAeqValueDomainGuardTargetShift
-import PA215PA.NumericPAeqValueRealizationGuardTargetShift
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealizationSyntax
+public import PA215PA.NumericPAeqValueDomainGuardTargetShift
+public import PA215PA.NumericPAeqValueRealizationGuardTargetShift
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

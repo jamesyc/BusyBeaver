@@ -1,66 +1,70 @@
-import PA213.ListBlocks
-import PA213PA.ModelCoverageShards.S000
-import PA213PA.ModelCoverageShards.S001
-import PA213PA.ModelCoverageShards.S002
-import PA213PA.ModelCoverageShards.S003
-import PA213PA.ModelCoverageShards.S004
-import PA213PA.ModelCoverageShards.S005
-import PA213PA.ModelCoverageShards.S006
-import PA213PA.ModelCoverageShards.S007
-import PA213PA.ModelCoverageShards.S008
-import PA213PA.ModelCoverageShards.S009
-import PA213PA.ModelCoverageShards.S010
-import PA213PA.ModelCoverageShards.S011
-import PA213PA.ModelCoverageShards.S012
-import PA213PA.ModelCoverageShards.S013
-import PA213PA.ModelCoverageShards.S014
-import PA213PA.ModelCoverageShards.S015
-import PA213PA.ModelCoverageShards.S016
-import PA213PA.ModelCoverageShards.S017
-import PA213PA.ModelCoverageShards.S018
-import PA213PA.ModelCoverageShards.S019
-import PA213PA.ModelCoverageShards.S020
-import PA213PA.ModelCoverageShards.S021
-import PA213PA.ModelCoverageShards.S022
-import PA213PA.ModelCoverageShards.S023
-import PA213PA.ModelCoverageShards.S024
-import PA213PA.ModelCoverageShards.S025
-import PA213PA.ModelCoverageShards.S026
-import PA213PA.ModelCoverageShards.S027
-import PA213PA.ModelCoverageShards.S028
-import PA213PA.ModelCoverageShards.S029
-import PA213PA.ModelCoverageShards.S030
-import PA213PA.ModelCoverageShards.S031
-import PA213PA.ModelCoverageShards.S032
-import PA213PA.ModelCoverageShards.S033
-import PA213PA.ModelCoverageShards.S034
-import PA213PA.ModelCoverageShards.S035
-import PA213PA.ModelCoverageShards.S036
-import PA213PA.ModelCoverageShards.S037
-import PA213PA.ModelCoverageShards.S038
-import PA213PA.ModelCoverageShards.S039
-import PA213PA.ModelCoverageShards.S040
-import PA213PA.ModelCoverageShards.S041
-import PA213PA.ModelCoverageShards.S042
-import PA213PA.ModelCoverageShards.S043
-import PA213PA.ModelCoverageShards.S044
-import PA213PA.ModelCoverageShards.S045
-import PA213PA.ModelCoverageShards.S046
-import PA213PA.ModelCoverageShards.S047
-import PA213PA.ModelCoverageShards.S048
-import PA213PA.ModelCoverageShards.S049
-import PA213PA.ModelCoverageShards.S050
-import PA213PA.ModelCoverageShards.S051
-import PA213PA.ModelCoverageShards.S052
-import PA213PA.ModelCoverageShards.S053
-import PA213PA.ModelCoverageShards.S054
-import PA213PA.ModelCoverageShards.S055
-import PA213PA.ModelCoverageShards.S056
-import PA213PA.ModelCoverageShards.S057
-import PA213PA.ModelCoverageShards.S058
-import PA213PA.ModelCoverageShards.S059
-import PA213PA.ModelCoverageShards.S060
-import PA213PA.ModelCoverageShards.S061
+module
+
+public import PA213.ListBlocks
+public import PA213PA.ModelCoverageShards.S000
+public import PA213PA.ModelCoverageShards.S001
+public import PA213PA.ModelCoverageShards.S002
+public import PA213PA.ModelCoverageShards.S003
+public import PA213PA.ModelCoverageShards.S004
+public import PA213PA.ModelCoverageShards.S005
+public import PA213PA.ModelCoverageShards.S006
+public import PA213PA.ModelCoverageShards.S007
+public import PA213PA.ModelCoverageShards.S008
+public import PA213PA.ModelCoverageShards.S009
+public import PA213PA.ModelCoverageShards.S010
+public import PA213PA.ModelCoverageShards.S011
+public import PA213PA.ModelCoverageShards.S012
+public import PA213PA.ModelCoverageShards.S013
+public import PA213PA.ModelCoverageShards.S014
+public import PA213PA.ModelCoverageShards.S015
+public import PA213PA.ModelCoverageShards.S016
+public import PA213PA.ModelCoverageShards.S017
+public import PA213PA.ModelCoverageShards.S018
+public import PA213PA.ModelCoverageShards.S019
+public import PA213PA.ModelCoverageShards.S020
+public import PA213PA.ModelCoverageShards.S021
+public import PA213PA.ModelCoverageShards.S022
+public import PA213PA.ModelCoverageShards.S023
+public import PA213PA.ModelCoverageShards.S024
+public import PA213PA.ModelCoverageShards.S025
+public import PA213PA.ModelCoverageShards.S026
+public import PA213PA.ModelCoverageShards.S027
+public import PA213PA.ModelCoverageShards.S028
+public import PA213PA.ModelCoverageShards.S029
+public import PA213PA.ModelCoverageShards.S030
+public import PA213PA.ModelCoverageShards.S031
+public import PA213PA.ModelCoverageShards.S032
+public import PA213PA.ModelCoverageShards.S033
+public import PA213PA.ModelCoverageShards.S034
+public import PA213PA.ModelCoverageShards.S035
+public import PA213PA.ModelCoverageShards.S036
+public import PA213PA.ModelCoverageShards.S037
+public import PA213PA.ModelCoverageShards.S038
+public import PA213PA.ModelCoverageShards.S039
+public import PA213PA.ModelCoverageShards.S040
+public import PA213PA.ModelCoverageShards.S041
+public import PA213PA.ModelCoverageShards.S042
+public import PA213PA.ModelCoverageShards.S043
+public import PA213PA.ModelCoverageShards.S044
+public import PA213PA.ModelCoverageShards.S045
+public import PA213PA.ModelCoverageShards.S046
+public import PA213PA.ModelCoverageShards.S047
+public import PA213PA.ModelCoverageShards.S048
+public import PA213PA.ModelCoverageShards.S049
+public import PA213PA.ModelCoverageShards.S050
+public import PA213PA.ModelCoverageShards.S051
+public import PA213PA.ModelCoverageShards.S052
+public import PA213PA.ModelCoverageShards.S053
+public import PA213PA.ModelCoverageShards.S054
+public import PA213PA.ModelCoverageShards.S055
+public import PA213PA.ModelCoverageShards.S056
+public import PA213PA.ModelCoverageShards.S057
+public import PA213PA.ModelCoverageShards.S058
+public import PA213PA.ModelCoverageShards.S059
+public import PA213PA.ModelCoverageShards.S060
+public import PA213PA.ModelCoverageShards.S061
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 64000000
 namespace PA213.PA.ModelCoverage

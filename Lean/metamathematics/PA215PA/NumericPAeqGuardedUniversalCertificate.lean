@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqGuardedUniversalInput
-import PA215PA.NumericPAeqFormulaUniversalCurry
-import PA215PA.NumericPAeqFormulaLogicalCurry
+module
+
+public import PA215PA.NumericPAeqGuardedUniversalInput
+public import PA215PA.NumericPAeqFormulaUniversalCurry
+public import PA215PA.NumericPAeqFormulaLogicalCurry
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqGuardedUniversal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationPrefixExtension
-import PA215PA.RelationalMultiplicationCompactSyntax
+module
+
+public import PA215PA.RelationalMultiplicationPrefixExtension
+public import PA215PA.RelationalMultiplicationCompactSyntax
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 open Ordinal (Term Formula)

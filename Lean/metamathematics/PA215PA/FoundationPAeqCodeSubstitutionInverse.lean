@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeClosureWitness
+module
+
+public import PA215PA.FoundationPAeqCodeClosureWitness
+
+@[expose] public section
 /-! Constructor inversion for the existing numeric simultaneous substitution.
 No injectivity on arbitrary free-variable formulas is asserted. -/
 namespace PA215.PA.FoundationPAeqCode

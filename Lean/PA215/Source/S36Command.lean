@@ -1,6 +1,10 @@
-import PA215.Source.NIPGuard
-import PA215.Source.Unpair
-import PA215.Source.Determinism
+module
+
+public import PA215.Source.NIPGuard
+public import PA215.Source.Unpair
+public import PA215.Source.Determinism
+
+@[expose] public section
 
 /-! Complete literal S36 command semantics, including the sum-one guard and
 Cantor-stack pop. Normal root return is `.exited`, not halting; the global

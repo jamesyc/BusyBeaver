@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateOrdinalBadTrace
-import PA215PA.RelationalPredicateTemplateLiftAxiomShift
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalBadTrace
+public import PA215PA.RelationalPredicateTemplateLiftAxiomShift
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder ND
 def separationShift {Γ : List Form} (p : Formula 1)

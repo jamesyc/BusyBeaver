@@ -1,6 +1,10 @@
-import PA215PA.RelationalIsoCompositionBijectionEntries
-import PA215PA.RelationalIsoCompositionBijectionLaws
-import PA215PA.RelationalIsoCompositionBijectionTotal
+module
+
+public import PA215PA.RelationalIsoCompositionBijectionEntries
+public import PA215PA.RelationalIsoCompositionBijectionLaws
+public import PA215PA.RelationalIsoCompositionBijectionTotal
+
+@[expose] public section
 
 /-! All seven order-bijection clauses for the actual constructed composition. -/
 namespace PA215.PA.RelationalSource.PairGraph

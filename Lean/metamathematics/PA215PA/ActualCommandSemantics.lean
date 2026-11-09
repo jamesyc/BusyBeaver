@@ -1,6 +1,10 @@
-import PA215PA.ActualAXBridge
-import PA215PA.CommandPASafety
-import PA215.Source.EnumerationSchedule
+module
+
+public import PA215PA.ActualAXBridge
+public import PA215PA.CommandPASafety
+public import PA215.Source.EnumerationSchedule
+
+@[expose] public section
 
 /-! Arithmetic interpreter for the literal AX profile. The S and MP commands share their semantics with CommandSemantics. ActualAXBridge supplies the finite witnesses for the AX heads and gate used in forward PA soundness. -/
 namespace PA215.PA.ActualCommandSemantics

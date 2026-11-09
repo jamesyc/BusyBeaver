@@ -1,4 +1,8 @@
-import PA215.Source.Enumeration
+module
+
+public import PA215.Source.Enumeration
+
+@[expose] public section
 namespace PA215.Source.CommandAtomEncoding
 open Cantor Enumeration
 

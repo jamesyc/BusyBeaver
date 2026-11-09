@@ -1,7 +1,11 @@
-import PA213PA.InternalModelSource
-import PA213PA.InternalPhysicalFrame
-import PA213PA.InternalUniformOracle
-import PA213PA.InternalTerminalContract
+module
+
+public import PA213PA.InternalModelSource
+public import PA213PA.InternalPhysicalFrame
+public import PA213PA.InternalUniformOracle
+public import PA213PA.InternalTerminalContract
+
+@[expose] public section
 namespace PA213.PA.ModelPrimitive
 open PA215 PA215.Source PA215.Runtime
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

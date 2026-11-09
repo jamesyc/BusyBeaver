@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationRecurrenceExtension
-import PA215PA.RelationalAdditionFrame
+module
+
+public import PA215PA.RelationalMultiplicationRecurrenceExtension
+public import PA215PA.RelationalAdditionFrame
+
+@[expose] public section
 
 /-! A full multiplication prefix extends by an explicitly supplied ordinal
 additive output and exact graph adjunction. No additive totality is assumed

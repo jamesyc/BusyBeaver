@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeSubstitutionInverse
+module
+
+public import PA215PA.FoundationPAeqCodeSubstitutionInverse
+
+@[expose] public section
 /-! Recover a closed matrix from the final universal conclusion of an additive
 induction body. No claim that this alone fixes its exact parameter support. -/
 namespace PA215.PA.FoundationPAeqCode

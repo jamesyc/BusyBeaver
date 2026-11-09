@@ -1,66 +1,70 @@
-import PA213.ListBlocks
-import User211ModelCoverage000
-import User211ModelCoverage001
-import User211ModelCoverage002
-import User211ModelCoverage003
-import User211ModelCoverage004
-import User211ModelCoverage005
-import User211ModelCoverage006
-import User211ModelCoverage007
-import User211ModelCoverage008
-import User211ModelCoverage009
-import User211ModelCoverage010
-import User211ModelCoverage011
-import User211ModelCoverage012
-import User211ModelCoverage013
-import User211ModelCoverage014
-import User211ModelCoverage015
-import User211ModelCoverage016
-import User211ModelCoverage017
-import User211ModelCoverage018
-import User211ModelCoverage019
-import User211ModelCoverage020
-import User211ModelCoverage021
-import User211ModelCoverage022
-import User211ModelCoverage023
-import User211ModelCoverage024
-import User211ModelCoverage025
-import User211ModelCoverage026
-import User211ModelCoverage027
-import User211ModelCoverage028
-import User211ModelCoverage029
-import User211ModelCoverage030
-import User211ModelCoverage031
-import User211ModelCoverage032
-import User211ModelCoverage033
-import User211ModelCoverage034
-import User211ModelCoverage035
-import User211ModelCoverage036
-import User211ModelCoverage037
-import User211ModelCoverage038
-import User211ModelCoverage039
-import User211ModelCoverage040
-import User211ModelCoverage041
-import User211ModelCoverage042
-import User211ModelCoverage043
-import User211ModelCoverage044
-import User211ModelCoverage045
-import User211ModelCoverage046
-import User211ModelCoverage047
-import User211ModelCoverage048
-import User211ModelCoverage049
-import User211ModelCoverage050
-import User211ModelCoverage051
-import User211ModelCoverage052
-import User211ModelCoverage053
-import User211ModelCoverage054
-import User211ModelCoverage055
-import User211ModelCoverage056
-import User211ModelCoverage057
-import User211ModelCoverage058
-import User211ModelCoverage059
-import User211ModelCoverage060
-import User211ModelCoverage061
+module
+
+public import PA213.ListBlocks
+public import User211ModelCoverage000
+public import User211ModelCoverage001
+public import User211ModelCoverage002
+public import User211ModelCoverage003
+public import User211ModelCoverage004
+public import User211ModelCoverage005
+public import User211ModelCoverage006
+public import User211ModelCoverage007
+public import User211ModelCoverage008
+public import User211ModelCoverage009
+public import User211ModelCoverage010
+public import User211ModelCoverage011
+public import User211ModelCoverage012
+public import User211ModelCoverage013
+public import User211ModelCoverage014
+public import User211ModelCoverage015
+public import User211ModelCoverage016
+public import User211ModelCoverage017
+public import User211ModelCoverage018
+public import User211ModelCoverage019
+public import User211ModelCoverage020
+public import User211ModelCoverage021
+public import User211ModelCoverage022
+public import User211ModelCoverage023
+public import User211ModelCoverage024
+public import User211ModelCoverage025
+public import User211ModelCoverage026
+public import User211ModelCoverage027
+public import User211ModelCoverage028
+public import User211ModelCoverage029
+public import User211ModelCoverage030
+public import User211ModelCoverage031
+public import User211ModelCoverage032
+public import User211ModelCoverage033
+public import User211ModelCoverage034
+public import User211ModelCoverage035
+public import User211ModelCoverage036
+public import User211ModelCoverage037
+public import User211ModelCoverage038
+public import User211ModelCoverage039
+public import User211ModelCoverage040
+public import User211ModelCoverage041
+public import User211ModelCoverage042
+public import User211ModelCoverage043
+public import User211ModelCoverage044
+public import User211ModelCoverage045
+public import User211ModelCoverage046
+public import User211ModelCoverage047
+public import User211ModelCoverage048
+public import User211ModelCoverage049
+public import User211ModelCoverage050
+public import User211ModelCoverage051
+public import User211ModelCoverage052
+public import User211ModelCoverage053
+public import User211ModelCoverage054
+public import User211ModelCoverage055
+public import User211ModelCoverage056
+public import User211ModelCoverage057
+public import User211ModelCoverage058
+public import User211ModelCoverage059
+public import User211ModelCoverage060
+public import User211ModelCoverage061
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 64000000
 namespace PA211.UserCandidate.PA.ModelCoverage

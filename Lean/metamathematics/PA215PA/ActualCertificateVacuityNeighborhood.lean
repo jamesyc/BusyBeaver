@@ -1,5 +1,9 @@
-import PA215PA.ActualCertificateVacuityLogic
-import PA215PA.FoundationRelationalCodeAtoms
+module
+
+public import PA215PA.ActualCertificateVacuityLogic
+public import PA215PA.FoundationRelationalCodeAtoms
+
+@[expose] public section
 
 /-! Numeric vacuity for the exact two-neighborhood equality translation.
 This supplies finite certificates over arbitrary PA models, not a source

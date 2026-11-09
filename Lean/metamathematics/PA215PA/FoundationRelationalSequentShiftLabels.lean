@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentPropositional
+module
+
+public import PA215PA.FoundationRelationalSequentPropositional
+
+@[expose] public section
 
 /-! Numeric free-environment extension for Foundation shift. This proves the
 variable/atom and binder-parameter prerequisites, not a formula induction or

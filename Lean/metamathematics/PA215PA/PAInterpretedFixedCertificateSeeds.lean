@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedBudgetBounds
-import PA215PA.ActualFixedCertificateExistence
-import PA215PA.NumericPAeqFormulaClosedQuote
+module
+
+public import PA215PA.PAInterpretedBudgetBounds
+public import PA215PA.ActualFixedCertificateExistence
+public import PA215PA.NumericPAeqFormulaClosedQuote
+
+@[expose] public section
 
 /-! One genuinely supplied standard native certificate seed for each of the
 fixed twelve typed PAeq images. Allocator/reserve relocation is separate. -/

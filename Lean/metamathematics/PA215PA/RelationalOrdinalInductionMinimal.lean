@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalInductionPredecessor
+module
+
+public import PA215PA.RelationalOrdinalInductionPredecessor
+
+@[expose] public section
 
 /-! The local irreflexivity argument in the minimum-counterexample template.
 No assumption that all sets are irreflexive is used. -/

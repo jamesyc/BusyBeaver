@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalCongruence
+module
+
+public import PA215PA.ActualRelationalCongruence
+
+@[expose] public section
 
 /-! Finite actual-basis equivalence axioms for the explicit relational
 replacement, with the same representative binder on each occurrence.

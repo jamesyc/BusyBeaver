@@ -1,5 +1,9 @@
-import PA215PA.ActualSeparationSchema
-import PA215PA.RelationalSourceNegation
+module
+
+public import PA215PA.ActualSeparationSchema
+public import PA215PA.RelationalSourceNegation
+
+@[expose] public section
 
 /-! The concrete separation witness is relocated to a requested output name;
 all freshness is proved from the padding bound, not assumed for its code. -/

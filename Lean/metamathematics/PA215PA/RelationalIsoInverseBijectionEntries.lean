@@ -1,6 +1,10 @@
-import PA215PA.RelationalIsoInverseEntryElimination
-import PA215PA.RelationalIsoEntries
-import PA215PA.RelationalOrderIsoRules
+module
+
+public import PA215PA.RelationalIsoInverseEntryElimination
+public import PA215PA.RelationalIsoEntries
+public import PA215PA.RelationalOrderIsoRules
+
+@[expose] public section
 
 /-! Full inverse-prefix objects have genuine entries with the codomain and
 domain reversed, not just decoded edge typing. -/

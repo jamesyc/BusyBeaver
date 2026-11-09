@@ -1,6 +1,10 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211EndpointPaddedNatTape
-import PA213.StartupData
+public import User211EndpointPaddedNatTape
+public import PA213.StartupData
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.PhysicalAdequacy
 open PA215.Zip
 /-- Auxiliary arithmetic tags do not enlarge the physical control set. The

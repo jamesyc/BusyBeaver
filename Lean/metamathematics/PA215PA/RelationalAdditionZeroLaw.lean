@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionZeroLawPayload
+module
+
+public import PA215PA.RelationalAdditionZeroLawPayload
+
+@[expose] public section
 
 /-! Every actual addition result at an empty input equals the base object.
 No uniqueness of empty representatives or arithmetic graph choice is assumed. -/

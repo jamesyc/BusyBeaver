@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionCorrectExtension
-import PA215PA.RelationalIsoCompositionEntriesExtension
+module
+
+public import PA215PA.RelationalIsoCompositionCorrectExtension
+public import PA215PA.RelationalIsoCompositionEntriesExtension
+
+@[expose] public section
 
 /-! Existential coverage and full actual composition-prefix successor closure. -/
 namespace PA215.PA.RelationalSource.PairGraph

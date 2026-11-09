@@ -1,4 +1,8 @@
-import User211Source
+module
+
+public import User211Source
+
+@[expose] public section
 namespace PA211.UserCandidate.Source
 open PA215.Source PA215.Source.PathTrie
 set_option maxRecDepth 100000

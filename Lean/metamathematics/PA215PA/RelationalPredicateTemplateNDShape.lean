@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateLKBounded
-import PA215PA.RelationalPredicateTemplateLiftND
+module
+
+public import PA215PA.RelationalPredicateTemplateLKBounded
+public import PA215PA.RelationalPredicateTemplateLiftND
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

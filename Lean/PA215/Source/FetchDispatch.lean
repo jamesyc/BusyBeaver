@@ -1,4 +1,8 @@
-import PA215.Source.Dispatch
+module
+
+public import PA215.Source.Dispatch
+
+@[expose] public section
 namespace PA215.Source.FetchDispatch
 
 def seed (n l : Nat) : Nat := if l = 0 then n else l-1

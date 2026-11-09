@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedArithmeticVariableValues
+module
+
+public import PA215PA.PAInterpretedArithmeticVariableValues
+
+@[expose] public section
 
 /-! Literal PA multiplication-successor value payloads, with add(base,product)
 kept in exactly that order. -/

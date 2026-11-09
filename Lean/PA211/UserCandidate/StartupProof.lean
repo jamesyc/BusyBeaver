@@ -1,19 +1,23 @@
-import PA211.UserCandidate.Startup.S000
-import PA211.UserCandidate.Startup.S001
-import PA211.UserCandidate.Startup.S002
-import PA211.UserCandidate.Startup.S003
-import PA211.UserCandidate.Startup.S004
-import PA211.UserCandidate.Startup.S005
-import PA211.UserCandidate.Startup.S006
-import PA211.UserCandidate.Startup.S007
-import PA211.UserCandidate.Startup.S008
-import PA211.UserCandidate.Startup.S009
-import PA211.UserCandidate.Startup.S010
-import PA211.UserCandidate.Startup.S011
-import PA211.UserCandidate.Startup.S012
-import PA211.UserCandidate.Startup.S013
-import PA211.UserCandidate.Startup.S014
-import PA211.UserCandidate.Startup.S015
+module
+
+public import PA211.UserCandidate.Startup.S000
+public import PA211.UserCandidate.Startup.S001
+public import PA211.UserCandidate.Startup.S002
+public import PA211.UserCandidate.Startup.S003
+public import PA211.UserCandidate.Startup.S004
+public import PA211.UserCandidate.Startup.S005
+public import PA211.UserCandidate.Startup.S006
+public import PA211.UserCandidate.Startup.S007
+public import PA211.UserCandidate.Startup.S008
+public import PA211.UserCandidate.Startup.S009
+public import PA211.UserCandidate.Startup.S010
+public import PA211.UserCandidate.Startup.S011
+public import PA211.UserCandidate.Startup.S012
+public import PA211.UserCandidate.Startup.S013
+public import PA211.UserCandidate.Startup.S014
+public import PA211.UserCandidate.Startup.S015
+
+@[expose] public section
 
 namespace PA211.UserCandidate.Startup
 open PA215.Zip PA213.Startup PA211.UserCandidate.CandidateTable

@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedInductionRules
+module
+
+public import PA215PA.PAInterpretedInductionRules
+
+@[expose] public section
 
 /-! The translated zero instance supplies the genuine ordinal-induction base,
 with the whole proof context and every occurring free parameter shifted. -/

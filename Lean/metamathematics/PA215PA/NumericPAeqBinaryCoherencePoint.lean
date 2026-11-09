@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqBinaryCoherenceRelation
+module
+
+public import PA215PA.NumericPAeqBinaryCoherenceRelation
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping
@@ -15,10 +19,10 @@ noncomputable def binaryCoherenceAt {Γ:ND.Seq (V:=V)} (D P Q U W:SF (V:=V) 1)
     (hq:ND.Proof (T:=T) Γ (unary (D ⋏ Q) b)) (hw:ND.Proof (T:=T) Γ (unary (D ⋏ W) c))
     (hr:ND.Proof (T:=T) Γ (ternary F x b r)) (hs:ND.Proof (T:=T) Γ (ternary F y c s)) :
     ND.Proof (T:=T) Γ (binary R r s) := by
-  have dx : ND.Proof (T:=T) Γ (unary D x) := ND.andLeft (by simpa [unary] using hp)
-  have dy : ND.Proof (T:=T) Γ (unary D y) := ND.andLeft (by simpa [unary] using hu)
-  have db : ND.Proof (T:=T) Γ (unary D b) := ND.andLeft (by simpa [unary] using hq)
-  have dc : ND.Proof (T:=T) Γ (unary D c) := ND.andLeft (by simpa [unary] using hw)
+  have dx : ND.Proof (T:=T) Γ (unary D x) := ND.andLeft (q := unary P x) (by simpa [unary] using hp)
+  have dy : ND.Proof (T:=T) Γ (unary D y) := ND.andLeft (q := unary U y) (by simpa [unary] using hu)
+  have db : ND.Proof (T:=T) Γ (unary D b) := ND.andLeft (q := unary Q b) (by simpa [unary] using hq)
+  have dc : ND.Proof (T:=T) Γ (unary D c) := ND.andLeft (q := unary W c) (by simpa [unary] using hw)
   exact binaryRelationAt D F R x y b c r s h dx dy db dc
     (pairwiseAt (D ⋏ P) (D ⋏ U) R x y hi hp hu)
     (pairwiseAt (D ⋏ Q) (D ⋏ W) R b c hj hq hw) hr hs

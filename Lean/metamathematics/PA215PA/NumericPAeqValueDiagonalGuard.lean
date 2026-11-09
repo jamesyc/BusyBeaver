@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqValueSourceProjections
-import PA215PA.NumericPAeqIsoReflexivityCertificate
-import PA215PA.NumericPAeqValueIsoGuardValidity
-import PA215PA.NumericPAeqValueDomainGuardValidity
+module
+
+public import PA215PA.NumericPAeqValueSourceProjections
+public import PA215PA.NumericPAeqIsoReflexivityCertificate
+public import PA215PA.NumericPAeqValueIsoGuardValidity
+public import PA215PA.NumericPAeqValueDomainGuardValidity
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

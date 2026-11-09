@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoPredecessorWitness
-import PA215PA.RelationalIsoPredecessorCutWitness
+module
+
+public import PA215PA.RelationalIsoPredecessorWitness
+public import PA215PA.RelationalIsoPredecessorCutWitness
+
+@[expose] public section
 
 /-! A real image predecessor also carries an actual predecessor isomorphism. -/
 namespace PA215.PA.RelationalSource.PairGraph

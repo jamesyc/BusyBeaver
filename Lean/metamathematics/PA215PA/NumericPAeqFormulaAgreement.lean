@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaCoverage
+module
+
+public import PA215PA.NumericPAeqFormulaCoverage
+
+@[expose] public section
 
 /-! Finite quoted-environment agreement used by later standard calibration.
 The numeric binder operations are justified independently for arbitrary models;

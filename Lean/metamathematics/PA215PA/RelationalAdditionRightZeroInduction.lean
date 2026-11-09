@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightZero
+module
+
+public import PA215PA.RelationalAdditionRightZero
+
+@[expose] public section
 
 /-! Uniform ordinal induction for the universally parameterized right-zero law. -/
 namespace PA215.PA.RelationalSource.PairGraph

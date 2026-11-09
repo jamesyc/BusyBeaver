@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedVectorRealization
-import PA215PA.NumericPAeqSupportedVectorRealizationTotality
-import PA215PA.NumericPAeqValueCertificatePair
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealization
+public import PA215PA.NumericPAeqSupportedVectorRealizationTotality
+public import PA215PA.NumericPAeqValueCertificatePair
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

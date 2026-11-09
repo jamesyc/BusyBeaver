@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphExtension
-import PA215PA.RelationalOrdinalSuccessorClosureLinear
+module
+
+public import PA215PA.RelationalGraphExtension
+public import PA215PA.RelationalOrdinalSuccessorClosureLinear
+
+@[expose] public section
 
 /-! Coordinate transport for actual finite pair witnesses under the literal
 ordinary equality base. No equality from extensional membership is inferred. -/

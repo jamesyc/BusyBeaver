@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightSuccessorOutputs
+module
+
+public import PA215PA.RelationalAdditionRightSuccessorOutputs
+
+@[expose] public section
 
 /-! The fully parameterized step of right-successor induction. -/
 namespace PA215.PA.RelationalSource.PairGraph

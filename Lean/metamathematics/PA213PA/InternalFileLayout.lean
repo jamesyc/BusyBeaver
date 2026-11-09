@@ -1,4 +1,8 @@
-import PA213PA.InternalMarkAll
+module
+
+public import PA213PA.InternalMarkAll
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FileLayout
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

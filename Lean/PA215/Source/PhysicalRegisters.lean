@@ -1,5 +1,9 @@
-import PA215.Runtime
-import PA215.Source.Semantics
+module
+
+public import PA215.Runtime
+public import PA215.Source.Semantics
+
+@[expose] public section
 
 /-! Exact logical-to-physical register permutation. The physical file has at
 least ten cells, including a spare; increment appends another zero spare. -/

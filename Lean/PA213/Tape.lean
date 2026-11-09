@@ -1,4 +1,8 @@
-import PA213.Machine
+module
+
+public import PA213.Machine
+
+@[expose] public section
 
 namespace PA213
 

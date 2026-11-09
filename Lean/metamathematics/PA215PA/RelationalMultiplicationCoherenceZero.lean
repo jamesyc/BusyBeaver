@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationCoherenceRules
-import PA215PA.RelationalMultiplicationZeroCoherence
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceRules
+public import PA215PA.RelationalMultiplicationZeroCoherence
+
+@[expose] public section
 
 /-! Universal zero case for the arbitrary-other-input multiplication coherence predicate. -/
 namespace PA215.PA.RelationalSource.PairGraph

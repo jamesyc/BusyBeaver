@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermVectorSubstValidity
-import PA215PA.NumericPAeqTermTargetSubst
+module
+
+public import PA215PA.NumericPAeqTermVectorSubstValidity
+public import PA215PA.NumericPAeqTermTargetSubst
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open FFL.FirstOrder.Arithmetic.Bootstrapping

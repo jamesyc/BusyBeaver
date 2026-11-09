@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSupportedValueCoherenceInvariant
-import PA215PA.NumericPAeqSupportedValueCoherenceSuccessorSupply
-import PA215PA.NumericPAeqSupportedValueCoherenceBinarySupply
+module
+
+public import PA215PA.NumericPAeqSupportedValueCoherenceInvariant
+public import PA215PA.NumericPAeqSupportedValueCoherenceSuccessorSupply
+public import PA215PA.NumericPAeqSupportedValueCoherenceBinarySupply
+
+@[expose] public section
 
 /-! Genuine full-PA source-rank induction supplies guarded semantic value
 coherence for arbitrary model-valued arithmetic terms, at requested labels. -/

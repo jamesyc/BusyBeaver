@@ -1,6 +1,10 @@
-import PA215PA.RelationalPredicateTemplateNDShape
-import PA215PA.RelationalPredicateTemplateCertificate
-import PA215PA.FoundationRelationalSequentFiniteDischarge
+module
+
+public import PA215PA.RelationalPredicateTemplateNDShape
+public import PA215PA.RelationalPredicateTemplateCertificate
+public import PA215PA.FoundationRelationalSequentFiniteDischarge
+
+@[expose] public section
 /-! Actual finite HFS discharge for a host template ND proof. Each premise
 certificate is explicitly supplied at the chosen covered native environment. -/
 namespace PA215.PA.RelationalPredicateTemplate

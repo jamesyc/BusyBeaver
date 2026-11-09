@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationCoherenceSupplier
-import PA215PA.RelationalIdentitySupplier
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceSupplier
+public import PA215PA.RelationalIdentitySupplier
+
+@[expose] public section
 
 /-! Finite already-proved source formulas used by the arithmetic recursion
 laws. Every member below has an explicit actual-basis supplier. -/

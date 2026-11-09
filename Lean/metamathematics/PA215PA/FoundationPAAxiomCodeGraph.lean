@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAAxiomCodeInduction
+module
+
+public import PA215PA.FoundationPAAxiomCodeInduction
+
+@[expose] public section
 
 /-! An arithmetic relation retaining the three induction annotations. Its
 correctness holds for arbitrary elements of every IΣ₁ model. -/

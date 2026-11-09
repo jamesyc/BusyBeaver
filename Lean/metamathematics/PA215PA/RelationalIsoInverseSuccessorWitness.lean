@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseFrame
+module
+
+public import PA215PA.RelationalIsoInverseFrame
+
+@[expose] public section
 
 /-! A real reverse Kuratowski object followed by raw Adjunction constructs
 an inverse prefix; no image set or canonical pair is assumed. -/

@@ -1,8 +1,12 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211EndpointStartupSourceBinding
-import PA215PA.Theory
-import User211EndpointInternalStartupTrace
-import User211EndpointInternalFixedFile
+public import User211EndpointStartupSourceBinding
+public import PA215PA.Theory
+public import User211EndpointInternalStartupTrace
+public import User211EndpointInternalFixedFile
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.FixedTrace
 open PA215 PA215.PA
 open PA213.PA.InternalTrace.CodedSource

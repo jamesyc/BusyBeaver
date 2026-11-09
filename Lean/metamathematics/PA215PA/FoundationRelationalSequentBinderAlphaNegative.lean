@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentBinderAlpha
+module
+
+public import PA215PA.FoundationRelationalSequentBinderAlpha
+
+@[expose] public section
 
 /-! Alpha for native-negated translated bodies, without replacing the source
 body by its potentially much larger Foundation NNF-negation code. -/

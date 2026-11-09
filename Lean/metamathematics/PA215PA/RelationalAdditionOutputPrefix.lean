@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionResultWitness
+module
+
+public import PA215PA.RelationalAdditionResultWitness
+
+@[expose] public section
 
 /-! Extract an actual ordinal endpoint from an inclusive addition prefix. -/
 namespace PA215.PA.RelationalSource.PairGraph

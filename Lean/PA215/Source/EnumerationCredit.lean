@@ -1,4 +1,8 @@
-import PA215.Source.CantorPullback
+module
+
+public import PA215.Source.CantorPullback
+
+@[expose] public section
 
 namespace PA215.Source.Enumeration
 open Cantor

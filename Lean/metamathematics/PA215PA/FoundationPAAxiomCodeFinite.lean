@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAAxiomCodeInduction
-import PA215PA.PAPresentationAxiomWitness
+module
+
+public import PA215PA.FoundationPAAxiomCodeInduction
+public import PA215PA.PAPresentationAxiomWitness
+
+@[expose] public section
 
 /-! A finite, executable tag decoder. No decision procedure for the infinite
 induction scheme is assumed here. Soundness targets the same pinned axiom graph. -/

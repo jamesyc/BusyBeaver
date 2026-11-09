@@ -1,4 +1,8 @@
-import PA215PA.ActualBasis
+module
+
+public import PA215PA.ActualBasis
+
+@[expose] public section
 
 /-! First concrete atomic obligation for a possible equality-free image:
 membership vacuity has a finite proof in the literal actual basis. This does

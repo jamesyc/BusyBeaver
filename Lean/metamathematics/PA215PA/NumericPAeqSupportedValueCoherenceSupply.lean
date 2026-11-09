@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSupportedValueCoherenceVariables
-import PA215PA.NumericPAeqSupportedValueCoherenceZero
+module
+
+public import PA215PA.NumericPAeqSupportedValueCoherenceVariables
+public import PA215PA.NumericPAeqSupportedValueCoherenceZero
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

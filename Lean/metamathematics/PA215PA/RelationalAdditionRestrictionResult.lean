@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRestrictionPayload
+module
+
+public import PA215PA.RelationalAdditionRestrictionPayload
+
+@[expose] public section
 
 /-! Genuine predecessor extraction for an arbitrary actual addition result.
 Both original existential witnesses are opened capture-safely; the empty witness

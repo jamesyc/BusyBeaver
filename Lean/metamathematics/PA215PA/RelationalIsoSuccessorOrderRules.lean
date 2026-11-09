@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoOrderLocal
+module
+
+public import PA215PA.RelationalIsoOrderLocal
+
+@[expose] public section
 
 /-! All four old/new edge cases for order preservation. -/
 namespace PA215.PA.RelationalSource.PairGraph

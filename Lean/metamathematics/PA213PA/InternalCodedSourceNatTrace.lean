@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceNatView
-import PA213PA.InternalCodedSourcePhysicalStep
-import PA213PA.InternalCodedSourceTraceCompose
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceNatView
+public import PA213PA.InternalCodedSourcePhysicalStep
+public import PA213PA.InternalCodedSourceTraceCompose
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA

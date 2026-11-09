@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCommutativityLowerWitness
+module
+
+public import PA215PA.RelationalAdditionCommutativityLowerWitness
+
+@[expose] public section
 
 /-! Restrict the original left addition trace and retain its actual predecessor
 output before choosing the two later existential witnesses. -/

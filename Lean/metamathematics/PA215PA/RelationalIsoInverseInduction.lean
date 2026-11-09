@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseGuardedStep
+module
+
+public import PA215PA.RelationalIsoInverseGuardedStep
+
+@[expose] public section
 
 /-! Parameter-preserving ordinal induction with the explicit subset guard. -/
 namespace PA215.PA.RelationalSource.PairGraph

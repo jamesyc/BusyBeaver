@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionTransitivity
+module
+
+public import PA215PA.RelationalIsoCompositionTransitivity
+
+@[expose] public section
 
 /-! Actual-basis existential transitivity. Both graph-parameter closures of
 Separation are supplied by reusable generalization, with exact finite budgets. -/

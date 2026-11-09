@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateSuccessorSyntax
+module
+
+public import PA215PA.RelationalPredicateTemplateSuccessorSyntax
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Successor
 open FFL FFL.FirstOrder ND Ordinal
 

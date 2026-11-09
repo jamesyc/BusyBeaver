@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermLanguage
+module
+
+public import PA215PA.NumericPAeqTermLanguage
+
+@[expose] public section
 
 /-! Generalized last-bound-variable opening, using the pinned TermRec on the
 existing PAeq syntax. The pinned termFreeAt sketch is commented out; active

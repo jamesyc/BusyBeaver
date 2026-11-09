@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentAllRule
+module
+
+public import PA215PA.FoundationRelationalSequentAllRule
+
+@[expose] public section
 
 /-! Universal introduction from an actual closed accepted certificate. Any
 antecedent must already be part of the source formula, not an ambient context. -/

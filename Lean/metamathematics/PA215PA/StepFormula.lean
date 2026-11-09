@@ -1,5 +1,9 @@
-import PA215PA.Theory
-import PA215PA.NatTape
+module
+
+public import PA215PA.Theory
+public import PA215PA.NatTape
+
+@[expose] public section
 
 /-! An explicit six-place object-arithmetic formula for all 430 exact rows.
 State code 215 is reserved for halting; working controls use their dense index.

@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqTermValidity
-import PA215PA.FoundationRelationalSequentPropositional
-import PA215PA.FoundationRelationalSequentFold
+module
+
+public import PA215PA.NumericPAeqTermValidity
+public import PA215PA.FoundationRelationalSequentPropositional
+public import PA215PA.FoundationRelationalSequentFold
+
+@[expose] public section
 
 /-! Every genuine arithmetic value syntax has the displayed result-domain
 conjunct. This is a constructor fact, not semantic term totality. -/

@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentCode
+module
+
+public import PA215PA.FoundationRelationalSequentCode
+
+@[expose] public section
 
 /-! Exact singleton scan behavior. Singleton sequents retain the trailing
 empty disjunction; no equality with their sole translated member is asserted. -/

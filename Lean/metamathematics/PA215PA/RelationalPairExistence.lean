@@ -1,4 +1,8 @@
-import PA215PA.RelationalPairGraph
+module
+
+public import PA215PA.RelationalPairGraph
+
+@[expose] public section
 
 /-! Actual finite existence proofs for noncanonical singleton and unordered-pair
 objects. Only empty-set existence and adjunction are used. -/

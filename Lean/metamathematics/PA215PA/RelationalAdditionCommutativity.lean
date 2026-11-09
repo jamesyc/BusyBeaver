@@ -1,7 +1,11 @@
-import PA215PA.RelationalAdditionRightZeroApplications
-import PA215PA.RelationalAdditionRightSuccessorApplications
-import PA215PA.RelationalOrderIsoClosedTransitivity
-import PA215PA.PAForwardRelationalTotalityOutputs
+module
+
+public import PA215PA.RelationalAdditionRightZeroApplications
+public import PA215PA.RelationalAdditionRightSuccessorApplications
+public import PA215PA.RelationalOrderIsoClosedTransitivity
+public import PA215PA.PAForwardRelationalTotalityOutputs
+
+@[expose] public section
 
 /-! The exact three-parameter commutativity induction property. Outputs are
 compared by actual order isomorphism, never by extensional object equality. -/

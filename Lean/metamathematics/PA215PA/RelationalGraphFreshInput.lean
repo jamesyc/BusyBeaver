@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphOperations
-import PA215PA.RelationalOrdinalGraphOrder
+module
+
+public import PA215PA.RelationalGraphOperations
+public import PA215PA.RelationalOrdinalGraphOrder
+
+@[expose] public section
 
 /-! An ordinal successor is absent from a trace whose inclusive domain ends at
 its predecessor. This pays the freshness premise used in graph extension. -/

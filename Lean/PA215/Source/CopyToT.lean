@@ -1,4 +1,8 @@
-import PA215.Source.Determinism
+module
+
+public import PA215.Source.Determinism
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 set_option linter.unusedSectionVars false
 namespace PA215.Source.CopyToT

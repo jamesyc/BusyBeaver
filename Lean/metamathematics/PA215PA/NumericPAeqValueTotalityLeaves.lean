@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueTotalitySyntax
-import PA215PA.RelationalPredicateTemplateVariableApplication
-import PA215PA.RelationalClosedCertificateSupply
+module
+
+public import PA215PA.NumericPAeqValueTotalitySyntax
+public import PA215PA.RelationalPredicateTemplateVariableApplication
+public import PA215PA.RelationalClosedCertificateSupply
+
+@[expose] public section
 
 /-! Exact leaf constructor joins. Variable branches still require the domain
 antecedent; zero uses the already paid closed inhabited-zero theorem. -/

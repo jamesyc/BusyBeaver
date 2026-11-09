@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationRestrictionPrefix
-import PA215PA.RelationalMultiplicationResultWitness
+module
+
+public import PA215PA.RelationalMultiplicationRestrictionPrefix
+public import PA215PA.RelationalMultiplicationResultWitness
+
+@[expose] public section
 
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND

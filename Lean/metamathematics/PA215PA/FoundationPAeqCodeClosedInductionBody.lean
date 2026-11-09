@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeIdentityVector
+module
+
+public import PA215PA.FoundationPAeqCodeIdentityVector
+
+@[expose] public section
 /-! A successor induction body constructed directly from a closed matrix with
 model-valued parameter arity. Membership in the canonical axiom class is separate. -/
 namespace PA215.PA.FoundationPAeqCode

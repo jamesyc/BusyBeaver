@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSupportedVectorRealizationBound
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealizationBound
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

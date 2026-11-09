@@ -1,7 +1,11 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211PANatTape
-import User211PANativeTable
-import User211EndpointPaddedBridge
+public import User211PANatTape
+public import User211PANativeTable
+public import User211EndpointPaddedBridge
+
+@[expose] public section
 
 /-! Exact connection from the native finite-list zipper interpreter to the
 two-natural stack semantics and hence to the literal functional-tape machine.

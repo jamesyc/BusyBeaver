@@ -1,4 +1,8 @@
-import PA215.Source.ExactTrie
+module
+
+public import PA215.Source.ExactTrie
+
+@[expose] public section
 namespace PA215.Source.PathTrie
 
 def fastAfter (p : Path) : Option (Option Nat) :=

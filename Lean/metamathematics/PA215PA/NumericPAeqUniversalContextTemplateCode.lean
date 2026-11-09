@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqUniversalContextTemplateProof
+module
+
+public import PA215PA.NumericPAeqUniversalContextTemplateProof
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqUniversalContextTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

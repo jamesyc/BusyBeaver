@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSequentProofBudget
+module
+
+public import PA215PA.NumericPAeqSequentProofBudget
+
+@[expose] public section
 
 /-! The proof-wide budgeted invariant. Its arithmetic characterization is
 unrestricted full-PA syntax, not a claim that the ten rule cases are proved. -/

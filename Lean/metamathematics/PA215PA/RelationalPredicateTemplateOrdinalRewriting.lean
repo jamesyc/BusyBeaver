@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateOrdinalSchema
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalSchema
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder
 

@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateSourceInstance
-import PA215PA.RelationalPredicateTemplateUniversalRule
+module
+
+public import PA215PA.RelationalPredicateTemplateSourceInstance
+public import PA215PA.RelationalPredicateTemplateUniversalRule
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

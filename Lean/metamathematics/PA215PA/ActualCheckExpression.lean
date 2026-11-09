@@ -1,6 +1,10 @@
-import PA215PA.ActualHeadGraphs
-import PA215PA.ActualFieldGraphs
-import Foundation.FirstOrder.Arithmetic.HFS.Vec
+module
+
+public import PA215PA.ActualHeadGraphs
+public import PA215PA.ActualFieldGraphs
+public import Foundation.FirstOrder.Arithmetic.HFS.Vec
+
+@[expose] public section
 namespace PA215.PA.ActualCheckExpression
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic

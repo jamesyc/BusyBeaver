@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqIsoReflexivityProof
-import PA215PA.RelationalPredicateBinaryRequested
-import PA215PA.RelationalClosedCertificateCoherenceSupply
+module
+
+public import PA215PA.NumericPAeqIsoReflexivityProof
+public import PA215PA.RelationalPredicateBinaryRequested
+public import PA215PA.RelationalClosedCertificateCoherenceSupply
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

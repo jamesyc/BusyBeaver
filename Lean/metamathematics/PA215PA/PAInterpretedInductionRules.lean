@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedInductionInstances
+module
+
+public import PA215PA.PAInterpretedInductionInstances
+
+@[expose] public section
 
 /-! Guarded universal specialization and implication normalization for the
 literal typed induction image. -/

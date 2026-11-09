@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTemplates
-import Foundation.FirstOrder.Arithmetic.HFS.PRF
+module
+
+public import PA215PA.NumericPAeqTermTemplates
+public import Foundation.FirstOrder.Arithmetic.HFS.PRF
+
+@[expose] public section
 
 /-! Model-length domain guards over a vector of relational term codes.
 This is syntax construction only; no native certificate is assumed. -/

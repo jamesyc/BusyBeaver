@@ -1,8 +1,12 @@
-import PA215PA.NumericPAeqFormulaRealizationBinderOpening
-import PA215PA.NumericPAeqFormulaRealizationConnectives
-import PA215PA.NumericPAeqSupportedVectorBinderInputCertificate
-import PA215PA.NumericPAeqSourceCertificateMP
-import PA215PA.NumericPAeqFormulaLogicalCurry
+module
+
+public import PA215PA.NumericPAeqFormulaRealizationBinderOpening
+public import PA215PA.NumericPAeqFormulaRealizationConnectives
+public import PA215PA.NumericPAeqSupportedVectorBinderInputCertificate
+public import PA215PA.NumericPAeqSourceCertificateMP
+public import PA215PA.NumericPAeqFormulaLogicalCurry
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

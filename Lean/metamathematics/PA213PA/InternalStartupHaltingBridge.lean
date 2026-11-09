@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA213PA.InternalStartupFrame
-import PA213PA.InternalCodedSourcePhysicalTrace
-import PA213PA.InternalTraceProjection
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalStartupFrame
+public import PA213PA.InternalCodedSourcePhysicalTrace
+public import PA213PA.InternalTraceProjection
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FixedTrace
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalInductionTrace
+module
+
+public import PA215PA.RelationalOrdinalInductionTrace
+
+@[expose] public section
 
 /-! Uniform ordinal-domain induction, via a finite minimum-counterexample
 proof and exact parameter-preserving Separation of the negated property. -/

@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAStepSemantics
-import Foundation.FirstOrder.Arithmetic.HFS.Vec
+public import User211PAStepSemantics
+public import Foundation.FirstOrder.Arithmetic.HFS.Vec
+
+@[expose] public section
 
 /-! A single arithmetic halting sentence using Foundation's specified HFS
 finite-sequence coding (not an external Lean existential over lists).

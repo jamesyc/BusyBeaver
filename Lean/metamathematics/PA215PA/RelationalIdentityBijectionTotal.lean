@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityBijectionRules
+module
+
+public import PA215PA.RelationalIdentityBijectionRules
+
+@[expose] public section
 
 /-! Diagonal identity graphs satisfy typing and both directions of totality. -/
 namespace PA215.PA.RelationalSource.PairGraph

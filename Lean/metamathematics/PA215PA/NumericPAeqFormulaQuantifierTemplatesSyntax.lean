@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaLogicalCertificate
+module
+
+public import PA215PA.NumericPAeqFormulaLogicalCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaQuantifierTemplates
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

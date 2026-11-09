@@ -1,5 +1,9 @@
-import User211AllSourceChecks
-import PA213.SourceEquivalence
+module
+
+public import User211AllSourceChecks
+public import PA213.SourceEquivalence
+
+@[expose] public section
 namespace PA211.UserCandidate.Source
 open PA215.Source PA215.Source.PathTrie
 

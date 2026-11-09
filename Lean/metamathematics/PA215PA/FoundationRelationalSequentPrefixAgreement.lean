@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentPaddedProofEnvironment
+module
+
+public import PA215PA.FoundationRelationalSequentPaddedProofEnvironment
+
+@[expose] public section
 
 /-! Exact translation equality from a conservative finite prefix agreement.
 The source and all environments may be nonstandard model codes. -/

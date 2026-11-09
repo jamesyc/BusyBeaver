@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationRightSucc
+module
+
+public import PA215PA.PAPresentationRightSucc
+
+@[expose] public section
 
 /-! Third fixed PA-minus image. Right-zero and right-recursion are reused
 as actual derived proofs, never silently inserted as target axioms. -/

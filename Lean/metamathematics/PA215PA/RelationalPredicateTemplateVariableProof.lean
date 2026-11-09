@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateLiftEquality
-import PA215PA.RelationalPredicateTemplateOrdinalRewriting
+module
+
+public import PA215PA.RelationalPredicateTemplateLiftEquality
+public import PA215PA.RelationalPredicateTemplateOrdinalRewriting
+
+@[expose] public section
 
 /-! A finite template proof of variable-value existence, using only actual
 ordinary equality reflexivity. The source variable remains a parameter. -/

@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaRealizationShift
-import PA215PA.NumericPAeqFormulaOpeningLogic
-import PA215PA.NumericPAeqFormulaLogicalCertificate
+module
+
+public import PA215PA.NumericPAeqFormulaRealizationShift
+public import PA215PA.NumericPAeqFormulaOpeningLogic
+public import PA215PA.NumericPAeqFormulaLogicalCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

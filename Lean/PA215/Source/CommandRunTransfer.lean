@@ -1,6 +1,10 @@
-import PA215.Source.CommandRunTransferCore
-import PA215.Source.CommandTransfer
-import PA215.Source.SchedulerInvariant
+module
+
+public import PA215.Source.CommandRunTransferCore
+public import PA215.Source.CommandTransfer
+public import PA215.Source.SchedulerInvariant
+
+@[expose] public section
 namespace PA215.Source.CommandRunTransfer
 open Enumeration
 

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionEntryElimination
+module
+
+public import PA215PA.RelationalIsoCompositionEntryElimination
+
+@[expose] public section
 
 /-! Actual triple-coordinate entries survive a composition-prefix extension. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeEqualityTerm
+module
+
+public import PA215PA.FoundationPAeqCodeEqualityTerm
+
+@[expose] public section
 /-! PAeq atom replacement; adapted from Foundation EquationalTheory (Apache-2.0)
 with the actual target relation0 and paid finite equality leaves. -/
 namespace PA215.PA.FoundationPAeqCode

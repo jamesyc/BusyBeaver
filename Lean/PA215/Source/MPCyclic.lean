@@ -1,5 +1,9 @@
-import PA215.Source.MPCommand
-import PA215.Source.NonexitCycle
+module
+
+public import PA215.Source.MPCommand
+public import PA215.Source.NonexitCycle
+
+@[expose] public section
 namespace PA215.Source.MP
 
 /-- The complete MP macro transports unchanged to the restarting driver:

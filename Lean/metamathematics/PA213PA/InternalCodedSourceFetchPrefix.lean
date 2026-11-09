@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceDrainJumpInc
-import PA213PA.InternalCodedSourceS36DrainPrefix
-import PA215.Source.FetchPrefixBinding
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceDrainJumpInc
+public import PA213PA.InternalCodedSourceS36DrainPrefix
+public import PA215.Source.FetchPrefixBinding
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

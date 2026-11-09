@@ -1,4 +1,8 @@
-import PA215PA.FoundationNativeRefutationTransport
+module
+
+public import PA215PA.FoundationNativeRefutationTransport
+
+@[expose] public section
 namespace PA215.PA.FoundationNativeRefutationTransport
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

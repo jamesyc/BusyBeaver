@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionZeroExistence
+module
+
+public import PA215PA.RelationalAdditionZeroExistence
+
+@[expose] public section
 
 /-! The actual-basis zero-input addition-prefix instance. Every finite ordinary
 set/equality premise is discharged at the same allocator. -/

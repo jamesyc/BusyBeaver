@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaQuote
-import PA215PA.PAForwardRelationalClosureSupport
-import PA215PA.PAInterpretedFixedClosure
+module
+
+public import PA215PA.NumericPAeqFormulaQuote
+public import PA215PA.PAForwardRelationalClosureSupport
+public import PA215PA.PAInterpretedFixedClosure
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

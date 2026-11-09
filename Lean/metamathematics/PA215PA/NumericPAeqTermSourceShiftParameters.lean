@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermChildren
+module
+
+public import PA215PA.NumericPAeqTermChildren
+
+@[expose] public section
 
 /-! Prepending a target free-environment entry compensates for source free shift.
 The bound environment and result term are preserved. -/

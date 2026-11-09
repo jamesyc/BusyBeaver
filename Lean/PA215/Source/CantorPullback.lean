@@ -1,4 +1,8 @@
-import PA215.Source.Enumeration
+module
+
+public import PA215.Source.Enumeration
+
+@[expose] public section
 
 /-! Bounded nonnegative-prefix sums are preserved by the Cantor right
 projection. This is the twice-used diagonal lemma in the global credit proof. -/

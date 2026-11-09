@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionZeroSupplier
+module
+
+public import PA215PA.RelationalAdditionZeroSupplier
+
+@[expose] public section
 
 /-! Finite elimination and equality-transport rules for the literal inclusive
 trace clauses. These operate on actual LK proofs, not semantic interfaces. -/

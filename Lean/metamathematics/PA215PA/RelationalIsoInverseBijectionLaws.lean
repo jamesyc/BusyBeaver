@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseBijectionRules
+module
+
+public import PA215PA.RelationalIsoInverseBijectionRules
+
+@[expose] public section
 
 /-! Universal typing, uniqueness, and order laws for the reversed graph. -/
 namespace PA215.PA.RelationalSource.PairGraph

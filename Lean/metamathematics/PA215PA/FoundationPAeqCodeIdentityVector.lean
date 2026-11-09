@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionMatrix
+module
+
+public import PA215PA.FoundationPAeqCodeInductionMatrix
+
+@[expose] public section
 /-! Model-valued identity substitution vectors. Adapted from Foundation's
 `fvarVec` primitive-recursion construction in Syntax/Term/Typed.lean.
 Copyright Foundation contributors; Apache-2.0, as retained in the repository.

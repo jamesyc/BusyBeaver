@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqInductionAxiomCertificate
-import PA215PA.PAInterpretedFixedNumericClass
+module
+
+public import PA215PA.NumericPAeqInductionAxiomCertificate
+public import PA215PA.PAInterpretedFixedNumericClass
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

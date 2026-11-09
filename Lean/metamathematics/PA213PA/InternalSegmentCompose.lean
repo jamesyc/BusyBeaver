@@ -1,4 +1,8 @@
-import PA213PA.InternalTraceCompose
+module
+
+public import PA213PA.InternalTraceCompose
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace
 open PA215

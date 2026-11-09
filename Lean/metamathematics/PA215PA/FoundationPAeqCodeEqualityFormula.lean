@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeEqualityAtoms
+module
+
+public import PA215PA.FoundationPAeqCodeEqualityAtoms
+
+@[expose] public section
 /-! Adapted from Foundation EquationalTheory (Apache-2.0). Genuine definable
 model-code structural induction for PAeq formula equality replacement. -/
 namespace PA215.PA.FoundationPAeqCode

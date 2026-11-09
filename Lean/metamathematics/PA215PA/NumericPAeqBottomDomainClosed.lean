@@ -1,8 +1,12 @@
-import PA215PA.NumericPAeqBottomDomainProof
-import PA215PA.RelationalClosedCertificateSupply
-import PA215PA.NumericPAeqSourceCertificateMP
-import PA215PA.NumericPAeqFormulaOpeningLogic
-import PA215PA.FoundationRelationalSequentRequestedUniversal
+module
+
+public import PA215PA.NumericPAeqBottomDomainProof
+public import PA215PA.RelationalClosedCertificateSupply
+public import PA215PA.NumericPAeqSourceCertificateMP
+public import PA215PA.NumericPAeqFormulaOpeningLogic
+public import PA215PA.FoundationRelationalSequentRequestedUniversal
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqBottomDomain
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

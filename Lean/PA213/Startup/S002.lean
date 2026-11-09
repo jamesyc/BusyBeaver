@@ -1,4 +1,8 @@
-import PA213.StartupData
+module
+
+public import PA213.StartupData
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA213.Startup

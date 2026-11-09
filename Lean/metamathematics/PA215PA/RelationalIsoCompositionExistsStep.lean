@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionSuccessorWitness
+module
+
+public import PA215PA.RelationalIsoCompositionSuccessorWitness
+
+@[expose] public section
 
 /-! Supply the old graph and actual intermediate/output coordinate witnesses
 by finite existential elimination. -/

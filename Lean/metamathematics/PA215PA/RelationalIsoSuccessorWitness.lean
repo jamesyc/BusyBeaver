@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoSuccessorFrame
+module
+
+public import PA215PA.RelationalIsoSuccessorFrame
+
+@[expose] public section
 
 /-! Real Kuratowski and raw Adjunction witnesses for successor isomorphism. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,7 +1,11 @@
-import PA215PA.PAInterpretedMultiplicationSuccessorEquality
-import PA215PA.PAInterpretedFunctionCongruenceGuards
-import PA215PA.PAInterpretedUniversal
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAInterpretedMultiplicationSuccessorEquality
+public import PA215PA.PAInterpretedFunctionCongruenceGuards
+public import PA215PA.PAInterpretedUniversal
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! Exact literal typed PAeq multiplication-successor image. -/
 namespace PA215.PA.ForwardRelational

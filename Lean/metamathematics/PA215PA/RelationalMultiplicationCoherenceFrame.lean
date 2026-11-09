@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationCoherenceRules
-import PA215PA.RelationalAdditionCoherenceApplications
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceRules
+public import PA215PA.RelationalAdditionCoherenceApplications
+
+@[expose] public section
 
 /-! Explicit proof data for using the coherence induction hypothesis. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqSupportedValueTotalityLeaves
-import PA215PA.NumericPAeqSupportedValueTotalitySuccessor
-import PA215PA.NumericPAeqSupportedValueTotalityBinary
-import PA215PA.NumericPAeqValueCertificatePair
+module
+
+public import PA215PA.NumericPAeqSupportedValueTotalityLeaves
+public import PA215PA.NumericPAeqSupportedValueTotalitySuccessor
+public import PA215PA.NumericPAeqSupportedValueTotalityBinary
+public import PA215PA.NumericPAeqValueCertificatePair
+
+@[expose] public section
 
 namespace PA215.PA.NumericPAeqSupportedValueTotality
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

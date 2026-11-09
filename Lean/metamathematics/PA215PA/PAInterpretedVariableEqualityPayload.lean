@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedVariableEqualityTransport
+module
+
+public import PA215PA.PAInterpretedVariableEqualityTransport
+
+@[expose] public section
 
 /-! Real variable-value witnesses have the declared representatives as their
 ordinary-equality endpoints; no uniqueness of arbitrary term values is assumed. -/

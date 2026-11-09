@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaRealizationSyntax
-import PA215PA.NumericPAeqSupportedVectorInputShift
-import PA215PA.NumericPAeqFormulaSupportedTargetShift
+module
+
+public import PA215PA.NumericPAeqFormulaRealizationSyntax
+public import PA215PA.NumericPAeqSupportedVectorInputShift
+public import PA215PA.NumericPAeqFormulaSupportedTargetShift
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

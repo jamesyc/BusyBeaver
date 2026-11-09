@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationRestrictionPayload
+module
+
+public import PA215PA.RelationalMultiplicationRestrictionPayload
+
+@[expose] public section
 
 /-! Genuine predecessor extraction for an arbitrary actual multiplication result.
 Both original existential witnesses are opened capture-safely; the empty witness

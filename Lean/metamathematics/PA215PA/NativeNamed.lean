@@ -1,5 +1,9 @@
-import PA215PA.NativeCalculus
-import PA215PA.Theory
+module
+
+public import PA215PA.NativeCalculus
+public import PA215PA.Theory
+
+@[expose] public section
 
 /-! Literal named-formula syntax from NumericSyntax238.v at the same pinned
 upstream. Its interpretation below is parameterized by two arithmetic binary

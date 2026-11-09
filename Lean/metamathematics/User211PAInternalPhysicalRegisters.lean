@@ -1,8 +1,12 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalFileEffects
-import User211PAInternalFileGuards
-import PA215.Source.PhysicalRegisters
+public import User211PAInternalFileEffects
+public import User211PAInternalFileGuards
+public import PA215.Source.PhysicalRegisters
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.PhysicalRegisters
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

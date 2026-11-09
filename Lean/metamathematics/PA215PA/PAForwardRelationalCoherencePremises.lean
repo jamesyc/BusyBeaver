@@ -1,9 +1,13 @@
-import PA215PA.PAForwardRelationalTotality
-import PA215PA.RelationalAdditionCoherenceApplications
-import PA215PA.RelationalMultiplicationCoherenceApplications
-import PA215PA.RelationalOrderIsoTransport
-import PA215PA.RelationalOrderIsoSuccessor
-import PA215PA.RelationalZeroIso
+module
+
+public import PA215PA.PAForwardRelationalTotality
+public import PA215PA.RelationalAdditionCoherenceApplications
+public import PA215PA.RelationalMultiplicationCoherenceApplications
+public import PA215PA.RelationalOrderIsoTransport
+public import PA215PA.RelationalOrderIsoSuccessor
+public import PA215PA.RelationalZeroIso
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalUniformOracle
-import PA211.UserCandidate.RuntimeContracts
+public import User211PAInternalUniformOracle
+public import PA211.UserCandidate.RuntimeContracts
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.FileBoxes
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

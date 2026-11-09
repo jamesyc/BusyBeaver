@@ -1,4 +1,8 @@
-import PA215PA.NativeDecode
+module
+
+public import PA215PA.NativeDecode
+
+@[expose] public section
 
 /-! Finite name tracking and freshness from the pinned NumericSyntax238.v.
 This is the bounded-name component of future native readback/calibration. -/

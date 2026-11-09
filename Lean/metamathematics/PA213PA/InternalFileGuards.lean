@@ -1,4 +1,8 @@
-import PA213PA.InternalFileBoxes
+module
+
+public import PA213PA.InternalFileBoxes
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FileBoxes
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

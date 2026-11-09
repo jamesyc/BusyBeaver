@@ -1,4 +1,8 @@
-import PA215PA.NativeDeduction
+module
+
+public import PA215PA.NativeDeduction
+
+@[expose] public section
 
 /-! Finite numeric proof operations from pinned NumericHilbert238.v.
 No semantic completeness: every output is an actual dominated proof tree. -/

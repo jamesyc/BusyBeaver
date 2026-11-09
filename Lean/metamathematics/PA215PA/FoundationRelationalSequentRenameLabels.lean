@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentVacuity
+module
+
+public import PA215PA.FoundationRelationalSequentVacuity
+
+@[expose] public section
 
 /-! Exact finite label-renaming relations. These supply source-environment
 metadata for conditional native congruence, not a proof of that congruence. -/

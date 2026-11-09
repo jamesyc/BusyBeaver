@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedEqualityWitnesses
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAInterpretedEqualityWitnesses
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! One literal fixed PAeq axiom under the typed relational interpretation.
 This does not assume a theory interpretation or source substitution theorem. -/

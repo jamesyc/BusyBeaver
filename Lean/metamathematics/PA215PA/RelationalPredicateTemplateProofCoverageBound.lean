@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateProofCoverage
+module
+
+public import PA215PA.RelationalPredicateTemplateProofCoverage
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionGuardedStep
-import PA215PA.RelationalIsoCompositionEmpty
+module
+
+public import PA215PA.RelationalIsoCompositionGuardedStep
+public import PA215PA.RelationalIsoCompositionEmpty
+
+@[expose] public section
 
 /-! Uniform composition-prefix construction by accepted ordinal induction.
 The precise subset guard and free graph parameters are retained. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionOutputPrefix
+module
+
+public import PA215PA.RelationalAdditionOutputPrefix
+
+@[expose] public section
 
 /-! Eliminate the original graph witness while retaining the same zero. -/
 namespace PA215.PA.RelationalSource.PairGraph

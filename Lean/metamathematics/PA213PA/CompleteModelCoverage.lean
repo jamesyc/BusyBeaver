@@ -1,5 +1,9 @@
-import PA213PA.ModelCoverage
-import PA213.SourceEquivalence
+module
+
+public import PA213PA.ModelCoverage
+public import PA213.SourceEquivalence
+
+@[expose] public section
 
 set_option maxRecDepth 100000
 set_option maxHeartbeats 8000000

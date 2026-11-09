@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermTableNodes
+module
+
+public import PA215PA.NumericPAeqTermTableNodes
+
+@[expose] public section
 
 /-! Finite HFS witness tables with bounded Sigma-one checks. Monotonicity of local support permits tables to be joined and a root to be inserted. -/
 namespace PA215.PA.NumericPAeqTerm

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueBoundInstance
-import PA215PA.NumericPAeqTermSupportedTargetSubst
+module
+
+public import PA215PA.NumericPAeqValueBoundInstance
+public import PA215PA.NumericPAeqTermSupportedTargetSubst
+
+@[expose] public section
 
 /-! Actual bound substitution in value syntax with context-zero target term
 environments. Source arithmetic syntax stays unchanged. -/

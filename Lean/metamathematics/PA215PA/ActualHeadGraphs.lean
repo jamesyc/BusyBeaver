@@ -1,5 +1,9 @@
-import PA215PA.ActualArithmeticGraph
-import PA215.Source.ActualAXCode
+module
+
+public import PA215PA.ActualArithmeticGraph
+public import PA215.Source.ActualAXCode
+
+@[expose] public section
 namespace PA215.PA.ActualHeadGraphs
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic

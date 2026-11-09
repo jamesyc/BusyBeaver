@@ -1,20 +1,20 @@
-import PA215PA.ActualCommandWordGraph
+module
+
+public import PA215PA.ActualCommandWordGraph
+
+@[expose] public section
 namespace PA215.PA.ActualCommandStepGraph
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic
 open SourceCantorInternal ActualHeadGraphs
-/- Resolve the private scalar-template names from the unchanged imported module.
-This only supplies identifiers to ordinary `simp`; all produced equalities are
-checked by the Lean kernel. No declaration or environment body is changed. -/
-open Lean Elab Tactic in
-elab "expose_pa215_step_helpers" : tactic => do
-  let env ← getEnv
-  let names := env.constants.toList.filterMap fun (n,_) =>
-    if n.toString.startsWith "_private.PA215PA.ActualCommandStepGraph." &&
-        ["zero","top","stack","cacheD","cacheH","tag","fields","first","second","state","imp","headValue","push"].any
-          (fun suffix => n.toString.endsWith ("." ++ suffix)) then some (mkIdent n) else none
-  let names := names.toArray
-  evalTactic (← `(tactic| simp only [$[$names:ident],*]))
+macro "expose_pa215_step_helpers" : tactic => `(tactic|
+  simp only [ActualCommandStepGraph.Templates.zero, ActualCommandStepGraph.Templates.top,
+    ActualCommandStepGraph.Templates.stack, ActualCommandStepGraph.Templates.cacheD,
+    ActualCommandStepGraph.Templates.cacheH, ActualCommandStepGraph.Templates.tag,
+    ActualCommandStepGraph.Templates.fields, ActualCommandStepGraph.Templates.first,
+    ActualCommandStepGraph.Templates.second, ActualCommandStepGraph.Templates.state,
+    ActualCommandStepGraph.Templates.imp, ActualCommandStepGraph.Templates.headValue,
+    ActualCommandStepGraph.Templates.push])
 
 variable {V : Type*} [ORingStructure V] [V↓[ℒₒᵣ] ⊧* 𝗜𝚺₁]
 

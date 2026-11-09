@@ -1,6 +1,10 @@
-import PA215PA.RelationalPredicateTemplateLKBounded
-import PA215PA.FoundationRelationalSequentDerivation
-import PA215PA.FoundationRelationalSequentEnvironmentExistence
+module
+
+public import PA215PA.RelationalPredicateTemplateLKBounded
+public import PA215PA.FoundationRelationalSequentDerivation
+public import PA215PA.FoundationRelationalSequentEnvironmentExistence
+
+@[expose] public section
 /-! A fixed host template LK proof supplies an actual native certificate.
 The native environment is existentially supplied by the checked numeric proof
 compiler. This does not construct the ordinal-induction template. -/

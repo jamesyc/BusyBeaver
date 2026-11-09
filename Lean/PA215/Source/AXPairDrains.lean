@@ -1,5 +1,9 @@
-import PA215.Source.AXPairSteps
-import PA215.Source.Cantor
+module
+
+public import PA215.Source.AXPairSteps
+public import PA215.Source.Cantor
+
+@[expose] public section
 namespace PA215.Source.AXPair
 variable {sites : Array Site} {offset : Nat} (hbound : Bound sites offset)
 include hbound

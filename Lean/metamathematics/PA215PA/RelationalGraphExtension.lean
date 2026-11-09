@@ -1,4 +1,8 @@
-import PA215PA.RelationalGraphEntry
+module
+
+public import PA215PA.RelationalGraphEntry
+
+@[expose] public section
 
 /-! Adjunction adds a Kuratowski edge while preserving every existing edge. -/
 namespace PA215.PA.RelationalSource.PairGraph

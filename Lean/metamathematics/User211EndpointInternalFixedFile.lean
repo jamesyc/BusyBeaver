@@ -1,7 +1,11 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import PA215PA.Theory
-import User211EndpointInternalCodedSourceFrame
-import User211EndpointInternalCarryNatBridge
+public import PA215PA.Theory
+public import User211EndpointInternalCodedSourceFrame
+public import User211EndpointInternalCarryNatBridge
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.FixedTrace
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

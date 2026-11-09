@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeNegation
-import PA215PA.FoundationPAeqCodeAtomTransport
+module
+
+public import PA215PA.FoundationPAeqCodeNegation
+public import PA215PA.FoundationPAeqCodeAtomTransport
+
+@[expose] public section
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

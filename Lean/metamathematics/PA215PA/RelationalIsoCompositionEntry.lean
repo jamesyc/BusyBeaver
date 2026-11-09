@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionPrefix
+module
+
+public import PA215PA.RelationalIsoCompositionPrefix
+
+@[expose] public section
 
 /-! Actual three-coordinate witnesses for each composition graph object. -/
 namespace PA215.PA.RelationalSource.PairGraph

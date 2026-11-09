@@ -1,4 +1,8 @@
-import PA215PA.PAPresentationEqualityLift
+module
+
+public import PA215PA.PAPresentationEqualityLift
+
+@[expose] public section
 
 /-! Constructive equality substitution for arbitrary arithmetic formulas,
 including both quantifiers. Every value is an actual finite LK derivation;

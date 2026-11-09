@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateVacuityMembership
+module
+
+public import PA215PA.ActualCertificateVacuityMembership
+
+@[expose] public section
 
 /-! Finite modal vacuity certificate recipes, using closed GEN only. -/
 namespace PA215.PA.ActualCertificateEquivalence

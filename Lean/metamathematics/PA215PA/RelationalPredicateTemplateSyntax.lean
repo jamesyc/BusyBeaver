@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTargetShiftParameters
-import Foundation.FirstOrder.LK.Basic
+module
+
+public import PA215PA.NumericPAeqTermTargetShiftParameters
+public import Foundation.FirstOrder.LK.Basic
+
+@[expose] public section
 
 /-! A template-only unary predicate extension. Proofs, when added, use
 Foundation's existing LK datatype; the target relational language is unchanged.

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqValueDiagonalInvariant
+module
+
+public import PA215PA.NumericPAeqValueDiagonalInvariant
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open FFL.FirstOrder.Arithmetic.Bootstrapping

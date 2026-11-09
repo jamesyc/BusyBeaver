@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityInduction
+module
+
+public import PA215PA.RelationalIdentityInduction
+
+@[expose] public section
 
 /-! Actual-basis identity-graph existence on every ordinal, with all finite
 ordinary source premises discharged, including exact Separation. -/

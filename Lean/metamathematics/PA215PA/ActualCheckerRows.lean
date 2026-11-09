@@ -1,4 +1,8 @@
-import PA215PA.ActualRuleGraph
+module
+
+public import PA215PA.ActualRuleGraph
+
+@[expose] public section
 namespace PA215.PA.ActualCheckerRows
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

@@ -1,5 +1,9 @@
-import PA215PA.PAForwardRelationalSubstitutionAtomic
-import PA215PA.PAForwardRelationalSubstitutionFormulaSyntax
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionAtomic
+public import PA215PA.PAForwardRelationalSubstitutionFormulaSyntax
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

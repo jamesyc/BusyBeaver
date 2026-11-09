@@ -1,6 +1,11 @@
-import PA215.Source.AXBindings.B011
-import PA215.Source.AXTypedPlan
-import PA215.Source.ExistingPrivateBound
+module
+
+public import PA215.Source.AXBindings.B011
+public import PA215.Source.AXTypedPlan
+public import PA215.Source.ExistingPrivateBound
+import all PA215.Source.AXBindings.B011
+
+@[expose] public section
 namespace PA215.Source.AXModelBounds
 theorem bound1765_p : AXPushParam.Bound exactSites 1740 :=
   existingPrivateBound% "PA215.Source.AXBindings.B011" "PA215.Source.AXAll.bound1765_p"

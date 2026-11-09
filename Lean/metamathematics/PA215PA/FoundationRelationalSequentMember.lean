@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentLogic
+module
+
+public import PA215PA.FoundationRelationalSequentLogic
+
+@[expose] public section
 
 /-! Member injection by displayed full-PA model-length induction. All witnesses
 are accepted numeric certificates, including for nonstandard HFS sequents. -/

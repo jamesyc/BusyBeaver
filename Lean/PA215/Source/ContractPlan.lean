@@ -1,5 +1,9 @@
-import PA215.Source.RootFrame
-import PA215.OriginalCensusTypes
+module
+
+public import PA215.Source.RootFrame
+public import PA215.OriginalCensusTypes
+
+@[expose] public section
 
 /-! Primitive obligations generated directly from the source operation/path.
 No target frame is borrowed from a separately generated target census. -/

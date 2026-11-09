@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqGuardedAlls
-import PA215PA.NumericPAeqFormulaClosedEnvironment
-import PA215PA.RelationalPredicateBinaryEmptyRequested
+module
+
+public import PA215PA.NumericPAeqGuardedAlls
+public import PA215PA.NumericPAeqFormulaClosedEnvironment
+public import PA215PA.RelationalPredicateBinaryEmptyRequested
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqGuardedAlls
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

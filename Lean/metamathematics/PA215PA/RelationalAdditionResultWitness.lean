@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionTotalSupplier
+module
+
+public import PA215PA.RelationalAdditionTotalSupplier
+
+@[expose] public section
 
 /-! Real endpoint witnesses for the exact addition graph relation. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,5 +1,9 @@
-import PA213PA.InternalDecrementPositiveCell
-import PA213PA.InternalIncrement
+module
+
+public import PA213PA.InternalDecrementPositiveCell
+public import PA213PA.InternalIncrement
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.DecrementPositive
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

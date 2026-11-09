@@ -1,4 +1,8 @@
-import PA215.Zip
+module
+
+public import PA215.Zip
+
+@[expose] public section
 
 /-!
 K230's frozen table (Elliot Glazer's k230-rocq, `machine/k230.tm`, commit `3142e4d`),

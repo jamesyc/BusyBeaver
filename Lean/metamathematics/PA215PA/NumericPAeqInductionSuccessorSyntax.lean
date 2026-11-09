@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqInductionInterpretationSyntax
-import PA215PA.NumericPAeqFormulaSuccessorInstance
-import PA215PA.NumericPAeqFormulaSupportedUnaryInstance
+module
+
+public import PA215PA.NumericPAeqInductionInterpretationSyntax
+public import PA215PA.NumericPAeqFormulaSuccessorInstance
+public import PA215PA.NumericPAeqFormulaSupportedUnaryInstance
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

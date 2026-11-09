@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosureEquality
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosureEquality
+
+@[expose] public section
 
 /-! Three structural clauses of successor-domain closure, using ordinary
 membership congruence and local member irreflexivity only. -/

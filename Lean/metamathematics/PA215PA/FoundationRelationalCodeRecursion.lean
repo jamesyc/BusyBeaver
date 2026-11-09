@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeConstruction
+module
+
+public import PA215PA.FoundationRelationalCodeConstruction
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.Numeric
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

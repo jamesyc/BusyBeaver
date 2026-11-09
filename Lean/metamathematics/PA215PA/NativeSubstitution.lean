@@ -1,4 +1,8 @@
-import PA215PA.NativeEquality
+module
+
+public import PA215PA.NativeEquality
+
+@[expose] public section
 
 /-! Finite numeric equality substitution through every named connective.
 The quantified branch uses actual guarded-bundle equality vacuity and R2;

@@ -1,5 +1,9 @@
-import PA215PA.RelationalOrderIsoClosedTransitivity
-import PA215PA.RelationalIsoInverseSymmetrySupplier
+module
+
+public import PA215PA.RelationalOrderIsoClosedTransitivity
+public import PA215PA.RelationalIsoInverseSymmetrySupplier
+
+@[expose] public section
 
 /-! Fully parameter-closed symmetry, supplied only after the inverse graph and
 its finite Separation context have been discharged. -/

@@ -1,6 +1,10 @@
-import PA215PA.RelationalIsoCompositionEdgesElimination
-import PA215PA.RelationalOrderIsoRelationRules
-import PA215PA.RelationalIsoInverseRules
+module
+
+public import PA215PA.RelationalIsoCompositionEdgesElimination
+public import PA215PA.RelationalOrderIsoRelationRules
+public import PA215PA.RelationalIsoInverseRules
+
+@[expose] public section
 
 /-! Composite relations inherit typing, uniqueness, and order from their
 actual component graphs. Ordinary equality aligns intermediate witnesses. -/

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSequentFold
+module
+
+public import PA215PA.NumericPAeqSequentFold
+
+@[expose] public section
 
 /-! Inserting a member into an HFS sequent is certificate-equivalent to a
 native disjunction. This is not a syntactic equality of the canonical scans. -/

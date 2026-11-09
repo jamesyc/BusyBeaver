@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeClosureProof
-import PA215PA.FoundationPAeqCodeSubstitutionAgreement
+module
+
+public import PA215PA.FoundationPAeqCodeClosureProof
+public import PA215PA.FoundationPAeqCodeSubstitutionAgreement
+
+@[expose] public section
 /-! Open successor induction for a matrix extracted from an original closed
 witness. Surplus parameters are ignored by proved numeric substitution agreement. -/
 namespace PA215.PA.FoundationPAeqCode

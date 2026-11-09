@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoPredecessorTyped
-import PA215PA.RelationalGraphFunctionalExtension
+module
+
+public import PA215PA.RelationalIsoPredecessorTyped
+public import PA215PA.RelationalGraphFunctionalExtension
+
+@[expose] public section
 
 /-! Functionality, injectivity, and order are inherited by the actual strict cut. -/
 namespace PA215.PA.RelationalSource.PairGraph

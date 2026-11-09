@@ -1,9 +1,13 @@
-import PA215PA.NumericPAeqSupportedValueTotalityValidity
-import PA215PA.NumericPAeqValueCertificateComposition
-import PA215PA.NumericPAeqValueDomainNormalization
-import PA215PA.NumericPAeqValueDomainProjection
-import PA215PA.NumericPAeqValueSuccessorShape
-import PA215PA.RelationalPredicateTemplateSuccessorCertificate
+module
+
+public import PA215PA.NumericPAeqSupportedValueTotalityValidity
+public import PA215PA.NumericPAeqValueCertificateComposition
+public import PA215PA.NumericPAeqValueDomainNormalization
+public import PA215PA.NumericPAeqValueDomainProjection
+public import PA215PA.NumericPAeqValueSuccessorShape
+public import PA215PA.RelationalPredicateTemplateSuccessorCertificate
+
+@[expose] public section
 
 /-! Actual semantic successor branch for value-output existence. Both the
 duplicate-domain antecedent and requested-label reserve changes are paid. -/

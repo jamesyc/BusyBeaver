@@ -1,5 +1,9 @@
-import PA215.Source.AXMacroSound
-import PA215.Source.UnpairRelocation
+module
+
+public import PA215.Source.AXMacroSound
+public import PA215.Source.UnpairRelocation
+
+@[expose] public section
 namespace PA215.Source.AXMacro
 
 def renameH (r : Fin 9) : Fin 9 := if r=2 then 8 else if r=8 then 2 else r

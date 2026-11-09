@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoSuccessorTotalRules
+module
+
+public import PA215PA.RelationalIsoSuccessorTotalRules
+
+@[expose] public section
 
 /-! Both universal totality clauses with their actual existential witnesses. -/
 namespace PA215.PA.RelationalSource.PairGraph

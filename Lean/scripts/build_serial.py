@@ -35,10 +35,13 @@ def build_order(root, target='PA211', package_roots=None):
         states[name] = 1
         for line in without_comments(source.read_text()).splitlines():
             words = line.split()
-            if words[:1] == ['public']:
+            while words and words[0] in ('public', 'private', 'meta'):
                 words = words[1:]
             if words[:1] == ['import']:
-                for dep in words[1:]:
+                imports = words[1:]
+                if imports[:1] == ['all']:
+                    imports = imports[1:]
+                for dep in imports:
                     if not NAME.fullmatch(dep):
                         raise ValueError(f'Unsupported import syntax in {name}: {line}')
                     if local(dep):

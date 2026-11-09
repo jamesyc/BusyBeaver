@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeClosure
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Basic
+module
+
+public import PA215PA.FoundationPAeqCodeClosure
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Basic
+
+@[expose] public section
 
 /-! Exact HFS sequent image under the original-to-PAeq syntax function.
 This uses actual Sigma-one replacement, not a host list/set map. -/

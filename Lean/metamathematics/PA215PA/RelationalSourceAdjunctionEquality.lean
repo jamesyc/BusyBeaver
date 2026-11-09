@@ -1,5 +1,9 @@
-import PA215PA.RelationalSourceAdjunctionExistence
-import PA215PA.RelationalSourceEquality
+module
+
+public import PA215PA.RelationalSourceAdjunctionExistence
+public import PA215PA.RelationalSourceEquality
+
+@[expose] public section
 namespace PA215.PA.RelationalSource
 open FFL FFL.FirstOrder
 namespace ND

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermFunction
-import Foundation.FirstOrder.Arithmetic.HFS.PRF
+module
+
+public import PA215PA.NumericPAeqTermFunction
+public import Foundation.FirstOrder.Arithmetic.HFS.PRF
+
+@[expose] public section
 
 /-! A genuine model-length conjunction of actual substitution-entry value
 formulas. This defines syntax, not truth or accepted certificates. -/

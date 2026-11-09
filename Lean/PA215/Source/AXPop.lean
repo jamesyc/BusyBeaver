@@ -1,4 +1,8 @@
-import PA215.Source.UnpairPartial
+module
+
+public import PA215.Source.UnpairPartial
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXPop
 open UnpairPartial

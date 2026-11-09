@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeTerm
+module
+
+public import PA215PA.FoundationPAeqCodeTerm
+
+@[expose] public section
 
 /-! Target arity preservation for arbitrary model-valued source terms.
 The induction is Foundation's definable syntax induction, not Nat induction. -/

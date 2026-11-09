@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedSuccessorCancellationValues
+module
+
+public import PA215PA.PAInterpretedSuccessorCancellationValues
+
+@[expose] public section
 
 /-! Eliminate the actual right successor output witness of interpreted equality. -/
 namespace PA215.PA.ForwardRelational

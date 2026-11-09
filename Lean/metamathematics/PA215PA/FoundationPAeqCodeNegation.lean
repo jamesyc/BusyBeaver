@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeFormulaCalibration
+module
+
+public import PA215PA.FoundationPAeqCodeFormulaCalibration
+
+@[expose] public section
 
 /-! Exact NNF negation compatibility in arbitrary IΣ₁ models. -/
 namespace PA215.PA.FoundationPAeqCode

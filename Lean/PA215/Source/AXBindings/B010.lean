@@ -1,8 +1,12 @@
-import PA213.FastCodes
-import PA215.Source.AXMacroPlan
-import PA215.Source.AXMacroRead
-import PA215.Source.AXHead3Plan
-import PA215.Source.TrieResolver
+module
+
+public import PA213.FastCodes
+public import PA215.Source.AXMacroPlan
+public import PA215.Source.AXMacroRead
+public import PA215.Source.AXHead3Plan
+public import PA215.Source.TrieResolver
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXAll
 private theorem row1621_c0 : resolveAt exactSites 1621 = some (CopyToT.expected 5 1621 0) := by

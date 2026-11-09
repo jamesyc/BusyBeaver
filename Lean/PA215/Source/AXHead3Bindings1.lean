@@ -1,5 +1,9 @@
-import PA215.Source.AXMacroPlan
-import PA215.Source.TrieResolver
+module
+
+public import PA215.Source.AXMacroPlan
+public import PA215.Source.TrieResolver
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXHead3
 private theorem row1847_p0 : resolveAt exactSites 1847 = some (AXPushParam.relocate 1822 (AXPushParam.expected 0)) := by

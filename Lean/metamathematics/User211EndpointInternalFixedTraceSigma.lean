@@ -1,6 +1,10 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211PAInternalTraceCompose
-import Foundation.FirstOrder.Arithmetic.R0.Basic
+public import User211PAInternalTraceCompose
+public import Foundation.FirstOrder.Arithmetic.R0.Basic
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalTrace.FixedTrace
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

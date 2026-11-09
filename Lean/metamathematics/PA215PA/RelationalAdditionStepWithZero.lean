@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionStepExistence
+module
+
+public import PA215PA.RelationalAdditionStepExistence
+
+@[expose] public section
 
 /-! The existential addition-prefix predicate is closed under ordinal successor.
 The original zero witness is retained, not replaced by a canonical object. -/

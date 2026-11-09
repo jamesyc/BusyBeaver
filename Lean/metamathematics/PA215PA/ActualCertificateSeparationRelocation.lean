@@ -1,5 +1,9 @@
-import PA215PA.ActualCertificateSeparationRaw
-import PA215PA.FoundationRelationalSequentConditional
+module
+
+public import PA215PA.ActualCertificateSeparationRaw
+public import PA215PA.FoundationRelationalSequentConditional
+
+@[expose] public section
 
 /-! Finite raw-separation output alpha conversion. Actual property-vacuity
 certificates at both output labels are explicit premises. -/

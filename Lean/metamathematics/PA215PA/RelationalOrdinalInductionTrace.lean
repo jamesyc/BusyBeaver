@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalInductionContradiction
+module
+
+public import PA215PA.RelationalOrdinalInductionContradiction
+
+@[expose] public section
 
 /-! Existential witness elimination for the minimum-bad trace argument. -/
 namespace PA215.PA.RelationalSource.Ordinal

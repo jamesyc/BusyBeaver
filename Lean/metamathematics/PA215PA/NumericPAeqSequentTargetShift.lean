@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentFold
-import PA215PA.NumericPAeqFormulaSupportedTargetShift
+module
+
+public import PA215PA.NumericPAeqSequentFold
+public import PA215PA.NumericPAeqFormulaSupportedTargetShift
+
+@[expose] public section
 
 /-! Target shift commutes with a scan over the SAME HFS index set. This does
 not identify the differently ordered scan over source setShift. -/

@@ -1,6 +1,10 @@
-import PA215PA.RelationalPredicateBinaryReverse
-import PA215PA.NumericPAeqTermBinaryTemplates
-import PA215PA.RelationalClosedCertificateSupply
+module
+
+public import PA215PA.RelationalPredicateBinaryReverse
+public import PA215PA.NumericPAeqTermBinaryTemplates
+public import PA215PA.RelationalClosedCertificateSupply
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateBinary
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

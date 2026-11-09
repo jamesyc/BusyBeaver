@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoZeroWitness
+module
+
+public import PA215PA.RelationalIsoZeroWitness
+
+@[expose] public section
 
 /-! Total typed graphs transport emptiness in both directions. -/
 namespace PA215.PA.RelationalSource.PairGraph

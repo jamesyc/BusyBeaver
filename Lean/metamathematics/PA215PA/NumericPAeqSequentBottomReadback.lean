@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentDerivationInvariant
-import PA215PA.NumericPAeqSourceCertificateMP
+module
+
+public import PA215PA.NumericPAeqSequentDerivationInvariant
+public import PA215PA.NumericPAeqSourceCertificateMP
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula.Sequent
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

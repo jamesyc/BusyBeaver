@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationTrace
-import PA215PA.RelationalAdditionRewriting
+module
+
+public import PA215PA.RelationalMultiplicationTrace
+public import PA215PA.RelationalAdditionRewriting
+
+@[expose] public section
 
 /-! Compositional multiplication rewriting: additive traces remain opaque. -/
 namespace PA215.PA.RelationalSource.PairGraph

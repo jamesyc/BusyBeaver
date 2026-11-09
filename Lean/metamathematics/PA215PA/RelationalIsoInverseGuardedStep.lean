@@ -1,6 +1,10 @@
-import PA215PA.RelationalIsoInverseExistsStep
-import PA215PA.RelationalOrderIsoRules
-import PA215PA.RelationalOrdinalInductionUniform
+module
+
+public import PA215PA.RelationalIsoInverseExistsStep
+public import PA215PA.RelationalOrderIsoRules
+public import PA215PA.RelationalOrdinalInductionUniform
+
+@[expose] public section
 
 /-! The successor step retains the subset bound: only prefix coordinates
 inside the original graph's domain need values. -/

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqExistentialRule
+module
+
+public import PA215PA.NumericPAeqExistentialRule
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqExistentialInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

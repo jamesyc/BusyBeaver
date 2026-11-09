@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosure
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosure
+
+@[expose] public section
 
 /-! Downward closure of the five-clause ordinal domain. These finite ND
 proof transformations preserve every ambient assumption and use no equality

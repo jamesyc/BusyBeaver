@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateConstructorsMPGen
+module
+
+public import PA215PA.ActualCertificateConstructorsMPGen
+
+@[expose] public section
 
 /-! Exact numeric one-round V1 leaf certificates, including all guards. -/
 namespace PA215.PA.ActualCertificateConstructors

@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeAtoms
+module
+
+public import PA215PA.FoundationRelationalCodeAtoms
+
+@[expose] public section
 
 /-! Model-valued binder parameters and conservative source-code reserve.
 This supplies the changing parameter operation for a future UformulaRec1

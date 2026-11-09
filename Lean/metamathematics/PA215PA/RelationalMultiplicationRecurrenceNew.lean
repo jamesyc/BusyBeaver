@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationRecurrenceInputs
+module
+
+public import PA215PA.RelationalMultiplicationRecurrenceInputs
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 set_option maxHeartbeats 600000

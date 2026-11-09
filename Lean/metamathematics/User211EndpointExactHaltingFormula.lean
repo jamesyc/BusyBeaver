@@ -1,6 +1,10 @@
+module
+
 /- Exact211: fresh physical interpretation of the unchanged original coded source. -/
-import User211PAInternalTraceRows
-import User211EndpointSentenceCorrectness
+public import User211PAInternalTraceRows
+public import User211EndpointSentenceCorrectness
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA211.UserCandidate.PA.ExactHaltingFormula

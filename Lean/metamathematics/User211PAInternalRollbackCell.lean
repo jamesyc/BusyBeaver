@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalLeftPhase
-import Mathlib.Tactic.Ring.Basic
+public import User211PAInternalLeftPhase
+public import Mathlib.Tactic.Ring.Basic
+
+@[expose] public section
 
 namespace PA211.UserCandidate.PA.InternalTrace.RollbackCell
 open PA215

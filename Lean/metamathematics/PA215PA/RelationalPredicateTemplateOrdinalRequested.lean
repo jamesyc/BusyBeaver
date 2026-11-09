@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateOrdinalCanonicalCertificate
-import PA215PA.RelationalPredicateTemplateNDRequested
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalCanonicalCertificate
+public import PA215PA.RelationalPredicateTemplateNDRequested
+
+@[expose] public section
 /-! All-model ordinal-induction template supply at the exact requested native
 label environment and reserve. No native free labels are collapsed. -/
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal

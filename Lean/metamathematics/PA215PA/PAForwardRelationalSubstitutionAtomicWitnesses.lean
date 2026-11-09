@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitutionEqualityElim
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionEqualityElim
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

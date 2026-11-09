@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationCoherenceFrame
-import PA215PA.RelationalAdditionCoherenceOutputRight
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceFrame
+public import PA215PA.RelationalAdditionCoherenceOutputRight
+
+@[expose] public section
 
 /-! The first-argument additive recursion equation modulo witnessed isomorphism.
 Two arbitrary actual traces are compared; no choice of arithmetic graph is fixed. -/

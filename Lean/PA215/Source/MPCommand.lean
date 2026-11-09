@@ -1,5 +1,9 @@
-import PA215.Source.MPPrelude
-import PA215.Source.MPSuccessPush
+module
+
+public import PA215.Source.MPPrelude
+public import PA215.Source.MPSuccessPush
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA215.Source.MP

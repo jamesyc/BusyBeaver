@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateOrdinalRewriting
-import PA215PA.RelationalPredicateTemplateLiftLogic
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalRewriting
+public import PA215PA.RelationalPredicateTemplateLiftLogic
+
+@[expose] public section
 
 /-! A single unary-hole successor totality template. Source syntax is closed;
 the target predicate may retain arbitrary parameters when interpreted. -/

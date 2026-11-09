@@ -1,5 +1,9 @@
-import PA215PA.PAPresentationRelationExt
-import PA215PA.Theory
+module
+
+public import PA215PA.PAPresentationRelationExt
+public import PA215PA.Theory
+
+@[expose] public section
 
 /-! Explicit Type-valued tags, including the induction body. The completeness
 lemma is Prop-valued: it does not extract executable data from theory membership. -/

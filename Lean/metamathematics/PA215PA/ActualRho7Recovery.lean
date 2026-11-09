@@ -1,4 +1,8 @@
-import PA215PA.ActualModal
+module
+
+public import PA215PA.ActualModal
+
+@[expose] public section
 
 /-! Derivation of equality reflexivity and plain rho7 from quantified rho7. The Proof constructors used here have leaves R1, R2, R6, actual R7, and dominated R8. -/
 namespace PA215.PA.NativeCalculus.ActualCore

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoPredecessorCutFrame
+module
+
+public import PA215PA.RelationalIsoPredecessorCutFrame
+
+@[expose] public section
 
 /-! The cut graph is a real Separation witness satisfying all seven clauses. -/
 namespace PA215.PA.RelationalSource.PairGraph

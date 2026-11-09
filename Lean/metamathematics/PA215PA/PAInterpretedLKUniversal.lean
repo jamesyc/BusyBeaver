@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedLKVariables
+module
+
+public import PA215PA.PAInterpretedLKVariables
+
+@[expose] public section
 
 /-! Actual universal-rule transport with a fresh domain-guarded eigenvariable.
 The original sequent is traversed constructively, without extracting a witness

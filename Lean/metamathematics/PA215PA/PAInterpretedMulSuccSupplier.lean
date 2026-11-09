@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedMulSucc
-import PA215PA.PAInterpretedAddSuccSupplier
+module
+
+public import PA215PA.PAInterpretedMulSucc
+public import PA215PA.PAInterpretedAddSuccSupplier
+
+@[expose] public section
 
 /-! Fully supplied literal PAeq multiplication recursion, including the paid
 addition commutativity needed to match its exact operand order. -/

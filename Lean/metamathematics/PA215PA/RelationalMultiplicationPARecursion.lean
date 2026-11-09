@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionCommutativityApplications
-import PA215PA.RelationalMultiplicationSuccessorLaw
+module
+
+public import PA215PA.RelationalAdditionCommutativityApplications
+public import PA215PA.RelationalMultiplicationSuccessorLaw
+
+@[expose] public section
 
 /-! Match the literal PAeq multiplication recursion orientation: the added base
 is on the left. The actual graph's opposite addition orientation is reconciled

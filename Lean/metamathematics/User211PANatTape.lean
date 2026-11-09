@@ -1,6 +1,10 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PATape
+public import User211PATape
+
+@[expose] public section
 
 /-! Two natural-number stacks represent a finite binary tape relative to its
 head. This representation connects arithmetic data with the independently

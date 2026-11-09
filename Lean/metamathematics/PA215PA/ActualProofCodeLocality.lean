@@ -1,4 +1,8 @@
-import PA215PA.ActualProofCodeSound
+module
+
+public import PA215PA.ActualProofCodeSound
+
+@[expose] public section
 namespace PA215.PA.NativeCalculus.ActualBasis.Code
 open PA215.Source PA215.Source.Cantor PA215.Source.Enumeration
 

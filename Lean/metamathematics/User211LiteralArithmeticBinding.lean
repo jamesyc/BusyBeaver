@@ -1,6 +1,10 @@
-import User211PAMachine
-import User211PAStepFormula
-import PA211.UserCandidate.Dense
+module
+
+public import User211PAMachine
+public import User211PAStepFormula
+public import PA211.UserCandidate.Dense
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA211.UserCandidate.PA

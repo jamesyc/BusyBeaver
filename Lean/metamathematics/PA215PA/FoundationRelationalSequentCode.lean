@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalCodeRecursion
-import Foundation.FirstOrder.Arithmetic.HFS.PRF
+module
+
+public import PA215PA.FoundationRelationalCodeRecursion
+public import Foundation.FirstOrder.Arithmetic.HFS.PRF
+
+@[expose] public section
 
 /-! A total auxiliary translation of HFS formula sets, not a reinterpretation
 of sets as vectors. Numeric indices are scanned with actual HFS membership. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateBinaryRequested
+module
+
+public import PA215PA.RelationalPredicateBinaryRequested
+
+@[expose] public section
 
 /-! Actual model-valued logical derivation duplicating a domain conjunct
 under an existential. The two predicates retain all free parameters. -/

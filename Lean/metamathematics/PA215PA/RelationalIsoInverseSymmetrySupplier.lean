@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseSymmetry
+module
+
+public import PA215PA.RelationalIsoInverseSymmetry
+
+@[expose] public section
 
 /-! Actual-basis existential symmetry: the universally closed graph-parameter
 Separation axiom is supplied explicitly, with its fresh-label budget. -/

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermTargetSubst
+module
+
+public import PA215PA.NumericPAeqTermTargetSubst
+
+@[expose] public section
 
 /-! Context-zero relational term environments contain only free variables.
 Bound-variable shifting therefore preserves their actual model vector. -/

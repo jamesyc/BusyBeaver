@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityEmpty
+module
+
+public import PA215PA.RelationalIdentityEmpty
+
+@[expose] public section
 
 /-! Literal finite composition prefixes, independently formalized against
 CompositionGraph238 at commit84049b5e753190cf328cbc2d2710791ad32ad59c.

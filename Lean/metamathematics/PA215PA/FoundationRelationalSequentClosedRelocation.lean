@@ -1,6 +1,10 @@
-import PA215PA.FoundationRelationalSequentReserve
-import PA215PA.FoundationRelationalSequentClosedEnvironment
-import PA215PA.FoundationRelationalSequentEnvironmentExistence
+module
+
+public import PA215PA.FoundationRelationalSequentReserve
+public import PA215PA.FoundationRelationalSequentClosedEnvironment
+public import PA215PA.FoundationRelationalSequentEnvironmentExistence
+
+@[expose] public section
 
 /-! Joint parameter relocation for shift-fixed formulas at bound context zero.
 The intermediate model-length zero environment and maximum reserve satisfy

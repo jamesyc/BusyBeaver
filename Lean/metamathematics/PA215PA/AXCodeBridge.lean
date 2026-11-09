@@ -1,5 +1,9 @@
-import PA215.Source.AXCode
-import PA215PA.NativeCalculus
+module
+
+public import PA215.Source.AXCode
+public import PA215PA.NativeCalculus
+
+@[expose] public section
 
 /-! Definitional bridge between core pure PA135 output arithmetic and the
 one existing native proof calculus. No source execution is assumed here. -/

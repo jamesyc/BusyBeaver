@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeEqualitySyntax
-import PA215PA.PAInterpretedFixedClosure
+module
+
+public import PA215PA.FoundationPAeqCodeEqualitySyntax
+public import PA215PA.PAInterpretedFixedClosure
+
+@[expose] public section
 /-! Exact finite equality axiom instances for arbitrary model-valued terms.
 Proof strategy follows Foundation Bootstrapping/DerivabilityCondition/EquationalTheory
 (Apache-2.0), specialized additively to PAeq's distinct signature. -/

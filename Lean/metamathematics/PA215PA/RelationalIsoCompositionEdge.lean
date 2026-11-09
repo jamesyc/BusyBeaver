@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionPrefix
-import PA215PA.RelationalGraphOperations
+module
+
+public import PA215PA.RelationalIsoCompositionPrefix
+public import PA215PA.RelationalGraphOperations
+
+@[expose] public section
 
 /-! Finite introduction/elimination for a relational composite edge. -/
 namespace PA215.PA.RelationalSource.PairGraph

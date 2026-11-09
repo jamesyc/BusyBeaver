@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionEntry
+module
+
+public import PA215PA.RelationalIsoCompositionEntry
+
+@[expose] public section
 
 /-! Three eigenvariables expose the actual composition object coordinates. -/
 namespace PA215.PA.RelationalSource.PairGraph

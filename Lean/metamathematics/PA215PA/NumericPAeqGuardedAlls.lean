@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqGuardedAllsSyntax
+module
+
+public import PA215PA.NumericPAeqGuardedAllsSyntax
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqGuardedAlls
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

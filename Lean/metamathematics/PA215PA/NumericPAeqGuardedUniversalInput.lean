@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqValueDomainGuardPrepend
-import PA215PA.NumericPAeqValueDomainGuardTargetShift
-import PA215PA.NumericPAeqValueGuardedTotalitySyntax
-import PA215PA.NumericPAeqValueCertificateComposition
+module
+
+public import PA215PA.NumericPAeqValueDomainGuardPrepend
+public import PA215PA.NumericPAeqValueDomainGuardTargetShift
+public import PA215PA.NumericPAeqValueGuardedTotalitySyntax
+public import PA215PA.NumericPAeqValueCertificateComposition
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqGuardedUniversal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

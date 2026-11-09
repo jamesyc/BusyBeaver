@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAAxiomCodeFinite
-import PA215PA.FoundationPAAxiomCodeGraph
+module
+
+public import PA215PA.FoundationPAAxiomCodeFinite
+public import PA215PA.FoundationPAAxiomCodeGraph
+
+@[expose] public section
 
 /-! Completeness for arbitrary model-valued inputs to the pinned finite axiom
 branch. No alternate Δ₁ instance is installed for PeanoMinus or Peano. -/

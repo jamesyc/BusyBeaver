@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaParameters
+module
+
+public import PA215PA.NumericPAeqFormulaParameters
+
+@[expose] public section
 
 /-! The exact two existential value environments for arithmetic equality.
 Both source environments shift twice; result indices one and zero are distinct

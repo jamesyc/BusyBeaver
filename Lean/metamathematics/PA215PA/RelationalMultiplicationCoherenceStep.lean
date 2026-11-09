@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationCoherenceStepFrame
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceStepFrame
+
+@[expose] public section
 
 /-! The full universally parameterized successor step, without any parameter
 freshness assumption or a fixed second input. -/

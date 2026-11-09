@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCommutativitySuccessorWitness
+module
+
+public import PA215PA.RelationalAdditionCommutativitySuccessorWitness
+
+@[expose] public section
 
 /-! Obtain a reversed lower-sum witness by the fully supplied addition totality. -/
 namespace PA215.PA.RelationalSource.PairGraph

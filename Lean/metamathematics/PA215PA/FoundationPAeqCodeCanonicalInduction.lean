@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeClosedInductionReadback
+module
+
+public import PA215PA.FoundationPAeqCodeClosedInductionReadback
+
+@[expose] public section
 /-! A genuinely canonical target induction axiom for any shift-fixed coded
 matrix. The closure count is its actual support, never an added vacuous count. -/
 namespace PA215.PA.FoundationPAeqCode

@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionBijectionRules
+module
+
+public import PA215PA.RelationalIsoCompositionBijectionRules
+
+@[expose] public section
 
 /-! Universal typing, uniqueness and order of the actual composition graph. -/
 namespace PA215.PA.RelationalSource.PairGraph

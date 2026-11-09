@@ -1,7 +1,11 @@
+module
+
 /- Minimized211 candidate: fresh arithmetic/native model runtime.
 The unchanged original source interpreter is reused explicitly. -/
-import User211PAInternalTracePrepend
-import User211PAInternalTraceRows
+public import User211PAInternalTracePrepend
+public import User211PAInternalTraceRows
+
+@[expose] public section
 
 /-! Explicit arithmetic coding of arbitrary repeated binary bits. This is not
 Foundation's HFS list encoding; HFS sequences encode the resulting run. -/

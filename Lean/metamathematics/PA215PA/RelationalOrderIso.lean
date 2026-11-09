@@ -1,4 +1,8 @@
-import PA215PA.RelationalTraceGraph
+module
+
+public import PA215PA.RelationalTraceGraph
+
+@[expose] public section
 
 /-! Existential order-isomorphisms of nonextensional ordinal representatives.
 All seven clauses are explicit, including actual Kuratowski witnesses for every

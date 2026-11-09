@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeCalibration
+module
+
+public import PA215PA.FoundationRelationalCodeCalibration
+
+@[expose] public section
 
 /-! Replacing explicit numeric lookups by host environments requires agreement
 on the formula's actual finite support. No representation is postulated. -/

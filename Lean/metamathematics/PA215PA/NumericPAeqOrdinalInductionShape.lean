@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqOrdinalInductionShapeStep
+module
+
+public import PA215PA.NumericPAeqOrdinalInductionShapeStep
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqOrdinalInductionShape
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

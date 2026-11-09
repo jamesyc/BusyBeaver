@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCommutativity
+module
+
+public import PA215PA.RelationalAdditionCommutativity
+
+@[expose] public section
 
 /-! Explicit finite proof inputs for commutativity; closed totality is consumed
 only to obtain real existential witnesses. -/

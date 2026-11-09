@@ -1,5 +1,9 @@
-import PA215PA.ActualRefutationGraph
-import PA215PA.HaltingFormula
+module
+
+public import PA215PA.ActualRefutationGraph
+public import PA215PA.HaltingFormula
+
+@[expose] public section
 namespace PA215.PA.InternalActualRefutation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic

@@ -1,7 +1,11 @@
-import PA215PA.RelationalClosedCertificate
-import PA215PA.PAForwardRelationalArithmeticClosure
-import PA215PA.RelationalMultiplicationUniversalOutput
-import PA215PA.PAForwardRelationalRewriting
+module
+
+public import PA215PA.RelationalClosedCertificate
+public import PA215PA.PAForwardRelationalArithmeticClosure
+public import PA215PA.RelationalMultiplicationUniversalOutput
+public import PA215PA.PAForwardRelationalRewriting
+
+@[expose] public section
 
 namespace PA215.PA.RelationalClosedCertificate
 open FFL FFL.FirstOrder RelationalSource ND

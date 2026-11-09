@@ -1,5 +1,9 @@
-import PA215.Source.FetchUnpairTransport
-import PA215.Source.UnpairAddition
+module
+
+public import PA215.Source.FetchUnpairTransport
+public import PA215.Source.UnpairAddition
+
+@[expose] public section
 
 namespace PA215.Source
 

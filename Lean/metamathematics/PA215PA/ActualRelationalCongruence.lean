@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalInstance
+module
+
+public import PA215PA.ActualRelationalInstance
+
+@[expose] public section
 
 /-! Both membership-argument congruence tests for the explicit neighborhood
 equality replacement. Fresh representative labels are explicit hypotheses.

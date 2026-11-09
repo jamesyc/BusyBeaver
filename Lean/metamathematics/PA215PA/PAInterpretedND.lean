@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedLK
+module
+
+public import PA215PA.PAInterpretedLK
+
+@[expose] public section
 
 /-! Finite-context transport of actual arithmetic ND/LK derivations. Every
 translated source premise is a supplied target proof; no theory membership

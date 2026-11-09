@@ -1,5 +1,9 @@
-import PA215PA.PAForwardRelationalCoherenceWitnesses
-import PA215PA.PAInterpretedEqualityWitnesses
+module
+
+public import PA215PA.PAForwardRelationalCoherenceWitnesses
+public import PA215PA.PAInterpretedEqualityWitnesses
+
+@[expose] public section
 
 /-! Ordinary endpoint transport for the unchanged arithmetic graph predicates. -/
 namespace PA215.PA.ForwardRelational

@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentSeparationCode
+module
+
+public import PA215PA.FoundationRelationalSequentSeparationCode
+
+@[expose] public section
 
 /-! Exact three-binder source separation coverage and requested output
 freshness, derived from the whole-schema guard and finite environments. -/

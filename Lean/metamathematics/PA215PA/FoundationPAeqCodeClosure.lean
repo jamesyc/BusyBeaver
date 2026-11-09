@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeSubstitution
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Formula.Iteration
+module
+
+public import PA215PA.FoundationPAeqCodeSubstitution
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Formula.Iteration
+
+@[expose] public section
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

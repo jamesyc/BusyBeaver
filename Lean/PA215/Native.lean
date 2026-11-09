@@ -1,5 +1,9 @@
-import PA215.Runtime
-import PA215.Reference230
+module
+
+public import PA215.Runtime
+public import PA215.Reference230
+
+@[expose] public section
 
 /-!
 The four register lemmas of the K-family engine (port of K230's `Tape230Blocks.v` and

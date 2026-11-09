@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueRealizationGuardValidity
-import PA215PA.NumericPAeqValueCoherenceShape
-import PA215PA.NumericPAeqTermVectorSubstInstance
+module
+
+public import PA215PA.NumericPAeqValueRealizationGuardValidity
+public import PA215PA.NumericPAeqValueCoherenceShape
+public import PA215PA.NumericPAeqTermVectorSubstInstance
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

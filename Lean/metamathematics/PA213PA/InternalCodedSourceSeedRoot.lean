@@ -1,7 +1,11 @@
-import PA215PA.Theory
-import PA213PA.InternalAXCommandStore
-import PA213PA.InternalCodedSourceCommandBlocks
-import PA213PA.InternalSeedPrefix159
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalAXCommandStore
+public import PA213PA.InternalCodedSourceCommandBlocks
+public import PA213PA.InternalSeedPrefix159
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.CodedSource
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

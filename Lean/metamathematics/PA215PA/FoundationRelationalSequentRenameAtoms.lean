@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentConditional
-import PA215PA.ActualCertificateNeighborhoodCongruence
+module
+
+public import PA215PA.FoundationRelationalSequentConditional
+public import PA215PA.ActualCertificateNeighborhoodCongruence
+
+@[expose] public section
 
 /-! Finite conditional native atom-renaming certificates, over arbitrary PA
 models, using the exact neighborhood replacement and guarded membership rules. -/

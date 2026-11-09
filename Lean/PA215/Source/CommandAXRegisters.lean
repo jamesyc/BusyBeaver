@@ -1,5 +1,9 @@
-import PA215.Source.CommandSMP
-import PA215.Source.AXMacro
+module
+
+public import PA215.Source.CommandSMP
+public import PA215.Source.AXMacro
+
+@[expose] public section
 namespace PA215.Source
 
 theorem command_ax_registers (n l a t d h bottom : Nat) (stack : List Nat) :

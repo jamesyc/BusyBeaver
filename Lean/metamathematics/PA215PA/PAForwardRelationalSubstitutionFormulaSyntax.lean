@@ -1,5 +1,9 @@
-import PA215PA.PAForwardRelationalSubstitutionLift
-import PA215PA.RelationalFormulaCongruence
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionLift
+public import PA215PA.RelationalFormulaCongruence
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

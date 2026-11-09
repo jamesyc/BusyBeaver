@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaClosedSupport
-import PA215PA.NumericPAeqFormulaSupportedSubstitution
+module
+
+public import PA215PA.NumericPAeqFormulaClosedSupport
+public import PA215PA.NumericPAeqFormulaSupportedSubstitution
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqCanonicalMatrix
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

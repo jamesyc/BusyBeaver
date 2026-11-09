@@ -1,4 +1,8 @@
-import Foundation.FirstOrder.Arithmetic.Schemata
+module
+
+public import Foundation.FirstOrder.Arithmetic.Schemata
+
+@[expose] public section
 
 /-! The fixed first-order Peano arithmetic presentation. This small interface
 does not import arithmetization or incompleteness, so elementary internal PA

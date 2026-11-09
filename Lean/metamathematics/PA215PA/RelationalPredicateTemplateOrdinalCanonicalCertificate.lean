@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateOrdinalCode
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalCode
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

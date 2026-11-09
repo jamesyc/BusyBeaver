@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaRealizationAtomInput
-import PA215PA.NumericPAeqFormulaEqualityTransportCertificate
-import PA215PA.NumericPAeqFormulaLogicalCertificate
+module
+
+public import PA215PA.NumericPAeqFormulaRealizationAtomInput
+public import PA215PA.NumericPAeqFormulaEqualityTransportCertificate
+public import PA215PA.NumericPAeqFormulaLogicalCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

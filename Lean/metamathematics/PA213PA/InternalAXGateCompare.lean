@@ -1,6 +1,10 @@
-import PA215PA.Theory
-import PA213PA.InternalCodedSourceMPGuard
-import PA213PA.InternalCodedSourceCompareBindings
+module
+
+public import PA215PA.Theory
+public import PA213PA.InternalCodedSourceMPGuard
+public import PA213PA.InternalCodedSourceCompareBindings
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.AXGateModel
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

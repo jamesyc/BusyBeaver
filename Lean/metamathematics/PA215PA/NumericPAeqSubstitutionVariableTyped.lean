@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqValueCoherenceSuccessorSyntax
-import PA215PA.NumericPAeqVariableCoherenceCalibration
-import PA215PA.NumericPAeqSubstitutionVariableSupply
+module
+
+public import PA215PA.NumericPAeqValueCoherenceSuccessorSyntax
+public import PA215PA.NumericPAeqVariableCoherenceCalibration
+public import PA215PA.NumericPAeqSubstitutionVariableSupply
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

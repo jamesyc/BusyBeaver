@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationFrame
-import PA215PA.RelationalAdditionApplications
+module
+
+public import PA215PA.RelationalMultiplicationFrame
+public import PA215PA.RelationalAdditionApplications
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 attribute [local irreducible] addResult addPrefix mulPrefix

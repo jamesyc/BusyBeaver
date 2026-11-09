@@ -1,4 +1,8 @@
-import PA215PA.RelationalKuratowskiComponents
+module
+
+public import PA215PA.RelationalKuratowskiComponents
+
+@[expose] public section
 
 /-! Explicit two-witness elimination for raw Kuratowski syntax. The continuation
 receives actual finite components and only ordinary context weakening. -/

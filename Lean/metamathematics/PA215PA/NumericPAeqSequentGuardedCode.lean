@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqSequentGuardedPropositional
-import PA215PA.NumericPAeqInductionInterpretationSyntax
-import PA215PA.FoundationRelationalSequentConnectiveNormalization
+module
+
+public import PA215PA.NumericPAeqSequentGuardedPropositional
+public import PA215PA.NumericPAeqInductionInterpretationSyntax
+public import PA215PA.FoundationRelationalSequentConnectiveNormalization
+
+@[expose] public section
 
 /-! The exact outer-domain source formula used for requested-parameter proof
 translation. Its native implication view is connected by accepted certificates. -/

@@ -1,4 +1,8 @@
-import PA213.SourceProgram
+module
+
+public import PA213.SourceProgram
+
+@[expose] public section
 namespace PA213.SourceCheck
 open PA215.Source PA215.Source.PathTrie PA213.FastResolve PA213.SourceProgram
 

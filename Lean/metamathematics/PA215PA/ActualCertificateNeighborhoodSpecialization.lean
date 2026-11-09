@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateNeighborhoodWitness
+module
+
+public import PA215PA.ActualCertificateNeighborhoodWitness
+
+@[expose] public section
 
 /-! Generic finite universal specialization/alpha recipes. Actual conditional
 replacement and actual vacuity certificates remain explicit inputs. -/

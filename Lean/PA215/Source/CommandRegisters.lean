@@ -1,7 +1,11 @@
-import PA215.Source.CommandStore
-import PA215.Source.MPCyclic
-import PA215.Source.S36Cyclic
-import PA215.Source.FetchDispatch
+module
+
+public import PA215.Source.CommandStore
+public import PA215.Source.MPCyclic
+public import PA215.Source.S36Cyclic
+public import PA215.Source.FetchDispatch
+
+@[expose] public section
 namespace PA215.Source
 
 theorem command_mp_registers (n l a t w d h : Nat) :

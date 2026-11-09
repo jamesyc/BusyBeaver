@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionOutputPayload
+module
+
+public import PA215PA.RelationalAdditionOutputPayload
+
+@[expose] public section
 
 /-! The exact addition-prefix existential entails an ordinal addition result. -/
 namespace PA215.PA.RelationalSource.PairGraph

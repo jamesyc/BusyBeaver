@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityEmpty
+module
+
+public import PA215PA.RelationalIdentityEmpty
+
+@[expose] public section
 
 /-! Finite inverse prefixes with actual graph-object witnesses. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedLKConnectives
+module
+
+public import PA215PA.PAInterpretedLKConnectives
+
+@[expose] public section
 
 /-! Eigenvariable environment helpers. Freeing a source binder uses actual
 variable-value proofs; no arbitrary function substitution is treated as syntax. -/

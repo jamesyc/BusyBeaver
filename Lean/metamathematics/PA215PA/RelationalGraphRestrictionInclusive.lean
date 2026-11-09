@@ -1,4 +1,8 @@
-import PA215PA.RelationalGraphRestrictionEdges
+module
+
+public import PA215PA.RelationalGraphRestrictionEdges
+
+@[expose] public section
 
 /-! Finite restrictions of actual graph objects. Separation retains all free
 parameters; a retained object includes its own decoding witnesses. -/

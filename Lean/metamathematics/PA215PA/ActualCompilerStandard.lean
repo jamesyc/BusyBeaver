@@ -1,5 +1,9 @@
-import PA215PA.ActualCompilerBlueprint
-import PA215PA.ActualAtomCompilerCorrect
+module
+
+public import PA215PA.ActualCompilerBlueprint
+public import PA215PA.ActualAtomCompilerCorrect
+
+@[expose] public section
 namespace PA215.PA.ActualCompilerStandard
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic

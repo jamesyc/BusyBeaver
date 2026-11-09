@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqTermSourceFreeParameters
-import PA215PA.NumericPAeqTermSourceFreeCalibration
-import PA215PA.NumericPAeqTermSupportedValidity
+module
+
+public import PA215PA.NumericPAeqTermSourceFreeParameters
+public import PA215PA.NumericPAeqTermSourceFreeCalibration
+public import PA215PA.NumericPAeqTermSupportedValidity
+
+@[expose] public section
 
 /-! Exact last-bound opening interpretation in all PA models. Original source coverage only; opened code coverage is not assumed. -/
 namespace PA215.PA.NumericPAeqTerm

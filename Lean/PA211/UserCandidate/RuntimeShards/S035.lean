@@ -1,4 +1,8 @@
-import PA211.UserCandidate.RuntimeContracts
+module
+
+public import PA211.UserCandidate.RuntimeContracts
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA211.UserCandidate.RuntimeShards.S035

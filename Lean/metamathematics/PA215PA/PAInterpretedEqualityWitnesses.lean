@@ -1,6 +1,10 @@
-import PA215PA.PAForwardRelationalNaturality
-import PA215PA.PAForwardRelationalConstructors
-import PA215PA.RelationalOrderIsoReflexivity
+module
+
+public import PA215PA.PAForwardRelationalNaturality
+public import PA215PA.PAForwardRelationalConstructors
+public import PA215PA.RelationalOrderIsoReflexivity
+
+@[expose] public section
 
 /-! Actual witness introduction for the typed interpretation of arithmetic
 equality. This is not raw equality of interpreted representatives. -/

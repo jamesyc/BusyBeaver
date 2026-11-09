@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaSupportedOpening
-import PA215PA.FoundationPAeqCodeSubstitutionAgreement
+module
+
+public import PA215PA.NumericPAeqFormulaSupportedOpening
+public import PA215PA.FoundationPAeqCodeSubstitutionAgreement
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

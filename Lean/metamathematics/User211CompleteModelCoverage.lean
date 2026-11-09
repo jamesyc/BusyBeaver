@@ -1,5 +1,9 @@
-import User211ModelCoverage
-import User211ModelCoverageAssembler
+module
+
+public import User211ModelCoverage
+public import User211ModelCoverageAssembler
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.CompleteModelCoverage
 open PA215.Source PA211.UserCandidate.PA.ModelCoverage
 /-- Exact original source instructions at the reconstructed candidate paths,

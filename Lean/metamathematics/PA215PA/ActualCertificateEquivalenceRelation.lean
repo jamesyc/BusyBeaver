@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateEquivalenceLogic
+module
+
+public import PA215PA.ActualCertificateEquivalenceLogic
+
+@[expose] public section
 
 /-! Exact first-order paired-certificate relation and finite congruence recipes.
 The existential relation is not a claimed graph of a unique proof recipe. -/

@@ -1,6 +1,10 @@
-import PA213PA.InternalDecrementZeroCell
-import PA213PA.InternalCarryFile
-import PA213PA.InternalRollbackFile
+module
+
+public import PA213PA.InternalDecrementZeroCell
+public import PA213PA.InternalCarryFile
+public import PA213PA.InternalRollbackFile
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.DecrementZero
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

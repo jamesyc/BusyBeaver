@@ -1,5 +1,9 @@
-import PA215PA.RelationalOrdinalInductionSchema
-import PA215PA.RelationalOrdinalTraceMinimum
+module
+
+public import PA215PA.RelationalOrdinalInductionSchema
+public import PA215PA.RelationalOrdinalTraceMinimum
+
+@[expose] public section
 
 /-! The finite minimum-counterexample contradiction. -/
 namespace PA215.PA.RelationalSource.Ordinal

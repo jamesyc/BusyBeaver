@@ -1,4 +1,8 @@
-import Foundation.FirstOrder.Arithmetic.Basic.Misc
+module
+
+public import Foundation.FirstOrder.Arithmetic.Basic.Misc
+
+@[expose] public section
 
 /-! Explicit one-way presentation adapter. The target has only 0, successor,
 addition, multiplication and equality. This file proves syntax facts, not

@@ -1,8 +1,12 @@
-import PA215PA.RelationalPredicateTemplateOrdinalDerivation
-import PA215PA.RelationalPredicateTemplateOrdinalCalibration
-import PA215PA.RelationalPredicateTemplateNDDischarge
-import PA215PA.RelationalPredicateTemplateClosedSupply
-import PA215PA.FoundationRelationalSequentSeparationSupplier
+module
+
+public import PA215PA.RelationalPredicateTemplateOrdinalDerivation
+public import PA215PA.RelationalPredicateTemplateOrdinalCalibration
+public import PA215PA.RelationalPredicateTemplateNDDischarge
+public import PA215PA.RelationalPredicateTemplateClosedSupply
+public import PA215PA.FoundationRelationalSequentSeparationSupplier
+
+@[expose] public section
 /-! All seven finite assumptions of the actual ordinal-induction template
 are supplied by native certificates. The unary predicate is model-valued. -/
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal

@@ -1,7 +1,11 @@
-import PA215PA.PAForwardRelationalSubstitutionRenaming
-import PA215PA.PAInterpretedEqualityTransitivity
-import PA215PA.PAInterpretedEqualitySymmetryRight
-import PA215PA.RelationalAdditionRightSuccessor
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionRenaming
+public import PA215PA.PAInterpretedEqualityTransitivity
+public import PA215PA.PAInterpretedEqualitySymmetryRight
+public import PA215PA.RelationalAdditionRightSuccessor
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

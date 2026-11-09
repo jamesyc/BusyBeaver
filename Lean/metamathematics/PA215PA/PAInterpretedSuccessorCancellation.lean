@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedSuccessorCancellationPayload
+module
+
+public import PA215PA.PAInterpretedSuccessorCancellationPayload
+
+@[expose] public section
 
 /-! Successor injectivity for arbitrary typed source term values. -/
 namespace PA215.PA.ForwardRelational

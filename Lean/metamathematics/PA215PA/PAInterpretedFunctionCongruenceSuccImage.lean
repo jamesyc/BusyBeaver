@@ -1,7 +1,11 @@
-import PA215PA.PAInterpretedFunctionCongruenceSuccessor
-import PA215PA.PAInterpretedVariableEquality
-import PA215PA.PAInterpretedUniversal
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAInterpretedFunctionCongruenceSuccessor
+public import PA215PA.PAInterpretedVariableEquality
+public import PA215PA.PAInterpretedUniversal
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 /-! The literal frozen successor-congruence axiom, with both domain guards
 and both actual interpreted successor values retained. -/

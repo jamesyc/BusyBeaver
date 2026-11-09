@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateEquivalenceLogic
+module
+
+public import PA215PA.ActualCertificateEquivalenceLogic
+
+@[expose] public section
 
 /-! Actual V1 numeric membership-vacuity certificates over arbitrary PA models.
 The only atomic guards are the literal bundle's two label inequalities. -/

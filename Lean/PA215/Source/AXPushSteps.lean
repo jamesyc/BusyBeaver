@@ -1,4 +1,8 @@
-import PA215.Source.AXPushBinding
+module
+
+public import PA215.Source.AXPushBinding
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.AXPush
 

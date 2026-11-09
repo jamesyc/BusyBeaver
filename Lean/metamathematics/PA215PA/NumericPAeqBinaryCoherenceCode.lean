@@ -1,8 +1,12 @@
-import PA215PA.NumericPAeqBinaryCoherenceProof
-import PA215PA.FoundationRelationalSequentSeparationCode
-import PA215PA.NumericPAeqValueCoherencePairwiseCode
-import PA215PA.RelationalPredicateBinaryTemplates
-import PA215PA.NumericPAeqTermBinaryConstructors
+module
+
+public import PA215PA.NumericPAeqBinaryCoherenceProof
+public import PA215PA.FoundationRelationalSequentSeparationCode
+public import PA215PA.NumericPAeqValueCoherencePairwiseCode
+public import PA215PA.RelationalPredicateBinaryTemplates
+public import PA215PA.NumericPAeqTermBinaryConstructors
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

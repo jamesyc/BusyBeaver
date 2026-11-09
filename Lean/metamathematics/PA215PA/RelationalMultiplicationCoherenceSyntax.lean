@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationTrace
-import PA215PA.RelationalOrderIso
+module
+
+public import PA215PA.RelationalMultiplicationTrace
+public import PA215PA.RelationalOrderIso
+
+@[expose] public section
 
 /-! The two-input coherence predicate for actual multiplication traces. All five
 parameters are universally bound, while the induction input remains explicit.

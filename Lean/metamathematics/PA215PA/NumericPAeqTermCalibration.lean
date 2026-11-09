@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermAgreement
+module
+
+public import PA215PA.NumericPAeqTermAgreement
+
+@[expose] public section
 
 /-! Standard-syntax calibration of the independently total all-model numeric
 term interpreter. Only explicitly agreeing finite environment entries are used. -/

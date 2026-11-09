@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedArithmeticVariableValues
+module
+
+public import PA215PA.PAInterpretedArithmeticVariableValues
+
+@[expose] public section
 
 /-! Exact graph payloads extracted from both literal sides of the PAeq
 addition-successor equation, retaining the actual intermediate ordinals. -/

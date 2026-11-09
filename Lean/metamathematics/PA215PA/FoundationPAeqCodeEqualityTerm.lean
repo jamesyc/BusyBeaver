@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeEqualityLeaves
-import Foundation.Meta.ClProver
+module
+
+public import PA215PA.FoundationPAeqCodeEqualityLeaves
+public import Foundation.Meta.ClProver
+
+@[expose] public section
 /-! Adapted from Foundation Bootstrapping/DerivabilityCondition/EquationalTheory
 (Apache-2.0). This is a new proof for PAeq's distinct zero/succ/add/mul signature,
 not an application of the ordered-semiring replacement theorem. -/

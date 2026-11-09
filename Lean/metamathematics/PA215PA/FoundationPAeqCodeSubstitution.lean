@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeSubstitutionGraph
+module
+
+public import PA215PA.FoundationPAeqCodeSubstitutionGraph
+
+@[expose] public section
 
 /-! Literal source/target formula substitution compatibility, including lifted
 vectors beneath quantifiers. The displayed arbitrary-parameter course-of-values

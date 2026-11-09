@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentShiftSet
+module
+
+public import PA215PA.FoundationRelationalSequentShiftSet
+
+@[expose] public section
 
 /-! Guarded finite term-label substitution environments for the existing
 function-free relational source language. This is not native substitution. -/

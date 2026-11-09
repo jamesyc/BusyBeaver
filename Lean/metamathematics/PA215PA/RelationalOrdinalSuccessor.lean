@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosure
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosure
+
+@[expose] public section
 
 /-! Finite actual-basis supplier for ordinal successor existence. All source
 premises are ordinary equality base, adjunction and fixed intersection. -/

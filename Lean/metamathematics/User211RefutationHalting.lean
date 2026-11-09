@@ -1,6 +1,10 @@
-import User211EndpointInternalStartupHaltingBridge
-import User211InternalActualRefutationSentences
-import PA213PA.InternalActualRefutationHalting
+module
+
+public import User211EndpointInternalStartupHaltingBridge
+public import User211InternalActualRefutationSentences
+public import PA213PA.InternalActualRefutationHalting
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalActualRefutation
 open PA215 PA215.PA
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

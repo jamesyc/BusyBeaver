@@ -1,4 +1,8 @@
-import PA215PA.RelationalPredicateTemplateTerms
+module
+
+public import PA215PA.RelationalPredicateTemplateTerms
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic FFL.FirstOrder.Bounding

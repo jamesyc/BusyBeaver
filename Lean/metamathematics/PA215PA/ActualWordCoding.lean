@@ -1,6 +1,10 @@
-import PA215PA.InternalCarryNatBridge
-import PA215PA.InternalTraceAppend
-import PA215PA.ActualTableCoding
+module
+
+public import PA215PA.InternalCarryNatBridge
+public import PA215PA.InternalTraceAppend
+public import PA215PA.ActualTableCoding
+
+@[expose] public section
 namespace PA215.PA.ActualWordCoding
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open scoped FFL.FirstOrder.Arithmetic

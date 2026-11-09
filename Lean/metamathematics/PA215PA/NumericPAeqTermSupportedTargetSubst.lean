@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermTargetSubstConstructors
-import PA215PA.NumericPAeqTermSupportedValidity
+module
+
+public import PA215PA.NumericPAeqTermTargetSubstConstructors
+public import PA215PA.NumericPAeqTermSupportedValidity
+
+@[expose] public section
 
 /-! Exact target bound-variable substitution naturality in every model of PA.
 All source ranks, arities and environment vectors may be nonstandard. -/

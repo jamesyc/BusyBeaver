@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentShift
-import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Basic
+module
+
+public import PA215PA.FoundationRelationalSequentShift
+public import Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Proof.Basic
+
+@[expose] public section
 
 /-! The actual HFS setShift image is certificate-equivalent under the matching
 free-environment change. Numeric scan order may change, so equality is not claimed. -/

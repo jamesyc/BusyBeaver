@@ -1,4 +1,8 @@
-import PA215PA.ActualProofCompiler
+module
+
+public import PA215PA.ActualProofCompiler
+
+@[expose] public section
 
 /-! Version 1 of the actual-basis numeric certificate format. This is not
 Foundation's PA proof predicate or its HFS sequence coding. -/

@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermParameters
+module
+
+public import PA215PA.NumericPAeqTermParameters
+
+@[expose] public section
 
 /-! Ternary fixed templates for the exact frozen addition/multiplication result
 predicates. No new arithmetic relation or value selection is introduced. -/

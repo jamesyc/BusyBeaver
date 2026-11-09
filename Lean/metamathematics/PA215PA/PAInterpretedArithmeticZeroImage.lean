@@ -1,7 +1,11 @@
-import PA215PA.PAInterpretedArithmeticZeroEquality
-import PA215PA.PAInterpretedFunctionCongruenceGuards
-import PA215PA.PAInterpretedUniversal
-import PA215PA.PAPresentationAxioms
+module
+
+public import PA215PA.PAInterpretedArithmeticZeroEquality
+public import PA215PA.PAInterpretedFunctionCongruenceGuards
+public import PA215PA.PAInterpretedUniversal
+public import PA215PA.PAPresentationAxioms
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

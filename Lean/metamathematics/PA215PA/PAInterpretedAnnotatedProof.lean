@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedAxiomWitness
-import PA215PA.PAPresentationND
+module
+
+public import PA215PA.PAInterpretedAxiomWitness
+public import PA215PA.PAPresentationND
+
+@[expose] public section
 
 /-! Explicit finite ordinary-PAeq proof annotations. Executable consumers take
 these typed witness lists; existence from Prop-only theory membership remains

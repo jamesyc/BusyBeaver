@@ -1,7 +1,11 @@
-import PA215.Source.AXMacro
-import PA215.Source.AXPushParam
-import PA215.Source.AXCons
-import PA215.Source.CopyToT
+module
+
+public import PA215.Source.AXMacro
+public import PA215.Source.AXPushParam
+public import PA215.Source.AXCons
+public import PA215.Source.CopyToT
+
+@[expose] public section
 namespace PA215.Source.AXMacro
 
 /-- A macro's full physical source meaning; no correctness is assumed by the type. -/

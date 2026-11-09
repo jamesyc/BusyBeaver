@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentAllRule
+module
+
+public import PA215PA.FoundationRelationalSequentAllRule
+
+@[expose] public section
 
 /-! Actual existential introduction from a guarded finite source-term label.
 The witness label comes from real in-range lookup, never a default assumption. -/

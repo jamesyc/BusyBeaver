@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqBinaryCoherenceSyntax
-import PA215PA.NumericPAeqValueCoherencePairwiseCode
-import PA215PA.RelationalClosedCertificateCoherenceSupply
-import PA215PA.RelationalPredicateBinaryTemplates
+module
+
+public import PA215PA.NumericPAeqBinaryCoherenceSyntax
+public import PA215PA.NumericPAeqValueCoherencePairwiseCode
+public import PA215PA.RelationalClosedCertificateCoherenceSupply
+public import PA215PA.RelationalPredicateBinaryTemplates
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

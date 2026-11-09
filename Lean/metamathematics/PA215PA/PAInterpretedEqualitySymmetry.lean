@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedEqualitySymmetryRight
+module
+
+public import PA215PA.PAInterpretedEqualitySymmetryRight
+
+@[expose] public section
 
 /-! Symmetry of interpreted equality for arbitrary source terms and finite
 binder arities, retaining both real value witnesses. -/

@@ -1,4 +1,8 @@
-import PA215PA.NativeVacuity
+module
+
+public import PA215PA.NativeVacuity
+
+@[expose] public section
 
 /-! Finite native proofs for the literal AX variants establish the forward invariant. The bundle retains the numeric syntax tree, including its double negations. -/
 namespace PA215.PA.NativeCalculus.ActualAX

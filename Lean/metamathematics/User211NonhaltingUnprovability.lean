@@ -1,8 +1,12 @@
-import User211RefutationHalting
-import PA215PA.InternalActualRefutationConsistency
-import PA215PA.Foundation
-import User211EndpointExactHaltingFormula
-import PA211.UserCandidate.StateBound
+module
+
+public import User211RefutationHalting
+public import PA215PA.InternalActualRefutationConsistency
+public import PA215PA.Foundation
+public import User211EndpointExactHaltingFormula
+public import PA211.UserCandidate.StateBound
+
+@[expose] public section
 namespace PA211.UserCandidate.PA.InternalUnprovability
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic

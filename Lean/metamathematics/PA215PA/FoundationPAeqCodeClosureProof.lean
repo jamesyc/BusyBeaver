@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeClosureOpening
+module
+
+public import PA215PA.FoundationPAeqCodeClosureOpening
+
+@[expose] public section
 /-! Model-count opening/closing of actual numerical proofs. Full PA induction
 is applied to the explicit arithmetic invariant below, not a host callback. -/
 namespace PA215.PA.FoundationPAeqCode

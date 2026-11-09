@@ -1,5 +1,9 @@
-import PA215PA.PAPresentationSyntax
-import PA215PA.PAForwardRelationalRewriting
+module
+
+public import PA215PA.PAPresentationSyntax
+public import PA215PA.PAForwardRelationalRewriting
+
+@[expose] public section
 
 /-! Typed relational syntax with separate bound and free environments. This is
 not a numerical compiler or an arithmetic interpretation theorem. Internal

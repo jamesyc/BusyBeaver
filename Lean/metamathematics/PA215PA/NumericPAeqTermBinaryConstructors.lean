@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqTermBinaryTemplates
+module
+
+public import PA215PA.NumericPAeqTermBinaryTemplates
+
+@[expose] public section
 
 /-! Two actual existential value witnesses for the exact addition and
 multiplication clauses. Inputs are child formula codes under two binders. -/

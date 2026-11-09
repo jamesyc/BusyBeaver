@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoCompositionEdge
+module
+
+public import PA215PA.RelationalIsoCompositionEdge
+
+@[expose] public section
 
 /-! Two actual intermediate witnesses with capture-aware context inclusion. -/
 namespace PA215.PA.RelationalSource.PairGraph

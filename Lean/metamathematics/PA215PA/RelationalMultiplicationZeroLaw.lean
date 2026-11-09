@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationZeroLawPayload
+module
+
+public import PA215PA.RelationalMultiplicationZeroLawPayload
+
+@[expose] public section
 
 /-! Every actual multiplication result at an empty input is an empty object.
 No uniqueness of empty representatives or arithmetic graph choice is assumed. -/

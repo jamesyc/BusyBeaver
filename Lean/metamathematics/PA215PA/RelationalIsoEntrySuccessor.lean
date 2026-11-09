@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoEntryElimination
+module
+
+public import PA215PA.RelationalIsoEntryElimination
+
+@[expose] public section
 
 /-! Successor inclusion transports the actual coordinates of every old graph
 object; the newly adjoined object has displayed diagonal coordinates. -/

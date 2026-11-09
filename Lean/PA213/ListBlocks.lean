@@ -1,4 +1,8 @@
-import PA213.SourceProgramData
+module
+
+public import PA213.SourceProgramData
+
+@[expose] public section
 namespace PA213.ListBlocks
 def blocks {α : Type} (l : List α) : Nat → List α
   | 0 => []

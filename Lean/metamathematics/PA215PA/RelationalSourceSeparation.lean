@@ -1,5 +1,9 @@
-import PA215PA.ActualSeparationRelocation
-import PA215PA.RelationalSourceEquality
+module
+
+public import PA215PA.ActualSeparationRelocation
+public import PA215PA.RelationalSourceEquality
+
+@[expose] public section
 
 /-! Actual finite supplier for the ordinary nonextensional Separation source
 schema, arbitrary member property and all free parameters retained. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRestrictionRecurrence
+module
+
+public import PA215PA.RelationalAdditionRestrictionRecurrence
+
+@[expose] public section
 
 /-! Restriction of a full addition prefix, preserving its original literal zero.
 The graph restriction premise is discharged by actual Separation in the witness

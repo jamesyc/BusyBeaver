@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqSupportedVectorBinderInput
-import PA215PA.NumericPAeqSupportedVectorBinderEnvironment
-import PA215PA.NumericPAeqValueSelfVariableCertificate
-import PA215PA.NumericPAeqValueCertificateComposition
+module
+
+public import PA215PA.NumericPAeqSupportedVectorBinderInput
+public import PA215PA.NumericPAeqSupportedVectorBinderEnvironment
+public import PA215PA.NumericPAeqValueSelfVariableCertificate
+public import PA215PA.NumericPAeqValueCertificateComposition
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqSupportedVectorRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

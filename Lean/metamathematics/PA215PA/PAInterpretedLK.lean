@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedLKUniversal
+module
+
+public import PA215PA.PAInterpretedLKUniversal
+
+@[expose] public section
 
 /-! Structural recursion on actual Foundation source LK derivations.
 The target proofs are actual relational LK values; arithmetic premises and

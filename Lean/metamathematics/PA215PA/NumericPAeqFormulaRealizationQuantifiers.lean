@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaRealizationBinderChild
-import PA215PA.FoundationRelationalSequentRequestedUniversal
-import PA215PA.NumericPAeqFormulaQuantifierTemplatesCertificate
+module
+
+public import PA215PA.NumericPAeqFormulaRealizationBinderChild
+public import PA215PA.FoundationRelationalSequentRequestedUniversal
+public import PA215PA.NumericPAeqFormulaQuantifierTemplatesCertificate
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaRealization
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

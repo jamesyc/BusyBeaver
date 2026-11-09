@@ -1,4 +1,8 @@
-import PA213PA.StepFormula
+module
+
+public import PA213PA.StepFormula
+
+@[expose] public section
 
 /-! Uniform object-PA derivations for every exact machine row. These quantify
 arbitrary stack tails, not just standard natural-number witnesses. They do not

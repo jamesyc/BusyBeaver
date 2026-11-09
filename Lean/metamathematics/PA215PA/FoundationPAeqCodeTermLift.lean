@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeTermBShift
-import PA215PA.FoundationPAeqCodeTermSubstitution
+module
+
+public import PA215PA.FoundationPAeqCodeTermBShift
+public import PA215PA.FoundationPAeqCodeTermSubstitution
+
+@[expose] public section
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

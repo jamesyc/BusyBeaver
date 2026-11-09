@@ -1,5 +1,9 @@
-import PA215PA.PAInterpretedClosedSourceSyntax
-import PA215PA.PAInterpretedInductionParameters
+module
+
+public import PA215PA.PAInterpretedClosedSourceSyntax
+public import PA215PA.PAInterpretedInductionParameters
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

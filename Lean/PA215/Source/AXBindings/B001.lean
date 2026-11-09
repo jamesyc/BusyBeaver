@@ -1,7 +1,11 @@
-import PA215.Source.AXMacroPlan
-import PA215.Source.AXMacroRead
-import PA215.Source.AXHead3Plan
-import PA215.Source.TrieResolver
+module
+
+public import PA215.Source.AXMacroPlan
+public import PA215.Source.AXMacroRead
+public import PA215.Source.AXHead3Plan
+public import PA215.Source.TrieResolver
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXAll
 private theorem row172_u0 : resolveAt exactSites 172 = some (UnpairPartial.expected 172 0) := by

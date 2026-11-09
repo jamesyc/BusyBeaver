@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentEnvironmentExistence
+module
+
+public import PA215PA.FoundationRelationalSequentEnvironmentExistence
+
+@[expose] public section
 
 /-! Model-length right padding of finite label environments. Existing entries
 retain their indices; this is not repeated head insertion. -/

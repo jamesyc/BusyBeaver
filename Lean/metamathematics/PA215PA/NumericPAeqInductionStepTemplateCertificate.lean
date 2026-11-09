@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqInductionStepTemplateProof
-import PA215PA.NumericPAeqInductionStepTemplateCode
-import PA215PA.RelationalPredicateBinaryEmptyRequested
+module
+
+public import PA215PA.NumericPAeqInductionStepTemplateProof
+public import PA215PA.NumericPAeqInductionStepTemplateCode
+public import PA215PA.RelationalPredicateBinaryEmptyRequested
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionStepTemplate
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

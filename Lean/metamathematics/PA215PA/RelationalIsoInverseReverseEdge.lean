@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseBijectionRules
+module
+
+public import PA215PA.RelationalIsoInverseBijectionRules
+
+@[expose] public section
 
 /-! Existential coverage and forward functionality recover every reversed edge. -/
 namespace PA215.PA.RelationalSource.PairGraph

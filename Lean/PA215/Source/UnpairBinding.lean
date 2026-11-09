@@ -1,4 +1,8 @@
-import PA215.Source.TrieResolver
+module
+
+public import PA215.Source.TrieResolver
+
+@[expose] public section
 set_option maxHeartbeats 16000000
 set_option maxRecDepth 50000
 

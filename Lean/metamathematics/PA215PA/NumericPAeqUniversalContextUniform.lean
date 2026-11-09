@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqUniversalContextMatrix
-import PA215PA.NumericPAeqUniversalContextInput
-import PA215PA.FoundationRelationalSequentRequestedUniversal
+module
+
+public import PA215PA.NumericPAeqUniversalContextMatrix
+public import PA215PA.NumericPAeqUniversalContextInput
+public import PA215PA.FoundationRelationalSequentRequestedUniversal
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqUniversalContext
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

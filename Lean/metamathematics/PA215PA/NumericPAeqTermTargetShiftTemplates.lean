@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermBinaryTemplates
-import PA215PA.PAForwardRelationalRewriting
+module
+
+public import PA215PA.NumericPAeqTermBinaryTemplates
+public import PA215PA.PAForwardRelationalRewriting
+
+@[expose] public section
 
 /-! Target free-variable shift through capture-aware coded fixed templates.
 The source arithmetic term is not substituted or shifted. -/

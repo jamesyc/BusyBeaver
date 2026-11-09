@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrderIso
+module
+
+public import PA215PA.RelationalOrderIso
+
+@[expose] public section
 
 /-! Literal finite instantiation rules for the shared order-bijection clauses. -/
 namespace PA215.PA.RelationalSource.PairGraph

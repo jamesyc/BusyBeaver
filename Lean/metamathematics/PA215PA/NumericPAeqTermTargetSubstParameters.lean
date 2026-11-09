@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqTermChildren
-import PA215PA.RelationalPredicateTemplateSubstitutionBinders
+module
+
+public import PA215PA.NumericPAeqTermChildren
+public import PA215PA.RelationalPredicateTemplateSubstitutionBinders
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqTerm
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

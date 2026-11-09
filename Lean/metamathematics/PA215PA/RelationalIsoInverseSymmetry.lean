@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoInverseExists
-import PA215PA.RelationalParameterFresh
+module
+
+public import PA215PA.RelationalIsoInverseExists
+public import PA215PA.RelationalParameterFresh
+
+@[expose] public section
 
 /-! Existential symmetry using an explicitly closed Separation instance.
 The graph eigenvariable is opened by the reusable fresh-parameter rule. -/

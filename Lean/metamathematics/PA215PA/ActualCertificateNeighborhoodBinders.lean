@@ -1,4 +1,8 @@
-import PA215PA.ActualCertificateNeighborhoodCongruence
+module
+
+public import PA215PA.ActualCertificateNeighborhoodCongruence
+
+@[expose] public section
 
 /-! Exact finite reserve-binder change for neighborhood equality. -/
 namespace PA215.PA.ActualCertificateEquivalence

@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoPredecessorLaws
-import PA215PA.RelationalIsoPredecessorTotal
+module
+
+public import PA215PA.RelationalIsoPredecessorLaws
+public import PA215PA.RelationalIsoPredecessorTotal
+
+@[expose] public section
 
 /-! All seven predecessor bijection clauses. The actual graph-entry premise
 is retained and retyped, never inferred from decoded-edge typing alone. -/

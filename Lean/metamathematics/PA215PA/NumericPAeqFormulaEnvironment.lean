@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaCoverage
+module
+
+public import PA215PA.NumericPAeqFormulaCoverage
+
+@[expose] public section
 
 /-! Concrete finite syntactic environments exist even for nonstandard source
 arity and formula codes. They map every old variable to free variable zero;

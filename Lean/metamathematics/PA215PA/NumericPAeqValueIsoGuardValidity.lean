@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqValueIsoGuard
+module
+
+public import PA215PA.NumericPAeqValueIsoGuard
+
+@[expose] public section
 
 /-! Guarded arity of the model-length conjunction, proved by an explicitly
 represented full-PA induction invariant. No semantic domain witnesses follow. -/

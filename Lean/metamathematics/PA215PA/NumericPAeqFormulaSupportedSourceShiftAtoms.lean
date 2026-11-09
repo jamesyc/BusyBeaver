@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaSourceShiftParameters
-import PA215PA.NumericPAeqFormulaSupportedAtomValidity
-import PA215PA.NumericPAeqTermSupportedSourceShift
+module
+
+public import PA215PA.NumericPAeqFormulaSourceShiftParameters
+public import PA215PA.NumericPAeqFormulaSupportedAtomValidity
+public import PA215PA.NumericPAeqTermSupportedSourceShift
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

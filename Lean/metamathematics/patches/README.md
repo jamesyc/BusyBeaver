@@ -28,3 +28,7 @@ repair. Rerunning either on its reviewed version succeeds immediately.
 The 22 project proof overlays are already applied in the supporting sources.
 Their original files and diffs are preserved alongside
 [the project overlay manifest](../../proof_overlays/MANIFEST.json).
+
+The proof-overlay manifest records the original checkout paths. The
+archived Lean text in `proof_overlays/originals` now has a `.lean.txt`
+suffix, with the original bytes preserved.

@@ -1,5 +1,9 @@
-import PA215PA.CommandInvariant
-import PA215PA.NativeSoundness
+module
+
+public import PA215PA.CommandInvariant
+public import PA215PA.NativeSoundness
+
+@[expose] public section
 
 /-! Discharge the arithmetic interpreter's no-refutation premise using the
 actual native-to-PA proof, not a new supplier. The arithmetic-command prefix

@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalSubstitutionFormula
+module
+
+public import PA215PA.PAForwardRelationalSubstitutionFormula
+
+@[expose] public section
 
 /-! Exact source-variable rewriting, including bound/free category changes.
 This is not substitution of arbitrary arithmetic function terms. -/

@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqVariableCoherenceTyped
-import PA215PA.NumericPAeqValueCoherenceZeroCalibration
-import PA215PA.NumericPAeqValueClosedEnvironment
-import PA215PA.RelationalClosedCertificateCoherenceTransportSupply
+module
+
+public import PA215PA.NumericPAeqVariableCoherenceTyped
+public import PA215PA.NumericPAeqValueCoherenceZeroCalibration
+public import PA215PA.NumericPAeqValueClosedEnvironment
+public import PA215PA.RelationalClosedCertificateCoherenceTransportSupply
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqInductionSuccessorSyntax
-import PA215PA.NumericPAeqInductionSourceBody
-import PA215PA.NumericPAeqFormulaSupportedNegation
-import PA215PA.NumericPAeqInductionStepTemplateCode
+module
+
+public import PA215PA.NumericPAeqInductionSuccessorSyntax
+public import PA215PA.NumericPAeqInductionSourceBody
+public import PA215PA.NumericPAeqFormulaSupportedNegation
+public import PA215PA.NumericPAeqInductionStepTemplateCode
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionInterpretation
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

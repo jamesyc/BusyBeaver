@@ -1,5 +1,9 @@
-import PA215.Source.AXFullPlan
-import PA215.Source.AXComposition
+module
+
+public import PA215.Source.AXFullPlan
+public import PA215.Source.AXComposition
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXCommand
 

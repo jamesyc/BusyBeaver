@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentPropositional
-import PA215PA.FoundationRelationalSequentSeparationSupplier
+module
+
+public import PA215PA.FoundationRelationalSequentPropositional
+public import PA215PA.FoundationRelationalSequentSeparationSupplier
+
+@[expose] public section
 
 /-! Discharge of sequent assumptions by HFS insertion and numerical certificates. -/
 namespace PA215.PA.RelationalSource.Numeric

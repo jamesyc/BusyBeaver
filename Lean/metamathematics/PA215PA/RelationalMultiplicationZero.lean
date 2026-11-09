@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationTrace
+module
+
+public import PA215PA.RelationalMultiplicationTrace
+
+@[expose] public section
 
 /-! The genuine zero-input multiplication trace: its recurrence is proved from the
 impossibility of a predecessor for an actual empty ordinal. -/

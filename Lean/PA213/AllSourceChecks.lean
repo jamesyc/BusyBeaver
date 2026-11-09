@@ -1,65 +1,69 @@
-import PA213.SourceCheckShards.S000
-import PA213.SourceCheckShards.S001
-import PA213.SourceCheckShards.S002
-import PA213.SourceCheckShards.S003
-import PA213.SourceCheckShards.S004
-import PA213.SourceCheckShards.S005
-import PA213.SourceCheckShards.S006
-import PA213.SourceCheckShards.S007
-import PA213.SourceCheckShards.S008
-import PA213.SourceCheckShards.S009
-import PA213.SourceCheckShards.S010
-import PA213.SourceCheckShards.S011
-import PA213.SourceCheckShards.S012
-import PA213.SourceCheckShards.S013
-import PA213.SourceCheckShards.S014
-import PA213.SourceCheckShards.S015
-import PA213.SourceCheckShards.S016
-import PA213.SourceCheckShards.S017
-import PA213.SourceCheckShards.S018
-import PA213.SourceCheckShards.S019
-import PA213.SourceCheckShards.S020
-import PA213.SourceCheckShards.S021
-import PA213.SourceCheckShards.S022
-import PA213.SourceCheckShards.S023
-import PA213.SourceCheckShards.S024
-import PA213.SourceCheckShards.S025
-import PA213.SourceCheckShards.S026
-import PA213.SourceCheckShards.S027
-import PA213.SourceCheckShards.S028
-import PA213.SourceCheckShards.S029
-import PA213.SourceCheckShards.S030
-import PA213.SourceCheckShards.S031
-import PA213.SourceCheckShards.S032
-import PA213.SourceCheckShards.S033
-import PA213.SourceCheckShards.S034
-import PA213.SourceCheckShards.S035
-import PA213.SourceCheckShards.S036
-import PA213.SourceCheckShards.S037
-import PA213.SourceCheckShards.S038
-import PA213.SourceCheckShards.S039
-import PA213.SourceCheckShards.S040
-import PA213.SourceCheckShards.S041
-import PA213.SourceCheckShards.S042
-import PA213.SourceCheckShards.S043
-import PA213.SourceCheckShards.S044
-import PA213.SourceCheckShards.S045
-import PA213.SourceCheckShards.S046
-import PA213.SourceCheckShards.S047
-import PA213.SourceCheckShards.S048
-import PA213.SourceCheckShards.S049
-import PA213.SourceCheckShards.S050
-import PA213.SourceCheckShards.S051
-import PA213.SourceCheckShards.S052
-import PA213.SourceCheckShards.S053
-import PA213.SourceCheckShards.S054
-import PA213.SourceCheckShards.S055
-import PA213.SourceCheckShards.S056
-import PA213.SourceCheckShards.S057
-import PA213.SourceCheckShards.S058
-import PA213.SourceCheckShards.S059
-import PA213.SourceCheckShards.S060
-import PA213.SourceCheckShards.S061
+module
+
+public import PA213.SourceCheckShards.S000
+public import PA213.SourceCheckShards.S001
+public import PA213.SourceCheckShards.S002
+public import PA213.SourceCheckShards.S003
+public import PA213.SourceCheckShards.S004
+public import PA213.SourceCheckShards.S005
+public import PA213.SourceCheckShards.S006
+public import PA213.SourceCheckShards.S007
+public import PA213.SourceCheckShards.S008
+public import PA213.SourceCheckShards.S009
+public import PA213.SourceCheckShards.S010
+public import PA213.SourceCheckShards.S011
+public import PA213.SourceCheckShards.S012
+public import PA213.SourceCheckShards.S013
+public import PA213.SourceCheckShards.S014
+public import PA213.SourceCheckShards.S015
+public import PA213.SourceCheckShards.S016
+public import PA213.SourceCheckShards.S017
+public import PA213.SourceCheckShards.S018
+public import PA213.SourceCheckShards.S019
+public import PA213.SourceCheckShards.S020
+public import PA213.SourceCheckShards.S021
+public import PA213.SourceCheckShards.S022
+public import PA213.SourceCheckShards.S023
+public import PA213.SourceCheckShards.S024
+public import PA213.SourceCheckShards.S025
+public import PA213.SourceCheckShards.S026
+public import PA213.SourceCheckShards.S027
+public import PA213.SourceCheckShards.S028
+public import PA213.SourceCheckShards.S029
+public import PA213.SourceCheckShards.S030
+public import PA213.SourceCheckShards.S031
+public import PA213.SourceCheckShards.S032
+public import PA213.SourceCheckShards.S033
+public import PA213.SourceCheckShards.S034
+public import PA213.SourceCheckShards.S035
+public import PA213.SourceCheckShards.S036
+public import PA213.SourceCheckShards.S037
+public import PA213.SourceCheckShards.S038
+public import PA213.SourceCheckShards.S039
+public import PA213.SourceCheckShards.S040
+public import PA213.SourceCheckShards.S041
+public import PA213.SourceCheckShards.S042
+public import PA213.SourceCheckShards.S043
+public import PA213.SourceCheckShards.S044
+public import PA213.SourceCheckShards.S045
+public import PA213.SourceCheckShards.S046
+public import PA213.SourceCheckShards.S047
+public import PA213.SourceCheckShards.S048
+public import PA213.SourceCheckShards.S049
+public import PA213.SourceCheckShards.S050
+public import PA213.SourceCheckShards.S051
+public import PA213.SourceCheckShards.S052
+public import PA213.SourceCheckShards.S053
+public import PA213.SourceCheckShards.S054
+public import PA213.SourceCheckShards.S055
+public import PA213.SourceCheckShards.S056
+public import PA213.SourceCheckShards.S057
+public import PA213.SourceCheckShards.S058
+public import PA213.SourceCheckShards.S059
+public import PA213.SourceCheckShards.S060
+public import PA213.SourceCheckShards.S061
+
+@[expose] public section
 namespace PA213.AllSourceChecks
 open PA213.SourceCheck
 theorem checked (i : Nat) (hi : i < 3947) : atCheck i = true := by

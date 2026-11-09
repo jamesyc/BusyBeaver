@@ -1,66 +1,70 @@
-import PA213.ListBlocks
-import PA211.UserCandidate.CoverageShards.S000
-import PA211.UserCandidate.CoverageShards.S001
-import PA211.UserCandidate.CoverageShards.S002
-import PA211.UserCandidate.CoverageShards.S003
-import PA211.UserCandidate.CoverageShards.S004
-import PA211.UserCandidate.CoverageShards.S005
-import PA211.UserCandidate.CoverageShards.S006
-import PA211.UserCandidate.CoverageShards.S007
-import PA211.UserCandidate.CoverageShards.S008
-import PA211.UserCandidate.CoverageShards.S009
-import PA211.UserCandidate.CoverageShards.S010
-import PA211.UserCandidate.CoverageShards.S011
-import PA211.UserCandidate.CoverageShards.S012
-import PA211.UserCandidate.CoverageShards.S013
-import PA211.UserCandidate.CoverageShards.S014
-import PA211.UserCandidate.CoverageShards.S015
-import PA211.UserCandidate.CoverageShards.S016
-import PA211.UserCandidate.CoverageShards.S017
-import PA211.UserCandidate.CoverageShards.S018
-import PA211.UserCandidate.CoverageShards.S019
-import PA211.UserCandidate.CoverageShards.S020
-import PA211.UserCandidate.CoverageShards.S021
-import PA211.UserCandidate.CoverageShards.S022
-import PA211.UserCandidate.CoverageShards.S023
-import PA211.UserCandidate.CoverageShards.S024
-import PA211.UserCandidate.CoverageShards.S025
-import PA211.UserCandidate.CoverageShards.S026
-import PA211.UserCandidate.CoverageShards.S027
-import PA211.UserCandidate.CoverageShards.S028
-import PA211.UserCandidate.CoverageShards.S029
-import PA211.UserCandidate.CoverageShards.S030
-import PA211.UserCandidate.CoverageShards.S031
-import PA211.UserCandidate.CoverageShards.S032
-import PA211.UserCandidate.CoverageShards.S033
-import PA211.UserCandidate.CoverageShards.S034
-import PA211.UserCandidate.CoverageShards.S035
-import PA211.UserCandidate.CoverageShards.S036
-import PA211.UserCandidate.CoverageShards.S037
-import PA211.UserCandidate.CoverageShards.S038
-import PA211.UserCandidate.CoverageShards.S039
-import PA211.UserCandidate.CoverageShards.S040
-import PA211.UserCandidate.CoverageShards.S041
-import PA211.UserCandidate.CoverageShards.S042
-import PA211.UserCandidate.CoverageShards.S043
-import PA211.UserCandidate.CoverageShards.S044
-import PA211.UserCandidate.CoverageShards.S045
-import PA211.UserCandidate.CoverageShards.S046
-import PA211.UserCandidate.CoverageShards.S047
-import PA211.UserCandidate.CoverageShards.S048
-import PA211.UserCandidate.CoverageShards.S049
-import PA211.UserCandidate.CoverageShards.S050
-import PA211.UserCandidate.CoverageShards.S051
-import PA211.UserCandidate.CoverageShards.S052
-import PA211.UserCandidate.CoverageShards.S053
-import PA211.UserCandidate.CoverageShards.S054
-import PA211.UserCandidate.CoverageShards.S055
-import PA211.UserCandidate.CoverageShards.S056
-import PA211.UserCandidate.CoverageShards.S057
-import PA211.UserCandidate.CoverageShards.S058
-import PA211.UserCandidate.CoverageShards.S059
-import PA211.UserCandidate.CoverageShards.S060
-import PA211.UserCandidate.CoverageShards.S061
+module
+
+public import PA213.ListBlocks
+public import PA211.UserCandidate.CoverageShards.S000
+public import PA211.UserCandidate.CoverageShards.S001
+public import PA211.UserCandidate.CoverageShards.S002
+public import PA211.UserCandidate.CoverageShards.S003
+public import PA211.UserCandidate.CoverageShards.S004
+public import PA211.UserCandidate.CoverageShards.S005
+public import PA211.UserCandidate.CoverageShards.S006
+public import PA211.UserCandidate.CoverageShards.S007
+public import PA211.UserCandidate.CoverageShards.S008
+public import PA211.UserCandidate.CoverageShards.S009
+public import PA211.UserCandidate.CoverageShards.S010
+public import PA211.UserCandidate.CoverageShards.S011
+public import PA211.UserCandidate.CoverageShards.S012
+public import PA211.UserCandidate.CoverageShards.S013
+public import PA211.UserCandidate.CoverageShards.S014
+public import PA211.UserCandidate.CoverageShards.S015
+public import PA211.UserCandidate.CoverageShards.S016
+public import PA211.UserCandidate.CoverageShards.S017
+public import PA211.UserCandidate.CoverageShards.S018
+public import PA211.UserCandidate.CoverageShards.S019
+public import PA211.UserCandidate.CoverageShards.S020
+public import PA211.UserCandidate.CoverageShards.S021
+public import PA211.UserCandidate.CoverageShards.S022
+public import PA211.UserCandidate.CoverageShards.S023
+public import PA211.UserCandidate.CoverageShards.S024
+public import PA211.UserCandidate.CoverageShards.S025
+public import PA211.UserCandidate.CoverageShards.S026
+public import PA211.UserCandidate.CoverageShards.S027
+public import PA211.UserCandidate.CoverageShards.S028
+public import PA211.UserCandidate.CoverageShards.S029
+public import PA211.UserCandidate.CoverageShards.S030
+public import PA211.UserCandidate.CoverageShards.S031
+public import PA211.UserCandidate.CoverageShards.S032
+public import PA211.UserCandidate.CoverageShards.S033
+public import PA211.UserCandidate.CoverageShards.S034
+public import PA211.UserCandidate.CoverageShards.S035
+public import PA211.UserCandidate.CoverageShards.S036
+public import PA211.UserCandidate.CoverageShards.S037
+public import PA211.UserCandidate.CoverageShards.S038
+public import PA211.UserCandidate.CoverageShards.S039
+public import PA211.UserCandidate.CoverageShards.S040
+public import PA211.UserCandidate.CoverageShards.S041
+public import PA211.UserCandidate.CoverageShards.S042
+public import PA211.UserCandidate.CoverageShards.S043
+public import PA211.UserCandidate.CoverageShards.S044
+public import PA211.UserCandidate.CoverageShards.S045
+public import PA211.UserCandidate.CoverageShards.S046
+public import PA211.UserCandidate.CoverageShards.S047
+public import PA211.UserCandidate.CoverageShards.S048
+public import PA211.UserCandidate.CoverageShards.S049
+public import PA211.UserCandidate.CoverageShards.S050
+public import PA211.UserCandidate.CoverageShards.S051
+public import PA211.UserCandidate.CoverageShards.S052
+public import PA211.UserCandidate.CoverageShards.S053
+public import PA211.UserCandidate.CoverageShards.S054
+public import PA211.UserCandidate.CoverageShards.S055
+public import PA211.UserCandidate.CoverageShards.S056
+public import PA211.UserCandidate.CoverageShards.S057
+public import PA211.UserCandidate.CoverageShards.S058
+public import PA211.UserCandidate.CoverageShards.S059
+public import PA211.UserCandidate.CoverageShards.S060
+public import PA211.UserCandidate.CoverageShards.S061
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 64000000
 namespace PA211.UserCandidate.RuntimeCoverage

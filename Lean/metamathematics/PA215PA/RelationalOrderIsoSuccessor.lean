@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoSuccessorWitness
+module
+
+public import PA215PA.RelationalIsoSuccessorWitness
+
+@[expose] public section
 
 /-! Successor congruence of existential order isomorphism. Both predecessor
 objects are ordinal representatives; no raw equality of representatives is used. -/

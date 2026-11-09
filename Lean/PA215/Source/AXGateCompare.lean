@@ -1,5 +1,9 @@
-import PA215.Source.Determinism
-import PA215.Source.AXGateCompareSteps
+module
+
+public import PA215.Source.Determinism
+public import PA215.Source.AXGateCompareSteps
+
+@[expose] public section
 namespace PA215.Source.AXGateCompare
 variable {sites : Array Site} {base : Nat} (hbound : Bound sites base)
 include hbound

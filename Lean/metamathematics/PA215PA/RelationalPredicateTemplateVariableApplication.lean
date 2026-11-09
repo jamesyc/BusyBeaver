@@ -1,7 +1,11 @@
-import PA215PA.RelationalPredicateTemplateVariableCertificate
-import PA215PA.RelationalPredicateTemplateVariableConstructor
-import PA215PA.NumericPAeqValueDomainGuardProjection
-import PA215PA.FoundationRelationalSequentConnectiveNormalization
+module
+
+public import PA215PA.RelationalPredicateTemplateVariableCertificate
+public import PA215PA.RelationalPredicateTemplateVariableConstructor
+public import PA215PA.NumericPAeqValueDomainGuardProjection
+public import PA215PA.FoundationRelationalSequentConnectiveNormalization
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Variable
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

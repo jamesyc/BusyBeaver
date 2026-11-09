@@ -1,7 +1,11 @@
-import PA215PA.NumericPAeqBottomDomainCertificate
-import PA215PA.NumericPAeqSequentBottomReadback
-import PA215PA.NumericPAeqRepeatedEnvironment
-import PA215PA.FoundationRelationalSequentEnvironmentExistence
+module
+
+public import PA215PA.NumericPAeqBottomDomainCertificate
+public import PA215PA.NumericPAeqSequentBottomReadback
+public import PA215PA.NumericPAeqRepeatedEnvironment
+public import PA215PA.FoundationRelationalSequentEnvironmentExistence
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqBottomDomain
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

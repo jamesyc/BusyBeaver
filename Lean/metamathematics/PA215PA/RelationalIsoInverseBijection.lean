@@ -1,6 +1,10 @@
-import PA215PA.RelationalIsoInverseBijectionEntries
-import PA215PA.RelationalIsoInverseBijectionLaws
-import PA215PA.RelationalIsoInverseBijectionTotal
+module
+
+public import PA215PA.RelationalIsoInverseBijectionEntries
+public import PA215PA.RelationalIsoInverseBijectionLaws
+public import PA215PA.RelationalIsoInverseBijectionTotal
+
+@[expose] public section
 
 /-! All seven order-bijection clauses for a constructed full inverse prefix. -/
 namespace PA215.PA.RelationalSource.PairGraph

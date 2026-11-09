@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationClosedResult
+module
+
+public import PA215PA.RelationalMultiplicationClosedResult
+
+@[expose] public section
 
 /-! Exact input-first universal ordinal-valued multiplication-result totality. The premise
 is a closed, actually supplied theorem, not an open ND parameter context. -/

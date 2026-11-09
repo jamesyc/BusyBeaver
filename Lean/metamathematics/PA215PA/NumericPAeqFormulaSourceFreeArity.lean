@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaSourceFreeOperation
+module
+
+public import PA215PA.NumericPAeqFormulaSourceFreeOperation
+
+@[expose] public section
 
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

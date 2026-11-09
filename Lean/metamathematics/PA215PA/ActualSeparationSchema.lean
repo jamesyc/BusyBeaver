@@ -1,4 +1,8 @@
-import PA215PA.ActualRelationalPointed
+module
+
+public import PA215PA.ActualRelationalPointed
+
+@[expose] public section
 
 /-! Nonextensional separation at a fresh output name for an arbitrary property in named syntax, retaining every parameter. -/
 namespace PA215.PA.NativeCalculus.ActualBasis

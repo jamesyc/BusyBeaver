@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedInductionBase
+module
+
+public import PA215PA.PAInterpretedInductionBase
+
+@[expose] public section
 
 /-! The literal translated source step supplies the full ordinal successor
 step, using an actual raw successor value rather than syntactic substitution. -/

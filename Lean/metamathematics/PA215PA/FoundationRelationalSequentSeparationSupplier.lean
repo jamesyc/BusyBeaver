@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentSeparationReadback
+module
+
+public import PA215PA.FoundationRelationalSequentSeparationReadback
+
+@[expose] public section
 
 /-! Uniform accepted source Separation schema over arbitrary PA-model formula
 codes. The exact source constructor and endpoint coverage are explicit. -/

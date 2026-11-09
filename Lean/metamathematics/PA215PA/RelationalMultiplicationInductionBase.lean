@@ -1,6 +1,10 @@
-import PA215PA.RelationalMultiplicationPrefixStep
-import PA215PA.RelationalMultiplicationZeroExistence
-import PA215PA.RelationalOrdinalInductionUniform
+module
+
+public import PA215PA.RelationalMultiplicationPrefixStep
+public import PA215PA.RelationalMultiplicationZeroExistence
+public import PA215PA.RelationalOrdinalInductionUniform
+
+@[expose] public section
 namespace PA215.PA.RelationalSource.PairGraph
 open FFL FFL.FirstOrder ND
 open Ordinal (Term Formula)

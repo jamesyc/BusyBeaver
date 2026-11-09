@@ -1,4 +1,8 @@
-import PA213.SourceProgramData
+module
+
+public import PA213.SourceProgramData
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 64000000
 namespace PA213.SourceProgram

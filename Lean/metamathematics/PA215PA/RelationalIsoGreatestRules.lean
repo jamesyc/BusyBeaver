@@ -1,6 +1,10 @@
-import PA215PA.RelationalOrderIsoRelationRules
-import PA215PA.RelationalOrdinalInductionPredecessor
-import PA215PA.RelationalGraphOperations
+module
+
+public import PA215PA.RelationalOrderIsoRelationRules
+public import PA215PA.RelationalOrdinalInductionPredecessor
+public import PA215PA.RelationalGraphOperations
+
+@[expose] public section
 
 /-! A successor endpoint is greatest; an order-bijection transports its
 comparison property through actual graph edges. -/

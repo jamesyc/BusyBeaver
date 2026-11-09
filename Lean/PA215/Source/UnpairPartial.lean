@@ -1,4 +1,8 @@
-import PA215.Source.UnpairPartialSteps
+module
+
+public import PA215.Source.UnpairPartialSteps
+
+@[expose] public section
 namespace PA215.Source.UnpairPartial
 open Unpair (roundCost loopCost steps_trans)
 variable {sites : Array Site} {base : Nat} (hbound : Bound sites base)

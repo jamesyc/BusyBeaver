@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaEqualityTransportBoth
-import PA215PA.NumericPAeqFormulaEqualityTransportCode
+module
+
+public import PA215PA.NumericPAeqFormulaEqualityTransportBoth
+public import PA215PA.NumericPAeqFormulaEqualityTransportCode
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaEqualityTransport
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

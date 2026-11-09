@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqSupportedVectorRealizationInvariant
+module
+
+public import PA215PA.NumericPAeqSupportedVectorRealizationInvariant
+
+@[expose] public section
 
 /-! Genuine full-PA original-source-rank induction for supported vector realization.
 All actual value and domain assumptions remain inside the certified implication. -/

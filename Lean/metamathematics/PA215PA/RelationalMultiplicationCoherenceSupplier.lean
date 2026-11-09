@@ -1,4 +1,8 @@
-import PA215PA.RelationalMultiplicationCoherenceInduction
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceInduction
+
+@[expose] public section
 
 /-! Actual-basis full two-input multiplication coherence, with eleven finite source
 premises paid. Addition coherence is supplied by its proved derivation; both

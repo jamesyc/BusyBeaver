@@ -1,4 +1,8 @@
-import PA215PA.PAInterpretedOrdinaryRefutation
+module
+
+public import PA215PA.PAInterpretedOrdinaryRefutation
+
+@[expose] public section
 
 /-! Explicit finite numerical bounds exist; no proof premise is hidden here. -/
 namespace PA215.PA.ForwardRelational

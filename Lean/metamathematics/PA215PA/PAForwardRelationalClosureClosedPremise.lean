@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalClosureCoverage
+module
+
+public import PA215PA.PAForwardRelationalClosureCoverage
+
+@[expose] public section
 
 /-! Logical introduction from a single shift-invariant closed theorem. The
 closedness equation and uniform specialization interface remain explicit; no

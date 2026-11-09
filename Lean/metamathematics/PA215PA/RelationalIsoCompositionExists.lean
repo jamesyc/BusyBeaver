@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoCompositionExistsSyntax
-import PA215PA.RelationalIsoCompositionInduction
+module
+
+public import PA215PA.RelationalIsoCompositionExistsSyntax
+public import PA215PA.RelationalIsoCompositionInduction
+
+@[expose] public section
 
 /-! Construct an actual composite order-isomorphism from two displayed
 bijections. The precise Separation instance is explicit at this layer. -/

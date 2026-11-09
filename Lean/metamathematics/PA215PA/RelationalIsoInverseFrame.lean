@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseCoverageExtension
+module
+
+public import PA215PA.RelationalIsoInverseCoverageExtension
+
+@[expose] public section
 
 /-! Actual finite premises for one inverse-prefix successor witness. -/
 namespace PA215.PA.RelationalSource.PairGraph

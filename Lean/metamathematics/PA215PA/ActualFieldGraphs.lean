@@ -1,5 +1,9 @@
-import PA215PA.SourceCantorInjectiveInternal
-import PA215PA.ActualProofCode
+module
+
+public import PA215PA.SourceCantorInjectiveInternal
+public import PA215PA.ActualProofCode
+
+@[expose] public section
 namespace PA215.PA.ActualFieldGraphs
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment
 open scoped FFL.FirstOrder.Arithmetic

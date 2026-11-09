@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalTotalityConstructors
+module
+
+public import PA215PA.PAForwardRelationalTotalityConstructors
+
+@[expose] public section
 
 /-! Structural ND totality for typed PA terms. Coverage requests domain proofs
 only at the finitely many variable occurrences of this term. Neither infinite

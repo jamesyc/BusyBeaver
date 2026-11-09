@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentExistentialInstance
+module
+
+public import PA215PA.FoundationRelationalSequentExistentialInstance
+
+@[expose] public section
 
 /-! Exact HFS existential-rule accepted-code closure with a covered source term
 and an explicitly raised child allocator. No uniform environment existence. -/

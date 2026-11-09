@@ -1,6 +1,10 @@
-import PA215PA.ActualCodeCompilerSound
-import PA215.Source.CommandAtomEncoding
-import PA215.Source.UniversalCommandWitness
+module
+
+public import PA215PA.ActualCodeCompilerSound
+public import PA215.Source.CommandAtomEncoding
+public import PA215.Source.UniversalCommandWitness
+
+@[expose] public section
 namespace PA215.PA.NativeCalculus.ActualBasis.Code
 open PA215.Source PA215.Source.Enumeration PA215.Source.Cantor
 open PA215.Source.CommandAtomEncoding

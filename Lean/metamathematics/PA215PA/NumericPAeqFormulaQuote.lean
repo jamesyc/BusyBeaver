@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaQuoteAtoms
+module
+
+public import PA215PA.NumericPAeqFormulaQuoteAtoms
+
+@[expose] public section
 
 /-! Exact calibration of the complete coded PAeq formula interpreter to the
 unchanged typed relational interpretation, with explicit finite environment

@@ -1,5 +1,9 @@
-import PA215PA.RelationalMultiplicationCoherenceFrame
-import PA215PA.RelationalMultiplicationRestrictionResult
+module
+
+public import PA215PA.RelationalMultiplicationCoherenceFrame
+public import PA215PA.RelationalMultiplicationRestrictionResult
+
+@[expose] public section
 
 /-! Eliminate the actual right predecessor-output witness before lifting the IH. -/
 namespace PA215.PA.RelationalSource.PairGraph

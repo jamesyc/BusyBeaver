@@ -1,4 +1,8 @@
-import Std.Tactic
+module
+
+public import Std.Tactic
+
+@[expose] public section
 
 /-! The three counter loops before the sum-one guard in S36 terminate on natural inputs. This module gives their exact effect on the store. -/
 namespace PA215.Source.S36Drain

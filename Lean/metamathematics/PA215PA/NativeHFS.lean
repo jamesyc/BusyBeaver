@@ -1,5 +1,9 @@
-import PA215PA.NativeNames
-import PA215PA.HFSComprehension
+module
+
+public import PA215PA.NativeNames
+public import PA215PA.HFSComprehension
+
+@[expose] public section
 
 /-! Concrete arithmetic HFS interpretation for native named and numeric syntax.
 The model is an arbitrary PA model, including nonstandard elements. -/

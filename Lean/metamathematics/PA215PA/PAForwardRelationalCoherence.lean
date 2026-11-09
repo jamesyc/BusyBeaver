@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalCoherenceBinary
+module
+
+public import PA215PA.PAForwardRelationalCoherenceBinary
+
+@[expose] public section
 
 /-! Constructive typed term-value coherence. Every existential witness in both
 value derivations is eliminated; arithmetic steps invoke full two-input

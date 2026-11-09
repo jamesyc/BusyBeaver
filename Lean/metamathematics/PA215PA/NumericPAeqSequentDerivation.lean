@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentDerivationStep
-import PA215PA.NumericPAeqSequentBudgetInvariant
+module
+
+public import PA215PA.NumericPAeqSequentDerivationStep
+public import PA215PA.NumericPAeqSequentBudgetInvariant
+
+@[expose] public section
 
 /-! Full-PA model-code induction for the unchanged ordinaryPAeq derivation
 predicate. The conclusion retains its explicit proof-wide source term budget

@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqInductionSuccessorValueProof
-import PA215PA.RelationalPredicateBinaryRequested
+module
+
+public import PA215PA.NumericPAeqInductionSuccessorValueProof
+public import PA215PA.RelationalPredicateBinaryRequested
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqInductionSuccessorValue
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

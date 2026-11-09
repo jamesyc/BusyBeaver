@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoInverseEntryElimination
+module
+
+public import PA215PA.RelationalIsoInverseEntryElimination
+
+@[expose] public section
 
 /-! Successor transport and insertion preserve actual reverse-entry witnesses. -/
 namespace PA215.PA.RelationalSource.PairGraph

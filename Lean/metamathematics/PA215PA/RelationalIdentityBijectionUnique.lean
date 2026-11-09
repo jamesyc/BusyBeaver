@@ -1,4 +1,8 @@
-import PA215PA.RelationalIdentityBijectionTotal
+module
+
+public import PA215PA.RelationalIdentityBijectionTotal
+
+@[expose] public section
 
 /-! Functionality and injectivity of actual diagonal identity edges. -/
 namespace PA215.PA.RelationalSource.PairGraph

@@ -1,5 +1,9 @@
-import PA215PA.ActualCheckExpression
-import PA215PA.InternalTraceAppend
+module
+
+public import PA215PA.ActualCheckExpression
+public import PA215PA.InternalTraceAppend
+
+@[expose] public section
 
 /-! Explicit HFS-vector expressions for the deterministic command compiler.
 Scalar inputs retain the exact V1 previous-table/tag/payload interpretation.

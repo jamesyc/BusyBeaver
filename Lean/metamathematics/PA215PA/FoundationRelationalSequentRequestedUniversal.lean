@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentClosedUniversal
-import PA215PA.FoundationRelationalSequentPaddingReadback
+module
+
+public import PA215PA.FoundationRelationalSequentClosedUniversal
+public import PA215PA.FoundationRelationalSequentPaddingReadback
+
+@[expose] public section
 
 /-! Universal introduction at requested native parameters. A supplier of closed
 certificates for the opened source formula is used at an explicitly padded

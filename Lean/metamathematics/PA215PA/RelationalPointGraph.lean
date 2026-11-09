@@ -1,4 +1,8 @@
-import PA215PA.RelationalTraceGraph
+module
+
+public import PA215PA.RelationalTraceGraph
+
+@[expose] public section
 
 /-! A single-entry graph built from an actual empty graph. Functionality and
 ordinal range follow by concrete decoding, without canonical representatives. -/

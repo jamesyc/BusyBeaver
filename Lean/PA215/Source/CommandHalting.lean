@@ -1,4 +1,8 @@
-import PA215.Source.CommandSMP
+module
+
+public import PA215.Source.CommandSMP
+
+@[expose] public section
 namespace PA215.Source
 open Cantor Enumeration
 

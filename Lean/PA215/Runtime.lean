@@ -1,4 +1,8 @@
-import PA215.Zip
+module
+
+public import PA215.Zip
+
+@[expose] public section
 
 /-!
 Append-zero adaptation: increment appends a zero-valued spare, not the old one.

@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionCoherenceStepFrame
+module
+
+public import PA215PA.RelationalAdditionCoherenceStepFrame
+
+@[expose] public section
 
 /-! The full universally parameterized successor step, without any parameter
 freshness assumption or a fixed second input. -/

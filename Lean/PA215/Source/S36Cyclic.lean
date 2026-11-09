@@ -1,5 +1,9 @@
-import PA215.Source.CyclicDriver
-import PA215.Source.S36Command
+module
+
+public import PA215.Source.CyclicDriver
+public import PA215.Source.S36Command
+
+@[expose] public section
 
 /-! Literal S36 invocation outcomes transported to the explicitly restarting
 source driver. This does not identify the driver with physical root frames. -/

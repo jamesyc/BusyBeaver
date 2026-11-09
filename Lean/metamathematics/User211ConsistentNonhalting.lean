@@ -1,5 +1,9 @@
-import User211SourceCalibration
-import PA211.UserCandidate.KernelEndpoint
+module
+
+public import User211SourceCalibration
+public import PA211.UserCandidate.KernelEndpoint
+
+@[expose] public section
 namespace PA211.UserCandidate.PA
 /-- Ordinary PA consistency, not consistency of Lean, supplies exact blank nonhalting. -/
 theorem consistent_machine_nonhalting (hcons : PA215.PA.Consistent) :

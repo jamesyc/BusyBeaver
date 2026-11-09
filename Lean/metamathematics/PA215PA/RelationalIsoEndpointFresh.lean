@@ -1,4 +1,8 @@
-import PA215PA.RelationalIsoSuccessorTyped
+module
+
+public import PA215PA.RelationalIsoSuccessorTyped
+
+@[expose] public section
 
 /-! Old order-bijection edges cannot use either ordinal container as a
 coordinate. Only local member irreflexivity is used. -/

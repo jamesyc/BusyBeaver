@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalCodeTotalAtoms
+module
+
+public import PA215PA.FoundationRelationalCodeTotalAtoms
+
+@[expose] public section
 
 /-! A concrete all-model formula recursion, with explicit changing binder
 parameters. Correctness under global coverage and external calibration are

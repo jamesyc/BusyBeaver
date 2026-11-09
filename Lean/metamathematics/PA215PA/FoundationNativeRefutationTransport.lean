@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqRefutationTransport
-import PA215PA.FoundationPAeqCodeOriginalProofTransport
+module
+
+public import PA215PA.NumericPAeqRefutationTransport
+public import PA215PA.FoundationPAeqCodeOriginalProofTransport
+
+@[expose] public section
 namespace PA215.PA.FoundationNativeRefutationTransport
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

@@ -1,5 +1,9 @@
-import PA215PA.FoundationPAeqCodeFormulaShift
-import PA215PA.Theory
+module
+
+public import PA215PA.FoundationPAeqCodeFormulaShift
+public import PA215PA.Theory
+
+@[expose] public section
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

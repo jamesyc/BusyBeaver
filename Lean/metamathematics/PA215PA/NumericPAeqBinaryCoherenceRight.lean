@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqBinaryCoherencePoint
-import PA215PA.NumericPAeqBinaryCoherenceOpening
+module
+
+public import PA215PA.NumericPAeqBinaryCoherencePoint
+public import PA215PA.NumericPAeqBinaryCoherenceOpening
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

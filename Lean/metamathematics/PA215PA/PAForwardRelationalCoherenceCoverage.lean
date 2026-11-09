@@ -1,4 +1,8 @@
-import PA215PA.PAForwardRelationalCoherencePremises
+module
+
+public import PA215PA.PAForwardRelationalCoherencePremises
+
+@[expose] public section
 
 namespace PA215.PA.ForwardRelational
 open FFL FFL.FirstOrder RelationalSource ND

@@ -1,5 +1,9 @@
-import PA215PA.RelationalPredicateTemplateLiftEquality
-import PA215PA.RelationalSourceAdjunction
+module
+
+public import PA215PA.RelationalPredicateTemplateLiftEquality
+public import PA215PA.RelationalSourceAdjunction
+
+@[expose] public section
 namespace PA215.PA.RelationalPredicateTemplate.Ordinal
 open FFL FFL.FirstOrder ND
 

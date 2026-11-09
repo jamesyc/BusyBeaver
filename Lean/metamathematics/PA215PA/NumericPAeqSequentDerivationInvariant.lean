@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqSequentGuardedCode
-import PA215PA.NumericPAeqOrdinaryAxiomCertificate
+module
+
+public import PA215PA.NumericPAeqSequentGuardedCode
+public import PA215PA.NumericPAeqOrdinaryAxiomCertificate
+
+@[expose] public section
 
 /-! The first-order requested-parameter invariant for the existing ordinaryPAeq
 Foundation derivation predicate. This module defines and characterizes the

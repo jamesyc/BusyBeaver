@@ -1,5 +1,9 @@
-import PA215.Source.AXPair
-import PA215.Source.AXTimes4
+module
+
+public import PA215.Source.AXPair
+public import PA215.Source.AXTimes4
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXPairFirst
 private theorem pair_0 : resolveAt exactSites 88 = some (AXPair.relocate 57 (AXPair.expected 6)) := by rfl

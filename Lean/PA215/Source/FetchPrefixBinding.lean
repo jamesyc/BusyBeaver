@@ -1,4 +1,8 @@
-import PA215.Source.ExactSource
+module
+
+public import PA215.Source.ExactSource
+
+@[expose] public section
 set_option maxHeartbeats 2000000
 set_option maxRecDepth 50000
 namespace PA215.Source

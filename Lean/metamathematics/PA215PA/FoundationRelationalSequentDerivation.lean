@@ -1,4 +1,8 @@
-import PA215PA.FoundationRelationalSequentDerivationStep
+module
+
+public import PA215PA.FoundationRelationalSequentDerivationStep
+
+@[expose] public section
 
 /-! Genuine full-PA course-of-values induction on the original numeric
 relational derivation code. The explicit axiom certificate supplier remains

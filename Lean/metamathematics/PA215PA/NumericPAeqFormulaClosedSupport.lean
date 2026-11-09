@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqTermClosedSupport
-import PA215PA.NumericPAeqFormulaFreeSupportLaws
-import PA215PA.FoundationPAeqCodeInductionBody
+module
+
+public import PA215PA.NumericPAeqTermClosedSupport
+public import PA215PA.NumericPAeqFormulaFreeSupportLaws
+public import PA215PA.FoundationPAeqCodeInductionBody
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

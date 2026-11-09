@@ -67,3 +67,22 @@ After the serial build, `lake --rehash build` from either `Lean` or
 `Lean/metamathematics` checks that package's default target. Those targets
 are `PA211` and `PA211PA`.
 [Verification records](validation.md)
+
+## Run the Palomar comparison
+
+From `Lean/metamathematics`, build the two submission modules and run
+Comparator on Linux with `bwrap` installed:
+
+```sh
+lake --rehash build PA211Palomar
+lake env lake comparator
+```
+
+The configuration enables NanoDa in the local toolchain. Palomar selects
+its own checker when verifying a submitted commit. The Challenge imports
+only Mathlib, and the package check verifies that its definitions match
+the separate definitions imported by the Solution.
+
+The public dependency pin is the original Foundation revision. The
+reproduction patches above are the reviewed proof-performance repairs
+used for the earlier local build.

@@ -1,6 +1,10 @@
-import PA215PA.ActualWordExpression
-import PA215PA.ActualWordCoding
-import PA215PA.ActualAtomCompiler
+module
+
+public import PA215PA.ActualWordExpression
+public import PA215PA.ActualWordCoding
+public import PA215PA.ActualAtomCompiler
+
+@[expose] public section
 namespace PA215.PA.ActualWordMacros
 open ActualWordExpression
 open PA215.Source PA215.Source.Enumeration PA215.Source.CommandAtomEncoding

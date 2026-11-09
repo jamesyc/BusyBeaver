@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosureLinear
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosureLinear
+
+@[expose] public section
 
 /-! Literal ordinary equality proof data for generic relational substitution.
 No new theory or extensionality axiom is introduced. -/

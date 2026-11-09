@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqFormulaCoverage
-import PA215PA.NumericPAeqTermTargetShiftParameters
+module
+
+public import PA215PA.NumericPAeqFormulaCoverage
+public import PA215PA.NumericPAeqTermTargetShiftParameters
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

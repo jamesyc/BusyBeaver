@@ -1,22 +1,32 @@
-import PA215PA.ActualCheckExpression
-import PA215PA.ActualTableCoding
+module
+
+public import PA215PA.ActualCheckExpression
+public import PA215PA.ActualTableCoding
+
+@[expose] public section
 namespace PA215.PA.ActualRuleExpression
 open ActualCheckExpression ActualHeadGraphs
-private def zero : Expr := .num 0
-private def one : Expr := .num 1
-private def accepted (x : Expr) : Expr := .add x one
-private def r1 : Expr := .right .payload
-private def r2 : Expr := .right r1
-private def r3 : Expr := .right r2
-private def r4 : Expr := .right r3
-private def a : Expr := .left .payload
-private def b : Expr := .left r1
-private def c : Expr := .left r2
-private def u : Expr := .left r3
-private def h (e : ActualArithmeticGraph.Expr) : Expr := .head e a b c u
-private def requireZero (tail result : Expr) : Expr := .ifEq tail zero result zero
-private def minor : Expr := .nth .previous b
-private def major : Expr := .nth .previous c
+namespace Templates
+
+def zero : Expr := .num 0
+def one : Expr := .num 1
+def accepted (x : Expr) : Expr := .add x one
+def r1 : Expr := .right .payload
+def r2 : Expr := .right r1
+def r3 : Expr := .right r2
+def r4 : Expr := .right r3
+def a : Expr := .left .payload
+def b : Expr := .left r1
+def c : Expr := .left r2
+def u : Expr := .left r3
+def h (e : ActualArithmeticGraph.Expr) : Expr := .head e a b c u
+def requireZero (tail result : Expr) : Expr := .ifEq tail zero result zero
+def minor : Expr := .nth .previous b
+def major : Expr := .nth .previous c
+
+end Templates
+
+open Templates
 
 /-- Exact V1 MP, with explicit conclusion a, minor child b, major child c.
 Some zero is entry one and therefore passes the nonzero child test. -/

@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrderIsoReflexivity
+module
+
+public import PA215PA.RelationalOrderIsoReflexivity
+
+@[expose] public section
 
 /-! Distinct empty representatives are related by an actual empty graph.
 Ordinary equality premises used by the existing diagonal rules remain explicit;

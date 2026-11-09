@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionStep
+module
+
+public import PA215PA.FoundationPAeqCodeInductionStep
+
+@[expose] public section
 /-! Uniform transport of the additive and successor induction bodies for a model-coded formula p. -/
 namespace PA215.PA.FoundationPAeqCode
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic

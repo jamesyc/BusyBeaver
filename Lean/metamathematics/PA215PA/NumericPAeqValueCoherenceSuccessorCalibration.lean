@@ -1,5 +1,9 @@
-import PA215PA.NumericPAeqValueCoherenceSuccessorProof
-import PA215PA.NumericPAeqValueCoherencePairwiseCode
+module
+
+public import PA215PA.NumericPAeqValueCoherenceSuccessorProof
+public import PA215PA.NumericPAeqValueCoherencePairwiseCode
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqValueCoherence
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

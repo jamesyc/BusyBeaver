@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqFormulaQuantifierTemplatesSyntax
+module
+
+public import PA215PA.NumericPAeqFormulaQuantifierTemplatesSyntax
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormulaQuantifierTemplates
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping
@@ -39,7 +43,7 @@ noncomputable def exsDirection {Γ:ND.Seq (V:=V)} (H:SF (V:=V) 0) (D P Q:SF (V:=
   have hbi := uniformAt H.shift D.shift P.shift Q.shift t
     (ND.up (by simpa using ND.shift h) _) (ND.up (ND.shift hh) _) (ND.andLeft hd)
   have hq := ND.mp (ND.andRight hd) (ND.andLeft hbi)
-  have out := ND.exsIntro (D.shift ⋏ Q.shift) t (by simpa [Bootstrapping.Semiformula.free,t] using ND.andIntro (ND.andLeft hd) hq)
+  have out := ND.exsIntro (T := T) (Γ := C) (D.shift ⋏ Q.shift) t (by simpa [Bootstrapping.Semiformula.free,t] using ND.andIntro (ND.andLeft hd) hq)
   simpa [guardedExs,C] using out
 noncomputable def uniformSwap {Γ:ND.Seq (V:=V)} (H:SF (V:=V) 0) (D P Q:SF (V:=V) 1)
     (h:ND.Proof (T:=T) Γ (uniformPremise H D P Q)) :

@@ -1,5 +1,9 @@
-import PA215PA.RelationalAdditionRightZero
-import PA215PA.RelationalOrderIsoTransport
+module
+
+public import PA215PA.RelationalAdditionRightZero
+public import PA215PA.RelationalOrderIsoTransport
+
+@[expose] public section
 
 /-! Right-successor syntax and the genuine zero-input case. All five other
 parameters are bound in the induction property, including the displayed successor. -/

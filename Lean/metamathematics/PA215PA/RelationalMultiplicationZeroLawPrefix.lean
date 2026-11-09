@@ -1,5 +1,9 @@
-import PA215PA.RelationalGraphOperations
-import PA215PA.RelationalMultiplicationTrace
+module
+
+public import PA215PA.RelationalGraphOperations
+public import PA215PA.RelationalMultiplicationTrace
+
+@[expose] public section
 
 /-! A multiplication trace with an empty input has its unique output equal to the
 displayed zero object. The displayed zero object is forced equal by the actual inclusive domain,

@@ -1,4 +1,8 @@
-import PA215PA.RelationalFormulaEqualityLift
+module
+
+public import PA215PA.RelationalFormulaEqualityLift
+
+@[expose] public section
 
 /-! Structural finite equality substitution for arbitrary relational NNF
 formulas, with capture-aware quantifiers and arbitrary free parameters. -/

@@ -1,6 +1,10 @@
-import PA215PA.PAInterpretedFunctionCongruenceSuccImage
-import PA215PA.PAInterpretedFunctionCongruenceBinaryImage
-import PA215PA.PAForwardRelationalCoherenceSupplier
+module
+
+public import PA215PA.PAInterpretedFunctionCongruenceSuccImage
+public import PA215PA.PAInterpretedFunctionCongruenceBinaryImage
+public import PA215PA.PAForwardRelationalCoherenceSupplier
+
+@[expose] public section
 
 /-! One explicit finite context for the three function-congruence images.
 Its ordinary equality, empty/adjunction and closed arithmetic premises are

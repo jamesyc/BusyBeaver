@@ -1,5 +1,9 @@
-import PA215.Source.AXGateCompare
-import PA215.Source.TrieResolver
+module
+
+public import PA215.Source.AXGateCompare
+public import PA215.Source.TrieResolver
+
+@[expose] public section
 set_option maxRecDepth 100000
 namespace PA215.Source.AXGateCompare
 private theorem row3773_0 : resolveAt exactSites 3773 = some (expected 3773 0) := by

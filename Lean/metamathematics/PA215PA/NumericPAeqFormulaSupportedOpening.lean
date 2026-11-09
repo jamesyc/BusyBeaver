@@ -1,6 +1,10 @@
-import PA215PA.NumericPAeqFormulaSupportedTargetShift
-import PA215PA.NumericPAeqFormulaSupportedTargetSubst
-import PA215PA.RelationalPredicateTemplateSourceInstance
+module
+
+public import PA215PA.NumericPAeqFormulaSupportedTargetShift
+public import PA215PA.NumericPAeqFormulaSupportedTargetSubst
+public import PA215PA.RelationalPredicateTemplateSourceInstance
+
+@[expose] public section
 namespace PA215.PA.NumericPAeqFormula
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
 open FFL.FirstOrder.Arithmetic.Bootstrapping

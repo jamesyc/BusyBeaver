@@ -1,4 +1,8 @@
-import PA215.Source.Unpair
+module
+
+public import PA215.Source.Unpair
+
+@[expose] public section
 set_option linter.unusedSimpArgs false
 namespace PA215.Source.UnpairPartial
 abbrev Store := Unpair.Store

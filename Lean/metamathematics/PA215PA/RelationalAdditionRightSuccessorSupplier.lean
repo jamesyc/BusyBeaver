@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionRightSuccessorInduction
+module
+
+public import PA215PA.RelationalAdditionRightSuccessorInduction
+
+@[expose] public section
 
 /-! Right-successor supplier from ten explicit finite source axioms, including
 the inclusive restriction and negated right-successor property Separation instances.

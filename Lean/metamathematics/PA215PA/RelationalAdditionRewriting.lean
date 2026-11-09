@@ -1,4 +1,8 @@
-import PA215PA.RelationalAdditionTrace
+module
+
+public import PA215PA.RelationalAdditionTrace
+
+@[expose] public section
 
 /-! Capture-aware rewriting for the fixed addition-result formula. This keeps
 nested additive traces opaque in later multiplicative witness constructions. -/

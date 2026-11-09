@@ -1,5 +1,9 @@
-import PA215PA.RelationalParameterSpecialization
-import PA215PA.RelationalSourceAdjunctionLogic
+module
+
+public import PA215PA.RelationalParameterSpecialization
+public import PA215PA.RelationalSourceAdjunctionLogic
+
+@[expose] public section
 
 /-! Opening a closed parameter at the actual fresh eigenvariable, while the
 entire surrounding context is shifted. -/

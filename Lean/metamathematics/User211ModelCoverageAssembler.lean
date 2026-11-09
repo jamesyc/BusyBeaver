@@ -1,5 +1,9 @@
-import User211PAModelPrimitive
-import User211SourceEquivalence
+module
+
+public import User211PAModelPrimitive
+public import User211SourceEquivalence
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 8000000
 namespace PA211.UserCandidate.PA.ModelCoverageAssembler

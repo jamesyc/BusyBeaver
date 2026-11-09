@@ -1,6 +1,10 @@
-import PA213PA.InternalFileGuards
-import PA213PA.InternalSymbolicAudit
-import PA213.InternalOracleAlphabet
+module
+
+public import PA213PA.InternalFileGuards
+public import PA213PA.InternalSymbolicAudit
+public import PA213.InternalOracleAlphabet
+
+@[expose] public section
 namespace PA213.PA.InternalTrace.FileBoxes
 open PA215
 open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic FFL.Entailment

@@ -1,0 +1,10 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PA211.Palomar.blank_nonhalting",
+    "PA211.Palomar.two_sided_independence"
+  ],
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "enable_nanoda": true
+}

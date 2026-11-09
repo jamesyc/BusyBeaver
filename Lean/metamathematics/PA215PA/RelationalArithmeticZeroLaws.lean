@@ -1,7 +1,11 @@
-import PA215PA.RelationalAdditionZeroLaw
-import PA215PA.RelationalMultiplicationZeroLaw
-import PA215PA.RelationalOrderIsoTransport
-import PA215PA.RelationalZeroIso
+module
+
+public import PA215PA.RelationalAdditionZeroLaw
+public import PA215PA.RelationalMultiplicationZeroLaw
+public import PA215PA.RelationalOrderIsoTransport
+public import PA215PA.RelationalZeroIso
+
+@[expose] public section
 
 /-! The two arithmetic zero equations in the interpreted equality relation.
 No arbitrary empty representative is identified by raw equality. -/

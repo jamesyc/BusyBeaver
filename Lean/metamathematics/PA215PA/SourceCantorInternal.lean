@@ -1,6 +1,10 @@
-import PA215PA.Theory
-import PA215.Source.Cantor
-import Foundation.FirstOrder.Arithmetic.HFS.PRF
+module
+
+public import PA215PA.Theory
+public import PA215.Source.Cantor
+public import Foundation.FirstOrder.Arithmetic.HFS.PRF
+
+@[expose] public section
 
 /-! Explicit primitive-recursion blueprint for the source triangular number,
 valid in every IΣ1 model, including nonstandard inputs. It is separate from the

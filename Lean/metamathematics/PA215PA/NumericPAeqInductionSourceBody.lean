@@ -1,4 +1,8 @@
-import PA215PA.FoundationPAeqCodeInductionCalibration
+module
+
+public import PA215PA.FoundationPAeqCodeInductionCalibration
+
+@[expose] public section
 
 /-! Literal all-model source induction-body decoding. Only the two fixed
 quoted term vectors are normalized; the arbitrary source formula is untouched. -/

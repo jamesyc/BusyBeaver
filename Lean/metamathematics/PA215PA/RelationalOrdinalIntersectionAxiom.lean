@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalIntersection
+module
+
+public import PA215PA.RelationalOrdinalIntersection
+
+@[expose] public section
 
 /-! The fixed universally closed intersection axiom is an actual Separation
 instance, generalized at the numeric proof level. The allocated name of the

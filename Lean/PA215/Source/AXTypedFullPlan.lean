@@ -1,30 +1,34 @@
-import PA215.Source.AXTypedBindings.B000
-import PA215.Source.AXTypedBindings.B001
-import PA215.Source.AXTypedBindings.B002
-import PA215.Source.AXTypedBindings.B003
-import PA215.Source.AXTypedBindings.B004
-import PA215.Source.AXTypedBindings.B005
-import PA215.Source.AXTypedBindings.B006
-import PA215.Source.AXTypedBindings.B007
-import PA215.Source.AXTypedBindings.B008
-import PA215.Source.AXTypedBindings.B009
-import PA215.Source.AXTypedBindings.B010
-import PA215.Source.AXTypedBindings.B011
-import PA215.Source.AXTypedBindings.B012
-import PA215.Source.AXTypedBindings.B013
-import PA215.Source.AXTypedBindings.B014
-import PA215.Source.AXTypedBindings.B015
-import PA215.Source.AXTypedBindings.B016
-import PA215.Source.AXTypedBindings.B017
-import PA215.Source.AXTypedBindings.B018
-import PA215.Source.AXTypedBindings.B019
-import PA215.Source.AXTypedBindings.B020
-import PA215.Source.AXTypedBindings.B021
-import PA215.Source.AXTypedBindings.B022
-import PA215.Source.AXTypedBindings.AXHead3Bindings0
-import PA215.Source.AXTypedBindings.AXHead3Bindings1
-import PA215.Source.AXTypedBindings.AXHead3Bindings2
-import PA215.Source.AXMacroProgram
+module
+
+public import PA215.Source.AXTypedBindings.B000
+public import PA215.Source.AXTypedBindings.B001
+public import PA215.Source.AXTypedBindings.B002
+public import PA215.Source.AXTypedBindings.B003
+public import PA215.Source.AXTypedBindings.B004
+public import PA215.Source.AXTypedBindings.B005
+public import PA215.Source.AXTypedBindings.B006
+public import PA215.Source.AXTypedBindings.B007
+public import PA215.Source.AXTypedBindings.B008
+public import PA215.Source.AXTypedBindings.B009
+public import PA215.Source.AXTypedBindings.B010
+public import PA215.Source.AXTypedBindings.B011
+public import PA215.Source.AXTypedBindings.B012
+public import PA215.Source.AXTypedBindings.B013
+public import PA215.Source.AXTypedBindings.B014
+public import PA215.Source.AXTypedBindings.B015
+public import PA215.Source.AXTypedBindings.B016
+public import PA215.Source.AXTypedBindings.B017
+public import PA215.Source.AXTypedBindings.B018
+public import PA215.Source.AXTypedBindings.B019
+public import PA215.Source.AXTypedBindings.B020
+public import PA215.Source.AXTypedBindings.B021
+public import PA215.Source.AXTypedBindings.B022
+public import PA215.Source.AXTypedBindings.AXHead3Bindings0
+public import PA215.Source.AXTypedBindings.AXHead3Bindings1
+public import PA215.Source.AXTypedBindings.AXHead3Bindings2
+public import PA215.Source.AXMacroProgram
+
+@[expose] public section
 namespace PA215.Source.AXModelBounds
 set_option maxRecDepth 100000
 theorem full_plan : AXTyped.Plan 25 3769 AXMacro.program :=

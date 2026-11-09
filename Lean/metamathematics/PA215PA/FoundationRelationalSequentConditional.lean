@@ -1,5 +1,9 @@
-import PA215PA.FoundationRelationalSequentRenameLabels
-import PA215PA.ActualCertificateNeighborhoodEquivalence
+module
+
+public import PA215PA.FoundationRelationalSequentRenameLabels
+public import PA215PA.ActualCertificateNeighborhoodEquivalence
+
+@[expose] public section
 
 /-! Conditional accepted bicertificates for the pending source-renaming
 induction. Universal congruence requires an actual antecedent-vacuity code. -/

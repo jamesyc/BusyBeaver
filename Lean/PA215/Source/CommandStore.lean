@@ -1,6 +1,10 @@
-import PA215.Source.Enumeration
-import PA215.Source.ActualAXCode
-import PA215.Source.Semantics
+module
+
+public import PA215.Source.Enumeration
+public import PA215.Source.ActualAXCode
+public import PA215.Source.Semantics
+
+@[expose] public section
 namespace PA215.Source
 open Cantor Enumeration
 

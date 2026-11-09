@@ -1,5 +1,9 @@
-import PA215PA.RelationalIsoPredecessorImage
-import PA215PA.RelationalIsoSuccessorFrame
+module
+
+public import PA215PA.RelationalIsoPredecessorImage
+public import PA215PA.RelationalIsoSuccessorFrame
+
+@[expose] public section
 
 /-! A bijection between two successor containers relates their displayed
 predecessors. This uses actual left-totality and local predecessor uniqueness. -/

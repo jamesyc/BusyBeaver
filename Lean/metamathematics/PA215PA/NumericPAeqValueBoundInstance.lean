@@ -1,4 +1,8 @@
-import PA215PA.NumericPAeqValueClosedEnvironment
+module
+
+public import PA215PA.NumericPAeqValueClosedEnvironment
+
+@[expose] public section
 
 /-! Actual bound substitution in value syntax with context-zero target term
 environments. Source arithmetic syntax stays unchanged. -/

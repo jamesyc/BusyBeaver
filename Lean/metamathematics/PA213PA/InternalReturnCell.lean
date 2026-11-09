@@ -1,5 +1,9 @@
-import PA213PA.InternalLeftPhase
-import Mathlib.Tactic.Ring.Basic
+module
+
+public import PA213PA.InternalLeftPhase
+public import Mathlib.Tactic.Ring.Basic
+
+@[expose] public section
 
 namespace PA213.PA.InternalTrace.ReturnCell
 open PA215

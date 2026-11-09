@@ -1,4 +1,8 @@
-import PA215PA.RelationalOrdinalSuccessorClosureLinear
+module
+
+public import PA215PA.RelationalOrdinalSuccessorClosureLinear
+
+@[expose] public section
 
 /-! Capture-aware represented-subset and intersection proof operations. -/
 namespace PA215.PA.RelationalSource.Ordinal

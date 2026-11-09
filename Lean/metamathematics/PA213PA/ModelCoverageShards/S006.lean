@@ -1,8 +1,12 @@
-import PA213PA.ModelPrimitive
-import PA213.FastPaths
-import PA213.RuntimeShards.S007
-import PA213.RuntimeShards.S008
-import PA213.RuntimeShards.S009
+module
+
+public import PA213PA.ModelPrimitive
+public import PA213.FastPaths
+public import PA213.RuntimeShards.S007
+public import PA213.RuntimeShards.S008
+public import PA213.RuntimeShards.S009
+
+@[expose] public section
 set_option maxRecDepth 100000
 set_option maxHeartbeats 16000000
 namespace PA213.PA.ModelCoverageShards.S006

@@ -1,5 +1,9 @@
-import PA215PA.ActualCertificateNeighborhoodSpecialization
-import PA215PA.ActualCertificateEquivalenceRelation
+module
+
+public import PA215PA.ActualCertificateNeighborhoodSpecialization
+public import PA215PA.ActualCertificateEquivalenceRelation
+
+@[expose] public section
 
 /-! Literal numerical pointed-existential extraction from actual bundle10.
 All formulas and witnesses are arbitrary PA-model values, with the original
