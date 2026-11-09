@@ -12,11 +12,13 @@ from check_source_hygiene import without_comments
 
 NAME = re.compile(r'[A-Za-z_][A-Za-z_0-9]*(?:\.[A-Za-z_][A-Za-z_0-9]*)*\Z')
 
-def is_local(name):
-    return name in ('PA215', 'PA213') or name.startswith(('PA215.', 'PA213.'))
-
-def build_order(root, target='PA213', package_roots=None):
-    roots = {'PA215': root, 'PA213': root, **(package_roots or {})}
+def build_order(root, target='PA211', package_roots=None):
+    roots = {'PA215': root, 'PA213': root, 'PA211': root, 'TreeSite': root,
+             **(package_roots or {})}
+    # The frozen publication uses flat User211 module names. Keep its bytes
+    # unchanged and resolve each module in the package that owns its source.
+    for base in set(roots.values()):
+        roots.update({p.stem: base for p in base.glob('User211*.lean')})
     def local(name):
         return name.split('.')[0] in roots
     states, order = {}, []
@@ -57,9 +59,9 @@ def main():
     cwd = root / 'metamathematics' if args.metamathematics else root
     extra = {}
     if args.metamathematics:
-        extra = {'PA215PA': cwd, 'PA213PA': cwd,
+        extra = {'PA215PA': cwd, 'PA213PA': cwd, 'PA211PA': cwd,
                  'Foundation': cwd / '.lake/packages/Foundation'}
-    target = args.target or ('PA213PA' if args.metamathematics else 'PA213')
+    target = args.target or ('PA211PA' if args.metamathematics else 'PA211')
     try:
         order = build_order(root, target, extra)
     except ValueError as e:

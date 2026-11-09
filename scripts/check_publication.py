@@ -12,8 +12,9 @@ sys.path.insert(0, str(ROOT / "Lean/scripts"))
 from build_serial import build_order
 from check_source_hygiene import without_comments
 
-ENDPOINT = "PA213PA.NonhaltingUnprovability"
-INDEPENDENCE = "PA213PA.TwoSidedIndependence"
+ENDPOINT = "User211LiteralEndpoint"
+INDEPENDENCE = "PA211PA.TwoSidedIndependence"
+PA211_BASELINE_SHA256 = "7adf9362e4e2b1fdc0af633dd7fd08a22747f553a778c5574a6f8acf6a03a85b"
 
 
 def checked_file(root, name, expected):
@@ -32,38 +33,59 @@ def lean_program_sha256(text):
 
 def main():
     manifest = json.loads((ROOT / "evidence/source-manifest.json").read_text())
+    baseline = {name: record["sha256"] for name, record in manifest["files"].items()
+                if record.get("pa211_baseline")}
+    encoded = json.dumps(baseline, sort_keys=True, separators=(",", ":")).encode()
+    if hashlib.sha256(encoded).hexdigest() != PA211_BASELINE_SHA256:
+        raise ValueError("The 395-module PA211 source baseline differs from its pinned hash")
     for name, record in manifest["files"].items():
         checked_file(ROOT, name, record["sha256"])
         if "lean_program_sha256" in record:
             if lean_program_sha256((ROOT / name).read_text()) != record["lean_program_sha256"]:
                 raise ValueError(f"Lean program differs from its recorded source: {name}")
     lean = ROOT / "Lean"
-    for package, expected in ((lean, {"PA213"}),
-                              (lean / "metamathematics", {"PA213PA"})):
+    for package, expected in ((lean, {"PA211"}),
+                              (lean / "metamathematics", {"PA211PA"})):
         config = (package / "lakefile.toml").read_text()
         targets = re.search(r"^defaultTargets = (\[[^\n]*\])$", config, re.M)
         if targets is None or set(json.loads(targets.group(1))) != expected:
-            raise ValueError(f"Default target must be PA213: {package}")
-    roots = {"PA215PA": lean / "metamathematics", "PA213PA": lean / "metamathematics"}
-    closure = set(build_order(lean, "PA213PA", roots))
+            raise ValueError(f"Default target must be PA211: {package}")
+    roots = {"PA215PA": lean / "metamathematics", "PA213PA": lean / "metamathematics",
+             "PA211PA": lean / "metamathematics"}
+    closure = set(build_order(lean, "PA211PA", roots))
     if ENDPOINT not in closure:
         raise ValueError(f"Default root does not expose {ENDPOINT}")
     if INDEPENDENCE not in closure:
         raise ValueError(f"Default root does not expose {INDEPENDENCE}")
-    closure.update(build_order(lean, "PA213"))
+    closure.update(build_order(lean, "PA211"))
+    sources = {"PA211", "PA211PA", "TreeSite"}
+    for base, namespaces in ((lean, ("PA211", "PA213", "PA215")),
+                             (lean / "metamathematics", ("PA211PA", "PA213PA", "PA215PA"))):
+        sources.update(p.stem for p in base.glob("User211*.lean"))
+        for namespace in namespaces:
+            sources.update(".".join(p.relative_to(base).with_suffix("").parts)
+                           for p in (base / namespace).rglob("*.lean"))
+    if sources != closure:
+        raise ValueError(f"Proof sources outside the PA211 closure: {sorted(sources - closure)}")
+    for obsolete in ("Lean/PA213.lean", "Lean/metamathematics/PA213PA.lean",
+                     "Lean/data/pa213.tm", "docs/pa213-independence.tex",
+                     "docs/pa213-independence.pdf", "evidence/pa213"):
+        if (ROOT / obsolete).exists():
+            raise ValueError(f"Obsolete publication artifact: {obsolete}")
     expected_axioms = {
-        "PA213.PA.consistent_machine_nonhalting",
-        "PA213.PA.InternalUnprovability.nonhalting_true",
-        "PA213.PA.InternalUnprovability.pa_proves_nonhalting_consistency",
-        "PA213.PA.InternalUnprovability.nonhalting_unprovable",
-        "PA213.PA.InternalUnprovability.final_endpoint",
-        "PA213.PA.Independence.nonhalting_irrefutable",
-        "PA213.PA.Independence.two_sided_independence",
-        "PA213.PA.Independence.machine_nonhalting",
+        "PA211.UserCandidate.PA.literal_final_endpoint",
+        "PA211.UserCandidate.PA.consistent_literal_nonhalting",
+        "PA211.UserCandidate.PA.InternalUnprovability.nonhalting_true",
+        "PA211.UserCandidate.PA.InternalUnprovability.pa_proves_nonhalting_consistency",
+        "PA211.UserCandidate.PA.InternalUnprovability.nonhalting_unprovable",
+        "PA211.UserCandidate.PA.literal_arithmetic_binding",
+        "PA211.UserCandidate.PA.Independence.nonhalting_irrefutable",
+        "PA211.UserCandidate.PA.Independence.two_sided_independence",
+        "PA211.UserCandidate.PA.Independence.machine_nonhalting",
     }
     audit = (lean / "metamathematics/Audit.lean").read_text()
     if set(re.findall(r"^#print axioms (\S+)$", audit, re.M)) != expected_axioms:
-        raise ValueError("The final axiom audit must name the five original PA213 roots and the three independence roots")
+        raise ValueError("The final axiom audit must name all nine PA211 roots")
     docs = {ROOT / name for name in manifest["files"] if name.endswith(".md")}
     docs.add(ROOT / "evidence/README.md")
     docs.update((ROOT / "docs").glob("*.md"))
@@ -76,7 +98,7 @@ def main():
             if not dest.is_relative_to(ROOT) or not dest.exists():
                 raise ValueError(f"Broken file link in {doc.relative_to(ROOT)}: {target}")
     print(f"PASS: {len(manifest['files'])} source identities, {len(closure)} "
-          f"PA213 dependency modules, "
+          f"PA211 dependency modules, "
           "and publication documentation links.")
 
 

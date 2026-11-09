@@ -1,6 +1,6 @@
 # Foundation proof patches
 
-The PA213 build uses two reviewed repairs to Foundation commit
+The PA211 build uses two reviewed repairs to Foundation commit
 `c3eb37ae896dc8f1d239ba1511e74d9f25e9d158` with Lean 4.35.0.
 They add generic substitution lemmas and use them in two syntax proofs.
 The preserved originals, patches, and exact hashes are in

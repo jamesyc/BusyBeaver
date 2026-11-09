@@ -36,21 +36,23 @@ class Integrity(unittest.TestCase):
     def test_rejects_divergent_lean_table_labels_and_source(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            for name in ("data/pa213.tm", "data/candidate_source.json",
-                         "PA213/CandidateTable.lean", "PA213/Machine.lean",
-                         "PA213/SourceSites.lean"):
+            for name in ("data/pa211.tm", "data/candidate_source.json",
+                         "PA211/UserCandidate/CandidateTable.lean",
+                         "PA211/UserCandidate/Dense.lean",
+                         "metamathematics/User211PAMachine.lean", "User211Source.lean"):
                 target = root / name
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(ROOT / "Lean" / name, target)
             check_inputs(root)
             for name, old, new in (
-                ("CandidateTable.lean", "some (true, true, 94)", "some (false, true, 94)"),
-                ("CandidateTable.lean", "List Nat := [74, 0", "List Nat := [73, 0"),
-                ("Machine.lean", "target 64", "target 63"),
-                ("SourceSites.lean", ".dec 8", ".dec 7"),
+                ("PA211/UserCandidate/CandidateTable.lean", "some (true, true, 0)", "some (false, true, 0)"),
+                ("PA211/UserCandidate/CandidateTable.lean", "List Nat := [74, 0", "List Nat := [73, 0"),
+                ("PA211/UserCandidate/Dense.lean", "some (true, true, 1)", "some (false, true, 1)"),
+                ("metamathematics/User211PAMachine.lean", "target 64", "target 63"),
+                ("User211Source.lean", ".dec 8", ".dec 7"),
             ):
                 with self.subTest(name=name, old=old):
-                    target = root / "PA213" / name
+                    target = root / name
                     original = target.read_text()
                     self.assertIn(old, original)
                     target.write_text(original.replace(old, new, 1))

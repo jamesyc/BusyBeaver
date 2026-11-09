@@ -3,7 +3,7 @@
  "packages":
  [{"type": "path",
    "scope": "",
-   "name": "pa213",
+   "name": "pa211",
    "manifestFile": "lake-manifest.json",
    "inherited": false,
    "dir": "..",
@@ -169,6 +169,6 @@
    "inputRev": "main",
    "inherited": true,
    "configFile": "lakefile.toml"}],
- "name": "pa213Metamathematics",
+ "name": "pa211Metamathematics",
  "lakeDir": ".lake",
  "fixedToolchain": false}

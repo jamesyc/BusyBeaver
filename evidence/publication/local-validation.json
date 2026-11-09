@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-11-09T06:00:12.139126+00:00",
+  "toolchain": "Lean 4.35.0 (eb6cafb7290e8bd5f2937522d8d804f58f02bafc), arm64-apple-darwin24.6.0, Release",
+  "machine_sha256": "fd986dc8cb7f30c3d9f6e4a1767e3335f06679aeadeedb8d1d7fecd442f232c3",
+  "source_sha256": "d7f77b32dbc6546c5015c6a596044506060e534def3d04cf8bcd49811161c36b",
+  "project_modules_in_default_closures": 2277,
+  "checked_source_digest": {
+    "algorithm": "SHA256 of compact sorted-key JSON mapping the default project closure, both audits, and package/toolchain configurations to their SHA256 hashes",
+    "files": 2285,
+    "sha256": "5b5b7ab40c66be01adb502a501f989c34dee054a7e840e3e86e55eb77c5bb715"
+  },
+  "serial_build": {
+    "command": "python3 Lean/scripts/build_serial.py --metamathematics",
+    "exit_code": 0,
+    "scheduled_modules": 2420,
+    "project_modules": 2276,
+    "foundation_modules": 144,
+    "log_sha256": "2164b85741897242dddd914c6b006904bba7ea044f6b6b8bc4662976902e9e8e"
+  },
+  "default_builds": [
+    {
+      "directory": "Lean",
+      "command": "lake --rehash build",
+      "exit_code": 0,
+      "jobs": 336,
+      "log_sha256": "8dc8b57d24d1324ff7cae9dd8a0a4b4a33851b8b27ee6d10edcd6c6032a96ff1"
+    },
+    {
+      "directory": "Lean/metamathematics",
+      "command": "lake --rehash build",
+      "exit_code": 0,
+      "jobs": 3548,
+      "log_sha256": "e6a4d6114c4751c6405d206141e269291fd06d9645be18528cf3b8df5d357c0c"
+    }
+  ],
+  "axiom_audits": {
+    "core": {
+      "roots": 8,
+      "axioms": {
+        "PA211.UserCandidate.CandidateTable.native_boxes": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.StateBound.domain": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.CompleteCoverage.coverage": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.Startup.startup_exact": [
+          "propext"
+        ],
+        "PA211.UserCandidate.LiteralStartup.startup_exact": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.Dense.rows_conjugate": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.physical_endpoint": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.Dense.defined_row_count": []
+      },
+      "report_sha256": "5fc3548eaf2dc97c41fbd39ea04a002a8d9ca7cb8391d7e8c7f1a629dea0f765"
+    },
+    "endpoint": {
+      "roots": 9,
+      "axioms": {
+        "PA211.UserCandidate.PA.literal_final_endpoint": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.PA.consistent_literal_nonhalting": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.PA.InternalUnprovability.nonhalting_true": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.PA.InternalUnprovability.pa_proves_nonhalting_consistency": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.PA.InternalUnprovability.nonhalting_unprovable": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.PA.Independence.nonhalting_irrefutable": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.PA.Independence.two_sided_independence": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.PA.Independence.machine_nonhalting": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PA211.UserCandidate.PA.literal_arithmetic_binding": []
+      },
+      "report_sha256": "535596d9edbfda5fa25357b3832772822a482afc0cf99a31a1c430b184772ef1"
+    }
+  },
+  "public_interface_check": {
+    "status": "PASS",
+    "ordinary_Peano_two_sided_theorem_without_explicit_premises": true,
+    "literal_blank_nonhalting_without_explicit_premises": true
+  },
+  "packaging_tests": {
+    "command": "bash scripts/check.sh",
+    "unit_tests": 24,
+    "status": "PASS"
+  },
+  "scope": "The serial Lake checks and both default package builds allowed cached external dependencies.",
+  "baseline_lean_modules": 395
+}

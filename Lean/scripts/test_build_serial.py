@@ -40,12 +40,24 @@ class Plan(unittest.TestCase):
             root = Path(d)
             (root / 'PA215').mkdir()
             (root / 'PA215/Support.lean').write_text('')
-            (root / 'PA213.lean').write_text('import PA215.Support')
-            self.assertEqual(build_order(root), ['PA215.Support', 'PA213'])
+            (root / 'PA211.lean').write_text('import PA215.Support')
+            self.assertEqual(build_order(root), ['PA215.Support', 'PA211'])
             meta = root / 'meta'
             meta.mkdir()
-            (meta / 'PA213PA.lean').write_text('import PA213')
-            self.assertEqual(build_order(root, 'PA213PA', {'PA213PA': meta}),
-                             ['PA215.Support', 'PA213', 'PA213PA'])
+            (meta / 'PA211PA.lean').write_text('import PA211')
+            self.assertEqual(build_order(root, 'PA211PA', {'PA211PA': meta}),
+                             ['PA215.Support', 'PA211', 'PA211PA'])
+
+    def test_frozen_flat_modules_resolve_in_their_own_package(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            meta = root / 'meta'
+            meta.mkdir()
+            (root / 'TreeSite.lean').write_text('')
+            (root / 'User211Source.lean').write_text('import TreeSite')
+            (meta / 'User211LiteralEndpoint.lean').write_text('import User211Source')
+            (meta / 'PA211PA.lean').write_text('import User211LiteralEndpoint')
+            self.assertEqual(build_order(root, 'PA211PA', {'PA211PA': meta}),
+                             ['TreeSite', 'User211Source', 'User211LiteralEndpoint', 'PA211PA'])
 
 if __name__ == '__main__': unittest.main()

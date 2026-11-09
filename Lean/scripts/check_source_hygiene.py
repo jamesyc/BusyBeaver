@@ -57,10 +57,14 @@ def main():
     forbidden = re.compile(r'\b(sorry|admit|native_decide|native_eval|axiom)\b')
     failed = []
     sources = []
-    for package in (root / 'PA215', root / 'PA213',
-                    root / 'metamathematics/PA215PA', root / 'metamathematics/PA213PA'):
+    for package in (root / 'PA215', root / 'PA213', root / 'PA211',
+                    root / 'metamathematics/PA215PA', root / 'metamathematics/PA213PA',
+                    root / 'metamathematics/PA211PA'):
         sources.extend(sorted(package.rglob('*.lean')))
-    sources.extend([root / 'PA213.lean', root / 'metamathematics/PA213PA.lean'])
+    sources.extend(root.glob('User211*.lean'))
+    sources.extend((root / 'metamathematics').glob('User211*.lean'))
+    sources.extend([root / 'TreeSite.lean', root / 'PA211.lean',
+                    root / 'metamathematics/PA211PA.lean'])
     for source in sources:
         for line_no, line in enumerate(without_comments(source.read_text()).splitlines(), 1):
             if forbidden.search(line):
