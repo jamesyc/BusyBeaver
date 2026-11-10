@@ -1,0 +1,71 @@
+import PA215PA.Startup.Composition
+
+namespace PA215.PA.Startup
+open NatTape
+def c000 : NatTape.Configuration := ⟨some ⟨0, by decide⟩, 0, 0⟩
+def c001 : NatTape.Configuration := ⟨some ⟨117, by decide⟩, 21, 1400129⟩
+def c002 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 22, 179665662⟩
+def c003 : NatTape.Configuration := ⟨some ⟨1, by decide⟩, 416, 715742911⟩
+def c004 : NatTape.Configuration := ⟨some ⟨54, by decide⟩, 430280, 48698665662⟩
+def c005 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 0, 3086608040116105366⟩
+def c006 : NatTape.Configuration := ⟨some ⟨71, by decide⟩, 26893, 375665074724837⟩
+def c007 : NatTape.Configuration := ⟨some ⟨82, by decide⟩, 420, 192200505209913228⟩
+def c008 : NatTape.Configuration := ⟨some ⟨10, by decide⟩, 105, 49192074074063372336⟩
+def c009 : NatTape.Configuration := ⟨some ⟨11, by decide⟩, 27539072, 1501205603723967⟩
+def c010 : NatTape.Configuration := ⟨some ⟨71, by decide⟩, 26893, 1537234400774389756⟩
+def c011 : NatTape.Configuration := ⟨some ⟨74, by decide⟩, 0, 805951315188297240637590⟩
+def c012 : NatTape.Configuration := ⟨some ⟨11, by decide⟩, 110161920, 24019203739965311⟩
+def c013 : NatTape.Configuration := ⟨some ⟨51, by decide⟩, 1721295, 12297830115480944639⟩
+def c014 : NatTape.Configuration := ⟨some ⟨94, by decide⟩, 112814194686, 1501199898159791⟩
+def c015 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 6891775, 24595659131450019839⟩
+def c016 : NatTape.Configuration := ⟨some ⟨74, by decide⟩, 0, 3301173450392201292150756502⟩
+def c017 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 430759, 25185954598761056960511⟩
+def c018 : NatTape.Configuration := ⟨some ⟨40, by decide⟩, 8136750786768153897559829162, 85⟩
+def c019 : NatTape.Configuration := ⟨some ⟨4, by decide⟩, 105, 6602346876573003253291154740⟩
+def c020 : NatTape.Configuration := ⟨some ⟨6, by decide⟩, 0, 432691404879488819756756308644440⟩
+def c021 : NatTape.Configuration := ⟨some ⟨74, by decide⟩, 0, 55384499824422264773810384773391744⟩
+def c022 : NatTape.Configuration := ⟨some ⟨44, by decide⟩, 6731, 422550200076173674267203862516⟩
+def c023 : NatTape.Configuration := ⟨some ⟨70, by decide⟩, 26924, 6760803201217320867559393722375⟩
+def c024 : NatTape.Configuration := ⟨some ⟨49, by decide⟩, 430796, 3380401600608623911460879204352⟩
+def c025 : NatTape.Configuration := ⟨some ⟨35, by decide⟩, 0, 1814839290245006774007314715932044895616⟩
+def c026 : NatTape.Configuration := ⟨some ⟨2, by decide⟩, 1723240, 54086425609737799971340462063616⟩
+def c027 : NatTape.Configuration := ⟨some ⟨11, by decide⟩, 28911270363136, 25790417485112090508916074⟩
+def c028 : NatTape.Configuration := ⟨some ⟨54, by decide⟩, 32551168274357470446085690709, 183251937962⟩
+def c029 : NatTape.Configuration := ⟨some ⟨64, by decide⟩, 1850319692627957, 3223802185639011177299628⟩
+def c030 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 1682, 28356863910078205387020464562188058595⟩
+def c031 : NatTape.Configuration := ⟨some ⟨36, by decide⟩, 1764548607, 216345702438951151376465770381312⟩
+def c032 : NatTape.Configuration := ⟨some ⟨54, by decide⟩, 6892575, 443075998594971957731441291741364223⟩
+def c033 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 1723187, 14178431955039102645072980344110579711⟩
+def c034 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 1723183, 113427455640312821156013538640738123775⟩
+def c035 : NatTape.Configuration := ⟨some ⟨1, by decide⟩, 34950364275278082171330617096970873514, 44739242⟩
+def c036 : NatTape.Configuration := ⟨some ⟨4, by decide⟩, 462572272746495, 27043212804868893898619488302421⟩
+def c037 : NatTape.Configuration := ⟨some ⟨36, by decide⟩, 1723243, 58074857287840164431095042362059400413184⟩
+def c038 : NatTape.Configuration := ⟨some ⟨40, by decide⟩, 508612004286841179816831830, 1574122160956548404565⟩
+def c039 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 1723244, 464598858302721315448685398998632808579071⟩
+def c040 : NatTape.Configuration := ⟨some ⟨11, by decide⟩, 462580862681088, 13846124956092873676081506841177775⟩
+def c041 : NatTape.Configuration := ⟨some ⟨1, by decide⟩, 8532734453501868814975992987298474, 750599937895082⟩
+def c042 : NatTape.Configuration := ⟨some ⟨2, by decide⟩, 1850263321182208, 221537999297485978817301361419332436⟩
+def c043 : NatTape.Configuration := ⟨some ⟨1, by decide⟩, 2133183613375467251031800104528554, 192153584101141162⟩
+def c044 : NatTape.Configuration := ⟨some ⟨11, by decide⟩, 27571072, 951498461803973254038857362737109307211382783⟩
+def c045 : NatTape.Configuration := ⟨some ⟨1, by decide⟩, 110285311, 237874615450993313509714340612219732764917759⟩
+def c046 : NatTape.Configuration := ⟨some ⟨36, by decide⟩, 1723243, 121791803110908576516973737646302348642894217216⟩
+def c047 : NatTape.Configuration := ⟨some ⟨91, by decide⟩, 600463070457332878056172646389552947824029947221, 349525⟩
+def c048 : NatTape.Configuration := ⟨some ⟨4, by decide⟩, 1, 1021663693910592572238898021402185315813198854870797605⟩
+def c049 : NatTape.Configuration := ⟨some ⟨1, by decide⟩, 2518418699402766636279394577412033510049303608836139690, 0⟩
+def c050 : NatTape.Configuration := ⟨some ⟨11, by decide⟩, 27571072, 3897337699549074448543159554703394112652120686591⟩
+def c051 : NatTape.Configuration := ⟨some ⟨6, by decide⟩, 0, 1046183622564446793972631570745086663298916625322557493848⟩
+def c052 : NatTape.Configuration := ⟨some ⟨11, by decide⟩, 118420151090544640, 7259357160980020553885324958910981860011⟩
+def c053 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 441126911, 1948668849774537224271579777053450678965689647103⟩
+def c054 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 115650584379391, 7433581732843541047178572757924845424652287⟩
+def c055 : NatTape.Configuration := ⟨some ⟨54, by decide⟩, 37530934597123994080646570460316862327198930261, 183251937962⟩
+def c056 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 26, 261545905641111698493157892636954746529593726542343568338⟩
+def c057 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 26926, 2043327387821185144477796036206861422357961485777371134⟩
+def c058 : NatTape.Configuration := ⟨some ⟨11, by decide⟩, 28235530240, 15589350798196297794172638215652653039980787007487⟩
+def c059 : NatTape.Configuration := ⟨some ⟨3, by decide⟩, 6893375, 63853980869412035764931126131313266845759619362455551⟩
+def c060 : NatTape.Configuration := ⟨some ⟨1, by decide⟩, 1894766397913825279, 1858395433210885261794643189387730051967739⟩
+def c061 : NatTape.Configuration := ⟨some ⟨2, by decide⟩, 441180160, 63853980869412035764931126131266031662217260859129856⟩
+def c062 : NatTape.Configuration := ⟨some ⟨16, by decide⟩, 0, 1097003038214137361436646121704954436233926729084970979684206944⟩
+def c063 : NatTape.Configuration := ⟨some ⟨1, by decide⟩, 1894766397913825279, 118937307725496656754857164120792727735152623⟩
+def c064 : NatTape.Configuration := ⟨some ⟨81, by decide⟩, 1, 137125379776767170179580765213114232692120930255577756685319461⟩
+
+end PA215.PA.Startup

@@ -1,0 +1,15 @@
+name = "pa215Metamathematics"
+version = "0.1.0"
+defaultTargets = ["PA215PA"]
+
+[[lean_lib]]
+name = "PA215PA"
+
+[[require]]
+name = "Foundation"
+git = "https://github.com/FormalizedFormalLogic/Foundation.git"
+rev = "c3eb37ae896dc8f1d239ba1511e74d9f25e9d158"
+
+[[require]]
+name = "pa215"
+path = ".."

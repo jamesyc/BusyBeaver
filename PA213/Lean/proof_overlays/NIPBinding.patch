@@ -1,0 +1,19 @@
+--- original
++++ proof_overlay
+@@ -1,4 +1,4 @@
+-import PA215.Source.ExactSource
++import PA215.Source.TrieResolver
+ 
+ set_option maxHeartbeats 16000000
+ set_option maxRecDepth 50000
+@@ -23,7 +23,9 @@
+ 
+ theorem nip_resolved_fragment :
+     (List.range 12).map (fun j => resolveAt exactSites (3921 + j)) =
+-      nipExpected.toList.map some := by decide
++      nipExpected.toList.map some := by
++  simp only [← PathTrie.fastResolveAt_eq]
++  decide +kernel
+ 
+ theorem nip_resolved_at (j : Fin 12) :
+     resolveAt exactSites (3921 + j.val) = some nipExpected[j.val] := by

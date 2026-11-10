@@ -1,15 +1,13 @@
 cff-version: 1.2.0
-message: "Please cite the article and identify the commit used."
+message: "Please cite the relevant version's CITATION.cff and identify its original commit."
 type: software
-title: "Nonhalting and PA-independence for a 211-state Turing machine"
+title: "Busy Beaver: PA-independent Turing machines with 215, 213, and 211 working states"
 authors:
   - family-names: "Chang"
     given-names: "James"
 repository-code: "https://github.com/jamesyc/BusyBeaver"
 abstract: >-
-  Assuming the consistency of ordinary Peano arithmetic, an explicit binary
-  Turing machine with 211 working states runs forever on a blank tape and PA
-  cannot prove its nonhalting sentence. Since the natural numbers model PA,
-  PA cannot refute that sentence either. The Lean formalization checks the
-  machine simulation, the internal implication from nonhalting to PA
-  consistency, and the two-sided independence corollary.
+  Combined historical archive of three explicit binary Turing machines
+  searching for contradictions in Peano arithmetic, with Lean formalizations
+  for nonhalting, PA-unprovability, and later two-sided PA independence.
+  Each version is preserved as a complete original Git tree.

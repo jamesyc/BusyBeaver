@@ -1,12 +1,8 @@
-# Maintaining PA211
+# Maintaining the combined BusyBeaver archive
 
-Read the [article](README.md), [theorem statements](docs/result.md), and
-[reproduction instructions](docs/reproduction.md) before changing the package.
-
-- Preserve the machine bytes, theorem statements, and explicit assumptions.
-- Keep the literal PA211 endpoint in the default metamathematics build and all nine roots in its axiom audit.
-- Run `bash scripts/check.sh` for packaging changes. For changes to proofs, imports, or dependencies, build the affected packages and run the axiom audit.
-- Keep source identities and license notices accurate. Preserve original validation data verbatim.
-- Retain the support libraries under their original names. Publish only the PA211 endpoint and machine data.
-- Keep build caches, private files, and experiments outside the publication tree.
-- Push, release, or change repository visibility only on the user's instruction.
+- Treat `PA215/`, `PA213/`, and `PA211/` as frozen historical snapshots. Preserve their relative file paths, machine table bytes, evidence, toolchain locks, and theorem statements.
+- The three directories are complete original Git trees. Keep `scripts/verify-snapshots.sh` consistent with the recorded tree hashes if deliberately changing archive policy; do not silently modify historical snapshots.
+- Do not deduplicate Lean proof sources across top-level versions. Within a snapshot, modules named after earlier versions may be necessary imports for its proof.
+- For a new smaller machine, create a new top-level `PA<number>/` snapshot with its own readme, scripts, Lean tree, and evidence. Update the root index and CI separately.
+- Run `bash scripts/verify-snapshots.sh` and `bash PA215/scripts/check.sh`, `bash PA213/scripts/check.sh`, and `bash PA211/scripts/check.sh` before publishing organizational changes. Full Lean builds require the pinned toolchain and dependencies in each snapshot.
+- Do not rewrite Git history or merge the archive into another branch without explicit instruction.

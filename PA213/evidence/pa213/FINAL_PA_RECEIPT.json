@@ -1,0 +1,60 @@
+{
+  "status": "kernel_checked",
+  "created_utc": "2026-11-07T11:20:00.107032+00:00",
+  "endpoint": "PA213.PA.InternalUnprovability.final_endpoint",
+  "endpoint_file": "metamathematics/PA213PA/NonhaltingUnprovability.lean",
+  "endpoint_sha256": "af646b139c43c879435afeab366ed46992136b4bd5f2220ec44be7f70f79a5fd",
+  "table_sha256": "b332b36d8ed9c909c51df27727a2c68a6890c122e102a4e7a6d411a483094989",
+  "source_sha256": "e5e8bae79278c83b5ed96a6981a81252916deb702473e6f186f3ba32467289ba",
+  "working_controls": 213,
+  "binary_rows": 426,
+  "source_sites": 3947,
+  "symbolic_branch_contracts": 5134,
+  "blank_startup_steps": 64764,
+  "lean": {
+    "version": "4.35.0",
+    "commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "official_linux_archive_sha256": "7289597a44543246c9227b8cae501767e095ce17f6d448b95fc4a8dc97268f6d"
+  },
+  "foundation_commit": "c3eb37ae896dc8f1d239ba1511e74d9f25e9d158",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "internal_pa_theorem": "PA213.PA.InternalUnprovability.pa_proves_nonhalting_consistency",
+  "external_assumption_for_nonhalting_and_unprovability": "PA215.PA.Consistent, the ordinary syntactic consistency of Foundation Peano arithmetic.",
+  "conclusions": [
+    "The actual physical transition-function domain is contained in exactly 213 distinct working controls.",
+    "The object-arithmetic nonhalting sentence contains exactly 426 physical rows, with a proved all-model equivalence to the auxiliary encoding.",
+    "Ordinary PA proves this exact nonhalting sentence implies its usual arithmetized consistency sentence, without external supplier premises.",
+    "If ordinary PA is consistent, the exact physical machine does not halt from blank tape, the exact sentence is true in Nat, and ordinary PA does not prove the sentence."
+  ],
+  "not_claimed": [
+    "Two-sided independence from consistency alone.",
+    "Unconditional consistency of PA.",
+    "A clean source rebuild of every vendor dependency: the pinned official Mathlib cache is used.",
+    "Independent final-endpoint review, which is being performed separately."
+  ],
+  "build": {
+    "cwd": "metamathematics",
+    "command": "lake --rehash build +PA213PA.NonhaltingUnprovability",
+    "successful_targets": 3224,
+    "log": "metamathematics/serial_logs/final_nonhalting_unprovability.log",
+    "log_sha256": "10288f88006777d0360542d548d1f1b58086f03130a0933dc4bec93c9b7c4151"
+  },
+  "source_manifest": {
+    "path": "FINAL_PA_MANIFEST.json",
+    "sha256": "2519af884bf1daaa9941709348437198d2d312473a97f703afd107da5cb95f6a",
+    "modules": 2097,
+    "foundation_modules": 144
+  },
+  "overlays": {
+    "original_project_proof_import_overlays": 22,
+    "foundation_proof_only_repairs": 2,
+    "foundation_verification": "foundation_overlays/VERIFICATION.json"
+  },
+  "static_audit": "FINAL_SOURCE_AUDIT.json",
+  "guide": "PA213_PROOF_GUIDE.md"
+}

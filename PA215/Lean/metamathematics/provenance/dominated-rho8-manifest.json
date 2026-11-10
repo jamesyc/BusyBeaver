@@ -1,0 +1,37 @@
+{
+  "scope": "Lean port of the dominated rho8 proof using native derivation constructors and Cantor bounds.",
+  "source": {
+    "repository": "VladimirReshetnikov/ProveIt",
+    "commit": "6809609c61b9f2dd11c66374952cc5eb3defbd9f",
+    "path": "Computability/BusyBeaver/Research/ZFC/k225-formal/rocq/rocq-extension/coq/215/DominatedCore.v",
+    "git_blob": "43b3a1d1a86a5defab48403aa443e8c694938132",
+    "sha256": "ce27f2836c3723763964738fc7dfb07ae42ae90028a6564cbccb45466f2b73fe"
+  },
+  "dependencies": [
+    "PA215PA.NativeDecode",
+    "PA215PA.NativeCalculus",
+    "PA215PA.NativeNamed"
+  ],
+  "files": [
+    {
+      "path": "Lean/metamathematics/PA215PA/DominatedRho8.lean",
+      "sha256": "e7be479e7a99c0ae515cd42fdb3dc474714890f145a7abc5203a1f91014f84cc",
+      "bytes": 14769
+    },
+    {
+      "path": "Lean/metamathematics/scripts/port_dominated_core.py",
+      "sha256": "161fdd172872dc4ee371891f28f685168b9987c39c758831ee28060e9d60daae",
+      "bytes": 3076
+    },
+    {
+      "path": "Lean/metamathematics/provenance/DominatedCore.v",
+      "sha256": "ce27f2836c3723763964738fc7dfb07ae42ae90028a6564cbccb45466f2b73fe",
+      "bytes": 13083
+    }
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

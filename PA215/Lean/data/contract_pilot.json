@@ -1,0 +1,1116 @@
+{
+  "source_corpus_sha256": "7cc47482b8ffcaad47dac92c9033a54a93d1a43d4686db2ccd165542897dfffe",
+  "indices": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    5085,
+    5086,
+    5087,
+    5088
+  ],
+  "original_contracts": [
+    {
+      "arg": 8,
+      "branch": [
+        1,
+        true
+      ],
+      "branch_name": "decrement_zero",
+      "graph_changed_support_key": [
+        27,
+        0
+      ],
+      "halt": false,
+      "index": 0,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            1,
+            64
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "0000",
+      "port_row": [
+        27,
+        0
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 0,
+      "tag": "EDecnz",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            2
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            1,
+            61
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 8,
+      "branch": [
+        1,
+        false
+      ],
+      "branch_name": "decrement_positive",
+      "graph_changed_support_key": [
+        27,
+        0
+      ],
+      "halt": false,
+      "index": 1,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            1,
+            64
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "0000",
+      "port_row": [
+        27,
+        0
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 0,
+      "tag": "EDecnz",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            3
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            1,
+            61
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "dec",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 1,
+      "branch": null,
+      "branch_name": "break",
+      "graph_changed_support_key": [
+        27,
+        1
+      ],
+      "halt": false,
+      "index": 2,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            3
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            1,
+            60
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "0001",
+      "port_row": [
+        27,
+        1
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 1,
+      "tag": "EBreak",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            1,
+            62
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 8,
+      "branch": null,
+      "branch_name": "increment",
+      "graph_changed_support_key": [
+        138,
+        0
+      ],
+      "halt": false,
+      "index": 5,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            2
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            1,
+            59
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "001010",
+      "port_row": [
+        138,
+        0
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 3,
+      "tag": "EInc",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            2
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            1,
+            58
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "inc",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 6,
+      "branch": null,
+      "branch_name": "increment",
+      "graph_changed_support_key": [
+        62,
+        0
+      ],
+      "halt": false,
+      "index": 6,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            2
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            1,
+            58
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "0010110",
+      "port_row": [
+        62,
+        0
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 4,
+      "tag": "EInc",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            2
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            3
+          ],
+          [
+            "r",
+            0,
+            1,
+            57
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "inc",
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 3,
+      "branch": null,
+      "branch_name": "continue",
+      "graph_changed_support_key": [
+        62,
+        1
+      ],
+      "halt": false,
+      "index": 7,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            2
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            3
+          ],
+          [
+            "r",
+            0,
+            1,
+            57
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "0010111",
+      "port_row": [
+        62,
+        1
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 5,
+      "tag": "EContinue",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            0,
+            0,
+            2
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            1,
+            61
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 1,
+      "branch": [
+        2,
+        true
+      ],
+      "branch_name": "decrement_zero",
+      "graph_changed_support_key": [
+        28,
+        0
+      ],
+      "halt": false,
+      "index": 5085,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            1,
+            62
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "1100",
+      "port_row": [
+        28,
+        0
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 3911,
+      "tag": "EDecnz",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            1,
+            0,
+            3
+          ],
+          [
+            "r",
+            0,
+            1,
+            61
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 1,
+      "branch": [
+        2,
+        false
+      ],
+      "branch_name": "decrement_positive",
+      "graph_changed_support_key": [
+        28,
+        0
+      ],
+      "halt": false,
+      "index": 5086,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            1,
+            62
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "1100",
+      "port_row": [
+        28,
+        0
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 3911,
+      "tag": "EDecnz",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            1,
+            61
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "dec",
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 6,
+      "branch": null,
+      "branch_name": "increment",
+      "graph_changed_support_key": [
+        42,
+        0
+      ],
+      "halt": false,
+      "index": 5087,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "r",
+            0,
+            1,
+            60
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "11010",
+      "port_row": [
+        42,
+        0
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 3912,
+      "tag": "EInc",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            1,
+            59
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "inc",
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "arg": 2,
+      "branch": null,
+      "branch_name": "continue",
+      "graph_changed_support_key": [
+        42,
+        1
+      ],
+      "halt": false,
+      "index": 5088,
+      "initial": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            0,
+            1
+          ],
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            1,
+            59
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      },
+      "path": "11011",
+      "port_row": [
+        42,
+        1
+      ],
+      "runtime_status": "UNPAID",
+      "site_index": 3913,
+      "tag": "EContinue",
+      "target": {
+        "left": [
+          [
+            "r",
+            1,
+            0,
+            1
+          ]
+        ],
+        "on_left": false,
+        "q": "84",
+        "right": [
+          [
+            "r",
+            1,
+            0,
+            2
+          ],
+          [
+            "r",
+            0,
+            1,
+            62
+          ],
+          [
+            "r",
+            1,
+            0,
+            1
+          ],
+          [
+            "b",
+            "none",
+            -1
+          ]
+        ]
+      }
+    }
+  ],
+  "scope": "Original input projection. Historical runtime_status fields are immutable metadata, not statuses of the new Lean proofs."
+}

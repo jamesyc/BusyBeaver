@@ -1,0 +1,14 @@
+--- a/Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Functions.lean
++++ b/Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Functions.lean
+@@ -24,7 +24,10 @@
+   bvar (param z)        := (param 1).[z]
+   fvar (_     x)        := ^&x
+   func (_     k f _ v') := ^func k f v'
+-  bvar_defined := .mk fun v ↦ by simp [blueprint]
++  bvar_defined := .mk fun v ↦ by
++    simp only [blueprint, Bounding.HierarchySymbol.Semiformula.val_mkSigma]
++    rw [Semiformula.eval_substs]
++    simp [nth_defined.df]
+   fvar_defined := .mk fun v ↦ by simp [blueprint]
+   func_defined := .mk fun v ↦ by simp [blueprint]
+ 

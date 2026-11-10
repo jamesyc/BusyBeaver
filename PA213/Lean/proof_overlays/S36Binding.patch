@@ -1,0 +1,19 @@
+--- original
++++ proof_overlay
+@@ -1,4 +1,4 @@
+-import PA215.Source.ExactSource
++import PA215.Source.TrieResolver
+ import PA215.Source.S36Drain
+ 
+ set_option maxHeartbeats 16000000
+@@ -24,7 +24,9 @@
+ 
+ theorem s36_resolved_fragment :
+     (List.range 10).map (fun j => resolveAt exactSites (3911 + j)) =
+-      s36Expected.toList.map some := by decide
++      s36Expected.toList.map some := by
++  simp only [← PathTrie.fastResolveAt_eq]
++  decide +kernel
+ 
+ /-- Individual instruction access follows from the single checked window. -/
+ theorem s36_resolved_at (j : Fin 10) :

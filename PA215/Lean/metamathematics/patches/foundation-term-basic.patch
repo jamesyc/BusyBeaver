@@ -1,0 +1,14 @@
+--- a/Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Basic.lean
++++ b/Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Basic.lean
+@@ -681,7 +681,10 @@
+   func (_ _ _ _ v') := listMax v'
+   bvar_defined := .mk fun v ↦ by simp [blueprint]
+   fvar_defined := .mk fun v ↦ by simp [blueprint]
+-  func_defined := .mk fun v ↦ by simp [blueprint]
++  func_defined := .mk fun v ↦ by
++    simp only [blueprint, Bounding.HierarchySymbol.Semiformula.val_mkSigma]
++    rw [Semiformula.eval_substs]
++    simp [listMax_defined.df]
+ 
+ end IsUTerm.BV
+ 

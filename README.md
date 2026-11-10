@@ -1,36 +1,38 @@
-# Nonhalting and PA-independence for a 211-state Turing machine
+# Busy Beaver: Turing machines independent of Peano arithmetic
 
-Let PA stand for ordinary first-order Peano arithmetic. PA is consistent if its axioms admit no proof of a contradiction.
+This repository archives three explicit binary Turing machines with **215, 213, and 211 working states**. Each machine starts on a blank, two-way-infinite tape and searches for a proof of a contradiction in ordinary first-order Peano arithmetic (PA). Their Lean proof packages connect the published transition tables to that search and formalize statements about nonhalting and PA independence.
 
-> PA211 runs forever on a blank tape, and PA can neither prove nor refute its arithmetic nonhalting sentence. The consistency-conditional proof is checked independently; the two-sided corollary uses Foundation's standard model of PA in Lean's metatheory.
+The versions are kept as **complete, separate snapshots**, not a shared, evolving Lean project. This preserves the exact sources, dependency manifests, proof evidence, and instructions associated with each result.
 
-PA211 searches for a proof of a contradiction from PA. Its proof commands encode formulas and finite derivations as numbers. The machine halts when the command interpreter derives falsity.
+| Version | Working states | Transition rows | Formal result | Reproduce |
+| --- | ---: | ---: | --- | --- |
+| [PA215](PA215/README.md) | 215 | 430 | Nonhalting and PA-unprovability, conditional on PA consistency | `bash PA215/scripts/check.sh` |
+| [PA213](PA213/README.md) | 213 | 426 | Two-sided PA independence, with the consistency and truth prerequisites discharged in Lean's metatheory | `bash PA213/scripts/check.sh` |
+| [PA211](PA211/README.md) | 211 | 422 | Two-sided PA independence, with the consistency and truth prerequisites discharged in Lean's metatheory | `bash PA211/scripts/check.sh` |
 
-The tape extends infinitely in both directions, contains only zeros initially, and has alphabet `{0,1}`. The machine starts in state 0. Its 211 working states use labels 0 through 214 with 122, 150, 205, and 214 omitted. There are 422 transition rows. State 215 signals a halt and is excluded from the working-state count. [Complete transition table](Lean/data/pa211.tm)
+These are distinct published machines, not the number of Lean modules or source-level search instructions. In particular, PA215's original result did **not** claim the same unconditional two-sided independence theorem later established for PA213 and PA211.
 
-## Nonhalting
+## Explore the versions
 
-If PA is consistent, the search cannot derive a contradiction. The Lean proof connects that search to the exact transition table. The source has 3,947 instructions, represented by a 173-node tree. Its instruction order and successors are unchanged from the accepted interpreter; 366 source paths were rearranged to obtain this machine. The new source equivalence, physical runtime, and all-model runtime are checked separately.
+Each version directory contains its original:
 
-After exactly 64,764 tape steps, the machine reaches the frame for a checked 159-step source prefix. The proof checks all 5,134 branch-sensitive runtime duties and covers every source site. Each simulated instruction takes a positive number of tape steps. An indefinitely running source therefore gives an indefinitely running tape machine. [Source equivalence](Lean/User211SourceEquivalence.lean) · [Physical endpoint](Lean/PA211/UserCandidate/KernelEndpoint.lean) · [Nonhalting from PA consistency](Lean/metamathematics/User211ConsistentNonhalting.lean)
+- `README.md`, `AGENTS.md`, `CITATION.cff`, and publication metadata;
+- `Lean/` packages, data (including the exact machine table), scripts, and pinned toolchain/dependency manifests;
+- `docs/`, `evidence/`, and `scripts/` folders, including available verification records;
+- other files present in that historical commit, kept under their original relative paths.
 
-## Independence from PA
+Some recent Lean packages contain support modules named `PA213` and `PA215`. These modules belong to the snapshot containing them; they must not be replaced with files from another top-level version directory.
 
-Let *N* be the exact arithmetic sentence saying that no finite halting trace exists. Its step formula uses exactly the 422 active rows. Lean binds those arithmetic rows directly to the published literal table and proves standard-model adequacy through the physical encoding. [Exact sentence](Lean/metamathematics/User211EndpointExactHaltingFormula.lean) · [Literal row binding](Lean/metamathematics/User211LiteralArithmeticBinding.lean)
+The quick checks above verify publication package integrity without requiring a Lean build. With each snapshot's pinned toolchain and dependencies installed, use `bash PA215/scripts/check.sh --full`, `bash PA213/scripts/check.sh --full`, or `bash PA211/scripts/check.sh --full` for the corresponding Lean build and axiom audit. See each version's `docs/reproduction.md` for further details.
 
-The proof translates a PA refutation code into an accepted certificate and then into a halting trace, uniformly in every PA model. Consequently PA proves *N* → Con(PA). If PA proved *N*, it would prove its own consistency, contrary to Gödel's second incompleteness theorem under PA consistency. [Internal implication and unprovability](Lean/metamathematics/User211NonhaltingUnprovability.lean)
+## Provenance
 
-Foundation proves that the natural numbers model PA, hence that PA is consistent and its theorems are true there. A PA proof of the negation of *N* would contradict the established truth of *N*. The combined independence and literal blank-tape nonhalting theorems therefore have no explicit premises. These are results in Lean's metatheory, not PA proofs of its own consistency. [Two-sided theorem](Lean/metamathematics/PA211PA/TwoSidedIndependence.lean) · [LaTeX exposition](docs/pa211-independence.tex)
+| Snapshot | Original commit | Original Git tree |
+| --- | --- | --- |
+| PA215 | [`eccd1b0`](https://github.com/jamesyc/BusyBeaver/commit/eccd1b006e951bad1ed03efd627cab548c743194) | `2456a82396242f8eb44231145a0e7f0efc0b8b7e` |
+| PA213 | [`b42d9ff`](https://github.com/jamesyc/BusyBeaver/commit/b42d9ffe1aee8e074bff2359aba4c5f07adc5293) | `37e0440ebc7a38cea565cce1202043d68f3cdc7d` |
+| PA211 | [`1654314`](https://github.com/jamesyc/BusyBeaver/commit/1654314dd6892371ea38e488a7aa501d2aa55a0c) | `8c23186eef0b05e760421c0903cdb3acdfc7f331` |
 
-## Formal verification
+The archive directories are direct references to those historical Git trees, so the bytes and paths within them match their source commits exactly. Run `bash scripts/verify-snapshots.sh` from a Git checkout to verify their tree hashes. The root CI runs that check and each version's fast publication checks.
 
-The Lean formalization checks source equivalence, the physical simulation, the runtime in every PA model, and the literal endpoint. Foundation's standard model of PA supplies the consistency and soundness used for the two-sided result. [Formal statements](docs/result.md) · [Verification records](docs/validation.md)
-
-The default targets `PA211` and `PA211PA` use support libraries under the `PA213`, `PA215`, `PA213PA`, and `PA215PA` namespaces. The final audit covers nine PA211 roots and allows `propext`, `Classical.choice`, and `Quot.sound`.
-
-## References and reproduction
-
-- Tibor Radó, “On Non-Computable Functions,” *Bell System Technical Journal* 41 (1962), 877–884. [Paper](https://doi.org/10.1002/j.1538-7305.1962.tb00480.x)
-- Kurt Gödel, “Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I,” *Monatshefte für Mathematik und Physik* 38 (1931), 173–198. [Paper](https://doi.org/10.1007/BF01700692)
-
-Run `bash scripts/check.sh` for package and input checks. With the pinned Lean toolchain and dependencies installed, `bash scripts/check.sh --full` builds the metamathematics root and runs its axiom audit. [Reproduction instructions](docs/reproduction.md) · [Citation](CITATION.cff)
+For citations, prefer the `CITATION.cff` in the specific version folder and identify its original commit. This root describes the combined archive.

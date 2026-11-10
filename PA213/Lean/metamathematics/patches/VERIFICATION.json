@@ -1,0 +1,12 @@
+[
+  {
+    "module": "Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Basic",
+    "original_matches_pinned_git": true,
+    "working_hash_matches": true
+  },
+  {
+    "module": "Foundation.FirstOrder.Arithmetic.Bootstrapping.Syntax.Term.Functions",
+    "original_matches_pinned_git": true,
+    "working_hash_matches": true
+  }
+]

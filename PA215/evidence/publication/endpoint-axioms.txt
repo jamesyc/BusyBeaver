@@ -1,0 +1,7 @@
+'PA215.PA.CachedV2.consistent_machine_nonhalting' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PA215.PA.CachedV2.consistent_nonhalting_sentence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PA215.PA.InternalUnprovability.pa_proves_nonhalting_consistency' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PA215.PA.InternalUnprovability.nonhalting_unprovable' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS: all 4 audited roots use only the declared standard axioms.
