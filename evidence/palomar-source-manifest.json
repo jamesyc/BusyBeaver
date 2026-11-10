@@ -73,13 +73,13 @@
     "Lean/metamathematics/User211EndpointInternalStartupTrace.lean": "5ac8b28b67180e5245a37f02d8bfe5a0a2ac419929c7b4bb290082db70186f79",
     "Lean/metamathematics/comparator.json": "a9efdb41b84fb9cf74f33587aa20c92d48d0fee27adbb876ca8707c5b1de3286",
     "Lean/metamathematics/formalization.yaml": "6fcf910409317bbbc6cfd135bb870a191ed69f4d7defc137e278489a0faa940b",
-    "Lean/metamathematics/lakefile.toml": "711ec589a9274ec390c703066705f341babc844cff21847d0b77944648213942",
+    "Lean/metamathematics/lakefile.lean": "defb241e4eea6d97099d21b673ae2328ba0907f00d055c7a51d407b5fba3d474",
     "Lean/metamathematics/patches/README.md": "43251b9211eec0eb6d28a02389caa4637c645b11e7ef5476fa2bde3979019bdd",
     "Lean/scripts/build_serial.py": "ad55b45cba4a210b4a83f059f7a9758986571063a9ed2b3cf7545345c2adc428",
     "Lean/scripts/check_table.py": "d0bfdce14625a947795df5a6550f0336a014bb5f772aaa9994535c8a9a4a12f2",
-    "docs/reproduction.md": "3c1955b0a5d03fd107b96a225f6a326205b87cafc570274cf2d5f4f16d64cc32",
+    "docs/reproduction.md": "a76fab354b6835cf9db4c0774738c40084f4a59765dcc6fdc0da7364ab7241ea",
     "docs/validation.md": "ae07702a3274491a51ef99511ce08bc9b8f1792fb98971aa3f329660b9881f45",
     "evidence/README.md": "39155d52eb8ca85c930e3ac71f2a8043d620404f3c8ad1924a224040a43eec76",
-    "scripts/check_publication.py": "2edb5eef9fbcdff8c1ec3fcd945ea693b98695254314578803c938b12a64e563"
+    "scripts/check_publication.py": "6a500197e98c4083dd361744ae0a5c0af6736502aa24208eff88d98aedabe9ff"
   }
 }

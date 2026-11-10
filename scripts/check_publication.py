@@ -59,6 +59,8 @@ def main():
     for name, record in manifest["files"].items():
         if name in port["files"]:
             continue
+        if name == "Lean/metamathematics/lakefile.toml" and "Lean/metamathematics/lakefile.lean" in port["files"]:
+            continue
         archive = name.startswith("Lean/proof_overlays/originals/") and name.endswith(".lean")
         path = (ROOT / (name + ".txt" if archive else name)).resolve()
         if not path.is_relative_to(ROOT) or not path.is_file():
@@ -72,12 +74,15 @@ def main():
             if lean_program_sha256(data.decode()) != record["lean_program_sha256"]:
                 raise ValueError(f"Lean program differs from its recorded source: {name}")
     lean = ROOT / "Lean"
-    for package, expected in ((lean, {"PA211"}),
-                              (lean / "metamathematics", {"PA211PA"})):
-        config = (package / "lakefile.toml").read_text()
-        targets = re.search(r"^defaultTargets = (\[[^\n]*\])$", config, re.M)
-        if targets is None or set(json.loads(targets.group(1))) != expected:
-            raise ValueError(f"Default target must be PA211: {package}")
+    core_config = (lean / "lakefile.toml").read_text()
+    core_targets = re.search(r"^defaultTargets = (\[[^\n]*\])$", core_config, re.M)
+    if core_targets is None or json.loads(core_targets.group(1)) != ["PA211"]:
+        raise ValueError("Default core target must be PA211")
+    project = lean / "metamathematics"
+    meta_config = (project / "lakefile.lean").read_text()
+    meta_targets = re.findall(r"^@\[default_target\]\s+lean_lib\s+(\w+)", meta_config, re.M)
+    if meta_targets != ["PA211PA"] or (project / "lakefile.toml").exists():
+        raise ValueError("The metamathematics Lakefile must select PA211PA as its default target")
     roots = {"PA215PA": lean / "metamathematics", "PA213PA": lean / "metamathematics",
              "PA211PA": lean / "metamathematics"}
     closure = set(build_order(lean, "PA211PA", roots))
@@ -114,7 +119,6 @@ def main():
     audit = (lean / "metamathematics/Audit.lean").read_text()
     if set(re.findall(r"^#print axioms (\S+)$", audit, re.M)) != expected_axioms:
         raise ValueError("The final axiom audit must name all nine PA211 roots")
-    project = lean / "metamathematics"
     challenge = (project / "Challenge.lean").read_text()
     statement = (project / "PA211Statement.lean").read_text()
     if challenge.split("-- Challenge theorems\n", 1)[0] + "\nend PA211.Palomar\n" != statement:

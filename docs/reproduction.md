@@ -74,7 +74,7 @@ From `Lean/metamathematics`, build the two submission modules and run
 Comparator on Linux with `bwrap` installed:
 
 ```sh
-lake --rehash build PA211Palomar
+lake --rehash build +Challenge PA211Palomar
 lake env lake comparator
 ```
 
@@ -82,6 +82,10 @@ The configuration enables NanoDa in the local toolchain. Palomar selects
 its own checker when verifying a submitted commit. The Challenge imports
 only Mathlib, and the package check verifies that its definitions match
 the separate definitions imported by the Solution.
+
+The Solution build prepares `PA211PA` in a one-worker Lake process to
+limit peak memory on hosted runners. Lake compiles the Solution after
+that preparation completes.
 
 The public dependency pin is the original Foundation revision. The
 reproduction patches above are the reviewed proof-performance repairs
