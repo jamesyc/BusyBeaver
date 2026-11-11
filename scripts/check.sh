@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-case "${1:-}" in
-  ""|--full) ;;
-  *) echo "Usage: bash scripts/check.sh [--full]" >&2; exit 2 ;;
-esac
-if [ "$#" -gt 1 ]; then
+
+if [[ $# -gt 1 || ( $# -eq 1 && $1 != --full ) ]]; then
   echo "Usage: bash scripts/check.sh [--full]" >&2
   exit 2
 fi
-python3 -m unittest discover -s Lean/scripts -p 'test_*.py'
-python3 -m unittest discover -s scripts -p 'test_*.py'
+
 python3 scripts/check_publication.py
-python3 Lean/scripts/check_source_hygiene.py
-python3 Lean/scripts/check_table.py
-if [ "${1:-}" = --full ]; then
-  bash Lean/metamathematics/scripts/check.sh
+if [[ $# -eq 1 ]]; then
+  lake build
+  audit=$(mktemp)
+  trap 'rm -f "$audit"' EXIT
+  lake env lean Audit.lean | tee "$audit"
+  python3 scripts/check_publication.py "$audit"
 fi

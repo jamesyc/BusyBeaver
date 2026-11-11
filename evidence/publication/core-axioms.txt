@@ -1,9 +1,0 @@
-'PA211.UserCandidate.CandidateTable.native_boxes' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PA211.UserCandidate.StateBound.domain' depends on axioms: [propext, Quot.sound]
-'PA211.UserCandidate.CompleteCoverage.coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PA211.UserCandidate.Startup.startup_exact' depends on axioms: [propext]
-'PA211.UserCandidate.LiteralStartup.startup_exact' depends on axioms: [propext, Quot.sound]
-'PA211.UserCandidate.Dense.rows_conjugate' depends on axioms: [propext, Quot.sound]
-'PA211.UserCandidate.Dense.defined_row_count' does not depend on any axioms
-'PA211.UserCandidate.physical_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
-PASS: all 8 audited roots use only the declared standard axioms.

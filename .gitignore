@@ -10,3 +10,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
+/paper/*.aux
+/paper/*.log
+/paper/*.out

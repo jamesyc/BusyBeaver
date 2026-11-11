@@ -1,0 +1,37 @@
+module
+public import M6PA.Theory
+public import M6PA.Calibration.RelationalClosedCertificateCoherenceTransport
+@[expose] public section
+namespace M6.PA.RelationalClosedCertificate
+noncomputable section
+open FFL FFL.FirstOrder RelationalSource ND PairGraph ForwardRelational
+attribute [local irreducible] lkBudget isoTransportDerivation isoTransportClosed
+
+def isoTransportReserve : Nat := max 20 (5+lkBudget isoTransportDerivation) + (1+Encodable.encode isoTransportClosed)
+theorem isoTransportReserve_code : 1+Encodable.encode isoTransportClosed≤isoTransportReserve := Nat.le_add_left _ _
+theorem isoTransportReserve_room : 20≤isoTransportReserve :=
+  le_trans (le_max_left _ _) (Nat.le_add_right _ _)
+theorem isoTransportReserve_budget : 5+lkBudget isoTransportDerivation≤isoTransportReserve :=
+  le_trans (le_max_right _ _) (Nat.le_add_right _ _)
+attribute [local irreducible] isoTransportReserve
+
+def isoTransportNativeProof : NativeCalculus.ActualBasis.Proof
+    (code isoTransportClosed (fun _=>0) 1 isoTransportReserve) := by
+  unfold isoTransportClosed
+  apply closeParametersSupplier 4 isoTransportOpen
+  apply compileContext zeroIsoAxioms isoTransportOpen isoTransportDerivation _ (1+4) isoTransportReserve (by decide)
+    (closureLabels_bound 4 (fun _=>0) 1 (by intro; decide)) isoTransportReserve_budget
+  intro p hp
+  classical
+  by_cases h0 : p=reflexivityFormula
+  · subst p; exact reflexivitySupplier _ _ _
+  by_cases h1 : p=symmetryFormula
+  · subst p; exact symmetrySupplier _ _ _
+  by_cases h2 : p=transitivityFormula
+  · subst p; exact transitivitySupplier _ _ _
+  have h3 : p=congruenceFormula := by simpa [zeroIsoAxioms,h0,h1,h2] using hp
+  subst p
+  exact congruenceSupplier _ _ _ (lt_of_lt_of_le (by decide : 1+4+3<20) isoTransportReserve_room)
+#print axioms isoTransportNativeProof
+end
+end M6.PA.RelationalClosedCertificate

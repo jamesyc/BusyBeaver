@@ -1,37 +1,28 @@
 # Formal theorem statements
 
-The formalization uses Foundation's ordinary first-order theory `Peano`.
-The published machine is `PA211.UserCandidate.Dense.machine`, started at
-`PA215.Zip.zc 0 [] []`: literal state 0 on a blank binary tape. Its 211
-working states have 422 rows; 215 is the halt label.
-[Literal table](../Lean/PA211/UserCandidate/Dense.lean) · [Theory](../Lean/metamathematics/PA215PA/Theory.lean)
+The literal machine is `M6.Literal.machine`. Its initial configuration is
+`M6.Startup.blank`, state 0 on a blank binary tape. Ordinary Peano arithmetic
+is Foundation's first-order theory `Peano`, with full induction.
+Let `H` denote `ExactHaltingFormula.traceSentence` and `N` its negation.
 
-Write *N* for
-`PA211.UserCandidate.PA.ExactHaltingFormula.nonhaltingSentence`.
-The premise `PA215.PA.Consistent` expresses consistency of ordinary PA.
+| Lean declaration | Statement |
+| --- | --- |
+| `M6.Arithmetic.PA.FinalEndpoint.literal_final_endpoint` | Under PA consistency, the exact machine has 209 working states and 418 rows, runs forever, and its exact arithmetic nonhalting sentence is true and unprovable in PA. |
+| `M6.PA.literal_nonhalting` | Under PA consistency, the literal machine never halts from the blank tape. |
+| `M6.Arithmetic.PA.FinalEndpoint.nonhalting_true` | Under PA consistency, the natural numbers satisfy `N`. |
+| `M6.Arithmetic.PA.FinalEndpoint.pa_proves_nonhalting_consistency` | PA proves `N → Con(PA)`. |
+| `M6.Arithmetic.PA.FinalEndpoint.nonhalting_unprovable` | Under PA consistency, PA cannot prove `N`. |
+| `M6.Arithmetic.PA.ExactHaltingFormula.literal_binding` | Each active arithmetic row agrees with the corresponding physical transition after state relabeling. |
+| `M6.Arithmetic.PA.Independence.nonhalting_irrefutable` | Under PA consistency, standard-model soundness excludes a PA proof of `¬N`. |
+| `M6.Arithmetic.PA.Independence.halting_unprovable` | PA cannot prove the positive halting sentence `H`. |
+| `M6.Arithmetic.PA.Independence.two_sided_independence` | PA can prove neither `N` nor `¬N`. |
+| `M6.Arithmetic.PA.Independence.machine_nonhalting` | The literal machine never halts from the blank tape. |
 
-The final audit checks these nine declarations. In the table, names are
-relative to `PA211.UserCandidate.PA`.
+The unconditional corollaries use Foundation's standard-model consistency
+and soundness theorems in Lean's metatheory.
 
-| Theorem | Statement |
-|---|---|
-| `literal_final_endpoint` | Under PA consistency, combines the 211-state and 422-row counts, literal blank-tape nonhalting, truth of *N*, and PA unprovability of *N*. |
-| `consistent_literal_nonhalting` | Under PA consistency, the literal machine does not halt from the blank tape in state 0. |
-| `InternalUnprovability.nonhalting_true` | Under PA consistency, *N* is true in the natural numbers. |
-| `InternalUnprovability.pa_proves_nonhalting_consistency` | PA proves *N* → Con(PA), without an external consistency premise. |
-| `InternalUnprovability.nonhalting_unprovable` | Under PA consistency, PA cannot prove *N*. |
-| `literal_arithmetic_binding` | Every active arithmetic row equals the corresponding transition of the literal table. |
-| `Independence.nonhalting_irrefutable` | Under PA consistency, standard-model soundness rules out a PA proof of the negation of *N*. |
-| `Independence.two_sided_independence` | PA proves neither *N* nor its negation, with no explicit premises. |
-| `Independence.machine_nonhalting` | The literal machine does not halt from the blank tape, with no explicit premises. |
-
-The final three declarations use Foundation's standard-model soundness and
-consistency theorems in Lean's metatheory.
-[Literal endpoint](../Lean/metamathematics/User211LiteralEndpoint.lean) ·
-[Independence corollaries](../Lean/metamathematics/PA211PA/TwoSidedIndependence.lean) ·
-[Axiom audit](../Lean/metamathematics/Audit.lean)
-
-The physical simulation uses a sparse relabeling with start 74 and halt
-254. `Dense.run_conjugate` binds literal runs to that encoding. The
-arithmetic auxiliary table has 430 rows on 215 tags; the exact sentence
-removes all four unreachable tags 122, 150, 205, and 214.
+[Challenge](../Challenge.lean) states both headline results with explicit
+syntax and provability for ordinary PA. [Solution](../Solution.lean)
+identifies that proof predicate and those sentences with Foundation's
+presentation and transfers literal machine runs. [Audit](../Audit.lean)
+covers the proof endpoints and both compared declarations.

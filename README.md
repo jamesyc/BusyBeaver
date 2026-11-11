@@ -1,36 +1,48 @@
-# Nonhalting and PA-independence for a 211-state Turing machine
+# Nonhalting and PA-independence for a 209-state Turing machine
 
-Let PA stand for ordinary first-order Peano arithmetic. PA is consistent if its axioms admit no proof of a contradiction.
+PA209 is an explicit two-symbol Turing machine that searches for a contradiction
+in ordinary first-order Peano arithmetic (PA). It runs forever from a blank
+tape. If $H$ is its exact arithmetic halting sentence, PA proves neither
+$H$ nor its negation.
 
-> PA211 runs forever on a blank tape, and PA can neither prove nor refute its arithmetic nonhalting sentence. The consistency-conditional proof is checked independently; the two-sided corollary uses Foundation's standard model of PA in Lean's metatheory.
+[Paper (PDF)](paper/pa209.pdf) · [Transition table](data/pa209.tm) ·
+[Formal statements](docs/result.md) · [Reproduction](docs/reproduction.md)
 
-PA211 searches for a proof of a contradiction from PA. Its proof commands encode formulas and finite derivations as numbers. The machine halts when the command interpreter derives falsity.
+## The machine
 
-The tape extends infinitely in both directions, contains only zeros initially, and has alphabet `{0,1}`. The machine starts in state 0. Its 211 working states use labels 0 through 214 with 122, 150, 205, and 214 omitted. There are 422 transition rows. State 215 signals a halt and is excluded from the working-state count. [Complete transition table](Lean/data/pa211.tm)
+The tape is infinite in both directions and initially all zero. The machine
+starts at state 0. Its 209 working states have two transition rows each.
+State 215 is the halt label. After 58,210 tape steps the machine reaches the
+register-program frame that starts the proof search at candidate 2.
 
-## Nonhalting
+## The proof
 
-If PA is consistent, the search cannot derive a contradiction. The Lean proof connects that search to the exact transition table. The source has 3,947 instructions, represented by a 173-node tree. Its instruction order and successors are unchanged from the accepted interpreter; 366 source paths were rearranged to obtain this machine. The new source equivalence, physical runtime, and all-model runtime are checked separately.
+The register program enumerates finite words of proof commands and halts
+when it derives a contradiction. Lean checks the source program, the startup
+trace, and a positive-length tape simulation of every source instruction.
+Soundness of the proof commands gives blank-tape nonhalting under PA
+consistency.
 
-After exactly 64,764 tape steps, the machine reaches the frame for a checked 159-step source prefix. The proof checks all 5,134 branch-sensitive runtime duties and covers every source site. Each simulated instruction takes a positive number of tape steps. An indefinitely running source therefore gives an indefinitely running tape machine. [Source equivalence](Lean/User211SourceEquivalence.lean) · [Physical endpoint](Lean/PA211/UserCandidate/KernelEndpoint.lean) · [Nonhalting from PA consistency](Lean/metamathematics/User211ConsistentNonhalting.lean)
+In every model of PA, a coded PA refutation gives an accepted certificate, a
+halting source execution, and a coded tape trace using the exact table.
+Consequently PA proves $\neg H \to \operatorname{Con}(\mathrm{PA})$.
+Gödel's second incompleteness theorem rules out a PA proof of $\neg H$
+under PA consistency. Soundness of PA in the standard natural numbers
+rules out a PA proof of $H$. Foundation's standard model supplies
+consistency and soundness in Lean's metatheory.
 
-## Independence from PA
+## Paper-to-Lean map
 
-Let *N* be the exact arithmetic sentence saying that no finite halting trace exists. Its step formula uses exactly the 422 active rows. Lean binds those arithmetic rows directly to the published literal table and proves standard-model adequacy through the physical encoding. [Exact sentence](Lean/metamathematics/User211EndpointExactHaltingFormula.lean) · [Literal row binding](Lean/metamathematics/User211LiteralArithmeticBinding.lean)
+| Paper | Lean |
+| --- | --- |
+| Machine and startup (§2) | [Literal table](M6/Literal.lean), [startup](M6/Startup.lean) |
+| Physical simulation (§3) | [Source transport](M6/SourceTransport.lean), [runtime coverage](M6/Coverage.lean), [physical endpoint](M6/PhysicalEndpoint.lean) |
+| Proof search and soundness (§4) | [AX formulas](M6/Source/ActualAXCode.lean), [logical endpoint](M6/LogicalEndpoint.lean), [PA consistency bridge](M6PA/Endpoint.lean) |
+| Arithmetic trace sentence (§5) | [Exact halting formula](M6PA/Model/ExactHaltingFormula.lean), [statement correspondence](Solution.lean) |
+| From refutation to halting (§6) | [Refutation transport](M6PA/Calibration/FoundationNativeRefutationTransport.lean), [scheduler](M6PA/Scheduler/SourceEnumerationFromTwo.lean), [trace](M6PA/RefutationHalting.lean) |
+| Two-sided independence (§7) | [Internal consistency implication](M6PA/FinalEndpoint.lean), [independence](M6PA/TwoSidedIndependence.lean) |
 
-The proof translates a PA refutation code into an accepted certificate and then into a halting trace, uniformly in every PA model. Consequently PA proves *N* → Con(PA). If PA proved *N*, it would prove its own consistency, contrary to Gödel's second incompleteness theorem under PA consistency. [Internal implication and unprovability](Lean/metamathematics/User211NonhaltingUnprovability.lean)
-
-Foundation proves that the natural numbers model PA, hence that PA is consistent and its theorems are true there. A PA proof of the negation of *N* would contradict the established truth of *N*. The combined independence and literal blank-tape nonhalting theorems therefore have no explicit premises. These are results in Lean's metatheory, not PA proofs of its own consistency. [Two-sided theorem](Lean/metamathematics/PA211PA/TwoSidedIndependence.lean) · [LaTeX exposition](docs/pa211-independence.tex)
-
-## Formal verification
-
-The Lean formalization checks source equivalence, the physical simulation, the runtime in every PA model, and the literal endpoint. Foundation's standard model of PA supplies the consistency and soundness used for the two-sided result. [Formal statements](docs/result.md) · [Verification records](docs/validation.md)
-
-The default targets `PA211` and `PA211PA` use support libraries under the `PA213`, `PA215`, `PA213PA`, and `PA215PA` namespaces. The final audit covers nine PA211 roots and allows `propext`, `Classical.choice`, and `Quot.sound`.
-
-## References and reproduction
-
-- Tibor Radó, “On Non-Computable Functions,” *Bell System Technical Journal* 41 (1962), 877–884. [Paper](https://doi.org/10.1002/j.1538-7305.1962.tb00480.x)
-- Kurt Gödel, “Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I,” *Monatshefte für Mathematik und Physik* 38 (1931), 173–198. [Paper](https://doi.org/10.1007/BF01700692)
-
-Run `bash scripts/check.sh` for package and input checks. With the pinned Lean toolchain and dependencies installed, `bash scripts/check.sh --full` builds the metamathematics root and runs its axiom audit. [Reproduction instructions](docs/reproduction.md) · [Citation](CITATION.cff)
+The default Lake build includes the [PA209 proof](PA209.lean), the
+[Palomar statement](Challenge.lean), and its [Solution](Solution.lean).
+Run `bash scripts/check.sh` for source and table checks, or
+`bash scripts/check.sh --full` to build and audit the proof.

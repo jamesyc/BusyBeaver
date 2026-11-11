@@ -1,69 +1,45 @@
-# Reproducing the proofs
+# Reproducing PA209
 
-Run these commands from the repository root. The input checks require
-Python 3.10 or later. Proof compilation also requires Git and the Lean
-version in `Lean/lean-toolchain`.
-
-## Check the package
+From the repository root, run the source and machine-table checks with
+Python 3.10 or later.
 
 ```sh
 bash scripts/check.sh
 ```
 
-This checks file hashes, the default import closure, all nine endpoint
-audit names, the literal and sparse tables, the arithmetic rows, and the
-3,947 source instructions reconstructed from the 173-node Lean tree.
-The exact table and source hashes are pinned in the checker.
-
-## Install the dependencies
-
-Install [elan](https://github.com/leanprover/elan) and put its executables
-on `PATH`. Then install the pinned toolchain and dependencies:
+Install [elan](https://github.com/leanprover/elan) and place its executables
+on `PATH`. Build with the pinned Lean 4.35.0 toolchain and committed Lake
+manifest.
 
 ```sh
 elan toolchain install leanprover/lean4:v4.35.0
-cd Lean/metamathematics
-lake env lean --version
 lake exe cache get
-python3 scripts/apply_foundation_patch.py
-python3 scripts/apply_foundation_functions_patch.py
-cd ../..
-```
-
-Skip `lake exe cache get` to build external dependencies from source.
-The two Foundation repairs are hash-checked and idempotent. The project
-support sources already contain their proof repairs.
-[Patch specifications](../Lean/metamathematics/patches/README.md)
-
-## Build and audit
-
-```sh
 bash scripts/check.sh --full
 ```
 
-The scheduler submits one project or Foundation module at a time. A clean
-build can take several hours and several GiB of memory per large module.
+Mathlib's cache is optional. Lake builds PA209 and the bundled Foundation
+modules from source. A fresh build can take substantial time and memory.
+See [Foundation's source and license](../vendor/Foundation/README.md).
 
-Inspect the order without building:
-
-```sh
-python3 Lean/scripts/build_serial.py --metamathematics --list
-```
-
-To build the final module and audit its declarations:
+On Linux with [Bubblewrap](https://github.com/containers/bubblewrap) and
+user namespaces available, run Comparator with its independent NanoDa check.
 
 ```sh
-python3 Lean/scripts/build_serial.py --metamathematics --target PA211PA.TwoSidedIndependence
-python3 Lean/metamathematics/scripts/check_axioms.py
+lake comparator --config comparator.json
 ```
 
-The core physical package has its own eight-root audit:
+The root [audit](../Audit.lean) checks the literal proof endpoints and both
+compared theorems for dependencies beyond `propext`, `Classical.choice`,
+and `Quot.sound`. The two declarations in
+[Challenge.lean](../Challenge.lean) use intentional statement holes.
+The verified declarations come from [Solution.lean](../Solution.lean).
 
-```sh
-bash Lean/scripts/check.sh
-```
+Build the paper with `tectonic --outdir paper paper/pa209.tex` or run
+`pdflatex -output-directory=paper paper/pa209.tex` twice.
 
-After the serial build, `lake --rehash build` from either `Lean` or
-`Lean/metamathematics` checks that package's default target. Those targets
-are `PA211` and `PA211PA`.
-[Verification records](validation.md)
+The [K230 Rocq development](https://github.com/elliotglazer/k230-rocq/tree/3142e4d)
+and the [PA238 Rocq development](https://github.com/jeff87654/busy-beaver/tree/84049b5/PA/m238)
+supply background for the tape engine and the proof calculus. The
+restricted implicational proof adapted from
+[ProveIt](https://github.com/VladimirReshetnikov/ProveIt/tree/6809609)
+retains its [MIT-0 notice](../vendor/ProveIt/LICENSE).

@@ -1,106 +1,98 @@
-#!/usr/bin/env python3
-"""Publication integrity checks; not a proof checker."""
+"""Check the published machine, Palomar source boundaries, and optional axiom audit."""
+
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import sys
-from urllib.parse import unquote, urlsplit
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "Lean/scripts"))
-from build_serial import build_order
-from check_source_hygiene import without_comments
-
-ENDPOINT = "User211LiteralEndpoint"
-INDEPENDENCE = "PA211PA.TwoSidedIndependence"
-PA211_BASELINE_SHA256 = "7adf9362e4e2b1fdc0af633dd7fd08a22747f553a778c5574a6f8acf6a03a85b"
+MACHINE_SHA256 = "0610d978675320f0b4b1ef34619dcd3daa5912632d7037e200dfcc70954fea51"
+AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 
 
-def checked_file(root, name, expected):
-    path = (root / name).resolve()
-    if not path.is_relative_to(root.resolve()) or not path.is_file():
-        raise ValueError(f"Missing or out-of-tree file: {name}")
-    if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
-        raise ValueError(f"SHA256 mismatch: {name}")
+def require(condition, message):
+    if not condition:
+        raise SystemExit(message)
 
 
-def lean_program_sha256(text):
-    lines = without_comments(text).splitlines()
-    program = "\n".join(line.rstrip() for line in lines if line.strip())
-    return hashlib.sha256(program.encode()).hexdigest()
+def check_table():
+    table = Path("data/pa209.tm").read_bytes()
+    require(hashlib.sha256(table).hexdigest() == MACHINE_SHA256, "Machine bytes changed.")
+    rows = [
+        (int(q), int(b), int(w), int(next_state), direction == "R")
+        for q, b, w, direction, next_state in (line.split() for line in table.decode().splitlines())
+    ]
+    controls = set(range(214)) - {50, 122, 150, 157, 205}
+    require(
+        len(controls) == 209 and len(rows) == 418
+        and {(q, b) for q, b, *_ in rows} == {(q, b) for q in controls for b in range(2)}
+        and all(row[3] in controls | {215} for row in rows),
+        "Expected a closed 209-state table with two rows per working state.",
+    )
+    pattern = r"\((\d+),([01]),([01]),(\d+),(true|false)\)"
+    for path in (Path("Challenge.lean"), Path("M6Data.lean")):
+        source = path.read_text()
+        start = source.index("def m6Rows : List RowSpec := [")
+        literal = source[start : source.index("]", start)]
+        encoded = [
+            (int(q), int(b), int(w), int(t), direction == "true")
+            for q, b, w, t, direction in re.findall(pattern, literal)
+        ]
+        require(encoded == rows, f"{path} does not encode the published table.")
+    literal = Path("M6/Literal.lean").read_text()
+    bool_to_int = {"false": 0, "true": 1}
+    machine = [
+        (int(q), bool_to_int[b], bool_to_int[w], int(t), direction == "true")
+        for q, b, w, direction, t in re.findall(
+            r"\| (\d+), (false|true) => some \((false|true), (false|true), (\d+)\)", literal
+        )
+    ]
+    require(machine == rows, "M6/Literal.lean differs from the published table.")
 
 
-def main():
-    manifest = json.loads((ROOT / "evidence/source-manifest.json").read_text())
-    baseline = {name: record["sha256"] for name, record in manifest["files"].items()
-                if record.get("pa211_baseline")}
-    encoded = json.dumps(baseline, sort_keys=True, separators=(",", ":")).encode()
-    if hashlib.sha256(encoded).hexdigest() != PA211_BASELINE_SHA256:
-        raise ValueError("The 395-module PA211 source baseline differs from its pinned hash")
-    for name, record in manifest["files"].items():
-        checked_file(ROOT, name, record["sha256"])
-        if "lean_program_sha256" in record:
-            if lean_program_sha256((ROOT / name).read_text()) != record["lean_program_sha256"]:
-                raise ValueError(f"Lean program differs from its recorded source: {name}")
-    lean = ROOT / "Lean"
-    for package, expected in ((lean, {"PA211"}),
-                              (lean / "metamathematics", {"PA211PA"})):
-        config = (package / "lakefile.toml").read_text()
-        targets = re.search(r"^defaultTargets = (\[[^\n]*\])$", config, re.M)
-        if targets is None or set(json.loads(targets.group(1))) != expected:
-            raise ValueError(f"Default target must be PA211: {package}")
-    roots = {"PA215PA": lean / "metamathematics", "PA213PA": lean / "metamathematics",
-             "PA211PA": lean / "metamathematics"}
-    closure = set(build_order(lean, "PA211PA", roots))
-    if ENDPOINT not in closure:
-        raise ValueError(f"Default root does not expose {ENDPOINT}")
-    if INDEPENDENCE not in closure:
-        raise ValueError(f"Default root does not expose {INDEPENDENCE}")
-    closure.update(build_order(lean, "PA211"))
-    sources = {"PA211", "PA211PA", "TreeSite"}
-    for base, namespaces in ((lean, ("PA211", "PA213", "PA215")),
-                             (lean / "metamathematics", ("PA211PA", "PA213PA", "PA215PA"))):
-        sources.update(p.stem for p in base.glob("User211*.lean"))
-        for namespace in namespaces:
-            sources.update(".".join(p.relative_to(base).with_suffix("").parts)
-                           for p in (base / namespace).rglob("*.lean"))
-    if sources != closure:
-        raise ValueError(f"Proof sources outside the PA211 closure: {sorted(sources - closure)}")
-    for obsolete in ("Lean/PA213.lean", "Lean/metamathematics/PA213PA.lean",
-                     "Lean/data/pa213.tm", "docs/pa213-independence.tex",
-                     "docs/pa213-independence.pdf", "evidence/pa213"):
-        if (ROOT / obsolete).exists():
-            raise ValueError(f"Obsolete publication artifact: {obsolete}")
-    expected_axioms = {
-        "PA211.UserCandidate.PA.literal_final_endpoint",
-        "PA211.UserCandidate.PA.consistent_literal_nonhalting",
-        "PA211.UserCandidate.PA.InternalUnprovability.nonhalting_true",
-        "PA211.UserCandidate.PA.InternalUnprovability.pa_proves_nonhalting_consistency",
-        "PA211.UserCandidate.PA.InternalUnprovability.nonhalting_unprovable",
-        "PA211.UserCandidate.PA.literal_arithmetic_binding",
-        "PA211.UserCandidate.PA.Independence.nonhalting_irrefutable",
-        "PA211.UserCandidate.PA.Independence.two_sided_independence",
-        "PA211.UserCandidate.PA.Independence.machine_nonhalting",
-    }
-    audit = (lean / "metamathematics/Audit.lean").read_text()
-    if set(re.findall(r"^#print axioms (\S+)$", audit, re.M)) != expected_axioms:
-        raise ValueError("The final axiom audit must name all nine PA211 roots")
-    docs = {ROOT / name for name in manifest["files"] if name.endswith(".md")}
-    docs.add(ROOT / "evidence/README.md")
-    docs.update((ROOT / "docs").glob("*.md"))
-    for doc in sorted(docs):
-        for target in re.findall(r"\[[^\]]*\]\(([^\s)]+)\)", doc.read_text()):
-            parsed = urlsplit(target)
-            if parsed.scheme or not parsed.path:
+def check_sources():
+    for directory, directories, files in os.walk("."):
+        directories[:] = [name for name in directories if name not in {".git", ".lake"}]
+        for name in files:
+            if not name.endswith(".lean"):
                 continue
-            dest = (doc.parent / unquote(parsed.path)).resolve()
-            if not dest.is_relative_to(ROOT) or not dest.exists():
-                raise ValueError(f"Broken file link in {doc.relative_to(ROOT)}: {target}")
-    print(f"PASS: {len(manifest['files'])} source identities, {len(closure)} "
-          f"PA211 dependency modules, "
-          "and publication documentation links.")
+            path = Path(directory) / name
+            require(not path.is_symlink(), f"Lean source symlink: {path}")
+            lines = path.read_text().splitlines()
+            require(len(lines) <= 10_000, f"Lean source exceeds 10,000 lines: {path}")
+            if name != "lakefile.lean":
+                require(next((line.strip() for line in lines if line.strip()), "") == "module",
+                        f"Missing module header: {path}")
+    challenge = Path("Challenge.lean").read_bytes()
+    require(len(challenge) <= 100 * 1024 and len(challenge.splitlines()) <= 1_000,
+            "Challenge exceeds Palomar's source limits.")
+    require(set(re.findall(rb"^(?:(?:public |meta )*)import (?:all )?(.+)$", challenge, re.M)) ==
+            {b"Std", b"Mathlib.Data.Finset.Image", b"Mathlib.Data.Finset.Max"},
+            "Unexpected Challenge imports.")
+    require(not re.search(r"\bimport (?:all )?Challenge\b", Path("Solution.lean").read_text()),
+            "Solution imports Challenge.")
 
 
-if __name__ == "__main__":
-    main()
+def check_audit(path):
+    output = path.read_text()
+    expected = re.findall(r"^#print axioms (\S+)", Path("Audit.lean").read_text(), re.M)
+    config = json.loads(Path("comparator.json").read_text())
+    require(set(config["theorem_names"]).issubset(expected), "Audit omits a compared theorem.")
+    for name in expected:
+        result = re.search(
+            rf"'{re.escape(name)}' (?:depends on axioms: \[([^]]*)\]|does not depend on any axioms)",
+            output,
+        )
+        require(result is not None, f"Missing axiom report for {name}.")
+        reported = {axiom.strip() for axiom in result[1].split(",")} if result[1] else set()
+        require(reported <= AXIOMS, f"{name} has unexpected axioms: {reported - AXIOMS}.")
+    print(f"PASS: {len(expected)} audited declarations.")
+
+
+if len(sys.argv) == 2:
+    check_audit(Path(sys.argv[1]))
+else:
+    check_table()
+    check_sources()
+    print("PASS: PA209's 418 transition rows and Palomar source checks.")
