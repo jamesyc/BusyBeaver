@@ -1,18 +1,22 @@
 module
 public import M6PA.Theory
 public import M6PA.Calibration.RelationalClosedCertificateCoherenceTransport
+public import M6PA.Calibration.RelationalClosedCertificateReserve
 @[expose] public section
 namespace M6.PA.RelationalClosedCertificate
 noncomputable section
 open FFL FFL.FirstOrder RelationalSource ND PairGraph ForwardRelational
 attribute [local irreducible] lkBudget isoTransportDerivation isoTransportClosed
 
-def isoTransportReserve : Nat := max 20 (5+lkBudget isoTransportDerivation) + (1+Encodable.encode isoTransportClosed)
-theorem isoTransportReserve_code : 1+Encodable.encode isoTransportClosed≤isoTransportReserve := Nat.le_add_left _ _
-theorem isoTransportReserve_room : 20≤isoTransportReserve :=
-  le_trans (le_max_left _ _) (Nat.le_add_right _ _)
-theorem isoTransportReserve_budget : 5+lkBudget isoTransportDerivation≤isoTransportReserve :=
-  le_trans (le_max_right _ _) (Nat.le_add_right _ _)
+def isoTransportReserve : Nat :=
+  certificateReserve (5 + lkBudget isoTransportDerivation) (1 + Encodable.encode isoTransportClosed)
+
+theorem isoTransportReserve_code : 1 + Encodable.encode isoTransportClosed ≤ isoTransportReserve :=
+  certificateReserve_code (5 + lkBudget isoTransportDerivation) (1 + Encodable.encode isoTransportClosed)
+theorem isoTransportReserve_room : 20 ≤ isoTransportReserve :=
+  certificateReserve_room (5 + lkBudget isoTransportDerivation) (1 + Encodable.encode isoTransportClosed)
+theorem isoTransportReserve_budget : 5 + lkBudget isoTransportDerivation ≤ isoTransportReserve :=
+  certificateReserve_budget (5 + lkBudget isoTransportDerivation) (1 + Encodable.encode isoTransportClosed)
 attribute [local irreducible] isoTransportReserve
 
 def isoTransportNativeProof : NativeCalculus.ActualBasis.Proof

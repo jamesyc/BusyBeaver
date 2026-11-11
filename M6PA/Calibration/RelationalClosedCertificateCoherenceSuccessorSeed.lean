@@ -1,21 +1,35 @@
 module
 public import M6PA.Theory
 public import M6PA.Calibration.RelationalClosedCertificateCoherenceSuccessor
+public import M6PA.Calibration.RelationalClosedCertificateReserve
 @[expose] public section
 namespace M6.PA.RelationalClosedCertificate
 noncomputable section
 open FFL FFL.FirstOrder RelationalSource ND PairGraph ForwardRelational
 attribute [local irreducible] lkBudget successorIsoClosed
 
-def successorIsoReserve : Nat := max 20 (max (7+lkBudget adjunctionDerivation)
-  (5+lkBudget (orderIsoSuccessorDerivation 3 2 1 0))) + (1+Encodable.encode successorIsoClosed)
-theorem successorIsoReserve_code : 1+Encodable.encode successorIsoClosed≤successorIsoReserve := Nat.le_add_left _ _
-theorem successorIsoReserve_room : 20≤successorIsoReserve :=
-  le_trans (le_max_left _ _) (Nat.le_add_right _ _)
-theorem successorIsoReserve_adj : 7+lkBudget adjunctionDerivation≤successorIsoReserve :=
-  le_trans (le_trans (le_max_left _ _) (le_max_right _ _)) (Nat.le_add_right _ _)
-theorem successorIsoReserve_budget : 5+lkBudget (orderIsoSuccessorDerivation 3 2 1 0)≤successorIsoReserve :=
-  le_trans (le_trans (le_max_right _ _) (le_max_right _ _)) (Nat.le_add_right _ _)
+def successorIsoReserve : Nat :=
+  certificateReserve
+    (max (7 + lkBudget adjunctionDerivation) (5 + lkBudget (orderIsoSuccessorDerivation 3 2 1 0)))
+    (1 + Encodable.encode successorIsoClosed)
+
+theorem successorIsoReserve_code : 1 + Encodable.encode successorIsoClosed ≤ successorIsoReserve :=
+  certificateReserve_code
+    (max (7 + lkBudget adjunctionDerivation) (5 + lkBudget (orderIsoSuccessorDerivation 3 2 1 0)))
+    (1 + Encodable.encode successorIsoClosed)
+theorem successorIsoReserve_room : 20 ≤ successorIsoReserve :=
+  certificateReserve_room
+    (max (7 + lkBudget adjunctionDerivation) (5 + lkBudget (orderIsoSuccessorDerivation 3 2 1 0)))
+    (1 + Encodable.encode successorIsoClosed)
+theorem successorIsoReserve_adj : 7 + lkBudget adjunctionDerivation ≤ successorIsoReserve :=
+  certificateReserve_budget_left
+    (7 + lkBudget adjunctionDerivation) (5 + lkBudget (orderIsoSuccessorDerivation 3 2 1 0))
+    (1 + Encodable.encode successorIsoClosed)
+theorem successorIsoReserve_budget :
+    5 + lkBudget (orderIsoSuccessorDerivation 3 2 1 0) ≤ successorIsoReserve :=
+  certificateReserve_budget_right
+    (7 + lkBudget adjunctionDerivation) (5 + lkBudget (orderIsoSuccessorDerivation 3 2 1 0))
+    (1 + Encodable.encode successorIsoClosed)
 attribute [local irreducible] successorIsoReserve
 
 def successorIsoNativeProof : NativeCalculus.ActualBasis.Proof

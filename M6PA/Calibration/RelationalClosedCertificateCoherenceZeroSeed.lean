@@ -1,18 +1,22 @@
 module
 public import M6PA.Theory
 public import M6PA.Calibration.RelationalClosedCertificateCoherenceZero
+public import M6PA.Calibration.RelationalClosedCertificateReserve
 @[expose] public section
 namespace M6.PA.RelationalClosedCertificate
 noncomputable section
 open FFL FFL.FirstOrder RelationalSource ND PairGraph ForwardRelational
 attribute [local irreducible] lkBudget zeroIsoDerivation zeroIsoClosed
 
-def zeroIsoReserve : Nat := max 20 (3+lkBudget zeroIsoDerivation) + (1+Encodable.encode zeroIsoClosed)
-theorem zeroIsoReserve_code : 1+Encodable.encode zeroIsoClosed≤zeroIsoReserve := Nat.le_add_left _ _
-theorem zeroIsoReserve_room : 20≤zeroIsoReserve :=
-  le_trans (le_max_left _ _) (Nat.le_add_right _ _)
-theorem zeroIsoReserve_budget : 3+lkBudget zeroIsoDerivation≤zeroIsoReserve :=
-  le_trans (le_max_right _ _) (Nat.le_add_right _ _)
+def zeroIsoReserve : Nat :=
+  certificateReserve (3 + lkBudget zeroIsoDerivation) (1 + Encodable.encode zeroIsoClosed)
+
+theorem zeroIsoReserve_code : 1 + Encodable.encode zeroIsoClosed ≤ zeroIsoReserve :=
+  certificateReserve_code (3 + lkBudget zeroIsoDerivation) (1 + Encodable.encode zeroIsoClosed)
+theorem zeroIsoReserve_room : 20 ≤ zeroIsoReserve :=
+  certificateReserve_room (3 + lkBudget zeroIsoDerivation) (1 + Encodable.encode zeroIsoClosed)
+theorem zeroIsoReserve_budget : 3 + lkBudget zeroIsoDerivation ≤ zeroIsoReserve :=
+  certificateReserve_budget (3 + lkBudget zeroIsoDerivation) (1 + Encodable.encode zeroIsoClosed)
 attribute [local irreducible] zeroIsoReserve
 
 def zeroIsoNativeProof : NativeCalculus.ActualBasis.Proof
