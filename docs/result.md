@@ -1,28 +1,31 @@
 # Formal theorem statements
 
-The literal machine is `M6.Literal.machine`. Its initial configuration is
-`M6.Startup.blank`, state 0 on a blank binary tape. Ordinary Peano arithmetic
-is Foundation's first-order theory `Peano`, with full induction.
-Let `H` denote `ExactHaltingFormula.traceSentence` and `N` its negation.
+The literal machine is `PA196.Literal.machine`. It starts in state 0 with an
+all-zero binary tape and uses 196 working states (0 through 195). Its only
+transition to the halting control is `(63, 1, 1, R, 196)`.
+
+Let `H` denote `PA196.Arithmetic.haltingSentence` and let `N` be its
+negation. The theory is ordinary first-order Peano arithmetic with full
+induction.
 
 | Lean declaration | Statement |
 | --- | --- |
-| `M6.Arithmetic.PA.FinalEndpoint.literal_final_endpoint` | Under PA consistency, the exact machine has 209 working states and 418 rows, runs forever, and its exact arithmetic nonhalting sentence is true and unprovable in PA. |
-| `M6.PA.literal_nonhalting` | Under PA consistency, the literal machine never halts from the blank tape. |
-| `M6.Arithmetic.PA.FinalEndpoint.nonhalting_true` | Under PA consistency, the natural numbers satisfy `N`. |
-| `M6.Arithmetic.PA.FinalEndpoint.pa_proves_nonhalting_consistency` | PA proves `N → Con(PA)`. |
-| `M6.Arithmetic.PA.FinalEndpoint.nonhalting_unprovable` | Under PA consistency, PA cannot prove `N`. |
-| `M6.Arithmetic.PA.ExactHaltingFormula.literal_binding` | Each active arithmetic row agrees with the corresponding physical transition after state relabeling. |
-| `M6.Arithmetic.PA.Independence.nonhalting_irrefutable` | Under PA consistency, standard-model soundness excludes a PA proof of `¬N`. |
-| `M6.Arithmetic.PA.Independence.halting_unprovable` | PA cannot prove the positive halting sentence `H`. |
-| `M6.Arithmetic.PA.Independence.two_sided_independence` | PA can prove neither `N` nor `¬N`. |
-| `M6.Arithmetic.PA.Independence.machine_nonhalting` | The literal machine never halts from the blank tape. |
+| `PA196.Literal.working_count`, `PA196.Literal.row_count` | The literal machine has 196 working states and 392 rows. |
+| `PA196.Startup.startup_exact` | The blank run reaches the clean startup configuration after 58,154 steps. |
+| `PA196.Arithmetic.Machine.Exact.PA.literal_binding` | The arithmetic rows agree with the corresponding literal transitions. |
+| `PA196.machine_nonhalting` | The literal machine never halts from the blank tape. |
+| `PA196.Arithmetic.nonhalting_true` | The standard natural numbers satisfy `N`. |
+| `PA196.Arithmetic.pa_proves_nonhalting_consistency` | PA proves `N → Con(PA)`. |
+| `PA196.Arithmetic.two_sided_independence` | PA proves neither `N` nor `H`. |
 
-The unconditional corollaries use Foundation's standard-model consistency
-and soundness theorems in Lean's metatheory.
+The paper states the roles of PA consistency and standard-model soundness
+explicitly. The closed Lean corollaries use Foundation's standard-model
+theorems in Lean's metatheory. The formal simulation uses the reachable
+gap bound 48. The arithmetic proof projects an auxiliary 215-slot control
+coding to the exact 196 working states and halt label 196.
 
-[Challenge](../Challenge.lean) states both headline results with explicit
-syntax and provability for ordinary PA. [Solution](../Solution.lean)
-identifies that proof predicate and those sentences with Foundation's
-presentation and transfers literal machine runs. [Audit](../Audit.lean)
-covers the proof endpoints and both compared declarations.
+The [Challenge](../Challenge.lean) presents PA and the literal machine
+independently of the proof libraries. The [Solution](../PA196/Palomar/Solution.lean)
+proves the matching `PalomarPA.PA196.two_sided_independence` and
+`PalomarPA.PA196.machine_nonhalting` declarations. The [audit](../Audit.lean)
+covers both proof presentations.

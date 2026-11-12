@@ -7,7 +7,7 @@ from pathlib import Path
 import re
 import sys
 
-MACHINE_SHA256 = "0610d978675320f0b4b1ef34619dcd3daa5912632d7037e200dfcc70954fea51"
+MACHINE_SHA256 = "e8bbccd4cfa325251ca95066db116b5aa766e404b0971c33c02772be1c3617a8"
 AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 
 
@@ -17,38 +17,31 @@ def require(condition, message):
 
 
 def check_table():
-    table = Path("data/pa209.tm").read_bytes()
+    table = Path("data/pa196.tm").read_bytes()
     require(hashlib.sha256(table).hexdigest() == MACHINE_SHA256, "Machine bytes changed.")
     rows = [
         (int(q), int(b), int(w), int(next_state), direction == "R")
         for q, b, w, direction, next_state in (line.split() for line in table.decode().splitlines())
     ]
-    controls = set(range(214)) - {50, 122, 150, 157, 205}
+    controls = set(range(196))
     require(
-        len(controls) == 209 and len(rows) == 418
+        len(rows) == 392
         and {(q, b) for q, b, *_ in rows} == {(q, b) for q in controls for b in range(2)}
-        and all(row[3] in controls | {215} for row in rows),
-        "Expected a closed 209-state table with two rows per working state.",
+        and all(row[3] in controls | {196} for row in rows),
+        "Expected a closed 196-state table with two rows per working state.",
     )
+    require([row for row in rows if row[3] == 196] == [(63, 1, 1, 196, True)],
+            "Unexpected transition to the halting control.")
     pattern = r"\((\d+),([01]),([01]),(\d+),(true|false)\)"
-    for path in (Path("Challenge.lean"), Path("M6Data.lean")):
+    for path in (Path("Challenge.lean"), Path("PA196/Palomar/Data.lean")):
         source = path.read_text()
-        start = source.index("def m6Rows : List RowSpec := [")
+        start = source.index("def pa196Rows : List RowSpec := [")
         literal = source[start : source.index("]", start)]
         encoded = [
             (int(q), int(b), int(w), int(t), direction == "true")
             for q, b, w, t, direction in re.findall(pattern, literal)
         ]
         require(encoded == rows, f"{path} does not encode the published table.")
-    literal = Path("M6/Literal.lean").read_text()
-    bool_to_int = {"false": 0, "true": 1}
-    machine = [
-        (int(q), bool_to_int[b], bool_to_int[w], int(t), direction == "true")
-        for q, b, w, direction, t in re.findall(
-            r"\| (\d+), (false|true) => some \((false|true), (false|true), (\d+)\)", literal
-        )
-    ]
-    require(machine == rows, "M6/Literal.lean differs from the published table.")
 
 
 def check_sources():
@@ -70,7 +63,8 @@ def check_sources():
     require(set(re.findall(rb"^(?:(?:public |meta )*)import (?:all )?(.+)$", challenge, re.M)) ==
             {b"Std", b"Mathlib.Data.Finset.Image", b"Mathlib.Data.Finset.Max"},
             "Unexpected Challenge imports.")
-    require(not re.search(r"\bimport (?:all )?Challenge\b", Path("Solution.lean").read_text()),
+    solution = Path("PA196/Palomar/Solution.lean").read_text()
+    require(not re.search(r"\bimport (?:all )?Challenge\b", solution),
             "Solution imports Challenge.")
 
 
@@ -95,4 +89,4 @@ if len(sys.argv) == 2:
 else:
     check_table()
     check_sources()
-    print("PASS: PA209's 418 transition rows and Palomar source checks.")
+    print("PASS: PA196's 392 transition rows and Palomar source checks.")

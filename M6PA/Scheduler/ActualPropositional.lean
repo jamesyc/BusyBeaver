@@ -1,7 +1,7 @@
 module
 public import M6PA.Theory
 public import M6PA.Model.PATheory
-public import M6PA.Scheduler.ActualDominated
+public import M6PA.Scheduler.ActualImplicationBasis
 @[expose] public section
 open M6.Arithmetic.PA
 

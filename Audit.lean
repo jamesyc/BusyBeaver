@@ -1,21 +1,27 @@
 module
 
-import PA209
-import Solution
+import PA196
+import PA196.Palomar.Audit
 
-#print axioms M6.Arithmetic.PA.FinalEndpoint.literal_final_endpoint
-#print axioms M6.PA.literal_nonhalting
-#print axioms M6.Arithmetic.PA.FinalEndpoint.nonhalting_true
-#print axioms M6.Arithmetic.PA.FinalEndpoint.pa_proves_nonhalting_consistency
-#print axioms M6.Arithmetic.PA.FinalEndpoint.nonhalting_unprovable
-#print axioms M6.Arithmetic.PA.ExactHaltingFormula.literal_binding
-#print axioms M6.Arithmetic.PA.Independence.nonhalting_irrefutable
-#print axioms M6.Arithmetic.PA.Independence.halting_unprovable
-#print axioms M6.Arithmetic.PA.Independence.two_sided_independence
-#print axioms M6.Arithmetic.PA.Independence.machine_nonhalting
-#print axioms PalomarPA.m6Rows_exact
-#print axioms PalomarPA.machineRow_eq
-#print axioms PalomarPA.pa_provable_iff
-#print axioms PalomarPA.m6Halting_toFoundation
-#print axioms PalomarPA.m6_two_sided_independence
-#print axioms PalomarPA.m6_machine_nonhalting
+#print axioms PA196.Literal.working_count
+#print axioms PA196.Literal.row_count
+#print axioms PA196.Startup.startup_exact
+#print axioms PA196.Arithmetic.Machine.Exact.PA.literal_binding
+#print axioms PA196.Arithmetic.Machine.Exact.PA.sentence_iff_literal_nonhalting
+
+#print axioms PA196.machine_nonhalting
+#print axioms PA196.Arithmetic.nonhalting_true
+#print axioms PA196.Arithmetic.Transport.FoundationNativeRefutationTransport.original_provable_refutation_transport
+#print axioms PA196.Arithmetic.refutation_implies_literal
+#print axioms PA196.Arithmetic.pa_proves_nonhalting_consistency
+#print axioms PA196.Arithmetic.nonhalting_unprovable
+#print axioms PA196.Arithmetic.halting_unprovable
+#print axioms PA196.Arithmetic.two_sided_independence
+#print axioms PalomarPA.PA196.pa196Halting_toFoundation
+#print axioms PalomarPA.PA196.pa196Nonhalting_toFoundation
+#print axioms PalomarPA.PA196.nonhalting_true
+#print axioms PalomarPA.PA196.halting_unprovable
+#print axioms PalomarPA.PA196.nonhalting_unprovable
+#print axioms PalomarPA.PA196.two_sided_independence
+#print axioms PalomarPA.PA196.nonhalting_irrefutable
+#print axioms PalomarPA.PA196.machine_nonhalting

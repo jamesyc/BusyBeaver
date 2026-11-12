@@ -1,48 +1,35 @@
-# Nonhalting and PA-independence for a 209-state Turing machine
+# Nonhalting and PA-independence for a 196-state Turing machine
 
-PA209 is an explicit two-symbol Turing machine that searches for a contradiction
-in ordinary first-order Peano arithmetic (PA). It runs forever from a blank
-tape. If $H$ is its exact arithmetic halting sentence, PA proves neither
-$H$ nor its negation.
+PA196 is an explicit binary Turing machine that searches for a contradiction
+in ordinary first-order Peano arithmetic (PA). Lean 4 proves that it runs
+forever from a blank tape and that PA proves neither its exact arithmetic
+halting sentence nor its negation.
 
-[Paper (PDF)](paper/pa209.pdf) · [Transition table](data/pa209.tm) ·
-[Formal statements](docs/result.md) · [Reproduction](docs/reproduction.md)
+[Paper (PDF)](paper/pa196.pdf) · [Transition table](data/pa196.tm) ·
+[Theorem statements](docs/result.md) · [Reproduction](docs/reproduction.md)
 
-## The machine
+The machine has 196 working states and 392 rows, reducing the working-state
+count of the [previous published construction](https://github.com/jamesyc/BusyBeaver/tree/69d98241a721ead20b4f0b17df9062950b40fbfe) by 13. It starts in state 0 on an
+all-zero tape and reaches the register-program frame for candidate 2 after
+58,154 steps. The tape machine implements a proof-command search with a
+transposed universal-quantifier code and a guarded equality-vacuity clause.
+The proof verifies the startup and the simulation at all 3,812 source sites.
 
-The tape is infinite in both directions and initially all zero. The machine
-starts at state 0. Its 209 working states have two transition rows each.
-State 215 is the halt label. After 58,210 tape steps the machine reaches the
-register-program frame that starts the proof search at candidate 2.
+In an arbitrary model of PA, a coded PA refutation yields an accepted
+certificate, a halting source execution, and a coded trace for the literal
+machine. PA therefore proves that nonhalting implies its own consistency.
+Gödel's second incompleteness theorem excludes a PA proof of nonhalting under
+consistency. Soundness in the standard natural numbers excludes a PA proof of
+halting. Foundation supplies standard-model consistency and soundness in
+Lean's metatheory.
 
-## The proof
-
-The register program enumerates finite words of proof commands and halts
-when it derives a contradiction. Lean checks the source program, the startup
-trace, and a positive-length tape simulation of every source instruction.
-Soundness of the proof commands gives blank-tape nonhalting under PA
-consistency.
-
-In every model of PA, a coded PA refutation gives an accepted certificate, a
-halting source execution, and a coded tape trace using the exact table.
-Consequently PA proves $\neg H \to \operatorname{Con}(\mathrm{PA})$.
-Gödel's second incompleteness theorem rules out a PA proof of $\neg H$
-under PA consistency. Soundness of PA in the standard natural numbers
-rules out a PA proof of $H$. Foundation's standard model supplies
-consistency and soundness in Lean's metatheory.
-
-## Paper-to-Lean map
-
-| Paper | Lean |
+| Component | Lean |
 | --- | --- |
-| Machine and startup (§2) | [Literal table](M6/Literal.lean), [startup](M6/Startup.lean) |
-| Physical simulation (§3) | [Source transport](M6/SourceTransport.lean), [runtime coverage](M6/Coverage.lean), [physical endpoint](M6/PhysicalEndpoint.lean) |
-| Proof search and soundness (§4) | [AX formulas](M6/Source/ActualAXCode.lean), [logical endpoint](M6/LogicalEndpoint.lean), [PA consistency bridge](M6PA/Endpoint.lean) |
-| Arithmetic trace sentence (§5) | [Exact halting formula](M6PA/Model/ExactHaltingFormula.lean), [statement correspondence](Solution.lean) |
-| From refutation to halting (§6) | [Refutation transport](M6PA/Calibration/FoundationNativeRefutationTransport.lean), [scheduler](M6PA/Scheduler/SourceEnumerationFromTwo.lean), [trace](M6PA/RefutationHalting.lean) |
-| Two-sided independence (§7) | [Internal consistency implication](M6PA/FinalEndpoint.lean), [independence](M6PA/TwoSidedIndependence.lean) |
+| Literal table and startup | [Literal](PA196/Literal.lean), [Startup](PA196/Startup.lean) |
+| Tape simulation and command calculus | [Coverage](PA196/Coverage.lean), [Logic](PA196/Logic/Basic.lean), [Nonhalting](PA196/Nonhalting.lean) |
+| Exact trace sentence and internal implication | [Literal binding](PA196/Arithmetic/Machine/Exact/SentenceCorrectness.lean), [Refutation-to-halting](PA196/Arithmetic/RefutationHalting.lean), [Independence](PA196/Independence.lean) |
+| Palomar statement and proof | [Challenge](Challenge.lean), [Solution](PA196/Palomar/Solution.lean), [Axiom audit](Audit.lean) |
 
-The default Lake build includes the [PA209 proof](PA209.lean), the
-[Palomar statement](Challenge.lean), and its [Solution](Solution.lean).
-Run `bash scripts/check.sh` for source and table checks, or
-`bash scripts/check.sh --full` to build and audit the proof.
+Run `bash scripts/check.sh` for the source and table checks, or
+`bash scripts/check.sh --full` to build and audit the proof. The root license
+is MIT. Bundled support retains its own license notices.

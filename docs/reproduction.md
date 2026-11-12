@@ -1,15 +1,16 @@
-# Reproducing PA209
+# Reproducing PA196
 
-From the repository root, run the source and machine-table checks with
-Python 3.10 or later.
+Run the source and machine-table checks from the repository root with Python
+3.10 or later.
 
 ```sh
 bash scripts/check.sh
 ```
 
-Install [elan](https://github.com/leanprover/elan) and place its executables
-on `PATH`. Build with the pinned Lean 4.35.0 toolchain and committed Lake
-manifest.
+The checker verifies the exact table bytes and checks that the literal machine,
+58,154-step startup, and standalone Challenge match their source inputs.
+The default build uses Lean 4.35.0 and the committed Lake manifest. Install
+[elan](https://github.com/leanprover/elan) and put its executables on `PATH`.
 
 ```sh
 elan toolchain install leanprover/lean4:v4.35.0
@@ -17,29 +18,30 @@ lake exe cache get
 bash scripts/check.sh --full
 ```
 
-Mathlib's cache is optional. Lake builds PA209 and the bundled Foundation
-modules from source. A fresh build can take substantial time and memory.
-See [Foundation's source and license](../vendor/Foundation/README.md).
+The Mathlib cache is optional. Lake builds the bundled Foundation modules and
+the PA196 proof from source. A fresh build can take substantial time and
+memory. See [Foundation's source and license](../vendor/Foundation/README.md).
 
-On Linux with [Bubblewrap](https://github.com/containers/bubblewrap) and
-user namespaces available, run Comparator with its independent NanoDa check.
+The root [audit](../Audit.lean) checks the exact machine and both Palomar
+declarations. Guarded audits also check the compiler and scheduler. Only
+`propext`, `Classical.choice`, and `Quot.sound` are permitted in the compared
+proofs. The two deliberate theorem holes are confined to the standalone
+[Challenge](../Challenge.lean).
+
+For the sandboxed statement comparison and independent replay, use Linux
+with [Bubblewrap](https://github.com/containers/bubblewrap) and user
+namespaces enabled. The script uses NanoDa and con-ron from the pinned Lean
+toolchain.
 
 ```sh
-lake comparator --config comparator.json
+bash scripts/verify-comparator.sh
 ```
 
-The root [audit](../Audit.lean) checks the literal proof endpoints and both
-compared theorems for dependencies beyond `propext`, `Classical.choice`,
-and `Quot.sound`. The two declarations in
-[Challenge.lean](../Challenge.lean) use intentional statement holes.
-The verified declarations come from [Solution.lean](../Solution.lean).
+Build the paper with `tectonic --outdir paper paper/pa196.tex`, or run
+`pdflatex -output-directory=paper paper/pa196.tex` twice.
 
-Build the paper with `tectonic --outdir paper paper/pa209.tex` or run
-`pdflatex -output-directory=paper paper/pa209.tex` twice.
-
+The [public PA209 snapshot](https://github.com/jamesyc/BusyBeaver/tree/69d98241a721ead20b4f0b17df9062950b40fbfe)
+documents the predecessor machine and the shared arithmetic proof architecture.
 The [K230 Rocq development](https://github.com/elliotglazer/k230-rocq/tree/3142e4d)
 and the [PA238 Rocq development](https://github.com/jeff87654/busy-beaver/tree/84049b5/PA/m238)
-supply background for the tape engine and the proof calculus. The
-restricted implicational proof adapted from
-[ProveIt](https://github.com/VladimirReshetnikov/ProveIt/tree/6809609)
-retains its [MIT-0 notice](../vendor/ProveIt/LICENSE).
+supply background for the tape engine and proof calculus.

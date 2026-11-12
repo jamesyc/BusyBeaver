@@ -1,10 +1,13 @@
 {
   "challenge_module": "Challenge",
-  "solution_module": "Solution",
+  "solution_module": "PA196.Palomar.Solution",
   "theorem_names": [
-    "PalomarPA.m6_two_sided_independence",
-    "PalomarPA.m6_machine_nonhalting"
+    "PalomarPA.PA196.two_sided_independence",
+    "PalomarPA.PA196.machine_nonhalting"
   ],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
-  "enable_nanoda": true
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
 }

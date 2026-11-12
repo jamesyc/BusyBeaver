@@ -2,80 +2,65 @@
 version: "v0.4"
 
 project:
-  name: "Nonhalting and PA-independence for a 209-state Turing machine"
+  name: "Nonhalting and PA-independence for a 196-state Turing machine"
   description: >-
-    An explicit binary Turing machine with 209 working states searches for a
-    contradiction in ordinary first-order Peano arithmetic. Lean proves that
-    the machine runs forever from a blank tape and that PA proves neither
-    the exact arithmetic halting sentence nor its negation. The proof
-    connects a refutation compiler and a register-program simulation to all
-    418 rows of the literal transition table.
-  authors:
-    - "James Chang"
+    An explicit binary Turing machine with 196 working states searches for
+    a contradiction in ordinary first-order Peano arithmetic. Lean proves
+    blank-tape nonhalting and that PA proves neither the exact arithmetic
+    halting sentence nor its negation. A refutation compiler connects the PA
+    proof predicate to the literal 392-row table. The axiom command uses
+    a transposed quantifier code and a guarded equality-vacuity clause.
+  authors: ["James Chang"]
   license: "MIT"
-  responsible_maintainers:
-    - "James Chang"
+  responsible_maintainers: ["James Chang"]
 
 classification:
   arxiv: ["math.LO", "cs.LO"]
   msc2020: ["03F30", "03D10"]
 
 sources:
+  - title: "Nonhalting and PA-independence for a 196-state Turing machine"
+    authors: ["James Chang"]
+    type: paper
+    location: "paper/pa196.pdf in this repository"
+    relationship: formalizes
+    note: "Companion paper presenting the machine and its independence proof."
   - title: "Nonhalting and PA-independence for a 209-state Turing machine"
-    authors:
-      - "James Chang"
-    type: article
-    location: "paper/pa209.pdf in this repository"
-    relationship: other
-    note: "Companion paper presenting the same construction and proof."
-  - title: "PA independence for the explicit PA209 transition table"
-    type: original-proof
-    relationship: other
-  - title: "Nonhalting and PA-independence for a 211-state Turing machine"
-    authors:
-      - "James Chang"
-    type: article
-    location: "https://github.com/jamesyc/BusyBeaver/tree/1654314dd6892371ea38e488a7aa501d2aa55a0c"
+    authors: ["James Chang"]
+    type: paper
+    location: "https://github.com/jamesyc/BusyBeaver/tree/69d98241a721ead20b4f0b17df9062950b40fbfe"
     relationship: background
-    note: "Earlier state bound and proof architecture."
+    note: "Predecessor machine and shared tape-engine and arithmetic proof architecture."
   - title: "K230 Rocq verification"
-    authors:
-      - "Elliot Glazer"
-    type: code
+    authors: ["Elliot Glazer"]
     location: "https://github.com/elliotglazer/k230-rocq/tree/3142e4dd980f0be12f4abb636c4ae2528afc17eb"
     relationship: background
     note: "Transition reference and tape-engine verification."
   - title: "PA238 Rocq development"
-    type: code
     location: "https://github.com/jeff87654/busy-beaver/tree/84049b5e753190cf328cbc2d2710791ad32ad59c/PA/m238"
     relationship: background
     note: "Numeric proof calculus and arithmetic interpretation."
-  - title: "ProveIt"
-    authors:
-      - "Vladimir Reshetnikov"
-    type: code
-    location: "https://github.com/VladimirReshetnikov/ProveIt/tree/6809609c61b9f2dd11c66374952cc5eb3defbd9f"
-    relationship: background
-    note: "Restricted implicational proof in DominatedCore.v."
   - title: "Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I"
-    authors:
-      - "Kurt Gödel"
-    type: article
+    authors: ["Kurt Gödel"]
+    type: paper
     id: "https://doi.org/10.1007/BF01700692"
     relationship: background
     note: "The second incompleteness theorem supplies the unprovability of nonhalting."
-  - title: "On Non-Computable Functions"
-    authors:
-      - "Tibor Radó"
-    type: article
-    id: "https://doi.org/10.1002/j.1538-7305.1962.tb00480.x"
-    relationship: background
+
+related_formalizations:
+  - id: "https://github.com/jamesyc/BusyBeaver/tree/69d98241a721ead20b4f0b17df9062950b40fbfe"
+    relationship: builds-on
+    note: >-
+      PA196 retains shared PA syntax, coding, and engine lemmas. Intermediate
+      formulas from the PA209 implication proof guided the search for PA196's
+      shared restricted implication derivation.
 
 status:
   scope: >-
-    The result concerns the displayed 209-state, two-symbol machine and
-    ordinary first-order PA. The two-sided corollary uses PA soundness
-    and consistency in the standard natural numbers.
+    Blank-tape nonhalting and two-sided independence for the exact PA196
+    table in ordinary first-order PA. The closed Lean corollaries use
+    Foundation's standard-model consistency and soundness in the metatheory.
+    The two intentional Challenge holes state the compared claims.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: []
@@ -84,31 +69,31 @@ automation:
   methods:
     - method: agent
       framework: "OpenAI Codex"
-      tool_setup: >-
-        AI-assisted proof development and publication preparation, with
-        Lean kernel checking of the formal derivations.
+      tool_setup: "AI-assisted Lean development with deterministic source generators and kernel-checked proofs."
 
 fidelity:
   divergences: >-
-    The Challenge presents PA with an explicit first-order syntax and
-    calculus. The Solution proves correspondence with Foundation's PA,
-    including the exact halting sentence. The Challenge's two-list tape
-    semantics is identified with the literal machine's tape model.
+    Lean verifies the simulation for the reachable gap bound of 48,
+    established by startup. The arithmetic transport projects its internal
+    215-slot encoding to the exact 196 working states and halt label 196.
+    The Challenge uses explicit first-order syntax and two-list tape
+    semantics. The Solution proves their correspondence to Foundation and
+    the literal machine.
 
 review:
   status: "self-assessed"
-  notes: "The Lean statements and paper describe the same fixed machine and proof scope."
+  notes: "Self-assessed statement alignment. Human review status is unrecorded."
 
 alignment:
-  namespace: "PalomarPA"
+  namespace: "PalomarPA.PA196"
   statements:
-    - source: "The exact halting sentence and its negation are both unprovable in PA."
-      lean: "PalomarPA.m6_two_sided_independence"
-      module: "Solution"
+    - source: "Ordinary PA proves neither exact PA196 halting nor exact PA196 nonhalting."
+      lean: "PalomarPA.PA196.two_sided_independence"
+      module: "PA196.Palomar.Solution"
       status: "proved"
-    - source: "PA209 does not halt on the blank tape in state zero."
-      lean: "PalomarPA.m6_machine_nonhalting"
-      module: "Solution"
+    - source: "PA196 runs forever from state zero on a blank tape."
+      lean: "PalomarPA.PA196.machine_nonhalting"
+      module: "PA196.Palomar.Solution"
       status: "proved"
 
 acknowledgements: "Lean 4, Mathlib, and FormalizedFormalLogic's Foundation library."

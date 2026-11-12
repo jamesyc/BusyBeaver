@@ -1,6 +1,6 @@
-name = "pa209"
+name = "pa196"
 version = "0.1.0"
-defaultTargets = ["PA209", "Challenge", "Solution"]
+defaultTargets = ["PA196", "Challenge", "PA196.Palomar.Audit"]
 weakLeanArgs = ["-j1"]
 
 [[require]]
@@ -19,16 +19,10 @@ name = "M6"
 name = "M6PA"
 
 [[lean_lib]]
-name = "PA209"
-
-[[lean_lib]]
 name = "Challenge"
 
 [[lean_lib]]
-name = "Solution"
-
-[[lean_lib]]
-name = "PA209Bridge"
+name = "PA196Bridge"
 roots = [
   "PACore",
   "PATheory",
@@ -44,12 +38,7 @@ roots = [
   "TemplateNthCore",
   "NthData",
   "ExactCore",
-  "M6Data",
-  "PhysicalCore",
-  "PhysicalBridge",
   "RowBridge",
-  "M6RowsBridge",
-  "TraceBridge",
   "FixTemplateBridge",
   "PRTemplateBridge",
   "MappingTemplateBridge",
@@ -65,3 +54,6 @@ roots = [
   "TemplateNthBridge",
   "NthBridge",
 ]
+
+[[lean_lib]]
+name = "PA196"

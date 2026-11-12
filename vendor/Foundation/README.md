@@ -1,9 +1,9 @@
 # Foundation
 
 These Lean modules come from [FormalizedFormalLogic/Foundation][foundation]
-at revision [c3eb37a][revision]. The included modules are the portion used
-by PA209. The local changes are confined to proof performance and Lake
-configuration. They preserve the definitions and theorem statements of
+at revision [c3eb37a][revision]. The included modules supply first-order
+arithmetic and proof support. The local changes are confined to proof
+performance and Lake configuration. They preserve the definitions and theorem statements of
 the affected declarations.
 
 Foundation is distributed under the [Apache License, Version 2.0](LICENSE).

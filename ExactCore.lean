@@ -26,22 +26,4 @@ def rowFormula (src read write next : Nat) (right : Bool) : Formula Empty 6 :=
 def nthAt (v s i : Term Empty n) : Formula Empty n :=
   nthFormula.rewrite (fun j => if j.val=0 then v else if j.val=1 then s else i) Empty.elim
 
-/-- Exact four-sequence-witness, six-register-step halting sentence schema. -/
-def traceFormula (step : Formula Empty 6) : Sentence :=
-  let body : Formula Empty 11 :=
-    .and (nthAt (.bvar (boundIndex 5)) (.bvar (boundIndex 9)) (.bvar (boundIndex 6))) <|
-    .and (nthAt (.bvar (boundIndex 4)) (.bvar (boundIndex 8)) (.bvar (boundIndex 6))) <|
-    .and (nthAt (.bvar (boundIndex 3)) (.bvar (boundIndex 7)) (.bvar (boundIndex 6))) <|
-    .and (nthAt (.bvar (boundIndex 2)) (.bvar (boundIndex 9)) (.add (.bvar (boundIndex 6)) .one)) <|
-    .and (nthAt (.bvar (boundIndex 1)) (.bvar (boundIndex 8)) (.add (.bvar (boundIndex 6)) .one)) <|
-    .and (nthAt (.bvar (boundIndex 0)) (.bvar (boundIndex 7)) (.add (.bvar (boundIndex 6)) .one)) <|
-    step.rewrite (fun j => .bvar (boundIndex (5-j.val))) Empty.elim
-  let timeBody : Formula Empty 5 :=
-    .or (.nlt (.bvar (boundIndex 0)) (.bvar (boundIndex 4))) (.ex (.ex (.ex (.ex (.ex (.ex body))))))
-  let startBody : Formula Empty 4 :=
-    .and (nthAt .zero (.bvar (boundIndex 2)) .zero) <|
-    .and (nthAt .zero (.bvar (boundIndex 1)) .zero) <|
-    .and (nthAt .zero (.bvar (boundIndex 0)) .zero) <|
-    .and (nthAt (.numeral 215) (.bvar (boundIndex 2)) (.bvar (boundIndex 3))) (.all timeBody)
-  .ex (.ex (.ex (.ex startBody)))
 end PalomarPA

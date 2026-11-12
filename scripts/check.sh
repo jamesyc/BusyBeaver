@@ -8,6 +8,8 @@ if [[ $# -gt 1 || ( $# -eq 1 && $1 != --full ) ]]; then
 fi
 
 python3 scripts/check_publication.py
+python3 scripts/pa196/generate_machine.py --check
+python3 scripts/pa196/generate_challenge.py --check
 if [[ $# -eq 1 ]]; then
   lake build
   audit=$(mktemp)
