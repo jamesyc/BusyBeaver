@@ -32,24 +32,23 @@
 \maketitle
 
 \begin{abstract}
-We give an explicit two-symbol Turing machine with 196 working states
-that searches for a contradiction in ordinary first-order Peano
-arithmetic. It runs forever on a blank tape, and Peano arithmetic
-proves neither its exact arithmetic halting sentence nor its negation.
-The axiom command uses a transposed code for universal quantification
-and a guarded equality-vacuity clause. The latter replaces the need
-for a primitive transitivity head. The modified calculus, the simulation
-of the register program, and both unprovability directions for the
-literal transition table are formalized in Lean~4.
+We give a two-symbol Turing machine with 196 working states that
+searches for a contradiction in ordinary first-order Peano arithmetic.
+It runs forever on a blank tape. Peano arithmetic proves neither its
+exact arithmetic halting sentence nor its negation. The machine's
+axiom command reverses the two arguments in the quantifier code and
+uses a guarded equality-vacuity clause in place of a primitive
+transitivity head. In Lean~4 we verify the calculus, the simulation
+of the register program, and both unprovability results for the
+literal table.
 \end{abstract}
 
 \section{The result}\label{sec:result}
 
-Write $M_{209}$ for the machine of~\cite{pa209} and $M$ for the
-machine of Section~\ref{sec:machine}. Let $H$ be the arithmetic halting sentence
-of $M$, built from the rows of $M$ as the halting sentence of
-$M_{209}$ is built in~\cite[\S5]{pa209}. Ordinary first-order Peano
-arithmetic is denoted by $\PA$.
+Let $M$ be the machine in Section~\ref{sec:machine}, and let $M_{209}$
+be its predecessor~\cite{pa209}. Write $\PA$ for ordinary first-order
+Peano arithmetic. The arithmetic halting sentence $H$ uses the rows
+of $M$ in the trace formula of~\cite[\S5]{pa209}.
 
 \begin{theorem}\label{thm:main}
 If $\PA$ is consistent, the machine $M$ does not halt from the blank
@@ -57,72 +56,71 @@ tape and $\PA\nvdash\neg H$. If $\PA$ is sound for the standard model,
 also $\PA\nvdash H$.
 \end{theorem}
 
-The register program of $M$ differs from that of $M_{209}$ only in the
-body of one command (Lemma~\ref{lem:program}). Sections~\ref{sec:sound}
-and~\ref{sec:complete} show that the new command calculus is sound and
-that the refutation transport of~\cite{pa209} still reaches it.
-Sections~\ref{sec:layout} and~\ref{sec:simulation} deal with the table.
+The change to the register program is confined to the body of one
+command (Lemma~\ref{lem:program}). We prove soundness for the revised
+calculus in Section~\ref{sec:sound} and show how the compiler
+of~\cite{pa209} sends PA refutations to proofs in that calculus in
+Section~\ref{sec:complete}. Sections~\ref{sec:layout}
+and~\ref{sec:simulation} give the tape layout and its simulation proof.
 
-The Lean endpoints use Foundation's standard model of ordinary PA to
-supply consistency and soundness in the metatheory. They prove blank-tape
-nonhalting and both unprovability directions without additional hypotheses.
+Lean uses Foundation's standard model of ordinary PA to establish
+consistency and soundness in the metatheory. This yields closed Lean
+theorems for blank-tape nonhalting and both unprovability directions.
 
 \section{The machine}\label{sec:machine}
 
-The tape is infinite in both directions, with alphabet $\{0,1\}$ and
-initially all cells zero. The working states are $0,\ldots,195$, state
-$0$ is initial, and $196$ terminates the run. A row $(q,b,w,D,q')$
-reads $b$ at state $q$, writes $w$, moves one cell in direction $D$,
-and enters $q'$. There is one row for every pair in
-$\{0,\ldots,195\}\times\{0,1\}$. The 392 rows are given in
-\file{data/pa196.tm}, with SHA-256 digest
+The tape has alphabet $\{0,1\}$ and is infinite in both directions.
+It starts with all cells zero. State $0$ is the start state,
+$0,\ldots,195$ are the working states, and $196$ is the halt label. In state $q$, a row
+$(q,b,w,D,q')$ reads $b$, writes $w$, moves one cell in direction $D$,
+and enters $q'$. The table has one row for each pair in
+$\{0,\ldots,195\}\times\{0,1\}$. The file \file{data/pa196.tm} contains
+all 392 rows and has SHA-256 digest
 \begin{quote}\small
 \nolinkurl{e8bbccd4cfa325251ca95066db116b5aa766e404b0971c33c02772be1c3617a8}.
 \end{quote}
 The first row is $(0,0,1,R,1)$, and $(63,1,1,R,196)$ is the only row
 that enters the halt label.
 
-Like $M_{209}$, the machine consists of a tape engine that interprets
-a register program stored as a binary tree. A configuration of the
-register program is a \emph{frame}: a marker, the path of the current
-site in the tree, a gap, and a register file in which a value $v$ is
-the block $0\,1^{v+1}$~\cite[\S3]{pa209}. The 36 states of the engine
-have the same rows in $M$ as in $M_{209}$, after renaming. The root of
-the tree is read by state $75$. Of the 196 states, 36 form the engine,
-13 route leaf instructions to it, and 147 read the 159 distinct nodes
-of the tree.
+As in $M_{209}$, a tape engine interprets a register program stored
+as a binary tree. A \emph{frame} records a marker, the path to the
+current site, a gap, and the register file. A block $0\,1^{v+1}$
+stores value $v$~\cite[\S3]{pa209}. The engine's 36 states have
+the same rows as in $M_{209}$ after renaming. Of the remaining states,
+13 route leaf instructions to the engine and 147 read the 159
+distinct nodes. State $75$ reads the root.
 
 \section{The register program}\label{sec:steps}
 
 The register program of $M_{209}$ enumerates words over three commands
-acting on a store $(t,w,d,h)$ and halts when a Shift sees formula code
-$1$~\cite[\S4]{pa209}. Shift and $\mpc$ are kept. The command
-$\ax(c,x,y)$ is changed in three steps, and stored differently in a
-fourth.
+on a store $(t,w,d,h)$. It halts when Shift reads formula code
+$1$~\cite[\S4]{pa209}. We keep Shift and $\mpc$, change $\ax(c,x,y)$
+in three steps, and then change how the program stores that command.
 
-\subsection{Step 1: the code of the quantifier}
+\subsection{Step 1. The quantifier code}
 
-Let $p(a,b)=\binom{a+b+1}{2}+b$. In $M_{209}$ the four constructors
-are $4p(a,b)+r$ with $r=0,1,2,3$ for implication, membership, the
-universal quantifier and equality. Here
+Let $p(a,b)=\binom{a+b+1}{2}+b$. The four constructors in $M_{209}$
+use $4p(a,b)+r$, where $r=0,1,2,3$ denotes implication, membership,
+universal quantification and equality, respectively. The constructors
+in $M$ are
 \[
  \Ic(a,b)=4p(a,b),\quad \Mc(a,b)=4p(a,b)+1,\quad
  \Uc(a,B)=4p(B,a)+2,\quad \Ec(a,b)=4p(a,b)+3 .
 \]
-The code of the quantifier exchanges the two pairing arguments. Code $0$ is truth and code
-$1=\Mc(0,0)$ is the contradiction, as before. Write
+Only the quantifier code reverses the pairing arguments. As before,
+code $0$ is truth and $1=\Mc(0,0)$ is the contradiction. Write
 $\Nc(B)=\Ic(B,1)$, $B\wedge C=\Nc(\Ic(B,\Nc(C)))$,
 $B\leftrightarrow C$ for $\Ic(B,C)\wedge\Ic(C,B)$, and
-$\exists x_a\,B$ for $\Nc(\Uc(a,\Nc(B)))$. In the formulas below an
-arrow is $\Ic$.
+$\exists x_a\,B$ for $\Nc(\Uc(a,\Nc(B)))$. An arrow in the formulas
+below denotes $\Ic$.
 
-\subsection{Steps 2 and 3: the heads}
+\subsection{Steps 2 and 3. The axiom heads}
 
-In $M_{209}$ the command pushes the saved top, a generalization, the
-restricted propositional head $\rho_8$, seven further heads
-$\rho_1,\ldots,\rho_7$, and leaves a guarded gate in $t$. Here
-$\ax(c,x,y)$ puts $D=d+x$, $H=h+y$ and $A=c$. It pushes the saved top
-$t$, the generalization $\Uc(d,h)$, the head
+In $M_{209}$, $\ax$ pushes the saved top, a generalization, the
+restricted propositional head $\rho_8$ and seven further heads
+$\rho_1,\ldots,\rho_7$. It leaves a guarded gate in $t$.
+For $\ax(c,x,y)$ in $M$, put $D=d+x$, $H=h+y$ and $A=c$. The command
+pushes the saved top $t$, the generalization $\Uc(d,h)$, the head
 \[
  \rho_8(D,A,H,d)=\bigl((H\to d)\to D\bigr)\to\bigl((D\to H)\to(A\to H)\bigr),
 \]
@@ -146,8 +144,8 @@ Push & Formula & Head of~\cite{pa209} \\
 $\Uc(d,h)$ and $\rho_8$.}\label{tab:heads}
 \end{table}
 
-It leaves in $t$ the guarded gate: $0$ if $A=H$ or $A=D$, and
-otherwise $F(H,D,A)$, where for labels $a,b$ and a code $c$
+The command leaves $0$ in $t$ if $A=H$ or $A=D$, and $F(H,D,A)$
+otherwise. For labels $a,b$ and a code $c$, the gate $F$ is defined by
 \begin{align*}
  \Delta_c(a,b)&=\Ec(a,b)\to\Uc(c,\Ec(a,b)), &
  V&=\Mc(a,b)\to\Uc(c,\Mc(a,b)),\\
@@ -156,27 +154,27 @@ otherwise $F(H,D,A)$, where for labels $a,b$ and a code $c$
  Q&=\Uc(c,\,S\to\Nc(P)), &
  F(a,b,c)&=\Nc\bigl(\Delta_c(a,b)\to(V\to Q)\bigr).
 \end{align*}
-Finally it sets $d=h=0$. Nine items are pushed, the saved top
-included. In $P$, $S$ and $Q$ the number $c$ occurs both as the label
-of the variable $x_c$ and as the code of a formula.
+The command finishes by setting $d=h=0$. It pushes nine items in all,
+including the saved top. In $P$, $S$ and $Q$, the number $c$ is both
+the label of $x_c$ and a formula code.
 
-The gate of~\cite{pa209} is $G(a,b,c)=\Nc(V\to Q)$:
-membership vacuity $V$ together with pointed separation $\Nc(Q)$,
-under the guard $c\ne a,b$. Step~2 removes the seventh head
+Under the guard $c\ne a,b$, the gate $G(a,b,c)=\Nc(V\to Q)$
+of~\cite{pa209} gives membership vacuity $V$ and pointed separation
+$\Nc(Q)$. Step~2 removes the seventh head
 \[
  \rho_7(a,b,c)=\Ec(c,a)\to\bigl(\Ec(c,b)\to\Uc(\Mc(a,b),\Ec(a,b))\bigr)
 \]
-and puts the vacuity of equality $\Delta_c(a,b)$ under the same guard.
-Step~3 is the rearrangement recorded in the third column of
-Table~\ref{tab:heads} and in the parameters of $\rho_8$, whose second
-and third arguments are exchanged.
+and adds equality vacuity $\Delta_c(a,b)$ to the gate under the same
+guard. Step~3 rearranges the heads as shown in the third column of
+Table~\ref{tab:heads} and exchanges the second and third arguments of
+$\rho_8$.
 
-The body of $\ax$ is straight-line code: a sequence of 201 items. An
-item is a call of one of the macros of~\cite{pa209} (push the
-accumulator; push it and load one of the three registers; pop and form
-$4p$; the two parameter reads; the two parts of the guard), a single
-increment of the accumulator, or the closing jump. The whole program
-has $3{,}812$ sites, compared with $3{,}948$ for $M_{209}$.
+The body of $\ax$ is a straight-line sequence of 201 items. Its macro
+calls come from~\cite{pa209}. They push the accumulator, push it and
+load one of the three registers, pop and form $4p$, read the two
+parameters, or check the two parts of the guard. The other items are
+single increments of the accumulator and the closing jump. The full
+program has $3{,}812$ sites, compared with $3{,}948$ for $M_{209}$.
 
 \begin{lemma}[Program]\label{lem:program}
 Outside the body of $\ax$ the register program $R$ of $M$ agrees with
@@ -188,15 +186,15 @@ codes of Step~1.
 \end{lemma}
 
 \begin{proof}
-Flattening the program gives 169 sites outside the body that agree
-with $M_{209}$ after translation of addresses. The 201 blocks use the
-same macros and internal jump offsets, with the closing jump
-redirected to the corresponding successor. Their store effects follow
-from the macro contracts. Executing the sequence of calls symbolically
-gives nine stack entries and a top that are the stated formulas as
-trees over $4p(\cdot,\cdot)+r$, with the pairing arguments in the order
-of Step~1. The checked source program and its axiom-command binding
-are in \file{PA196/Program.lean} and \file{PA196/Source/AXEffect.lean}.
+After flattening the program and translating the addresses, the 169
+sites outside the body agree with $M_{209}$. The 201 blocks use the
+same macros and internal jump offsets. The closing jump goes to the
+corresponding successor. The macro contracts give the store effect of
+each block. Symbolic execution gives the nine stack entries and the
+new top as formula trees over $4p(\cdot,\cdot)+r$, with the argument
+order of Step~1. Lean checks the source program in
+\file{PA196/Program.lean} and the effect of the command in
+\file{PA196/Source/AXEffect.lean}.
 \end{proof}
 
 \section{Soundness}\label{sec:sound}
@@ -206,92 +204,90 @@ If $\PA$ is consistent, $R$ does not halt from the clean store.
 \end{lemma}
 
 \begin{proof}
-Interpret membership and equality in a model of $\PA$ as
-in~\cite[\S4.2]{pa209}: $\Mc(a,b)$ says that bit $x_b$ of $x_a$ is
-set. Each formula of Table~\ref{tab:heads} is a head of~\cite{pa209}
-up to the order of two antecedents, or is $\exists x_a(x_b=x_a)$, and
-is true under every assignment. So is $\rho_8$, a propositional
-tautology. When $c\ne a,b$, the formula $G(a,b,c)$ is true as
-in~\cite{pa209}, and $\Delta_c(a,b)$ is true because the variable
-$x_c$ does not occur in $\Ec(a,b)$; hence $F(a,b,c)$, which is
-propositionally $G\wedge\Delta_c$, is true. When the guard fails the
-gate is truth. Modus ponens and generalization preserve truth under
-every assignment, and code $1$ is false. The invariant, the halt test
-and the scheduler are those of~\cite[\S4.2]{pa209}.
+Use the interpretation of membership and equality
+from~\cite[\S4.2]{pa209}. In a model of $\PA$, $\Mc(a,b)$ says that
+bit $x_b$ of $x_a$ is set. Each formula in Table~\ref{tab:heads} is
+either a head of~\cite{pa209}, possibly with two antecedents exchanged,
+or the witness formula $\exists x_a(x_b=x_a)$. Each is true under every
+assignment, as is the propositional tautology $\rho_8$.
 
-Exchanging the pairing arguments in the code of the quantifier changes
-the encoder and the decoder together. Both components of a code
-$4p(u,v)+r$ are smaller than the code in either order, so the decoding
-recursion and the fact that every label in the formula with code $c$
-is below $c$ are unaffected. The latter is what makes $x_c$ fresh in
-the gate.
+When $c\ne a,b$, $G(a,b,c)$ is true by~\cite{pa209}. The atom
+$\Ec(a,b)$ contains no $x_c$, so $\Delta_c(a,b)$ is also true. Thus
+$F(a,b,c)$ is true, since it is propositionally $G\wedge\Delta_c$.
+If the guard fails, the gate returns truth. Modus ponens and
+generalization preserve truth under every assignment, and code $1$
+is false. We use the invariant, halt test and scheduler
+of~\cite[\S4.2]{pa209}.
+
+The encoder and decoder exchange the quantifier arguments together.
+For a nonzero code $4p(u,v)+r$, both components are smaller than the
+code in either order. The decoder still recurses on smaller codes, and
+every label in the formula with code $c$ is below $c$. Thus $x_c$ is
+fresh in the gate.
 \end{proof}
 
 \section{Completeness}\label{sec:complete}
 
-Call a formula \emph{derivable} if it has a proof from instances of
-the six heads, of $\rho_8$ with $u\le a$, and of the gate with
-$c\ne a,b$, by modus ponens and generalization. All arguments in this
-section are fixed finite templates in the labels and codes involved,
-with case distinctions on equalities between numbers. They can be
-carried out inside $\PA$ for coded proofs, as the corresponding
-arguments are in~\cite[\S6.1]{pa209}.
+A formula is \emph{derivable} if modus ponens and generalization give
+a proof from instances of the six heads, $\rho_8$ with $u\le a$, and
+the gate with $c\ne a,b$. The proofs below use fixed finite templates
+in the labels and codes. Their case distinctions compare numbers
+for equality. PA can carry out these arguments on coded proofs by the
+method of~\cite[\S6.1]{pa209}.
 
-\subsection{What the seventh head was used for}
+\subsection{Uses of the seventh head}
 
-In the Lean development of~\cite{pa209} the head $\rho_7$ occurs in
-one module, \file{ActualCertificateNeighborhoodPrimitive.lean}, which
-derives from it reflexivity and symmetry of primitive equality and the
-vacuity of $\Ec(a,b)$ under the label $\Mc(a,b)$. These are used in two
-places. In \file{ActualCertificateNeighborhoodCongruence.lean},
-symmetry turns the two membership rewrites $\rho_3,\rho_5$ into
-rewrites in the opposite direction. In
-\file{ActualCertificateNeighborhoodWitness.lean}, symmetry and the
-vacuity give $\Ec(a,b)\to\Rc(a,b,z)$ for $z\ne a,b$, where
+In the Lean development of~\cite{pa209}, only
+\file{ActualCertificateNeighborhoodPrimitive.lean} uses $\rho_7$
+directly. It derives reflexivity and symmetry of primitive equality
+and vacuity of $\Ec(a,b)$ under the label $\Mc(a,b)$.
+\file{ActualCertificateNeighborhoodCongruence.lean} uses symmetry
+to reverse the membership rewrites $\rho_3,\rho_5$.
+\file{ActualCertificateNeighborhoodWitness.lean} uses symmetry and
+vacuity to prove $\Ec(a,b)\to\Rc(a,b,z)$ for $z\ne a,b$, where
 \[
  \Rc(a,b,z)=\Uc\bigl(z,\Mc(a,z)\leftrightarrow\Mc(b,z)\bigr)\wedge
             \Uc\bigl(z,\Mc(z,a)\leftrightarrow\Mc(z,b)\bigr)
 \]
-is the equality relation of the interpretation, and then
-$\exists x_a\,\Rc(a,c,z)$ from $\rho_1$. Everything after that uses
-primitive equality only through these three facts:
+is the equality relation of the interpretation. The same module
+then gets $\exists x_a\,\Rc(a,c,z)$ from $\rho_1$. The rest of the
+proof uses primitive equality through the following three facts.
 \begin{description}
-\item[(R)] for all labels $a,b,d$, both
+\item[(R)] For all labels $a,b,d$, both
   $\Ec(a,b)\to(\Mc(d,a)\leftrightarrow\Mc(d,b))$ and
-  $\Ec(a,b)\to(\Mc(a,d)\leftrightarrow\Mc(b,d))$;
-\item[(N)] $\Ec(a,b)\to\Rc(a,b,z)$ for $z\ne a,b$;
-\item[(W)] an existential witness for equality at every pair of
-  labels.
+  $\Ec(a,b)\to(\Mc(a,d)\leftrightarrow\Mc(b,d))$.
+\item[(N)] $\Ec(a,b)\to\Rc(a,b,z)$ for $z\ne a,b$.
+\item[(W)] An existential witness for equality at every pair of labels.
 \end{description}
-We show that (R), (N) and (W) are derivable. Symmetry and
-transitivity of primitive equality are not derived, and are not
-needed.
+We derive (R), (N) and (W) directly. They suffice for the interpretation
+in place of separate laws for symmetry and transitivity of primitive
+equality.
 
-\subsection{Tools}\label{sec:tools}
+\subsection{Proof rules used below}\label{sec:tools}
 
 \begin{enumerate}
-\item Classical propositional reasoning with code $1$ as falsity. The
-  implicational part comes from $\rho_8$ as in~\cite{pa209}. Head~1
-  with $X=\Uc(D,\Nc(\Uc(D,H)))$ reads $\Nc(X)\to H$, and
-  $1\to(X\to1)$ is implicational, so $1\to H$ for every formula $H$;
-  double negation elimination follows.
-\item Lifting: from a derivable implication $B\to C$, the implication
-  $\Uc(x,B)\to\Uc(x,C)$, by generalization and head~6.
-\item Vacuity. Say that $B$ is vacuous at $r$ if $B\to\Uc(r,B)$ is
-  derivable. The gate gives this for the atoms $\Mc(a,b)$ and
-  $\Ec(a,b)$ at every $r\ne a,b$. If $B$ is vacuous at $r$, so is
-  $\Nc(B)$: from $\Nc(\Uc(r,B))\to\Nc(B)$, lifted at $r$, and head~1
-  with $D=r$, one gets $\Nc(\Uc(r,\Nc(B)))\to B$. Vacuity then passes
-  to implications by lifting $\Nc(B)\to(B\to C)$ and $C\to(B\to C)$,
-  and to $\Uc(x,B)$ with $x\ne r$ by lifting at $x$ and head~2. So a
-  formula built from atoms is vacuous at every label that is none of
-  its atom indices or bound labels.
-\item Existential elimination: if $B$ is vacuous at $x$, then
-  $\Uc(x,A\to B)$ and $\exists x\,A$ give $B$. Indeed $\Nc(B)$ gives
-  $\Uc(x,\Nc(B))$ and then $\Uc(x,\Nc(A))$.
+\item The classical implicational rules come from $\rho_8$ as
+  in~\cite{pa209}. Use code $1$ for falsity. Head~1 with
+  $X=\Uc(D,\Nc(\Uc(D,H)))$ gives $\Nc(X)\to H$. Implicational
+  reasoning gives $1\to(X\to1)$, so $1\to H$ for every formula $H$.
+  Double negation elimination follows.
+\item To lift a derivable implication $B\to C$ to
+  $\Uc(x,B)\to\Uc(x,C)$, use generalization and head~6.
+\item A formula $B$ is vacuous at $r$ if $B\to\Uc(r,B)$ is
+  derivable. The gate gives vacuity for both $\Mc(a,b)$ and
+  $\Ec(a,b)$ whenever $r\ne a,b$. If $B$ is vacuous at $r$, lift
+  $\Nc(\Uc(r,B))\to\Nc(B)$ at $r$ and use head~1 with $D=r$
+  to get $\Nc(\Uc(r,\Nc(B)))\to B$. Thus $\Nc(B)$ is vacuous at $r$.
+  Vacuity passes to implications by lifting $\Nc(B)\to(B\to C)$ and
+  $C\to(B\to C)$. It passes to $\Uc(x,B)$ when $x\ne r$ by lifting
+  at $x$ and using head~2. A formula built from atoms is therefore
+  vacuous at every label outside its atom indices and bound labels.
+\item If $B$ is vacuous at $x$, then $\Uc(x,A\to B)$ and
+  $\exists x\,A$ give $B$. If $\Nc(B)$ holds, vacuity gives
+  $\Uc(x,\Nc(B))$, which yields $\Uc(x,\Nc(A))$.
 \end{enumerate}
-Tools 1, 2 and 4 are those of~\cite{pa209}. Tool~3 is the vacuity
-argument of~\cite{pa209} with one more kind of atom.
+Rules 1, 2 and 4 are from~\cite{pa209}. Rule~3 extends the vacuity
+argument of~\cite{pa209} to equality atoms.
 
 \subsection{The gate}
 
@@ -300,16 +296,16 @@ $F(a,b,c)\to G(a,b,c)$ and $F(a,b,c)\to\Delta_c(a,b)$ are derivable.
 \end{lemma}
 
 \begin{proof}
-Put $B=(V\to Q)$, so that $F=\Nc(\Delta_c\to B)$ and $G=\Nc(B)$. From
-$B$ one gets $\Delta_c\to B$, hence $F\to\Nc(B)$. From $\Nc(\Delta_c)$
-one gets $\Delta_c\to B$ by explosion, hence
+Put $B=(V\to Q)$, so $F=\Nc(\Delta_c\to B)$ and $G=\Nc(B)$.
+Weakening $B$ gives $\Delta_c\to B$, so $F\to\Nc(B)$. The assumption
+$\Nc(\Delta_c)$ also gives $\Delta_c\to B$, by explosion. Therefore
 $F\to\Nc(\Nc(\Delta_c))$, and double negation elimination gives
-$\Delta_c$.
+$\Delta_c$ under $F$.
 \end{proof}
 
-So every instance of the old gate is derivable at the same parameters.
-In particular, for a label $u$ and a formula $\varphi$ with code
-$c\ne u$, the gate at $(u,u,c)$ gives the separation instance
+The new gate thus gives the old gate at the same parameters. For a
+label $u$ and a formula $\varphi$ with code $c\ne u$, the instance
+at $(u,u,c)$ gives separation in the form
 \begin{equation}\label{eq:sep}
  \exists x_c\,(S\wedge P),\qquad
  P=\varphi\to\Mc(c,u),\qquad
@@ -327,8 +323,8 @@ label. The direct rewrites give
 \begin{equation}\label{eq:direct}
  \Ec(v,y)\to(\chi(v)\to\chi(y))
 \end{equation}
-for all labels $v$ and $y$; for $\Mc(t,t)$ by rewriting one position
-after the other.
+for all labels $v$ and $y$. For $\Mc(t,t)$, rewrite one position
+at a time.
 
 \begin{lemma}[Specialization of a negative property]\label{lem:spec}
 Let $y$, $v$, $c$ be labels with $v\ne y$ and $c\ne y$, and let
@@ -343,15 +339,14 @@ is derivable.
 \begin{proof}
 Write $\psi(t)=\Mc(c,t)\to\Nc(\chi(t))$. Head~4 gives
 $\Ec(v,y)\to(\Mc(c,v)\to\Mc(c,y))$, and~\eqref{eq:direct} gives
-$\Ec(v,y)\to(\chi(v)\to\chi(y))$; here $d=v$ is allowed, because
-heads 3 and 4 have no side condition. So
-$\Ec(v,y)\to(\psi(y)\to\psi(v))$ is derivable: the label $y$ occurs in
-$\psi(y)$ only in an antecedent and under a negation, and both are
-reached by direct rewrites. Lift at $y$ to obtain
+$\Ec(v,y)\to(\chi(v)\to\chi(y))$. Heads 3 and 4 allow $d=v$
+because they have no side condition. These direct rewrites suffice
+for $\Ec(v,y)\to(\psi(y)\to\psi(v))$, since $y$ occurs in $\psi(y)$
+only in an antecedent and under a negation. Lift at $y$ to obtain
 $\Uc(y,\psi(y))\to\Uc(y,\Ec(v,y)\to\psi(v))$. The indices of
-$\psi(v)$ are among $c$, $v$, $d$, all different from $y$, so
-$\psi(v)$ is vacuous at $y$. Existential elimination with the instance
-$\exists x_y\,\Ec(v,y)$ of head~5 gives $\psi(v)$.
+$\psi(v)$ lie among $c$, $v$ and $d$, all different from $y$, so
+$\psi(v)$ is vacuous at $y$. Apply existential elimination with the
+instance $\exists x_y\,\Ec(v,y)$ of head~5 to get $\psi(v)$.
 \end{proof}
 
 \begin{lemma}[Reverse rewriting]\label{lem:rev}
@@ -375,13 +370,13 @@ Lemma~\ref{lem:spec} with $y=a$ and $v=b$,
  S\to\bigl(\Mc(c,b)\to\Nc(\chi(b))\bigr),
 \]
 and head~4 gives $\Ec(a,b)\to(\Mc(c,a)\to\Mc(c,b))$. Hence
-$(S\wedge P)\to C$ is derivable, where $C$ is the
-formula~\eqref{eq:chi}: if $\Ec(a,b)$ and $\chi(b)$ hold and
-$\chi(a)$ fails, then $\varphi$ holds, $P$ gives $\Mc(c,a)$, the
-rewrite gives $\Mc(c,b)$, and $S$ gives $\Nc(\chi(b))$. The indices
-of $C$ are $a$, $b$ and $d$, all different from $c$, so $C$ is vacuous
-at $c$. This is where the vacuity of the equality atom is used.
-Existential elimination with~\eqref{eq:sep} gives $C$.
+$(S\wedge P)\to C$ is derivable for the formula $C$ in~\eqref{eq:chi}.
+Suppose $\Ec(a,b)$ and $\chi(b)$ hold and $\chi(a)$ fails. Then
+$\varphi$ holds, so $P$ gives $\Mc(c,a)$. The rewrite gives
+$\Mc(c,b)$, and $S$ gives $\Nc(\chi(b))$. The indices of $C$ are
+$a$, $b$ and $d$, all different from $c$. Vacuity for the equality
+atom makes $C$ vacuous at $c$, so existential elimination
+with~\eqref{eq:sep} gives $C$.
 
 For $d\ne a$, \eqref{eq:chi} with $\chi(t)=\Mc(d,t)$ and with
 $\chi(t)=\Mc(t,d)$ are the two statements. For $d=a$ the statements
@@ -392,14 +387,14 @@ $\Ec(a,b)\to(\Mc(b,a)\to\Mc(b,b))$, and~\eqref{eq:chi} with
 $\chi(t)=\Mc(t,t)$ gives $\Ec(a,b)\to(\Mc(b,b)\to\Mc(a,a))$.
 \end{proof}
 
-In the semantics the argument is the familiar one: by separation there
-is a set $x_c$ that contains $x_a$ if $x_a$ lacks the property $\chi$
-and contains only elements that lack it; $x_b$ belongs to every set
-that $x_a$ belongs to; so if $x_b$ has the property, $x_a$ has it. The
-calculus has no substitution rule. A quantifier is specialized by a
-witness from head~5 and rewriting, and the proof is arranged so that
-this needs the direct rewrites only.
+In the interpretation, separation gives a set $x_c$ that contains
+$x_a$ if $x_a$ lacks $\chi$ and contains only elements that lack
+$\chi$. Since $x_b$ belongs to every set that contains $x_a$, if
+$x_b$ has $\chi$, then $x_a$ has it too. The calculus specializes a
+quantifier with a witness from head~5 and direct rewrites. These
+steps supply the specialization without a substitution rule.
 
+\pagebreak[2]
 \begin{lemma}[The defined equality]\label{lem:nbhd}
 For $z\ne a,b$, $\Ec(a,b)\to\Rc(a,b,z)$ is derivable.
 \end{lemma}
@@ -411,13 +406,12 @@ $\Ec(a,b)\to(\Mc(z,a)\leftrightarrow\Mc(z,b))$. Lift both at $z$ and
 compose with $\Ec(a,b)\to\Uc(z,\Ec(a,b))$ from the gate.
 \end{proof}
 
-Lean derives the reverse rewrites and neighborhood equality in
-\file{PA196/Logic/Reverse.lean} and
-\file{PA196/Logic/Neighborhood.lean}. The arithmetic certificate
-construction supplies the corresponding derivations inside arbitrary
-PA models.
+The Lean proofs of reverse rewriting and neighborhood equality are
+in \file{PA196/Logic/Reverse.lean} and
+\file{PA196/Logic/Neighborhood.lean}. The certificate compiler builds
+the same derivations inside arbitrary PA models.
 
-\subsection{The transport}
+\subsection{Transporting PA refutations}
 
 \begin{lemma}[Completeness]\label{lem:complete}
 $\PA$ proves that if $\Prov_{\PA}(\ulcorner\bot\urcorner)$ then $R$
@@ -425,38 +419,38 @@ halts from the clean store.
 \end{lemma}
 
 \begin{proof}
-\emph{The calculus.} The direct rewrites and Lemma~\ref{lem:rev} give
-(R). Lemma~\ref{lem:nbhd} is (N). Head~5 is (W) with the equation
-mirrored. Where~\cite{pa209} specializes a quantifier at $z$ to a
-label $c$ it assumes $\Ec(z,c)$ and rewrites atoms in both directions;
-with the mirrored witness it assumes $\Ec(c,z)$, and (R) again
-supplies both directions. For the witness of the defined equality,
-existential monotonicity on $\exists x_a\,\Ec(c,a)$ with (N) gives
-$\exists x_a\,\Rc(c,a,z)$, and the symmetry of $\Rc$, which is
-derivable from its definition, gives $\exists x_a\,\Rc(a,c,z)$. The
-old gate is derivable by Lemma~\ref{lem:extract}, and heads 1, 2, 4
-and $\rho_8$ are the old heads $\rho_6$, $\rho_4$, $\rho_3$ and
-$\rho_8$. Heads 3 and 6 yield $\rho_5$ and $\rho_2$ by exchanging two
-antecedents, which is propositional. So the construction
-of~\cite[\S6.1]{pa209}, with the module that used $\rho_7$ replaced by
-the lemmas above, turns a coded refutation in $\PA$ into a coded
+The direct rewrites and Lemma~\ref{lem:rev} give (R),
+Lemma~\ref{lem:nbhd} gives (N), and head~5 gives (W) with the
+equation reversed. To specialize a quantifier at $z$ to a label $c$,
+the proof in~\cite{pa209} assumes $\Ec(z,c)$ and rewrites atoms in
+both directions. With the head~5 witness, the assumption is
+$\Ec(c,z)$, and (R) still gives both rewrites. For the witness of the
+defined equality, apply existential monotonicity to $\exists x_a\,\Ec(c,a)$ using (N) to get
+$\exists x_a\,\Rc(c,a,z)$. The definition of $\Rc$ gives its symmetry,
+and hence $\exists x_a\,\Rc(a,c,z)$.
+
+Lemma~\ref{lem:extract} gives the old gate. Heads 1, 2, 4 and
+$\rho_8$ give the old heads $\rho_6$, $\rho_4$, $\rho_3$ and
+$\rho_8$. Exchanging two antecedents in heads 3 and 6 gives $\rho_5$
+and $\rho_2$ by propositional reasoning. With these derivations in
+place of the ones that use $\rho_7$, the construction
+of~\cite[\S6.1]{pa209} turns a coded $\PA$ refutation into a coded
 derivation of code $1$ in the present calculus.
 
-\emph{The codes.} The construction uses of the four codes that
-encoder and decoder are inverse to each other, that both components of
-a code are smaller than the code, the residues modulo $4$, and, for
-$\mpc$, the exact value $\Ic(t,y)=4p(t,y)$ that the program computes.
-All four hold for the codes of Step~1. Labels that are chosen as codes
-of formulas, such as the code of $\varphi$ in Lemma~\ref{lem:rev} and
-the padded property code in the use of separation, are formed with the
-new constructor and satisfy the same bounds.
+Step~1 preserves the four coding properties the construction uses.
+The encoder and decoder are inverse, both components are smaller
+than their compound code, the residues modulo $4$ are the same, and
+$\mpc$ still computes $\Ic(t,y)=4p(t,y)$. When we choose a formula
+code as a label, we use the new constructor. The code of $\varphi$
+in Lemma~\ref{lem:rev} and the padded property code for separation
+satisfy the same bounds.
 
-\emph{The command words.} With nine pushed items the identities
-of~\cite[\S6.2]{pa209} become, writing $\shift$ for Shift,
+The nine items pushed by $\ax$ change the command identities
+of~\cite[\S6.2]{pa209}. Writing $\shift$ for Shift, the first is
 \[
- \ax(c,x,y)\,\shift^{9}(t,w,d,h)=(\Uc(d,h),w,0,t),
+ \ax(c,x,y)\,\shift^{9}(t,w,d,h)=(\Uc(d,h),w,0,t).
 \]
-and the following words implement the three stack operations:
+The following words implement the three stack operations.
 \[
 \begin{aligned}
 \text{pop}\quad & \ax(0,0,0)\,\shift^{10},\\
@@ -464,40 +458,40 @@ and the following words implement the three stack operations:
 \text{discard}\quad & \mpc(1)\,\ax(1,0,0)\,\shift^{9}\,\mpc(0).
 \end{aligned}
 \]
-Every formula tested by
-these Shifts is $0$ or at least $2$, because heads and gate have
-residue $0$ and $\Uc(d,h)$ has residue $2$. The head in position $j$
-from the top, $1\le j\le7$, is selected by discard, an $\ax$ call,
-$j+1$ Shifts and $8-j$ pops, and the gate by discard, an $\ax$ call
-and nine pops. After discard $d=h=0$, so $(D,H,A)=(x,y,c)$, and the
-instance $\rho(\alpha,\beta,\gamma)$ of a head is obtained by reading
-its row of Table~\ref{tab:heads} backwards. For $\rho_8(a,b,c,u)$
-with $u\le a$, set the offset to $u$ and call $\ax(b,a-u,c)$. The
-generalization word is push, the offset $i$, a Shift,
-$\ax(i,0,0)$ and $\shift^{9}$; the modus ponens suffix is
-$\shift^{2}\,\mpc(b)\,\ax(b,0,0)\,\shift^{10}$. With these words the
-induction on fuel and the scheduler argument
+Each formula these Shifts test is $0$ or at least $2$. The heads
+and gate have residue $0$, and $\Uc(d,h)$ has residue $2$. To select
+head $j$ from the top, for $1\le j\le7$, discard, call $\ax$, then
+apply $j+1$ Shifts and $8-j$ pops. To select the gate, discard, call
+$\ax$, then pop nine times. Discard sets $d=h=0$, so
+$(D,H,A)=(x,y,c)$. Read the corresponding row of
+Table~\ref{tab:heads} backwards to choose the arguments for an
+instance $\rho(\alpha,\beta,\gamma)$. For $\rho_8(a,b,c,u)$ with
+$u\le a$, set the offset to $u$ and call $\ax(b,a-u,c)$.
+
+The generalization word pushes, applies offset $i$ and a Shift,
+calls $\ax(i,0,0)$ and applies $\shift^{9}$. The modus ponens suffix
+is $\shift^{2}\,\mpc(b)\,\ax(b,0,0)\,\shift^{10}$. With these words,
+the induction on fuel and the scheduler argument
 of~\cite[\S6.2--6.3]{pa209} apply as written.
 \end{proof}
 
 \section{The layout}\label{sec:layout}
 
-A node of the program tree is read by a state that moves right to the
-state of its left or right child according to the path bit. Leaves are
-instructions, and equal subtrees are stored once. The 201 items of the
-body of $\ax$ are the leaves of a binary tree with 68 distinct
-internal nodes.
+At a node, the state reads the path bit, moves right and enters the
+state for the corresponding child. Leaves are instructions, and
+the machine stores equal subtrees once. The 201 items in the body of
+$\ax$ form the leaves of a binary tree with 68 distinct internal
+nodes.
 
-As in $M_{209}$, two nodes may share one state when one of them occurs
-only as a left child and the other only as a right child. On a side
-where their children differ, the shared state does not move right. It
-moves left, onto the cell that holds the bit by which the node was
-entered. A second state re-reads that bit and moves right into a state
-whose row for the current cell leads to the correct child. The second
-and third states read other nodes of the tree, or are the first state
-of a macro, so the device costs nothing. Table~\ref{tab:shared} lists
-the six pairs of this kind inside the body. The 68 nodes are therefore
-read by 62 states.
+As in $M_{209}$, two nodes can share a state if one occurs only as a
+left child and the other only as a right child. When the current bit
+would select different children for the two nodes, the shared state
+moves left to the bit that selected the node. A second state reads
+that bit again and moves right into a third state, which uses the
+current bit to choose the correct child. Both states already read
+other nodes or start a macro, so sharing requires no extra states.
+The six pairs in Table~\ref{tab:shared} let 62 states read the 68
+nodes.
 
 \begin{table}[ht]
 \centering\small
@@ -513,28 +507,28 @@ State & Left-child node & Right-child node & Rows sent left \\
 183 & $(\mathtt{C}\mid\mathtt{PiC})$ & $(\mathtt{H}\mid\mathtt{DCi})$ & $0\to158$, $1\to167$ \\
 \bottomrule
 \end{tabular}
-\caption{States of $M$ that read two nodes of the body of $\ax$. A
-node is written as its two children, each as a string of items:
-\texttt{P} pushes, \texttt{D}, \texttt{H}, \texttt{A} push and load a
-register, \texttt{C} pops and forms $4p$, \texttt{i} adds one. The
-last column gives each symbol whose row moves left and the state it
-enters.}\label{tab:shared}
+\caption{States of $M$ that read two nodes of the body of $\ax$.
+Each node lists its two children as strings of items. \texttt{P}
+pushes. \texttt{D}, \texttt{H} and \texttt{A} push and load a
+register. \texttt{C} pops and forms $4p$, and \texttt{i} adds one.
+The last column gives each symbol whose row moves left and the
+state it enters.}\label{tab:shared}
 \end{table}
 
-Outside the body, two states of $M_{209}$ that only served to tell
-apart nodes of its old body are gone. Each read a single symbol and
-stepped back onto the cell just written. The row that entered it now
-does directly what the next state did.
+We remove two states outside the body that $M_{209}$ used to
+distinguish nodes of its old body. Each read a single symbol and
+stepped back onto the cell just written. The row that entered it
+now performs the successor's action directly.
 
 \section{Simulation}\label{sec:simulation}
 
 Number the cells of a frame from the first path cell. In a
-\emph{clean} frame the path is followed by zeros up to a single header
-$1$, which is followed by the register file. The \emph{gap} is the
-position of the header. The deepest site of $R$ has a path of 38
-bits. The formal simulation uses the reachable frames whose gap is at
-least 48 and whose file has at least ten registers. The clean startup
-frame has this gap, and the simulation preserves the lower bound.
+\emph{clean} frame, zeros separate the path from the header $1$, and
+the register file follows the header. The \emph{gap} is the position
+of that header. The longest path in $R$ is 38 bits. The formal
+simulation uses reachable frames with a gap of at least 48 and a
+file of at least ten registers. The clean startup frame meets the
+gap bound, and the simulation preserves it.
 
 \begin{lemma}[One instruction]\label{lem:contract}
 For every site of $R$ and each outcome of a conditional decrement,
@@ -545,35 +539,33 @@ halt site it enters the halt label.
 \end{lemma}
 
 \begin{proof}
-A run from a clean frame alternates between walks of the states that
-are not engine states, and calls of the engine. The engine rows are
-those of $M_{209}$. Its register lemmas therefore hold for all
-register contents and all gaps as in~\cite[\S3]{pa209}: filling the
-gap, marking a register, the increment, the decrement with both
-outcomes, the update of the path, and the return scan. The return scan
-ends on the cell after the first $1$ that has seven zeros to its left.
-For most sites that cell is the root. For 19 sites one pass ends on a
-later path cell, and the walk that follows starts there; $M_{209}$ has
-the same feature.
+A run from a clean frame alternates between walks outside the engine
+and calls to the engine. The engine rows match those of $M_{209}$.
+The register lemmas of~\cite[\S3]{pa209} apply for the same register
+contents and gaps. They cover filling the gap, marking a register,
+incrementing, both outcomes of decrementing, updating the path and
+scanning back. The return scan ends on the cell after the first $1$
+with seven zeros to its left. For most sites that cell is the root.
+At 19 sites one pass ends on a later path cell, where the next walk
+begins, as in $M_{209}$.
 
-In every run that was computed, the states outside the engine read
-only path cells and the two cells after the path, and never a cell to
-the left of the root. For every site and outcome the sequence of
-states, cells and symbols of the walks was computed for several
-register contents and found to be the same. Each contract is therefore
-a fixed finite composition of rows and engine calls, and it is
-determined by one run.
+In the computed runs, states outside the engine read only path
+cells and the two cells after the path. These reads stay at or to the
+right of the root. At each site and for each outcome, the walk visits
+the same sequence of states, cells and symbols for every register
+file tested. One run thus determines the fixed sequence of rows
+and engine calls for the contract.
 
-These runs were carried out for all $3{,}812$ sites, with both
-outcomes at each of the $1{,}147$ decrement sites, with varied
-register contents and at gaps $40$, $41$, $48$ and $61$. All
-$68{,}616$ runs end in the required frame, and every one of the 392
-rows is read in at least one of them.
+We ran the checks at all $3{,}812$ sites, including both outcomes
+at each of the $1{,}147$ decrement sites. We varied the register
+contents and used gaps $40$, $41$, $48$ and $61$. All $68{,}616$
+runs end in the required frame, and together they read all 392
+rows.
 \end{proof}
 
-Lean verifies the positive-length contract at each site for the
-reachable gap bound, including both outcomes of a conditional
-decrement. The coverage theorem is in \file{PA196/Coverage.lean}.
+The coverage theorem in \file{PA196/Coverage.lean} checks the
+positive-length contract at every site for the reachable gap
+bound, including both outcomes of a conditional decrement.
 
 \begin{lemma}[Startup]\label{lem:startup}
 From the blank tape $M$ reaches after exactly $58{,}154$ steps the
@@ -582,30 +574,29 @@ other logical register $0$, and $26$ further registers equal to $1$.
 \end{lemma}
 
 \begin{proof}
-By running the machine. The tape after $58{,}154$ steps equals the
-start frame of $M_{209}$ in~\cite[\S2]{pa209} cell for cell, with the
-head on the first path cell in state $75$. Lean checks the
-segments and composes them into the literal startup trace.
+After running $M$ for $58{,}154$ steps, the tape matches the startup
+frame of $M_{209}$ cell for cell~\cite[\S2]{pa209}. The head is on
+the first path cell in state $75$. Lean checks each segment and
+joins them to obtain the literal startup trace.
 \end{proof}
 
-Site $25$ is the first instruction of the scheduler, and the store
-with candidate $2$ and all other registers zero is the clean store
-of~\cite{pa209}. The finite startup and its connection to the clean
-store are proved in \file{PA196/Startup.lean} and
-\file{PA196/Nonhalting.lean}.
+The scheduler starts at site $25$ with candidate $2$ and every
+other logical register zero, the clean store of~\cite{pa209}.
+\file{PA196/Startup.lean} verifies the startup, and
+\file{PA196/Nonhalting.lean} connects it to that store.
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-By Lemmas~\ref{lem:contract} and~\ref{lem:startup}, $M$ halts from the
-blank tape if and only if $R$ halts from the clean store. If $\PA$ is
-consistent, $R$ does not halt by Lemma~\ref{lem:sound}, so $M$ does
-not halt and $\neg H$ is true in $\N$.
+Lemmas~\ref{lem:contract} and~\ref{lem:startup} identify halting of
+$M$ from the blank tape with halting of $R$ from the clean store.
+Under PA consistency, Lemma~\ref{lem:sound} gives nonhalting of $R$,
+so $M$ runs forever and $\neg H$ is true in $\N$.
 
-In an arbitrary model of $\PA$, the refutation transport compiles a
-coded PA refutation into a halting command word. The scheduler reaches
-that word from candidate $2$. The coded tape simulation prepends the
-startup, concatenates the instruction traces, and projects the internal
-control coding to the literal rows. The resulting trace witnesses $H$
-even when the proof code and trace length are nonstandard. This gives
+In any model of $\PA$, the compiler turns a coded PA refutation into
+a halting command word. The scheduler reaches that word from
+candidate $2$. The tape simulation joins the startup to the
+instruction traces, then projects the internal control codes onto
+the literal rows. This trace witnesses $H$, including when the proof
+code and trace length are nonstandard. Hence
 \[
    \PA\vdash \Prov_{\PA}(\ulcorner\bot\urcorner)\to H,
    \qquad
@@ -616,27 +607,29 @@ $\PA$ proof of $\neg H$. If $\PA$ is sound, it does not prove the
 false sentence $H$.
 \end{proof}
 
+\clearpage
 \section{Lean verification}\label{sec:status}
 
-The checked physical simulation binds all 392 transitions, the startup,
-and the contracts at all 3,812 source sites. The finite simulation
-checks at gaps 40 and 41 are supplementary. The formal contracts use
-the reachable lower bound 48, which suffices for the blank-tape theorem.
+Lean checks all 392 transitions, the startup trace and the
+simulation contracts at all 3,812 source sites.
+The formal contracts use the reachable lower bound 48, which
+suffices for the blank-tape theorem. The finite runs at gaps 40 and
+41 give additional checks.
 
-The internal arithmetic trace construction is in
-\file{PA196/Arithmetic/RefutationHalting.lean}. The exact trace sentence
-uses the 196 working states and the distinct halt label 196.
-\file{PA196/Independence.lean} derives the internal consistency
-implication and two-sided independence. The machine theorem is in
-\file{PA196/Nonhalting.lean}. \file{Challenge.lean} states the two
-headlines with an explicit PA proof calculus and the literal table.
-\file{PA196/Palomar/Solution.lean} proves the matching declarations and
-relates this presentation to Foundation and the tape model. The
-guarded axiom audits cover both presentations.
+\file{PA196/Arithmetic/RefutationHalting.lean} connects the arithmetic
+trace construction to halting. The trace sentence uses the 196
+working states and the distinct halt label 196.
+\file{PA196/Independence.lean} proves the internal consistency
+implication and two-sided independence. \file{PA196/Nonhalting.lean}
+proves the machine theorem.
 
-The machine table and checked proof sources are distributed together.
-See \file{docs/reproduction.md} for finite checks, the Lean build,
-and the Comparator invocation.
+\file{Challenge.lean} states nonhalting and independence using an
+explicit PA proof calculus and the literal table.
+\file{PA196/Palomar/Solution.lean} proves those declarations and
+connects their definitions to Foundation and the tape model. Guarded
+axiom audits cover both presentations. The repository includes the
+table and the checked proof sources. \file{docs/reproduction.md}
+gives the finite checks, Lean build and Comparator commands.
 
 \begin{thebibliography}{9}
 
