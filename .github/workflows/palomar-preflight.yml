@@ -21,5 +21,6 @@ jobs:
       mode: full
       execution_profile: palomar-standard-v1
       options: >-
-        {"comparator_config_path":"comparator.json",
+        {"project_path":"PA196",
+         "comparator_config_path":"PA196/comparator.json",
          "authorization_relationship":"I am a responsible author or maintainer"}

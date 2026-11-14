@@ -2,6 +2,8 @@
 __pycache__/
 *.py[cod]
 .venv/
+.claude/
+graphify-out/
 .lake/
 *.olean
 *.ilean
@@ -10,6 +12,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
-/paper/*.aux
-/paper/*.log
-/paper/*.out
+/PA196/paper/*.aux
+/PA196/paper/*.log
+/PA196/paper/*.out
