@@ -1,0 +1,20 @@
+module
+public import M209.Startup.Data
+@[expose] public section
+set_option maxRecDepth 100000
+set_option maxHeartbeats 64000000
+namespace M209.Startup
+open M6.Zip
+theorem run0108 : run literal 128 c0108 = some c0109 := by decide +kernel
+theorem run0109 : run literal 128 c0109 = some c0110 := by decide +kernel
+theorem run0110 : run literal 128 c0110 = some c0111 := by decide +kernel
+theorem run0111 : run literal 128 c0111 = some c0112 := by decide +kernel
+theorem run0112 : run literal 128 c0112 = some c0113 := by decide +kernel
+theorem run0113 : run literal 128 c0113 = some c0114 := by decide +kernel
+theorem run0114 : run literal 128 c0114 = some c0115 := by decide +kernel
+theorem run0115 : run literal 128 c0115 = some c0116 := by decide +kernel
+theorem run0116 : run literal 128 c0116 = some c0117 := by decide +kernel
+theorem run0117 : run literal 128 c0117 = some c0118 := by decide +kernel
+theorem run0118 : run literal 128 c0118 = some c0119 := by decide +kernel
+theorem run0119 : run literal 128 c0119 = some c0120 := by decide +kernel
+end M209.Startup

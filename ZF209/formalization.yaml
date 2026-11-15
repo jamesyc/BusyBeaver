@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Conditional ZF-independence of the exact 209-state machine"
+  description: >-
+    A sentence represents blank-tape halting of the 209-state machine in
+    every ZF model. If ZF is consistent, it cannot prove nonhalting. If ZF
+    is arithmetically Sigma1-sound, it can prove neither halting nor nonhalting.
+  authors: ["James Chang"]
+  responsible_maintainers: ["James Chang"]
+  license: "MIT"
+
+classification:
+  arxiv: ["math.LO", "cs.LO"]
+  msc2020: ["03F30", "03D10"]
+
+sources:
+  - title: "Nonhalting and ZF-independence for a 209-state Turing machine"
+    authors: ["James Chang"]
+    type: paper
+    location: "ZF209/paper/zf209.pdf in this repository"
+    relationship: formalizes
+  - title: "K230 Rocq verification"
+    authors: ["Elliot Glazer"]
+    location: "https://github.com/elliotglazer/k230-rocq"
+    relationship: background
+  - title: "Busy Beaver developments"
+    authors: ["Jeff Ketchersid"]
+    location: "https://github.com/jeff87654/busy-beaver"
+    relationship: background
+
+related_formalizations:
+  - id: "https://github.com/FormalizedFormalLogic/Foundation/tree/b2d8f55e995dede4fdb809423bb4e83f55c14446"
+    relationship: builds-on
+    note: "122 vendored modules, including one documented performance patch."
+  - id: "https://github.com/FormalizedFormalLogic/Foundation/tree/c3eb37ae896dc8f1d239ba1511e74d9f25e9d158"
+    relationship: builds-on
+    note: "39 modules from PA196's vendored copy."
+
+status:
+  scope: >-
+    The local build, axiom audit, and Comparator checks with Lean and NanoDa
+    passed. The local con-ron replay timed out.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: agent
+      framework: "ChatGPT"
+
+review:
+  status: "self-assessed"
+  notes: "Hosted Palomar verification is pending."
+
+alignment:
+  namespace: "PalomarZF209"
+  statements:
+    - source: "Conditional ZF independence for the 209-state machine."
+      lean: "PalomarZF209.exact209Claim"
+      module: "Solution"
+      status: "proved"

@@ -1,0 +1,7 @@
+{
+  "Foundation/FirstOrder/Arithmetic/HFS/Seq.lean": {
+    "original_sha256": "1c9e2008db2ab2055fe8ea161bf2069269e87d5b216f2dcdc30211e37e0cf6c4",
+    "patched_sha256": "d0f34f7230e96d9bf756b4f7299943bf13172e57c2395f840fbf91723ab2a1b1",
+    "reason": "Generic specialization reduces proof elaboration memory and preserves public definitions and theorem statements."
+  }
+}

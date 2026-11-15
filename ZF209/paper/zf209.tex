@@ -1,0 +1,494 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,xurl}
+\usepackage[hidelinks,pdftitle={Nonhalting and ZF-independence for a 209-state Turing machine},
+  pdfauthor={James Chang}]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newcommand{\ZF}{\mathrm{ZF}}
+\newcommand{\PA}{\mathrm{PA}}
+\newcommand{\ISig}{\mathrm{I}\Sigma_1}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\Prov}{\operatorname{Prov}}
+\newcommand{\Ic}{\mathsf{I}}
+\newcommand{\Mc}{\mathsf{M}}
+\newcommand{\Uc}{\mathsf{U}}
+\newcommand{\Ec}{\mathsf{E}}
+\newcommand{\Nc}{\mathsf{N}}
+\newcommand{\Cc}{\mathsf{C}}
+\newcommand{\mk}{\mathsf{Mark}}
+\newcommand{\file}[1]{\texttt{\nolinkurl{#1}}}
+\setlength{\emergencystretch}{2em}
+
+\title{Nonhalting and ZF-independence\\for a 209-state Turing machine}
+\author{James Chang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a two-symbol Turing machine with 209 working states that
+searches for a contradiction in a small numeric calculus for set theory,
+and a sentence of the language of set theory that expresses its
+blank-tape halting in every model of ZF. If ZF is consistent, the machine
+runs forever and ZF does not prove the negation of the sentence. If ZF is
+arithmetically $\Sigma_1$-sound, ZF proves neither the sentence nor its
+negation. The incompleteness step goes through an arithmetic theory whose
+axioms are read off from proofs in the machine's calculus, so Foundation's
+second incompleteness theorem for arithmetic applies directly. In Lean~4
+we verify the calculus, the machine's simulation of its proof search, and
+both unprovability results for the literal table.
+\end{abstract}
+
+\section{The result}\label{sec:result}
+
+Let $M$ be the machine in Section~\ref{sec:machine}. Write $\ZF$ for
+ordinary classical first-order Zermelo--Fraenkel set theory with full
+Separation and Replacement and without choice. For an arithmetic sentence
+$\theta$, write $\theta^\omega$ for its reading in the natural numbers of
+a model of set theory.
+
+\begin{definition}
+$\ZF$ is \emph{arithmetically $\Sigma_1$-sound} if $\ZF\vdash\theta^\omega$
+implies $\N\models\theta$ for every closed arithmetic $\Sigma_1$ sentence
+$\theta$.
+\end{definition}
+
+\begin{theorem}\label{thm:main}
+There is a closed sentence $H$ of the language of set theory such that,
+in every model $V$ of $\ZF$, $V\models H$ exactly when $V$ contains an
+internally finite halting history of $M$ from the blank tape. Moreover:
+\begin{enumerate}
+\item If $\ZF$ is consistent, $M$ does not halt and $\ZF\nvdash\neg H$.
+\item If $\ZF$ is arithmetically $\Sigma_1$-sound, then $\ZF\nvdash H$
+  and $\ZF\nvdash\neg H$.
+\end{enumerate}
+\end{theorem}
+
+The histories may have nonstandard length. The meaning of $H$ and the
+correctness of the compilation into the machine are conclusions of the
+proof.
+
+The machine searches for a refutation in a calculus $\Cc$ with
+one set-theoretic axiom schema, the pointed gate
+(Section~\ref{sec:calculus}). Soundness (Section~\ref{sec:sound}) shows
+that a halting run gives a refutation of $\ZF$. The unprovability of
+$\neg H$ is an instance of the following principle.
+
+\begin{lemma}[Calibration]\label{lem:calib}
+Let $T$ be an arithmetic theory with a $\Delta_1$ axiom set, and $\varphi$ a
+set-theoretic sentence. Suppose that
+\begin{enumerate}
+\item $\ISig\subseteq T$;
+\item if $\ZF$ is consistent, so is $T$;
+\item $\ZF\vdash\neg\varphi\to\Con(T)^\omega$;
+\item $\ZF\vdash\psi^\omega$ implies $T\vdash\psi$ for every arithmetic
+  sentence $\psi$.
+\end{enumerate}
+If $\ZF$ is consistent, then $\ZF\nvdash\neg\varphi$.
+\end{lemma}
+
+\begin{proof}
+If $\ZF\vdash\neg\varphi$, then (3) gives $\ZF\vdash\Con(T)^\omega$ and (4)
+gives $T\vdash\Con(T)$. By (1), (2) and the second incompleteness
+theorem~\cite{goedel} for $T$, this is impossible.
+\end{proof}
+
+Section~\ref{sec:theories} defines a theory $T$ from the machine's
+calculus. Sections~\ref{sec:internal}--\ref{sec:absorb} prove the four
+premises for $T$ and $\varphi=H$. Foundation~\cite{foundation} supplies
+the second incompleteness theorem for arithmetic theories. No
+derivability conditions for a set-theoretic provability predicate are
+needed.
+
+\section{The machine}\label{sec:machine}
+
+The tape has alphabet $\{0,1\}$ and is infinite in both directions. It
+starts with all cells zero. State $0$ is the start state, $0,\ldots,208$
+are the working states, and $209$ is the halt label. In state $q$, a row
+$(q,b,w,D,q')$ reads $b$, writes $w$, moves one cell in direction $D$, and
+enters $q'$. The table has one row for each pair in
+$\{0,\ldots,208\}\times\{0,1\}$. The file \file{data/zf209.tm} contains
+all 418 rows and has SHA-256 digest
+\begin{quote}\small
+\nolinkurl{6b8acf3cf8523e2c2db2020f69c19f7ced2b1343e1b09621697515ed54b6eabd}.
+\end{quote}
+The first row is $(0,0,1,R,1)$, and $(62,1,1,R,209)$ is the only row that
+enters the halt label. Appendix~\ref{app:table} lists the table.
+
+As in~\cite{pa209}, a tape engine interprets a register program stored as
+a binary tree. The program maintains a top formula, a coded stack and two
+working registers. Its axiom, modus ponens and shift commands implement
+the rules of $\Cc$, and its scheduler enumerates command words starting
+from candidate $2$. Every $\Cc$-refutation has a command word that forces
+halting from any retained store, so enumeration may keep the store
+between candidates. Conversely, a halting command run supplies a
+$\Cc$-refutation. From the blank tape the machine reaches the clean frame
+of the scheduler's first site after $58{,}154$ steps.
+
+\section{The calculus}\label{sec:calculus}
+
+Let $p(a,b)=\binom{a+b+1}{2}+b$. The four constructors are
+\[
+ \Ic(a,b)=4p(a,b),\quad \Mc(a,b)=4p(a,b)+1,\quad
+ \Uc(a,B)=4p(B,a)+2,\quad \Ec(a,b)=4p(a,b)+3,
+\]
+for implication, membership, universal quantification and equality.
+A number used as an argument of $\Mc$, $\Ec$ or as the first argument of
+$\Uc$ is a \emph{label}; $x_a$ is the variable with label $a$. Code $0$ is
+truth and $1=\Mc(0,0)$ is falsity. Write $\Nc(B)=\Ic(B,1)$,
+$B\wedge C=\Nc(\Ic(B,\Nc(C)))$, $B\leftrightarrow C$ for
+$\Ic(B,C)\wedge\Ic(C,B)$, and $\exists x_a\,B$ for $\Nc(\Uc(a,\Nc(B)))$.
+An arrow below denotes $\Ic$, and $x_a\in x_b$, $x_a=x_b$ denote
+$\Mc(a,b)$, $\Ec(a,b)$.
+
+A \emph{derivation} is a finite list in which each entry is an axiom, follows
+from two earlier entries by modus ponens, or is $\Uc(x,A)$ for an earlier
+entry $A$. The axioms are the six heads of Table~\ref{tab:heads}, the
+restricted head
+\[
+ \rho_8(a,b,c,u)=\bigl((c\to u)\to a\bigr)\to\bigl((a\to c)\to(b\to c)\bigr)
+ \qquad(u\le a),
+\]
+and the gate $F(a,b,c)$ for $c\ne a,b$.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}cl@{}}
+\toprule
+Head & Formula \\
+\midrule
+1 & $(\exists x_d\,\Uc(d,h))\to h$ \\
+2 & $\Uc(d,\Uc(a,h))\to\Uc(a,\Uc(d,h))$ \\
+3 & $x_h\in x_d\to(x_h=x_a\to x_a\in x_d)$ \\
+4 & $x_h=x_d\to(x_a\in x_h\to x_a\in x_d)$ \\
+5 & $\exists x_d\,(x_h=x_d)$ \\
+6 & $\Uc(d,a)\to(\Uc(d,a\to h)\to\Uc(d,h))$ \\
+\bottomrule
+\end{tabular}
+\caption{The six logical heads. The letters $a,d,h$ are numbers, read
+as labels or as formula codes according to their position.}\label{tab:heads}
+\end{table}
+
+The gate uses the number $c$ both as a label and as a formula code. Write
+$c$ for the formula, read with $x_b$ and $x_a$ as its first and second
+arguments. Put
+\begin{align*}
+ \Delta&=x_a=x_b\to\Uc(c,x_a=x_b), &
+ V&=x_a\in x_b\to\Uc(c,x_a\in x_b),
+\end{align*}
+and let $Q(a,b,c)=\Uc(c,G)$, where $G$ is the code of
+\[
+ \begin{aligned}
+ &\Bigl[\forall x_a\Bigl(x_a\in x_c\to\neg\forall x_b\bigl(c\to\neg
+  \forall x_b\bigl(\forall x_c(x_c\in x_b\to x_c\in x_a)\\
+ &\qquad\qquad\qquad\qquad\quad{}\to
+  \forall x_a(c\to\neg\forall x_a(c\to\neg\,x_a\in x_c))\bigr)\bigr)
+ \Bigr)\Bigr]\\
+ &\qquad{}\to\neg(c\to x_a\in x_c).
+ \end{aligned}
+\]
+Then $F(a,b,c)=\Nc\bigl(\Delta\to(V\to Q)\bigr)$. Inside $G$ the binders
+$\forall x_a$ and $\forall x_b$ rebind the arguments of $c$. Read
+semantically, $\neg Q$ says that the relation $R(u,v)$ defined by $c$ has a
+\emph{pointed hull} at $(x_b,x_a)$: a set $C$ with
+\begin{equation}\label{eq:hull}
+ R(x_b,x_a)\to x_a\in C,\qquad
+ \forall z\in C\Bigl(\exists p\,R(p,z)\ \wedge\
+ \forall u\subseteq z\bigl(\exists v\,R(u,v)\to\exists w\in C\,R(u,w)\bigr)\Bigr).
+\end{equation}
+
+\section{Soundness}\label{sec:sound}
+
+\begin{lemma}[Definable pointed hulls]\label{lem:hull}
+For every definable relation $R$ with parameters and all $u_0,v_0$, $\ZF$
+proves that some set $C$ satisfies~\eqref{eq:hull} at $(u_0,v_0)$.
+\end{lemma}
+
+\begin{proof}
+If $R(u,\cdot)$ is nonempty, let $\alpha_u$ be the least stage of the
+cumulative hierarchy meeting it and $S(u)=\{v\in V_{\alpha_u}:R(u,v)\}$;
+otherwise $S(u)=\varnothing$. Start with $C_0=\{v\in\{v_0\}:R(u_0,v)\}$ and
+put $C_{n+1}=C_n\cup\bigcup\{S(u):\exists z\in C_n\,(u\subseteq z)\}$.
+Power Set and Replacement make each stage a set, and $C=\bigcup_nC_n$ is
+as required. No choice is used.
+\end{proof}
+
+\begin{lemma}\label{lem:sound}
+If $M$ halts from the blank tape, $\ZF$ is inconsistent.
+\end{lemma}
+
+\begin{proof}
+A halting run gives a $\Cc$-refutation (Section~\ref{sec:machine}). In a
+model of $\ZF$, interpret membership and equality as themselves, with
+label $0$ assigned the empty set so that code $1$ is false. The heads and
+$\rho_8$ are valid. Lemma~\ref{lem:hull} gives $\neg Q$; the guard
+$c\ne a,b$ and the fact that every label of a code is below the code make
+$\Delta$ and $V$ valid. The rules preserve validity, so a refutation
+contradicts the existence of a model. The reverse translation into a
+fixed presentation of $\ZF$ makes this an actual finite $\ZF$ refutation.
+\end{proof}
+
+\section{The theories}\label{sec:theories}
+
+\paragraph{The translation $\chi$.}
+A set-theoretic formula becomes a $\Cc$ code by a translation $\chi$ that
+keeps track of labels. Free variable $i$ gets the label $Y(m+i)$; a
+quantifier at depth $d$ binds the label $X(f,d)$, where $f$ names a label
+family; three reserved labels $R_0,R_1,R_2$ are used only inside atoms.
+These are distinct numbers given by pairing, and none is $0$. Equality
+becomes the defined equality
+\[
+ x\approx y\ =\ \forall r_0(r_0\in x\leftrightarrow r_0\in y)\wedge
+                \forall r_0(x\in r_0\leftrightarrow y\in r_0),
+\]
+membership becomes $\exists r_1\exists r_2(x\approx r_1\wedge y\approx r_2
+\wedge r_1\in r_2)$, and connectives and quantifiers become their $\Cc$
+codes. The translation computes the pair $(\chi\varphi,\chi\neg\varphi)$
+at once.
+
+\paragraph{The theories $U$ and $T$.}
+Let $U$ be the set-theoretic theory with axioms $\theta\wedge\top^n$, where
+$n$ codes a $\Cc$-derivation containing $\chi\theta$. Let $T$ be the
+arithmetic theory with axioms $\sigma\wedge\top^n$, where $n$ codes a
+$\Cc$-derivation containing $\chi(\kappa\sigma)$ and
+\[
+ \kappa\sigma\ =\ \forall e\,\bigl(\mk(e)\to J(e,\sigma)\bigr).
+\]
+Here $J(e,\cdot)$ reads arithmetic formulas in set theory through seven
+fixed set-theoretic templates with a marker $e$: a domain, equality, order,
+zero, one, addition and multiplication. $\mk(e)$ says that $e$ has no
+members. The witness $n$ lies below the axiom, and checking a derivation
+is $\Delta_1$, so both axiom sets are $\Delta_1$ (Craig's trick).
+
+The templates are chosen as follows. At a marker $e$ with no members, a
+structure satisfying the gate contains a model $N_e$ of $\ZF$, defined in
+three layers: indiscernibility classes of the base structure, marked
+objects modulo marked bisimilarity with marker $e$, and the well-founded
+part. The gate supplies the Separation, Replacement and closure
+constructions each layer needs. Each object is projected to the natural number of $N_e$
+it denotes, or to zero. The templates relate projections through the
+formulas that read arithmetic in $\omega^{N_e}$. At any other $e$ every
+template holds.
+
+Two properties of $U$ follow from its definition. If $U\vdash\theta$, then
+$\Cc$ proves $\chi\theta$ (Section~\ref{sec:internal}, applied in $\N$).
+If $\Cc$ proves $\chi\theta$, then $\theta\wedge\top^n$ is an axiom of $U$.
+Similarly, a $\Cc$-proof of $\chi(\kappa\sigma)$ puts $\sigma\wedge\top^n$
+into $T$.
+
+\section{The internal premise}\label{sec:internal}
+
+Let $H_{\mathrm{phys}}$ be the arithmetic sentence asserting the existence
+of a coded blank-tape history for the literal table, with an initial blank
+configuration, valid adjacent steps, and a terminal configuration. Write
+$H=H_{\mathrm{phys}}^\omega$. Lean also gives a $\Sigma_1$ sentence
+$H_\Sigma$ for the same halting predicate and proves
+$\ZF\vdash H\to H_\Sigma^\omega$.
+
+\begin{lemma}\label{lem:internal}
+$\PA\vdash\neg H_{\mathrm{phys}}\to\Con(T)$. Hence premise~(3) of
+Lemma~\ref{lem:calib} holds
+for $\varphi=H$.
+\end{lemma}
+
+\begin{proof}
+Work in a model of $\PA$ and suppose it contains a coded $T$-refutation,
+possibly nonstandard. We transport it in two stages.
+
+\emph{Stage 1.} The translation $J(\varepsilon,\cdot)$, with a free marker
+$\varepsilon$, sends the refutation to a $U$-derivation of $\neg\mk(\varepsilon)$.
+The axiom $\sigma\wedge\top^n$ of $T$ comes from the axiom
+$\kappa\sigma\wedge\top^n$ of $U$ by instantiating $e$. The quantifier steps
+need a substitution lemma for $J$, proved by induction on formulas from
+seven template facts: the domain is everything, equality is an equivalence,
+the operations are total and functional, and every template respects
+equality. Section~\ref{sec:absorb} shows that $U$ proves these facts and
+$\exists e\,\mk(e)$; together with $\forall e\,\neg\mk(e)$ this refutes $U$.
+
+\emph{Stage 2.} Every internal derivation of $U$ becomes a $\Cc$-proof of
+the translation of its conclusion. Each logical rule has a fixed template
+in $\Cc$. Eigenvariables take free labels from a window that the derivation
+code bounds, and the label discipline of $\chi$ supplies the vacuity and
+substitution side conditions of the quantifier rules. Axioms of $U$ come
+with their $\Cc$-proofs.
+
+A $\Cc$-proof of $1$ halts the machine: the scheduler reaches its command
+word, and the tape simulation, including the startup, gives a coded halting
+run of the literal table. All steps hold in arbitrary models of $\PA$,
+so first-order completeness gives the displayed implication. Interpreting
+it in $\omega$ gives $\ZF\vdash\neg H\to\Con(T)^\omega$.
+\end{proof}
+
+\section{The gate inside \texorpdfstring{$U$}{U}}\label{sec:gate}
+
+The template facts and absorption are proved semantically, in models of
+$U$. What a model $W$ of $U$ needs is the gate: every definable relation
+on its indiscernibility quotient has pointed hulls. Then $W$ has an object
+with no members, and each such object $e$ gives the model $N_e$ of $\ZF$.
+
+For a set-theoretic formula $\varphi(D,H,\bar p)$ with $k$ parameters, let
+$\gamma_\varphi$ say: for all $\bar p$ and all $u,v$, some $C$ is a pointed
+hull of $R=\varphi(\cdot,\cdot,\bar p)$ at $(u,v)$, written with the exact
+connectives and binders of $\neg Q$.
+
+\begin{lemma}\label{lem:gatesent}
+$\Cc$ proves $\chi\gamma_\varphi$. Hence $U\vdash\gamma_\varphi$.
+\end{lemma}
+
+\begin{proof}
+Take labels $a=X(0,k+1)$ and $b=X(0,k)$, the labels $\chi$ gives the
+binders of $u$ and $v$. Let the relation code $c$ be $\chi\varphi$ in the
+separate family $X(1,\cdot)$, conjoined with a closed theorem of $\Cc$
+whose binders are $R_0,R_1,R_2$ and $X(0,j)$ for $j<k+10$. Then $c$
+exceeds every label the argument must avoid, and the gate instance
+$\neg Q(a,b,c)$ is available.
+
+Three steps turn $\neg Q(a,b,c)$ into $\chi\gamma_\varphi$.
+First, $\Cc$ proves $x\in y\leftrightarrow\chi(x\in y)$ for distinct labels:
+the witnesses come from head~5 and the direct rewrites, and each conjunct
+of $\approx$ is used at a label introduced by head~5, with the backward
+rewrites. Second, a renaming theorem relabels every binder of $\neg Q$
+with the label $\chi$ uses at that depth. It is proved once for a small
+syntax of gate-shaped formulas: under a substitution and vacuity
+interface for the relation code, and under conditions that no binder
+captures a variable used beneath it, the two labellings are equivalent in
+$\Cc$. Third, at each occurrence of the relation, $\chi$ of the substituted
+formula is $\chi\varphi$ with relabelled arguments at the current depth in
+family $0$. Renaming between families and depths gives equivalence with
+$c$. The substitution and vacuity conditions for $\chi\varphi$ need only the
+labels the translation actually binds, and these lie below $c$.
+\end{proof}
+
+\begin{lemma}\label{lem:Uhull}
+In every model $W$ of $U$, every relation definable with parameters on the
+indiscernibility quotient of $W$ has pointed hulls, and $W$ has an object
+with no members.
+\end{lemma}
+
+\begin{proof}
+Lemma~\ref{lem:gatesent} gives hulls in $W$ for relations defined with
+parameters. A relation on the quotient defined by $\varphi$ is defined in
+$W$ by $\varphi$ with equality replaced by indiscernibility, so its hull in
+$W$ projects to a hull in the quotient. No extensionality is needed in $W$.
+The empty relation has a hull, which has no members.
+\end{proof}
+
+\section{Absorption and consistency}\label{sec:absorb}
+
+\begin{lemma}\label{lem:absorb}
+Premises (1), (2) and (4) of Lemma~\ref{lem:calib} hold for $T$. Moreover
+$U$ proves the template facts and $\exists e\,\mk(e)$.
+\end{lemma}
+
+\begin{proof}
+Let $W$ be a model of $U$. By Lemma~\ref{lem:Uhull} and
+Section~\ref{sec:theories}, every marker $e$ of $W$ gives a model $N_e$ of $\ZF$, and the templates at
+$e$ read the arithmetic of $\omega^{N_e}$ through the projection. The
+template facts hold at such $e$ and trivially at other $e$. By
+completeness, $U$ proves them, and Lemma~\ref{lem:Uhull} gives
+$\exists e\,\mk(e)$.
+
+(4) If $\ZF\vdash\psi^\omega$, then $\psi$ holds in $\omega^{N_e}$ for every
+marker $e$ of every model of $U$, so $W\models\kappa\psi$. Hence
+$U\vdash\kappa\psi$, $\Cc$ proves $\chi(\kappa\psi)$, and $T\vdash\psi$.
+(1) Every axiom of $\PA$ is proved by $\ZF$ in $\omega$, so (4) gives
+$\PA\subseteq T$ and $\ISig\subseteq T$.
+
+(2) Let $V$ be a model of $\ZF$. Every theorem of $\Cc$ holds in $V$ with
+label $0$ assigned the empty set (Lemma~\ref{lem:sound}), and the reading
+of $\chi\theta$ in $V$ is the reading of $\theta$. So $V\models\kappa\sigma$
+for every axiom $\sigma\wedge\top^n$ of $T$. At the empty set $e$ of $V$,
+the templates read $\omega^{N_e}$, which is therefore a model of $T$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The interpretation of $H_{\mathrm{phys}}$ in $\omega$ gives the internally
+finite history in the statement of the theorem. Under consistency,
+Lemma~\ref{lem:sound} gives nonhalting. Lemmas~\ref{lem:internal}
+and~\ref{lem:absorb} give the four premises of Lemma~\ref{lem:calib} for
+$T$ and $H$, so $\ZF\nvdash\neg H$.
+
+Under arithmetic $\Sigma_1$-soundness, $\ZF$ is consistent, so the first
+part applies. If $\ZF\vdash H$, the implication to $H_\Sigma^\omega$
+gives $\ZF\vdash H_\Sigma^\omega$. By soundness $\N\models H_\Sigma$,
+so $M$ halts, a contradiction.
+\end{proof}
+
+\section{Lean verification}\label{sec:status}
+
+The standalone \file{ProofSources/Challenge.lean} uses only \file{Std}.
+It defines the proof system of $\ZF$, its axioms, the literal table and the
+model-internal meaning of halting, and states the claim as
+\file{PalomarZF209.exact209Claim}. \file{ProofSources/Solution.lean} proves
+it from \file{Halting/Final.lean}; its one statement placeholder lies
+outside the Solution's imports. Paths below are relative to
+\file{ProofSources/}.
+
+The calibration principle is \file{Independence/Godel.lean}, and
+\file{Independence/Top.lean} derives the compared claim from it.
+\file{Halting/Theories.lean} and \file{Halting/Craig.lean} define $U$ and
+$T$. \file{Internal/Arith/} contains stage~1 and
+\file{Internal/Tait/Derivation.lean} stage~2; \file{Halting/Premise.lean}
+combines them with \file{Halting/Prov.lean}, which turns a $\Cc$-proof of
+$1$ into halting of the literal table. \file{Halting/GateAtom.lean},
+\file{Halting/GateAlpha.lean}, \file{Halting/GateChi.lean},
+\file{Halting/GateFound.lean} and \file{Halting/GateC.lean} prove
+Lemma~\ref{lem:gatesent}; \file{Halting/GateHull.lean} proves
+Lemma~\ref{lem:Uhull}. \file{GateModel/} builds $N_e$, and
+\file{Halting/Absorb.lean} and \file{Halting/Consistent.lean} prove
+Lemma~\ref{lem:absorb}. \file{ScottHull.lean} proves
+Lemma~\ref{lem:hull}, and \file{Literal209FoundationNonhalting.lean} the
+nonhalting theorem. \file{M209/} contains the startup and the simulation
+of the register program.
+
+The package has 1,225 Lean files with 156,142 lines, including 161
+vendored Foundation modules. Each Lean process is capped at 1,536 MiB.
+A clean build of the package, with Mathlib's cached build, took
+14.4 minutes on a ten-core machine, and the largest process used 1.7 GB.
+The axiom audit reports only \file{propext}, \file{Classical.choice} and
+\file{Quot.sound}. The Solution uses no \file{sorry},
+\file{native_decide} or added axioms. \file{docs/reproduction.md} gives the
+build, audit and Comparator commands.
+
+The formalization uses Foundation~\cite{foundation} and a tape engine
+ported from Elliot Glazer's K230 Rocq development, with components adapted
+from Jeff Ketchersid's Busy Beaver developments. \file{docs/provenance.md}
+records the revisions, licences and source notices.
+
+\begin{thebibliography}{9}
+
+\bibitem{pa209}
+J. Chang.
+Nonhalting and PA-independence for a 209-state Turing machine.
+\href{https://github.com/jamesyc/BusyBeaver/tree/69d98241a721ead20b4f0b17df9062950b40fbfe}{Public PA209 snapshot}.
+
+\bibitem{foundation}
+FormalizedFormalLogic.
+Foundation.
+\url{https://github.com/FormalizedFormalLogic/Foundation}.
+
+\bibitem{goedel}
+K. G\"odel.
+\"Uber formal unentscheidbare S\"atze der Principia Mathematica und
+verwandter Systeme I.
+\emph{Monatshefte f\"ur Mathematik und Physik} 38 (1931), 173--198.
+\url{https://doi.org/10.1007/BF01700692}.
+
+\end{thebibliography}
+
+\appendix
+\section{The literal table}\label{app:table}
+
+Each entry below is ``write, move, successor''. The column heading is the
+read symbol.
+
+\input{machine-table.tex}
+
+\end{document}
