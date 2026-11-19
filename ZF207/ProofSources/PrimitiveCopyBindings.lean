@@ -1,0 +1,82 @@
+module
+public import PrimitiveCopyA
+public import PrimitiveCopyH
+public import PrimitiveMPCopy
+@[expose] public section
+namespace C207Search.Primitive
+theorem CopyA_bound_389 : CopyA.Bound 389 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_831 : CopyA.Bound 831 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_1022 : CopyA.Bound 1022 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_1210 : CopyA.Bound 1210 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_1266 : CopyA.Bound 1266 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_1482 : CopyA.Bound 1482 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_1562 : CopyA.Bound 1562 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_1927 : CopyA.Bound 1927 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_2008 : CopyA.Bound 2008 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_2441 : CopyA.Bound 2441 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_2683 : CopyA.Bound 2683 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_2791 : CopyA.Bound 2791 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_2845 : CopyA.Bound 2845 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_2871 : CopyA.Bound 2871 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_2951 : CopyA.Bound 2951 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_3058 : CopyA.Bound 3058 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_3113 : CopyA.Bound 3113 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_3139 : CopyA.Bound 3139 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_3191 : CopyA.Bound 3191 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_3843 : CopyA.Bound 3843 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_3895 : CopyA.Bound 3895 := by unfold CopyA.Bound; decide +kernel
+theorem CopyA_bound_4050 : CopyA.Bound 4050 := by unfold CopyA.Bound; decide +kernel
+theorem CopyH_bound_69 : CopyH.Bound 69 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_164 : CopyH.Bound 164 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_336 : CopyH.Bound 336 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_415 : CopyH.Bound 415 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_522 : CopyH.Bound 522 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_752 : CopyH.Bound 752 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_805 : CopyH.Bound 805 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_941 : CopyH.Bound 941 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_1104 : CopyH.Bound 1104 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_1184 : CopyH.Bound 1184 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_1400 : CopyH.Bound 1400 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_1508 : CopyH.Bound 1508 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_1696 : CopyH.Bound 1696 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_2034 : CopyH.Bound 2034 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_2142 : CopyH.Bound 2142 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_2277 : CopyH.Bound 2277 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_2359 : CopyH.Bound 2359 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_2523 : CopyH.Bound 2523 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_2603 : CopyH.Bound 2603 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_2765 : CopyH.Bound 2765 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_2977 : CopyH.Bound 2977 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_3165 : CopyH.Bound 3165 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_3319 : CopyH.Bound 3319 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_3448 : CopyH.Bound 3448 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_3788 : CopyH.Bound 3788 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_3869 : CopyH.Bound 3869 := by unfold CopyH.Bound; decide +kernel
+theorem CopyH_bound_4332 : CopyH.Bound 4332 := by unfold CopyH.Bound; decide +kernel
+theorem MPCopy_bound_95 : MPCopy.Bound 95 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_190 : MPCopy.Bound 190 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_257 : MPCopy.Bound 257 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_310 : MPCopy.Bound 310 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_548 : MPCopy.Bound 548 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_650 : MPCopy.Bound 650 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_886 : MPCopy.Bound 886 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_967 : MPCopy.Bound 967 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_1130 : MPCopy.Bound 1130 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_1292 : MPCopy.Bound 1292 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_1426 : MPCopy.Bound 1426 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_1588 : MPCopy.Bound 1588 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_1722 : MPCopy.Bound 1722 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_1825 : MPCopy.Bound 1825 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_1953 : MPCopy.Bound 1953 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_2087 : MPCopy.Bound 2087 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_2168 : MPCopy.Bound 2168 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_2303 : MPCopy.Bound 2303 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_2385 : MPCopy.Bound 2385 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_2549 : MPCopy.Bound 2549 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_2629 : MPCopy.Bound 2629 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_2897 : MPCopy.Bound 2897 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_3530 : MPCopy.Bound 3530 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_3659 : MPCopy.Bound 3659 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_4255 : MPCopy.Bound 4255 := by unfold MPCopy.Bound; decide +kernel
+theorem MPCopy_bound_4321 : MPCopy.Bound 4321 := by unfold MPCopy.Bound; decide +kernel
+end C207Search.Primitive

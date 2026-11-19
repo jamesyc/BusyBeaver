@@ -8,6 +8,12 @@ Its existing Palomar submission remains tied to the original submitted commit.
 The local build, axiom audit and Comparator passed with Lean and NanoDa.
 The local con-ron replay reached its time limit. Palomar submission is pending.
 
+[ZF207](ZF207/README.md) is a separate project for a 207-state machine that
+runs the same proof search with a smaller decoder. It reuses the ZF209
+development with the table-specific checks redone. The local build, axiom
+audit, Comparator (unsandboxed, on macOS) with Lean and NanoDa, and the
+bundled con-ron passed. Palomar submission is pending.
+
 PA196 is self-contained under `PA196/`. Its Lean sources are in
 `PA196/ProofSources/`; shared tape-engine and arithmetic support are folded
 into `PA196.Engine` and `PA196.ArithmeticSupport`. Required support code and
@@ -25,5 +31,6 @@ See the [paper](PA196/paper/pa196.pdf),
 [reproduction instructions](PA196/docs/reproduction.md).
 PA196's citation metadata is in [CITATION.cff](PA196/CITATION.cff).
 Use project path `PA196` for a local Palomar verification of this layout.
-ZF209 uses project path `ZF209` and its own pinned dependencies.
+ZF209 and ZF207 use project paths `ZF209` and `ZF207`, each with its own
+pinned dependencies.
 The repository licence is [MIT](LICENSE); vendored support retains its own notices.

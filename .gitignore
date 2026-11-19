@@ -18,3 +18,7 @@ graphify-out/
 /ZF209/paper/*.aux
 /ZF209/paper/*.log
 /ZF209/paper/*.out
+/ZF207/paper/*.aux
+/ZF207/paper/*.log
+/ZF207/paper/*.out
+/notes/

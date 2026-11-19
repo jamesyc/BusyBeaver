@@ -1,0 +1,29 @@
+module
+public import LiteralCTraceModelAlignment
+@[expose] public section
+open scoped FFL.FirstOrder.Arithmetic
+open FFL FFL.FirstOrder FFL.FirstOrder.Arithmetic
+namespace ZF207.MM0ModelReplay
+open ZF207.MM0ModelPeano ZFR.ArithmeticRepresentation
+variable {M : Type*} [ORingStructure M] [M↓[ℒₒᵣ] ⊧* 𝗣𝗔]
+/-- Induction over an internal C proof trace. The compiler invariant must itself
+have an actual first-order formula certificate; arbitrary external predicates
+are deliberately not admitted. -/
+theorem modelCTrace_induction (e : Nat → M) (P : M → Prop)
+ (cert : FormulaCertificate e 1 (fun v=>P (v 0)))
+ (zero : P 0)
+ (step : ∀a b,modelTrace modelCRule b → P b → modelCRule a b → P (modelListCons a b)) :
+ ∀n,modelTrace modelCRule n → P n := by
+ apply ((modelTrace_certificate (modelCRule_certificate e)).imp cert).orderInduction
+ intro n ih
+ change modelTrace modelCRule n → P n
+ intro hn
+ by_cases hz:n=0
+ · subst n; exact zero
+ · have hp:0<n := pos_iff_ne_zero.mpr hz
+   have he:n=modelListCons (modelListHead n) (modelListTail n) := (modelList_reconstruct n hp).symm
+   have ht := modelListTail_lt n hp
+   rw [he,modelTrace_cons] at hn
+   rw [he]
+   exact step _ _ hn.1 (ih _ ht hn.1) hn.2
+end ZF207.MM0ModelReplay
