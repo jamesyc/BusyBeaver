@@ -1,11 +1,16 @@
 name: Palomar preflight
-run-name: Palomar preflight for ${{ inputs.commit || github.sha }}
+run-name: Palomar preflight of ${{ inputs.project || 'PA196' }} for ${{ inputs.commit || github.sha }}
 on:
   workflow_dispatch:
     inputs:
       commit:
         description: Full source commit SHA to verify
         type: string
+      project:
+        description: Project path to verify
+        type: choice
+        options: [PA196, ZF209, ZF207]
+        default: PA196
 
 permissions:
   contents: read
@@ -21,6 +26,6 @@ jobs:
       mode: full
       execution_profile: palomar-standard-v1
       options: >-
-        {"project_path":"PA196",
-         "comparator_config_path":"PA196/comparator.json",
+        {"project_path":"${{ inputs.project || 'PA196' }}",
+         "comparator_config_path":"${{ inputs.project || 'PA196' }}/comparator.json",
          "authorization_relationship":"I am a responsible author or maintainer"}
