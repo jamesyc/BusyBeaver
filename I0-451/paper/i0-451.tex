@@ -1,0 +1,590 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,xurl}
+\usepackage[hidelinks,pdftitle={Conditional I0-independence for a 451-state Turing machine},
+  pdfauthor={James Chang}]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\ZF}{\mathrm{ZF}}
+\newcommand{\ZFC}{\mathrm{ZFC}}
+\newcommand{\PA}{\mathrm{PA}}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\Prv}{\operatorname{Pr}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\cardB}{\mathsf{BC}}
+\newcommand{\setread}[1]{#1^{\omega}}
+\newcommand{\file}[1]{\texttt{\nolinkurl{#1}}}
+\setlength{\emergencystretch}{2em}
+
+\title{Conditional \texorpdfstring{$I_0$}{I0}-independence for a\\451-state Turing machine}
+\author{James Chang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We verify a binary Turing machine with 451 working states whose
+blank-tape halting is conditionally independent of $\ZFC+I_0$.
+The machine searches for a contradiction in a calculus for set
+theory with a Berkeley cardinal. Its additional axiom expresses
+elementarity by comparing an assignment with the identity in a
+family of truth sets. We prove in Lean~4 that the exact table
+implements the search, and that Peano arithmetic proves that
+nonhalting implies consistency of a specified arithmetic
+presentation of the searched theory. Let $B$ be $\ZF$ plus a
+Berkeley cardinal and let $A$ be the Craig presentation of the
+arithmetic consequences of $\ZFC+I_0$ used in the proof. If $B$
+proves $\Con(A)$ in its natural numbers and $\ZFC+I_0$ is
+consistent, then $\ZFC+I_0$ cannot prove nonhalting. Consistency
+of $B$ gives actual nonhalting. With arithmetic $\Sigma_1$-soundness
+of $\ZFC+I_0$ we also obtain unprovability of halting. Both
+unprovability statements descend to $\ZF$ with the same $I_0$ sentence.
+\end{abstract}
+
+\section{Statement of the result}\label{sec:result}
+
+Let $M$ be the machine in Section~\ref{sec:literal}. We use the language
+of membership with equality. Let $\cardB$ assert the existence of a
+Berkeley cardinal, and write
+\[
+  B=\ZF+\cardB,\qquad T=\ZFC+I_0,\qquad T^-=\ZF+I_0.
+\]
+The symbol $I_0$ in these theories denotes the first-order sentence
+of Section~\ref{sec:large}. For an arithmetic sentence $\sigma$,
+write $\setread{\sigma}$ for its interpretation in the natural numbers
+of a model of set theory.
+
+Let $A$ be the Craig presentation of the arithmetic theory
+\[
+  \operatorname{Ar}(T)=\{\,\sigma : T\vdash \setread{\sigma}\,\},
+\]
+where $\sigma$ ranges over closed arithmetic sentences.
+Section~\ref{sec:incompleteness} specifies this presentation and the
+consistency sentence $\Con(A)$. Write $H$ for the $\Sigma_1$ arithmetic
+sentence that a finite run of $M$ from the blank tape terminates.
+Its interpretation and its relation to the literal table are given
+in Section~\ref{sec:arithmetic}.
+
+\begin{theorem}\label{thm:main}
+For the exact 451-state table the following hold.
+\begin{enumerate}
+\item If $B$ is consistent, then $M$ runs forever from the blank tape.
+\item If $T$ is consistent and $B\vdash\setread{\Con(A)}$, then
+      $T\nvdash\neg\setread{H}$ and $T^-\nvdash\neg\setread{H}$.
+\item If $B$ is consistent and $T$ is arithmetically $\Sigma_1$-sound,
+      then $T\nvdash\setread{H}$ and $T^-\nvdash\setread{H}$.
+\end{enumerate}
+Thus consistency of $B$, arithmetic $\Sigma_1$-soundness of $T$,
+and $B\vdash\setread{\Con(A)}$ suffice for nonhalting and two-sided
+independence in both theories.
+\end{theorem}
+
+Here arithmetic $\Sigma_1$-soundness means that if $T$ proves
+$\setread{\sigma}$ for a closed arithmetic $\Sigma_1$ sentence
+$\sigma$, then $\N\models\sigma$. In particular, it implies consistency
+of $T$. The premise $B\vdash\setread{\Con(A)}$ is the form of relative
+consistency used throughout the argument. It refers to an internal
+proof in $B$ and to the same proof predicate used in the application
+of G\"odel's second incompleteness theorem.
+
+The 451-state construction was obtained by compressing the register
+program and decoder of a larger Berkeley-based proof search. The
+verification below works directly with the 451-state table. Its two
+directions use different forms of correctness. A halting computation
+can be interpreted in a model of $B$ using the soundness of the
+command calculus. For the nonhalting unprovability result, every
+model of $\PA$ must admit the converse construction on its
+internally finite proof codes.
+
+\section{The literal machine}\label{sec:literal}
+
+The tape is two-way infinite with alphabet $\{0,1\}$. State $0$ is
+initial and the tape is entirely zero. There are 451 working states,
+numbered $0,\ldots,450$, and a separate terminal label $451$.
+For a state $q$ and symbol $b$, a row $(q,b,w,D,q')$ writes $w$,
+moves one cell in direction $D\in\{L,R\}$, and enters $q'$.
+The complete 902-row table is \file{data/zf-berkeley-451.tm} in the
+companion source package. Its SHA-256 digest is
+\begin{quote}\small
+\nolinkurl{034c26fb655f32123c516bfab93be38d5e055415058eb29e856c4c9a80e74d64}.
+\end{quote}
+The first row is $(0,0,1,R,1)$. The unique row entering the terminal
+label is $(156,1,1,R,451)$, and the terminal label has no outgoing
+rows. These properties are checked on the packed literal table.
+
+The initialization has two parts. After 39,753 literal steps the
+head reaches decoder state $7$. At this point the tape has a left
+marker, an encoded instruction pointer, a gap of zeros and a unary
+register file. The initial frame has 192 fixed blocks and nine live
+registers, all nine initially zero. A block $0\,1^{v+1}$ holds $v$.
+The distance from the instruction-pointer start to the first
+register is called the slot.
+
+The next 126 interpreter instructions bring the slot from $19$ to
+$107$ and enter the region used by the permanent interpreter
+invariant. These instructions are checked through the interpreter
+contracts. The loader, by comparison, is checked by concatenating
+finite literal runs. At a decoder entry a word and a padding of zeros
+specify the address. Explicit trailing zeros of the word can be shifted
+into the padding at fixed slot, since the physical tape is unaltered.
+
+The decoder proof gives a rank for each active control and two-bit
+left context. It verifies the local effect on both read symbols,
+including contractions of up to three tape steps. Each recursive
+case lowers the rank, and at most 94 address bits are needed at
+the root. A separate condition on zero runs and jump markers verifies
+the return paths. The register contracts compute the effects of
+increment and of both decrement branches on arbitrary unary blocks.
+The space invariant combines these results so that decoding, register
+access and continuation preserve the permitted frame at the next
+abstract boundary. This is the part of the proof that connects the
+finite transition checks to an unbounded run.
+
+\section{The proof search}\label{sec:search}
+
+\subsection{Formula and command codes}
+
+Let $p(a,b)=\binom{a+b+1}{2}+b$ be Cantor pairing. Implication,
+membership, universal quantification and equality have constructors
+\[
+\begin{array}{ll}
+  \mathsf{imp}(a,b)=4p(a,b), & \mathsf{mem}(i,j)=4p(i,j)+1,\\
+  \mathsf{all}(i,a)=4p(i,a)+2, & \mathsf{eq}(i,j)=4p(i,j)+3.
+\end{array}
+\]
+Here $i,j$ are variable labels. Code $0$ denotes truth. Code $1$
+denotes $v_0\in v_0$, the contradiction used by the machine. The
+calculus includes irreflexivity of membership, so this atom can
+serve in the coding of negation.
+
+At a command boundary the proof store consists of the current formula,
+a stack coded by nested pairs, a numeric operand and a cached formula.
+A successful \textsc{mp} tests that the cached formula is the implication
+from the current formula to the candidate consequence.
+\textsc{drop} exposes the cached formula and saves the old current
+formula on the stack. \textsc{nip} pops the stack into the cache,
+except that it terminates when the cache already contains code $1$.
+\textsc{extra} saves the current formula and places the Foundation
+sentence and the compressed Berkeley sentence above it. The
+\textsc{ax} routine builds the axiom bundle and the guarded
+logical operations. The implementation follows the numerical
+proof-search design of the \texttt{m254}/\texttt{tg296} development
+\cite{ketchersid}.
+
+A command word is stored as a nested pair code. A fresh candidate
+is read directly. Between its commands the queued tail is stored
+with a one-unit delimiter. When the queue is empty the machine
+loads the next natural-number candidate. Otherwise it subtracts
+one before unpacking the next command. The remainder of an
+unpacked code is at most that code, so a nonempty queue strictly
+decreases. In a nonhalting run each candidate is therefore reached.
+Packing a finite command word gives a candidate that executes the
+word in order. The bootstrapped interpreter and the command-boundary
+invariant connect this enumeration to the literal run.
+
+\subsection{The calculus searched by the machine}
+
+Write $P$ for the compressed Berkeley sentence emitted by
+\textsc{extra}. The nonlogical base used by the calculus includes
+Extensionality and Foundation, together with a container principle
+and a collection scheme. In the container principle every $a$
+belongs to a transitive set $D$ such that for each $x\in D$ there
+is a $w\in D$ containing every subset of $x$. In the collection scheme,
+given a formula $R(x,y,\bar z)$ and a set of inputs, an image set
+contains a witness for each input that has one. Each element of the
+image is in the global range of $R$.
+
+In a model of $\ZF$ the container can be taken at a sufficiently
+high limit rank. Collection follows by bounding the least ranks
+of witnesses for the inputs with witnesses, and cutting out the
+required elements from a common rank bound. For the reverse
+interpretation the collection scheme yields Separation and
+Replacement. The container bounds unions and power sets, and the
+ordinal members of a container of the empty set give an inductive
+set. With the other base axioms these principles suffice for
+$\ZF$. The model-theoretic verification applies also to arbitrary
+first-order models of the base.
+
+The command soundness invariant asserts that the top, cache, and
+each stack entry are derivable. The operand has a purely numeric
+role. For completeness, the detachment and axiom-building contracts
+give command words for derivations, using a single-formula push
+contract over a preserved stack. For example the closed formulas
+produced by \textsc{extra} can each be isolated by stack and cache
+operations. A proof of code $1$ can place that formula in the cache
+and invoke \textsc{nip}. The resulting standard-natural theorem is
+\begin{equation}\label{eq:search}
+  M\text{ halts on the blank tape}
+  \quad\Longleftrightarrow\quad
+  1\text{ is derivable in the native calculus}.
+\end{equation}
+The Lean declaration for \eqref{eq:search} is
+\file{I0451.Runtime.literal_halts_iff_derives}.
+
+\section{The large-cardinal sentences}\label{sec:large}
+
+\subsection{The Berkeley sentence emitted by the machine}
+
+A Berkeley cardinal $\delta$ is an uncountable cardinal such that
+for every transitive set $D$ with $\delta\in D$ and every $\eta<\delta$,
+there is an elementary $j:D\to D$ with
+$\eta<\operatorname{crit}(j)<\delta$ \cite{bkw}. The emitted formula
+uses a different witness. It asks for a set $a$ such that every
+transitive $D$ containing $a$ admits an elementary self-map moving
+some member of $a$, with elementarity expressed in the following
+compressed form.
+
+An assignment on $D$ is a map $D\to D$, using the members of $D$
+as labels. Pair graphs give a set $U$ of such assignments. For
+$i,k\in D$, begin with the truth set
+\[
+ E_{ik}=\{s\in U:s(i)\in s(k)\}.
+\]
+For $R,S\subseteq U$ and $i\in D$, the closure operation takes
+\begin{equation}\label{eq:cyl}
+  \{s\in U:\exists t\in U\
+       [\,s\equiv_i t\ \land\ (t\in R\ \longrightarrow\ t\in S)\,]\},
+\end{equation}
+where $s\equiv_i t$ means agreement outside label $i$. Representatives
+in the literal formula are compared by their traces on $U$.
+There is a closed family containing the atomic truth sets and
+closed under \eqref{eq:cyl}. If $e$ is the identity assignment and
+$j$ is the proposed map, the literal condition requires that each
+member of the family whose trace contains $e$ also contain $j$.
+
+\begin{lemma}\label{lem:elementarity}
+For an infinite transitive set $D$, the truth-set condition implies
+that $j$ is elementary. An elementary self-map of $D$ satisfies the
+condition with a suitable family of traces.
+\end{lemma}
+
+\begin{proof}
+Irreflexivity makes the diagonal atom the empty truth set. Applying
+\eqref{eq:cyl} with empty antecedent gives $U$. For two truth sets
+of finite support, choose $i$ outside the two supports and obtain
+ordinary implication. Implication to the empty truth set gives
+complement. Applying \eqref{eq:cyl} with antecedent $U$ gives
+existential quantification at $i$. Equality is expressed by agreement
+of membership extensions in $D$, using its transitivity and
+Extensionality. Induction now represents every internally finite
+formula.
+
+For a parameter tuple, rename bound labels away from the finitely
+many parameter values. Use the parameter values themselves as
+the free labels, with a shared label for repeated values. Evaluating the
+resulting formula at $e$ gives its truth at the original tuple.
+Evaluating at $j$ gives truth at its image. Applying the comparison
+to a formula and its negation gives both implications. Conversely,
+take the traces represented by internally finite formulas.
+The closure operations preserve this family and elementarity
+gives the comparison at $e$ and $j$.
+\end{proof}
+
+The formalization constructs the least closed trace family by
+Separation in the power set of $U$. It identifies that family with
+finite stages of the closure operations and uses coded satisfaction
+to implement the renaming argument inside the model. In particular,
+Lemma~\ref{lem:elementarity} is used for internally finite codes
+rather than merely for each externally standard formula.
+
+\begin{lemma}\label{lem:berkeley}
+Over $\ZF$, the emitted sentence $P$ is equivalent to $\cardB$.
+\end{lemma}
+
+\begin{proof}
+If $\delta$ is Berkeley, take $a=\delta$. The defining property
+supplies the required moving map on every transitive set containing
+$\delta$, and Lemma~\ref{lem:elementarity} supplies its comparison
+family.
+
+Conversely, take a witness $a$ and put $\gamma=\operatorname{rank}(a)$.
+Given a transitive $M$ with $\gamma+1\in M$, choose a sufficiently
+high limit rank $V_\rho$. Include $M$ and $V_\rho$ as a pair in a
+larger transitive set $N$ in which the pair is definable. One can
+do this by adding a set of pairs with fixed first coordinate to a
+limit rank, making the added set the unique membership-maximal
+element. See \cite[Lemma~3.1]{bkw}. The map supplied by $P$ on $N$
+moves a member of $a$ and fixes $M$ and $V_\rho$ setwise.
+Relativization gives elementary restrictions. If all ordinals
+below $\gamma$ were fixed, induction on ranks in $V_\rho$ would
+fix $V_\gamma$ pointwise, contradicting the moved member of $a$.
+The least moved ordinal is therefore below $\gamma+1$ and is
+the critical point of the restriction to $M$. This makes
+$\gamma+1$ proto-Berkeley. The least proto-Berkeley ordinal is
+an uncountable cardinal with the required cofinality of critical
+points \cite[Theorem~3.3 and Remark~3.5]{bkw}. The formalization
+checks these leastness arguments in the coded set language.
+\end{proof}
+
+Together with the base axioms, Lemma~\ref{lem:berkeley} gives
+both uses of $B$ needed below. Its models validate the native
+calculus, and the native calculus proves the interpreted axioms
+of $B$.
+
+\subsection{The first-order presentation of \texorpdfstring{$I_0$}{I0}}
+
+The target axiom is expressed using the proper-ultrapower
+presentation of \cite[Definitions~2.5 and~2.7 and Proposition~3.5]{schlutzenberg}.
+It uses an even ordinal $\lambda$, the set $X=V_{\lambda+1}$,
+and a set ultrafilter $\mu$ on the subsets of $X$ in $L(X)$.
+The ultrapower uses functions in $L(X)$ with domain $X$.
+For each function $f$, the collapse of its quotient value is
+specified by a set of representatives containing $f$ and covering
+the predecessors modulo $\mu$. A transitive set is the range of
+the collapse map, with equality and membership on it agreeing
+with the corresponding relations modulo $\mu$.
+The sentence requires compatibility of the collapses and coverage
+of $L(X)$.
+
+The induced constant-function map $j$ fixes $X$ and $\lambda$.
+Its critical point is below $\lambda$, and $j\upharpoonright V_\lambda$
+belongs to $L(X)$. It takes each relative constructible stage to
+the stage at the image ordinal and preserves internally coded
+satisfaction between those two set stages. The relative hierarchy
+starts at the transitive closure of $\{X\}$, takes definable subsets
+at successors, and takes unions at limits.
+
+For a proper $I_0$ witness, the derived ultrafilter gives the
+quotient collapse and the elementary constant-function map.
+Collection supplies the representatives for the local collapse
+of a given value. Since the stage recursion is uniform in $X$,
+elementarity gives the two stage clauses. Conversely, the local
+collapses give an isomorphism of the quotient with $L(X)$.
+The stages are transitive and exhaust that class. Their satisfaction
+clauses give bounded elementarity, and the ordinal images are
+cofinal. Mapping stages to their image stages therefore gives
+membership cofinality. Cofinal bounded elementarity yields full
+elementarity. This gives the mathematical identification of the
+coded sentence with the proper-witness presentation. The Lean
+formalization encodes the sentence and proves the result for
+the theories thereby specified.
+
+\section{Arithmetizing the literal computation}\label{sec:arithmetic}
+
+In a model of $\PA$, represent a configuration by $(q,\ell,r)$.
+The two tape stacks $\ell$ and $r$ are binary integers with the nearest
+cell in the low bit. The right stack starts at the head. The table is
+one integer whose base-$2048$ digit at $2q+b$ encodes the row for
+state $q$ and read symbol $b$. A row with target $q'$, direction
+bit $d$ and write symbol $w$ has digit $1+4q'+2d+w$.
+The bit $d=1$ denotes a right move. With integer division, the tape
+updates for the two directions are
+\[
+\begin{array}{ll}
+ R: & (q,\ell,r)\longmapsto (q',2\ell+w,\lfloor r/2\rfloor),\\
+ L: & (q,\ell,r)\longmapsto
+ (q',\lfloor\ell/2\rfloor,4\lfloor r/2\rfloor+2w+(\ell\bmod 2)).
+\end{array}
+\]
+A zero digit denotes the absence of a move, in which case the
+arithmetized transition leaves the configuration fixed. The formula
+$H$ asserts that the primitive recursive iteration from $(0,0,0)$
+reaches a configuration with a zero digit. It is $\Sigma_1$.
+The standard-model equivalence is
+\[
+   \N\models H \quad\Longleftrightarrow\quad
+   M\text{ halts on the blank tape}.
+\]
+The interpretation $\setread H$ reads this assertion in the internal
+$\omega$ of any model of $\ZF$.
+
+The direction used for incompleteness needs witnesses that a
+nonstandard model of $\PA$ regards as finite. The native arithmetic
+calculus uses a proof book with coded axiom, generalization and
+detachment lines. A proof book for code $1$ gives a coded command
+word by the stack contracts. The coded queue decreases between
+candidate loads, so an internally finite word is reached and
+executed through arithmetic induction. Register updates are
+transported through arithmetic histories of the literal tape by
+the arithmetized decoder and register contracts. This proves
+that an internally finite native refutation produces an
+internally finite literal halting history.
+
+To apply this argument to ordinary arithmetical proof predicates,
+let $S$ be the fixed arithmetic presentation obtained from the
+native calculus. A set-language presentation enumerates the
+sentences whose translations into the native syntax have native
+proof books. An arithmetic presentation enumerates sentences
+whose readings in the set language belong to that enumeration.
+Both recognizers have explicit $\Sigma_1$ definitions. Padding
+an axiom with a coded witnessing computation gives a
+$\Delta_1$ axiom predicate. There are two relevant facts.
+\begin{enumerate}
+\item If $B\vdash\setread{\sigma}$, then $S\vdash\sigma$.
+      The native set presentation proves the axioms of $B$.
+      A coded sequent-to-Hilbert translation compiles its proof
+      of the reading of $\sigma$ to a native derivation.
+\item In any model of $\PA$, an $S$-refutation gives a native
+      proof book for code $1$. The coded arithmetic-to-set
+      interpretation transports the axiom cases and the logical
+      rules. The translated proof produces a contradiction in the
+      native set presentation, which the native compiler transports
+      to a book of the required form.
+\end{enumerate}
+The first fact is a metatheoretic statement about proofs. In
+particular $S$ contains the theorems of $\PA$. The second fact
+holds for internally finite proofs. Combining it with the
+arithmetized run above and applying completeness for arithmetic
+gives the object-theory statement
+\begin{equation}\label{eq:internal}
+  \PA\vdash \neg H\longrightarrow\Con(S).
+\end{equation}
+This is \file{I0451.literal_nonhalting_implies_native_consistency}.
+The proof of \eqref{eq:internal} uses the actual literal run
+predicate. The distinction between \eqref{eq:search} and
+\eqref{eq:internal} is essential because standard computations alone
+do not establish an arithmetic implication in every model.
+
+\section{The incompleteness argument}\label{sec:incompleteness}
+
+The theory $\operatorname{Ar}(T)$ extends $\PA$. To enumerate its
+theorems, use the finite-parameter versions of the $\ZF$ schemata
+and a coded reading of arithmetic sentences in $\omega$.
+The search for a proof of a reading is recursively enumerable.
+The equivalence of these readings with the interpretation
+$\setread{\sigma}$ gives exactly $\operatorname{Ar}(T)$.
+Foundation's Craig construction uses a chosen standard-natural
+recognizer for this enumeration and pads its axioms with
+bounded witnesses. This yields the specific $\Delta_1$
+presentation $A$ used here. Its standard theorem set agrees with
+$\operatorname{Ar}(T)$, so consistency of $T$ implies consistency
+of $A$. We write $\Con(A)$ for $\neg\Prv_A(\ulcorner\bot\urcorner)$
+using this proof predicate, and likewise for $S$.
+
+\begin{lemma}\label{lem:transfer}
+If $B\vdash\setread{\Con(A)}$, then
+\[
+        \PA\vdash \Con(S)\longrightarrow\Con(A).
+\]
+\end{lemma}
+
+\begin{proof}
+The first proof transport of Section~\ref{sec:arithmetic} gives
+$S\vdash\Con(A)$. Since $\neg\Con(A)$ is $\Sigma_1$,
+formalized $\Sigma_1$ completeness gives, in $I\Sigma_1$,
+\[
+  \neg\Con(A)\longrightarrow\Prv_S(\ulcorner\neg\Con(A)\urcorner).
+\]
+The fixed $S$-proof of $\Con(A)$ turns a coded $S$-proof of
+its negation into a coded $S$-refutation. This gives
+$\neg\Con(A)\to\neg\Con(S)$ within $I\Sigma_1$. Contraposition
+and extension to $\PA$ prove the lemma.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+If $B$ is consistent, first-order completeness gives a model
+of $B$. It validates the axioms checked by the native calculus,
+by the model argument in Section~\ref{sec:search} and
+Lemma~\ref{lem:berkeley}. Code $1$ is false in that model.
+By \eqref{eq:search} the machine cannot halt.
+
+For the second assertion, compose \eqref{eq:internal} with
+Lemma~\ref{lem:transfer}. The result is
+\[
+         \PA\vdash \neg H\longrightarrow\Con(A).
+\]
+A proof of $\neg\setread H$ in $T$ would give a proof of
+$\neg H$ in $A$. Hence $A$ would prove $\Con(A)$, contrary to
+G\"odel's second incompleteness theorem for this presentation
+\cite{goedel}. For the third assertion, $H$ is false in $\N$ by the
+first assertion and the exact arithmetic interpretation. Arithmetic
+$\Sigma_1$-soundness excludes a $T$-proof of $\setread H$.
+Both unprovability statements descend by inclusion $T^-\subseteq T$.
+\end{proof}
+
+\paragraph{Scope of the consistency premise.}
+Goldberg attributes to Woodin the result that $\ZF$ plus a
+Berkeley cardinal proves the consistency of $\ZFC+I_0$
+\cite[slide~15]{goldberg}. The premise used here is a proof in
+$B$ for the particular Craig predicate just specified.
+Discharging it from the conventional set-theory consistency
+statement would require an implication provable in $B$ between
+the two internal consistency sentences. The equality of the
+standard theorem sets gives external equiconsistency. That
+calculation leaves the internal implication open. Theorem~\ref{thm:main}
+states the premise for the presentation used in its proof.
+
+\section{Formal verification}\label{sec:verification}
+
+The main Lean declaration is \file{I0451.exact451_independence}.
+The unprovability of nonhalting with the weaker consistency
+assumptions is \file{I0451.i0_nonhalting_unprovable}.
+The standalone statement \file{I0451.Standalone.exact451Claim}
+uses only Lean's standard library in its Challenge.
+It gives the transition table and the membership-model statement.
+Comparator checks the claim together with the four formula values
+supplied by the Solution, for $\cardB$, $I_0$, the consistency
+premise and the arithmetic halting sentence. The alignment proof
+uses first-order completeness to connect validity with provability
+and verifies the interpretation of $\Sigma_1$ soundness.
+
+The proof reuses Foundation's arithmetized syntax, proof predicates
+and incompleteness arguments \cite{foundation}, and the arithmetic
+interpretation and proof-calculus libraries shared with the
+207-state development \cite{zf207}. The checked table and decoder
+data are generated from the machine representation. The simulation,
+logical interpretation and proof transports are reusable Lean
+arguments. The local build and axiom audit passed with Lean~4.35.0.
+The audited independence declarations use only \file{propext},
+\file{Classical.choice} and \file{Quot.sound}. Lean's kernel and
+NanoDa accepted the Comparator export, and the bundled Con-Ron
+accepted the same export in verified mode. The source package
+records the reproduction commands and includes the literal and named
+transition tables.
+
+\paragraph{Acknowledgments.}
+The Lean development and preparation of this manuscript used Codex.
+The source package documents the construction and library provenance.
+
+\begin{thebibliography}{9}
+
+\bibitem{bkw}
+J.~Bagaria, P.~Koellner, and W.~H.~Woodin.
+\newblock Large cardinals beyond choice.
+\newblock \emph{Bulletin of Symbolic Logic}, 25(3):283--318, 2019.
+\newblock \url{https://doi.org/10.1017/bsl.2019.28}.
+
+\bibitem{zf207}
+J.~Chang.
+\newblock The ZF207 proof package.
+\newblock \url{https://github.com/jamesyc/BusyBeaver/tree/9437ef874e1c76a0ec45330554e895157d56c604/ZF207}.
+
+\bibitem{foundation}
+Formalized Formal Logic.
+\newblock \emph{Foundation}, Lean library, revision \file{b2d8f55}.
+\newblock \url{https://github.com/FormalizedFormalLogic/Foundation}.
+
+\bibitem{goedel}
+K.~G\"odel.
+\newblock \"Uber formal unentscheidbare S\"atze der Principia Mathematica
+und verwandter Systeme I.
+\newblock \emph{Monatshefte f\"ur Mathematik und Physik}, 38:173--198, 1931.
+
+\bibitem{goldberg}
+G.~Goldberg.
+\newblock Introduction to choiceless large cardinals.
+\newblock Lecture slides, 2022.
+\newblock \url{https://advances.assafrinot.com/wp-content/uploads/2022/07/goldberg1.pdf}.
+
+\bibitem{ketchersid}
+J.~Ketchersid.
+\newblock \texttt{m254} and \texttt{tg296}, \emph{busy-beaver}, revision
+\file{cde3649}.
+\newblock \url{https://github.com/jeff87654/busy-beaver/tree/cde3649e0f1f3ae57454be7a5bed8bf19f8115d7}.
+
+\bibitem{schlutzenberg}
+F.~Schlutzenberg.
+\newblock On the consistency of ZF with an elementary embedding from
+$V_{\lambda+2}$ into $V_{\lambda+2}$.
+\newblock \emph{Journal of Mathematical Logic}, 2024, online first.
+\newblock \url{https://arxiv.org/abs/2006.01077v4}.
+
+\end{thebibliography}
+\end{document}

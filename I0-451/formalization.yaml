@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+project:
+  name: "Conditional independence for a literal 451-state Turing machine"
+  description: >-
+    This formalization concerns a binary machine with 451 working states.
+    Under consistency of ZF plus a Berkeley cardinal, arithmetic
+    Σ₁-soundness of ZFC plus I₀, and a proof in ZF plus a Berkeley
+    cardinal of consistency of the specified Craig presentation of the
+    arithmetic consequences of ZFC plus I₀, the machine never halts on
+    the blank tape and neither halting nor nonhalting is provable in
+    ZFC plus I₀ or ZF plus I₀.
+  authors: ["James Chang"]
+  responsible_maintainers: ["James Chang"]
+  license: "MIT"
+classification:
+  arxiv: ["cs.LO", "math.LO"]
+sources:
+  - title: "m254 and tg296 numerical proof-search designs"
+    type: other
+    authors: ["Jeff Ketchersid"]
+    url: "https://github.com/jeff87654/busy-beaver/tree/cde3649e0f1f3ae57454be7a5bed8bf19f8115d7"
+    location: "ZF/m254/design/logic.md and ZF/tg296/design/machine.md"
+    relationship: adapts
+    note: >-
+      I0-451 adapts the numerical proof-search and register-to-tape design
+      for a Berkeley-cardinal contradiction search. The accompanying paper
+      (paper/i0-451.tex) is the first public presentation of the exact
+      451-state construction, its conditional independence theorem, and
+      their Lean verification.
+  - title: "Introduction to choiceless large cardinals"
+    authors: ["Gabriel Goldberg"]
+    url: "https://advances.assafrinot.com/wp-content/uploads/2022/07/goldberg1.pdf"
+    relationship: background
+    note: "Slide 15 states the ordinary relative consistency result attributed to Woodin. The proof assumes its instance for the specified Craig presentation."
+  - title: "On the consistency of ZF with an elementary embedding from V_{λ+2} into V_{λ+2}"
+    type: paper
+    authors: ["Farmer Schlutzenberg"]
+    url: "https://arxiv.org/abs/2006.01077v4"
+    relationship: background
+    note: "Definition 2.7 and Proposition 3.5 inform the set-coded presentation of I₀."
+related_formalizations:
+  - id: "https://github.com/jamesyc/BusyBeaver/tree/9437ef874e1c76a0ec45330554e895157d56c604/ZF207"
+    relationship: builds-on
+    note: "Reuses the arithmetic interpretation and proof-calculus libraries. The literal 451-state run and independence argument are checked in this project."
+automation:
+  methods:
+    - method: agent
+      framework: "Codex"
+      models: ["GPT-6"]
+status:
+  scope: >-
+    Conditional 451-state independence with explicit relative consistency
+    and soundness assumptions. Transport of the conventional Woodin
+    consistency statement to the chosen Craig predicate is open.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+review:
+  status: "self-assessed"
+  notes: "Codex checked the statement against the literal table and documented the scope of the relative consistency premise."
+alignment:
+  namespace: "I0451"
+  statements:
+    - source: "Conditional independence of halting in ZFC plus I₀ and ZF plus I₀."
+      lean: "I0451.Standalone.exact451Claim"
+      module: "Solution"
+      status: "proved"

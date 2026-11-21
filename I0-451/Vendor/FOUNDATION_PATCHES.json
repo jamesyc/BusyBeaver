@@ -1,0 +1,21 @@
+{
+  "files": {
+    "Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Basic.lean": {
+      "original_sha256": "011d4e6c7d222628926ef327104ee6ef4dd683ed4a8447f8379a6752c61e78ec",
+      "reason": "Prove the listMax substitution generically before specializing it.",
+      "vendored_sha256": "c9920e45648ebd4548ba2ee1168abf0934661f49b1f915ff882d1971b4562a9a"
+    },
+    "Foundation/FirstOrder/Arithmetic/Bootstrapping/Syntax/Term/Functions.lean": {
+      "original_sha256": "d79a08c80f3c9f86cfcea1f2c60b1d193b0df9a902be8d6a008cfa7d5aac16b7",
+      "reason": "Prove the nth argument swap generically before specializing it.",
+      "vendored_sha256": "04afa51d52b48cd1deb41f06449218bb370e93d1ce1284c772a92f07fac31544"
+    },
+    "Foundation/FirstOrder/Arithmetic/HFS/Seq.lean": {
+      "original_sha256": "1c9e2008db2ab2055fe8ea161bf2069269e87d5b216f2dcdc30211e37e0cf6c4",
+      "reason": "Prove the zero argument specialization generically.",
+      "vendored_sha256": "6badc822962674d37ade4cc894e180489a001ee1b3551b4570097c6f0d65481d"
+    }
+  },
+  "foundation_revision": "b2d8f55e995dede4fdb809423bb4e83f55c14446",
+  "patch_source": "ZF207/Vendor in 9437ef874e1c76a0ec45330554e895157d56c604"
+}
