@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "I0451.Standalone.exact451Claim"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true,
+  "definition_names": [
+    "I0451.Standalone.berkeleyAxiom",
+    "I0451.Standalone.i0Axiom",
+    "I0451.Standalone.targetConsistency",
+    "I0451.Standalone.haltingArithmetic"
+  ]
+}

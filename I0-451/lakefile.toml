@@ -1,0 +1,42 @@
+name = "I0-451"
+version = "0.1.0"
+defaultTargets = ["Solution"]
+weakLeanArgs = ["-j1", "-M1536"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
+
+[[lean_lib]]
+name = "Foundation"
+srcDir = "Vendor"
+globs = ["Foundation.+"]
+
+[[lean_lib]]
+name = "I0451"
+srcDir = "ProofSources"
+globs = ["I0451.+"]
+
+[[lean_lib]]
+name = "Challenge"
+srcDir = "ProofSources"
+
+[[lean_lib]]
+name = "Solution"
+srcDir = "ProofSources"
+
+[[lean_lib]]
+name = "M6"
+srcDir = "ProofSources"
+globs = ["M6.Source.Cantor"]
+
+[[lean_lib]]
+name = "CKernel"
+srcDir = "ProofSources"
+globs = ["CKernel.Logic"]
+
+[[lean_lib]]
+name = "Internal"
+srcDir = "ProofSources"
+globs = ["Internal.Arith.+"]
