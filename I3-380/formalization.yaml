@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "I3-380 conditional independence from ZFC + I3"
+  description: >-
+    Lean formalization of the literal 380-state machine, its external
+    consistency equivalence, and conditional independence from ZFC + I3.
+  authors: ["James Chang"]
+  responsible_maintainers: ["James Chang"]
+  license: "MIT"
+
+classification:
+  arxiv: ["math.LO", "cs.LO"]
+  msc2020: ["03F30", "03D10"]
+
+sources:
+  - title: "Conditional ZFC + I3 independence for a 380-state Turing machine"
+    authors: ["James Chang"]
+    type: "paper"
+    location: "I3-380/paper/i3-380.pdf in this repository"
+    relationship: "formalizes"
+  - title: "On the Two Short Axiomatizations of Ortholattices"
+    authors: ["Wioletta Truszkowska", "Adam Grabowski"]
+    location: "https://mizar.uwb.edu.pl/JFM/Vol15/robbins2.html"
+    relationship: "background"
+
+related_formalizations:
+  - id: "https://github.com/FormalizedFormalLogic/Foundation/tree/c3eb37ae896dc8f1d239ba1511e74d9f25e9d158"
+    relationship: "builds-on"
+    note: "Arithmetic and incompleteness support from PA196's vendored snapshot."
+
+automation:
+  methods:
+    - method: "agent"
+      framework: "Codex"
+
+status:
+  scope: "Exact machine, external consistency equivalence, and the full conditional independence theorem."
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+review:
+  status: "unchecked"

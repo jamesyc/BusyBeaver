@@ -1,0 +1,27 @@
+name = "I3_380"
+version = "0.1.0"
+# Bound each Lean process while leaving room for the kernel-checked register bootstrap.
+weakLeanArgs = ["-j1", "-M4096"]
+defaultTargets = ["Solution"]
+
+[[require]]
+name = "Foundation"
+path = "vendor/Foundation"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
+
+[[lean_lib]]
+name = "I3_380"
+srcDir = "ProofSources"
+globs = ["I3_380.+"]
+
+[[lean_lib]]
+name = "Solution"
+srcDir = "ProofSources"
+
+[[lean_lib]]
+name = "Challenge"
+srcDir = "ProofSources"

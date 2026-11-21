@@ -1,0 +1,604 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,microtype,xurl}
+\usepackage[hidelinks,pdftitle={Conditional ZFC + I3 independence for a 380-state Turing machine},
+  pdfauthor={James Chang}]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\ZFC}{\mathrm{ZFC}}
+\newcommand{\PA}{\mathrm{PA}}
+\newcommand{\Ithree}{\mathrm{I}_3}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\Halt}{\operatorname{Halt}}
+\newcommand{\code}[1]{\texttt{\nolinkurl{#1}}}
+\newcommand{\A}{\mathcal A}
+\newcommand{\G}{\mathcal G}
+\newcommand{\D}{\mathsf D}
+\newcommand{\J}{\mathsf J}
+\newcommand{\E}{\mathsf E}
+\newcommand{\U}{\mathsf U}
+\newcommand{\I}{\mathsf I}
+\newcommand{\T}{\mathsf T}
+\newcommand{\Sstage}{\mathsf S}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\loc}{\operatorname{h}}
+\newcommand{\node}{\operatorname{node}}
+\setlength{\emergencystretch}{2em}
+
+\title{Conditional \texorpdfstring{$\ZFC+\Ithree$}{ZFC + I3} independence\texorpdfstring{\\}{ }for a 380-state Turing machine}
+\author{James Chang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalize the conditional independence of blank-tape halting for a
+literal two-symbol Turing machine with 380 working states. The machine
+searches for a ground equational derivation of a distinguished equality.
+Its nonhalting is equivalent to the syntactic consistency of
+$\ZFC+\Ithree$. Under consistency, $\ZFC+\Ithree$ cannot prove the
+machine's nonhalting. Under arithmetic $\Sigma_1$-soundness, it can
+prove neither halting nor nonhalting. The unprovability of nonhalting
+uses an internal consistency implication for a recursive arithmetic
+theory whose theorems include the arithmetic consequences of
+$\ZFC+\Ithree$. Lean verifies the theorem for the transition table
+printed in the appendix.
+\end{abstract}
+
+\section{Introduction}\label{sec:result}
+
+Let $M$ denote the binary Turing machine in Appendix~\ref{app:table},
+and write $T=\ZFC+\Ithree$. We use the first-order formulation of
+$\Ithree$ asserting that some $V_\lambda$, with $\lambda$ a nonzero
+limit ordinal, admits a nonidentity elementary self-embedding in the
+language of membership \cite{corazza}. The axiom uses a uniform
+satisfaction formula for the set structure $V_\lambda$. In a
+nonstandard model, the satisfaction assertion quantifies over the
+formula codes of that model. The proof calculus is ordinary
+first-order logic with equality, full Separation and Replacement, and
+Choice.
+
+Let $H_M$ be the closed set-theoretic sentence asserting the existence
+of a finite computation of $M$ from the blank configuration to its
+halt state. The finite history is coded by a function on an initial
+segment of the natural numbers. Let $\Halt(M)$ denote actual halting
+from the blank tape, with the number of steps taken in the standard
+natural numbers. For arithmetic $\Sigma_1$-soundness, the formal statement
+quantifies over a closed arithmetic $\Sigma_1$ formula $\theta$ and a
+closed set-theoretic sentence $\psi$ that represents it. Representation
+means that in every $T$-model, $\psi$ is true exactly when $\theta$ holds
+on the natural numbers of the model. Soundness requires that if
+$T\vdash\psi$ then $\mathbb N\models\theta$.
+
+\begin{theorem}\label{thm:main}
+For the machine $M$ the following hold.
+\begin{enumerate}
+\item $\neg\Halt(M)$ if and only if $\Con(T)$.
+\item If $T$ is consistent, then $T\nvdash\neg H_M$.
+\item If $T$ is arithmetically $\Sigma_1$-sound, then
+      $T\nvdash H_M$ and $T\nvdash\neg H_M$.
+\end{enumerate}
+In every model of $T$, the sentence $H_M$ holds exactly when there is a
+halting computation in the sense of that model.
+\end{theorem}
+
+The two steps in the proof of
+Theorem~\ref{thm:main} concern different notions of computation.
+The external equivalence uses standard finite rewrite sequences.
+The unprovability result requires an implication that holds in
+models of $T$ and therefore also applies to computations and proofs
+whose lengths are nonstandard. Sections~\ref{sec:machine} and
+\ref{sec:models} give the external reduction. Section~\ref{sec:internal}
+constructs the internal implication and applies the second
+incompleteness theorem.
+
+\section{The literal machine and the ground search}\label{sec:machine}
+
+The tape is doubly infinite, initially filled with zeros, and has
+alphabet $\{0,1\}$. State $0$ is the start state, $0$ through $379$ are
+working states, and $380$ is the separate halt label. A transition
+$(q,b,w,d,q')$ reads $b$ in state $q$, writes $w$, moves one cell in
+direction $d$, and enters $q'$. The only transition entering the halt
+label is $(260,1,1,\mathrm R,380)$. The exact 760 rows are kept in
+\code{data/zfc-i3-native-380.tm}, with SHA-256 digest
+\begin{quote}\small
+\nolinkurl{b9479f0a460656f93a13d0328a52dfdf410eaae7f1a8861f0b95141a0612c1cf}.
+\end{quote}
+
+The tape program implements a twelve-register program for one-step
+equational rewrites.
+A trial gives a proposed replacement word, a context position, the
+orientation of a selected equation, and a dictionary assigning a
+closed term to each of the equation's three available variables.
+A trie reads the selectors for the equation. The verifier checks the
+common prefix and suffix and the two instantiated sides of the
+equation. An accepted trial replaces the current word by the proposal.
+The machine halts when an accepted proposal is the code of $\J$.
+
+To describe the word coding, put
+$P(a,b)=\binom{a+b+1}{2}+b$. In the prefix token stream for a term,
+a token of arity $a$ and tag $b$, followed by a stream with code $r$,
+has code $P(a+1,P(b,r))$. The empty stream has code $0$.
+The one-token words $\D$ and $\J$ have arity zero and tags one and
+zero, so their word codes are $4$ and $1$, respectively.
+
+The scheduler enumerates numeric trial streams. When a stream is
+exhausted it starts a new one with incumbent $\D$. In the middle of a
+stream the remaining code decreases. For a prescribed input $n$, the
+termination argument for reaching that input uses the measure
+\[
+   (n-i)(n+1)+p,
+\]
+where $i\le n$ is the next input index and $p$ is the pending code.
+Reading the next trial decreases $p$. Starting another stream
+increases $i$ and loads a pending code bounded by the previous index.
+This gives a decreasing measure until the requested input is reached,
+unless a previous trial has already halted. Any finite valid rewrite
+chain can be encoded consecutively in such a stream. As each trial is
+read, the verifier consumes the corresponding fields and leaves the
+continuation for the next trial.
+
+\begin{lemma}[Exact search]\label{lem:search}
+Let $\mathcal E_{19}$ be the equations defined in
+Section~\ref{sec:equations}. Then
+\[
+  \Halt(M)\quad\Longleftrightarrow\quad
+  \mathcal E_{19}\vdash_{\mathrm{eq}}\D=\J,
+\]
+where the derivations use ground substitution instances and contextual
+replacement in either direction.
+\end{lemma}
+
+\begin{proof}
+The compiler verification connects the literal configuration at each
+control boundary to the register program that executes a trial. It
+checks the physical decoder against a reference control tree and
+checks the reference register program against the equation trie. The
+literal blank run reaches its loader exit in 39,753 steps, and the
+startup simulation connects that exit to the initial search store.
+The equality of equation theories for the concrete trie rows and
+$\mathcal E_{19}$ is proved by explicit equational derivations.
+
+For soundness, the incumbent remains equationally equal to $\D$.
+An unsuccessful trial contributes no new equation, and an accepted
+trial checks one contextual rewrite of a ground substitution instance.
+At a halt the accepted proposal is $\J$. For completeness, a derivation
+of $\D=\J$ yields a finite chain of contextual rewrites. Encode that
+chain as above and apply the scheduler's reachability argument. These
+two directions use the checked control correspondence all the way
+back to the literal blank tape.
+\end{proof}
+
+\section{The equational theory}\label{sec:equations}
+
+Use constants $\D,\J,\U,\E,\I,\T,\Sstage$ and operations for Boolean
+complement $\bar x$, converse $x^\smile$, relational composition
+$x;y$, choice $\ch(x)$, a unary operation $\loc(x)$ and a ternary
+constructor $\node(x,y,z)$. The machine uses NAND as a primitive,
+and the term $x\wedge y$ abbreviates the complement of $x\mathbin{\mathrm{NAND}}y$.
+In the relational interpretation $(x;y)(u,w)$ means
+$\exists v\,(x(u,v)\land y(v,w))$.
+
+The expanded presentation $\mathcal E_{21}$ has the two Meredith
+equations \cite{meredith,robbins}
+\begin{align*}
+ \overline{(\bar a\wedge b)}\wedge a &= a,\\
+ \overline{(\bar a\wedge b)}\wedge(c\wedge b)
+   &= b\wedge(c\wedge a),
+\end{align*}
+and the two defining equations
+\[
+ \T=\overline{\E^\smile;\bar\E},
+ \qquad
+ \Sstage=\ch(\T)^\smile;\ch(\T).
+\]
+Here $\T$ represents inclusion, and $\Sstage$ represents the diagonal
+on hierarchy stages in the model built from a rank embedding.
+The remaining equations are as follows. Consecutive products are
+associated to the left where parentheses are omitted.
+\begin{align*}
+ a;(b;c)&=(a;b);c, &
+ a;\I&=a,\\
+ (a^\smile)^\smile&=a, &
+ (a;b)\wedge(a;(c\wedge b))&=a;(c\wedge b),\\
+ (a\wedge b)^\smile&=a^\smile\wedge b^\smile, &
+ (a^\smile;\overline{a;b})\wedge b&=\bar\U,\\
+ \T\wedge\T^\smile&=\I, &
+ \ch(a)\wedge a&=\ch(a),\\
+ (\ch(a)^\smile;\ch(a))\wedge\bar\I&=\bar\U, &
+ \ch(a);\U&=a;\U,\\
+ \D&=\I\wedge(\J;\U), &
+ \loc(\I)&=\E;\D.
+\end{align*}
+Writing $r=\E^\smile;\ch(a)$ as a term abbreviation, the other five
+equations are
+\begin{gather*}
+ (\overline{r;\bar\E}\wedge\overline{\bar r;\E});\U=\U,\\
+ \Sstage;\E^\smile=\Sstage;\E^\smile;\Sstage;\T^\smile,\\
+ \D=\I\wedge(\E;(\Sstage\wedge\D);\U),\\
+ \loc(\node(a,b,c))
+   =(\loc(a);\loc(b)^\smile)
+        \wedge(\loc(b)\mathbin{\mathrm{NAND}}\loc(c)),\\
+ (\J^\smile;\loc(a);\J)\wedge\overline{\loc(a)}=\bar\U.
+\end{gather*}
+The equations are universally closed in the variables displayed.
+
+To obtain $\mathcal E_{19}$, substitute the defining terms for $\T$
+and $\Sstage$, remove the definition equations, and cancel common
+leading complements on both sides of a remaining equation. The
+Meredith equations stay in the presentation and give complement
+involution. Thus each cancellation is reversible. Every model of
+$\mathcal E_{19}$ admits the corresponding expansion to a model of
+$\mathcal E_{21}$, and restriction gives the converse. In particular,
+the elimination preserves ground derivability of $\D=\J$. The
+physical trie uses equation instances from a fixed presentation with
+reassociated products, side reversals, and variable renamings.
+The Lean equivalence for those rows also checks the few replacements
+by equationally equivalent rows.
+
+\section{Equational underivability and consistency}\label{sec:models}
+
+\begin{lemma}\label{lem:equational}
+$\mathcal E_{19}\nvdash_{\mathrm{eq}}\D=\J$ if and only if $T$ is
+syntactically consistent.
+\end{lemma}
+
+\begin{proof}
+First suppose that $\D=\J$ is underivable. Quotient the ground term
+algebra by equational derivability and use the expansion to
+$\mathcal E_{21}$. The two constants remain distinct in this quotient.
+In the Boolean algebra of subidentities below $\I$, choose an
+ultrafilter containing the domain support of a nonzero separating
+piece of $\D$ and $\J$. More explicitly, a separating piece is one of
+$\D\wedge\bar\J$ and $\J\wedge\bar\D$, and the support of $r$ is
+$\I\wedge(r;\U)$. A countable enumeration of the ground classes
+allows the filter to be constructed by successive nonzero meets.
+The representation takes equivalence classes of local functional
+elements as points, where agreement on a support in the ultrafilter
+identifies two local functions. Relational application to those
+points gives a square in which the images of $\D$ and $\J$ differ.
+
+Restrict to the points that have singleton names in the representation.
+The equations for choice, image and the stage operations give the
+needed closure on these points. The pairing construction supplies
+projections for translating arbitrary first-order formulas with
+parameters. The resulting interpretation of $\E$ satisfies
+Extensionality, Empty Set, Pairing, Union, Power Set and Choice.
+The definable relation and image constructions give the full
+Separation and Replacement schemas.
+
+The interpretation of $\D$ is an active subidentity, and the
+interpretation of $\J$ is a function on its active points. Its
+difference from $\D$ gives a moved point. On the active domain, the
+local constructor equations allow membership formulas to be expressed
+by the relations $\loc(a)$. The preservation equation for $\J$ then
+gives local elementarity. The stage law makes the rank analysis
+possible before all the set axioms have been recovered. In particular,
+the rank argument supplies Foundation, and the moved-point argument
+supplies an active inductive set and an active $\omega$.
+
+Choose a critical point and form its critical sequence by recursion
+on that internal $\omega$. If $\kappa_n$ denotes the resulting
+sequence of heights, the limit is $\lambda=\sup_{n\in\omega}\kappa_n$.
+The corresponding increasing stages have union $V_\lambda$.
+Replacement constructs the graph of the restriction of $\J$ to this
+union, and the next-stage property ensures that its range is in the
+union. A coded assignment of parameters from the union is bounded
+in one earlier stage. Satisfaction on the union is obtained by set
+recursion on formula codes. Transport of satisfaction across a
+successive pair of stages gives preservation on the union. The
+critical point is moved, so the restriction witnesses the literal
+$\Ithree$ axiom. This produces a model of $T$, and soundness implies
+$\Con(T)$.
+
+Conversely, use completeness to obtain a countable model of $T$.
+The construction expands it by a generic global order such that
+expanded formulas have Separation and Replacement and definable
+nonempty successor classes have least elements. The membership
+relation remains the one in the original model. Take the algebra of
+definable binary relations with parameters in this expanded
+structure. Interpret $\E$ as membership, $\I$ as the diagonal and
+$\U$ as the universal relation. Interpret $\D$ as the diagonal on the
+rank of the given embedding and $\J$ as the graph of that embedding.
+For choice use least eligible successors, with a stage selector on
+the inclusion relation. Interpret the local operations by evaluation
+of finite ternary trees on the rank, starting from membership
+restricted to that rank. Elementarity gives the local preservation
+equation. These interpretations satisfy $\mathcal E_{21}$ and
+separate $\D$ from $\J$. Equational soundness gives the desired
+underivability.
+\end{proof}
+
+Combining Lemmas~\ref{lem:search} and~\ref{lem:equational} gives the
+first assertion of Theorem~\ref{thm:main}.
+
+\section{The internal consistency implication}\label{sec:internal}
+
+For an arithmetic sentence $\varphi$, write $\varphi^{\mathrm{set}}$
+for its reading on the natural numbers of a set model. We construct
+a recursive arithmetic theory $\A$ with the properties
+\begin{enumerate}
+\item $\A$ extends $\mathrm I\Sigma_1$, and $\Con(T)$ implies $\Con(\A)$.
+\item If $T\vdash\varphi^{\mathrm{set}}$, then $\A\vdash\varphi$.
+\item $T\vdash\neg H_M\to\Con(\A)^{\mathrm{set}}$.
+\end{enumerate}
+Here $\Con(\A)$ is the consistency sentence for the standard
+arithmetized provability predicate of the specified recursive
+presentation.
+
+\subsection{A finite theory of separating algebras}
+
+Expand the language of $\mathcal E_{21}$ by a predicate for a
+subidentity ultrafilter. Add the ultrafilter axioms and the assertion
+that it contains the support of a separating piece of $\D$ and $\J$.
+Convert this theory to a finite relational theory $\G$ by replacing
+function symbols by their graphs and adding totality and uniqueness.
+The relational form allows term and assignment operations in the
+coded proof calculus to use variable terms.
+
+A model of $\G$ gives a named square by the representation in the
+first half of Lemma~\ref{lem:equational}. Reading the natural numbers
+in the resulting set model interprets arithmetic in $\G$. Denote the
+translation of an arithmetic sentence by $\varphi^\dagger$. Set-theoretic
+soundness and first-order completeness give
+\[
+  T\vdash\varphi^{\mathrm{set}}
+  \quad\Longrightarrow\quad
+  \G\vdash\varphi^\dagger .
+\]
+The proof of this implication checks the translation against the
+operations on the natural numbers of the represented model.
+
+\subsection{A recursive arithmetic presentation}
+
+Use the sentences $\varphi$ for which $\G\vdash\varphi^\dagger$.
+The recursive presentation pads $\varphi$ by a conjunction of
+tautologies indexed by a code $p$ of a $\G$-proof of
+$\varphi^\dagger$. In the padded sentence, the candidate witness is
+bounded by its code, so axiom recognition checks a bounded witness
+for the translation and proof relation. The resulting presentation has
+a $\Delta_1$ axiom predicate in the coding used for incompleteness.
+A padded axiom proves its unpadded conjunct. In particular, $\A$
+absorbs arithmetic consequences of $T$. Since $T$ proves the readings
+of PA theorems on its natural numbers, $\A$ extends PA. If $T$ is
+consistent, the separating term algebra gives a model of $\G$.
+Its interpreted natural numbers satisfy every admitted padded axiom,
+which gives consistency of $\A$.
+
+\subsection{Internal nonhalting and coded proof soundness}
+
+Fix any model $N$ of $T$ in which $H_M$ is false. Work with its own
+natural numbers. Codes for ground terms and finite rewrite sequences
+are arithmetic in this model. The internal replay theorem proves
+that collapse of the two ground classes $\D$ and $\J$ would give a
+halting computation in the model. The proof uses arithmetic induction
+to replay a coded sequence and to reach the corresponding scheduler
+input. Its induction applies to every internally finite code.
+The two classes are therefore distinct.
+
+Take least representatives of the ground classes and construct the
+separating filter by a coded descending sequence. The resulting
+domain and relation tables are sets of $N$. They give a set-coded
+model of $\G$ in $N$. Set recursion in $N$ supplies a truth table
+on its arithmetic formula codes for this structure. Induction on
+coded sequent derivations proves soundness with respect to that
+table. In particular, there is no coded $\G$-refutation in $N$.
+The verification treats the truth table as a set parameter in the
+induction argument.
+
+The translation of arithmetic proofs to the relational language is
+also checked on internal codes. An admitted $\A$ axiom comes with a
+$\G$-proof of its translated arithmetic conjunct. The checked
+translation of derivation rules therefore takes an $\A$-refutation
+in $N$ to a $\G$-refutation in $N$. This proves
+$\Con(\A)^{\mathrm{set}}$ in every model of $T$ satisfying
+$\neg H_M$. Completeness for the source calculus proves the
+internal implication.
+
+\begin{proof}[Proof of the remaining assertions of Theorem~\ref{thm:main}]
+Suppose $T$ is consistent and $T\vdash\neg H_M$. The internal
+implication gives $T\vdash\Con(\A)^{\mathrm{set}}$. Absorption yields
+$\A\vdash\Con(\A)$. Since $\A$ is a consistent recursive extension of
+$\mathrm I\Sigma_1$, its standard provability predicate satisfies the
+derivability conditions used in G\"odel's second incompleteness
+theorem \cite{goedel}. This is a contradiction.
+
+The finite run predicate of the literal machine has a closed
+arithmetic $\Sigma_1$ representation. In $\mathbb N$ it expresses
+actual halting, and its reading on the natural numbers in each
+$T$-model agrees with $H_M$. If $T$ is arithmetically
+$\Sigma_1$-sound, it is consistent, so the external equivalence gives
+actual nonhalting. A $T$-proof of $H_M$ would contradict soundness.
+The preceding argument excludes a proof of $\neg H_M$.
+\end{proof}
+
+\section{Formal verification}\label{sec:lean}
+
+The Lean project contains the exact table, a standalone Challenge
+statement and a Solution. The Solution uses the closed sentence
+\code{PalomarI3380.Logic.haltingSentence}. The principal comparison,
+\code{PalomarI3380.exactClaim}, includes the representation of halting
+in each model and the two conditional conclusions. The external
+equivalence with consistency is the separate Solution theorem
+\code{PalomarI3380.literal_nonhalting_iff_consistency}.
+
+The link from the tape machine to the ground calculus is
+\code{Compiler.Source.exact_machine_halts_iff_derives}.
+The model-valued converse used in the internal argument is
+\code{Calibration.TermWords.model_halts_of_distinction_failure}.
+Soundness of coded graph proofs and the internal consistency
+implication are verified in \code{Calibration/InternalGraphSoundness.lean}
+and \code{Calibration/InternalConsistency.lean}.
+
+The project uses Foundation \cite{foundation} for arithmetization
+and incompleteness. The build and axiom audit passed using Lean
+4.37.0-rc1. Comparator accepted the full principal declaration in
+both Lean and the bundled NanoDa checker in a local macOS run.
+The declaration depends on \code{propext}, \code{Classical.choice}
+and \code{Quot.sound}. The reproduction instructions give the
+exact commands. The paper and Lean development were
+prepared with assistance from Codex.
+
+\begingroup
+\small
+\begin{thebibliography}{9}
+\setlength{\itemsep}{0pt}
+\bibitem{corazza}
+P. Corazza,
+The gap between $\mathrm I_3$ and the wholeness axiom,
+\emph{Fundamenta Mathematicae} \textbf{179} (2003), 43--60.
+\href{https://doi.org/10.4064/fm179-1-4}{doi:10.4064/fm179-1-4}.
+
+\bibitem{meredith}
+C. A. Meredith and A. N. Prior,
+Equational logic,
+\emph{Notre Dame Journal of Formal Logic} \textbf{9} (1968), 212--226.
+\href{https://doi.org/10.1305/ndjfl/1093893457}{doi:10.1305/ndjfl/1093893457}.
+
+\bibitem{robbins}
+W. Truszkowska and A. Grabowski,
+On the two short axiomatizations of ortholattices,
+\emph{Journal of Formalized Mathematics} \textbf{15} (2003),
+Mizar article ROBBINS2.
+\url{https://mizar.uwb.edu.pl/JFM/Vol15/robbins2.html}.
+
+\bibitem{goedel}
+K. G\"odel,
+\"Uber formal unentscheidbare S\"atze der Principia Mathematica
+und verwandter Systeme I,
+\emph{Monatshefte f\"ur Mathematik und Physik} \textbf{38} (1931),
+173--198.
+\href{https://doi.org/10.1007/BF01700692}{doi:10.1007/BF01700692}.
+
+\bibitem{foundation}
+S. Saitou and M. Noguchi,
+\emph{Formalized Formal Logic}, Lean library.
+\url{https://github.com/FormalizedFormalLogic/Foundation}.
+\end{thebibliography}
+\endgroup
+
+\clearpage
+\appendix
+\section{The transition table}\label{app:table}
+
+In each group the two entries are for reading $0$ and $1$.
+An entry of the form \texttt{1R023} writes $1$, moves right and
+enters state $23$. State $0$ starts the blank run and $380$ halts it.
+
+\begingroup
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{longtable}{@{}rll@{\qquad}rll@{\qquad}rll@{\qquad}rll@{}}
+\toprule
+$q$ & $0$ & $1$ & $q$ & $0$ & $1$ & $q$ & $0$ & $1$ & $q$ & $0$ & $1$\\
+\midrule
+\endfirsthead
+\toprule
+$q$ & $0$ & $1$ & $q$ & $0$ & $1$ & $q$ & $0$ & $1$ & $q$ & $0$ & $1$\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+0 & \texttt{1R001} & \texttt{0L002} & 95 & \texttt{1L062} & \texttt{1R080} & 190 & \texttt{0R176} & \texttt{1R183} & 285 & \texttt{0R175} & \texttt{1R231} \\
+1 & \texttt{0R002} & \texttt{0R001} & 96 & \texttt{0R042} & \texttt{1R049} & 191 & \texttt{0R171} & \texttt{1R207} & 286 & \texttt{0R014} & \texttt{1R296} \\
+2 & \texttt{1L003} & \texttt{0R004} & 97 & \texttt{0R042} & \texttt{1R051} & 192 & \texttt{0R156} & \texttt{1R173} & 287 & \texttt{0R297} & \texttt{1R298} \\
+3 & \texttt{0L004} & \texttt{0L005} & 98 & \texttt{0R109} & \texttt{1R110} & 193 & \texttt{0R081} & \texttt{1R208} & 288 & \texttt{0R154} & \texttt{1R249} \\
+4 & \texttt{1L000} & \texttt{0L001} & 99 & \texttt{0R111} & \texttt{0L047} & 194 & \texttt{0R209} & \texttt{1R210} & 289 & \texttt{0R299} & \texttt{1R300} \\
+5 & \texttt{0L006} & \texttt{1R007} & 100 & \texttt{0R060} & \texttt{1R028} & 195 & \texttt{0R057} & \texttt{1R165} & 290 & \texttt{0R081} & \texttt{1R301} \\
+6 & \texttt{0L005} & \texttt{0L005} & 101 & \texttt{0R096} & \texttt{0L047} & 196 & \texttt{0R084} & \texttt{1R211} & 291 & \texttt{0R302} & \texttt{1R303} \\
+7 & \texttt{0R008} & \texttt{1R009} & 102 & \texttt{0R112} & \texttt{0L047} & 197 & \texttt{0R022} & \texttt{1R212} & 292 & \texttt{0R081} & \texttt{1R304} \\
+8 & \texttt{0R010} & \texttt{1R011} & 103 & \texttt{0R113} & \texttt{1R114} & 198 & \texttt{0R213} & \texttt{1R145} & 293 & \texttt{0R131} & \texttt{1R187} \\
+9 & \texttt{0R012} & \texttt{1R013} & 104 & \texttt{0L115} & \texttt{1L038} & 199 & \texttt{0R214} & \texttt{1R203} & 294 & \texttt{0R305} & \texttt{1R306} \\
+10 & \texttt{0L012} & \texttt{1L014} & 105 & \texttt{0R116} & \texttt{0R090} & 200 & \texttt{0R215} & \texttt{1R142} & 295 & \texttt{0R307} & \texttt{1R308} \\
+11 & \texttt{0R015} & \texttt{1R016} & 106 & \texttt{0L117} & \texttt{1L091} & 201 & \texttt{0R216} & \texttt{1R215} & 296 & \texttt{0R309} & \texttt{1R310} \\
+12 & \texttt{0R017} & \texttt{1R018} & 107 & \texttt{0L042} & \texttt{1R116} & 202 & \texttt{0R217} & \texttt{1R123} & 297 & \texttt{0R081} & \texttt{1R311} \\
+13 & \texttt{0R019} & \texttt{1R020} & 108 & \texttt{1L118} & \texttt{0L062} & 203 & \texttt{0R218} & \texttt{1R219} & 298 & \texttt{0R275} & \texttt{1R312} \\
+14 & \texttt{0R021} & \texttt{1R022} & 109 & \texttt{0R068} & \texttt{1R119} & 204 & \texttt{0R209} & \texttt{1R215} & 299 & \texttt{0R081} & \texttt{1R313} \\
+15 & \texttt{0R023} & \texttt{1R024} & 110 & \texttt{0R029} & \texttt{1R085} & 205 & \texttt{0R220} & \texttt{1R221} & 300 & \texttt{0R314} & \texttt{1R315} \\
+16 & \texttt{0R025} & \texttt{1R026} & 111 & \texttt{0R042} & \texttt{1R120} & 206 & \texttt{0R222} & \texttt{1R171} & 301 & \texttt{0R316} & \texttt{0L036} \\
+17 & \texttt{0R027} & \texttt{1R028} & 112 & \texttt{0R121} & \texttt{1R121} & 207 & \texttt{0R185} & \texttt{1R128} & 302 & \texttt{0R317} & \texttt{1R192} \\
+18 & \texttt{0R029} & \texttt{1R030} & 113 & \texttt{0L122} & \texttt{1L123} & 208 & \texttt{0R223} & \texttt{0L036} & 303 & \texttt{0R317} & \texttt{1R318} \\
+19 & \texttt{0L031} & \texttt{1R032} & 114 & \texttt{0R124} & \texttt{1R125} & 209 & \texttt{0R207} & \texttt{1R224} & 304 & \texttt{0R122} & \texttt{0L036} \\
+20 & \texttt{0R033} & \texttt{1R034} & 115 & \texttt{0L126} & \texttt{1L038} & 210 & \texttt{0R072} & \texttt{1R225} & 305 & \texttt{0R081} & \texttt{1R319} \\
+21 & \texttt{0R035} & \texttt{0L036} & 116 & \texttt{0L059} & \texttt{1R116} & 211 & \texttt{0R137} & \texttt{1R226} & 306 & \texttt{0R246} & \texttt{1R320} \\
+22 & \texttt{0R037} & \texttt{0L038} & 117 & \texttt{0L117} & \texttt{0L036} & 212 & \texttt{0R035} & \texttt{0L038} & 307 & \texttt{0R321} & \texttt{1R322} \\
+23 & \texttt{0R039} & \texttt{1R040} & 118 & \texttt{0R108} & \texttt{1L118} & 213 & \texttt{0R048} & \texttt{1R227} & 308 & \texttt{0R323} & \texttt{1R141} \\
+24 & \texttt{0R029} & \texttt{1R041} & 119 & \texttt{0R127} & \texttt{0L047} & 214 & \texttt{0R175} & \texttt{1R228} & 309 & \texttt{0R035} & \texttt{1R324} \\
+25 & \texttt{0R042} & \texttt{1R043} & 120 & \texttt{0R042} & \texttt{1R066} & 215 & \texttt{0R198} & \texttt{1R229} & 310 & \texttt{0R147} & \texttt{1R325} \\
+26 & \texttt{0R044} & \texttt{1R045} & 121 & \texttt{0R098} & \texttt{1R128} & 216 & \texttt{0R154} & \texttt{1R230} & 311 & \texttt{0R326} & \texttt{0L036} \\
+27 & \texttt{0R042} & \texttt{1R039} & 122 & \texttt{0R129} & \texttt{1R130} & 217 & \texttt{0R185} & \texttt{1R185} & 312 & \texttt{0R249} & \texttt{1R183} \\
+28 & \texttt{0R046} & \texttt{0L047} & 123 & \texttt{0R131} & \texttt{1R132} & 218 & \texttt{0R175} & \texttt{1R010} & 313 & \texttt{0R327} & \texttt{0L036} \\
+29 & \texttt{0R042} & \texttt{1R048} & 124 & \texttt{0R081} & \texttt{0L038} & 219 & \texttt{0R231} & \texttt{1R232} & 314 & \texttt{0L328} & \texttt{1L278} \\
+30 & \texttt{0R049} & \texttt{0L047} & 125 & \texttt{0R012} & \texttt{1R133} & 220 & \texttt{0R183} & \texttt{1R204} & 315 & \texttt{0R154} & \texttt{1R329} \\
+31 & \texttt{0R050} & \texttt{1R018} & 126 & \texttt{0R134} & \texttt{1L038} & 221 & \texttt{0R233} & \texttt{1R234} & 316 & \texttt{0R253} & \texttt{1R330} \\
+32 & \texttt{0R051} & \texttt{0L047} & 127 & \texttt{0R066} & \texttt{1R135} & 222 & \texttt{0R187} & \texttt{1R142} & 317 & \texttt{0R154} & \texttt{1R314} \\
+33 & \texttt{0R052} & \texttt{1R019} & 128 & \texttt{0R136} & \texttt{1R137} & 223 & \texttt{0R235} & \texttt{1R236} & 318 & \texttt{0R323} & \texttt{1R302} \\
+34 & \texttt{0R053} & \texttt{1R054} & 129 & \texttt{0R081} & \texttt{1R138} & 224 & \texttt{0R170} & \texttt{1R128} & 319 & \texttt{0R331} & \texttt{0L036} \\
+35 & \texttt{0R042} & \texttt{1R055} & 130 & \texttt{0R139} & \texttt{1R140} & 225 & \texttt{0R237} & \texttt{1R238} & 320 & \texttt{0R332} & \texttt{1R333} \\
+36 & \texttt{0L056} & \texttt{0L036} & 131 & \texttt{0R141} & \texttt{1R142} & 226 & \texttt{0R239} & \texttt{1R240} & 321 & \texttt{0R207} & \texttt{1R334} \\
+37 & \texttt{0R042} & \texttt{1R057} & 132 & \texttt{0R143} & \texttt{1R144} & 227 & \texttt{0R174} & \texttt{0L047} & 322 & \texttt{0R207} & \texttt{1R192} \\
+38 & \texttt{0L058} & \texttt{1L038} & 133 & \texttt{0R145} & \texttt{1R146} & 228 & \texttt{0R212} & \texttt{1R231} & 323 & \texttt{0R307} & \texttt{1R142} \\
+39 & \texttt{0R042} & \texttt{1R059} & 134 & \texttt{0R134} & \texttt{1R007} & 229 & \texttt{0R214} & \texttt{1R199} & 324 & \texttt{0R284} & \texttt{0L047} \\
+40 & \texttt{0R060} & \texttt{0L047} & 135 & \texttt{0R021} & \texttt{1R147} & 230 & \texttt{0R154} & \texttt{1R241} & 325 & \texttt{0R335} & \texttt{1R128} \\
+41 & \texttt{0R025} & \texttt{0L047} & 136 & \texttt{0R148} & \texttt{1R149} & 231 & \texttt{0L135} & \texttt{1R174} & 326 & \texttt{0R336} & \texttt{1R189} \\
+42 & \texttt{1R061} & \texttt{0L062} & 137 & \texttt{0R150} & \texttt{1R151} & 232 & \texttt{0R242} & \texttt{1R243} & 327 & \texttt{0R337} & \texttt{1R338} \\
+43 & \texttt{1R063} & \texttt{1R043} & 138 & \texttt{0R152} & \texttt{0L036} & 233 & \texttt{0R222} & \texttt{1R244} & 328 & \texttt{0R144} & \texttt{1R339} \\
+44 & \texttt{0R064} & \texttt{0L038} & 139 & \texttt{0R153} & \texttt{1R142} & 234 & \texttt{0R204} & \texttt{1R183} & 329 & \texttt{0R340} & \texttt{1R341} \\
+45 & \texttt{0R065} & \texttt{1R065} & 140 & \texttt{0R154} & \texttt{1R155} & 235 & \texttt{0R081} & \texttt{1R245} & 330 & \texttt{0R154} & \texttt{1R342} \\
+46 & \texttt{0R066} & \texttt{1R067} & 141 & \texttt{0R156} & \texttt{1R157} & 236 & \texttt{0R246} & \texttt{1R247} & 331 & \texttt{0R343} & \texttt{1R344} \\
+47 & \texttt{0L047} & \texttt{0L038} & 142 & \texttt{0R158} & \texttt{1R159} & 237 & \texttt{0R081} & \texttt{1R248} & 332 & \texttt{0R081} & \texttt{1R345} \\
+48 & \texttt{0R042} & \texttt{1R068} & 143 & \texttt{0L160} & \texttt{1L161} & 238 & \texttt{0R249} & \texttt{1R250} & 333 & \texttt{0R217} & \texttt{1R346} \\
+49 & \texttt{0R042} & \texttt{1R025} & 144 & \texttt{0R156} & \texttt{1R156} & 239 & \texttt{0R048} & \texttt{0L038} & 334 & \texttt{0R288} & \texttt{1R192} \\
+50 & \texttt{0R055} & \texttt{0L036} & 145 & \texttt{0L031} & \texttt{1R162} & 240 & \texttt{0R037} & \texttt{1R251} & 335 & \texttt{0R156} & \texttt{1R285} \\
+51 & \texttt{0R042} & \texttt{1R069} & 146 & \texttt{0R163} & \texttt{1R164} & 241 & \texttt{0R187} & \texttt{1R183} & 336 & \texttt{0R081} & \texttt{1R347} \\
+52 & \texttt{0R037} & \texttt{1R070} & 147 & \texttt{0R029} & \texttt{1R165} & 242 & \texttt{0R082} & \texttt{1R252} & 337 & \texttt{0R081} & \texttt{1R348} \\
+53 & \texttt{0R064} & \texttt{1R071} & 148 & \texttt{0R057} & \texttt{1R028} & 243 & \texttt{0R074} & \texttt{0L038} & 338 & \texttt{0R187} & \texttt{1R349} \\
+54 & \texttt{0R072} & \texttt{1R073} & 149 & \texttt{0L098} & \texttt{1R071} & 244 & \texttt{0R253} & \texttt{1R254} & 339 & \texttt{0R350} & \texttt{1R113} \\
+55 & \texttt{0R042} & \texttt{1R074} & 150 & \texttt{0R035} & \texttt{1R166} & 245 & \texttt{0R255} & \texttt{0L036} & 340 & \texttt{0R217} & \texttt{1R183} \\
+56 & \texttt{1L038} & \texttt{0L056} & 151 & \texttt{0R055} & \texttt{1R167} & 246 & \texttt{0R154} & \texttt{1R072} & 341 & \texttt{0R351} & \texttt{1R352} \\
+57 & \texttt{0R042} & \texttt{1R064} & 152 & \texttt{0R154} & \texttt{1R168} & 247 & \texttt{0R256} & \texttt{1R257} & 342 & \texttt{0R321} & \texttt{1R353} \\
+58 & \texttt{0L075} & \texttt{1L038} & 153 & \texttt{0R156} & \texttt{1R169} & 248 & \texttt{0R258} & \texttt{0L036} & 343 & \texttt{0R081} & \texttt{1R354} \\
+59 & \texttt{1R076} & \texttt{1L077} & 154 & \texttt{0R170} & \texttt{1R156} & 249 & \texttt{0R185} & \texttt{1R170} & 344 & \texttt{0R141} & \texttt{1R355} \\
+60 & \texttt{0R049} & \texttt{1R066} & 155 & \texttt{0R171} & \texttt{1R153} & 250 & \texttt{0R072} & \texttt{1R259} & 345 & \texttt{0R356} & \texttt{0L036} \\
+61 & \texttt{0R061} & \texttt{1R078} & 156 & \texttt{0R172} & \texttt{1R128} & 251 & \texttt{0R260} & \texttt{1R261} & 346 & \texttt{0R357} & \texttt{1R358} \\
+62 & \texttt{0L079} & \texttt{1L062} & 157 & \texttt{0R172} & \texttt{1R173} & 252 & \texttt{0R064} & \texttt{1R262} & 347 & \texttt{0R202} & \texttt{0L036} \\
+63 & \texttt{0R063} & \texttt{1R080} & 158 & \texttt{0R057} & \texttt{1R174} & 253 & \texttt{0R209} & \texttt{1R207} & 348 & \texttt{0R359} & \texttt{0L036} \\
+64 & \texttt{0R042} & \texttt{1R081} & 159 & \texttt{0R149} & \texttt{1R175} & 254 & \texttt{0L233} & \texttt{1L263} & 349 & \texttt{0R207} & \texttt{1R360} \\
+65 & \texttt{0R082} & \texttt{1R082} & 160 & \texttt{0R176} & \texttt{1R177} & 255 & \texttt{0R264} & \texttt{1R265} & 350 & \texttt{0R288} & \texttt{1R361} \\
+66 & \texttt{0R042} & \texttt{1R083} & 161 & \texttt{0R178} & \texttt{1R179} & 256 & \texttt{0R081} & \texttt{1R266} & 351 & \texttt{0R314} & \texttt{1R207} \\
+67 & \texttt{0R050} & \texttt{1R084} & 162 & \texttt{0R083} & \texttt{0L047} & 257 & \texttt{0R187} & \texttt{1R267} & 352 & \texttt{0R217} & \texttt{1R143} \\
+68 & \texttt{0R042} & \texttt{1R037} & 163 & \texttt{0R072} & \texttt{1R180} & 258 & \texttt{0R268} & \texttt{1R269} & 353 & \texttt{0R171} & \texttt{1R362} \\
+69 & \texttt{0R042} & \texttt{1R082} & 164 & \texttt{0R124} & \texttt{1R181} & 259 & \texttt{0R270} & \texttt{1R271} & 354 & \texttt{0R205} & \texttt{0L036} \\
+70 & \texttt{0R085} & \texttt{0L047} & 165 & \texttt{0R172} & \texttt{0L047} & 260 & \texttt{0R272} & \texttt{1R380} & 355 & \texttt{0R246} & \texttt{1R363} \\
+71 & \texttt{0R069} & \texttt{0L047} & 166 & \texttt{0R182} & \texttt{0L047} & 261 & \texttt{0R065} & \texttt{1R273} & 356 & \texttt{0R241} & \texttt{1R160} \\
+72 & \texttt{0R012} & \texttt{1R086} & 167 & \texttt{0R022} & \texttt{0L047} & 262 & \texttt{0R274} & \texttt{0L047} & 357 & \texttt{0R254} & \texttt{1R340} \\
+73 & \texttt{0R087} & \texttt{1R088} & 168 & \texttt{0R183} & \texttt{1R184} & 263 & \texttt{0R275} & \texttt{1R276} & 358 & \texttt{0R224} & \texttt{1R364} \\
+74 & \texttt{0R042} & \texttt{1R029} & 169 & \texttt{0R172} & \texttt{1R170} & 264 & \texttt{0R081} & \texttt{1R277} & 359 & \texttt{0R171} & \texttt{1R365} \\
+75 & \texttt{0L089} & \texttt{1L038} & 170 & \texttt{0R172} & \texttt{1R185} & 265 & \texttt{0R278} & \texttt{1R279} & 360 & \texttt{0R230} & \texttt{1R143} \\
+76 & \texttt{0R076} & \texttt{0R090} & 171 & \texttt{0R186} & \texttt{1R187} & 266 & \texttt{0R280} & \texttt{0L036} & 361 & \texttt{0R366} & \texttt{1R366} \\
+77 & \texttt{0L091} & \texttt{1R092} & 172 & \texttt{0R042} & \texttt{1R111} & 267 & \texttt{0R072} & \texttt{1R281} & 362 & \texttt{0R192} & \texttt{1R367} \\
+78 & \texttt{0R093} & \texttt{1R078} & 173 & \texttt{0R172} & \texttt{1R169} & 268 & \texttt{0R081} & \texttt{1R282} & 363 & \texttt{0R368} & \texttt{1R369} \\
+79 & \texttt{0L094} & \texttt{1L062} & 174 & \texttt{0R120} & \texttt{1L100} & 269 & \texttt{0R171} & \texttt{1R206} & 364 & \texttt{0R340} & \texttt{1R370} \\
+80 & \texttt{0R095} & \texttt{1R080} & 175 & \texttt{0R074} & \texttt{1L098} & 270 & \texttt{0R081} & \texttt{1R283} & 365 & \texttt{0R191} & \texttt{1R186} \\
+81 & \texttt{0R042} & \texttt{1R027} & 176 & \texttt{0R154} & \texttt{1R188} & 271 & \texttt{0R254} & \texttt{1R263} & 366 & \texttt{0R186} & \texttt{1R307} \\
+82 & \texttt{0R042} & \texttt{1R096} & 177 & \texttt{0R189} & \texttt{1R190} & 272 & \texttt{0R037} & \texttt{0L036} & 367 & \texttt{0R321} & \texttt{1R371} \\
+83 & \texttt{0R042} & \texttt{1R097} & 178 & \texttt{0R191} & \texttt{1R192} & 273 & \texttt{0R037} & \texttt{1R284} & 368 & \texttt{0R081} & \texttt{1R372} \\
+84 & \texttt{0L098} & \texttt{1R099} & 179 & \texttt{0R139} & \texttt{1R153} & 274 & \texttt{0R285} & \texttt{1R286} & 369 & \texttt{0R314} & \texttt{1R113} \\
+85 & \texttt{0R097} & \texttt{1L100} & 180 & \texttt{0R193} & \texttt{1R194} & 275 & \texttt{0R189} & \texttt{1R249} & 370 & \texttt{0R217} & \texttt{1R373} \\
+86 & \texttt{0R055} & \texttt{1R101} & 181 & \texttt{0R195} & \texttt{1R196} & 276 & \texttt{0R209} & \texttt{1R241} & 371 & \texttt{0R154} & \texttt{1R161} \\
+87 & \texttt{0R081} & \texttt{1R102} & 182 & \texttt{0R050} & \texttt{1R197} & 277 & \texttt{0R287} & \texttt{0L036} & 372 & \texttt{0R374} & \texttt{0L036} \\
+88 & \texttt{0R072} & \texttt{1R103} & 183 & \texttt{0R198} & \texttt{1R199} & 278 & \texttt{0R224} & \texttt{1R288} & 373 & \texttt{0R200} & \texttt{1R375} \\
+89 & \texttt{0L104} & \texttt{1L038} & 184 & \texttt{0R200} & \texttt{1R201} & 279 & \texttt{0R072} & \texttt{1R289} & 374 & \texttt{0R143} & \texttt{1R376} \\
+90 & \texttt{1R105} & \texttt{1R090} & 185 & \texttt{0R172} & \texttt{1R156} & 280 & \texttt{0R290} & \texttt{1R291} & 375 & \texttt{0R217} & \texttt{1R377} \\
+91 & \texttt{0L106} & \texttt{1L091} & 186 & \texttt{0L202} & \texttt{1L140} & 281 & \texttt{0R292} & \texttt{1R293} & 376 & \texttt{0R209} & \texttt{1R328} \\
+92 & \texttt{1R107} & \texttt{0R092} & 187 & \texttt{0R198} & \texttt{1R203} & 282 & \texttt{0R294} & \texttt{0L036} & 377 & \texttt{0R378} & \texttt{1R379} \\
+93 & \texttt{0L108} & \texttt{1R078} & 188 & \texttt{0R187} & \texttt{1R204} & 283 & \texttt{0R295} & \texttt{0L036} & 378 & \texttt{0R169} & \texttt{1R128} \\
+94 & \texttt{0L094} & \texttt{0L056} & 189 & \texttt{0L205} & \texttt{1L206} & 284 & \texttt{0R082} & \texttt{1L100} & 379 & \texttt{0R241} & \texttt{1R215} \\
+\end{longtable}
+\endgroup
+
+\end{document}
