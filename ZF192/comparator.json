@@ -1,0 +1,10 @@
+{
+  "challenge_module": "ZF192.Challenge",
+  "solution_module": "ZF192.Solution",
+  "theorem_names": [
+    "PalomarZF192.exact192Claim",
+    "PalomarZF192.nonhalting_of_consistent"
+  ],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

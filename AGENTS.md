@@ -9,7 +9,7 @@ Read the [paper](PA196/paper/pa196.tex), [theorem statements](PA196/docs/result.
   imports, or dependencies, build the affected targets and run the axiom audit.
 - Keep source identities and license notices accurate. Preserve original validation data verbatim.
 - Retain the required support libraries under their original names. Publish
-  only the PA196, ZF209, ZF207 and I3-380 papers, proofs, machine data, and reproduction materials.
+  only the PA196, ZF209, ZF207, I3-380 and ZF192 papers, proofs, machine data, and reproduction materials.
 - PA196 is a separate Lake project under `PA196/`. Its shared engine and
   arithmetic support live under `ProofSources/PA196/Engine` and
   `ProofSources/PA196/ArithmeticSupport`; preserve their declaration namespaces.
@@ -28,4 +28,7 @@ Read the [paper](PA196/paper/pa196.tex), [theorem statements](PA196/docs/result.
   from `I3-380/` for proof changes, and use `comparator.json` to compare
   `PalomarI3380.exactClaim`. Keep the paper's appendix synchronized with
   `data/zfc-i3-native-380.tm` and preserve the decoder reference data.
+- ZF192 is a standalone Lake project. Preserve its exact table, the blank-run replay and the checked register
+  invariants. Keep both compared statements and the calibration and simulation
+  declarations in its axiom audit.
 - Push, release, or change repository visibility only on the user's instruction.

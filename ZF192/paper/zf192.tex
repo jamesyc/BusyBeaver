@@ -1,0 +1,873 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.02in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,xurl}
+\usepackage[hidelinks,pdftitle={Conditional ZF-independence of a 192-state Turing machine},
+  pdfauthor={James Chang}]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\ZF}{\mathrm{ZF}}
+\newcommand{\PA}{\mathrm{PA}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\pair}[2]{\langle #1,#2\rangle}
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\newcommand{\Left}{\mathsf{L}}
+\newcommand{\Right}{\mathsf{R}}
+\newcommand{\Halt}{H_{192}}
+\newcommand{\phys}{\mathsf{Halt}_{192}}
+\DeclareMathOperator{\AX}{AX}
+\DeclareMathOperator{\MP}{MP}
+\DeclareMathOperator{\SHIFT}{SHIFT}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+
+\title{Conditional ZF-independence of a 192-state Turing machine}
+\author{James Chang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give an explicit binary Turing machine with 192 working states.
+If first-order Zermelo--Fraenkel set theory is consistent, the machine
+runs forever on a blank tape and the negation of its halting sentence
+is unprovable in ZF. If ZF is arithmetically $\Sigma_1$-sound, the
+halting sentence is also unprovable. The machine executes a
+nine-register search for refutations in a coded calculus. A scanner
+decodes instructions from the tape, and seven states perform the
+register arithmetic. The simulation and the unprovability results
+are formalized in Lean~4 for the transition table given in the paper.
+\end{abstract}
+
+\section{Introduction}
+
+The running-time Busy Beaver function assigns to each state count
+the longest blank-tape run among halting machines of that size. The
+search for small machines with independent halting statements connects
+this function with the strength of formal theories~\cite{yedidia-aaronson}.
+
+Write $\ZF$ for first-order Zermelo--Fraenkel set theory and $\PA$
+for first-order Peano arithmetic. We say that ZF is
+\emph{arithmetically $\Sigma_1$-sound} if every closed $\Sigma_1$
+arithmetic sentence whose natural-number interpretation is provable
+in ZF is true in $\N$.
+
+\begin{theorem}\label{thm:main}
+There exists a closed sentence $\Halt$ in the language of set theory
+whose interpretation in each model of ZF asserts that the machine of
+Appendix~\ref{app:table} has a blank-tape halting history.
+\begin{enumerate}
+\item If ZF is consistent, the machine runs forever on the blank tape
+and $\ZF\nvdash\neg\Halt$.
+\item If ZF is arithmetically $\Sigma_1$-sound, then
+$\ZF\nvdash\Halt$ and $\ZF\nvdash\neg\Halt$.
+\end{enumerate}
+\end{theorem}
+
+The proof uses the register search in two ways. Over $\N$, a halting
+computation gives a refutation in the calculus. A model of ZF
+rules out such a refutation. Inside PA, a coded refutation of an
+auxiliary arithmetic theory yields a halting history. The latter
+implication allows a ZF proof of nonhalting to be turned into a
+proof of the auxiliary theory's consistency in that theory itself.
+
+Sections~\ref{sec:machine} and~\ref{sec:search} describe the machine
+and the register search. Sections~\ref{sec:layout}--\ref{sec:simulation}
+establish the simulation, and Section~\ref{sec:independence} proves
+the nonhalting and unprovability results.
+
+\subsection{Related work}
+
+ZF207 and ZF209 give analogous conditional results over ZF for
+their respective machines~\cite{zf207,zf209}. The two machines use
+different decoders for a common binary program tree and share their
+register arithmetic. The ZF192 table came from a separate search
+(Section~\ref{sec:machine}). A neighboring bit distinguishes two
+uses of a decoder state, and the seven-state arithmetic routine
+shares a return scan between increment and positive decrement.
+All three Lean proofs use arithmetic calibration and check their
+own transition tables. For ZF192, the proof aligns the two control
+graphs after unconditional jumps and uses induction in models of PA
+for registers of arbitrary length.
+
+\section{The machine and its halting sentence}\label{sec:machine}
+
+\subsection{Transition rules}
+
+The tape is indexed by $\mathbb{Z}$ and has alphabet $\{0,1\}$.
+Initially all cells contain zero, the head is at coordinate $0$,
+and the machine is in state $0$. The working states are
+$0,\ldots,191$, and $192$ is the halting state.
+
+A fresh search using Boolean satisfiability (SAT),
+starting from Glazer's 230-state K230 machine~\cite{k230},
+produced the ZF192 table. The search was independent of the ZF207 and ZF209
+transition tables.
+
+A row $(q,b,w,D,q')$ instructs the machine in state $q$ reading bit
+$b$ to write $w$, move one cell in direction $D\in\{\Left,\Right\}$,
+and enter state $q'$. Appendix~\ref{app:table} gives one row for
+each working state and read bit. The only transitions to $192$
+are $(0,1,1,\Right,192)$ and $(165,0,0,\Left,192)$. The first
+cannot occur on the blank run because the initial read bit is $0$
+and no transition enters state $0$. The 384 rows are also given in
+\file{data/zf192.tm}, in order of state and then read bit.
+
+\subsection{Coding configurations and histories}
+
+We use the Cantor pairing function
+\[
+  \pair{x}{y}=\frac{(x+y)(x+y+1)}{2}+y,
+\]
+a bijection from $\N^2$ to $\N$. A configuration is represented by
+$(q,\ell,r)\in\N^3$, with code $\pair{q}{\pair{\ell}{r}}$.
+The binary digits of $\ell$ give the cells to the left of the head,
+beginning with the nearest cell at the least significant bit.
+Those of $r$ begin at the scanned cell and continue to the right.
+Each configuration reached in finitely many steps has only finitely
+many nonzero cells, so both codes are natural numbers.
+
+A row reading $b$ applies when $r=b+2t$. A right move replaces
+$(\ell,r)$ by $(w+2\ell,t)$. For a left move, write $\ell=c+2u$
+with $c\in\{0,1\}$. The new pair is $(u,c+2w+4t)$. These
+identities and the transition table define the arithmetic step relation.
+
+A history lists the configuration codes in reverse chronological order.
+The empty list has code $0$, and prepending a code $a$ to a list
+with code $s$ gives $1+\pair{a}{s}$. A history of the blank run is
+nonempty, starts chronologically at $(0,0,0)$, and satisfies the step
+relation between consecutive configurations. It is a halting history
+if its last configuration has no successor, which for a history of
+this machine is equivalent to ending in state $192$. Internally, the
+history check iterates the tail operation on a code $s$ for $s$ steps,
+leaving the empty list fixed once reached. Each nonzero tail strictly
+decreases, so this iteration checks the entire history in the model's
+own natural numbers.
+
+Let $\phys$ be the arithmetic assertion that such a halting history
+exists. The formalization gives a $\Sigma_1$ presentation, with an
+existentially quantified code for the computation. The sentence $\Halt$ is the
+natural-number interpretation of the arithmetic halting assertion
+in ZF. The formalization proves its equivalence to the corresponding
+history predicate in each model, using that model's natural numbers.
+
+\section{A register program for refutation search}\label{sec:search}
+
+\subsection{Derivation rules}
+
+Let $C$ be the calculus in Appendix~\ref{app:calculus}.
+Its derivations use axiom introduction, modus ponens, and universal
+generalization. Code $0$ denotes a tautology. Code $1$ denotes
+$x_0\in x_0$, which is false under every assignment in a model of
+ZF by the axiom of foundation. A \emph{$C$-refutation} is a finite
+$C$-derivation containing code $1$.
+
+\subsection{Enumeration of command words}
+
+The search considers candidates $n=2,3,\ldots$ in order. It decodes
+$n$ as a command and a pointer $k$ to the rest of the word. The
+first component of the Cantor pair determines the command.
+\begin{align*}
+  \pair{0}{k} &\longmapsto (\SHIFT,k),\\
+  \pair{1}{\pair{x}{k}} &\longmapsto (\MP(x),k),\\
+  \pair{a+2}{\pair{y}{\pair{x}{k}}} &\longmapsto (\AX(a,x,y),k).
+\end{align*}
+A pointer $0$ ends the word. If a pointer is positive, the next
+command is decoded from the pointer minus one. Every component
+returned by unpairing is bounded by the input code, so the pointers
+strictly decrease until they reach zero. Conversely, these rules
+encode any finite nonempty command word.
+
+\subsection{Execution of command words}
+
+The store $(t,w,d,h)$ starts at $(0,0,0,0)$ and is carried from
+one candidate to the next. Here $t$ and $h$ are formula codes,
+$w$ codes a stack of formulas, and $d$ is an offset. Pushing $x$
+replaces $w$ by $\pair{x}{w}$. Popping unpairs $w$, so a pop
+from the empty stack returns code $0$ and leaves the stack empty.
+
+\begin{description}
+\item[$\SHIFT$] Halt if $t+h=1$. Otherwise move $h$ into $t$ and pop the
+stack into $h$.
+\item[$\MP(x)$] Set $v=d+x$ and test whether $h$ codes the implication
+from $t$ to $v$. If it does, put $v$ in $t$ and push $0$ on the
+stack. Otherwise put $0$ in $t$. In either case set $d=v$ and $h=0$.
+\item[$\AX(a,x,y)$] Compute the seven axiom heads at $(a,d+x,h+y)$,
+using $d$ as the fourth input to the seventh head. Push the heads,
+the universal generalization of $h$ with binder $d$, and the incoming
+value of $t$ in the order given in Appendix~\ref{app:calculus}.
+If $a$ differs from both $d+x$ and $h+y$, put the corresponding pointed
+hull axiom in $t$. Otherwise put $0$ in $t$. Set $d=h=0$.
+\end{description}
+
+The command rules are implemented by a program with nine unbounded
+registers and 4,341 instruction sites. The instructions are increment,
+test and decrement, unconditional jump, and halt. A test-and-decrement
+instruction takes its zero branch without changing the register. On
+the positive branch it subtracts one. The program decoded from the
+tape has 3,379 live sites. The correspondence is established in
+Section~\ref{sec:simulation}.
+
+\subsection{Correctness of the search}
+
+\begin{lemma}\label{lem:search}
+Over $\N$, the register search halts from its initial store if and
+only if there is a $C$-refutation.
+\end{lemma}
+
+\begin{proof}
+Initially $t$, $h$, and all stack entries are derivable in $C$.
+The command rules preserve this invariant. In particular, $\MP$
+introduces a nonzero formula only by modus ponens, and $\AX$
+adds axiom instances and a universal generalization. The halting
+test $t+h=1$ requires one of $t$ and $h$ to be $1$, so a halt
+implies a $C$-refutation.
+
+Conversely, fix a $C$-derivation of $1$. Its compiled word must
+work with the store left by the preceding candidate. To prepare
+that store, the word begins with $\AX(0,0,0)$, eight applications
+of $\SHIFT$, and $\MP(0)$. This sequence acts by
+\[
+  (t,w,d,h)\longmapsto (0,\pair{t}{w},0,0).
+\]
+The first command places seven implication codes and a universal
+code above the incoming $t$ on the stack. The shifts bring the
+incoming $t$ to the top and leave the universal code in $h$.
+The tags of the generated codes preclude halting during these
+shifts. The final $\MP(0)$ compares this universal code with an
+implication code, so it clears the formula registers without
+changing the stack.
+
+Appendix~\ref{app:compiler} gives a command sequence for each
+inference rule. Inductively, a sequence for a formula code $b$,
+started from any store $(t,w,0,0)$, either halts or ends at
+$(b,w,0,0)$. For a derivation of $1$, put this sequence after
+the preparation and append $\SHIFT$. The final test halts
+if the sequence has returned $1$. The word starts with $\AX$,
+so its candidate number is at least $2$. Each earlier candidate
+either halts or finishes and advances the counter. The search
+therefore halts on this word or on an earlier candidate.
+\end{proof}
+
+\section{Encoding the register program on the tape}\label{sec:layout}
+
+\subsection{Register configurations}
+
+A \emph{source configuration} on the tape records the current
+instruction address and the nine register values. The machine is
+in state $157$ at the address root. In the relative coordinates
+of this configuration the head is at $0$. The tape contents are given
+in these coordinates.
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Coordinates & Tape contents \\
+\midrule
+$0,-1,\ldots,-G+1$ & Complemented address bits followed by ones \\
+$-G,-G-1$ & Two zeros forming the gate, with $G\geq39$ \\
+$-G-2,-G-3,\ldots$ & Nine register blocks, followed by zeros \\
+$1$ through $8$ & A zero, six ones, then a zero \\
+Greater than $8$ & Arbitrary bits of finite support \\
+\bottomrule
+\end{tabular}
+\end{center}
+Starting just to the left of the gate and reading leftward, a
+register with value $v$ is represented by $1^{v+1}0$. The initial
+one distinguishes a zero register from the two consecutive zeros
+at the gate.
+
+\subsection{The initial computation}
+
+The first transition writes a one and moves left into state $1$.
+After $44{,}181$ steps the machine is in state $157$, with the head
+at coordinate $-121$ in the original tape coordinates. The gate
+zeros are at $-207$ and $-208$, giving $G=86$. The address is
+$100000$, which designates site $22$, and the register values are
+$(2,0,0,0,0,0,0,0,0)$. The tape has $186$ ones, including those
+beyond the zero cell at relative coordinate $8$. Lean verifies the
+entire tape at this checkpoint by replaying the initial computation
+in five intervals on packed tape words.
+
+\section{Implementation of the register instructions}\label{sec:macros}
+
+The decoder chooses among ten increment selectors and ten decrement
+selectors. A selector moves left through the register file, counting
+zero separators until it reaches the chosen block. The arithmetic
+routines use states $79,96,111,118,124,125,134$. They return toward
+the address in state $117$ after an increment or a positive decrement,
+and in state $129$ after testing a zero register.
+
+\subsection{The return scan}\label{sec:marker}
+
+Both successful operations move the gate one cell to the left. The
+shared return scan runs toward the address. Throughout the scan,
+a zero immediately to the left of the head marks the boundary
+between cells already shifted and those still to be copied.
+Starting in state $125$, the machine takes one of the following
+paths according to the bits at and to the right of the head.
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Bits at the head & States along the path & Effect \\
+\midrule
+$1$ & $125,125,134,96,111,125$ & Move a body bit left \\
+$01$ & $125,134,96,111,125$ & Move a separator and a body bit left \\
+$00$ & $125,134,117$ & Complete the shift at the gate \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The first path writes the body bit into the marker cell and
+makes the cell it vacated the new marker. The second moves the
+pair $01$ one cell left and advances the marker past the pair.
+The pattern $00$ marks the gate. The last path completes the
+displacement by turning one of its original cells into padding.
+Each of the three paths is checked directly against the transition
+table, with arbitrary tape on either side of the cells used.
+
+An induction on the number of body cells proves that the scan
+crosses a register block. Repeating the argument for the finitely
+many intervening blocks gives the return to the gate. The first
+induction uses an arithmetic formula, so it also applies to
+register lengths in nonstandard models of PA.
+
+\subsection{Test and decrement}
+
+From the first one of the selected block, state $118$ moves left
+into state $111$. If the head reads the separator, the register
+is zero. State $111$ leaves that separator intact and enters
+state $124$, which scans right. The scan crosses an isolated
+separator through states $118$ and $111$, then resumes in $124$.
+At the gate, state $118$ moves into state $129$. This branch
+leaves the register file and gate intact.
+
+If state $111$ reads a second one, it replaces that one by zero
+and returns to the first one in state $125$. The new zero is the
+marker for the return scan of Section~\ref{sec:marker}.
+The scan removes one body cell from the chosen block, leaves the
+other register values intact, and moves the gate one cell left.
+The return begins in state $117$.
+
+\subsection{Increment}
+
+The increment first scans left through the selected block and
+the blocks farther from the address. State $79$ writes a one and
+continues left, entering state $96$ when it reads a zero. If state
+$96$ reads a one, it writes zero and resumes the scan in state $79$.
+When state $96$ reaches the zero beyond the last separator,
+it writes one and turns right into state $111$. Two cells suffice
+to set up the marker and enter state $125$.
+
+Together, the outward scan and the return insert one body cell in
+the selected block. They preserve the other eight values and the
+zero tape beyond the file. The gate moves one cell left and the
+return begins in state $117$.
+
+\section{Simulation of the register program}\label{sec:simulation}
+
+\subsection{Local decoding and return paths}
+
+The decoder sometimes uses a neighboring bit to distinguish two
+situations in the same state. For instance, when state $128$ reads
+zero, it moves left into state $136$. If the new cell is zero,
+states $136$ and $137$ bring the head back through the original
+cell and one position to its right. If the new cell is one,
+state $136$ moves one cell further left into state $143$. Both
+paths preserve the tape.
+
+Every decoder path is checked in the window from $-38$ through $8$
+in the relative coordinates of Section~\ref{sec:layout}. At one of
+the 3,379 live instructions, the path must halt, reach the root for
+the next address, or enter the appropriate arithmetic selector at
+the left boundary. The checks also cover 4,339 arithmetic returns,
+including both branches of each test-and-decrement instruction.
+They verify the resulting state, head position, and window contents.
+Each path reads only cells in the window, so the same transitions
+hold for any tape outside it.
+
+The selector reaches the gate by moving left across the remaining
+ones without changing them. After arithmetic, state $117$ or $129$
+crosses the padding to the right in the same way. Joining the two
+scans to the finite paths and arithmetic routines gives a positive
+number of tape steps for every contextual instruction. The gate
+distance remains at least $39$.
+
+For example, site $22$, reached by the initial computation, tests
+register $8$. The zero branch leads to site $24$ and the positive
+branch to site $23$. This register initially contains zero.
+The zero branch takes $248$ steps, returns the head to $-121$ in
+state $157$, and changes only the cell at $-125$.
+
+\subsection{Correspondence of control graphs}
+
+The accompanying source gives both finite graphs. The register
+program is specified by a binary tree of primitive instructions
+in \file{TreeData.lean}. Its leaves are numbered from left to right,
+and the path to a leaf determines the targets of its fall-through
+and control-flow edges. In \file{data/source.json}, the entry at
+index $i$ of \file{sites} gives the tape address of contextual site
+$i$, and the entry in \file{cfg} gives its instruction and successors.
+The table has 3,689 slots, of which 310 are unused.
+
+Each graph has 3,037 sites for arithmetic or halting. The correspondence pairs these sites in increasing order
+within each program. For a jump site, follow its unconditional
+successors to the first arithmetic or halt site and use that
+site's partner. Such a jump prefix has length at most three.
+
+If the register-program values are $(r_0,\ldots,r_8)$, the tape
+stores them in the order
+\[
+  (r_6,r_2,r_0,r_4,r_3,r_7,r_8,r_5,r_1).
+\]
+Lean checks that paired arithmetic instructions operate on the
+corresponding register
+and that their successor sites correspond after following any
+unconditional jumps. The check also identifies the paired halt
+sites and the initial configurations.
+
+\subsection{Standard and internal simulation}
+
+\begin{lemma}\label{lem:simulation}
+Over $\N$, the tape machine halts on the blank tape if and only
+if the register search halts from its initial configuration.
+In every model of PA, a coded $C$-refutation yields a coded
+blank-tape halting history.
+\end{lemma}
+
+\begin{proof}
+An unconditional jump in the register program leaves the
+corresponding tape configuration unchanged. An arithmetic
+instruction takes a positive number of tape steps to execute the
+matching operation and the subsequent jumps in the decoded
+program. The halt instruction leads to state $192$. Thus a finite
+register computation ending in halt yields a halting computation
+of the tape machine. An infinite register computation contains
+infinitely many arithmetic instructions, because the jump prefixes
+are bounded. It therefore gives arbitrarily long tape computations
+from the initial configuration. Determinism rules out a halting
+computation from that configuration.
+
+The internal argument uses the arithmetic definition of the
+relation between a register configuration and its tape
+representation. In a model of PA, the compiler turns a coded
+$C$-refutation into a coded register computation ending in the
+halt instruction. Induction on the coded computation gives a
+halting history for the tape machine. The induction applies to
+histories of nonstandard length.
+\end{proof}
+
+\section{Nonhalting and independence over ZF}\label{sec:independence}
+
+\subsection{Soundness of the coded calculus}
+
+The axioms of $C$ hold under their set-theoretic interpretation
+in every model of ZF. The logical heads represent valid inference
+templates. The set-existence axiom expresses the pointed hull
+principle of Appendix~\ref{app:calculus}. To construct a hull for
+$R$ in ZF, start with $\{v_0\}$ if $R(u_0,v_0)$ holds and with
+the empty set otherwise. At each stage, consider the subsets
+$u$ of members of the current set for which some $R(u,v)$ holds.
+For each such $u$ adjoin all $R$-witnesses of least rank. These
+form a set, and replacement and union collect them over the set
+of requests. The union of the stages indexed by $\omega$
+contains the required witnesses and every member has an
+$R$-predecessor. The inference rules of $C$ preserve truth under
+every assignment.
+
+If ZF is consistent, it has a model by first-order completeness.
+Code $1$ is false under every assignment in that model, so no
+$C$-refutation exists over $\N$. Lemmas~\ref{lem:search}
+and~\ref{lem:simulation} now imply that the blank-tape run is infinite.
+
+\subsection{Auxiliary theories}
+
+We use an arithmetic theory $T$ whose refutations can be translated
+to $C$ and whose theorems include the arithmetic consequences of ZF.
+First define a set-language theory $U$ from derivations in $C$.
+Let $\operatorname{Cert}_C(n,k)$ mean that $n$ codes a $C$-derivation
+containing formula code $k$, and let $\chi(\theta)$ be the
+translation into $C$ of a closed set-language sentence $\theta$.
+
+For an arithmetic sentence $\sigma$, write $J_e(\sigma)$ for its
+interpretation in the natural numbers defined relative to the marker
+$e$. Write $K(\sigma)$ for the assertion that this interpretation
+holds at every empty marker.
+\[
+  K(\sigma)=\forall e\bigl(\operatorname{Empty}(e)\to J_e(\sigma)\bigr),
+  \qquad
+  \operatorname{Empty}(e)\equiv\forall x\,(x\notin e).
+\]
+Define $\top^{(0)}=\top$ and $\top^{(n+1)}=\top\land\top^{(n)}$.
+The two axiom sets consist of the following sentences.
+\[
+\begin{array}{ll}
+ U & \theta\land\top^{(n)}
+     \quad\text{when }\operatorname{Cert}_C(n,\chi(\theta)),\\[2pt]
+ T & \sigma\land\top^{(n)}
+     \quad\text{when }\operatorname{Cert}_C(n,\chi(K(\sigma))).
+\end{array}
+\]
+The repeated conjunctions record the certificate index $n$ in each
+axiom. To decide whether a sentence is an axiom, extract this index
+and check the derivation it codes. The two axiom predicates are
+$\Delta_1$ over $I\Sigma_1$, the fragment of PA with induction for
+$\Sigma_1$ formulas. In particular, $I\Sigma_1$ proves the
+equivalence of the $\Sigma_1$ and $\Pi_1$ descriptions of each
+predicate.
+
+\subsection{Interpretation and transfer of provability}
+
+The interpretation first identifies objects $x,y$ with the same
+membership behavior in both arguments of $\in$. The relation on
+the quotient is again written $\in$. In a model of $U$, the
+pointed hull principle holds on this quotient. Applying it to
+the empty relation gives an empty object, since every member of
+a hull must have a predecessor under that relation.
+
+Fix an empty object $e$ in the quotient. An object is marked if
+it contains $e$. For marked objects $x,y$, write $x\sim_e y$ when
+they are equal or are related by a set-coded bisimulation for
+marked membership. A bisimulation matches each marked member
+of $x$ with an equal or related marked member of $y$, and
+conversely. The second quotient is by $\sim_e$. In this quotient,
+$[x]\in[y]$ means that $y$ has a marked member equivalent to $x$.
+The ZF interpretation restricts to the elements of transitive
+sets that are internally well-founded in this second quotient.
+The pointed hull construction supplies its set-existence
+axioms.
+
+For the interpretation $J_e$, take the natural numbers of this
+ZF model. The formal arithmetic translation uses the projection
+that sends a representative of a natural number to that number
+and all other objects to zero. Quantifying over representatives
+therefore gives quantification over the interpreted natural
+numbers.
+
+In a model of ZF, soundness of $C$ gives $K(\sigma)$ for every
+certified axiom of $T$. Evaluating these assertions at an empty
+marker gives a model of $T$. Thus consistency of ZF implies
+consistency of $T$.
+
+Let $\sigma^\omega$ denote the usual interpretation of an
+arithmetic sentence $\sigma$ in the natural numbers of set theory.
+We use the following transfer of provability.
+\begin{equation}\label{eq:transfer}
+  \ZF\vdash\sigma^\omega \quad\Longrightarrow\quad T\vdash\sigma .
+\end{equation}
+Suppose $\ZF\vdash\sigma^\omega$. In every model of $U$, each
+empty marker induces the marked ZF interpretation, so
+$K(\sigma)$ holds in that model. By completeness,
+$U\vdash K(\sigma)$. The translation of this derivation into $C$
+uses the stored certificate for each axiom of $U$ and introduces its
+conjunctions with $\top$. The result is a code $n$ such that
+$\operatorname{Cert}_C(n,\chi(K(\sigma)))$. Hence
+$\sigma\land\top^{(n)}$ is an axiom of $T$, yielding $T\vdash\sigma$.
+In particular, $T$ extends PA because ZF proves the natural-number
+interpretations of the PA axioms.
+
+\subsection{Unprovability of halting and nonhalting}
+
+In a model of PA, a coded $T$-refutation gives a coded $U$-refutation
+by the marked interpretation and the existence of an empty marker.
+The stored certificates at the axiom uses give a coded
+$C$-refutation. By Lemma~\ref{lem:simulation} this yields a halting
+history for the tape machine. Arithmetic completeness gives the
+corresponding implication in PA. Its contrapositive, interpreted in
+the natural numbers of ZF, gives the following, where
+$\Con(T)$ is the consistency sentence for the axiom predicate of $T$.
+\begin{equation}\label{eq:consistency}
+  \ZF\vdash\neg\Halt\longrightarrow\Con(T)^\omega .
+\end{equation}
+
+If ZF is consistent, then so is $T$. A ZF proof of $\neg\Halt$
+would yield a ZF proof of $\Con(T)^\omega$ by
+\eqref{eq:consistency}. Applying \eqref{eq:transfer} would give
+$T\vdash\Con(T)$, contrary to G\"odel's second incompleteness
+theorem~\cite{godel}. Thus $\ZF\nvdash\neg\Halt$.
+
+If ZF is arithmetically $\Sigma_1$-sound, it is consistent and the
+actual blank-tape run is infinite. A proof of $\Halt$ in ZF would
+give a proof of the natural-number interpretation of the $\Sigma_1$
+halting assertion. By soundness this would give a halting history
+over $\N$. Hence $\ZF\nvdash\Halt$, completing the proof
+of Theorem~\ref{thm:main}.
+
+\section{Formalization in Lean}\label{sec:reproduction}
+
+The standalone \texttt{ZF192.Challenge} defines the literal machine,
+its history semantics, and both claims. The proved declarations in
+\texttt{ZF192.Solution} are
+\begin{quote}\small
+\file{PalomarZF192.exact192Claim}\\
+\file{PalomarZF192.nonhalting_of_consistent}.
+\end{quote}
+The first gives the sentence $\Halt$, its semantics in every ZF model,
+and both conditional unprovability results. The second proves nonhalting
+under consistency of ZF. Both use the exact table and depend only on
+Lean's \file{propext}, \file{Classical.choice}, and \file{Quot.sound} axioms.
+
+From the accompanying Lean project, run the following with Lean 4.35.0
+to obtain the optional Mathlib cache, build the proof, and audit the axioms.
+\begin{verbatim}
+lake exe cache get
+bash scripts/check.sh --full
+\end{verbatim}
+On Linux with Bubblewrap and user namespaces, the standalone
+comparison and NanoDa replay can be run with
+\begin{verbatim}
+lake comparator --config comparator.json
+\end{verbatim}
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{godel}
+Kurt G\"odel.
+\newblock \"Uber formal unentscheidbare S\"atze der \emph{Principia
+  Mathematica} und verwandter Systeme I.
+\newblock \emph{Monatshefte f\"ur Mathematik und Physik}, 38:173--198,
+  1931. \href{https://doi.org/10.1007/BF01700692}{doi:10.1007/BF01700692}.
+
+\bibitem{yedidia-aaronson}
+Adam Yedidia and Scott Aaronson.
+\newblock A relatively small Turing machine whose behavior is independent
+  of set theory.
+\newblock \href{https://arxiv.org/abs/1605.04343}{arXiv:1605.04343}, 2016.
+\bibitem{zf207}
+James Chang.
+\newblock Nonhalting and ZF-independence for a 207-state Turing machine.
+\newblock 2026.
+\href{https://github.com/jamesyc/BusyBeaver/blob/9437ef874e1c76a0ec45330554e895157d56c604/ZF207/paper/zf207.pdf}{Paper}
+and
+\href{https://github.com/jamesyc/BusyBeaver/tree/9437ef874e1c76a0ec45330554e895157d56c604/ZF207}{Lean formalization}.
+
+\bibitem{zf209}
+James Chang.
+\newblock Nonhalting and ZF-independence for a 209-state Turing machine.
+\newblock 2026.
+\href{https://github.com/jamesyc/BusyBeaver/blob/286324f9ad106bbeab32b70404e7a82be2cd660d/ZF209/paper/zf209.pdf}{Paper}
+and
+\href{https://github.com/jamesyc/BusyBeaver/tree/286324f9ad106bbeab32b70404e7a82be2cd660d/ZF209}{Lean formalization}.
+
+\bibitem{k230}
+Elliot Glazer.
+\newblock K230: a 230-state Turing machine for the consistency of ZFC.
+\newblock 2026.
+\href{https://github.com/elliotglazer/k230-rocq/tree/3142e4dd980f0be12f4abb636c4ae2528afc17eb}{Machine and Rocq formalization}.
+
+\end{thebibliography}
+
+\appendix
+\section{Numerical presentation of the calculus}\label{app:calculus}
+
+\subsection{Formula codes and axiom heads}
+
+Write $I(a,b)$ for the code of implication, $M(a,b)$ for membership,
+$E(a,b)$ for equality, and $Q_x(a)$ for universal quantification with
+binder $x$. The exact operations are
+\[
+ I(a,b)=4\pair{a}{b},\quad M(a,b)=4\pair{a}{b}+1,\quad
+ Q_x(a)=4\pair{a}{x}+2,\quad E(a,b)=4\pair{a}{b}+3 .
+\]
+In the formulas below, $a\to b$ abbreviates $I(a,b)$ and associates to
+the right. Put $F=1$. The seven heads at inputs $(a,d,h;u)$ are
+\begin{align*}
+ A_1 &= Q_d(a)\to Q_d(a\to h)\to Q_d(h),\\
+ A_2 &= Q_d(E(h,d)\to F)\to F,\\
+ A_3 &= E(h,d)\to M(a,h)\to M(a,d),\\
+ A_4 &= M(h,d)\to E(h,a)\to M(a,d),\\
+ A_5 &= Q_d(Q_a(h))\to Q_a(Q_d(h)),\\
+ A_6 &= \bigl(Q_d(Q_d(h)\to F)\to F\bigr)\to h,\\
+ A_7 &= \bigl((h\to u)\to d\bigr)\to(d\to h)\to a\to h .
+\end{align*}
+Head $A_7$ is an axiom when $u\le d$. The axiom set also includes $0$.
+
+\subsection{The pointed hull axiom}
+
+The axiom $G(a,d,h)$ is present when $a\ne d$ and $a\ne h$.
+Its code is built from the same operations.
+\begin{align*}
+ B &= Q_h\bigl(a\to (Q_h(a\to M(h,a)\to F)\to F)\bigr),\\
+ S &= Q_d\bigl(Q_a(M(a,d)\to M(a,h))\to B\bigr),\\
+ P &= Q_h\bigl(M(h,a)\to (Q_d(a\to S\to F)\to F)\bigr),\\
+ G(a,d,h)
+   &= \bigl((E(h,d)\to Q_a(E(h,d)))\to
+          (M(h,d)\to Q_a(M(h,d)))\to {}\\[-2pt]
+   &\hspace{3.8em} Q_a\bigl(P\to((a\to M(h,a))\to F)\bigr)\bigr)\to F .
+\end{align*}
+All binders act on the displayed numerical labels. This is a coded
+set-existence schema. Its interpretation, with parameters, supplies a
+pointed hull for a definable relation $R$ and a pair $(u_0,v_0)$.
+Such a hull is a set $C_0$ satisfying
+\[
+\begin{split}
+ R(u_0,v_0)&\ \Longrightarrow\ v_0\in C_0,\\
+ z\in C_0&\ \Longrightarrow\ \exists p\ R(p,z),\\
+ z\in C_0,\quad u\subseteq z,\quad \exists v\ R(u,v)
+    &\ \Longrightarrow\ \exists w\in C_0\ R(u,w).
+\end{split}
+\]
+
+\subsection{The axiom command}
+
+For $\AX(a,x,y)$, evaluate the seven heads at $(a,d+x,h+y;d)$.
+The new stack begins, from the top, with
+\[
+  (A_1,A_2,A_3,A_4,A_5,A_6,A_7,Q_d(h),t),
+\]
+followed by the prior stack. The generalization $Q_d(h)$ uses the
+incoming values of $d$ and $h$.
+
+\subsection{Compilation of derivations}\label{app:compiler}
+
+Write $S=\SHIFT$ and use juxtaposition for concatenation of
+command words. The following words implement stack operations.
+\begin{align*}
+ P &= \AX(0,0,0) S^8\MP(0),\\
+ L &= \AX(0,0,0) S^{10},\\
+ D &= \MP(1)\AX(1,0,0)S^9\MP(0),\\
+ J_i &= \begin{cases}
+   \text{the empty word}, & i=0,\\
+   \MP(i), & i>0.
+ \end{cases}
+\end{align*}
+The word $P$ pushes $t$ and clears $t,d,h$. If
+$w=\pair{x}{w'}$, the word $L$ sets $(w,d,h)=(w',0,x)$
+while preserving $t$. From $(t,w,0,0)$ the word $D$ returns
+$(0,w,0,0)$, and from $(0,w,0,0)$ the word $J_i$ sets $d=i$.
+
+For an axiom, the following words leave its code in $t$, preserve
+$w$, and return $d=h=0$ when started with $d=h=0$.
+\[
+\begin{array}{ll}
+ 0 & D,\\
+ A_j(a,d,h)\ (1\le j\le 6) & D\,\AX(a,d,h)\,S^{j+1}\,L^{8-j},\\
+ A_7(a,d,h;u)\ (u\le d) & D\,J_u\,\AX(a,d-u,h)\,S^8\,L,\\
+ G(a,d,h)\ (a\ne d,\ a\ne h) & D\,\AX(a,d,h)\,L^9 .
+\end{array}
+\]
+The guard on $A_7$ makes the increment $d-u$ well-defined, and
+$J_u$ supplies the incoming offset of that command.
+
+For generalization, first run the word for $a$. If it returns,
+append $P\,J_i\,S\,\AX(i,0,0)\,S^9$ to obtain $Q_i(a)$.
+For modus ponens, run the word for $I(a,b)$, then $P$, then
+the word for $a$, then $P$ again. At this point the first two
+stack entries are $a$ and $I(a,b)$. The suffix
+\[
+  S^2\,\MP(b)\,\AX(b,0,0)\,S^{10}
+\]
+either halts when a shift encounters code $1$, or returns
+$(b,w,0,0)$ with the original stack $w$. These store
+transformations give the induction used in Lemma~\ref{lem:search}.
+
+\clearpage
+\section{Complete transition table}\label{app:table}
+
+The file \file{data/zf192.tm} has SHA-256 digest
+\begin{quote}\small
+\file{be1db915a6f40e37a601d3cb54bc0cf0d9597bdf0c75e97098cf4c201c6d5585}.
+\end{quote}
+
+Each entry is $(\text{write},\text{direction},\text{next state})$.
+The direction is the head movement in the original tape coordinates.
+The initial state is $0$ and the halting state is $192$.
+
+\subsection*{States 0--95}
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{@{}rll@{\hspace{1.1em}}rll@{\hspace{1.1em}}rll@{}}
+\toprule
+State & Read 0 & Read 1 & State & Read 0 & Read 1 & State & Read 0 & Read 1 \\
+\midrule
+0 & $(1,\mathsf{L},1)$ & $(1,\mathsf{R},192)$ & 32 & $(0,\mathsf{R},11)$ & $(0,\mathsf{L},51)$ & 64 & $(0,\mathsf{L},84)$ & $(1,\mathsf{L},85)$ \\
+1 & $(0,\mathsf{L},2)$ & $(1,\mathsf{L},3)$ & 33 & $(0,\mathsf{L},52)$ & $(1,\mathsf{L},33)$ & 65 & $(1,\mathsf{R},86)$ & $(1,\mathsf{L},87)$ \\
+2 & $(0,\mathsf{L},3)$ & $(1,\mathsf{L},4)$ & 34 & $(0,\mathsf{L},53)$ & $(1,\mathsf{L},54)$ & 66 & $(0,\mathsf{L},50)$ & $(1,\mathsf{L},66)$ \\
+3 & $(0,\mathsf{L},5)$ & $(1,\mathsf{L},6)$ & 35 & $(1,\mathsf{R},55)$ & $(0,\mathsf{L},26)$ & 67 & $(0,\mathsf{L},26)$ & $(1,\mathsf{L},67)$ \\
+4 & $(0,\mathsf{L},7)$ & $(1,\mathsf{L},8)$ & 36 & $(0,\mathsf{L},51)$ & $(1,\mathsf{L},36)$ & 68 & $(0,\mathsf{L},88)$ & $(0,\mathsf{L},89)$ \\
+5 & $(0,\mathsf{L},9)$ & $(1,\mathsf{L},10)$ & 37 & $(0,\mathsf{L},47)$ & $(1,\mathsf{L},34)$ & 69 & $(0,\mathsf{L},67)$ & $(1,\mathsf{L},69)$ \\
+6 & $(0,\mathsf{L},11)$ & $(1,\mathsf{L},12)$ & 38 & $(1,\mathsf{L},26)$ & $(0,\mathsf{L},56)$ & 70 & $(0,\mathsf{L},56)$ & $(1,\mathsf{L},70)$ \\
+7 & $(0,\mathsf{L},13)$ & $(1,\mathsf{L},14)$ & 39 & $(0,\mathsf{R},13)$ & $(1,\mathsf{L},40)$ & 71 & $(1,\mathsf{R},90)$ & $(1,\mathsf{L},72)$ \\
+8 & $(0,\mathsf{L},15)$ & $(1,\mathsf{L},16)$ & 40 & $(0,\mathsf{L},18)$ & $(1,\mathsf{R},57)$ & 72 & $(0,\mathsf{L},86)$ & $(0,\mathsf{L},89)$ \\
+9 & $(0,\mathsf{L},17)$ & $(1,\mathsf{L},18)$ & 41 & $(0,\mathsf{L},58)$ & $(1,\mathsf{L},12)$ & 73 & $(1,\mathsf{R},55)$ & $(0,\mathsf{L},89)$ \\
+10 & $(0,\mathsf{L},19)$ & $(1,\mathsf{L},12)$ & 42 & $(0,\mathsf{L},59)$ & $(1,\mathsf{L},42)$ & 74 & $(0,\mathsf{L},91)$ & $(1,\mathsf{L},74)$ \\
+11 & $(0,\mathsf{L},20)$ & $(1,\mathsf{L},21)$ & 43 & $(0,\mathsf{L},60)$ & $(1,\mathsf{L},61)$ & 75 & $(0,\mathsf{L},92)$ & $(1,\mathsf{L},6)$ \\
+12 & $(0,\mathsf{L},22)$ & $(1,\mathsf{L},20)$ & 44 & $(0,\mathsf{L},62)$ & $(1,\mathsf{L},10)$ & 76 & $(0,\mathsf{L},93)$ & $(1,\mathsf{R},94)$ \\
+13 & $(0,\mathsf{L},23)$ & $(1,\mathsf{L},24)$ & 45 & $(0,\mathsf{L},63)$ & $(1,\mathsf{L},64)$ & 77 & $(1,\mathsf{L},69)$ & $(0,\mathsf{L},50)$ \\
+14 & $(0,\mathsf{L},25)$ & $(0,\mathsf{L},26)$ & 46 & $(0,\mathsf{L},65)$ & $(0,\mathsf{L},66)$ & 78 & $(0,\mathsf{R},95)$ & $(0,\mathsf{L},70)$ \\
+15 & $(0,\mathsf{L},27)$ & $(1,\mathsf{L},6)$ & 47 & $(1,\mathsf{L},67)$ & $(0,\mathsf{L},66)$ & 79 & $(1,\mathsf{L},96)$ & $(1,\mathsf{L},79)$ \\
+16 & $(0,\mathsf{L},20)$ & $(1,\mathsf{R},28)$ & 48 & $(0,\mathsf{L},68)$ & $(0,\mathsf{L},56)$ & 80 & $(1,\mathsf{R},17)$ & $(1,\mathsf{L},97)$ \\
+17 & $(1,\mathsf{R},17)$ & $(0,\mathsf{L},26)$ & 49 & $(0,\mathsf{L},69)$ & $(1,\mathsf{L},49)$ & 81 & $(0,\mathsf{L},82)$ & $(1,\mathsf{R},98)$ \\
+18 & $(0,\mathsf{L},29)$ & $(1,\mathsf{L},30)$ & 50 & $(0,\mathsf{L},36)$ & $(1,\mathsf{L},50)$ & 82 & $(0,\mathsf{L},99)$ & $(1,\mathsf{L},12)$ \\
+19 & $(0,\mathsf{L},31)$ & $(1,\mathsf{L},32)$ & 51 & $(0,\mathsf{L},70)$ & $(1,\mathsf{L},51)$ & 83 & $(0,\mathsf{L},100)$ & $(1,\mathsf{L},101)$ \\
+20 & $(1,\mathsf{R},33)$ & $(1,\mathsf{R},34)$ & 52 & $(0,\mathsf{L},49)$ & $(1,\mathsf{L},52)$ & 84 & $(1,\mathsf{L},102)$ & $(0,\mathsf{L},66)$ \\
+21 & $(0,\mathsf{L},35)$ & $(0,\mathsf{L},36)$ & 53 & $(0,\mathsf{L},71)$ & $(1,\mathsf{R},72)$ & 85 & $(0,\mathsf{L},68)$ & $(0,\mathsf{L},103)$ \\
+22 & $(0,\mathsf{L},37)$ & $(1,\mathsf{L},38)$ & 54 & $(0,\mathsf{L},73)$ & $(0,\mathsf{L},74)$ & 86 & $(1,\mathsf{L},26)$ & $(0,\mathsf{L},50)$ \\
+23 & $(1,\mathsf{R},17)$ & $(1,\mathsf{L},39)$ & 55 & $(1,\mathsf{L},33)$ & $(0,\mathsf{L},66)$ & 87 & $(1,\mathsf{R},17)$ & $(1,\mathsf{L},17)$ \\
+24 & $(0,\mathsf{L},3)$ & $(1,\mathsf{L},5)$ & 56 & $(0,\mathsf{L},74)$ & $(1,\mathsf{L},56)$ & 88 & $(1,\mathsf{R},90)$ & $(1,\mathsf{L},104)$ \\
+25 & $(0,\mathsf{L},40)$ & $(1,\mathsf{L},41)$ & 57 & $(0,\mathsf{L},75)$ & $(1,\mathsf{L},76)$ & 89 & $(0,\mathsf{L},33)$ & $(1,\mathsf{L},89)$ \\
+26 & $(0,\mathsf{L},42)$ & $(1,\mathsf{L},26)$ & 58 & $(0,\mathsf{L},77)$ & $(1,\mathsf{L},78)$ & 90 & $(1,\mathsf{R},105)$ & $(0,\mathsf{L},50)$ \\
+27 & $(0,\mathsf{L},43)$ & $(1,\mathsf{L},44)$ & 59 & $(0,\mathsf{L},79)$ & $(1,\mathsf{L},59)$ & 91 & $(0,\mathsf{L},106)$ & $(1,\mathsf{L},91)$ \\
+28 & $(0,\mathsf{L},18)$ & $(1,\mathsf{L},45)$ & 60 & $(0,\mathsf{L},80)$ & $(1,\mathsf{L},41)$ & 92 & $(0,\mathsf{L},9)$ & $(1,\mathsf{L},41)$ \\
+29 & $(0,\mathsf{L},46)$ & $(1,\mathsf{L},34)$ & 61 & $(0,\mathsf{L},81)$ & $(1,\mathsf{L},82)$ & 93 & $(0,\mathsf{L},107)$ & $(1,\mathsf{L},28)$ \\
+30 & $(0,\mathsf{L},47)$ & $(1,\mathsf{L},48)$ & 62 & $(0,\mathsf{L},83)$ & $(1,\mathsf{L},57)$ & 94 & $(0,\mathsf{L},108)$ & $(1,\mathsf{L},109)$ \\
+31 & $(1,\mathsf{L},49)$ & $(0,\mathsf{L},50)$ & 63 & $(0,\mathsf{L},10)$ & $(1,\mathsf{L},31)$ & 95 & $(0,\mathsf{L},54)$ & $(1,\mathsf{R},110)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\clearpage
+\subsection*{States 96--191}
+
+\begin{center}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular}{@{}rll@{\hspace{1.1em}}rll@{\hspace{1.1em}}rll@{}}
+\toprule
+State & Read 0 & Read 1 & State & Read 0 & Read 1 & State & Read 0 & Read 1 \\
+\midrule
+96 & $(1,\mathsf{R},111)$ & $(0,\mathsf{L},79)$ & 128 & $(0,\mathsf{L},136)$ & $(1,\mathsf{R},137)$ & 160 & $(1,\mathsf{R},55)$ & $(1,\mathsf{L},164)$ \\
+97 & $(0,\mathsf{R},112)$ & $(1,\mathsf{R},24)$ & 129 & $(1,\mathsf{R},135)$ & $(1,\mathsf{R},129)$ & 161 & $(0,\mathsf{L},16)$ & $(1,\mathsf{L},165)$ \\
+98 & $(0,\mathsf{L},113)$ & $(1,\mathsf{L},114)$ & 130 & $(0,\mathsf{L},138)$ & $(1,\mathsf{L},75)$ & 162 & $(1,\mathsf{R},127)$ & $(1,\mathsf{L},90)$ \\
+99 & $(0,\mathsf{L},18)$ & $(0,\mathsf{L},26)$ & 131 & $(0,\mathsf{L},139)$ & $(1,\mathsf{L},25)$ & 163 & $(0,\mathsf{L},162)$ & $(0,\mathsf{L},36)$ \\
+100 & $(0,\mathsf{L},23)$ & $(1,\mathsf{L},115)$ & 132 & $(0,\mathsf{L},140)$ & $(1,\mathsf{L},41)$ & 164 & $(0,\mathsf{L},166)$ & $(1,\mathsf{L},167)$ \\
+101 & $(0,\mathsf{L},25)$ & $(1,\mathsf{L},100)$ & 133 & $(0,\mathsf{L},141)$ & $(1,\mathsf{L},142)$ & 165 & $(0,\mathsf{L},192)$ & $(1,\mathsf{L},156)$ \\
+102 & $(0,\mathsf{L},89)$ & $(1,\mathsf{L},102)$ & 134 & $(1,\mathsf{R},117)$ & $(1,\mathsf{L},96)$ & 166 & $(0,\mathsf{L},110)$ & $(1,\mathsf{L},168)$ \\
+103 & $(0,\mathsf{L},66)$ & $(1,\mathsf{L},103)$ & 135 & $(0,\mathsf{L},129)$ & $(0,\mathsf{R},128)$ & 167 & $(0,\mathsf{L},169)$ & $(1,\mathsf{L},170)$ \\
+104 & $(0,\mathsf{L},55)$ & $(1,\mathsf{L},116)$ & 136 & $(0,\mathsf{R},137)$ & $(1,\mathsf{L},143)$ & 168 & $(0,\mathsf{L},171)$ & $(0,\mathsf{L},70)$ \\
+105 & $(1,\mathsf{R},117)$ & $(1,\mathsf{R},105)$ & 137 & $(0,\mathsf{R},128)$ & $(1,\mathsf{R},128)$ & 169 & $(0,\mathsf{L},77)$ & $(1,\mathsf{L},64)$ \\
+106 & $(0,\mathsf{L},118)$ & $(1,\mathsf{L},106)$ & 138 & $(0,\mathsf{L},144)$ & $(1,\mathsf{R},7)$ & 170 & $(0,\mathsf{L},172)$ & $(1,\mathsf{L},173)$ \\
+107 & $(0,\mathsf{L},119)$ & $(1,\mathsf{L},120)$ & 139 & $(0,\mathsf{L},120)$ & $(1,\mathsf{L},39)$ & 171 & $(1,\mathsf{R},90)$ & $(1,\mathsf{L},174)$ \\
+108 & $(0,\mathsf{L},97)$ & $(1,\mathsf{L},121)$ & 140 & $(0,\mathsf{L},39)$ & $(1,\mathsf{L},6)$ & 172 & $(0,\mathsf{L},175)$ & $(1,\mathsf{L},176)$ \\
+109 & $(0,\mathsf{L},122)$ & $(1,\mathsf{R},123)$ & 141 & $(0,\mathsf{L},145)$ & $(1,\mathsf{L},146)$ & 173 & $(1,\mathsf{R},127)$ & $(0,\mathsf{L},103)$ \\
+110 & $(0,\mathsf{L},11)$ & $(1,\mathsf{L},20)$ & 142 & $(0,\mathsf{L},147)$ & $(1,\mathsf{L},126)$ & 174 & $(0,\mathsf{L},177)$ & $(1,\mathsf{L},178)$ \\
+111 & $(0,\mathsf{R},124)$ & $(0,\mathsf{R},125)$ & 143 & $(0,\mathsf{R},117)$ & $(1,\mathsf{L},148)$ & 175 & $(0,\mathsf{L},90)$ & $(0,\mathsf{L},42)$ \\
+112 & $(0,\mathsf{L},92)$ & $(1,\mathsf{L},99)$ & 144 & $(0,\mathsf{L},149)$ & $(1,\mathsf{L},147)$ & 176 & $(0,\mathsf{L},179)$ & $(0,\mathsf{L},91)$ \\
+113 & $(0,\mathsf{L},108)$ & $(1,\mathsf{L},5)$ & 145 & $(0,\mathsf{L},150)$ & $(1,\mathsf{L},151)$ & 177 & $(0,\mathsf{L},180)$ & $(1,\mathsf{L},28)$ \\
+114 & $(0,\mathsf{L},126)$ & $(1,\mathsf{L},18)$ & 146 & $(0,\mathsf{L},78)$ & $(1,\mathsf{L},81)$ & 178 & $(0,\mathsf{L},181)$ & $(0,\mathsf{L},70)$ \\
+115 & $(0,\mathsf{L},60)$ & $(1,\mathsf{R},112)$ & 147 & $(0,\mathsf{L},18)$ & $(1,\mathsf{L},92)$ & 179 & $(0,\mathsf{R},32)$ & $(0,\mathsf{L},102)$ \\
+116 & $(1,\mathsf{R},127)$ & $(0,\mathsf{L},50)$ & 148 & $(0,\mathsf{R},117)$ & $(1,\mathsf{L},152)$ & 180 & $(0,\mathsf{L},182)$ & $(1,\mathsf{L},20)$ \\
+117 & $(0,\mathsf{L},128)$ & $(1,\mathsf{R},117)$ & 149 & $(0,\mathsf{L},80)$ & $(1,\mathsf{L},6)$ & 181 & $(0,\mathsf{L},183)$ & $(1,\mathsf{L},1)$ \\
+118 & $(0,\mathsf{R},129)$ & $(1,\mathsf{L},111)$ & 150 & $(0,\mathsf{L},153)$ & $(1,\mathsf{L},154)$ & 182 & $(0,\mathsf{L},10)$ & $(1,\mathsf{L},156)$ \\
+119 & $(0,\mathsf{L},130)$ & $(1,\mathsf{L},131)$ & 151 & $(0,\mathsf{L},155)$ & $(1,\mathsf{L},156)$ & 183 & $(0,\mathsf{L},123)$ & $(1,\mathsf{L},184)$ \\
+120 & $(0,\mathsf{L},40)$ & $(1,\mathsf{R},27)$ & 152 & $(0,\mathsf{L},157)$ & $(1,\mathsf{L},143)$ & 184 & $(0,\mathsf{L},98)$ & $(1,\mathsf{L},185)$ \\
+121 & $(0,\mathsf{L},18)$ & $(1,\mathsf{L},82)$ & 153 & $(1,\mathsf{R},127)$ & $(1,\mathsf{L},151)$ & 185 & $(0,\mathsf{L},186)$ & $(1,\mathsf{L},187)$ \\
+122 & $(0,\mathsf{L},108)$ & $(1,\mathsf{L},132)$ & 154 & $(0,\mathsf{L},32)$ & $(1,\mathsf{L},55)$ & 186 & $(0,\mathsf{L},94)$ & $(1,\mathsf{L},188)$ \\
+123 & $(0,\mathsf{L},133)$ & $(1,\mathsf{R},109)$ & 155 & $(1,\mathsf{R},117)$ & $(1,\mathsf{R},95)$ & 187 & $(0,\mathsf{L},189)$ & $(1,\mathsf{L},138)$ \\
+124 & $(0,\mathsf{R},118)$ & $(1,\mathsf{R},124)$ & 156 & $(0,\mathsf{L},158)$ & $(1,\mathsf{L},159)$ & 188 & $(0,\mathsf{L},112)$ & $(1,\mathsf{L},25)$ \\
+125 & $(0,\mathsf{R},134)$ & $(1,\mathsf{L},125)$ & 157 & $(0,\mathsf{L},160)$ & $(1,\mathsf{L},161)$ & 189 & $(0,\mathsf{L},190)$ & $(1,\mathsf{L},149)$ \\
+126 & $(0,\mathsf{L},121)$ & $(1,\mathsf{R},98)$ & 158 & $(0,\mathsf{L},162)$ & $(1,\mathsf{L},155)$ & 190 & $(0,\mathsf{L},191)$ & $(1,\mathsf{L},147)$ \\
+127 & $(1,\mathsf{R},127)$ & $(1,\mathsf{R},135)$ & 159 & $(1,\mathsf{R},90)$ & $(1,\mathsf{L},163)$ & 191 & $(0,\mathsf{L},115)$ & $(1,\mathsf{L},140)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}

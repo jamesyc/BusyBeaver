@@ -1,0 +1,22 @@
+name = "ZF192"
+version = "0.1.0"
+weakLeanArgs = ["-j1", "-M1536"]
+defaultTargets = ["ZF192.Solution"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "56a005855ea17e0b0958f73ec801ae140b0a1679"
+
+[[lean_lib]]
+name = "Foundation"
+srcDir = "Vendor"
+
+[[lean_lib]]
+name = "ZF192Support"
+srcDir = "Support"
+globs = ["ZF192Support.+"]
+
+[[lean_lib]]
+name = "ZF192"
+srcDir = "ProofSources"
