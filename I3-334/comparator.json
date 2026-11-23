@@ -1,0 +1,7 @@
+{
+  "challenge_module": "I3_334.Challenge",
+  "solution_module": "I3_334.Solution",
+  "theorem_names": ["PalomarI3334.exactClaim"],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

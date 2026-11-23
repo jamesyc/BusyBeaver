@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "I3-334 conditional independence from ZFC + I3"
+  description: >-
+    Lean formalization of a literal 334-state Turing machine, its external
+    consistency equivalence, and conditional independence from ZFC + I3.
+  authors: ["James Chang"]
+  responsible_maintainers: ["James Chang"]
+  license: "MIT"
+
+classification:
+  arxiv: ["math.LO", "cs.LO"]
+  msc2020: ["03F30", "03D10"]
+
+sources:
+  - title: "Conditional ZFC + I3 independence for a 334-state Turing machine"
+    authors: ["James Chang"]
+    type: "paper"
+    location: "I3-334/paper/i3-334.pdf in this repository"
+    relationship: "formalizes"
+  - title: "The gap between I3 and the wholeness axiom"
+    authors: ["Paul Corazza"]
+    location: "https://doi.org/10.4064/fm179-1-4"
+    relationship: "background"
+  - title: "On the Two Short Axiomatizations of Ortholattices"
+    authors: ["Wioletta Truszkowska", "Adam Grabowski"]
+    location: "https://mizar.uwb.edu.pl/JFM/Vol15/robbins2.html"
+    relationship: "background"
+
+related_formalizations:
+  - id: "https://github.com/jamesyc/BusyBeaver/tree/5928cc3a0ca3fbc548a39074ade7338c77983349/I3-380"
+    relationship: "builds-on"
+    note: "Reuses machine semantics, arithmetic coding, and proof transport."
+  - id: "https://github.com/FormalizedFormalLogic/Foundation/tree/c3eb37ae896dc8f1d239ba1511e74d9f25e9d158"
+    relationship: "builds-on"
+    note: "Arithmetic and incompleteness support from ZF192’s optimized Foundation snapshot.
+      The vendor provenance files document the upstream revisions."
+
+automation:
+  methods:
+    - method: "agent"
+      framework: "Codex"
+
+status:
+  scope: "Exact machine, external consistency equivalence, and conditional independence."
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+review:
+  status: "unchecked"

@@ -1,0 +1,267 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,microtype,xurl}
+\usepackage[hidelinks,pdftitle={Conditional ZFC + I3 independence for a 334-state Turing machine},
+  pdfauthor={James Chang}]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\ZFC}{\mathrm{ZFC}}
+\newcommand{\Ithree}{\mathrm{I}_3}
+\newcommand{\Con}{\operatorname{Con}}
+\newcommand{\Halt}{\operatorname{Halt}}
+\newcommand{\code}[1]{\texttt{\nolinkurl{#1}}}
+\newcommand{\nand}{\mathbin{\uparrow}}
+\newcommand{\conv}[1]{#1^{\smile}}
+\newcommand{\ch}{\operatorname{ch}}
+\setlength{\emergencystretch}{2em}
+
+\title{Conditional \texorpdfstring{$\ZFC+\Ithree$}{ZFC + I3} independence\\
+for a 334-state Turing machine}
+\author{James Chang}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a two-symbol Turing machine with 334 working states whose
+blank-tape nonhalting is equivalent to the syntactic consistency of
+$\ZFC+\Ithree$. The machine searches for an equality in a calculus of
+ten guarded equations. Consistency suffices for the unprovability of
+nonhalting, and arithmetic $\Sigma_1$-soundness suffices for the
+unprovability of halting. The proof distinguishes standard finite
+computations from internally finite computations in models of the
+theory. Lean checks the literal transition table, the guarded search,
+and the consistency implication needed for the second incompleteness
+argument.
+\end{abstract}
+
+\section{Statement}
+
+Write $T=\ZFC+\Ithree$. Here $\Ithree$ asserts that some $V_\lambda$,
+for a nonzero limit ordinal $\lambda$, admits a nonidentity elementary
+embedding into itself in the language of membership
+\cite{corazza}. The first-order axiom expresses elementarity using
+satisfaction for the set structure $V_\lambda$. In a model of $T$ this
+satisfaction condition ranges over the formula codes of that model.
+
+Let $M$ be the machine in Appendix~\ref{app:table}. It starts in
+state~$0$ on a doubly infinite tape of zeros. States $0,\ldots,333$ are
+working states, and $334$ is the halt label. The unique halting
+transition reads $1$ at state~$189$, writes $1$, and moves right.
+Write $\Halt(M)$ for actual halting and $H_M$ for the closed
+set-theoretic sentence asserting that a finite halting history exists.
+
+\begin{theorem}\label{thm:main}
+In every model of $T$, $H_M$ holds exactly when there is a blank-tape
+halting computation in that model. Moreover,
+\begin{enumerate}
+\item $\neg\Halt(M)\iff\Con(T)$.
+\item If $T$ is syntactically consistent, then $T\nvdash\neg H_M$.
+\item If $T$ is arithmetically $\Sigma_1$-sound, then $T\nvdash H_M$
+and $T\nvdash\neg H_M$.
+\end{enumerate}
+\end{theorem}
+
+Arithmetic $\Sigma_1$-soundness means that a closed arithmetic
+$\Sigma_1$ sentence is true in $\mathbb N$ whenever $T$ proves a
+set-theoretic sentence representing it. Representation here is
+agreement in every model of $T$ with the arithmetic sentence
+interpreted on the model's natural numbers.
+
+\section{The guarded equations}
+
+A symbol in the machine's term language is a pair $(k,t)$, where $k$
+is the arity and $t$ is the tag. A term is read in prefix order. Use
+$J,D,E,K,I$ for the constants with tags $0,1,2,3,5$, respectively.
+The unary operations $\ch$, $\neg$ and converse have tags $1,3,4$.
+NAND $\nand$ and product $\cdot$ have tags $3,4$ at arity two. Set
+\[
+x\wedge y=\neg(x\nand y),\qquad
+U=(\neg E)\nand E,\qquad
+P=\neg(\conv E\cdot\neg E),\qquad S=\conv{\ch(P)}\cdot\ch(P).
+\]
+The variables $a,b,c$ range over all closed terms. The variable $d$
+ranges over closed terms in which every tag is at least three.
+Write $F=\ch(a)\wedge a$ and $X=\conv E\cdot F$. The six factors of
+the guarded equation are
+\begin{align*}
+B_1 &= \bigl(\neg((\neg X)\cdot E) \wedge
+                 \neg(\conv E\cdot(F\cdot\neg E))\bigr)\cdot U,\\
+B_2 &= (\conv a\cdot(\neg(a\cdot b)\wedge c))\nand b,\\
+B_3 &= (d\cdot J)\nand(J\cdot\neg d),\\
+B_4 &= a\nand\neg(F\cdot U),\\
+B_5 &= (\conv{\ch(a)}\cdot\ch(a))\nand\neg I,\\
+B_6 &= (\conv P)\nand(P\wedge\neg I).
+\end{align*}
+Using these abbreviations, the ten equations in compiled order are
+\begin{align*}
+(\conv a)\nand(\conv b)&=\conv{(a\nand b)},\\
+a\cdot I&=a,\\
+B_1\wedge(B_2\wedge(B_3\wedge(B_4\wedge(B_5\wedge B_6))))&=U,\\
+P\cdot(S\cdot(E\cdot S))&=E\cdot S,\\
+a&=\neg\neg((\neg a)\nand b)\wedge a,\\
+a\cdot(b\cdot c)&=(a\cdot b)\cdot c,\\
+I\wedge(J\cdot U)&=D,\\
+b\wedge(c\wedge a)&=\neg\neg((\neg a)\nand b)\wedge(c\wedge b),\\
+I\wedge(K\cdot(S\cdot U))&=D,\\
+K&=E\cdot D.
+\end{align*}
+The machine allows either orientation of an instantiated equation in
+a common prefix and suffix context. A capture of $d$ checks the guard
+on the entire substituted term.
+
+\begin{lemma}\label{lem:consistent}
+The guarded calculus fails to derive $D=J$ exactly when $T$ is
+consistent.
+\end{lemma}
+
+\begin{proof}
+In a model of $T$ the algebra of definable relations interprets $D$ as
+the diagonal of $V_\lambda$, $E$ as membership and $J$ as the graph of
+the embedding. The Meredith equations give the Boolean reduct
+\cite{robbins}. The remaining identities express composition,
+choice, domain and stage laws. The seed $K=E\cdot D$ is preserved by
+the embedding. The closure proof for guarded terms propagates
+preservation through the allowed operations, including a complement
+argument on the domain of the embedding. Hence the interpretation
+satisfies the guarded equation. Nonidentity of the embedding gives
+$D\ne J$, so soundness of the calculus yields underivability.
+
+Conversely, form the ground-term algebra modulo guarded derivability.
+Assuming $D\ne J$, recover the relation-algebra laws from the ten
+equations. A guarded class is one with a representative satisfying
+the tag bound. The seed is guarded, and the class of
+$(x\cdot\conv y)\wedge(y\nand z)$ is guarded when $x,y,z$ are
+guarded. To interpret the older local-relation symbol, use the product
+with a two-element Boolean selector. A reserved selector value names
+the seed, and an available guarded representative acts as the
+local relation of its own class. This supplies the local closure and
+preservation equations of the older calculus. The representation
+argument for that calculus then produces a model of $T$.
+\end{proof}
+
+\section{From the literal tape to proof search}
+
+The simulation first checks the startup trace and the layout of the
+program and unary registers. The decoder is verified against a
+344-state reference using a finite state correspondence and bounded
+tape windows. The register proof handles growth, return traversal, and
+the actual halt transition in the 334-state table. The structured
+program read by the decoder normalizes to the register program for
+the equations above.
+
+A candidate input contains a proposed term, a context position and
+orientation, four substitution words, and a sequence of selectors for
+the equation trie. The register program compares and removes a common
+prefix, interprets the requested equation, scans each occurrence of a
+capture, and compares the remaining suffixes. A successful trial
+replaces the incumbent term. The distinct codes $4$ and $1$ represent
+$D$ and $J$, and the acceptance gate halts exactly when a checked
+proposal has code~$1$.
+
+For completeness, a single guarded rewrite determines both the
+ordinary trie selectors and any branch selected by a dictionary
+suffix. A finite proof is packed backwards into one input. Between
+trials the scheduler subtracts one from the pending word, so each
+continuing proof suffix includes this debit. All arbitrary trials
+terminate or halt. Below a fixed target input $N$, the expression
+$(N-i)(N+1)+p$ bounds the wait from index~$i$ and pending word~$p$.
+It decreases when an attempt spends pending input or advances the
+outer index. Every chosen finite proof therefore leads to a halting
+run. The soundness of each accepted rewrite gives the reverse
+implication. Together with Lemma~\ref{lem:consistent}, this proves the
+external equivalence in Theorem~\ref{thm:main}.
+
+\section{Internal calibration}
+
+An implication about standard finite derivations does not suffice
+to apply the second incompleteness theorem. The calibration uses a
+recursive arithmetic theory $A$ extending $\mathrm{PA}$, whose
+arithmetic consequences include the translated consequences of $T$
+needed in the argument. Consistency of $T$ implies consistency of~$A$.
+We show that~$T$ proves $\neg H_M\to\Con(A)$.
+
+Work in the arithmetic of a model of $T$. If the older coded
+ground-term quotient separates $D$ and $J$, an arithmetic-coded graph
+and its truth table exclude an internal refutation of~$A$. Suppose
+instead that the quotient collapses $D$ and $J$. In the arithmetic
+model, form the native quotient by guarded rewrite traces of
+internally finite length. The same guarded-class construction as in
+Lemma~\ref{lem:consistent} validates each older equation in this
+quotient. To transport a coded old derivation, evaluate its prefix
+words by a right-to-left stack fold. Its graph is arithmetically
+definable, including the test for a guarded representative. The
+evaluation preserves equality under concatenation and the two-sided
+rewrite contexts. Arithmetic induction through the coded old trace
+then yields a native guarded derivation of $D=J$.
+
+The native derivation is replayed by the register program with all
+word lengths, queue debits and loop counts interpreted in the same
+arithmetic model. The checked entry frame and decoder simulation turn
+that run into a physical halting history of the exact table. Thus
+$\neg H_M$ excludes the collapse and the refutation, which proves
+the desired consistency implication by first-order completeness.
+
+If $T$ proved $\neg H_M$, it would prove the interpretation of
+$\Con(A)$, so $A$ would prove its own consistency. Under consistency
+of $T$, this contradicts the second incompleteness theorem
+\cite{goedel}. For the remaining direction, arithmetic halting for
+the exact table is $\Sigma_1$. The representation of $H_M$ and the
+external equivalence exclude a proof of halting under arithmetic
+$\Sigma_1$-soundness.
+
+\section{Formal verification}
+
+The Lean declaration \code{PalomarI3334.exactClaim} gives the literal
+conditional independence statement. The exact external equivalence
+is recorded separately as
+\code{PalomarI3334.literal_nonhalting_iff_consistency}.
+The proof uses the arithmetic and incompleteness library Foundation
+\cite{foundation}, the binary tape semantics and proof transport adapted from
+the 380-state formalization, and a standalone Challenge
+compared against the Solution. The accompanying reproduction notes
+give the build, axiom audit and Comparator commands.
+
+\paragraph{Acknowledgment.}
+Codex assisted with the Lean proof, verification and paper preparation.
+
+\begin{thebibliography}{9}
+\bibitem{corazza}
+P. Corazza, The gap between $\mathrm I_3$ and the wholeness axiom,
+\emph{Fundamenta Mathematicae} \textbf{179} (2003), 43--60.
+\href{https://doi.org/10.4064/fm179-1-4}{doi:10.4064/fm179-1-4}.
+
+\bibitem{robbins}
+W. Truszkowska and A. Grabowski, On the two short axiomatizations of
+ortholattices, \emph{Journal of Formalized Mathematics} \textbf{15}
+(2003), Mizar article ROBBINS2.
+\url{https://mizar.uwb.edu.pl/JFM/Vol15/robbins2.html}.
+
+\bibitem{goedel}
+K. G\"odel, \"Uber formal unentscheidbare S\"atze der Principia
+Mathematica und verwandter Systeme I, \emph{Monatshefte f\"ur
+Mathematik und Physik} \textbf{38} (1931), 173--198.
+\href{https://doi.org/10.1007/BF01700692}{doi:10.1007/BF01700692}.
+
+\bibitem{foundation}
+S. Saitou and M. Noguchi, \emph{Formalized Formal Logic}, Lean library.
+\url{https://github.com/FormalizedFormalLogic/Foundation}.
+\end{thebibliography}
+
+\appendix
+\section{Exact transition table}\label{app:table}
+
+In each group the columns give the working state $q$ and the two
+actions for input bits $0$ and $1$. Each action encodes the written
+bit, a direction, and the successor state. The SHA-256 digest of the
+published table is
+\begin{center}\small
+\code{50b86af5fde24402b7e2326171deff3b781c66b799f0a9854090f23edf68399d}.
+\end{center}
+\input{machine-table.tex}
+
+\end{document}

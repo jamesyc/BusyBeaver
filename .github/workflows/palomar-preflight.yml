@@ -9,7 +9,7 @@ on:
       project:
         description: Project path to verify
         type: choice
-        options: [PA196, ZF209, ZF207, I3-380, I0-451, ZF192]
+        options: [PA196, ZF209, ZF207, I3-380, I0-451, ZF192, I3-334]
         default: PA196
 
 permissions:

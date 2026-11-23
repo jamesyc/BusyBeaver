@@ -1,40 +1,33 @@
 # Busy Beaver independence proofs
 
-[PA196](PA196/README.md) contains the paper, Lean proof, exact machine data,
-and reproduction materials for the 196-state machine independent of PA.
-Its existing Palomar submission remains tied to the original submitted commit.
+These Lean projects verify blank-tape halting statements for explicit binary
+Turing machines. Each project page links to its paper, exact transition
+table, theorem statement, and reproduction instructions.
 
-[ZF209](ZF209/README.md) contains the separate 209-state ZF project and paper.
-The local build, axiom audit and Comparator passed with Lean and NanoDa.
-The local con-ron replay reached its time limit. Palomar submission is pending.
+| Project | Working states | Theory |
+| --- | ---: | --- |
+| [PA196](PA196/README.md) | 196 | Peano arithmetic |
+| [ZF192](ZF192/README.md) | 192 | First-order ZF |
+| [ZF207](ZF207/README.md) | 207 | First-order ZF |
+| [ZF209](ZF209/README.md) | 209 | First-order ZF |
+| [I3-334](I3-334/README.md) | 334 | ZFC + I3 |
+| [I3-380](I3-380/README.md) | 380 | ZFC + I3 |
+| [I0-451](I0-451/README.md) | 451 | ZFC + I₀, with additional assumptions involving a Berkeley cardinal |
 
-[ZF207](ZF207/README.md) is a separate project for a 207-state machine that
-runs the same proof search with a smaller decoder. It reuses the ZF209
-development with the table-specific checks redone. The local build, axiom
-audit, Comparator (unsandboxed, on macOS) with Lean and NanoDa, and the
-bundled con-ron passed. Palomar submission is pending.
+The ZF and large-cardinal results are conditional. The project statements
+spell out the consistency, soundness, and proof assumptions used in each
+result.
 
-[ZF192](ZF192/README.md) formalizes a 192-state machine with a contextual scanner
-and a seven-control arithmetic engine. A kernel-checked run of 44,181 steps
-reaches the prescribed source frame from the blank tape.
+## Reproduction and Palomar
 
-PA196 is self-contained under `PA196/`. Its Lean sources are in
-`PA196/ProofSources/`; shared tape-engine and arithmetic support are folded
-into `PA196.Engine` and `PA196.ArithmeticSupport`. Required support code and
-its original declaration namespaces and licence notices are retained.
+Use the Lean toolchain and check commands documented in the project you want
+to reproduce. The repository-level `scripts/check.sh` covers PA196, ZF192,
+ZF207, and ZF209.
 
-From the repository root:
+I3-334 is a standalone Lake project with bundled proof support and Foundation
+sources. Its [reproduction instructions](I3-334/docs/reproduction.md) cover
+the build, axiom audit, and Comparator. For Palomar, use project path
+`I3-334` and configuration `I3-334/comparator.json` with the full commit SHA.
 
-```sh
-bash scripts/check.sh
-bash scripts/check.sh --full
-```
-
-See the [paper](PA196/paper/pa196.pdf),
-[theorem statements](PA196/docs/result.md), and
-[reproduction instructions](PA196/docs/reproduction.md).
-PA196's citation metadata is in [CITATION.cff](PA196/CITATION.cff).
-Use project path `PA196` for a local Palomar verification of this layout.
-ZF209, ZF207 and ZF192 use their respective project directories, each
-with its own pinned dependencies.
-The repository licence is [MIT](LICENSE); vendored support retains its own notices.
+The repository uses the [MIT license](LICENSE). Vendored libraries retain
+their own notices.
