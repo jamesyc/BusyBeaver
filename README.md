@@ -10,8 +10,8 @@ table, theorem statement, and reproduction instructions.
 | [ZF192](ZF192/README.md) | 192 | First-order ZF |
 | [ZF207](ZF207/README.md) | 207 | First-order ZF |
 | [ZF209](ZF209/README.md) | 209 | First-order ZF |
-| [I3-334](I3-334/README.md) | 334 | ZFC + I3 |
-| [I3-380](I3-380/README.md) | 380 | ZFC + I3 |
+| [I3-334](I3-334/README.md) | 334 | ZFC + I₃ |
+| [I3-380](I3-380/README.md) | 380 | ZFC + I₃ |
 | [I0-451](I0-451/README.md) | 451 | ZFC + I₀, with additional assumptions involving a Berkeley cardinal |
 
 The ZF and large-cardinal results are conditional. The project statements

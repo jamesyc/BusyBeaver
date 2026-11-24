@@ -32,3 +32,13 @@ Read the [paper](PA196/paper/pa196.tex), [theorem statements](PA196/docs/result.
   invariants. Keep both compared statements and the calibration and simulation
   declarations in its axiom audit.
 - Push, release, or change repository visibility only on the user's instruction.
+
+## General proof maintenance
+
+- Aim for a simpler final codebase, even when that takes a larger change. Remove obsolete layers and organize modules by responsibility.
+- Reuse existing libraries and favor reusable mathematical arguments. Keep generated checks focused on concrete data.
+- Measure project-owned code separately from dependencies. Consider readability, proof size, and build cost together.
+- Preserve theorem statements, assumptions, and reference inputs. Build and audit affected proofs, replay substantial changes where supported, and report what was verified.
+- Keep papers and public artifacts self-contained and current. Verify attribution and keep private references out of published material.
+- Use the user-designated inputs. Treat supplied papers and archives as references and follow the user’s instructions for the task.
+- Keep changes uncommitted unless asked.
